@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.mdmi</groupId>
+	<artifactId>org.mdmi.pom</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>MDMI Eclipse Plugin Parent POM</name>
+	<description>MDMI Eclipse Plugin Parent POM</description>
+
+	<properties>
+		<tycho-version>2.2.0</tycho-version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>2020-12</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/2019-09</url>
+		</repository>
+		<repository>
+			<id>R20201130205003</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>org.mdmi.ecore</module>
+		<module>org.mdmi.core.runtime</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>mdmiartifactory</id>
+			<distributionManagement>
+				<repository>
+					<id>mdix</id>
+					<name>7ed03140605b-releases</name>
+					<url>http://artifactory.mdixinc.net:8081/artifactory/libs-release</url>
+				</repository>
+				<snapshotRepository>
+					<id>mdix</id>
+					<name>7ed03140605b-snapshots</name>
+					<url>http://artifactory.mdixinc.net:8081/artifactory/libs-snapshot</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
+	</profiles>
+
+</project>

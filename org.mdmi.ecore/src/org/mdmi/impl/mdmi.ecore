@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mdmi" nsURI="http://schema.omg.org/spec/MDMI/1.0" nsPrefix="mdmi">
+  <eClassifiers xsi:type="ecore:EClass" name="MessageModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageModelName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        lowerBound="1" eType="#//MessageSyntaxModel" containment="true" eOpposite="#//MessageSyntaxModel/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" containment="true" eOpposite="#//SemanticElementSet/model"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/models"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSyntaxModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+        lowerBound="1" eType="#//MessageModel" eOpposite="#//MessageModel/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" ordered="false" lowerBound="1"
+        eType="#//Node" containment="true" eOpposite="#//Node/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eOperations name="getCompletePath" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        eType="#//MessageSyntaxModel" eOpposite="#//MessageSyntaxModel/root"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        eType="#//SemanticElement" resolveProxies="false" eOpposite="#//SemanticElement/syntaxNode">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSyntacticField" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"
+        defaultValueLiteral="path"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bag" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isUnique" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrdered" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LeafSyntaxTranslator" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formatExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageGroup">
+    <eOperations name="getDatatype" lowerBound="1" eType="#//MDMIDatatype">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="addDatatype">
+      <eParameters name="datatype" lowerBound="1" eType="#//MDMIDatatype"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRules" ordered="false"
+        upperBound="-1" eType="#//DataRule" containment="true" eOpposite="#//DataRule/scope"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultLocationExprLang"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultConstraintExprLang"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultRuleExprLang" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFormatExpressionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultOrderingExpressionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MessageModel" containment="true"
+        eOpposite="#//MessageModel/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainDictionary" ordered="false"
+        lowerBound="1" eType="#//MDMIDomainDictionaryReference" containment="true"
+        eOpposite="#//MDMIDomainDictionaryReference/group"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMDMIExpresionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" ordered="false"
+        upperBound="-1" eType="#//DataRule" eOpposite="#//DataRule/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatypes" upperBound="-1"
+        eType="#//MDMIDatatype" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatypeMaps" upperBound="-1"
+        eType="#//DatatypeMap" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scope" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/dataRules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MDMIDatatype"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/dataRules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/rules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageModelName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        lowerBound="1" eType="#//MessageSyntaxModel" eOpposite="#//MessageSyntaxModel/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+        lowerBound="1" eType="#//MessageModel" eOpposite="#//MessageModel/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//SemanticElement" containment="true"
+        eOpposite="#//SemanticElement/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" ordered="false"
+        upperBound="-1" eType="#//SimpleMessageComposite" containment="true" eOpposite="#//SimpleMessageComposite/elementSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" ordered="false"
+        lowerBound="1" eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyQualifier" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" ordered="false"
+        eType="#//SimpleMessageComposite" eOpposite="#//SimpleMessageComposite/semanticElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/semanticElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRules" ordered="false"
+        upperBound="-1" eType="#//SemanticElementBusinessRule" containment="true"
+        eOpposite="#//SemanticElementBusinessRule/semanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRules" ordered="false"
+        upperBound="-1" eType="#//DataRule" eOpposite="#//DataRule/semanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" ordered="false"
+        upperBound="-1" eType="#//SemanticElementRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multipleInstances" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapFromMdmi" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ConversionRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordering" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderingLanguage" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedValue" ordered="false"
+        eType="#//MDMIExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedInValue" ordered="false"
+        eType="#//MDMIExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapToMdmi" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ConversionRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
+        eType="#//SemanticElement" eOpposite="#//SemanticElement/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" ordered="false"
+        upperBound="-1" eType="#//SemanticElement" eOpposite="#//SemanticElement/parent">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxNode" ordered="false"
+        eType="#//Node" eOpposite="#//Node/semanticElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedOutValue" ordered="false"
+        eType="#//MDMIExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keywords" ordered="false"
+        upperBound="-1" eType="#//Keyword" containment="true" eOpposite="#//Keyword/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueDescrField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleMessageComposite">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//SemanticElement" eOpposite="#//SemanticElement/composite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/composite"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageComposite" eSuperTypes="#//SimpleMessageComposite">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composites" ordered="false"
+        upperBound="-1" eType="#//MessageComposite" eOpposite="#//MessageComposite/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//MessageComposite" eOpposite="#//MessageComposite/composites"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementBusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/businessRules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementRelationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+        lowerBound="1" eType="#//SemanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceIsInstance" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetIsInstance" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedSemanticElement"
+        ordered="false" lowerBound="1" eType="#//SemanticElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIBusinessElementReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueIdentifier" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRules" ordered="false"
+        upperBound="-1" eType="#//MDMIBusinessElementRule" containment="true" eOpposite="#//MDMIBusinessElementRule/businessElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainDictionaryReference"
+        ordered="false" lowerBound="1" eType="#//MDMIDomainDictionaryReference" eOpposite="#//MDMIDomainDictionaryReference/businessElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceDatatype" ordered="false"
+        lowerBound="1" eType="#//MDMIDatatype" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueSetField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueDescrField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueSet" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readonly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIBusinessElementRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElement" ordered="false"
+        lowerBound="1" eType="#//MDMIBusinessElementReference" eOpposite="#//MDMIBusinessElementReference/businessRules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConversionRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumExtResolverUri" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElement" ordered="false"
+        lowerBound="1" eType="#//MDMIBusinessElementReference" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIDomainDictionaryReference">
+    <eOperations name="addBusinessElement">
+      <eParameters name="businessElementReference" lowerBound="1" eType="#//MDMIBusinessElementReference"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MDMIBusinessElementReference" containment="true"
+        eOpposite="#//MDMIBusinessElementReference/domainDictionaryReference"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/domainDictionary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Keyword">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywordValue" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/keywords"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIDatatype">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadonly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeSpec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="restriction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageElementType">
+    <eLiterals name="NORMAL"/>
+    <eLiterals name="COMPUTED" value="1"/>
+    <eLiterals name="LOCAL" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="pattern" value="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSPrimitive" eSuperTypes="#//MDMIDatatype"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DTCStructured" eSuperTypes="#//MDMIDatatype">
+    <eOperations name="getField" lowerBound="1" eType="#//Field">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" lowerBound="1"
+        eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTExternal" eSuperTypes="#//DTSPrimitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSDerived" eSuperTypes="#//DTSPrimitive">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="#//MDMIDatatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTCChoice" eSuperTypes="#//MDMIDatatype">
+    <eOperations name="getField" lowerBound="1" eType="#//Field">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSEnumerated" eSuperTypes="#//MDMIDatatype">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"
+        eType="#//EnumerationLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatatypeMap">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromMDMI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toMDMI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mdmiDatatype" eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageDatatype" eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

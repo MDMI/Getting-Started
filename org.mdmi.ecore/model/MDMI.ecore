@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mdmi" nsURI="http://schema.omg.org/spec/MDMI/1.0" nsPrefix="mdmi">
+  <eClassifiers xsi:type="ecore:EClass" name="MessageModel">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>MessageModel contains the MessageElementSet in a message and the related MessageSyntaxModel. It important to point out that a MessageModel does not necessarily contain all of the MessageElements in a message, as some MessageElements can be associated with other domains. (For example, a RosettaNet message may have two hundred MessageElements but only a couple of dozen MessageElements associated with payments. In that case, only the payment MessageElements may be modeled and grouped into a MessageModel associated with a Payment-domain dictionary.)  The MessageModel is the parent class that contains the MDMI model of a message format. Database schema of a record in a table can also be considered a message format as well as most XML documents.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageModelName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The MessageModel is the parent class that contains the MDMI model of a message format. Database schema of a record in a table can also be considered a message format as well as most XML documents. A MessageModel does not necessarily contain all of the MessageElements in a message, as some MessageElements can be associated with other domains. For example, a RosettaNet message may have two hundred MessageElements but only a couple of dozen MessageElements associated with payments. In that case, only the payment MessageElements may be modeled and grouped into a MessageModel associated with a Payment domain dictionary.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        lowerBound="1" eType="#//MessageSyntaxModel" containment="true" eOpposite="#//MessageSyntaxModel/model"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" containment="true" eOpposite="#//SemanticElementSet/model"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String containing a description of the message model.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;source&quot; property � the value is a reference to the definition of the message format, whose elements are being mapped. This reference might be to a formal model such as the location of the message definition in the ISO 20022 repository or it might be a paper document.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/models"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSyntaxModel">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The MessageSyntaxModel contains a syntax tree that describes how each Semantic Element can be either inserted into or extracted from a message based on that message�s message format.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property, whose value is the name of the MessageSyntaxModel -- This name will often be similar to the MessageModel name, e.g., &quot;MT103 Syntax Tree.&quot;  The optional property &quot;description&quot; of type String provides a description of MessageGroup.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+        lowerBound="1" eType="#//MessageModel" eOpposite="#//MessageModel/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" ordered="false" lowerBound="1"
+        eType="#//Node" containment="true" eOpposite="#//Node/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/syntaxModel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional property &quot;description&quot; of type String provides a description of MessageGroup.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The Node class is an abstract class that represents all nodes in the syntax tree. It primarily contains location information so that any field in a message can be located.&lt;/p>"/>
+    </eAnnotations>
+    <eOperations name="getCompletePath" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;name&quot; property, whose value is a name for the Node -- This name can be useful to label a section or element in a message format. The name property should provide a reference to a node for the expression languages used in the syntax tree.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property whose value is a string describing the Node�s purpose.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;minOccurs&quot; property with a multiplicity of 0..1. The multiplicity of zero indicates that the Node is optional.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;maxOccurs&quot; property that puts an upper limit on the number of instances allowed for the node.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;location&quot; property whose value describes the location of the Node in the physical message. The location is often in reference to, or anchored by, the URI that defines the location of the physical message.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locationExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;locationExpressionLanguage&quot; property whose value defines a reference to the expression language used in the location property. The language used must have a reference.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        eType="#//MessageSyntaxModel" eOpposite="#//MessageSyntaxModel/root"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        eType="#//SemanticElement" resolveProxies="false" eOpposite="#//SemanticElement/syntaxNode">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;fieldName&quot; property has a value the class name of the simple datatype which is part of a complex MDMIDatatype, that corresponds to the syntactic field in the message format.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSyntacticField" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A derived Boolean property &quot;isSyntaticfield&quot;, which indicates that this node corresponds to a syntactic field if the property�s value is &quot;True&quot;.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true"
+        defaultValueLiteral="path">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;location&quot; property whose value describes the location of the Node in the physical message. The location is often in reference to, or anchored by, the URI that defines the location of the physical message.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bag" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The Bag class represents a set of syntax nodes. They can be a set or a bag and can be ordered or unordered.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isUnique" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An &quot;isUnique&quot; Boolean property whose value is true if the set is composed of unique items and false if the set can contain duplicates.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrdered" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An &quot;isOrdered&quot; Boolean property whose value is true if the nodes must be in an ordered sequence and false if the set can be unordered. This is needed information when inserting a value into a target message.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The Choice class describes a conditional branch of the syntax tree for which a subset is present in any particular message. The subset is determined by a constraint expression.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraint" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;constraint&quot; property whose value is an expression that can be used to determine which of the set of nodes should be in a physical message instance.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;constraintExpressionLanguage&quot; of type String that is a references the language used in the Choice constraint property. The constraintExpressionLanguage must be able to reference nodes.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LeafSyntaxTranslator" eSuperTypes="#//Node">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The LeafSyntaxTranslator class is a key class in the syntax model. It is the leaf of the syntax tree, corresponding to every field or sub-field in a message format.A LeafSyntaxTranslator (including its inherited attributes from the Node class) provides the information necessary to extract or insert a value from a message field from/to a SemanticElement.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;format&quot; property of type String provides the specific format of each field or subfield in the message format.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formatExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;formatExpressionLanguage&quot; property of type String is a reference to the expression language used in the format property. For example, SWIFT has a defined regular expression language for the format of fields in MT messages. The formatExpressionLanguage must be able to describe fields as well as sub-fields, in particular the proper termination character for a field or sub-field. While the MDMI standard does not require a specific formatExpressionLanguage, if no formatExpressionLanguage exists for a particular message format, the MDMI standard is recommending the use of a small subset of DFDL as a general solution.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageGroup">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The MessageGroup class contains a set of message models that are considered in the same grouping, e.g., SWIFT 15022 messages, SWIFT 20022 payment messages, FIX security messages, etc.&lt;/p>"/>
+    </eAnnotations>
+    <eOperations name="getDatatype" lowerBound="1" eType="#//MDMIDatatype">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="addDatatype">
+      <eParameters name="datatype" lowerBound="1" eType="#//MDMIDatatype"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The property &quot;name.&quot; of type String, names the MessageGroup.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRules" ordered="false"
+        upperBound="-1" eType="#//DataRule" containment="true" eOpposite="#//DataRule/scope"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional property &quot;description&quot; of type String provides a description of MessageGroup.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultLocationExprLang"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The property &quot;locationExpressionLanguage&quot; of type String identifies the location language to be used as a default for specifying location for all the messages in the MessageGroup. The value must be recognized by a runtime transformation application. The location of any field or sub-field in a message must be expressible in the chosen messagelocationExpressionLanguage. For example a location language for an XML message format would be &quot;XPath 2.0&quot;.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultConstraintExprLang"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The property &quot;constraintExpressionLanguage&quot; of type String identifies the constraint language to be used as a default for specifying the constraints in the Choice class for all the messages in the MessageGroup. The constraintExpressionLanguage must be able to reference nodes. The language used in the reference implementation is NRL 1.0&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultRuleExprLang" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The property &quot;ruleExpressionLanguage&quot; of type String identifies the rule language to be used as a default for specifying rules in all classes with the property &quot;rule&quot; for all the messages in the MessageGroup. This rule language must be able to access the values of any SemanticElement and thus it also must be able to access the fields in complex datatypes. The language used in the reference implementation is NRL 1.0&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFormatExpressionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The property &quot;formatExpressionLanguage&quot; of type String identifies the format language to be used as a default for specifying fornats in the LeafSyntaxTranslator class for all the messages in the MessageGroup. The formatExpressionLanguage must be able to describe fields as well as sub-fields, in particular the proper termination character for a field or sub-field. The languages used in the reference implementation are &quot;XML datatypes&quot; and &quot;SWIFT regular expression format language&quot;&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultOrderingExpressionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MessageModel" containment="true"
+        eOpposite="#//MessageModel/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainDictionary" ordered="false"
+        lowerBound="1" eType="#//MDMIDomainDictionaryReference" containment="true"
+        eOpposite="#//MDMIDomainDictionaryReference/group"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMDMIExpresionLanguage"
+        ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" ordered="false"
+        upperBound="-1" eType="#//DataRule" eOpposite="#//DataRule/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatypes" upperBound="-1"
+        eType="#//MDMIDatatype" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatypeMaps" upperBound="-1"
+        eType="#//DatatypeMap" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataRule">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The DataRule class contains a rule that is to be applied to an MDMIDatatype to ensure that values extracted or inserted are valid.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property of type String whose value is the name of the DatatypeRule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String that describes the DatatypeRule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;rule&quot; property that holds an expression for a rule or constraint associated with an associated Datatype.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;ruleExpressionLanguage&quot; that references the language in which the &quot;rule&quot; property is expressed. The standard does not require any particular rule language, but the language has to allow access to fields represented by simple datatype classes within a complex datatype.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scope" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/dataRules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MDMIDatatype">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;datatype&quot; property of type MDMIDatatype that explicitly identifies the datatypes that are referenced in the &quot;rule&quot;. The &quot;datatype&quot; property is to assist in the parsing and runtime processing of complex data.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/dataRules"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/rules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementSet">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The SemanticElement Set contains all of the smallest semantic elements contained in a message format. The syntax of a particular message format has been removed.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property whose value is the name of the SemanticElementSet.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property of type String provides a description of the SemanticElement Set.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="messageModelName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;MessageModelName&quot; property, whose value is constrained to be the same as the name property in the MessageModel that contains the SemanticElementSet. This derived property is included for implementation convenience.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxModel" ordered="false"
+        lowerBound="1" eType="#//MessageSyntaxModel" eOpposite="#//MessageSyntaxModel/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
+        lowerBound="1" eType="#//MessageModel" eOpposite="#//MessageModel/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//SemanticElement" containment="true"
+        eOpposite="#//SemanticElement/elementSet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" ordered="false"
+        upperBound="-1" eType="#//SimpleMessageComposite" containment="true" eOpposite="#//SimpleMessageComposite/elementSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>SemanticElement are the core of the MDMI message map. They represent the smallest semantic elements in a message format, stripped of any complicating syntax considerations. Each SemanticElement is unique in the context of its message format. It must have an individual semantic meaning. As example &quot;address&quot; cannot be a SemanticElement; &quot;address&quot; is a datatype that can be repeated in many message fields. &quot;Primary Debtor Address&quot; is a SemanticElement as it refers to a particular unique address in a message format.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property, whose value is the name of the SemanticElement.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property contains, as a String, a description of the SemanticElement.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>elementType can have one of three values.  &quot;NORMAL&quot; if the MessageElement is a semantic unit that explicitly exists in the message format and is mapped to an MDMIBusinessElement in the Dictionary. &quot;COMPUTED&quot; if the MessageElement must be computed from the value of other MessageElements. This may be required because there is not a direct mapping from the message format to the MessageElement and/or because there is not a direct mapping from an MDMIDomainDictionary MDMIBusinessElement to the MessageElement. &quot;LOCAL&quot; if the MessageElement is needed for technical reasons but is not meant to be mapped to an MDMIBusinessElement. For example, constructed indexes for a container are local, as they are not mapped to the domain dictionary. An &quot;elementType&quot; property that has three values has three values contained in the enumeration MessageElementType, each of which defines the type of Semantic Element. &lt;ul>&lt;li>NORMAL - a &quot;NORMAL&quot; semantic element is equivalent to the current definition of a SemanticElement, i.e., a semantic element, contained in a message format, which is to be mapped to a central dictionary. &lt;/li>&lt;li>LOCAL - a &quot;LOCAL semantic element contains some technical information need that is needed to correctly map NORMAL semantic element, e.g., it may contain an index that is used to provide the ordering for a semantic element that has multiple instances. &lt;/li>&lt;li>COMPUTED - a &quot;COMPUTED&quot; semantic element that is to be mapped to the central dictionary but contains a value that is not extracted from a message. Instead, a &quot;COMPUTED&quot; semantic element�s value is computed from the value of other SemanticElements in the message.&lt;/li>&lt;/ul>&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" ordered="false"
+        lowerBound="1" eType="#//MDMIDatatype">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;datatype&quot; property, whose value is associated with an MDMIDatatype.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyQualifier" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;propertyQualifier&quot; property, which is a list of keyword of type String that contains reference keywords of interest such as a tag associated with a SemanticElement.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composite" ordered="false"
+        eType="#//SimpleMessageComposite" eOpposite="#//SimpleMessageComposite/semanticElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/semanticElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRules" ordered="false"
+        upperBound="-1" eType="#//SemanticElementBusinessRule" containment="true"
+        eOpposite="#//SemanticElementBusinessRule/semanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataRules" ordered="false"
+        upperBound="-1" eType="#//DataRule" eOpposite="#//DataRule/semanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationships" ordered="false"
+        upperBound="-1" eType="#//SemanticElementRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multipleInstances" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;multipleInstances&quot; Boolean property, whose value if true indicates that this SemanticElement can be repeated in a physical message instance as a list or array. The multipleInstances property, if true, also can indicate that this SemanticElement can be repeated as part of a more complex structure defined in that message�s message format.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapFromMdmi" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ConversionRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordering" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An &quot;ordering&quot; property of type String, whose value contains an expression or keyword that describes how the instances are ordered, if the SemanticElement's multipleInstances property is &quot;True&quot;, e.g., the keyword Alphabetic.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orderingLanguage" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;orderingExpressionLanguage&quot; property of type String, whose value is a reference to the expression language used for the value of the &quot;ordering&quot; property. The ordering languagemust be able to describe ordinal and cardinal positioning as well as expressions that when evaluated will provide an index. The language used in the reference implementation is NRL.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedValue" ordered="false"
+        eType="#//MDMIExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;computedValue&quot; property, which is an MDMIexpression that computes the value of the SemanticElement, which can refer to the value of other SemanticElements. This property is most often used for SemanticElements of the type LOCAL.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedInValue" ordered="false"
+        eType="#//MDMIExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;computedInValue&quot; property, which is an MDMIexpression that computes a value for a SemanticElement, when it is a target, based on the values of one or more BusinessElements and SemanticElements. The value when it is a source is directly mapped.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapToMdmi" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ConversionRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
+        eType="#//SemanticElement" eOpposite="#//SemanticElement/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" ordered="false"
+        upperBound="-1" eType="#//SemanticElement" eOpposite="#//SemanticElement/parent">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="syntaxNode" ordered="false"
+        eType="#//Node" eOpposite="#//Node/semanticElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="computedOutValue" ordered="false"
+        eType="#//MDMIExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>&quot;computedOutValue&quot; property, which is an MDMIexpression that computes a value for a SemanticElement, when it is a source, based on the values of one or more SemanticElements. The value when it is a target is directly mapped.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="keywords" ordered="false"
+        upperBound="-1" eType="#//Keyword" containment="true" eOpposite="#//Keyword/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueDescrField" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleMessageComposite">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>SimpleMessageComposite represent aggregations of SemanticElements. SimpleMessageComposite are an informative artifact that can be useful when SemanticElement are associated with an object model. Usually the attributes of an object will be equivalent to a SemanticElement and the object itself equivalent to a SimpleMessageComposite.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property, whose value is the name of the SimpleMessageComposite.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//SemanticElement" eOpposite="#//SemanticElement/composite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementSet" ordered="false"
+        lowerBound="1" eType="#//SemanticElementSet" eOpposite="#//SemanticElementSet/composite"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String that describes SimpleMessageComposite.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageComposite" eSuperTypes="#//SimpleMessageComposite">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The MessageComposite class inherits from the SimpleMessageComposite class, allowing the construction of a complex object tree. MessageComposite are an informative artifact that can be useful when there is a desire to associated SemanticElements with a complex object model.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composites" ordered="false"
+        upperBound="-1" eType="#//MessageComposite" eOpposite="#//MessageComposite/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//MessageComposite" eOpposite="#//MessageComposite/composites"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementBusinessRule">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The SemanticElementBusinessRule holds a rule that is to be applied to a SemanticElement to make sure that the SemanticElement is valid. SemanticElementBusinessRule usually do not refer to other SematicElelemnts in a message. They are meant to provide rules that reflect an external context, e.g., a AcountID SemanticElement must be from an EU bank, etc.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticElement" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/businessRules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticElementRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The SemanticElementRelationship class is a key artifact in the MDMI standard. It provides the context and dependency relationships for each SemanticElement with other SemanticElements in the message. SemanticElementRelationship make it possible to extract and insert SemanticElement values in a valid manner.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property of type String that assigns a name to the rule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String that provides a description of the rule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;rule&quot; property of type String that defines a relationship between a source SemanticElement and other SemanticElements in the SemanticElementSet.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;ruleExpressionLanguage&quot; property of type String that contains a reference to the expression language used in the &quot;rule&quot; property. This rule language must be able to access the values of any SemanticElement and to that it must be able to access the fields in complex datatypes.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+        lowerBound="1" eType="#//SemanticElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>&quot;minOccurs&quot; property of type integer, which says how many instances of the target at a minimum must be involved in the relationship.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;maxOccurs&quot; property of type integer, which says how many instances at most can be involved in the relationship.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceIsInstance" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;sourceIs Instance&quot; property of type Boolean. When the sourceInstance is true, the defined relationship is for each Instance of the source SemanticElement. When the sourceInstance is false, the defined relationship is for the SemanticElement class as a whole. (The source SemanticElement owns the relationship by composition.)&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetIsInstance" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;targetIsInstance&quot; property of type Boolean. When the targetIsInstance is true, the defined relationship is for each Instance of the target SemanticElement. When the targetIsInstance is false, the defined relationship is for the SemanticElement class as a whole.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedSemanticElement"
+        ordered="false" lowerBound="1" eType="#//SemanticElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIBusinessElementReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The MDMIBusinessElementReference is as a class that references a business element in a dictionary. No assumption is made about the format of the business element in the central dictionary. Therefore, the reference can only be informational. However a function must be available that, given the reference, will return a uniqueIdentifier and a reference MDMIDatatype.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;Name&quot; property of type String names the MDMIBusinessElementReference.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property of type String describes the MDMIBusinessElementReference.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;reference&quot; property identifies the location of the BusinessElement in a central dictionary through a URI. URIs are very general address, i.e., the URI could even point to a line in a page in a document therefore the &quot;reference� property is informational.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueIdentifier" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;uniqueIdentifier&quot; is a key property. The �uniqueIdentifier&quot; of type String provides a unique identifier for all MDMIBusinessElementReference instances that reference the same business element in the central dictionary. There must be a function associated with the central dictionary that provides this identifier. Runtime transformation engines recognize the matching source and target mappings for a Semantic Element because they will each have the same &quot;uniqueIdentifier&quot;.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRules" ordered="false"
+        upperBound="-1" eType="#//MDMIBusinessElementRule" containment="true" eOpposite="#//MDMIBusinessElementRule/businessElement">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainDictionaryReference"
+        ordered="false" lowerBound="1" eType="#//MDMIDomainDictionaryReference" eOpposite="#//MDMIDomainDictionaryReference/businessElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceDatatype" ordered="false"
+        lowerBound="1" eType="#//MDMIDatatype" resolveProxies="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The &quot;referenceDatatype&quot; property of type MDMIDatatype provides a reference datatype for each business element in the central dictionary. There must be a function associated with the central dictionary that will deliver the &quot;referenceDatatype&quot;. Maps to/from this reference datatype to the &quot;datatype&quot; in the SemanticElement should be provided as a ConversionRule.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueSetField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueDescrField" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumValueSet" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readonly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIBusinessElementRule">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Given that the MDMI standard does not provide a specification for a the hub dictionary and in effect allows mapping to any appropriate dictionary, such as the ISO 20022 Data Dictionary, then some business rules may have to be specified to make sure that the mapping is correct. Instances of the MDMIBusinessElementRule maintain these rules.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property of type String that assigns a name to the rule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String that provides a description of the rule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;rule&quot; property of type String that is an expression defining the rule that applies to an associated MDMIBusinessElementReference.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;ruleExpressionLanguage&quot;, which provides a reference to the language used in the used for the &quot;rule&quot; property. This language must be able to describe the context in which the rule applies. The language should be able to reference the value of any Semantic Element instance and it should allow external function calls. If this property is not specified the default ruleExpressionLanguage will be used.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElement" ordered="false"
+        lowerBound="1" eType="#//MDMIBusinessElementReference" eOpposite="#//MDMIBusinessElementReference/businessRules"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConversionRule">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>ConversionRule is an abstract class that defines a rule used to convert values.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property of type String that names the ConversionRule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property of type String describes the ToBusinessElement.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property of type String describes the ToSemanticElement.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property of type String that describes the ConversionRule.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ruleExpressionLanguage"
+        ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;ruleExpressionLanguage&quot; property whose value is a reference to the expression language used to define the rule. This scope of the language allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules can be used to define the semantic distance between business elements in a central dictionary by identifying &quot;near synonyms&quot;. It is important that the &quot;near synonyms do not turn out to be far synonyms.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumExtResolverUri" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;ruleExpressionLanguage&quot; property whose value is a reference to the expression language used to define the rule. This scope of the language allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules can be used to define the semantic distance between business elements in a central dictionary by identifying &quot;near synonyms&quot;. It is important that the &quot;near synonyms do not turn out to be far synonyms.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElement" ordered="false"
+        lowerBound="1" eType="#//MDMIBusinessElementReference" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rule" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;rule&quot; property of type String that holds an expression for converting one value to another.&lt;/p>"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIDomainDictionaryReference">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The MDMIDomainDictionaryReference class provides a reference to the central dictionary that the Maps in the Message group are using. This class is purely for informational as the URI reference to the dictionary does not have be machine readable. The dictionary could reside on paper, for example. However, there must be a function or method associated with the dictionary that will provide 1) a uniqueIdentifier for all Business Elements, and 2) a reference to a datatype that is compatible with the set of MDMIDatatypes. The MessageSyntaxModel contains a syntax tree that describes how each Semantic Element can be either inserted into or extracted from a message based on that message�s message format.&lt;/p>"/>
+    </eAnnotations>
+    <eOperations name="addBusinessElement">
+      <eParameters name="businessElementReference" lowerBound="1" eType="#//MDMIBusinessElementReference"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;name&quot; property of type string that provides a name for the referenced central dictionary.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;description&quot; property that provides a description of the referenced central dictionary.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessElements" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MDMIBusinessElementReference" containment="true"
+        eOpposite="#//MDMIBusinessElementReference/domainDictionaryReference"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;reference&quot; property of the type URI that provides a reference to the central dictionary, such as a URL.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" ordered="false"
+        lowerBound="1" eType="#//MessageGroup" eOpposite="#//MessageGroup/domainDictionary"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Keyword">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>The keyword class contains either a keyword or a keyword/value pair. The set of Keywords can be used to profile a SemanticElement, to provide a mechanism to search for a SemanticElement, and to associate a SemanticElement with an external ontology or taxonomy.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>The optional &quot;description&quot; property of type string describing the Keyword and/or the set of Keyword associated with a SemanticElement.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>A &quot;keyword&quot; property of type String is used to describe or profile a SemanticElement.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywordValue" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional &quot;keywordValue&quot; of type string that is associated with the keyword creating a keyword/value pair.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>An optional reference that identifies the origin set for the keywords, for example a formal ontology.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        lowerBound="1" eType="#//SemanticElement" eOpposite="#//SemanticElement/keywords"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MDMIDatatype">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>Abstract class, base for the named types used to represent a message element. Can be a simple type (built-in, derived, or enumerated), or a complex type (structure or a choice) or an external datatype. The latter is a registered datatype that is associated with the domain dictionary - a URI is required to reference it.&lt;/p>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" lowerBound="1"
+        eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReadonly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeSpec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="restriction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageElementType">
+    <eLiterals name="NORMAL"/>
+    <eLiterals name="COMPUTED" value="1"/>
+    <eLiterals name="LOCAL" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="pattern" value="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="&lt;p>URI - see ISO standard [TODO: number]&lt;/p>"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSPrimitive" eSuperTypes="#//MDMIDatatype"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DTCStructured" eSuperTypes="#//MDMIDatatype">
+    <eOperations name="getField" lowerBound="1" eType="#//Field">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minOccurs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxOccurs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datatype" lowerBound="1"
+        eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Datatype description.&lt;/p>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTExternal" eSuperTypes="#//DTSPrimitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSDerived" eSuperTypes="#//DTSPrimitive">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="#//MDMIDatatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTCChoice" eSuperTypes="#//MDMIDatatype">
+    <eOperations name="getField" lowerBound="1" eType="#//Field">
+      <eParameters name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DTSEnumerated" eSuperTypes="#//MDMIDatatype">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"
+        eType="#//EnumerationLiteral" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatatypeMap">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fromMDMI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toMDMI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mdmiDatatype" eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageDatatype" eType="#//MDMIDatatype">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.mdmi.ecore/src" creationSubmenus="true" editDirectory="/org.mdmi.ecore.edit/src"
+    editorDirectory="/org.mdmi.ecore.editor/src" modelPluginID="org.mdmi.ecore" modelName="MDMI"
+    modelPluginClass="MDMIPlugin" editPluginClass="org.mdmi.ecore.provider.MDMIEditPlugin"
+    editorPluginClass="org.mdmi.ecore.presentation.MDMIEditorPlugin" testSuiteClass="org.mdmi.ecore.tests.MDMIAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    providerRootExtendsClass="" editPluginID="org.mdmi.ecore.edit" editorPluginID="org.mdmi.ecore.editor"
+    optimizedHasChildren="true" tableProviders="true" colorProviders="true" runtimeVersion="2.11"
+    runtimePlatform="RAP" styleProviders="true">
+  <foreignModel>MDMI.ecore</foreignModel>
+  <genPackages prefix="MDMI" basePackage="org" resource="XMI" disposableProviderFactory="true"
+      loadInitialization="true" extensibleProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="MDMI.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MDMI.ecore#//MessageElementType">
+      <genEnumLiterals ecoreEnumLiteral="MDMI.ecore#//MessageElementType/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="MDMI.ecore#//MessageElementType/COMPUTED"/>
+      <genEnumLiterals ecoreEnumLiteral="MDMI.ecore#//MessageElementType/LOCAL"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="MDMI.ecore#//URI"/>
+    <genClasses ecoreClass="MDMI.ecore#//MessageModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageModel/messageModelName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageModel/syntaxModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageModel/elementSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageModel/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageModel/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageModel/group"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MessageSyntaxModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageSyntaxModel/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//MessageSyntaxModel/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageSyntaxModel/root"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageSyntaxModel/elementSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageSyntaxModel/description"/>
+    </genClasses>
+    <genClasses provider="Stateful" image="false" ecoreClass="MDMI.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/maxOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/locationExpressionLanguage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//Node/syntaxModel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//Node/semanticElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/fieldName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/isSyntacticField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Node/path"/>
+      <genOperations ecoreOperation="MDMI.ecore#//Node/getCompletePath"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//Bag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Bag/isUnique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Bag/isOrdered"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//Bag/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//Choice">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Choice/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Choice/constraintExpressionLanguage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//Choice/nodes"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//LeafSyntaxTranslator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//LeafSyntaxTranslator/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//LeafSyntaxTranslator/formatExpressionLanguage"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MessageGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/dataRules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultLocationExprLang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultConstraintExprLang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultRuleExprLang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultFormatExpressionLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultOrderingExpressionLanguage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/models"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/domainDictionary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MessageGroup/defaultMDMIExpresionLanguage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/datatypes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageGroup/datatypeMaps"/>
+      <genOperations ecoreOperation="MDMI.ecore#//MessageGroup/getDatatype">
+        <genParameters ecoreParameter="MDMI.ecore#//MessageGroup/getDatatype/name"/>
+      </genOperations>
+      <genOperations ecoreOperation="MDMI.ecore#//MessageGroup/addDatatype">
+        <genParameters ecoreParameter="MDMI.ecore#//MessageGroup/addDatatype/datatype"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DataRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DataRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DataRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DataRule/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DataRule/ruleExpressionLanguage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//DataRule/scope"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DataRule/datatype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DataRule/semanticElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DataRule/group"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//SemanticElementSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementSet/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementSet/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementSet/messageModelName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementSet/syntaxModel"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementSet/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementSet/semanticElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementSet/composite"/>
+    </genClasses>
+    <genClasses provider="Stateful" ecoreClass="MDMI.ecore#//SemanticElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/elementType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/datatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/propertyQualifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/composite"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/elementSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/businessRules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/dataRules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/relationships"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/multipleInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/mapFromMdmi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/ordering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/orderingLanguage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/computedValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/computedInValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/mapToMdmi"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/syntaxNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/computedOutValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElement/keywords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/enumValueField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElement/enumValueDescrField"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//SimpleMessageComposite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SimpleMessageComposite/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SimpleMessageComposite/semanticElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//SimpleMessageComposite/elementSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SimpleMessageComposite/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MessageComposite">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageComposite/composites"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MessageComposite/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//SemanticElementBusinessRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementBusinessRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementBusinessRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementBusinessRule/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementBusinessRule/ruleExpressionLanguage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementBusinessRule/semanticElement"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//SemanticElementRelationship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/ruleExpressionLanguage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementRelationship/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/maxOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/sourceIsInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//SemanticElementRelationship/targetIsInstance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//SemanticElementRelationship/relatedSemanticElement"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MDMIBusinessElementReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/uniqueIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIBusinessElementReference/businessRules"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIBusinessElementReference/domainDictionaryReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIBusinessElementReference/referenceDatatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/enumValueSetField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/enumValueField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/enumValueDescrField"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/enumValueSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementReference/readonly"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MDMIBusinessElementRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementRule/rule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIBusinessElementRule/ruleExpressionLanguage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIBusinessElementRule/businessElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="MDMI.ecore#//ConversionRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//ConversionRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//ConversionRule/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//ConversionRule/ruleExpressionLanguage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//ConversionRule/enumExtResolverUri"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//ConversionRule/businessElement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//ConversionRule/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MDMIDomainDictionaryReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDomainDictionaryReference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDomainDictionaryReference/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIDomainDictionaryReference/businessElements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDomainDictionaryReference/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//MDMIDomainDictionaryReference/group"/>
+      <genOperations ecoreOperation="MDMI.ecore#//MDMIDomainDictionaryReference/addBusinessElement">
+        <genParameters ecoreParameter="MDMI.ecore#//MDMIDomainDictionaryReference/addBusinessElement/businessElementReference"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MDMIExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIExpression/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIExpression/language"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//Keyword">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Keyword/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Keyword/keyword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Keyword/keywordValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Keyword/reference"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference MDMI.ecore#//Keyword/owner"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//MDMIDatatype">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/typeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/isReadonly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/typeSpec"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//MDMIDatatype/restriction"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DTSPrimitive"/>
+    <genClasses ecoreClass="MDMI.ecore#//DTCStructured">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//DTCStructured/fields"/>
+      <genOperations ecoreOperation="MDMI.ecore#//DTCStructured/getField">
+        <genParameters ecoreParameter="MDMI.ecore#//DTCStructured/getField/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Field/minOccurs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Field/maxOccurs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//Field/datatype"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//Field/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DTExternal"/>
+    <genClasses ecoreClass="MDMI.ecore#//DTSDerived">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DTSDerived/baseType"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DTCChoice">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//DTCChoice/fields"/>
+      <genOperations ecoreOperation="MDMI.ecore#//DTCChoice/getField">
+        <genParameters ecoreParameter="MDMI.ecore#//DTCChoice/getField/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DTSEnumerated">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MDMI.ecore#//DTSEnumerated/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//EnumerationLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//EnumerationLiteral/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//EnumerationLiteral/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//EnumerationLiteral/code"/>
+    </genClasses>
+    <genClasses ecoreClass="MDMI.ecore#//DatatypeMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DatatypeMap/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DatatypeMap/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DatatypeMap/fromMDMI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MDMI.ecore#//DatatypeMap/toMDMI"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DatatypeMap/mdmiDatatype"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MDMI.ecore#//DatatypeMap/messageDatatype"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
