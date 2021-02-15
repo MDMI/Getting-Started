@@ -12,8 +12,7 @@
 
 	<properties>
 		<tycho-version>2.2.0</tycho-version>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
+                <java.version>1.8</java.version>
 	</properties>
 
 	<repositories>
@@ -56,7 +55,6 @@
 		<module>org.mdmi.ecore</module>
 		<module>org.mdmi.core.runtime</module>
 	</modules>
-
 	<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
@@ -64,12 +62,12 @@
 				<repository>
 					<id>mdix</id>
 					<name>7ed03140605b-releases</name>
-					<url>http://artifactory.mdixinc.net:8081/artifactory/libs-release</url>
+					<url>http://artifactory.mdixinc.net:8082/artifactory/mdmiartifactory/libs-release</url>
 				</repository>
 				<snapshotRepository>
 					<id>mdix</id>
 					<name>7ed03140605b-snapshots</name>
-					<url>http://artifactory.mdixinc.net:8081/artifactory/libs-snapshot</url>
+					<url>http://artifactory.mdixinc.net:8081/artifactory/mdmiartifactory/libs-snapshot</url>
 				</snapshotRepository>
 			</distributionManagement>
 		</profile>
