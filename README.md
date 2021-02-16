@@ -27,7 +27,10 @@ It can be install using the eclipse installer and this set up file
 or follow these instructions to install into existing eclipse
 << insert instructuions here >>
 
-# Map
+# Maps found here
 MDMI runs on maps - here are the open source maps
 <<insert link to maps here >>
+  
+# MDMI Spec found here
+<< insert link to omg >>
 
