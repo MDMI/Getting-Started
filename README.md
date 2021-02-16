@@ -1,4 +1,4 @@
-# Welcome to the wonderful world of Model Driven Message Interopability 
+# Welcome to the wonderful world of Model Driven Message Interoperability 
 
 We have serveral runtime options to choose from so please select wisely
 
