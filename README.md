@@ -24,5 +24,10 @@ http://localhost:5000/swagger-ui/i
 For you MDMI pleasure we have developed extensions to the eclipse environment
 It can be install using the eclipse installer and this set up file
 << insert eclipse installer instructions>> and setup file
+or follow these instructions to install into existing eclipse
+<< insert instructuions here >>
 
+# Map
+MDMI runs on maps - here are the open source maps
+<<insert link to maps here >>
 
