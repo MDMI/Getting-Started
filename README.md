@@ -37,8 +37,9 @@ Transformation maps are created using the MDMI Editor which is implemented as an
 ### New Eclipse Installations
 You can find the Eclipse IDE here https://www.eclipse.org/downloads/.
 
-For the MDMI Editor, download and unzip the its setup file [from here](/files/MDMI201909.zip) placing it in the same directory as the Eclipse installer, then run the installer. Click the hamburger menu of the installer.  
-![HamburgerMenu](/files/hamburgerMenu.png)|  
+For the MDMI Editor, download and unzip the its setup file [from here](/files/MDMI201909.zip) placing it in the same directory as the Eclipse installer, then run the installer. Click the "hamburger" menu of the installer.  
+
+![HamburgerMenu](/files/hamburgerMenu.png)  
 
 From that menu, select **ADVANCED MODE…**
 
