@@ -43,12 +43,12 @@ public class CDAPostProcessor implements IPostProcessor {
 		return "CcdaPostProcessor";
 	}
 
-	String stylesheet;
+	static String stylesheet;
 
 	/**
 	 * @return the stylesheet
 	 */
-	public String getStylesheet() {
+	public static String getStylesheet() {
 		if (StringUtils.isEmpty(stylesheet)) {
 			stylesheet = "section.xsl";
 		}
@@ -59,8 +59,8 @@ public class CDAPostProcessor implements IPostProcessor {
 	 * @param stylesheet
 	 *            the stylesheet to set
 	 */
-	public void setStylesheet(String stylesheet) {
-		this.stylesheet = stylesheet;
+	public static void setStylesheet(String resource) {
+		stylesheet = resource;
 	}
 
 	private void addSectionNarrative(Element section, Document doc) {
@@ -79,6 +79,8 @@ public class CDAPostProcessor implements IPostProcessor {
 			serializer.write(section, lsOutput);
 
 			String result = stringWriter.toString();
+
+			// System.out.println(result);
 
 			javax.xml.transform.TransformerFactory tFactory = javax.xml.transform.TransformerFactory.newInstance();
 
@@ -123,7 +125,7 @@ public class CDAPostProcessor implements IPostProcessor {
 			// df.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 			DocumentBuilder documentBuilder = df.newDocumentBuilder();
 
-			System.out.println(bos.toString());
+			// System.out.println(bos.toString());
 
 			// Files.write(Paths.get("resources/cda/examples/test.html"), bos.toString().getBytes());
 
