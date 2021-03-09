@@ -90,23 +90,57 @@ public class JsonSyntacticParser implements ISyntacticParser {
 			end = true;
 		}
 
+		private String liftFromValue(String value, String expression) {
+			String[] params = expression.split(",");
+			int results = StringUtils.countMatches(value.toString(), params[1]);
+			if (results >= Integer.valueOf(params[0])) {
+				return value.split(params[1])[Integer.valueOf(params[0])];
+			} else {
+				return null;
+			}
+		}
+
 		public boolean primitive(Object value) throws ParseException, IOException {
 			logger.trace("primitive(Object value) " + value);
 			if (node != null) {
 
-				if (this.syntaxNodes.peek() instanceof LeafSyntaxTranslator) {
-					/**
-					 * @TODO Modify logic to allow for some maps to process nulls
-					 */
+				if (node.getLocation().contains("[")) {
+
 					if (value != null && !StringUtils.isEmpty(value.toString())) {
-						YBag parentYBag = yBags.peek();
-						YLeaf leaf = new YLeaf((LeafSyntaxTranslator) this.syntaxNodes.peek(), parentYBag);
-						parentYBag.addYNode(leaf);
-						leaf.setValue(value.toString());
+						for (Node matchingNode : nodes) {
+							int start = matchingNode.getLocation().indexOf("[");
+							int end = matchingNode.getLocation().lastIndexOf("]");
+							if (start > -1 && end > -1) {
+								String expression = matchingNode.getLocation().substring(start + 1, end);
+								String theValue = liftFromValue(value.toString(), expression);
+
+								if (!StringUtils.isEmpty(theValue)) {
+									YBag parentYBag = yBags.peek();
+									YLeaf leaf = new YLeaf((LeafSyntaxTranslator) matchingNode, parentYBag);
+									parentYBag.addYNode(leaf);
+									leaf.setValue(theValue.toString());
+								}
+
+							}
+						}
 					}
+
 				} else {
-					yBags.peek();
-					this.syntaxNodes.peek();
+
+					if (this.syntaxNodes.peek() instanceof LeafSyntaxTranslator) {
+						/**
+						 * @TODO Modify logic to allow for some maps to process nulls
+						 */
+						if (value != null && !StringUtils.isEmpty(value.toString())) {
+							YBag parentYBag = yBags.peek();
+							YLeaf leaf = new YLeaf((LeafSyntaxTranslator) this.syntaxNodes.peek(), parentYBag);
+							parentYBag.addYNode(leaf);
+							leaf.setValue(value.toString());
+						}
+					} else {
+						// yBags.peek();
+						// this.syntaxNodes.peek();
+					}
 				}
 			}
 
@@ -153,20 +187,22 @@ public class JsonSyntacticParser implements ISyntacticParser {
 			return true;
 		}
 
-		Node matchingSyntaxNode = null;
+		// Node matchingSyntaxNode = null;
 
 		Stack<Boolean> shouldPop = new Stack<Boolean>();
 
 		private Node getSyntaxNode(String key) {
 			Bag bag = (Bag) syntaxNodes.peek();
-			ArrayList<Node> result = bag.getNodesByLocation(key);
-			if (!result.isEmpty()) {
-				return result.get(0);
+			nodes = bag.getNodesByLocation(key);
+			if (!nodes.isEmpty()) {
+				return nodes.get(0);
 			}
 			return null;
 		}
 
 		Node node = null;
+
+		ArrayList<Node> nodes = null;
 
 		public boolean startObjectEntry(String key) throws ParseException, IOException {
 
