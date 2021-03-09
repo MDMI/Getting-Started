@@ -146,8 +146,8 @@ public class JsonSyntacticParser implements ISyntacticParser {
 							leaf.setValue(value.toString());
 						}
 					} else {
-						// yBags.peek();
-						// this.syntaxNodes.peek();
+						yBags.peek();
+						this.syntaxNodes.peek();
 					}
 				}
 			}
@@ -258,8 +258,11 @@ public class JsonSyntacticParser implements ISyntacticParser {
 			 */
 			if (!syntaxNodes.isEmpty()) {
 				Node n = syntaxNodes.peek();
-				if (n.getLocation().equals(key)) {
-					syntaxNodes.pop();
+				if (!StringUtils.isEmpty(n.getLocation())) {
+					String simplelocation = n.getLocation().split("\\[")[0];
+					if (simplelocation.equals(key)) {
+						syntaxNodes.pop();
+					}
 				}
 			}
 
