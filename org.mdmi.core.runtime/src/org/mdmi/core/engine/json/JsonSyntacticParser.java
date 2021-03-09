@@ -121,6 +121,14 @@ public class JsonSyntacticParser implements ISyntacticParser {
 									leaf.setValue(theValue.toString());
 								}
 
+							} else {
+								if (value != null && !StringUtils.isEmpty(value.toString())) {
+									YBag parentYBag = yBags.peek();
+									YLeaf leaf = new YLeaf((LeafSyntaxTranslator) matchingNode, parentYBag);
+									parentYBag.addYNode(leaf);
+									leaf.setValue(value.toString());
+								}
+
 							}
 						}
 					}
