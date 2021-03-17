@@ -360,8 +360,19 @@ class ConversionImpl {
 
 					if (!StringUtils.isEmpty(transformCode.code)) {
 						xds.replaceValue("code", transformCode.code);
-						xds.replaceValue("system", transformCode.system);
-						xds.replaceValue("display", transformCode.displayName);
+						if (xds.hasfield("codeSystem")) {
+							xds.replaceValue("codeSystem", transformCode.system);
+						}
+						if (xds.hasfield("displayName")) {
+
+							if (!StringUtils.isEmpty((String) xds.getValue("displayName")) &&
+									xds.hasfield("originalText")) {
+								xds.replaceValue("originalText", (String) xds.getValue("displayName"));
+							}
+							xds.replaceValue("displayName", transformCode.displayName);
+						}
+						// xds.replaceValue("system", transformCode.system);
+						// xds.replaceValue("display", transformCode.displayName);
 					}
 				}
 
