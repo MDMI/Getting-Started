@@ -8,10 +8,6 @@ All software and content on this site are provided under the [Eclipse Public Lic
 ## Hands-on with MDMI Transformations
 The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. They include the following:
 
-### Online Demonstration
-<< insert link to ui here >
-This option is for SME and other general business types who want to make sure the software works
-
 ### Swagger API
 An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](/files/SwaggerInstructions.pdf). You can go directly to the site at this URL:  
 http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation  
