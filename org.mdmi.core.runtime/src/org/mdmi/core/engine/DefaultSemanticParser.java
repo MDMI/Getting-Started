@@ -1381,9 +1381,8 @@ public class DefaultSemanticParser implements ISemanticParser {
 			parent.addChild(xe);
 		}
 
-		// System.err.println("EXECUTE SETCOMPUTEDOUTVALUE");
-		// IExpressionInterpreter adapter = Mdmi.getInterpreter(lang, xe, "", null);
-		// adapter.evalAction(xe, rule, properties);
+		getSemanticInterpreter().update(se.getName() + "_COMPUTEDOUT", xe);
+
 	}
 
 	/**

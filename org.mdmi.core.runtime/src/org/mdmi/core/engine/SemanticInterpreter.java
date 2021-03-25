@@ -151,6 +151,20 @@ public class SemanticInterpreter {
 						sb.append(function.toString());
 					}
 
+				} else if (semanticElement.isComputedOut()) {
+
+					String computedOutExpression = semanticElement.getComputedOutValue().getExpression();
+
+					if (!StringUtils.isEmpty(computedOutExpression)) {
+						StringBuffer function = new StringBuffer();
+
+						function.append("function " + semanticElement.getName() + "_COMPUTEDOUT" + "(value) {");
+
+						function.append(computedOutExpression);
+						function.append("}");
+						sb.append(function.toString());
+					}
+
 				}
 			}
 		}
@@ -219,7 +233,7 @@ public class SemanticInterpreter {
 			return compiler.toSource();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			
+
 		}
 
 		return code;
