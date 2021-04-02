@@ -27,8 +27,8 @@ A Swagger implementation is accessed at http://localhost:5000/swagger-ui/i
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
 [Click here to see the Published Maps](https://github.com/MDMI/PublishedMaps)
 
-## MDMI Editor
-Transformation maps are created using the MDMI Editor which is implemented as an Eclipse plugin.
+## MDMI Workbench
+Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin.
 
 ### New Eclipse Installations
 You can find the Eclipse IDE here https://www.eclipse.org/downloads/.
@@ -41,7 +41,11 @@ From that menu, select **ADVANCED MODE…**
 
 ![AdvancedMode](/files/advMode.png)  
 
-After the prompt about storing the installer you will get the **Product** dialog which will show *MDMIWorkbench*. Select it and continue with the normal installation process.
+On the next window click the green plus sign.
+
+![productPlusSign](/files/productPlusSign.png)  
+
+In the ensuing **Add User Products** popup click the **Browse File System** button to select the MDMI setup file. Continue with the normal installation process.
 
 ### Existing Eclipse Installations
 TBD  
