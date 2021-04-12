@@ -28,28 +28,8 @@ MDMI Maps are MDMI models for a specific healthcare exchange standard. The model
 [Click here to see the Published Maps](https://github.com/MDMI/PublishedMaps)
 
 ## MDMI Workbench
-Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin.
-
-### New Eclipse Installations
-You can find the Eclipse IDE here https://www.eclipse.org/downloads/.
-
-For the MDMI Editor, download and unzip the its setup file [from here](/files/MDMI201909.zip) placing it in the same directory as the Eclipse installer, then run the installer. Click the "hamburger" menu of the installer.  
-
-![HamburgerMenu](/files/hamburgerMenu.png)  
-
-From that menu, select **ADVANCED MODE…**
-
-![AdvancedMode](/files/advMode.png)  
-
-On the next window click the green plus sign.
-
-![productPlusSign](/files/productPlusSign.png)  
-
-In the ensuing **Add User Products** popup click the **Browse File System** button to select the MDMI setup file. Continue with the normal installation process.
-
-### Existing Eclipse Installations
-TBD  
-<< insert instructuions here >>
+Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin. Setup instructions are documented in this repository's wiki here:  
+https://github.com/MDMI/MDMI-Transformation-Engine/wiki/MDMI-Workbench-Installation
  
 ## More Information about MDMI
 More information regarding MDMI including its specification is located on the Object Management Group's website at https://www.omg.org/mdmi/.  
