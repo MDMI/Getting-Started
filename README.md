@@ -9,7 +9,8 @@ All software and content on this site are provided under the [Eclipse Public Lic
 The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. They include the following:
 
 ### Swagger API
-An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](/files/SwaggerInstructions.pdf). You can go directly to the site at this URL:  
+An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
+https://github.com/MDMI/MDMI-Transformation-Engine/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
 http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation  
 
 ### Docker Implementation
@@ -33,4 +34,4 @@ https://github.com/MDMI/MDMI-Transformation-Engine/wiki/MDMI-Workbench-Installat
  
 ## More Information about MDMI
 More information regarding MDMI including its specification is located on the Object Management Group's website at https://www.omg.org/mdmi/.  
-![OMG](/files/OMG_Logo.png)
+![OMG](/files/images/OMG_Logo.png)
