@@ -121,6 +121,15 @@ public class SemanticInterpreter {
 						function.append(rule.replace("UPDATEVALUE:", ""));
 						function.append("}");
 						sb.append(function.toString());
+					} else {
+
+						StringBuffer function = new StringBuffer();
+
+						function.append("function " + semanticElement.getName() + "_COMPUTED" + "(value) {");
+
+						function.append(rule);
+						function.append("}");
+						sb.append(function.toString());
 					}
 
 				} else if (semanticElement.isNullFlavor()) {

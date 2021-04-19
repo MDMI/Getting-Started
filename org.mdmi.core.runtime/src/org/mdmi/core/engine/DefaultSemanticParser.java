@@ -1297,10 +1297,9 @@ public class DefaultSemanticParser implements ISemanticParser {
 					// evalRule(lang, rule.replace("UPDATEVALUE:", ""), (XElementValue) value, properties);
 				}
 			} else {
-				// System.err.println("EXECUTE SETCOMPUTEDVALUE B COMPUTEDIN " + rule);
-				// XElementValue computedInElement = new XElementValue(se, elementValueSet);
-				// IExpressionInterpreter adapter = Mdmi.getInterpreter(lang, computedInElement, "", null);
-				// adapter.evalAction(computedInElement, rule, properties);
+				System.err.println("EXECUTE SETCOMPUTEDVALUE B COMPUTEDIN " + rule);
+				XElementValue computedInElement = new XElementValue(se, elementValueSet);
+				getSemanticInterpreter().update(se.getName() + "_COMPUTED", computedInElement);
 			}
 		}
 
