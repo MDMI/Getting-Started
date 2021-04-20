@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Product
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore"
+    name="MDMIWorkbench"
+    label="MDMIWorkbench">
+  <annotation
+      source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+    <detail
+        key="folderName">
+      <value>MDMIWorkbench</value>
+    </detail>
+    <detail
+        key="folderName.macosx">
+      <value>MDMIWorkbench</value>
+    </detail>
+  </annotation>
+  <setupTask
+      xsi:type="setup:InstallationTask"
+      id="installation">
+    <description>MDMIWorkbench </description>
+  </setupTask>
+  <version name="V202102"
+      label="V202102"
+      requiredJavaVersion="11">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="${scope.product.label} (${scope.product.version.label})">
+      <requirement
+          name="org.eclipse.platform.ide"/>
+      <requirement
+          name="org.eclipse.platform.feature.group"/>
+      <requirement
+          name="org.eclipse.rcp.feature.group"/>
+      <requirement
+          name="epp.package.modeling"/>
+      <requirement
+          name="org.eclipse.jdt.feature.group"/>
+      <requirement
+          name="org.eclipse.pde.feature.group"/>
+      <requirement
+          name="org.eclipse.oomph.setup.feature.group"/>
+      <requirement
+          name="org.eclipse.mdht.uml.cda.basic.feature.group"/>
+      <requirement
+          name="org.eclipse.mdht.uml.cda.tooling.feature.group"/>
+      <requirement
+          name="org.eclipse.mdht.dita.feature.group"/>
+      <requirement
+          name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+      <requirement
+          name="org.openhealthtools.mdht.uml.cda.models.feature.group"/>
+      <requirement
+          name="org.openhealthtools.mdht.uml.cda.models.doc.feature.group"/>
+      <requirement
+          name="org.mdmi.eclipse.feature.group"/>
+      <requirement
+          name="javax.xml.bind"/>
+      <requirement
+          name="javax.xml.stream"/>
+      <requirement
+          name="org.eclipse.datatools.enablement.oda.designer.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.oda.ecore.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.oda.ecore.source.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.oda.ecore.ui.feature.group"/>
+      <requirement
+          name="org.eclipse.emf.oda.ecore.ui.source.feature.group"/>
+      <requirement
+          name="org.eclipse.qvtd.master.feature.group"
+          filter=""/>
+      <requirement
+          name="org.eclipse.m2m.qvt.oml.sdk.feature.group"/>
+      <requirement
+          name="org.eclipse.birt.feature.group"
+          filter=""/>
+      <requirement
+          name="org.eclipse.birt.cshelp.feature.group"
+          filter=""/>
+      <requirement
+          name="org.eclipse.birt.doc.feature.group"
+          filter=""/>
+      <requirement
+          name="org.eclipse.birt.example.feature.group"
+          filter=""/>
+      <requirement
+          name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+      <requirement
+          name="org.openhealthtools.mdht.uml.cda.models.feature.group"/>
+      <requirement
+          name="org.openhealthtools.mdht.uml.cda.models.doc.feature.group"/>
+      <requirement
+          name="org.eclipse.jst.enterprise_ui.feature.feature.group"/>
+      <requirement
+          name="com.sun.jersey.client"/>
+      <requirement
+          name="org.eclipse.dltk.javascript.feature.group"/>
+      <requirement
+          name="org.eclipse.dltk.javascript.sdk.feature.group"/>
+                
+    <repository url="http://download.eclipse.org/releases/2020-12"  name="2020-12"/>
+    <repository url="http://download.eclipse.org/technology/dltk/updates-dev/5.10"  name="Dynamic Languages Toolkit - latest stable"/>
+    <repository url="http://download.eclipse.org/nebula/releases/latest"  name="Eclipse Nebula Plugin Update Site"/>
+    
+    <repository url="http://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository/"  name="Eclipse Orbit Composite Site R20201130205003"/>
+    
+    <repository url="http://download.eclipse.org/egit/updates"  name="EGit P2 Repository"/>
+    <repository url="http://download.eclipse.org/releases/latest"  name="Latest Eclipse Release"/>
+    <repository url="http://download.eclipse.org/oomph/updates/milestone/latest"  name="Oomph Latest Milestone"/>
+    
+     
+    <repository url="https://download.eclipse.org/e4/snapshots/org.eclipse.e4.ui"  name="org.eclipse.e4.ui update site"/>
+    
+    <repository url="http://oht-modeling.sourceforge.net/updates/stable"  name="org.eclipse.mdht.p2"/>
+    
+    <repository url="http://mdmi.sourceforge.net/mdmi-2.5.0"  name="org.mdmi.eclipse.site"/>
+    
+    <repository url="http://oht-modeling.sourceforge.net/updates/ccda"  name="org.openhealthtools.mdht.cda.developer.site"/>
+    
+    <repository url="http://download.oracle.com/otn_software/oepe/library/jersey-1.17.1-p002/"  name="repository"/>
+    <repository url="http://download.eclipse.org/eclipse/updates/4.13"  name="The Eclipse Project Updates"/>
+    <repository url="http://download.eclipse.org/usssdk/updates/release/latest"  name="User Storage Latest Release"/>
+    <repository url="http://download.eclipse.org/cbi/updates/license"  name=""/>
+    
+     <repository url="http://download.eclipse.org/releases/2019-09/201909181001"  name="forbirt"/>
+    
+     </setupTask>
+    <description>MDMI 2020-12</description>
+  </version>
+  <description>MDMI workbench</description>
+</setup:Product>
