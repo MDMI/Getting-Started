@@ -27,18 +27,6 @@ public class RuntimeServiceMain {
 
 	public static void main(String[] args) {
 
-		// ClassLoader cl = ClassLoader.getSystemClassLoader();
-		//
-		// // ClassLoader.getPlatformClassLoader();
-		//
-		// URL[] urls = ((URLClassLoader) cl).getURLs();
-		//
-		// logger.trace(cl.getClass().getCanonicalName());
-
-		// for (URL url : urls) {
-		// logger.trace(url.getFile());
-		// }
-
 		Properties p = System.getProperties();
 		Enumeration<Object> keys = p.keys();
 		while (keys.hasMoreElements()) {
