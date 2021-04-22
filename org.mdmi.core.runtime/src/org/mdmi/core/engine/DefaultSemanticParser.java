@@ -1233,34 +1233,11 @@ public class DefaultSemanticParser implements ISemanticParser {
 									}
 
 								} else {
-									// System.err.println("EXECUTE SETCOMPUTEDVALUE ROLLUP");
-
-									// System.err.println(
-									// "EXECUTE SETCOMPUTEDVALUE ROLLUP " + rollupRule.replace(
-									// "<<LOCALSEMANTICVALUE>>>", StringEscapeUtils.escapeEcmaScript(
-									// (String) rollupValue.getXValue().getValue())));
-									//
-									// StringBuffer function = new StringBuffer();
-									// function.append("void " + se.getName() + "RollUp(value,param1) {");
-									//
-									// function.append(rollupRule.replace("'<<LOCALSEMANTICVALUE>>>'", "param1"));
-									// function.append("}");
-									//
-									// System.err.println(function.toString());
 
 									getSemanticInterpreter().execute(
 										SemanticInterpreter.getFunctionName(rollupValue.getSemanticElement(), se),
 										computedInElement, rollupValue.getXValue().getValue());
 
-									// function.append(false)
-
-									// evalRule(
-									// lang,
-									// rollupRule.replace(
-									// "<<LOCALSEMANTICVALUE>>>",
-									// StringEscapeUtils.escapeEcmaScript(
-									// (String) rollupValue.getXValue().getValue())),
-									// computedInElement, properties);
 								}
 							}
 						} else {
@@ -1291,15 +1268,19 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 			if (rule.startsWith("UPDATEVALUE:")) {
 				for (IElementValue value : elementValueSet.getElementValuesByName(se.getName())) {
-					// System.err.println("EXECUTE SETCOMPUTEDVALUE A UPDATEVALUE " + rule.replace("UPDATEVALUE:", ""));
 					getSemanticInterpreter().update(se.getName() + "_UPDATEVALUE", value);
-
-					// evalRule(lang, rule.replace("UPDATEVALUE:", ""), (XElementValue) value, properties);
 				}
 			} else {
-				System.err.println("EXECUTE SETCOMPUTEDVALUE B COMPUTEDIN " + rule);
-				XElementValue computedInElement = new XElementValue(se, elementValueSet);
-				getSemanticInterpreter().update(se.getName() + "_COMPUTED", computedInElement);
+				if (se.getParent() != null) {
+					List<IElementValue> elements = elementValueSet.getElementValuesByType(se.getParent());
+					for (IElementValue element : elements) {
+						XElementValue computedInElement = new XElementValue(se, elementValueSet);
+						computedInElement.setParent(element);
+						element.addChild(computedInElement);
+						getSemanticInterpreter().update(se.getName() + "_COMPUTED", computedInElement);
+					}
+				}
+
 			}
 		}
 
@@ -1500,19 +1481,4 @@ public class DefaultSemanticParser implements ISemanticParser {
 		return result;
 	}
 
-	// private void evalRule(String lang, String rule, XElementValue xe, Properties properties) {
-	// if (logger.isTraceEnabled()) {
-	// //
-	// // // if (xe.getXValue().getValue() == null) {
-	// // // xe.setValue("foo");
-	// // // }
-	// // //
-	// // // System.out.println("Target is " + xe.toString());
-	// // // System.out.println(System.identityHashCode(xe));
-	//
-	// logger.trace("evalRule " + rule);
-	// }
-	// IExpressionInterpreter adapter = Mdmi.getInterpreter(lang, xe, "", null);
-	// adapter.evalAction(xe, rule, properties);
-	// }
-} // DefaultMdmiSemanticParser
+}
