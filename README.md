@@ -1,4 +1,4 @@
-![MDMI](/files/MDMI_Logo.png)
+![MDMI](/files/images/MDMI_Logo.png)
 # Welcome to MDMI on GitHub
 ## Message Transformation Service for Healthcare
 The MDMI Project goals are to lower the barriers for implementing healthcare transformations using open standards and open source software. The MDMI Project uses a model driven approach that is compliant with the Object Management Group’s open standard of Model Driven Message Interoperability (MDMI). Visit [OMG.org](https://www.omg.org/spec/MDMI/1.0) for more information.
