@@ -26,7 +26,7 @@ A Swagger implementation is accessed at http://localhost:5000/swagger-ui/i
 
 ## MDMI Map Repository
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
-[Click here to see the Published Maps](https://github.com/MDMI/PublishedMaps)
+[Click here to see example maps](https://github.com/MDMI/MDMI-Transformation-Engine/tree/main/Maps)
 
 ## MDMI Workbench
 Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin. Setup instructions are documented in this repository's wiki here:  
