@@ -31,6 +31,12 @@ MDMI Maps are MDMI models for a specific healthcare exchange standard. The model
 ## MDMI Workbench
 Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin. Setup instructions are documented in this repository's wiki here:  
 https://github.com/MDMI/MDMI-Transformation-Engine/wiki/MDMI-Workbench-Installation
+
+## Discussions ![Discussions](/files/images/discuss3-160.png)
+The place for all discussions regarding MDMI software and maps is in this repository's [Discussion](https://github.com/MDMI/MDMI-Transformation-Engine/discussions) page. Please feel free to ask questions and provide suggestions for the system. The board is monitored.
+
+## Issues ![Issues](/files/images/issues160.png)
+Similarly, when you encounter issues with the software or maps, please enter details in the [Issues](https://github.com/MDMI/MDMI-Transformation-Engine/issues) section of this repository. As are the guidelines in all _good_ bug reporting, please provide enough information and file attachments that the problem can be reproduced.
  
 ## More Information about MDMI
 More information regarding MDMI including its specification is located on the Object Management Group's website at https://www.omg.org/mdmi/.  
