@@ -137,11 +137,6 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 						node.appendChild(childElement);
 					} else {
 						Element currentElement = (Element) node;
-						NodeList nodeList = currentElement.getElementsByTagName(ctx.getText());
-
-						if (nodeList.getLength() == 1) {
-							childElement = (Element) nodeList.item(0);
-						}
 						if (childElement == null) {
 							childElement = document.createElement(ctx.getText());
 							node.appendChild(childElement);
@@ -214,9 +209,11 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 	private org.w3c.dom.Node createElement(Element elemement, String xPath, boolean container) {
 
+		logger.trace("ELEMEMENT IS :" + elemement.getTagName());
+
 		logger.trace("XPATH IS :" + xPath);
 
-		logger.trace(elemement.getNodeName() + " creating " + xPath + "container" + container);
+		logger.trace(elemement.getNodeName() + " creating " + xPath + " container " + container);
 		XPathLexer lexer = new XPathLexer(new ANTLRInputStream(xPath));
 
 		logger.trace("Creating CommonTokenStream");
@@ -564,7 +561,8 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 											org.w3c.dom.Node achildnode = domNodes.peek().getChildNodes().item(
 												childNodeCtr);
 											if (expression.contains(achildnode.getNodeName())) {
-												org.w3c.dom.Node clonedChildNode = p.appendChild(achildnode.cloneNode(false));
+												org.w3c.dom.Node clonedChildNode = p.appendChild(
+													achildnode.cloneNode(false));
 												if (!StringUtils.isEmpty(achildnode.getTextContent())) {
 													clonedChildNode.setTextContent(achildnode.getTextContent());
 												}
@@ -1264,6 +1262,11 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 		for (YNode ynode : ynodes) {
 			// // System.out.println("serialize " + ynode.getNode().getName());
 			Node node = ynode.getNode();
+
+			if ("aaacode".equals(node.getName())) {
+				System.out.println("acode");
+			}
+
 			// if (ynode.getNode().equals(node)) {
 			if (ynode.isBag()) {
 				boolean isContainer = false;
