@@ -22,7 +22,7 @@ Then:
 
 *docker run --name cda2fhir -d -p 5000:8080 mdmiservices/cda2fhir*
 
-A Swagger implementation is accessed at http://localhost:5000/swagger-ui/i
+A Swagger implementation is accessed at [http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation](http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation)
 
 ## MDMI Map Repository
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
