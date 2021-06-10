@@ -28,6 +28,16 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository</url>
 		</repository>
+		<repository>
+			<id>MDMI2021-03</id>
+			<layout>p2</layout>
+			<url>http://mdmi.sourceforge.net/mdmi-2.5.0</url>
+		</repository>
+		<repository>
+			<id>mdmi3rdparty</id>
+			<layout>p2</layout>
+			<url>http://mdmi.sourceforge.net/mdmi3rdparty</url>
+		</repository>
 	</repositories>
 
 	<build>
