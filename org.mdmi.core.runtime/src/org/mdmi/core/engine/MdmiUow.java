@@ -869,9 +869,7 @@ public class MdmiUow implements Runnable {
 		logger.trace("containers : " + watch.toSplitString());
 
 		ArrayList<IElementValue> tobedeleted = new ArrayList<IElementValue>();
-		for (
-
-		IElementValue targetElementValue : targettosource.keySet()) {
+		for (IElementValue targetElementValue : targettosource.keySet()) {
 			SemanticElement se = targetElementValue.getSemanticElement();
 			SemanticElementRelationship ser = se.getRelationshipByName("QUALIFIER");
 			if (ser != null) {

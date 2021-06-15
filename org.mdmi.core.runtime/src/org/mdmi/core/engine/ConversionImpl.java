@@ -272,11 +272,11 @@ class ConversionImpl {
 			boolean executed = true;
 			if (v.getValue() == null) {
 				executed = datamapInterpreter.execute(
-					parseFunctionName(toBE.getRule()), src.value(), v, sourceProperties);
+					parseFunctionName(toBE.getRule()), src.value(), v, sourceProperties, toBE);
 
 			} else {
 				executed = datamapInterpreter.execute(
-					parseFunctionName(toBE.getRule()), src.value(), v.getValue(), sourceProperties);
+					parseFunctionName(toBE.getRule()), src.value(), v.getValue(), sourceProperties, toBE);
 			}
 			if (!executed) {
 				logger.error(
@@ -412,7 +412,7 @@ class ConversionImpl {
 				target = trg.value();
 			}
 			boolean executed = datamapInterpreter.execute(
-				parseFunctionName(toSE.getRule()), source, target, targetProperties);
+				parseFunctionName(toSE.getRule()), source, target, targetProperties, toSE);
 
 			if (!executed) {
 

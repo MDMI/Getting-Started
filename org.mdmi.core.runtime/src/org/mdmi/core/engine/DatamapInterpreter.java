@@ -27,6 +27,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import org.apache.commons.lang3.StringUtils;
+import org.mdmi.ConversionRule;
 import org.mdmi.DatatypeMap;
 import org.mdmi.MessageGroup;
 import org.mdmi.MessageModel;
@@ -90,7 +91,7 @@ public class DatamapInterpreter {
 				try {
 					Files.write(Paths.get("./logs/datatypemaps.js"), sb.toString().getBytes());
 				} catch (IOException e) {
-					
+
 				}
 
 			}
@@ -229,7 +230,7 @@ public class DatamapInterpreter {
 			return compiler.toSource();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			
+
 		}
 
 		// To get the complete set of externs, the logic in
@@ -302,7 +303,8 @@ public class DatamapInterpreter {
 
 	}
 
-	public boolean execute(String function, Object source, Object target, Properties properties) {
+	public boolean execute(String function, Object source, Object target, Properties properties,
+			ConversionRule conversionRule) {
 
 		// synchronized (inv) {
 		try {
@@ -311,8 +313,12 @@ public class DatamapInterpreter {
 			 * Editor is adding on white space chars causing issues with method invocation
 			 */
 			logger.trace("Executing Method " + function);
+			// if (conversionRule.getOwner() != null && !conversionRule.getOwner().getPropertyQualifier().isEmpty()) {
+			inv.invokeFunction(function.replaceAll("\\s+", ""), source, target, properties, conversionRule);
+			// } else {
+			// inv.invokeFunction(function.replaceAll("\\s+", ""), source, target, properties);
+			// }
 
-			inv.invokeFunction(function.replaceAll("\\s+", ""), source, target, properties);
 			return true;
 			// compare(function, source, target);
 		} catch (Exception e) {

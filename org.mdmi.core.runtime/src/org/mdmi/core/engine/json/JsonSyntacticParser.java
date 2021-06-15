@@ -216,6 +216,10 @@ public class JsonSyntacticParser implements ISyntacticParser {
 
 			logger.trace("startObjectEntry(String key)" + key);
 
+			if ("InDemographic".equals(key)) {
+				System.out.println(key);
+			}
+
 			keyStack.push(key);
 
 			node = getSyntaxNode(key);
@@ -261,6 +265,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 				if (!StringUtils.isEmpty(n.getLocation())) {
 					String simplelocation = n.getLocation().split("\\[")[0];
 					if (simplelocation.equals(key)) {
+						System.out.println("pop syntax " + key);
 						syntaxNodes.pop();
 					}
 				}

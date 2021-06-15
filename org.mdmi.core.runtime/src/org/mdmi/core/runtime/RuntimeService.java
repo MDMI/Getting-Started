@@ -302,7 +302,7 @@ public class RuntimeService {
 					populateFrom(from);
 					String function = "map" + datatypemap.getMdmiDatatype().getName() + "To" +
 							datatypemap.getMessageDatatype().getName();
-					Object executed = datamapInterpreter.execute(function, from, to, null);
+					Object executed = datamapInterpreter.execute(function, from, to, null, null);
 				}
 
 				if (!StringUtils.isEmpty(datatypemap.getToMDMI())) {
@@ -320,7 +320,7 @@ public class RuntimeService {
 					// // XValue foo = (XValue) from.getValueByName(name);
 					// // foo.getValueByName("EI2");
 					// }
-					Object executed = datamapInterpreter.execute(function, from, to, null);
+					Object executed = datamapInterpreter.execute(function, from, to, null, null);
 					// System.out.println("FROM IS");
 					log(from);
 					// System.out.println("TO IS");

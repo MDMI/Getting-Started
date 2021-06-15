@@ -23,6 +23,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
+import org.mdmi.ConversionRule;
 import org.mdmi.core.engine.XDataStruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -400,4 +401,17 @@ public class Utils {
 		}
 
 	}
+
+	public static String getSemanticProperyQualifier(ConversionRule conversionRule, String prefix) {
+		if (conversionRule.getOwner() != null && !conversionRule.getOwner().getPropertyQualifier().isEmpty()) {
+			for (String properyQualifier : conversionRule.getOwner().getPropertyQualifier()) {
+				if (properyQualifier.startsWith(prefix)) {
+					return properyQualifier.substring(prefix.length());
+				}
+			}
+
+		}
+		return "";
+	}
+
 }
