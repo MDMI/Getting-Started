@@ -57,8 +57,6 @@ public class Utils {
 
 		String pattern;
 
-		// static Calendar calendar = Calendar.getInstance();
-
 		public RuntimeDateFormat(String pattern, int significant) {
 			super();
 
@@ -67,8 +65,7 @@ public class Utils {
 			this.output = DateTimeFormatter.ofPattern(pattern.replace("yyyy", "uuuu")).withLocale(Locale.US).withZone(
 				ZoneId.systemDefault());
 			this.significant = significant;
-			this.pattern = pattern; // .format.toPattern();
-			// this.format.set2DigitYearStart(calendar.getTime());
+			this.pattern = pattern;
 		}
 
 		public RuntimeDateFormat(String inpattern, String outpattern, int significant) {
@@ -134,11 +131,17 @@ public class Utils {
 			new RuntimeDateFormat("yyyyMMdd", 8), new RuntimeDateFormat("yyyyMM", 6),
 			new RuntimeDateFormat("yyyy", 4) };
 
-	// A
-
 	private static final String fhirfmt = "yyyy-MM-dd'T'hh:mm:ss";
 
 	private static final RuntimeDateFormat fhirfmts[] = {
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", 12),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH", 10), new RuntimeDateFormat("yyyy-MM-dd", 8),
+			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
+
+	private static final String fhirInstancefmt = "yyyy-MM-dd'T'HH:mm:ss+zzzz";
+
+	private static final RuntimeDateFormat fhirInstancefmts[] = {
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss+zzzz", "yyyy-MM-dd'T'HH:mm:ssxxx", 16),
 			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", 12),
 			new RuntimeDateFormat("yyyy-MM-dd'T'HH", 10), new RuntimeDateFormat("yyyy-MM-dd", 8),
 			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
@@ -159,6 +162,7 @@ public class Utils {
 		formats.put(dash.toUpperCase(), dashes);
 		formats.put(dash2.toUpperCase(), dashes2);
 		formats.put(dash3.toUpperCase(), dashes3);
+		formats.put(fhirInstancefmt.toUpperCase(), fhirInstancefmts);
 	}
 
 	public static String FormatDate(String from, String to, String date) {
