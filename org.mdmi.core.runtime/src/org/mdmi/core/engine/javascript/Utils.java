@@ -142,7 +142,7 @@ public class Utils {
 
 	private static final RuntimeDateFormat fhirInstancefmts[] = {
 			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss+zzzz", "yyyy-MM-dd'T'HH:mm:ssxxx", 16),
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", 12),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mmxxx", 12),
 			new RuntimeDateFormat("yyyy-MM-dd'T'HH", 10), new RuntimeDateFormat("yyyy-MM-dd", 8),
 			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
 
