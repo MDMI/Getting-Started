@@ -1,5 +1,6 @@
-Notes on Map Usage
+#Notes on Map Usage#
 
+##Data Type Instant##
 In the FHIR standard, the data type Instant, a date-time variable, is specified as 
    YYYY-MM-DDThh:mm:ss.sss+zz:zz (see https://www.hl7.org/fhir/datatypes.html#instant)
 
