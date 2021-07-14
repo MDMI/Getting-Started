@@ -267,13 +267,21 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 				if (child.isNullFlavor()) {
 
 					boolean runForElement = true;
+
 					for (SemanticElementRelationship ser : child.getRelationships()) {
 						for (IElementValue childElement : elementValue.getChildren()) {
-							if (childElement.getSemanticElement().getName().equals(
-								ser.getRelatedSemanticElement().getName())) {
-								runForElement = false;
-							}
-							if (ser.getRelatedSemanticElement().isComputedIn()) {
+							if (ser.getRelatedSemanticElement() != null) {
+								if (childElement.getSemanticElement().getName().equals(
+									ser.getRelatedSemanticElement().getName())) {
+									runForElement = false;
+								}
+								if (ser.getRelatedSemanticElement().isComputedIn()) {
+									runForElement = false;
+								}
+							} else {
+								logger.error(
+									"Error! processing Null Flavor " + child.getName() +
+											", NULLFLAVOR relationship missing semantic element");
 								runForElement = false;
 							}
 						}
