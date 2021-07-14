@@ -37,6 +37,11 @@ The place for all discussions regarding MDMI software and maps is in this reposi
 
 ## Issues ![Issues](/files/images/issues160.png)
 Similarly, when you encounter issues with the software or maps, please enter details in the [Issues](https://github.com/MDMI/MDMI-Transformation-Engine/issues) section of this repository. As are the guidelines in all _good_ bug reporting, please provide enough information and file attachments that the problem can be reproduced.
+
+## License ##
+Licensed under the Eclipse Public License - v 2.0 (the "License"); you may not use this file except in compliance with the License. A copy can be obtained at https://www.eclipse.org/legal/epl-2.0/.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" basis, without warranties or conditions of any kind, either express or implied. See the License, sections 5 and 6 for the specific language governing permissions and limitations under the License.
  
 ## More Information about MDMI
 More information regarding MDMI including its specification is located on the Object Management Group's website at https://www.omg.org/mdmi/.  
