@@ -17,7 +17,7 @@ http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.htm
 | ----------|
 | **Connectathon Participants** |  
 
-Please click [here](https://github.com/MDMI/MDMI-Transformation-Engine/wiki/Connectathon) for test messages and a dedicated Swagger implementation.
+Please click [here](https://github.com/MDMI/MDMI-Transformation-Engine/wiki/Connectathon-Testing) for test messages and a dedicated Swagger implementation.
 
 ### Docker Implementation
 A Docker image is available to run the application locally - the best option to examine with your own messages. To get the Docker image enter the commands:
