@@ -55,6 +55,8 @@ public class MdmiUtil {
 			@Override
 			protected boolean doEquivalent(MDMIBusinessElementReference a, MDMIBusinessElementReference b) {
 
+				// System.out.println(a.eContainer());
+
 				return a.getUniqueIdentifier().equals(b.getUniqueIdentifier());
 			}
 

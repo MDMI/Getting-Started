@@ -35,11 +35,11 @@ public class ConvertFromFactory {
 
 	public static final StringConverter CONV_STRING = new StringConverter();
 
-	public static final DateTimeConverter CONV_DATETIME = new DateTimeConverter();
+	public static final StringConverter CONV_DATETIME = new StringConverter();
 
-	public static final DateConverter CONV_DATE = new DateConverter();
+	public static final StringConverter CONV_DATE = new StringConverter();
 
-	public static final TimeConverter CONV_TIME = new TimeConverter();
+	public static final StringConverter CONV_TIME = new StringConverter();
 
 	public static final GDayConverter CONV_DAY = new GDayConverter();
 

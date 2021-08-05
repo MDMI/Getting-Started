@@ -20,6 +20,21 @@ public interface ITerminologyTransform {
 	TransformCode transform(String sourceURI, String sourceCode, String targetURI);
 
 	public static class TransformCode {
+		/**
+		 * @return the code
+		 */
+		public String getCode() {
+			return code;
+		}
+
+		/**
+		 * @param code
+		 *            the code to set
+		 */
+		public void setCode(String code) {
+			this.code = code;
+		}
+
 		public String code;
 
 		public String system;

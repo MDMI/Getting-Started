@@ -1309,8 +1309,13 @@ public class MdmiUow implements Runnable {
 	 *
 	 */
 	public void clean() {
-		this.srcSemanticModel.getAllElementValues().clear();
-		this.trgSemanticModel.getAllElementValues().clear();
+		if (this.srcSemanticModel != null) {
+			this.srcSemanticModel.getAllElementValues().clear();
+		}
+
+		if (this.trgSemanticModel != null) {
+			this.trgSemanticModel.getAllElementValues().clear();
+		}
 
 		this.srcSyntaxModel = null;
 		this.trgSyntaxModel = null;
