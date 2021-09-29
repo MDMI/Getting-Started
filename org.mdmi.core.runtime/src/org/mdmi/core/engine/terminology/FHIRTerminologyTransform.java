@@ -11,10 +11,24 @@
  *******************************************************************************/
 package org.mdmi.core.engine.terminology;
 
+import java.util.Base64;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.HttpHeaders;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.mdmi.core.engine.ITerminologyTransform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -130,96 +144,96 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	private TransformCode translate(String url, String source, String code, String target) throws Exception {
 
-		// JSONObject jsonObject = (JSONObject) parser.parse(json);
+		logger.debug("translate ");
+		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+			if (StringUtils.isEmpty(source)) {
+				throw new Exception("SOURCE IS NULL");
+			}
 
-		// logger.debug("translate ");
-		// try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-		// if (StringUtils.isEmpty(source)) {
-		// throw new Exception("SOURCE IS NULL");
-		// }
-		//
-		// if (StringUtils.isEmpty(target)) {
-		// throw new Exception("TARGET IS NULL");
-		// }
-		//
-		// if (StringUtils.isEmpty(code)) {
-		// throw new Exception("CODE IS NULL");
-		// }
-		//
-		// String jsonInputString = "{\r\n" + "\"resourceType\": \"Parameters\",\r\n" + "\"id\": \"example\",\r\n" +
-		// "\"parameter\": [\r\n" + " {\r\n" + " \"name\": \"source\",\r\n" + " \"valueUri\": \"" +
-		// source + "\"\r\n" + " },\r\n" + " {\r\n" + " \"name\": \"target\",\r\n" +
-		// " \"valueUri\": \"" + target + "\"\r\n" + " },\r\n" + " {\r\n" +
-		// " \"name\": \"code\",\r\n" + " \"valueString\": \"" + code + "\"\r\n" + " }\r\n" +
-		// "]\r\n" + "}";
-		//
-		// StringEntity entity = new StringEntity(jsonInputString, ContentType.APPLICATION_JSON);
-		//
-		// HttpPost request = new HttpPost(fhirTerminologyURL + "/ConceptMap/$translate");
-		//
-		// if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)) {
-		// String encoding = Base64.getEncoder().encodeToString((userName + ":" + password).getBytes());
-		// request.setHeader(HttpHeaders.AUTHORIZATION, "Basic " + encoding);
-		// }
-		//
-		// request.setEntity(entity);
-		//
-		// CloseableHttpResponse response = httpclient.execute(request);
-		//
-		// String json = EntityUtils.toString(response.getEntity(), "UTF-8");
-		//
-		// JSONParser parser = new JSONParser();
-		// String key = createKey(source, code, target);
-		// try {
-		//
-		// JSONArray msg = (JSONArray) jsonObject.get("parameter");
-		//
-		// if (msg == null) {
-		// return BLANK;
-		// }
-		//
-		// Iterator<JSONObject> iterator = msg.iterator();
-		// while (iterator.hasNext()) {
-		// JSONObject p = iterator.next();
-		// String name = (String) p.get("name");
-		//
-		// switch (name) {
-		// case "result":
-		// Boolean result = (Boolean) p.get("valueBoolean");
-		//
-		// if (!result) {
-		// logger.trace("Unable to transform from " + source + "::" + code + " to " + target);
-		// }
-		// break;
-		// case "match":
-		// JSONArray partArray = (JSONArray) p.get("part");
-		// Iterator<JSONObject> partIterator = partArray.iterator();
-		// while (partIterator.hasNext()) {
-		// JSONObject part = partIterator.next();
-		// String partName = (String) part.get("name");
-		// if ("concept".equals(partName)) {
-		// JSONObject valueCoding = (JSONObject) part.get("valueCoding");
-		// String translatedCode = (String) valueCoding.get("code");
-		// if (!StringUtils.isEmpty(translatedCode)) {
-		// String translatedSystem = (String) valueCoding.get("system");
-		// String translatedDisplay = (String) valueCoding.get("display");
-		// TransformCode tc = new TransformCode(
-		// translatedCode, translatedSystem, translatedDisplay);
-		// codeValues.put(key, tc);
-		// return tc;
-		// }
-		// }
-		// }
-		// break;
-		// }
-		//
-		// }
-		//
-		// } catch (ParseException e) {
-		// logger.error(e.getMessage());
-		// }
-		return BLANK;
-		// }
+			if (StringUtils.isEmpty(target)) {
+				throw new Exception("TARGET IS NULL");
+			}
+
+			if (StringUtils.isEmpty(code)) {
+				throw new Exception("CODE IS NULL");
+			}
+
+			String jsonInputString = "{\r\n" + "\"resourceType\": \"Parameters\",\r\n" + "\"id\": \"example\",\r\n" +
+					"\"parameter\": [\r\n" + "	{\r\n" + "		\"name\": \"source\",\r\n" + "		\"valueUri\": \"" +
+					source + "\"\r\n" + "	},\r\n" + "	{\r\n" + "		\"name\": \"target\",\r\n" +
+					"		\"valueUri\": \"" + target + "\"\r\n" + "	},\r\n" + "	{\r\n" +
+					"		\"name\": \"code\",\r\n" + "		\"valueString\": \"" + code + "\"\r\n" + "	}\r\n" +
+					"]\r\n" + "}";
+
+			StringEntity entity = new StringEntity(jsonInputString, ContentType.APPLICATION_JSON);
+
+			HttpPost request = new HttpPost(fhirTerminologyURL + "/ConceptMap/$translate");
+
+			if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)) {
+				String encoding = Base64.getEncoder().encodeToString((userName + ":" + password).getBytes());
+				request.setHeader(HttpHeaders.AUTHORIZATION, "Basic " + encoding);
+			}
+
+			request.setEntity(entity);
+
+			CloseableHttpResponse response = httpclient.execute(request);
+
+			String json = EntityUtils.toString(response.getEntity(), "UTF-8");
+
+			JSONParser parser = new JSONParser();
+			String key = createKey(source, code, target);
+			try {
+
+				JSONObject jsonObject = (JSONObject) parser.parse(json);
+
+				JSONArray msg = (JSONArray) jsonObject.get("parameter");
+
+				if (msg == null) {
+					return BLANK;
+				}
+
+				Iterator<JSONObject> iterator = msg.iterator();
+				while (iterator.hasNext()) {
+					JSONObject p = iterator.next();
+					String name = (String) p.get("name");
+
+					switch (name) {
+						case "result":
+							Boolean result = (Boolean) p.get("valueBoolean");
+
+							if (!result) {
+								logger.trace("Unable to transform from " + source + "::" + code + " to " + target);
+							}
+							break;
+						case "match":
+							JSONArray partArray = (JSONArray) p.get("part");
+							Iterator<JSONObject> partIterator = partArray.iterator();
+							while (partIterator.hasNext()) {
+								JSONObject part = partIterator.next();
+								String partName = (String) part.get("name");
+								if ("concept".equals(partName)) {
+									JSONObject valueCoding = (JSONObject) part.get("valueCoding");
+									String translatedCode = (String) valueCoding.get("code");
+									if (!StringUtils.isEmpty(translatedCode)) {
+										String translatedSystem = (String) valueCoding.get("system");
+										String translatedDisplay = (String) valueCoding.get("display");
+										TransformCode tc = new TransformCode(
+											translatedCode, translatedSystem, translatedDisplay);
+										codeValues.put(key, tc);
+										return tc;
+									}
+								}
+							}
+							break;
+					}
+
+				}
+
+			} catch (ParseException e) {
+				logger.error(e.getMessage());
+			}
+			return BLANK;
+		}
 
 	}
 
