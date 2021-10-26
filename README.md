@@ -13,11 +13,15 @@ An online Swagger implementation is available allowing you to see the structure 
 https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
 http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation  
 
+---
+
 | 🚩 🚩 🚩 |
 | ----------|
 | **Connectathon Participants** |  
 
 Please click [here](https://github.com/MDMI/Getting-Started/wiki/Connectathon-Testing) for test messages and a dedicated Swagger implementation.
+
+---
 
 ### Docker Implementation
 A Docker image is available to run the application locally - the best option to examine with your own messages. To get the Docker image enter the commands:
