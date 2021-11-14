@@ -183,7 +183,10 @@ public class MdmiUow implements Runnable {
 			// logger.trace("Split Time Elapsed in MILLISECONDS: " + watch.getSplitNanoTime());
 			logger.debug("Done processInboundTargetMessage " + Thread.currentThread().getName());
 			logger.debug("Execute processConversions " + Thread.currentThread().getName());
+
+			processSourceSemanticModel();
 			processConversions();
+			processTargetSemanticModel();
 
 			watch.split();
 			logger.debug("Split processConversions: " + watch.toSplitString());
@@ -1210,10 +1213,14 @@ public class MdmiUow implements Runnable {
 
 			serializeSemanticModel("SourceSemanticModel", transferInfo.location, srcSemanticModel, false);
 
+			processSourceSemanticModel();
+
 			logger.debug("Target Semantic Model : \n" + trgSemanticModel.toString());
 			logger.info("Execute processConversions ");
 			processConversions();
 			logger.info("Execute processOutboundTargetMessage");
+
+			processTargetSemanticModel();
 
 			HashMap<String, IElementValue> results = new HashMap<String, IElementValue>();
 
@@ -1292,6 +1299,21 @@ public class MdmiUow implements Runnable {
 		} catch (RuntimeException ex) {
 			logger.error("Exception during transformation", ex);
 		}
+	}
+
+	/**
+	 *
+	 */
+	private void processTargetSemanticModel() {
+		Mdmi.INSTANCE().getTargetSemanticModelProcessors().targetSemanticModelProcessing(
+			transferInfo, trgSemanticModel);
+	}
+
+	/**
+	 *
+	 */
+	private void processSourceSemanticModel() {
+		Mdmi.INSTANCE().getSourceSemanticModelProcessors().sourceSemanticProcessing(transferInfo, srcSemanticModel);
 	}
 
 	String getFullPathForNode(Node n) {

@@ -411,7 +411,13 @@ public class XDataStruct extends XData {
 			if (theValue != null) {
 				StringBuffer sb = new StringBuffer();
 				for (Object object : theValue.getValues()) {
-					sb.append(object).append(" ");
+					if (object instanceof XDataStruct) {
+						XDataStruct fieldValue = (XDataStruct) object;
+						// sb.append(fieldValue.get).append(" ");
+						sb.append(fieldValue.getXValues()).append(" ");
+					} else {
+						sb.append(object).append(" ");
+					}
 				}
 				return sb.toString();
 			}

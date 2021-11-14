@@ -103,7 +103,7 @@ public final class Mdmi {
 
 	public static final String PARAM_MDMI_ROOT_DIR = "mdmi.root.dir";
 
-	static private ThreadLocal<Mdmi> foo = new ThreadLocal<Mdmi>() {
+	static private ThreadLocal<Mdmi> mdmiThreadLocal = new ThreadLocal<Mdmi>() {
 
 		/*
 		 * (non-Javadoc)
@@ -119,28 +119,11 @@ public final class Mdmi {
 
 	public static final Mdmi INSTANCE() {
 		logger.trace("Call  public static final Mdmi INSTANCE() " + Thread.currentThread().getName());
-		return foo.get();
+		return mdmiThreadLocal.get();
 
 	};
 
-	// private static final ThreadLocal<Integer> threadId =
-	// new ThreadLocal<Integer>() {
-	// @Override protected Integer initialValue() {
-	// return nextId.getAndIncrement();
-	// }
-	// };
-
 	private File m_rootDir;
-
-	// private PluginManager pluginManager = new DefaultPluginManager();
-
-	/**
-	 * @return the pluginManager
-	 *         //
-	 */
-	// public PluginManager getPluginManager() {
-	// return pluginManager;
-	// }
 
 	private MdmiResolver m_resolver;
 
@@ -149,6 +132,24 @@ public final class Mdmi {
 	private MdmiPreProcessors m_preProcessors = new MdmiPreProcessors();
 
 	private MdmiPostProcessors m_postProcessors = new MdmiPostProcessors();
+
+	private SourceSemanticModelProcessors sourceSemanticModelProcessors = new SourceSemanticModelProcessors();
+
+	/**
+	 * @return the sourceSemanticModelProcessors
+	 */
+	public SourceSemanticModelProcessors getSourceSemanticModelProcessors() {
+		return sourceSemanticModelProcessors;
+	}
+
+	private TargetSemanticModelProcessors targetSemanticModelProcessors = new TargetSemanticModelProcessors();
+
+	/**
+	 * @return the targetSemanticModelProcessors
+	 */
+	public TargetSemanticModelProcessors getTargetSemanticModelProcessors() {
+		return targetSemanticModelProcessors;
+	}
 
 	private HashMap<String, MapInfo> m_mapInfos = new HashMap<String, MapInfo>();
 
@@ -423,8 +424,7 @@ public final class Mdmi {
 		}
 	}
 
-	// clients should use the INSTANCE
-	public Mdmi() {
+	private Mdmi() {
 		init();
 	}
 

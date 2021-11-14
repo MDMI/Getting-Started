@@ -24,6 +24,8 @@ import org.mdmi.core.MdmiUtil;
 import org.mdmi.core.engine.DatamapInterpreter;
 import org.mdmi.core.engine.XDataStruct;
 import org.mdmi.core.engine.XValue;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic.DIRECTION;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -226,6 +228,10 @@ public class RuntimeService {
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
 		final ArrayList<String> filter = new ArrayList<String>();
+
+		DIRECTION asdf;
+		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new LogSemantic(DIRECTION.TO));
+		Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
 
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMdl, srcMap));
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(trgMdl, trgMap));
