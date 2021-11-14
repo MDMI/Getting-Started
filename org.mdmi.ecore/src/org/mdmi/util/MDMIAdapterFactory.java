@@ -47,6 +47,7 @@ import org.mdmi.SimpleMessageComposite;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.mdmi.MDMIPackage
  * @generated
  */
@@ -55,6 +56,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected static MDMIPackage modelPackage;
@@ -63,6 +65,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIAdapterFactory() {
@@ -76,6 +79,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -94,6 +98,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMISwitch<Adapter> modelSwitch = new MDMISwitch<Adapter>() {
@@ -257,7 +262,9 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 *
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
@@ -272,6 +279,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageModel
 	 * @generated
@@ -286,6 +294,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageSyntaxModel
 	 * @generated
@@ -300,6 +309,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Node
 	 * @generated
@@ -314,6 +324,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Bag
 	 * @generated
@@ -328,6 +339,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Choice
 	 * @generated
@@ -342,6 +354,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.LeafSyntaxTranslator
 	 * @generated
@@ -356,6 +369,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageGroup
 	 * @generated
@@ -370,6 +384,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DataRule
 	 * @generated
@@ -384,6 +399,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementSet
 	 * @generated
@@ -398,6 +414,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElement
 	 * @generated
@@ -412,6 +429,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SimpleMessageComposite
 	 * @generated
@@ -426,6 +444,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageComposite
 	 * @generated
@@ -440,6 +459,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementBusinessRule
 	 * @generated
@@ -454,6 +474,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementRelationship
 	 * @generated
@@ -468,6 +489,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIBusinessElementReference
 	 * @generated
@@ -482,6 +504,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIBusinessElementRule
 	 * @generated
@@ -496,6 +519,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.ConversionRule
 	 * @generated
@@ -510,6 +534,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIDomainDictionaryReference
 	 * @generated
@@ -524,6 +549,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIExpression
 	 * @generated
@@ -538,6 +564,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Keyword
 	 * @generated
@@ -552,6 +579,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIDatatype
 	 * @generated
@@ -566,6 +594,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSPrimitive
 	 * @generated
@@ -580,6 +609,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTCStructured
 	 * @generated
@@ -594,6 +624,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Field
 	 * @generated
@@ -608,6 +639,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTExternal
 	 * @generated
@@ -622,6 +654,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSDerived
 	 * @generated
@@ -636,6 +669,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTCChoice
 	 * @generated
@@ -650,6 +684,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSEnumerated
 	 * @generated
@@ -664,6 +699,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.EnumerationLiteral
 	 * @generated
@@ -678,6 +714,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DatatypeMap
 	 * @generated
@@ -691,6 +728,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

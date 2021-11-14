@@ -29,7 +29,6 @@ import java.util.Stack;
 import org.apache.commons.lang3.StringUtils;
 import org.mdmi.ConversionRule;
 import org.mdmi.DTCStructured;
-import org.mdmi.DTExternal;
 import org.mdmi.DTSEnumerated;
 import org.mdmi.EnumerationLiteral;
 import org.mdmi.Field;
@@ -575,8 +574,6 @@ class ConversionImpl {
 
 	private void vsConvertWithResolver(XValue src, XValue trg, boolean fromSrc, ConversionRule toBE,
 			ConversionRule toSE) {
-		// MdmiExternalResolvers rs = Mdmi.INSTANCE().getExternalResolvers();
-		DTExternal dt = null;
 		Field srcField = null;
 		Field trgField = null;
 		if (fromSrc) {
@@ -584,7 +581,6 @@ class ConversionImpl {
 			MDMIBusinessElementReference ber = toBE.getBusinessElement(); // target
 			DTCStructured srcDT = (DTCStructured) se.getDatatype();
 			srcField = srcDT.getField(se.getEnumValueField());
-			dt = (DTExternal) srcField.getDatatype();
 			DTCStructured trgDT = (DTCStructured) ber.getReferenceDatatype();
 			trgField = trgDT.getField(ber.getEnumValueField());
 		} else {
@@ -592,7 +588,6 @@ class ConversionImpl {
 			MDMIBusinessElementReference ber = toSE.getBusinessElement(); // source
 			DTCStructured srcDT = (DTCStructured) ber.getReferenceDatatype();
 			srcField = srcDT.getField(ber.getEnumValueField());
-			dt = (DTExternal) srcField.getDatatype();
 			DTCStructured trgDT = (DTCStructured) se.getDatatype();
 			trgField = trgDT.getField(se.getEnumValueField());
 		}
@@ -601,15 +596,8 @@ class ConversionImpl {
 			XDataStruct srcXD = (XDataStruct) values.get(i);
 			XDataStruct trgXD = new XDataStruct(trg);
 			trg.setValue(trgXD);
-			XValue sfv = srcXD.getXValue(srcField);
-			XValue tfv = trgXD.getXValue(trgField);
-			// if (fromSrc) {
-			// Object o = rs.getDictionaryValue(dt, sfv.getValue().toString());
-			// tfv.addValue(o);
-			// } else {
-			// Object o = rs.getModelValue(dt, sfv.getValue().toString());
-			// tfv.addValue(o);
-			// }
+			srcXD.getXValue(srcField);
+			trgXD.getXValue(trgField);
 		}
 	}
 

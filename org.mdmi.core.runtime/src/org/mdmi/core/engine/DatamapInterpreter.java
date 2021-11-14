@@ -253,10 +253,7 @@ public class DatamapInterpreter {
 	void compare(String function, Object source, Object target) {
 
 		if (source instanceof XDataStruct) {
-			XDataStruct sourceStruct = (XDataStruct) source;
 			if (target instanceof XDataStruct) {
-				XDataStruct targetStruct = (XDataStruct) target;
-				// Assume all the values should transfer
 
 				/**
 				 * @TODO Add better comparison

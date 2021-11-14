@@ -23,8 +23,8 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormat <em>Format</em>}</li>
+ * <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,6 +34,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -54,6 +56,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The default value of the '{@link #getFormatExpressionLanguage() <em>Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The cached value of the '{@link #getFormatExpressionLanguage() <em>Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LeafSyntaxTranslatorImpl() {
@@ -82,6 +87,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,6 +98,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getFormat() {
@@ -101,6 +108,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFormat(String newFormat) {
@@ -116,6 +124,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getFormatExpressionLanguage() {
@@ -125,6 +134,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFormatExpressionLanguage(String newFormatExpressionLanguage) {
@@ -141,6 +151,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,6 +168,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -175,6 +187,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,6 +206,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,6 +227,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

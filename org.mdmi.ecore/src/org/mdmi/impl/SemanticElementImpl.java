@@ -44,30 +44,30 @@ import org.mdmi.SimpleMessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getElementType <em>Element Type</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getPropertyQualifier <em>Property Qualifier</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComposite <em>Composite</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getBusinessRules <em>Business Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDataRules <em>Data Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getRelationships <em>Relationships</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#isMultipleInstances <em>Multiple Instances</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getMapFromMdmi <em>Map From Mdmi</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getOrdering <em>Ordering</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getOrderingLanguage <em>Ordering Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedValue <em>Computed Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedInValue <em>Computed In Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getMapToMdmi <em>Map To Mdmi</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getParent <em>Parent</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getSyntaxNode <em>Syntax Node</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedOutValue <em>Computed Out Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getKeywords <em>Keywords</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueField <em>Enum Value Field</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getElementType <em>Element Type</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDatatype <em>Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getPropertyQualifier <em>Property Qualifier</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComposite <em>Composite</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getBusinessRules <em>Business Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDataRules <em>Data Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getRelationships <em>Relationships</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#isMultipleInstances <em>Multiple Instances</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getMapFromMdmi <em>Map From Mdmi</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getOrdering <em>Ordering</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getOrderingLanguage <em>Ordering Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedValue <em>Computed Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedInValue <em>Computed In Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getMapToMdmi <em>Map To Mdmi</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getParent <em>Parent</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getSyntaxNode <em>Syntax Node</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedOutValue <em>Computed Out Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getKeywords <em>Keywords</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueField <em>Enum Value Field</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +77,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -87,6 +88,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -97,6 +99,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -107,6 +110,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -117,6 +121,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -127,6 +132,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -137,6 +143,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -147,6 +154,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getPropertyQualifier() <em>Property Qualifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPropertyQualifier()
 	 * @generated
 	 * @ordered
@@ -157,6 +165,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComposite() <em>Composite</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComposite()
 	 * @generated
 	 * @ordered
@@ -167,6 +176,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getBusinessRules() <em>Business Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBusinessRules()
 	 * @generated
 	 * @ordered
@@ -177,6 +187,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDataRules() <em>Data Rules</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDataRules()
 	 * @generated
 	 * @ordered
@@ -187,6 +198,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getRelationships() <em>Relationships</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRelationships()
 	 * @generated
 	 * @ordered
@@ -197,6 +209,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #isMultipleInstances() <em>Multiple Instances</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isMultipleInstances()
 	 * @generated NOT
 	 * @ordered
@@ -207,6 +220,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #isMultipleInstances() <em>Multiple Instances</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isMultipleInstances()
 	 * @generated
 	 * @ordered
@@ -217,6 +231,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getMapFromMdmi() <em>Map From Mdmi</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMapFromMdmi()
 	 * @generated
 	 * @ordered
@@ -227,6 +242,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -237,6 +253,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -247,6 +264,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getOrderingLanguage() <em>Ordering Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrderingLanguage()
 	 * @generated
 	 * @ordered
@@ -257,6 +275,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getOrderingLanguage() <em>Ordering Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrderingLanguage()
 	 * @generated
 	 * @ordered
@@ -267,6 +286,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedValue() <em>Computed Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedValue()
 	 * @generated
 	 * @ordered
@@ -277,6 +297,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedInValue() <em>Computed In Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedInValue()
 	 * @generated
 	 * @ordered
@@ -287,6 +308,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getMapToMdmi() <em>Map To Mdmi</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMapToMdmi()
 	 * @generated
 	 * @ordered
@@ -297,6 +319,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getParent()
 	 * @generated
 	 * @ordered
@@ -307,6 +330,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -317,6 +341,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getSyntaxNode() <em>Syntax Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSyntaxNode()
 	 * @generated
 	 * @ordered
@@ -327,6 +352,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedOutValue() <em>Computed Out Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedOutValue()
 	 * @generated
 	 * @ordered
@@ -337,6 +363,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getKeywords() <em>Keywords</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywords()
 	 * @generated
 	 * @ordered
@@ -347,6 +374,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -357,6 +385,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -367,6 +396,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -377,6 +407,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -386,6 +417,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementImpl() {
@@ -395,6 +427,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,6 +438,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -414,6 +448,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -427,6 +462,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -436,6 +472,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -451,6 +488,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getElementType() {
@@ -460,6 +498,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementType(String newElementType) {
@@ -475,6 +514,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getDatatype() {
@@ -495,6 +535,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetDatatype() {
@@ -504,6 +545,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDatatype(MDMIDatatype newDatatype) {
@@ -519,6 +561,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<String> getPropertyQualifier() {
@@ -532,6 +575,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SimpleMessageComposite getComposite() {
@@ -553,6 +597,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SimpleMessageComposite basicGetComposite() {
@@ -562,6 +607,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComposite(SimpleMessageComposite newComposite, NotificationChain msgs) {
@@ -582,6 +628,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setComposite(SimpleMessageComposite newComposite) {
@@ -609,6 +656,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet getElementSet() {
@@ -621,6 +669,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
@@ -631,6 +680,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementSet(SemanticElementSet newElementSet) {
@@ -661,6 +711,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SemanticElementBusinessRule> getBusinessRules() {
@@ -675,6 +726,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<DataRule> getDataRules() {
@@ -689,6 +741,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SemanticElementRelationship> getRelationships() {
@@ -702,6 +755,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isMultipleInstances() {
@@ -711,6 +765,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMultipleInstances(boolean newMultipleInstances) {
@@ -727,6 +782,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<ConversionRule> getMapFromMdmi() {
@@ -740,6 +796,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getOrdering() {
@@ -749,6 +806,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setOrdering(String newOrdering) {
@@ -764,6 +822,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getOrderingLanguage() {
@@ -773,6 +832,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setOrderingLanguage(String newOrderingLanguage) {
@@ -789,6 +849,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIExpression getComputedValue() {
@@ -798,6 +859,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedValue(MDMIExpression newComputedValue, NotificationChain msgs) {
@@ -819,6 +881,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setComputedValue(MDMIExpression newComputedValue) {
@@ -847,6 +910,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIExpression getComputedInValue() {
@@ -856,6 +920,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedInValue(MDMIExpression newComputedInValue, NotificationChain msgs) {
@@ -877,6 +942,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setComputedInValue(MDMIExpression newComputedInValue) {
@@ -905,6 +971,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<ConversionRule> getMapToMdmi() {
@@ -918,6 +985,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getParent() {
@@ -938,6 +1006,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetParent() {
@@ -947,6 +1016,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(SemanticElement newParent, NotificationChain msgs) {
@@ -967,6 +1037,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setParent(SemanticElement newParent) {
@@ -994,6 +1065,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SemanticElement> getChildren() {
@@ -1017,6 +1089,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Node getSyntaxNode() {
@@ -1038,6 +1111,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Node basicGetSyntaxNode() {
@@ -1047,6 +1121,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxNode(Node newSyntaxNode, NotificationChain msgs) {
@@ -1067,6 +1142,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSyntaxNode(Node newSyntaxNode) {
@@ -1094,6 +1170,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIExpression getComputedOutValue() {
@@ -1103,6 +1180,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedOutValue(MDMIExpression newComputedOutValue, NotificationChain msgs) {
@@ -1124,6 +1202,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setComputedOutValue(MDMIExpression newComputedOutValue) {
@@ -1152,6 +1231,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Keyword> getKeywords() {
@@ -1165,6 +1245,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueField() {
@@ -1174,6 +1255,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueField(String newEnumValueField) {
@@ -1190,6 +1272,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueDescrField() {
@@ -1199,6 +1282,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
@@ -1215,6 +1299,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1261,6 +1346,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1301,6 +1387,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1316,6 +1403,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1388,6 +1476,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1481,6 +1570,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1565,6 +1655,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1639,6 +1730,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

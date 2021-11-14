@@ -27,17 +27,17 @@ import org.mdmi.SemanticElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.NodeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getMinOccurs <em>Min Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getMaxOccurs <em>Max Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getLocation <em>Location</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getLocationExpressionLanguage <em>Location Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getSyntaxModel <em>Syntax Model</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getSemanticElement <em>Semantic Element</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getFieldName <em>Field Name</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#isIsSyntacticField <em>Is Syntactic Field</em>}</li>
- *   <li>{@link org.mdmi.impl.NodeImpl#getPath <em>Path</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getMinOccurs <em>Min Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getMaxOccurs <em>Max Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getLocation <em>Location</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getLocationExpressionLanguage <em>Location Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getSyntaxModel <em>Syntax Model</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getSemanticElement <em>Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getFieldName <em>Field Name</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#isIsSyntacticField <em>Is Syntactic Field</em>}</li>
+ * <li>{@link org.mdmi.impl.NodeImpl#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @generated
@@ -71,6 +71,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -81,6 +82,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -91,6 +93,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -101,6 +104,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -111,6 +115,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -121,6 +126,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -131,6 +137,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -141,6 +148,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -151,6 +159,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocation()
 	 * @generated NOT
 	 * @ordered
@@ -161,6 +170,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocation()
 	 * @generated
 	 * @ordered
@@ -171,6 +181,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getLocationExpressionLanguage() <em>Location Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocationExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -181,6 +192,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getLocationExpressionLanguage() <em>Location Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocationExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -191,6 +203,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getSemanticElement() <em>Semantic Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSemanticElement()
 	 * @generated
 	 * @ordered
@@ -201,6 +214,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getFieldName() <em>Field Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFieldName()
 	 * @generated
 	 * @ordered
@@ -211,6 +225,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getFieldName() <em>Field Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFieldName()
 	 * @generated
 	 * @ordered
@@ -221,6 +236,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #isIsSyntacticField() <em>Is Syntactic Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsSyntacticField()
 	 * @generated
 	 * @ordered
@@ -231,6 +247,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #isIsSyntacticField() <em>Is Syntactic Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsSyntacticField()
 	 * @generated
 	 * @ordered
@@ -241,6 +258,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -251,6 +269,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPath()
 	 * @generated
 	 * @ordered
@@ -260,6 +279,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected NodeImpl() {
@@ -269,6 +289,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -279,6 +300,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -288,6 +310,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -301,6 +324,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -310,6 +334,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -325,6 +350,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMinOccurs() {
@@ -334,6 +360,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMinOccurs(int newMinOccurs) {
@@ -348,6 +375,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMaxOccurs() {
@@ -357,6 +385,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMaxOccurs(int newMaxOccurs) {
@@ -371,6 +400,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLocation() {
@@ -380,6 +410,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLocation(String newLocation) {
@@ -393,6 +424,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLocationExpressionLanguage() {
@@ -402,6 +434,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLocationExpressionLanguage(String newLocationExpressionLanguage) {
@@ -418,6 +451,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageSyntaxModel getSyntaxModel() {
@@ -430,6 +464,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxModel(MessageSyntaxModel newSyntaxModel, NotificationChain msgs) {
@@ -440,6 +475,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
@@ -470,6 +506,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getSemanticElement() {
@@ -479,6 +516,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSemanticElement(SemanticElement newSemanticElement, NotificationChain msgs) {
@@ -499,6 +537,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSemanticElement(SemanticElement newSemanticElement) {
@@ -527,6 +566,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getFieldName() {
@@ -536,6 +576,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFieldName(String newFieldName) {
@@ -550,6 +591,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isIsSyntacticField() {
@@ -559,6 +601,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setIsSyntacticField(boolean newIsSyntacticField) {
@@ -575,6 +618,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getPath() {
@@ -584,6 +628,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setPath(String newPath) {
@@ -597,6 +642,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public String getCompletePath() {
@@ -625,6 +671,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -648,6 +695,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -664,6 +712,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -679,6 +728,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -713,6 +763,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -758,6 +809,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -803,6 +855,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -849,6 +902,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

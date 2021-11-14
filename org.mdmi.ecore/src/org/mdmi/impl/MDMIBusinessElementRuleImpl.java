@@ -25,11 +25,11 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getBusinessElement <em>Business Element</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementRuleImpl#getBusinessElement <em>Business Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIBusinessElementRuleImpl() {
@@ -127,6 +136,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -146,6 +157,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -161,6 +173,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -170,6 +183,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -186,6 +200,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRule() {
@@ -195,6 +210,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRule(String newRule) {
@@ -210,6 +226,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRuleExpressionLanguage() {
@@ -219,6 +236,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
@@ -235,6 +253,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIBusinessElementReference getBusinessElement() {
@@ -247,6 +266,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetBusinessElement(MDMIBusinessElementReference newBusinessElement,
@@ -259,6 +279,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setBusinessElement(MDMIBusinessElementReference newBusinessElement) {
@@ -292,6 +313,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -309,6 +331,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -323,6 +346,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -339,6 +363,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -361,6 +386,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -388,6 +414,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -415,6 +442,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,6 +473,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

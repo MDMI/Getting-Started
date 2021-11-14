@@ -136,7 +136,6 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 						childElement = document.createElement(ctx.getText());
 						node.appendChild(childElement);
 					} else {
-						Element currentElement = (Element) node;
 						if (childElement == null) {
 							childElement = document.createElement(ctx.getText());
 							node.appendChild(childElement);
@@ -486,12 +485,6 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 					// Iterable<Node>
 					Iterator<Node> iterator = matchingNodes.iterator();
 
-					/*
-					 * Loop over the nodes in the syntax model
-					 * If the node has a xpath - use that xpath evaluation to determine the correct node
-					 * If the node does not have a xpath - assume a match to the first node
-					 */
-					int loopctr = 1;
 					while (iterator.hasNext()) {
 
 						if (!results.isEmpty()) {
@@ -1098,7 +1091,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 					yroot.getNode().getName());
 			}
 			String nodeName = location(node); // for the root node it is its name
-			byte[] data = msg.getData();
+			msg.getData();
 			XmlParser p = new XmlParser();
 			Document doc = null;
 			Element root = null;
@@ -1262,10 +1255,6 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 		for (YNode ynode : ynodes) {
 			// // System.out.println("serialize " + ynode.getNode().getName());
 			Node node = ynode.getNode();
-
-			if ("aaacode".equals(node.getName())) {
-				System.out.println("acode");
-			}
 
 			// if (ynode.getNode().equals(node)) {
 			if (ynode.isBag()) {

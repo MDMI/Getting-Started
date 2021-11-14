@@ -19,12 +19,12 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getFromMDMI <em>From MDMI</em>}</li>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getToMDMI <em>To MDMI</em>}</li>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getMdmiDatatype <em>Mdmi Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.DatatypeMapImpl#getMessageDatatype <em>Message Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getFromMDMI <em>From MDMI</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getToMDMI <em>To MDMI</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getMdmiDatatype <em>Mdmi Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.DatatypeMapImpl#getMessageDatatype <em>Message Datatype</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,6 +34,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,6 +56,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -74,6 +78,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The default value of the '{@link #getFromMDMI() <em>From MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFromMDMI()
 	 * @generated
 	 * @ordered
@@ -84,6 +89,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getFromMDMI() <em>From MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFromMDMI()
 	 * @generated
 	 * @ordered
@@ -94,6 +100,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The default value of the '{@link #getToMDMI() <em>To MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getToMDMI()
 	 * @generated
 	 * @ordered
@@ -104,6 +111,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getToMDMI() <em>To MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getToMDMI()
 	 * @generated
 	 * @ordered
@@ -114,6 +122,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getMdmiDatatype() <em>Mdmi Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMdmiDatatype()
 	 * @generated
 	 * @ordered
@@ -124,6 +133,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 * The cached value of the '{@link #getMessageDatatype() <em>Message Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageDatatype()
 	 * @generated
 	 * @ordered
@@ -133,6 +143,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DatatypeMapImpl() {
@@ -142,6 +153,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,6 +164,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -161,6 +174,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -174,6 +188,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -183,6 +198,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -198,6 +214,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getFromMDMI() {
@@ -207,6 +224,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setFromMDMI(String newFromMDMI) {
@@ -222,6 +240,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getToMDMI() {
@@ -231,6 +250,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setToMDMI(String newToMDMI) {
@@ -245,6 +265,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getMdmiDatatype() {
@@ -266,6 +287,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetMdmiDatatype() {
@@ -275,6 +297,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMdmiDatatype(MDMIDatatype newMdmiDatatype) {
@@ -290,6 +313,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getMessageDatatype() {
@@ -311,6 +335,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetMessageDatatype() {
@@ -320,6 +345,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMessageDatatype(MDMIDatatype newMessageDatatype) {
@@ -336,6 +362,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -366,6 +393,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -396,6 +424,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -426,6 +455,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -458,6 +488,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

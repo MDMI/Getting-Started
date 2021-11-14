@@ -60,22 +60,25 @@ public class NameParser {
 
 	private boolean isOneOf(String checkStr, String[] titles) {
 		for (String title : titles) {
-			if (checkStr.toLowerCase().startsWith(title))
+			if (checkStr.toLowerCase().startsWith(title)) {
 				return true;
+			}
 		}
 		return false;
 	}
 
 	public void parse(String name) {
-		if (StringUtils.isBlank(name))
+		if (StringUtils.isBlank(name)) {
 			return;
+		}
 		this.reset();
 		String[] words = name.split(" ");
 		boolean isFirstName = false;
 
 		for (String word : words) {
-			if (StringUtils.isBlank(word))
+			if (StringUtils.isBlank(word)) {
 				continue;
+			}
 			if (word.charAt(word.length() - 1) == '.') {
 				if (!isFirstName && !this.isOneOf(word, prefixes)) {
 					firstName = word;
@@ -86,8 +89,9 @@ public class NameParser {
 					titlesBefore.add(word);
 				}
 			} else {
-				if (word.endsWith(","))
+				if (word.endsWith(",")) {
 					word = StringUtils.chop(word);
+				}
 				if (isFirstName == false) {
 					firstName = word;
 					isFirstName = true;

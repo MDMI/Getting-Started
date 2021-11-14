@@ -25,11 +25,11 @@ import org.mdmi.SemanticElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getKeywordValue <em>Keyword Value</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getKeyword <em>Keyword</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getKeywordValue <em>Keyword Value</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getOwner <em>Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeyword()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeyword()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getKeywordValue() <em>Keyword Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywordValue()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getKeywordValue() <em>Keyword Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywordValue()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected KeywordImpl() {
@@ -127,6 +136,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -146,6 +157,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -161,6 +173,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getKeyword() {
@@ -170,6 +183,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setKeyword(String newKeyword) {
@@ -183,6 +197,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getKeywordValue() {
@@ -192,6 +207,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setKeywordValue(String newKeywordValue) {
@@ -207,6 +223,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getReference() {
@@ -216,6 +233,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReference(String newReference) {
@@ -230,6 +248,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getOwner() {
@@ -242,6 +261,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(SemanticElement newOwner, NotificationChain msgs) {
@@ -252,6 +272,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setOwner(SemanticElement newOwner) {
@@ -280,6 +301,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,6 +319,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -311,6 +334,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -326,6 +350,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -348,6 +373,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,6 +401,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -402,6 +429,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -432,6 +460,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

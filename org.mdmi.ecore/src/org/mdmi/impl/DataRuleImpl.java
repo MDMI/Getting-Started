@@ -31,14 +31,14 @@ import org.mdmi.SemanticElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getScope <em>Scope</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
- *   <li>{@link org.mdmi.impl.DataRuleImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getScope <em>Scope</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getDatatype <em>Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.DataRuleImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +48,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -98,6 +103,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -108,6 +114,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -118,6 +125,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -128,6 +136,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -138,6 +147,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getSemanticElement() <em>Semantic Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSemanticElement()
 	 * @generated
 	 * @ordered
@@ -148,6 +158,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
@@ -157,6 +168,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DataRuleImpl() {
@@ -166,6 +178,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,6 +189,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -185,6 +199,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -198,6 +213,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -207,6 +223,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -222,6 +239,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRule() {
@@ -231,6 +249,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRule(String newRule) {
@@ -244,6 +263,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRuleExpressionLanguage() {
@@ -253,6 +273,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
@@ -269,6 +290,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup getScope() {
@@ -281,6 +303,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetScope(MessageGroup newScope, NotificationChain msgs) {
@@ -291,6 +314,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setScope(MessageGroup newScope) {
@@ -319,6 +343,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MDMIDatatype> getDatatype() {
@@ -332,6 +357,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getSemanticElement() {
@@ -353,6 +379,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetSemanticElement() {
@@ -362,6 +389,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSemanticElement(SemanticElement newSemanticElement, NotificationChain msgs) {
@@ -383,6 +411,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSemanticElement(SemanticElement newSemanticElement) {
@@ -411,6 +440,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup getGroup() {
@@ -431,6 +461,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup basicGetGroup() {
@@ -440,6 +471,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(MessageGroup newGroup, NotificationChain msgs) {
@@ -460,6 +492,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setGroup(MessageGroup newGroup) {
@@ -485,6 +518,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -514,6 +548,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,6 +567,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -547,6 +583,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -581,6 +618,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -619,6 +657,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -655,6 +694,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -691,6 +731,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

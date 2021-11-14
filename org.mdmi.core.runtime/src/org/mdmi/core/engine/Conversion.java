@@ -34,7 +34,7 @@ import org.mdmi.core.MdmiTransferInfo;
  * @deprecated
  *
  *
- * 			Internal class, defines a conversion for a transfer request, within a unit of
+ *             Internal class, defines a conversion for a transfer request, within a unit of
  *             work.
  *
  * @author goancea
@@ -313,7 +313,7 @@ public class Conversion {
 			}
 			impl.end();
 		} catch (Exception e) {
-			
+
 			throw new MdmiException(e.getMessage());
 		}
 		// NOTE: this may have side effects! Added temporary.
@@ -366,7 +366,7 @@ public class Conversion {
 			ArrayList<ConversionInfo> cis = getCisForSE(parent.target);
 			executeCis(srcOwner, parent, trgOwner, cis);
 		} catch (Exception e) {
-			
+
 			throw new MdmiException(e.getMessage());
 		}
 	}
@@ -395,7 +395,7 @@ public class Conversion {
 				executeCis(srcOwner, parent, trgOwner, cisProc);
 			}
 		} catch (Exception e) {
-			
+
 			throw new MdmiException(e.getMessage());
 		}
 	}

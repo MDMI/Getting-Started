@@ -963,11 +963,9 @@ public class XslUtil {
 	}
 
 	public static void main(String[] args) {
-		String a[] = splitForFirstAxes("e1/e2/ancestor::tag/e3");
-		// System.out.println(a[0] + " " + a[1] + " " + a[2] + " " + a[3]);
-		a = splitForFirstAxes(
+		splitForFirstAxes("e1/e2/ancestor::tag/e3");
+		splitForFirstAxes(
 			"component/section[templateId[@root=\"2.16.840.1.113883.10.20.21.2.6.1\"]]/ancestor::DEFAULT_NS:component[1]");
-		// System.out.println(a[0] + " " + a[1] + " " + a[2] + " " + a[3]);
 
 		String xml = "<root><e a='v1'/><e a='v2'/></root>";
 		XmlParser p = new XmlParser();

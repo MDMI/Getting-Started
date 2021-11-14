@@ -94,8 +94,9 @@ public class Deliminated2XML implements IPreProcessor {
 			for (;;) {
 				String line;
 				line = inputReader.readLine();
-				if (line == null)
+				if (line == null) {
 					break;
+				}
 				lines.add(line);
 			}
 			if (messageModel.getSyntaxModel() != null && messageModel.getSyntaxModel().getRoot() instanceof Bag) {

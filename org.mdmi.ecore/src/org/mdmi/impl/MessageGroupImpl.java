@@ -36,20 +36,20 @@ import org.mdmi.MessageModel;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDataRules <em>Data Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultLocationExprLang <em>Default Location Expr Lang</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultConstraintExprLang <em>Default Constraint Expr Lang</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultRuleExprLang <em>Default Rule Expr Lang</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultFormatExpressionLanguage <em>Default Format Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getModels <em>Models</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDomainDictionary <em>Domain Dictionary</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultMDMIExpresionLanguage <em>Default MDMI Expresion Language</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDatatypes <em>Datatypes</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageGroupImpl#getDatatypeMaps <em>Datatype Maps</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDataRules <em>Data Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultLocationExprLang <em>Default Location Expr Lang</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultConstraintExprLang <em>Default Constraint Expr Lang</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultRuleExprLang <em>Default Rule Expr Lang</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultFormatExpressionLanguage <em>Default Format Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getModels <em>Models</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDomainDictionary <em>Domain Dictionary</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDefaultMDMIExpresionLanguage <em>Default MDMI Expresion Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getRules <em>Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDatatypes <em>Datatypes</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageGroupImpl#getDatatypeMaps <em>Datatype Maps</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +59,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -69,6 +70,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -79,6 +81,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDataRules() <em>Data Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDataRules()
 	 * @generated
 	 * @ordered
@@ -89,6 +92,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -99,6 +103,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -109,6 +114,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultLocationExprLang() <em>Default Location Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultLocationExprLang()
 	 * @generated
 	 * @ordered
@@ -119,6 +125,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultLocationExprLang() <em>Default Location Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultLocationExprLang()
 	 * @generated
 	 * @ordered
@@ -129,6 +136,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultConstraintExprLang() <em>Default Constraint Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultConstraintExprLang()
 	 * @generated
 	 * @ordered
@@ -139,6 +147,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultConstraintExprLang() <em>Default Constraint Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultConstraintExprLang()
 	 * @generated
 	 * @ordered
@@ -149,6 +158,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultRuleExprLang() <em>Default Rule Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultRuleExprLang()
 	 * @generated
 	 * @ordered
@@ -159,6 +169,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultRuleExprLang() <em>Default Rule Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultRuleExprLang()
 	 * @generated
 	 * @ordered
@@ -169,6 +180,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultFormatExpressionLanguage() <em>Default Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -179,6 +191,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultFormatExpressionLanguage() <em>Default Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -189,6 +202,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultOrderingExpressionLanguage() <em>Default Ordering Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultOrderingExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -199,6 +213,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultOrderingExpressionLanguage() <em>Default Ordering Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultOrderingExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -209,6 +224,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getModels() <em>Models</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getModels()
 	 * @generated
 	 * @ordered
@@ -219,6 +235,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDomainDictionary() <em>Domain Dictionary</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDomainDictionary()
 	 * @generated
 	 * @ordered
@@ -229,6 +246,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The default value of the '{@link #getDefaultMDMIExpresionLanguage() <em>Default MDMI Expresion Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultMDMIExpresionLanguage()
 	 * @generated
 	 * @ordered
@@ -239,6 +257,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDefaultMDMIExpresionLanguage() <em>Default MDMI Expresion Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDefaultMDMIExpresionLanguage()
 	 * @generated
 	 * @ordered
@@ -249,6 +268,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -259,6 +279,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDatatypes() <em>Datatypes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatypes()
 	 * @generated
 	 * @ordered
@@ -269,6 +290,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 * The cached value of the '{@link #getDatatypeMaps() <em>Datatype Maps</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatypeMaps()
 	 * @generated
 	 * @ordered
@@ -278,6 +300,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MessageGroupImpl() {
@@ -287,6 +310,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -297,6 +321,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -306,6 +331,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -319,6 +345,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<DataRule> getDataRules() {
@@ -332,6 +359,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -341,6 +369,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -356,6 +385,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultLocationExprLang() {
@@ -365,6 +395,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultLocationExprLang(String newDefaultLocationExprLang) {
@@ -381,6 +412,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultConstraintExprLang() {
@@ -390,6 +422,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultConstraintExprLang(String newDefaultConstraintExprLang) {
@@ -406,6 +439,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultRuleExprLang() {
@@ -415,6 +449,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultRuleExprLang(String newDefaultRuleExprLang) {
@@ -431,6 +466,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultFormatExpressionLanguage() {
@@ -440,6 +476,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultFormatExpressionLanguage(String newDefaultFormatExpressionLanguage) {
@@ -456,6 +493,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultOrderingExpressionLanguage() {
@@ -465,6 +503,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultOrderingExpressionLanguage(String newDefaultOrderingExpressionLanguage) {
@@ -481,6 +520,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MessageModel> getModels() {
@@ -494,6 +534,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDomainDictionaryReference getDomainDictionary() {
@@ -503,6 +544,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDomainDictionary(MDMIDomainDictionaryReference newDomainDictionary,
@@ -525,6 +567,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDomainDictionary(MDMIDomainDictionaryReference newDomainDictionary) {
@@ -555,6 +598,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDefaultMDMIExpresionLanguage() {
@@ -564,6 +608,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDefaultMDMIExpresionLanguage(String newDefaultMDMIExpresionLanguage) {
@@ -580,6 +625,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<DataRule> getRules() {
@@ -593,6 +639,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MDMIDatatype> getDatatypes() {
@@ -606,6 +653,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<DatatypeMap> getDatatypeMaps() {
@@ -619,6 +667,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public MDMIDatatype getDatatype(String name) {
@@ -641,6 +690,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public void addDatatype(MDMIDatatype datatype) {
@@ -657,6 +707,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -682,6 +733,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -706,6 +758,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -746,6 +799,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -806,6 +860,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -860,6 +915,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -916,6 +972,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

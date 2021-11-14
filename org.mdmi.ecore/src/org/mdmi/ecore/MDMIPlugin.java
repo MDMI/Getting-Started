@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
  * This is the central singleton for the MDMI model plugin.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public final class MDMIPlugin extends EMFPlugin {
@@ -16,6 +17,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final MDMIPlugin INSTANCE = new MDMIPlugin();
@@ -24,6 +26,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static Implementation plugin;
@@ -32,6 +35,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * Create the instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIPlugin() {
@@ -42,6 +46,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -54,6 +59,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * Returns the singleton instance of the Eclipse plugin.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the singleton instance.
 	 * @generated
 	 */
@@ -65,6 +71,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * The actual implementation of the Eclipse <b>Plugin</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static class Implementation extends EclipsePlugin {
@@ -72,6 +79,7 @@ public final class MDMIPlugin extends EMFPlugin {
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		public Implementation() {

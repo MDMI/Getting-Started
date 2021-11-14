@@ -23,16 +23,16 @@ import org.mdmi.SemanticElementRelationship;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMinOccurs <em>Min Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMaxOccurs <em>Max Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isSourceIsInstance <em>Source Is Instance</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isTargetIsInstance <em>Target Is Instance</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRelatedSemanticElement <em>Related Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getContext <em>Context</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMinOccurs <em>Min Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMaxOccurs <em>Max Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isSourceIsInstance <em>Source Is Instance</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isTargetIsInstance <em>Target Is Instance</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRelatedSemanticElement <em>Related Semantic Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +42,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -72,6 +75,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -82,6 +86,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -92,6 +97,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -102,6 +108,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -112,6 +119,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -122,6 +130,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -132,6 +141,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -142,6 +152,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -152,6 +163,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -162,6 +174,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -172,6 +185,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #isSourceIsInstance() <em>Source Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isSourceIsInstance()
 	 * @generated
 	 * @ordered
@@ -182,6 +196,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #isSourceIsInstance() <em>Source Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isSourceIsInstance()
 	 * @generated
 	 * @ordered
@@ -192,6 +207,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #isTargetIsInstance() <em>Target Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isTargetIsInstance()
 	 * @generated
 	 * @ordered
@@ -202,6 +218,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #isTargetIsInstance() <em>Target Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isTargetIsInstance()
 	 * @generated
 	 * @ordered
@@ -212,6 +229,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRelatedSemanticElement() <em>Related Semantic Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRelatedSemanticElement()
 	 * @generated
 	 * @ordered
@@ -221,6 +239,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementRelationshipImpl() {
@@ -230,6 +249,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,6 +260,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -249,6 +270,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -264,6 +286,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -273,6 +296,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -289,6 +313,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRule() {
@@ -298,6 +323,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRule(String newRule) {
@@ -313,6 +339,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRuleExpressionLanguage() {
@@ -322,6 +349,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
@@ -338,6 +366,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getContext() {
@@ -359,6 +388,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetContext() {
@@ -368,6 +398,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setContext(SemanticElement newContext) {
@@ -383,6 +414,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMinOccurs() {
@@ -392,6 +424,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMinOccurs(int newMinOccurs) {
@@ -408,6 +441,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMaxOccurs() {
@@ -417,6 +451,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMaxOccurs(int newMaxOccurs) {
@@ -433,6 +468,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isSourceIsInstance() {
@@ -442,6 +478,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSourceIsInstance(boolean newSourceIsInstance) {
@@ -458,6 +495,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isTargetIsInstance() {
@@ -467,6 +505,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setTargetIsInstance(boolean newTargetIsInstance) {
@@ -483,6 +522,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getRelatedSemanticElement() {
@@ -505,6 +545,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetRelatedSemanticElement() {
@@ -514,6 +555,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRelatedSemanticElement(SemanticElement newRelatedSemanticElement) {
@@ -530,6 +572,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -568,6 +611,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -610,6 +654,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -652,6 +697,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -692,6 +738,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

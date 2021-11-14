@@ -262,7 +262,6 @@ public class RuntimeService {
 	public static void runDatatypeMappings(String srcMap, String srcMdl) throws Exception {
 		Mdmi.INSTANCE().start();
 
-		String retVal = null;
 		String[] a = srcMdl.split("\\.");
 		String srcMapName = a[0];
 		String srcMsgMdl = a[1];
@@ -302,7 +301,7 @@ public class RuntimeService {
 					populateFrom(from);
 					String function = "map" + datatypemap.getMdmiDatatype().getName() + "To" +
 							datatypemap.getMessageDatatype().getName();
-					Object executed = datamapInterpreter.execute(function, from, to, null, null);
+					datamapInterpreter.execute(function, from, to, null, null);
 				}
 
 				if (!StringUtils.isEmpty(datatypemap.getToMDMI())) {
@@ -312,15 +311,7 @@ public class RuntimeService {
 					XDataStruct to = new XDataStruct(new XValue(datatypemap.getMdmiDatatype()));
 					String function = "map" + datatypemap.getMessageDatatype().getName() + "To" +
 							datatypemap.getMdmiDatatype().getName();
-					// if (function.equals("mapPLToInstanceIdentifier")) {
-					// // System.out.println("mapPLToInstanceIdentifier");
-					// from.setValueSafely("PL10.EI1", "one");
-					// from.setValueSafely("PL10.EI2", "two");
-					// from.setValueSafely("PL10.EI3", "three");
-					// // XValue foo = (XValue) from.getValueByName(name);
-					// // foo.getValueByName("EI2");
-					// }
-					Object executed = datamapInterpreter.execute(function, from, to, null, null);
+					datamapInterpreter.execute(function, from, to, null, null);
 					// System.out.println("FROM IS");
 					log(from);
 					// System.out.println("TO IS");
@@ -407,7 +398,7 @@ public class RuntimeService {
 		String[] a = srcMdl.split("\\.");
 		String srcMapName = a[0];
 		String srcMsgMdl = a[1];
-		final List<String> filter = new ArrayList<String>();
+		new ArrayList<String>();
 
 		boolean isAll = false;
 		for (String element : elements) {

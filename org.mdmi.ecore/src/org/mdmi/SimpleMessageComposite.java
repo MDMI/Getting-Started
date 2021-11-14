@@ -15,17 +15,21 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>SimpleMessageComposite represent aggregations of SemanticElements. SimpleMessageComposite are an informative artifact that can be useful when SemanticElement are associated with an object model. Usually the attributes of an object will be equivalent to a SemanticElement and the object itself equivalent to a SimpleMessageComposite.</p>
+ * <p>
+ * SimpleMessageComposite represent aggregations of SemanticElements. SimpleMessageComposite are an informative artifact that can be useful when
+ * SemanticElement are associated with an object model. Usually the attributes of an object will be equivalent to a SemanticElement and the object
+ * itself equivalent to a SimpleMessageComposite.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.SimpleMessageComposite#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.SimpleMessageComposite#getSemanticElements <em>Semantic Elements</em>}</li>
- *   <li>{@link org.mdmi.SimpleMessageComposite#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.SimpleMessageComposite#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.SimpleMessageComposite#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.SimpleMessageComposite#getSemanticElements <em>Semantic Elements</em>}</li>
+ * <li>{@link org.mdmi.SimpleMessageComposite#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.SimpleMessageComposite#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getSimpleMessageComposite()
@@ -38,8 +42,11 @@ public interface SimpleMessageComposite extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "name" property, whose value is the name of the SimpleMessageComposite.</p>
+	 * <p>
+	 * A "name" property, whose value is the name of the SimpleMessageComposite.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getSimpleMessageComposite_Name()
@@ -52,7 +59,9 @@ public interface SimpleMessageComposite extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SimpleMessageComposite#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -68,6 +77,7 @@ public interface SimpleMessageComposite extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Semantic Elements</em>' reference list.
 	 * @see org.mdmi.MDMIPackage#getSimpleMessageComposite_SemanticElements()
 	 * @see org.mdmi.SemanticElement#getComposite
@@ -85,6 +95,7 @@ public interface SimpleMessageComposite extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Element Set</em>' container reference.
 	 * @see #setElementSet(SemanticElementSet)
 	 * @see org.mdmi.MDMIPackage#getSimpleMessageComposite_ElementSet()
@@ -98,7 +109,9 @@ public interface SimpleMessageComposite extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SimpleMessageComposite#getElementSet <em>Element Set</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Element Set</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Element Set</em>' container reference.
 	 * @see #getElementSet()
 	 * @generated
 	 */
@@ -109,8 +122,11 @@ public interface SimpleMessageComposite extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>An optional "description" property of type String that describes SimpleMessageComposite.</p>
+	 * <p>
+	 * An optional "description" property of type String that describes SimpleMessageComposite.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getSimpleMessageComposite_Description()
@@ -123,7 +139,9 @@ public interface SimpleMessageComposite extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SimpleMessageComposite#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */

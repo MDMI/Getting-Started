@@ -17,9 +17,9 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getCode <em>Code</em>}</li>
+ * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,6 +29,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -39,6 +40,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -59,6 +62,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -69,6 +73,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -79,6 +84,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -88,6 +94,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected EnumerationLiteralImpl() {
@@ -97,6 +104,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,6 +115,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -116,6 +125,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -130,6 +140,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -139,6 +150,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -154,6 +166,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getCode() {
@@ -163,6 +176,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setCode(String newCode) {
@@ -177,6 +191,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,6 +210,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,6 +232,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -237,6 +254,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -261,6 +279,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

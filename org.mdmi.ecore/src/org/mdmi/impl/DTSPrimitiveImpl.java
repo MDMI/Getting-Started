@@ -31,6 +31,7 @@ public class DTSPrimitiveImpl extends MDMIDatatypeImpl implements DTSPrimitive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTSPrimitiveImpl() {
@@ -40,6 +41,7 @@ public class DTSPrimitiveImpl extends MDMIDatatypeImpl implements DTSPrimitive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

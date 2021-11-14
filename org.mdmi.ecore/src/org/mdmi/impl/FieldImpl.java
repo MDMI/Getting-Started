@@ -23,11 +23,11 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.FieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.FieldImpl#getMinOccurs <em>Min Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.FieldImpl#getMaxOccurs <em>Max Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.FieldImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.FieldImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.FieldImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.FieldImpl#getMinOccurs <em>Min Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.FieldImpl#getMaxOccurs <em>Max Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.FieldImpl#getDatatype <em>Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.FieldImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,6 +37,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -57,6 +59,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The default value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -67,6 +70,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The cached value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The default value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -87,6 +92,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The cached value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -97,6 +103,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -107,6 +114,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -117,6 +125,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -126,6 +135,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected FieldImpl() {
@@ -135,6 +145,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -145,6 +156,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -154,6 +166,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -167,6 +180,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMinOccurs() {
@@ -176,6 +190,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMinOccurs(int newMinOccurs) {
@@ -190,6 +205,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public int getMaxOccurs() {
@@ -199,6 +215,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMaxOccurs(int newMaxOccurs) {
@@ -213,6 +230,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getDatatype() {
@@ -233,6 +251,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetDatatype() {
@@ -242,6 +261,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDatatype(MDMIDatatype newDatatype) {
@@ -255,6 +275,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -264,6 +285,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -279,6 +301,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,6 +327,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -331,6 +355,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,6 +383,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,6 +410,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

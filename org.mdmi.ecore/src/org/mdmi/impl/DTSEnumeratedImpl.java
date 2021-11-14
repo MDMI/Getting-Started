@@ -22,7 +22,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTSEnumeratedImpl#getLiterals <em>Literals</em>}</li>
+ * <li>{@link org.mdmi.impl.DTSEnumeratedImpl#getLiterals <em>Literals</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +32,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	 * The cached value of the '{@link #getLiterals() <em>Literals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLiterals()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTSEnumeratedImpl() {
@@ -50,6 +52,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,6 +63,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<EnumerationLiteral> getLiterals() {
@@ -73,6 +77,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -87,6 +92,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,6 +107,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -118,6 +125,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,6 +141,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

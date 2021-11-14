@@ -30,12 +30,14 @@ import org.mdmi.util.MDMIValidator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected String packageFilename = "mdmi.ecore";
@@ -43,6 +45,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass messageModelEClass = null;
@@ -50,6 +53,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass messageSyntaxModelEClass = null;
@@ -57,6 +61,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -64,6 +69,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass bagEClass = null;
@@ -71,6 +77,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass choiceEClass = null;
@@ -78,6 +85,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass leafSyntaxTranslatorEClass = null;
@@ -85,6 +93,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass messageGroupEClass = null;
@@ -92,6 +101,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dataRuleEClass = null;
@@ -99,6 +109,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass semanticElementSetEClass = null;
@@ -106,6 +117,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass semanticElementEClass = null;
@@ -113,6 +125,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass simpleMessageCompositeEClass = null;
@@ -120,6 +133,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass messageCompositeEClass = null;
@@ -127,6 +141,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass semanticElementBusinessRuleEClass = null;
@@ -134,6 +149,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass semanticElementRelationshipEClass = null;
@@ -141,6 +157,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mdmiBusinessElementReferenceEClass = null;
@@ -148,6 +165,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mdmiBusinessElementRuleEClass = null;
@@ -155,6 +173,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass conversionRuleEClass = null;
@@ -162,6 +181,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mdmiDomainDictionaryReferenceEClass = null;
@@ -169,6 +189,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mdmiExpressionEClass = null;
@@ -176,6 +197,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass keywordEClass = null;
@@ -183,6 +205,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass mdmiDatatypeEClass = null;
@@ -190,6 +213,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtsPrimitiveEClass = null;
@@ -197,6 +221,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtcStructuredEClass = null;
@@ -204,6 +229,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass fieldEClass = null;
@@ -211,6 +237,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtExternalEClass = null;
@@ -218,6 +245,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtsDerivedEClass = null;
@@ -225,6 +253,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtcChoiceEClass = null;
@@ -232,6 +261,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass dtsEnumeratedEClass = null;
@@ -239,6 +269,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass enumerationLiteralEClass = null;
@@ -246,6 +277,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EClass datatypeMapEClass = null;
@@ -253,6 +285,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EEnum messageElementTypeEEnum = null;
@@ -260,6 +293,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private EDataType uriEDataType = null;
@@ -268,12 +302,14 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
+	 * <p>
+	 * Note: the correct way to create the package is via the static
 	 * factory method {@link #init init()}, which also performs
 	 * initialization of the package, or returns the registered package,
 	 * if one already exists.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.mdmi.MDMIPackage#eNS_URI
 	 * @see #init()
@@ -286,6 +322,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -346,10 +383,12 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MDMIPackage#eINSTANCE} when that field is accessed.
+	 * <p>
+	 * This method is used to initialize {@link MDMIPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @generated NOT
 	 */
@@ -402,6 +441,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMessageModel() {
@@ -415,6 +455,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageModel_MessageModelName() {
@@ -424,6 +465,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageModel_SyntaxModel() {
@@ -433,6 +475,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageModel_ElementSet() {
@@ -442,6 +485,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageModel_Description() {
@@ -451,6 +495,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageModel_Source() {
@@ -460,6 +505,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageModel_Group() {
@@ -469,6 +515,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMessageSyntaxModel() {
@@ -482,6 +529,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageSyntaxModel_Name() {
@@ -491,6 +539,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageSyntaxModel_Model() {
@@ -500,6 +549,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageSyntaxModel_Root() {
@@ -509,6 +559,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageSyntaxModel_ElementSet() {
@@ -518,6 +569,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageSyntaxModel_Description() {
@@ -527,6 +579,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getNode() {
@@ -539,6 +592,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_Name() {
@@ -548,6 +602,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_Description() {
@@ -557,6 +612,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_MinOccurs() {
@@ -566,6 +622,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_MaxOccurs() {
@@ -575,6 +632,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_Location() {
@@ -584,6 +642,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_LocationExpressionLanguage() {
@@ -593,6 +652,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getNode_SyntaxModel() {
@@ -602,6 +662,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getNode_SemanticElement() {
@@ -611,6 +672,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_FieldName() {
@@ -620,6 +682,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_IsSyntacticField() {
@@ -629,6 +692,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_Path() {
@@ -638,6 +702,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getBag() {
@@ -650,6 +715,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getBag_IsUnique() {
@@ -659,6 +725,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getBag_IsOrdered() {
@@ -668,6 +735,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getBag_Nodes() {
@@ -677,6 +745,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getChoice() {
@@ -690,6 +759,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getChoice_Constraint() {
@@ -699,6 +769,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getChoice_ConstraintExpressionLanguage() {
@@ -708,6 +779,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getChoice_Nodes() {
@@ -717,6 +789,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getLeafSyntaxTranslator() {
@@ -730,6 +803,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getLeafSyntaxTranslator_Format() {
@@ -739,6 +813,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getLeafSyntaxTranslator_FormatExpressionLanguage() {
@@ -748,6 +823,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMessageGroup() {
@@ -761,6 +837,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_Name() {
@@ -770,6 +847,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_DataRules() {
@@ -779,6 +857,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_Description() {
@@ -788,6 +867,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultLocationExprLang() {
@@ -797,6 +877,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultConstraintExprLang() {
@@ -806,6 +887,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultRuleExprLang() {
@@ -815,6 +897,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultFormatExpressionLanguage() {
@@ -824,6 +907,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultOrderingExpressionLanguage() {
@@ -833,6 +917,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_Models() {
@@ -842,6 +927,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_DomainDictionary() {
@@ -851,6 +937,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMessageGroup_DefaultMDMIExpresionLanguage() {
@@ -860,6 +947,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_Rules() {
@@ -869,6 +957,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_Datatypes() {
@@ -878,6 +967,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageGroup_DatatypeMaps() {
@@ -887,6 +977,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDataRule() {
@@ -900,6 +991,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDataRule_Name() {
@@ -909,6 +1001,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDataRule_Description() {
@@ -918,6 +1011,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDataRule_Rule() {
@@ -927,6 +1021,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDataRule_RuleExpressionLanguage() {
@@ -936,6 +1031,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDataRule_Scope() {
@@ -945,6 +1041,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDataRule_Datatype() {
@@ -954,6 +1051,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDataRule_SemanticElement() {
@@ -963,6 +1061,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDataRule_Group() {
@@ -972,6 +1071,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticElementSet() {
@@ -985,6 +1085,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementSet_Name() {
@@ -994,6 +1095,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementSet_Description() {
@@ -1003,6 +1105,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementSet_MessageModelName() {
@@ -1012,6 +1115,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementSet_SyntaxModel() {
@@ -1021,6 +1125,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementSet_Model() {
@@ -1030,6 +1135,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementSet_SemanticElements() {
@@ -1039,6 +1145,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementSet_Composite() {
@@ -1048,6 +1155,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticElement() {
@@ -1061,6 +1169,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_Name() {
@@ -1070,6 +1179,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_Description() {
@@ -1079,6 +1189,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_ElementType() {
@@ -1088,6 +1199,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Datatype() {
@@ -1097,6 +1209,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_PropertyQualifier() {
@@ -1106,6 +1219,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Composite() {
@@ -1115,6 +1229,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_ElementSet() {
@@ -1124,6 +1239,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_BusinessRules() {
@@ -1133,6 +1249,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_DataRules() {
@@ -1142,6 +1259,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Relationships() {
@@ -1151,6 +1269,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_MultipleInstances() {
@@ -1160,6 +1279,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_MapFromMdmi() {
@@ -1169,6 +1289,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_Ordering() {
@@ -1178,6 +1299,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_OrderingLanguage() {
@@ -1187,6 +1309,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_ComputedValue() {
@@ -1196,6 +1319,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_ComputedInValue() {
@@ -1205,6 +1329,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_MapToMdmi() {
@@ -1214,6 +1339,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Parent() {
@@ -1223,6 +1349,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Children() {
@@ -1232,6 +1359,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_SyntaxNode() {
@@ -1241,6 +1369,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_ComputedOutValue() {
@@ -1250,6 +1379,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElement_Keywords() {
@@ -1259,6 +1389,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_EnumValueField() {
@@ -1268,6 +1399,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElement_EnumValueDescrField() {
@@ -1277,6 +1409,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getSimpleMessageComposite() {
@@ -1290,6 +1423,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSimpleMessageComposite_Name() {
@@ -1299,6 +1433,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSimpleMessageComposite_SemanticElements() {
@@ -1308,6 +1443,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSimpleMessageComposite_ElementSet() {
@@ -1317,6 +1453,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSimpleMessageComposite_Description() {
@@ -1326,6 +1463,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMessageComposite() {
@@ -1339,6 +1477,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageComposite_Composites() {
@@ -1348,6 +1487,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMessageComposite_Owner() {
@@ -1357,6 +1497,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticElementBusinessRule() {
@@ -1370,6 +1511,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementBusinessRule_Name() {
@@ -1379,6 +1521,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementBusinessRule_Description() {
@@ -1388,6 +1531,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementBusinessRule_Rule() {
@@ -1397,6 +1541,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementBusinessRule_RuleExpressionLanguage() {
@@ -1406,6 +1551,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementBusinessRule_SemanticElement() {
@@ -1415,6 +1561,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticElementRelationship() {
@@ -1428,6 +1575,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_Name() {
@@ -1437,6 +1585,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_Description() {
@@ -1446,6 +1595,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_Rule() {
@@ -1455,6 +1605,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_RuleExpressionLanguage() {
@@ -1464,6 +1615,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementRelationship_Context() {
@@ -1473,6 +1625,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_MinOccurs() {
@@ -1482,6 +1635,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_MaxOccurs() {
@@ -1491,6 +1645,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_SourceIsInstance() {
@@ -1500,6 +1655,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getSemanticElementRelationship_TargetIsInstance() {
@@ -1509,6 +1665,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getSemanticElementRelationship_RelatedSemanticElement() {
@@ -1518,6 +1675,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMDMIBusinessElementReference() {
@@ -1531,6 +1689,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_Name() {
@@ -1540,6 +1699,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_Description() {
@@ -1549,6 +1709,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_Reference() {
@@ -1558,6 +1719,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_UniqueIdentifier() {
@@ -1567,6 +1729,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIBusinessElementReference_BusinessRules() {
@@ -1576,6 +1739,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIBusinessElementReference_DomainDictionaryReference() {
@@ -1585,6 +1749,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIBusinessElementReference_ReferenceDatatype() {
@@ -1594,6 +1759,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_EnumValueSetField() {
@@ -1603,6 +1769,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_EnumValueField() {
@@ -1612,6 +1779,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_EnumValueDescrField() {
@@ -1621,6 +1789,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_EnumValueSet() {
@@ -1630,6 +1799,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementReference_Readonly() {
@@ -1639,6 +1809,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMDMIBusinessElementRule() {
@@ -1652,6 +1823,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementRule_Name() {
@@ -1661,6 +1833,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementRule_Description() {
@@ -1670,6 +1843,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementRule_Rule() {
@@ -1679,6 +1853,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIBusinessElementRule_RuleExpressionLanguage() {
@@ -1688,6 +1863,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIBusinessElementRule_BusinessElement() {
@@ -1697,6 +1873,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getConversionRule() {
@@ -1710,6 +1887,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getConversionRule_Name() {
@@ -1719,6 +1897,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getConversionRule_Description() {
@@ -1728,6 +1907,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getConversionRule_RuleExpressionLanguage() {
@@ -1737,6 +1917,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getConversionRule_EnumExtResolverUri() {
@@ -1746,6 +1927,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getConversionRule_BusinessElement() {
@@ -1755,6 +1937,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getConversionRule_Rule() {
@@ -1764,6 +1947,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMDMIDomainDictionaryReference() {
@@ -1777,6 +1961,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDomainDictionaryReference_Name() {
@@ -1786,6 +1971,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDomainDictionaryReference_Description() {
@@ -1795,6 +1981,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIDomainDictionaryReference_BusinessElements() {
@@ -1804,6 +1991,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDomainDictionaryReference_Reference() {
@@ -1813,6 +2001,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getMDMIDomainDictionaryReference_Group() {
@@ -1822,6 +2011,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMDMIExpression() {
@@ -1835,6 +2025,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIExpression_Expression() {
@@ -1844,6 +2035,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIExpression_Language() {
@@ -1853,6 +2045,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getKeyword() {
@@ -1866,6 +2059,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyword_Description() {
@@ -1875,6 +2069,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyword_Keyword() {
@@ -1884,6 +2079,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyword_KeywordValue() {
@@ -1893,6 +2089,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getKeyword_Reference() {
@@ -1902,6 +2099,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getKeyword_Owner() {
@@ -1911,6 +2109,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getMDMIDatatype() {
@@ -1924,6 +2123,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_TypeName() {
@@ -1933,6 +2133,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_Description() {
@@ -1942,6 +2143,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_Reference() {
@@ -1951,6 +2153,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_IsReadonly() {
@@ -1960,6 +2163,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_TypeSpec() {
@@ -1969,6 +2173,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getMDMIDatatype_Restriction() {
@@ -1978,6 +2183,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTSPrimitive() {
@@ -1991,6 +2197,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTCStructured() {
@@ -2004,6 +2211,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDTCStructured_Fields() {
@@ -2013,6 +2221,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getField() {
@@ -2026,6 +2235,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getField_Name() {
@@ -2035,6 +2245,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getField_MinOccurs() {
@@ -2044,6 +2255,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getField_MaxOccurs() {
@@ -2053,6 +2265,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getField_Datatype() {
@@ -2062,6 +2275,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getField_Description() {
@@ -2071,6 +2285,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTExternal() {
@@ -2084,6 +2299,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTSDerived() {
@@ -2097,6 +2313,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDTSDerived_BaseType() {
@@ -2106,6 +2323,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTCChoice() {
@@ -2119,6 +2337,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDTCChoice_Fields() {
@@ -2128,6 +2347,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDTSEnumerated() {
@@ -2141,6 +2361,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDTSEnumerated_Literals() {
@@ -2150,6 +2371,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getEnumerationLiteral() {
@@ -2163,6 +2385,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getEnumerationLiteral_Name() {
@@ -2172,6 +2395,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getEnumerationLiteral_Description() {
@@ -2181,6 +2405,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getEnumerationLiteral_Code() {
@@ -2190,6 +2415,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EClass getDatatypeMap() {
@@ -2203,6 +2429,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDatatypeMap_Name() {
@@ -2212,6 +2439,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDatatypeMap_Description() {
@@ -2221,6 +2449,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDatatypeMap_FromMDMI() {
@@ -2230,6 +2459,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EAttribute getDatatypeMap_ToMDMI() {
@@ -2239,6 +2469,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDatatypeMap_MdmiDatatype() {
@@ -2248,6 +2479,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EReference getDatatypeMap_MessageDatatype() {
@@ -2257,6 +2489,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EEnum getMessageElementType() {
@@ -2270,6 +2503,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EDataType getURI() {
@@ -2283,6 +2517,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIFactory getMDMIFactory() {
@@ -2292,6 +2527,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isLoaded = false;
@@ -2300,6 +2536,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * Laods the package and any sub-packages from their serialized form.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void loadPackage() {
@@ -2326,6 +2563,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private boolean isFixed = false;
@@ -2334,6 +2572,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * Fixes up the loaded package, to make it appear as if it had been programmatically built.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void fixPackageContents() {
@@ -2348,6 +2587,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * Sets the instance class on the given classifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Runtime
 Bundle-SymbolicName: org.mdmi.core.runtime;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.6.0.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.common,
  org.apache.commons.cli,
@@ -19,9 +19,9 @@ Require-Bundle: org.eclipse.emf.common,
  closure-compiler.ebr;bundle-version="0.0.0";visibility:=reexport,
  com.google.gson,
  org.apache.xml.serializer,
- org.apache.httpcomponents.client5.httpclient5;resolution:=optional,
- org.apache.httpcomponents.core5.httpcore5;resolution:=optional,
- org.apache.httpcomponents.core5.httpcore5-h2;resolution:=optional
+ org.apache.httpcomponents.client5.httpclient5,
+ org.apache.httpcomponents.core5.httpcore5,
+ org.apache.httpcomponents.core5.httpcore5-h2
 Export-Package: org.mdmi.core,
  org.mdmi.core.engine,
  org.mdmi.core.engine.converter,

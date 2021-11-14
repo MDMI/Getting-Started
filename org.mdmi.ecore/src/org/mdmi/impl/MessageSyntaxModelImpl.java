@@ -27,11 +27,11 @@ import org.mdmi.SemanticElementSet;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getModel <em>Model</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getRoot <em>Root</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getModel <em>Model</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getRoot <em>Root</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageSyntaxModelImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +41,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The cached value of the '{@link #getRoot() <em>Root</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRoot()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The cached value of the '{@link #getElementSet() <em>Element Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementSet()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -91,6 +96,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -100,6 +106,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MessageSyntaxModelImpl() {
@@ -109,6 +116,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,6 +127,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -128,6 +137,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -142,6 +152,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageModel getModel() {
@@ -154,6 +165,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetModel(MessageModel newModel, NotificationChain msgs) {
@@ -164,6 +176,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setModel(MessageModel newModel) {
@@ -194,6 +207,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Node getRoot() {
@@ -203,6 +217,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetRoot(Node newRoot, NotificationChain msgs) {
@@ -223,6 +238,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRoot(Node newRoot) {
@@ -248,6 +264,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet getElementSet() {
@@ -269,6 +286,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet basicGetElementSet() {
@@ -278,6 +296,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
@@ -298,6 +317,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementSet(SemanticElementSet newElementSet) {
@@ -326,6 +346,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -335,6 +356,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -351,6 +373,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -380,6 +403,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -398,6 +422,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -413,6 +438,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,6 +464,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -465,6 +492,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -492,6 +520,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,6 +547,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -31,11 +31,11 @@ import org.mdmi.MessageGroup;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getBusinessElements <em>Business Elements</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getBusinessElements <em>Business Elements</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDomainDictionaryReferenceImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +45,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,6 +67,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -85,6 +89,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The cached value of the '{@link #getBusinessElements() <em>Business Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBusinessElements()
 	 * @generated
 	 * @ordered
@@ -95,6 +100,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -105,6 +111,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -114,6 +121,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIDomainDictionaryReferenceImpl() {
@@ -123,6 +131,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,6 +142,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -142,6 +152,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -157,6 +168,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -166,6 +178,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -182,6 +195,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MDMIBusinessElementReference> getBusinessElements() {
@@ -197,6 +211,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getReference() {
@@ -206,6 +221,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReference(String newReference) {
@@ -222,6 +238,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup getGroup() {
@@ -234,6 +251,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(MessageGroup newGroup, NotificationChain msgs) {
@@ -245,6 +263,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setGroup(MessageGroup newGroup) {
@@ -275,6 +294,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public void addBusinessElement(MDMIBusinessElementReference businessElementReference) {
@@ -310,6 +330,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -331,6 +352,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -347,6 +369,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -362,6 +385,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -384,6 +408,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -413,6 +438,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -440,6 +466,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -468,6 +495,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

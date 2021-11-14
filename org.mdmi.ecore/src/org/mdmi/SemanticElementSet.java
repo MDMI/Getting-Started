@@ -15,20 +15,23 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>The SemanticElement Set contains all of the smallest semantic elements contained in a message format. The syntax of a particular message format has been removed.</p>
+ * <p>
+ * The SemanticElement Set contains all of the smallest semantic elements contained in a message format. The syntax of a particular message format has
+ * been removed.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.SemanticElementSet#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getMessageModelName <em>Message Model Name</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getSyntaxModel <em>Syntax Model</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getModel <em>Model</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getSemanticElements <em>Semantic Elements</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementSet#getComposite <em>Composite</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getMessageModelName <em>Message Model Name</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getSyntaxModel <em>Syntax Model</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getModel <em>Model</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getSemanticElements <em>Semantic Elements</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementSet#getComposite <em>Composite</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getSemanticElementSet()
@@ -42,8 +45,11 @@ public interface SemanticElementSet extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "name" property whose value is the name of the SemanticElementSet.</p>
+	 * <p>
+	 * A "name" property whose value is the name of the SemanticElementSet.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_Name()
@@ -56,7 +62,9 @@ public interface SemanticElementSet extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementSet#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -67,8 +75,11 @@ public interface SemanticElementSet extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The optional "description" property of type String provides a description of the SemanticElement Set.</p>
+	 * <p>
+	 * The optional "description" property of type String provides a description of the SemanticElement Set.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_Description()
@@ -81,7 +92,9 @@ public interface SemanticElementSet extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementSet#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -92,8 +105,12 @@ public interface SemanticElementSet extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "MessageModelName" property, whose value is constrained to be the same as the name property in the MessageModel that contains the SemanticElementSet. This derived property is included for implementation convenience.</p>
+	 * <p>
+	 * A "MessageModelName" property, whose value is constrained to be the same as the name property in the MessageModel that contains the
+	 * SemanticElementSet. This derived property is included for implementation convenience.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Message Model Name</em>' attribute.
 	 * @see #setMessageModelName(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_MessageModelName()
@@ -106,7 +123,9 @@ public interface SemanticElementSet extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementSet#getMessageModelName <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Model Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Message Model Name</em>' attribute.
 	 * @see #getMessageModelName()
 	 * @generated
 	 */
@@ -121,6 +140,7 @@ public interface SemanticElementSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Syntax Model</em>' reference.
 	 * @see #setSyntaxModel(MessageSyntaxModel)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_SyntaxModel()
@@ -134,7 +154,9 @@ public interface SemanticElementSet extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementSet#getSyntaxModel <em>Syntax Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Syntax Model</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Syntax Model</em>' reference.
 	 * @see #getSyntaxModel()
 	 * @generated
 	 */
@@ -149,6 +171,7 @@ public interface SemanticElementSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Model</em>' container reference.
 	 * @see #setModel(MessageModel)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_Model()
@@ -162,7 +185,9 @@ public interface SemanticElementSet extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementSet#getModel <em>Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Model</em>' container reference.
 	 * @see #getModel()
 	 * @generated
 	 */
@@ -178,6 +203,7 @@ public interface SemanticElementSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Semantic Elements</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_SemanticElements()
 	 * @see org.mdmi.SemanticElement#getElementSet
@@ -196,6 +222,7 @@ public interface SemanticElementSet extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Composite</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getSemanticElementSet_Composite()
 	 * @see org.mdmi.SimpleMessageComposite#getElementSet

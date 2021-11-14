@@ -28,7 +28,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTCStructuredImpl#getFields <em>Fields</em>}</li>
+ * <li>{@link org.mdmi.impl.DTCStructuredImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +48,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTCStructuredImpl() {
@@ -66,6 +68,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,6 +79,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -89,6 +93,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -114,6 +119,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,6 +134,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,6 +149,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -159,6 +167,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -174,6 +183,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

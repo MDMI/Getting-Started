@@ -34,13 +34,13 @@ import org.mdmi.SimpleMessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getMessageModelName <em>Message Model Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getSyntaxModel <em>Syntax Model</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getModel <em>Model</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getSemanticElements <em>Semantic Elements</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementSetImpl#getComposite <em>Composite</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getMessageModelName <em>Message Model Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getSyntaxModel <em>Syntax Model</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getModel <em>Model</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getSemanticElements <em>Semantic Elements</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementSetImpl#getComposite <em>Composite</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +50,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The default value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getSyntaxModel() <em>Syntax Model</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSyntaxModel()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getSemanticElements() <em>Semantic Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSemanticElements()
 	 * @generated
 	 * @ordered
@@ -130,6 +138,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * The cached value of the '{@link #getComposite() <em>Composite</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComposite()
 	 * @generated
 	 * @ordered
@@ -139,6 +148,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementSetImpl() {
@@ -148,6 +158,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,6 +169,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -167,6 +179,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -181,6 +194,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -190,6 +204,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -206,6 +221,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getMessageModelName() {
@@ -215,6 +231,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMessageModelName(String newMessageModelName) {
@@ -231,6 +248,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageSyntaxModel getSyntaxModel() {
@@ -252,6 +270,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageSyntaxModel basicGetSyntaxModel() {
@@ -261,6 +280,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxModel(MessageSyntaxModel newSyntaxModel, NotificationChain msgs) {
@@ -281,6 +301,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
@@ -309,6 +330,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageModel getModel() {
@@ -321,6 +343,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetModel(MessageModel newModel, NotificationChain msgs) {
@@ -331,6 +354,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setModel(MessageModel newModel) {
@@ -361,6 +385,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SemanticElement> getSemanticElements() {
@@ -375,6 +400,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SimpleMessageComposite> getComposite() {
@@ -389,6 +415,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -418,6 +445,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -438,6 +466,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -453,6 +482,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -482,6 +512,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -518,6 +549,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -551,6 +583,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -583,6 +616,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

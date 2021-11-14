@@ -273,7 +273,6 @@ public class DefaultSemanticParser implements ISemanticParser {
 				Object o = XDT.convertFromString(xdt, value, format, pdt);
 				xe.getXValue().addValue(o);
 			} else if (dt.isExternal()) {
-				DTExternal dte = (DTExternal) dt;
 				DTSPrimitive pdt = MDMIPackageImpl.STRING;
 				if (xdt == null) {
 					xdt = XDT.fromPDT(pdt);
@@ -319,7 +318,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 					if (me != null && me.getDatatype() != null) {
 						XElementValue xe = new XElementValue(me, valueSet);
 						XDataStruct xs = new XDataStruct(xe.getXValue(), true);
-						MDMIDatatype dt = me.getDatatype();
+						me.getDatatype();
 						JSONObject semanticElement = (JSONObject) initialValues.get(semanticElementName);
 						Consumer<String> action2 = new Consumer<String>() {
 							@Override
@@ -1099,7 +1098,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 	private void setComputedValue(SemanticElement se, ElementValueSet elementValueSet, Properties properties) {
 
 		String rule = se.getComputedValue().getExpression();
-		String lang = se.getComputedValue().getLanguage();
+		se.getComputedValue().getLanguage();
 		HashMap<IElementValue, ArrayList<IElementValue>> valuesByParent = new HashMap<IElementValue, ArrayList<IElementValue>>();
 		HashMap<SemanticElement, String> rulesBySemanticElement = new HashMap<SemanticElement, String>();
 
@@ -1353,8 +1352,8 @@ public class DefaultSemanticParser implements ISemanticParser {
 	}
 
 	private void setComputedOutValue(SemanticElement se, Properties properties, IElementValue parent) {
-		String rule = se.getComputedOutValue().getExpression();
-		String lang = se.getComputedOutValue().getLanguage();
+		se.getComputedOutValue().getExpression();
+		se.getComputedOutValue().getLanguage();
 		XElementValue xe = new XElementValue(se, valueSet);
 		if (parent != null) {
 			xe.setParent(parent);
@@ -1421,8 +1420,8 @@ public class DefaultSemanticParser implements ISemanticParser {
 	}
 
 	private void setComputedInValue(SemanticElement se, Properties properties) {
-		String rule = se.getComputedInValue().getExpression();
-		String lang = se.getComputedInValue().getLanguage();
+		se.getComputedInValue().getExpression();
+		se.getComputedInValue().getLanguage();
 		SemanticElement normalContainer = getNormalContainer(se);
 
 		// If my normal container exists

@@ -35,12 +35,12 @@ import org.mdmi.SemanticElementSet;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getMessageModelName <em>Message Model Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getSyntaxModel <em>Syntax Model</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getMessageModelName <em>Message Model Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getSyntaxModel <em>Syntax Model</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +50,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getSyntaxModel() <em>Syntax Model</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSyntaxModel()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getElementSet() <em>Element Set</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementSet()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -129,6 +137,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MessageModelImpl() {
@@ -138,6 +147,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,6 +158,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getMessageModelName() {
@@ -157,6 +168,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setMessageModelName(String newMessageModelName) {
@@ -173,6 +185,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageSyntaxModel getSyntaxModel() {
@@ -182,6 +195,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxModel(MessageSyntaxModel newSyntaxModel, NotificationChain msgs) {
@@ -202,6 +216,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
@@ -229,6 +244,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet getElementSet() {
@@ -238,6 +254,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
@@ -258,6 +275,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementSet(SemanticElementSet newElementSet) {
@@ -285,6 +303,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -294,6 +313,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -309,6 +329,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getSource() {
@@ -318,6 +339,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSource(String newSource) {
@@ -332,6 +354,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup getGroup() {
@@ -344,6 +367,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(MessageGroup newGroup, NotificationChain msgs) {
@@ -354,6 +378,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setGroup(MessageGroup newGroup) {
@@ -383,6 +408,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,6 +438,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,6 +457,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -445,6 +473,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -469,6 +498,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -499,6 +529,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -529,6 +560,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -559,6 +591,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

@@ -25,7 +25,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTSDerivedImpl#getBaseType <em>Base Type</em>}</li>
+ * <li>{@link org.mdmi.impl.DTSDerivedImpl#getBaseType <em>Base Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,6 +35,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	 * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBaseType()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTSDerivedImpl() {
@@ -53,6 +55,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,6 +66,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getBaseType() {
@@ -83,6 +87,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetBaseType() {
@@ -92,6 +97,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setBaseType(MDMIDatatype newBaseType) {
@@ -107,6 +113,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,6 +131,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,6 +147,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,6 +163,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

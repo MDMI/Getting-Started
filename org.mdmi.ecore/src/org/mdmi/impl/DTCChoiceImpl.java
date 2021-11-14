@@ -22,7 +22,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTCChoiceImpl#getFields <em>Fields</em>}</li>
+ * <li>{@link org.mdmi.impl.DTCChoiceImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +52,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTCChoiceImpl() {
@@ -70,6 +72,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -80,6 +83,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,6 +97,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -110,6 +115,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,6 +130,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -138,6 +145,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -155,6 +163,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,6 +179,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

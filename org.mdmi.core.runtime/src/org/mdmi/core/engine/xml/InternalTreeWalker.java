@@ -94,14 +94,15 @@ public class InternalTreeWalker {
 		m_contentHandler = contentHandler;
 		if (m_contentHandler instanceof SerializationHandler) {
 			m_Serializer = (SerializationHandler) m_contentHandler;
-		} else
+		} else {
 			m_Serializer = null;
+		}
 
 		// Set the system ID, if it is given
 		m_contentHandler.setDocumentLocator(m_locator);
-		if (systemId != null)
+		if (systemId != null) {
 			m_locator.setSystemId(systemId);
-		else {
+		} else {
 			try {
 				// Bug see Bugzilla 26741
 				m_locator.setSystemId(System.getProperty("user.dir") + File.separator + "dummy.xsl");
@@ -110,8 +111,9 @@ public class InternalTreeWalker {
 		}
 
 		// Set the document locator
-		if (m_contentHandler != null)
+		if (m_contentHandler != null) {
 			m_contentHandler.setDocumentLocator(m_locator);
+		}
 		try {
 			// Bug see Bugzilla 26741
 			m_locator.setSystemId(System.getProperty("user.dir") + File.separator + "dummy.xsl");
@@ -148,8 +150,9 @@ public class InternalTreeWalker {
 			while (null == nextNode) {
 				endNode(pos);
 
-				if (top.equals(pos))
+				if (top.equals(pos)) {
 					break;
+				}
 
 				nextNode = pos.getNextSibling();
 
@@ -157,8 +160,9 @@ public class InternalTreeWalker {
 					pos = pos.getParentNode();
 
 					if ((null == pos) || (top.equals(pos))) {
-						if (null != pos)
+						if (null != pos) {
 							endNode(pos);
+						}
 
 						nextNode = null;
 
@@ -199,8 +203,9 @@ public class InternalTreeWalker {
 			while (null == nextNode) {
 				endNode(pos);
 
-				if ((null != top) && top.equals(pos))
+				if ((null != top) && top.equals(pos)) {
 					break;
+				}
 
 				nextNode = pos.getNextSibling();
 
@@ -293,8 +298,9 @@ public class InternalTreeWalker {
 				String uri = elem_node.getNamespaceURI();
 				if (uri != null) {
 					String prefix = elem_node.getPrefix();
-					if (prefix == null)
+					if (prefix == null) {
 						prefix = "";
+					}
 					this.m_contentHandler.startPrefixMapping(prefix, uri);
 				}
 			}
@@ -315,23 +321,26 @@ public class InternalTreeWalker {
 						// Use "" instead of null, as Xerces likes "" for the
 						// name of the default namespace. Fix attributed
 						// to "Steven Murray" <smurray@ebt.com>.
-						if (colon < 0)
+						if (colon < 0) {
 							prefix = "";
-						else
+						} else {
 							prefix = attrName.substring(colon + 1);
+						}
 
 						this.m_contentHandler.startPrefixMapping(prefix, attr.getNodeValue());
 					} else if (colon > 0) {
 						prefix = attrName.substring(0, colon);
 						String uri = attr.getNamespaceURI();
-						if (uri != null)
+						if (uri != null) {
 							this.m_contentHandler.startPrefixMapping(prefix, uri);
+						}
 					}
 				}
 
 				String ns = m_dh.getNamespaceOfNode(node);
-				if (null == ns)
+				if (null == ns) {
 					ns = "";
+				}
 				this.m_contentHandler.startElement(
 					ns, m_dh.getLocalNameOfNode(node), node.getNodeName(), new AttList(atts, m_dh));
 				break;
@@ -412,8 +421,9 @@ public class InternalTreeWalker {
 
 			case Node.ELEMENT_NODE:
 				String ns = m_dh.getNamespaceOfNode(node);
-				if (null == ns)
+				if (null == ns) {
 					ns = "";
+				}
 				this.m_contentHandler.endElement(ns, m_dh.getLocalNameOfNode(node), node.getNodeName());
 
 				if (m_Serializer == null) {
@@ -436,10 +446,11 @@ public class InternalTreeWalker {
 							// Use "" instead of null, as Xerces likes "" for the
 							// name of the default namespace. Fix attributed
 							// to "Steven Murray" <smurray@ebt.com>.
-							if (colon < 0)
+							if (colon < 0) {
 								prefix = "";
-							else
+							} else {
 								prefix = attrName.substring(colon + 1);
+							}
 
 							this.m_contentHandler.endPrefixMapping(prefix);
 						} else if (colon > 0) {
@@ -451,8 +462,9 @@ public class InternalTreeWalker {
 						String uri = elem_node.getNamespaceURI();
 						if (uri != null) {
 							String prefix = elem_node.getPrefix();
-							if (prefix == null)
+							if (prefix == null) {
 								prefix = "";
+							}
 							this.m_contentHandler.endPrefixMapping(prefix);
 						}
 					}

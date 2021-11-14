@@ -25,11 +25,11 @@ import org.mdmi.SemanticElementBusinessRule;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementBusinessRuleImpl() {
@@ -127,6 +136,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -146,6 +157,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -161,6 +173,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -170,6 +183,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -186,6 +200,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRule() {
@@ -195,6 +210,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRule(String newRule) {
@@ -210,6 +226,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getRuleExpressionLanguage() {
@@ -219,6 +236,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
@@ -235,6 +253,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement getSemanticElement() {
@@ -247,6 +266,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSemanticElement(SemanticElement newSemanticElement, NotificationChain msgs) {
@@ -258,6 +278,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setSemanticElement(SemanticElement newSemanticElement) {
@@ -290,6 +311,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -307,6 +329,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,6 +344,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -336,6 +360,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -358,6 +383,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -385,6 +411,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -412,6 +439,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -442,6 +470,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

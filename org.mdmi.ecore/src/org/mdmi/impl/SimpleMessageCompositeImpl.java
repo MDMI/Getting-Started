@@ -31,10 +31,10 @@ import org.mdmi.SimpleMessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getSemanticElements <em>Semantic Elements</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getSemanticElements <em>Semantic Elements</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +44,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getSemanticElements() <em>Semantic Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSemanticElements()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SimpleMessageCompositeImpl() {
@@ -102,6 +108,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,6 +119,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -121,6 +129,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -136,6 +145,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<SemanticElement> getSemanticElements() {
@@ -150,6 +160,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet getElementSet() {
@@ -162,6 +173,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
@@ -173,6 +185,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setElementSet(SemanticElementSet newElementSet) {
@@ -204,6 +217,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -213,6 +227,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -229,6 +244,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -250,6 +266,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -266,6 +283,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -281,6 +299,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,6 +320,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -327,6 +347,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -351,6 +372,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -375,6 +397,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

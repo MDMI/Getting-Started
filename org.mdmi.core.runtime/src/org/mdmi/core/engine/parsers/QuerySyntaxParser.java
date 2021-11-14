@@ -348,7 +348,7 @@ public class QuerySyntaxParser implements ISyntacticParser {
 		// Mdmi.INSTANCE().executeTransfer(ti);
 		// // System.out.println(StringUtil.getString(tMsg.getData()));
 		// } catch (Exception ex) {
-		// 
+		//
 		// }
 	}
 
@@ -359,11 +359,8 @@ public class QuerySyntaxParser implements ISyntacticParser {
 		String t2 = "https://fhir-open-api-dstu2.smarthealthit.org/Patient?family=Smith&given=Joe";
 		String t3 = "fhir-open-api-dstu2.smarthealthit.org/Patient?identifier=23";
 
-		Query q = parseQueryString(t1);
-		// // System.out.println(q.toString());
-		q = parseQueryString(t2);
-		// // System.out.println(q.toString());
-		q = parseQueryString(t3);
-		// // System.out.println(q.toString());
+		parseQueryString(t1);
+		parseQueryString(t2);
+		parseQueryString(t3);
 	}
 } // FhirQuerySyntaxParser

@@ -27,8 +27,8 @@ import org.mdmi.MessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MessageCompositeImpl#getComposites <em>Composites</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageCompositeImpl#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageCompositeImpl#getComposites <em>Composites</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageCompositeImpl#getOwner <em>Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +38,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 * The cached value of the '{@link #getComposites() <em>Composites</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComposites()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 * The cached value of the '{@link #getOwner() <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOwner()
 	 * @generated
 	 * @ordered
@@ -57,6 +59,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MessageCompositeImpl() {
@@ -66,6 +69,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,6 +80,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MessageComposite> getComposites() {
@@ -90,6 +95,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageComposite getOwner() {
@@ -110,6 +116,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageComposite basicGetOwner() {
@@ -119,6 +126,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(MessageComposite newOwner, NotificationChain msgs) {
@@ -139,6 +147,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setOwner(MessageComposite newOwner) {
@@ -166,6 +175,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -187,6 +197,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,6 +214,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -222,6 +234,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -242,6 +255,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -260,6 +274,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

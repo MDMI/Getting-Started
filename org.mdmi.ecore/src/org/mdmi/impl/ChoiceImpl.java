@@ -32,9 +32,9 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.ChoiceImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.mdmi.impl.ChoiceImpl#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.ChoiceImpl#getNodes <em>Nodes</em>}</li>
+ * <li>{@link org.mdmi.impl.ChoiceImpl#getConstraint <em>Constraint</em>}</li>
+ * <li>{@link org.mdmi.impl.ChoiceImpl#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.ChoiceImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +44,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The default value of the '{@link #getConstraintExpressionLanguage() <em>Constraint Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConstraintExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getConstraintExpressionLanguage() <em>Constraint Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getConstraintExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNodes()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected ChoiceImpl() {
@@ -102,6 +108,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,6 +119,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getConstraint() {
@@ -121,6 +129,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setConstraint(String newConstraint) {
@@ -136,6 +145,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getConstraintExpressionLanguage() {
@@ -145,6 +155,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setConstraintExpressionLanguage(String newConstraintExpressionLanguage) {
@@ -161,6 +172,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Node> getNodes() {
@@ -173,6 +185,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -187,6 +200,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -205,6 +219,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -228,6 +243,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -249,6 +265,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,6 +288,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

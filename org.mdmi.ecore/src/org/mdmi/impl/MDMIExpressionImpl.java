@@ -21,8 +21,8 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIExpressionImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIExpressionImpl#getLanguage <em>Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIExpressionImpl#getExpression <em>Expression</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIExpressionImpl#getLanguage <em>Language</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +32,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIExpressionImpl() {
@@ -80,6 +85,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,6 +96,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getExpression() {
@@ -99,6 +106,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setExpression(String newExpression) {
@@ -114,6 +122,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getLanguage() {
@@ -123,6 +132,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setLanguage(String newLanguage) {
@@ -138,6 +148,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,6 +165,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,6 +184,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,6 +203,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -210,6 +224,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

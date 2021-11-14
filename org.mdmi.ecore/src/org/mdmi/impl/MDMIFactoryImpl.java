@@ -49,6 +49,7 @@ import org.mdmi.SimpleMessageComposite;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
@@ -56,6 +57,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static MDMIFactory init() {
@@ -74,6 +76,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIFactoryImpl() {
@@ -83,6 +86,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,6 +158,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -172,6 +177,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,6 +196,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageModel createMessageModel() {
@@ -200,6 +207,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageSyntaxModel createMessageSyntaxModel() {
@@ -210,6 +218,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Bag createBag() {
@@ -220,6 +229,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Choice createChoice() {
@@ -230,6 +240,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public LeafSyntaxTranslator createLeafSyntaxTranslator() {
@@ -240,6 +251,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageGroup createMessageGroup() {
@@ -250,6 +262,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DataRule createDataRule() {
@@ -260,6 +273,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementSet createSemanticElementSet() {
@@ -270,6 +284,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement createSemanticElement() {
@@ -280,6 +295,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SimpleMessageComposite createSimpleMessageComposite() {
@@ -290,6 +306,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageComposite createMessageComposite() {
@@ -300,6 +317,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementBusinessRule createSemanticElementBusinessRule() {
@@ -310,6 +328,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElementRelationship createSemanticElementRelationship() {
@@ -320,6 +339,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIBusinessElementReference createMDMIBusinessElementReference() {
@@ -330,6 +350,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIBusinessElementRule createMDMIBusinessElementRule() {
@@ -340,6 +361,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ConversionRule createConversionRule() {
@@ -350,6 +372,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDomainDictionaryReference createMDMIDomainDictionaryReference() {
@@ -360,6 +383,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIExpression createMDMIExpression() {
@@ -370,6 +394,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Keyword createKeyword() {
@@ -380,6 +405,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype createMDMIDatatype() {
@@ -390,6 +416,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTSPrimitive createDTSPrimitive() {
@@ -400,6 +427,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTCStructured createDTCStructured() {
@@ -410,6 +438,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Field createField() {
@@ -420,6 +449,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTExternal createDTExternal() {
@@ -430,6 +460,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTSDerived createDTSDerived() {
@@ -440,6 +471,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTCChoice createDTCChoice() {
@@ -450,6 +482,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DTSEnumerated createDTSEnumerated() {
@@ -460,6 +493,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EnumerationLiteral createEnumerationLiteral() {
@@ -470,6 +504,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public DatatypeMap createDatatypeMap() {
@@ -480,6 +515,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MessageElementType createMessageElementTypeFromString(EDataType eDataType, String initialValue) {
@@ -494,6 +530,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertMessageElementTypeToString(EDataType eDataType, Object instanceValue) {
@@ -505,6 +542,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String createURIFromString(EDataType eDataType, String initialValue) {
@@ -514,6 +552,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String convertURIToString(EDataType eDataType, Object instanceValue) {
@@ -523,6 +562,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIPackage getMDMIPackage() {
@@ -532,6 +572,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @deprecated
 	 * @generated
 	 */

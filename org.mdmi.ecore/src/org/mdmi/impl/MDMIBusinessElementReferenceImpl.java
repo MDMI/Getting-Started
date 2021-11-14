@@ -32,18 +32,18 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getUniqueIdentifier <em>Unique Identifier</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getBusinessRules <em>Business Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReferenceDatatype <em>Reference Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueSetField <em>Enum Value Set Field</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueField <em>Enum Value Field</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueSet <em>Enum Value Set</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReadonly <em>Readonly</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getUniqueIdentifier <em>Unique Identifier</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getBusinessRules <em>Business Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReferenceDatatype <em>Reference Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueSetField <em>Enum Value Set Field</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueField <em>Enum Value Field</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getEnumValueSet <em>Enum Value Set</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIBusinessElementReferenceImpl#getReadonly <em>Readonly</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +53,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,6 +75,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -93,6 +97,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -103,6 +108,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -113,6 +119,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getUniqueIdentifier() <em>Unique Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUniqueIdentifier()
 	 * @generated
 	 * @ordered
@@ -123,6 +130,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getUniqueIdentifier() <em>Unique Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getUniqueIdentifier()
 	 * @generated
 	 * @ordered
@@ -133,6 +141,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getBusinessRules() <em>Business Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBusinessRules()
 	 * @generated
 	 * @ordered
@@ -143,6 +152,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getReferenceDatatype() <em>Reference Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReferenceDatatype()
 	 * @generated
 	 * @ordered
@@ -153,6 +163,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getEnumValueSetField() <em>Enum Value Set Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueSetField()
 	 * @generated
 	 * @ordered
@@ -163,6 +174,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getEnumValueSetField() <em>Enum Value Set Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueSetField()
 	 * @generated
 	 * @ordered
@@ -173,6 +185,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -183,6 +196,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -193,6 +207,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -203,6 +218,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -213,6 +229,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getEnumValueSet() <em>Enum Value Set</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueSet()
 	 * @generated
 	 * @ordered
@@ -223,6 +240,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getEnumValueSet() <em>Enum Value Set</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueSet()
 	 * @generated
 	 * @ordered
@@ -233,6 +251,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The default value of the '{@link #getReadonly() <em>Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReadonly()
 	 * @generated
 	 * @ordered
@@ -243,6 +262,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * The cached value of the '{@link #getReadonly() <em>Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReadonly()
 	 * @generated
 	 * @ordered
@@ -252,6 +272,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIBusinessElementReferenceImpl() {
@@ -261,6 +282,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,6 +293,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -280,6 +303,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -295,6 +319,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getDescription() {
@@ -304,6 +329,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -320,6 +346,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getReference() {
@@ -329,6 +356,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReference(String newReference) {
@@ -345,6 +373,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getUniqueIdentifier() {
@@ -354,6 +383,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setUniqueIdentifier(String newUniqueIdentifier) {
@@ -370,6 +400,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<MDMIBusinessElementRule> getBusinessRules() {
@@ -384,6 +415,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDomainDictionaryReference getDomainDictionaryReference() {
@@ -396,6 +428,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDomainDictionaryReference(
@@ -409,6 +442,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setDomainDictionaryReference(MDMIDomainDictionaryReference newDomainDictionaryReference) {
@@ -442,6 +476,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype getReferenceDatatype() {
@@ -451,6 +486,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReferenceDatatype(MDMIDatatype newReferenceDatatype) {
@@ -467,6 +503,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueSetField() {
@@ -476,6 +513,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueSetField(String newEnumValueSetField) {
@@ -492,6 +530,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueField() {
@@ -501,6 +540,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueField(String newEnumValueField) {
@@ -517,6 +557,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueDescrField() {
@@ -526,6 +567,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
@@ -542,6 +584,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public String getEnumValueSet() {
@@ -551,6 +594,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setEnumValueSet(String newEnumValueSet) {
@@ -567,6 +611,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Boolean getReadonly() {
@@ -576,6 +621,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setReadonly(Boolean newReadonly) {
@@ -592,6 +638,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -613,6 +660,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -629,6 +677,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -645,6 +694,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -681,6 +731,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -731,6 +782,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -779,6 +831,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -833,6 +886,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

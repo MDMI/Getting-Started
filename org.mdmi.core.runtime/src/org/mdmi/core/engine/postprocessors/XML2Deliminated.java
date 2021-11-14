@@ -89,11 +89,7 @@ public class XML2Deliminated implements IPostProcessor {
 				if (!rootBag.getNodes().isEmpty()) {
 					root = encodeSpaces(rootBag.getLocation()) + "/" +
 							encodeSpaces(rootBag.getNodes().get(0).getLocation());
-					boolean isFirst = true;
-					boolean isLast = false;
 					Bag bucket = (Bag) rootBag.getNodes().get(0);
-					int i = 0;
-
 					// ;
 					ArrayList<String> columns = new ArrayList<>();
 					for (Node node : bucket.getNodes()) {

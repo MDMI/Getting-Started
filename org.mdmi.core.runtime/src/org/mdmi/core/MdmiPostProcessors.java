@@ -67,7 +67,7 @@ public final class MdmiPostProcessors {
 					logger.info("Executing " + postProcessor.getName());
 					postProcessor.processMessage(transferInfo.targetModel.getModel(), transferInfo.targetMessage);
 				} catch (Exception ex) {
-					
+
 					logger.error(
 						"MdmiPostProcessor {0} throws an unexpected exception while processing source of transfer request",
 						ex);

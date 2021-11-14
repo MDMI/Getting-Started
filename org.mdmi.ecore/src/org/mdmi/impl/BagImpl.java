@@ -34,9 +34,9 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
- *   <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
- *   <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,6 +56,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -66,6 +67,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -76,6 +78,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -86,6 +89,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -96,6 +100,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNodes()
 	 * @generated
 	 * @ordered
@@ -105,6 +110,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected BagImpl() {
@@ -114,6 +120,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,6 +131,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isIsUnique() {
@@ -133,6 +141,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setIsUnique(boolean newIsUnique) {
@@ -146,6 +155,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean isIsOrdered() {
@@ -155,6 +165,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public void setIsOrdered(boolean newIsOrdered) {
@@ -169,6 +180,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public EList<Node> getNodes() {
@@ -181,6 +193,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,6 +208,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,6 +227,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -236,6 +251,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,6 +273,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,6 +292,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
