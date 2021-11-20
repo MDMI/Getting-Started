@@ -128,6 +128,7 @@ public class LogSemantic implements ISemanticProcessor {
 		for (IElementValue semanticElement : parents) {
 			log(semanticElement, 1);
 		}
+		System.out.println("");
 	}
 
 }
