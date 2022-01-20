@@ -934,31 +934,40 @@ public class MdmiUow implements Runnable {
 
 		StringBuffer runtimeComment = new StringBuffer();
 
-		runtimeComment.append("Generated using MDMI " + Mdmi.RUNTIMEVERSION + "  " + Mdmi.RUNTIMEBUILD).append(
-			System.getProperty("line.separator"));
+		/**
+		 * @TODO
+		 *       Temporary update to not add comments to FHIR targets
+		 *
+		 */
+		if (System.getenv("RUNTIMECOMMENT") != null) {
+			runtimeComment.append("Generated using MDMI " + Mdmi.RUNTIMEVERSION + "  " + Mdmi.RUNTIMEBUILD).append(
+				System.getProperty("line.separator"));
 
-		for (MessageModel messageModel : transferInfo.sourceModel.getModel().getGroup().getModels()) {
-			runtimeComment.append("Source Group : " + transferInfo.sourceModel.getModel().getGroup().getName()).append(
-				System.getProperty("line.separator"));
-			;
-			runtimeComment.append("Source Message : " + messageModel.getMessageModelName()).append(
-				System.getProperty("line.separator"));
-			;
-			runtimeComment.append("Source Version : " + messageModel.getDescription()).append(
-				System.getProperty("line.separator"));
-			;
-		}
+			for (MessageModel messageModel : transferInfo.sourceModel.getModel().getGroup().getModels()) {
+				runtimeComment.append(
+					"Source Group : " + transferInfo.sourceModel.getModel().getGroup().getName()).append(
+						System.getProperty("line.separator"));
+				;
+				runtimeComment.append("Source Message : " + messageModel.getMessageModelName()).append(
+					System.getProperty("line.separator"));
+				;
+				runtimeComment.append("Source Version : " + messageModel.getDescription()).append(
+					System.getProperty("line.separator"));
+				;
+			}
 
-		for (MessageModel messageModel : transferInfo.targetModel.getModel().getGroup().getModels()) {
-			runtimeComment.append("Target Group : " + transferInfo.targetModel.getModel().getGroup().getName()).append(
-				System.getProperty("line.separator"));
-			;
-			runtimeComment.append("Target Message : " + messageModel.getMessageModelName()).append(
-				System.getProperty("line.separator"));
-			;
-			runtimeComment.append("Target Version : " + messageModel.getDescription()).append(
-				System.getProperty("line.separator"));
-			;
+			for (MessageModel messageModel : transferInfo.targetModel.getModel().getGroup().getModels()) {
+				runtimeComment.append(
+					"Target Group : " + transferInfo.targetModel.getModel().getGroup().getName()).append(
+						System.getProperty("line.separator"));
+				;
+				runtimeComment.append("Target Message : " + messageModel.getMessageModelName()).append(
+					System.getProperty("line.separator"));
+				;
+				runtimeComment.append("Target Version : " + messageModel.getDescription()).append(
+					System.getProperty("line.separator"));
+				;
+			}
 		}
 
 		trgSynProv.serialize(
