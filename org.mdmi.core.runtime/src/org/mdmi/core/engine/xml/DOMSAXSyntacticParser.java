@@ -223,11 +223,14 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				String[] elements = xPath.split("/");
 				Element current = elemement;
 				for (String element : elements) {
-
-					Element childElement = elemement.getOwnerDocument().createElement(element);
-					current.appendChild(childElement);
-
-					current = childElement;
+					if (element.startsWith("@")) {
+						Attr attribute = elemement.getOwnerDocument().createAttribute(element.substring(1));
+						current.setAttributeNode(attribute);
+					} else {
+						Element childElement = elemement.getOwnerDocument().createElement(element);
+						current.appendChild(childElement);
+						current = childElement;
+					}
 				}
 				return current;
 			} else {
