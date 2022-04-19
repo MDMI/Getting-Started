@@ -113,7 +113,7 @@ public class XElementValue implements IElementValue {
 		m_xvalue = new XValue(this);
 		m_owner = elementValueSet;
 		iterator.add(this);
-		// m_owner.addElementValue(this);
+		elementValueSet.pushElementValue(this);
 	}
 
 	/**
@@ -178,7 +178,6 @@ public class XElementValue implements IElementValue {
 		for (SemanticElement ase : this.getSemanticElement().getChildren()) {
 
 			if (ase.getName().equals(child.getSemanticElement().getName())) {
-				// // System.out.println("ADD CHILD " + child.getName());
 				m_children.add((XElementValue) child);
 				child.setParent(this);
 				return;
@@ -188,7 +187,6 @@ public class XElementValue implements IElementValue {
 		for (SemanticElement ase : this.getSemanticElement().getChildren()) {
 			for (SemanticElement ase2 : ase.getChildren()) {
 				if (ase2.getName().equals(child.getSemanticElement().getName())) {
-					// // System.out.println("ADD CHILD IN CONTAINER " + child.getName());
 					XElementValue targetElementValue = new XElementValue(ase, this.m_owner);
 					m_children.add(targetElementValue);
 					targetElementValue.setParent(this);

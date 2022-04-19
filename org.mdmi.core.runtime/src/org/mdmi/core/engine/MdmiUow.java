@@ -152,45 +152,35 @@ public class MdmiUow implements Runnable {
 
 		try {
 
-			// Bundle bundle = Platform.getBundle("org.mdmi.core.runtime");
-			// if (bundle != null) {
-			// org.osgi.framework.Version version = bundle.getVersion();
-			// if (version != null) {
-			// logger.debug("MDMI version " + version.toString());
-			// }
-			// }
-
 			StopWatch watch = new StopWatch();
 			watch.start();
-			logger.debug("Execute preProcess " + Thread.currentThread().getName());
+			logger.info("Execute preProcess " + Thread.currentThread().getName());
 			preProcess();
 			watch.split();
-			logger.debug("Split preProcess: " + watch.toSplitString());
+			logger.info("Split preProcess: " + watch.toSplitString());
 			// watch.split();
 			// logger.trace("Split Time Elapsed in MILLISECONDS: " + watch.getSplitNanoTime());
-			logger.debug("Execute processInboundSourceMessage " + Thread.currentThread().getName());
+			logger.info("Execute processInboundSourceMessage " + Thread.currentThread().getName());
 			processInboundSourceMessage();
 			watch.split();
-			logger.debug("Split processInboundSourceMessage: " + watch.toSplitString());
-			// watch.split();
-			// logger.trace("Split Time Elapsed in MILLISECONDS: " + watch.getSplitNanoTime());
-			logger.debug("Done processInboundSourceMessage " + Thread.currentThread().getName());
-			logger.debug("Execute processInboundTargetMessage " + Thread.currentThread().getName());
+			logger.info("Split processInboundSourceMessage: " + watch.toSplitString());
+
+			logger.info("Execute processInboundTargetMessage " + Thread.currentThread().getName());
 			processInboundTargetMessage();
 			watch.split();
-			logger.debug("Split processInboundTargetMessage: " + watch.toSplitString());
+			logger.info("Split processInboundTargetMessage: " + watch.toSplitString());
 			// watch.split();
 			// logger.trace("Split Time Elapsed in MILLISECONDS: " + watch.getSplitNanoTime());
-			logger.debug("Done processInboundTargetMessage " + Thread.currentThread().getName());
-			logger.debug("Execute processConversions " + Thread.currentThread().getName());
+			logger.info("Done processInboundTargetMessage " + Thread.currentThread().getName());
+			logger.info("Execute processConversions " + Thread.currentThread().getName());
 
 			processSourceSemanticModel();
 			processConversions();
 			processTargetSemanticModel();
 
 			watch.split();
-			logger.debug("Split processConversions: " + watch.toSplitString());
-			logger.debug("Done processConversions " + Thread.currentThread().getName());
+			logger.info("Split processConversions: " + watch.toSplitString());
+			logger.info("Done processConversions " + Thread.currentThread().getName());
 
 			if (false && logger.isTraceEnabled()) {
 
@@ -231,20 +221,20 @@ public class MdmiUow implements Runnable {
 				}
 
 			}
-			logger.debug("Execute processOutboundTargetMessage " + Thread.currentThread().getName());
+			logger.info("Execute processOutboundTargetMessage " + Thread.currentThread().getName());
 			processOutboundTargetMessage();
 			watch.split();
-			logger.debug("Split processOutboundTargetMessage: " + watch.toSplitString());
+			logger.info("Split processOutboundTargetMessage: " + watch.toSplitString());
 			// watch.split();
 			// logger.trace("Split Time Elapsed in MILLISECONDS: " + watch.getSplitNanoTime());
-			logger.debug("Execute postProcess " + Thread.currentThread().getName());
+			logger.info("Execute postProcess " + Thread.currentThread().getName());
 			postProcess();
-			logger.debug("Done Processing " + Thread.currentThread().getName());
+			logger.info("Done Processing " + Thread.currentThread().getName());
 			watch.split();
-			logger.debug("Split postProcess: " + watch.toSplitString());
+			logger.info("Split postProcess: " + watch.toSplitString());
 			watch.stop();
 
-			logger.debug(Thread.currentThread().getName() + " Process Message in MILLISECONDS: " + watch.getTime());
+			logger.info(Thread.currentThread().getName() + " Process Message in MILLISECONDS: " + watch.getTime());
 
 		} catch (
 
@@ -599,45 +589,118 @@ public class MdmiUow implements Runnable {
 		HashMap<IElementValue, ArrayList<IElementValue>> sourcetotarget = new HashMap<IElementValue, ArrayList<IElementValue>>();
 		HashMap<IElementValue, IElementValue> targettosource = new HashMap<IElementValue, IElementValue>();
 
-		// HashMap<IElementValue, IElementValue> sourcetotarget2 = new HashMap<IElementValue, IElementValue>();
-		// HashMap<IElementValue, IElementValue> targettosource2 = new HashMap<IElementValue, IElementValue>();
-
 		boolean skipContainmentCheck = "SKIPCONTAINMENT".equals(transferInfo.targetModel.getGroup().getDescription());
+
+		EList<SemanticElement> l = transferInfo.targetModel.getModel().getElementSet().getSemanticElements();
+
+		HashMap<String, ArrayList<SemanticElement>> targetSementicElementsByBER = new HashMap<String, ArrayList<SemanticElement>>();
+
+		for (SemanticElement targetSementicElement : l) {
+			if (!targetSementicElement.isMultipleInstances()) {
+				continue;
+			}
+			for (ConversionRule tme : targetSementicElement.getMapFromMdmi()) {
+				if (tme.getBusinessElement() != null) {
+					if (!targetSementicElementsByBER.containsKey(tme.getBusinessElement().getUniqueIdentifier())) {
+						targetSementicElementsByBER.put(
+							tme.getBusinessElement().getUniqueIdentifier(), new ArrayList<SemanticElement>());
+
+					}
+					targetSementicElementsByBER.get(tme.getBusinessElement().getUniqueIdentifier()).add(
+						targetSementicElement);
+				}
+			}
+
+		}
 
 		for (IElementValue sourceElementValue : whattotransfer) {
 
-			logger.trace("SOURCE  ELEMENT " + sourceElementValue.getSemanticElement().getName());
-
 			// Create list of RI for the element
-			ArrayList<MDMIBusinessElementReference> businessReference = new ArrayList<MDMIBusinessElementReference>();
+			// ArrayList<MDMIBusinessElementReference> businessReference = new ArrayList<MDMIBusinessElementReference>();
 
 			for (ConversionRule tme : sourceElementValue.getSemanticElement().getMapToMdmi()) {
-				businessReference.add(tme.getBusinessElement());
-			}
 
-			EList<SemanticElement> l = transferInfo.targetModel.getModel().getElementSet().getSemanticElements();
-			// Create list of target semantic elements based on the source RI
-			for (SemanticElement targetSementicElement : l) {
-				if (!targetSementicElement.isMultipleInstances()) {
+				if (tme.getBusinessElement() == null) {
 					continue;
 				}
-				for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
-					for (MDMIBusinessElementReference sourceRI : businessReference) {
 
-						if (sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null) {
-							logger.trace("sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null");
-							continue;
+				if (!targetSementicElementsByBER.containsKey(tme.getBusinessElement().getUniqueIdentifier())) {
+					continue;
+				}
+				// businessReference.add(tme.getBusinessElement());
+				// }
+
+				// Create list of target semantic elements based on the source RI
+				for (SemanticElement targetSementicElement : targetSementicElementsByBER.get(
+					tme.getBusinessElement().getUniqueIdentifier())) {
+					// if (!targetSementicElement.isMultipleInstances()) {
+					// continue;
+					// }
+					for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
+						// for (MDMIBusinessElementReference sourceRI : businessReference) {
+
+						// if (sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null) {
+						// logger.trace("sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null");
+						// continue;
+						// }
+						// if (sourceRI.getUniqueIdentifier().equals(tmo.getBusinessElement().getUniqueIdentifier())) {
+						logger.trace("CREATE CORRESPONDNG ELEMENT " + targetSementicElement.getName());
+						Stack<SemanticElement> mappedParentStack = new Stack<SemanticElement>();
+						getMappedStack(targetSementicElement, mappedParentStack);
+
+						boolean wholeStackMapped = true;
+
+						if (!skipContainmentCheck) {
+							while (!mappedParentStack.isEmpty()) {
+								SemanticElement mp1 = mappedParentStack.pop();
+								boolean isMP1Mapped = false;
+								for (ConversionRule lll : mp1.getMapFromMdmi()) {
+									if (matches.containsKey(lll.getBusinessElement().getUniqueIdentifier())) {
+										isMP1Mapped = true;
+										break;
+									}
+								}
+								wholeStackMapped = isMP1Mapped;
+								if (!wholeStackMapped) {
+									break;
+								}
+							}
 						}
-						if (sourceRI.getUniqueIdentifier().equals(tmo.getBusinessElement().getUniqueIdentifier())) {
-							logger.trace("FOUND CORRESPONDNG ELEMENT " + targetSementicElement.getName());
-							Stack<SemanticElement> mappedParentStack = new Stack<SemanticElement>();
-							getMappedStack(targetSementicElement, mappedParentStack);
 
-							boolean wholeStackMapped = true;
+						// wholeStackMapped = true;
 
-							if (!skipContainmentCheck) {
-								while (!mappedParentStack.isEmpty()) {
-									SemanticElement mp1 = mappedParentStack.pop();
+						if (wholeStackMapped) {
+							logger.trace("CREATING TARGET ELEMENT " + targetSementicElement.getName());
+							XElementValue targetElementValue = new XElementValue(
+								targetSementicElement, trgSemanticModel);
+
+							try {
+								@SuppressWarnings("deprecation")
+								org.mdmi.core.engine.Conversion.ConversionInfo ci = new org.mdmi.core.engine.Conversion.ConversionInfo(
+									targetSementicElement, tme.getBusinessElement(), tmo.getBusinessElement());
+								impl.convert((XElementValue) sourceElementValue, ci, targetElementValue);
+
+								targettosource.put(targetElementValue, sourceElementValue);
+
+								if (!sourcetotarget.containsKey(sourceElementValue)) {
+									sourcetotarget.put(sourceElementValue, new ArrayList<IElementValue>());
+								}
+								sourcetotarget.get(sourceElementValue).add(targetElementValue);
+
+							} catch (Exception e) {
+								logger.error("ERROR IN CONVERSION", e);
+							}
+						} else {
+							logger.debug(
+								sourceElementValue.getName() +
+										" NOT TRANSFERRED, Semantic containment not established");
+							if (logger.isDebugEnabled()) {
+								Stack<SemanticElement> missingSemanticStack = new Stack<SemanticElement>();
+								getMappedStack(targetSementicElement, missingSemanticStack);
+
+								while (!missingSemanticStack.isEmpty()) {
+									SemanticElement mp1 = missingSemanticStack.pop();
+									logger.debug("Semantic Path " + mp1.getName());
 									boolean isMP1Mapped = false;
 									for (ConversionRule lll : mp1.getMapFromMdmi()) {
 										if (matches.containsKey(lll.getBusinessElement().getUniqueIdentifier())) {
@@ -645,66 +708,16 @@ public class MdmiUow implements Runnable {
 											break;
 										}
 									}
-									wholeStackMapped = isMP1Mapped;
-									if (!wholeStackMapped) {
+									if (!isMP1Mapped) {
+										logger.debug("MISSING ELEMENT " + mp1.getName());
 										break;
 									}
 								}
 							}
 
-							// wholeStackMapped = true;
-
-							if (wholeStackMapped) {
-								logger.trace("CREATING TARGET ELEMENT " + targetSementicElement.getName());
-								XElementValue targetElementValue = new XElementValue(
-									targetSementicElement, trgSemanticModel);
-
-								try {
-									@SuppressWarnings("deprecation")
-									org.mdmi.core.engine.Conversion.ConversionInfo ci = new org.mdmi.core.engine.Conversion.ConversionInfo(
-										targetSementicElement, sourceRI, tmo.getBusinessElement());
-									impl.convert((XElementValue) sourceElementValue, ci, targetElementValue);
-
-									targettosource.put(targetElementValue, sourceElementValue);
-
-									if (!sourcetotarget.containsKey(sourceElementValue)) {
-										sourcetotarget.put(sourceElementValue, new ArrayList<IElementValue>());
-									}
-									sourcetotarget.get(sourceElementValue).add(targetElementValue);
-
-								} catch (Exception e) {
-									logger.error("ERROR IN CONVERSION", e);
-								}
-							} else {
-								logger.debug(
-									sourceElementValue.getName() +
-											" NOT TRANSFERRED, Semantic containment not established");
-								if (logger.isDebugEnabled()) {
-									Stack<SemanticElement> missingSemanticStack = new Stack<SemanticElement>();
-									getMappedStack(targetSementicElement, missingSemanticStack);
-
-									while (!missingSemanticStack.isEmpty()) {
-										SemanticElement mp1 = missingSemanticStack.pop();
-										logger.debug("Semantic Path " + mp1.getName());
-										boolean isMP1Mapped = false;
-										for (ConversionRule lll : mp1.getMapFromMdmi()) {
-											if (matches.containsKey(lll.getBusinessElement().getUniqueIdentifier())) {
-												isMP1Mapped = true;
-												break;
-											}
-										}
-										if (!isMP1Mapped) {
-											logger.debug("MISSING ELEMENT " + mp1.getName());
-											break;
-										}
-									}
-								}
-
-							}
 						}
 
 					}
-
 				}
 
 			}
@@ -736,11 +749,15 @@ public class MdmiUow implements Runnable {
 
 			if (single.getParent() != null) {
 
-				List<IElementValue> values = trgSemanticModel.getElementValuesByName(single.getParent().getName());
-
-				if (values.isEmpty()) {
+				if (!trgSemanticModel.hasElementValuesByName(single.getParent().getName())) {
 					continue;
 				}
+
+				List<IElementValue> values = trgSemanticModel.getElementValuesByName(single.getParent().getName());
+
+				// if (values.isEmpty()) {
+				// continue;
+				// }
 
 				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + single.getParent().getName());
 				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + values);

@@ -33,7 +33,6 @@ import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.DTCChoice;
 import org.mdmi.DTCStructured;
-import org.mdmi.DTExternal;
 import org.mdmi.DTSDerived;
 import org.mdmi.DTSEnumerated;
 import org.mdmi.DTSPrimitive;
@@ -1140,33 +1139,36 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 					}
 				}
-				for (IElementValue iev2 : elementValueSet.getElementValuesByType(
-					relationship.getRelatedSemanticElement())) {
+				if (elementValueSet.hasElementValuesByName(relationship.getRelatedSemanticElement().getName())) {
 
-					logger.trace("Walk the elements " + iev2.getName());
-					IElementValue theParentForRollup = iev2.getParent();
+					for (IElementValue iev2 : elementValueSet.getElementValuesByType(
+						relationship.getRelatedSemanticElement())) {
 
-					logger.trace("theParentForRollup  " + theParentForRollup);
-					/*
-					 * Loop for the IElementValue parent - this allows for roll ups where the content is not at the same level
-					 */
-					while ((theParentForRollup != null) && (theParentForRollup.getSemanticElement() != null) &&
-							!theParentForRollup.getSemanticElement().getName().equals(se.getParent().getName())) {
-						theParentForRollup = theParentForRollup.getParent();
-					}
+						logger.trace("Walk the elements " + iev2.getName());
+						IElementValue theParentForRollup = iev2.getParent();
 
-					if (theParentForRollup != null) {
-						if (!valuesByParent.containsKey(theParentForRollup)) {
-							valuesByParent.put(theParentForRollup, new ArrayList<IElementValue>());
+						logger.trace("theParentForRollup  " + theParentForRollup);
+						/*
+						 * Loop for the IElementValue parent - this allows for roll ups where the content is not at the same level
+						 */
+						while ((theParentForRollup != null) && (theParentForRollup.getSemanticElement() != null) &&
+								!theParentForRollup.getSemanticElement().getName().equals(se.getParent().getName())) {
+							theParentForRollup = theParentForRollup.getParent();
 						}
 
-						valuesByParent.get(theParentForRollup).add(iev2);
-					} else {
+						if (theParentForRollup != null) {
+							if (!valuesByParent.containsKey(theParentForRollup)) {
+								valuesByParent.put(theParentForRollup, new ArrayList<IElementValue>());
+							}
 
-						// check for root owned
-						logger.error("Invalid Semantic Rollup Relationship ");
+							valuesByParent.get(theParentForRollup).add(iev2);
+						} else {
+
+							// check for root owned
+							logger.error("Invalid Semantic Rollup Relationship ");
+						}
+
 					}
-
 				}
 			}
 
@@ -1266,17 +1268,23 @@ public class DefaultSemanticParser implements ISemanticParser {
 		} else {
 
 			if (rule.startsWith("UPDATEVALUE:")) {
-				for (IElementValue value : elementValueSet.getElementValuesByName(se.getName())) {
-					getSemanticInterpreter().update(se.getName() + "_UPDATEVALUE", value);
+				if (elementValueSet.hasElementValuesByName(se.getName())) {
+					for (IElementValue value : elementValueSet.getElementValuesByName(se.getName())) {
+						getSemanticInterpreter().update(se.getName() + "_UPDATEVALUE", value);
+					}
 				}
 			} else {
 				if (se.getParent() != null) {
-					List<IElementValue> elements = elementValueSet.getElementValuesByType(se.getParent());
-					for (IElementValue element : elements) {
-						XElementValue computedInElement = new XElementValue(se, elementValueSet);
-						computedInElement.setParent(element);
-						element.addChild(computedInElement);
-						getSemanticInterpreter().update(se.getName() + "_COMPUTED", computedInElement);
+
+					if (elementValueSet.hasElementValuesByName(se.getParent().getName())) {
+
+						List<IElementValue> elements = elementValueSet.getElementValuesByType(se.getParent());
+						for (IElementValue element : elements) {
+							XElementValue computedInElement = new XElementValue(se, elementValueSet);
+							computedInElement.setParent(element);
+							element.addChild(computedInElement);
+							getSemanticInterpreter().update(se.getName() + "_COMPUTED", computedInElement);
+						}
 					}
 				}
 

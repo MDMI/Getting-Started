@@ -163,7 +163,9 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 		for (SemanticElement computedElementOwner : computedElementsContainers) {
 
-			if (computedElementOwner.getParent() != null) {
+			if (computedElementOwner.getParent() != null &&
+					elementValueSet.hasElementValuesByName(computedElementOwner.getParent().getName())) {
+
 				List<IElementValue> foundElements = elementValueSet.getElementValuesByName(
 					computedElementOwner.getParent().getName());
 

@@ -18,6 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.mdmi.SemanticElement;
 
 /**
@@ -118,6 +119,10 @@ public final class ElementValueSet {
 		return values;
 	}
 
+	public boolean hasElementValuesByName(String semanticElementName) {
+		return m_xelements.containsKey(semanticElementName);
+	}
+
 	/**
 	 * Get all element values of the specified type (for the given semantic element name) from this set.
 	 *
@@ -153,10 +158,28 @@ public final class ElementValueSet {
 	 */
 	public void addElementValue(IElementValue xelement) {
 		theSetOfAll.add(xelement);
+		if (xelement.getSemanticElement() != null && !StringUtils.isEmpty(xelement.getSemanticElement().getName())) {
+			if (!m_xelements.containsKey(xelement.getSemanticElement().getName())) {
+				m_xelements.put(xelement.getSemanticElement().getName(), new LinkedList<IElementValue>());
+			}
+			m_xelements.get(xelement.getSemanticElement().getName()).add(xelement);
+		}
+
+	}
+
+	public void pushElementValue(IElementValue xelement) {
+		if (xelement.getSemanticElement() != null && !StringUtils.isEmpty(xelement.getSemanticElement().getName())) {
+			if (!m_xelements.containsKey(xelement.getSemanticElement().getName())) {
+				m_xelements.put(xelement.getSemanticElement().getName(), new LinkedList<IElementValue>());
+			}
+			m_xelements.get(xelement.getSemanticElement().getName()).add(xelement);
+		}
+
 	}
 
 	public void removeElementValue(IElementValue xelement) {
 		this.theSetOfAll.remove(xelement);
+		m_xelements.get(xelement.getSemanticElement().getName()).remove(xelement);
 	}
 
 	/**

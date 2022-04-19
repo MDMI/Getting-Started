@@ -212,6 +212,31 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 		logger.trace("XPATH IS :" + xPath);
 
+		if (xPath.startsWith("@")) {
+			Attr attribute = elemement.getOwnerDocument().createAttribute(xPath.substring(1));
+			elemement.setAttributeNode(attribute);
+			return attribute;
+		}
+
+		if (!(xPath.contains(".") || xPath.contains("[") || xPath.contains("]"))) {
+			if (xPath.contains("/")) {
+				String[] elements = xPath.split("/");
+				Element current = elemement;
+				for (String element : elements) {
+
+					Element childElement = elemement.getOwnerDocument().createElement(element);
+					current.appendChild(childElement);
+
+					current = childElement;
+				}
+				return current;
+			} else {
+				Element childElement = elemement.getOwnerDocument().createElement(xPath);
+				elemement.appendChild(childElement);
+				return childElement;
+			}
+		}
+
 		logger.trace(elemement.getNodeName() + " creating " + xPath + " container " + container);
 		XPathLexer lexer = new XPathLexer(new ANTLRInputStream(xPath));
 
