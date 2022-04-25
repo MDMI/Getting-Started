@@ -637,6 +637,16 @@ public class MdmiUow implements Runnable {
 					// continue;
 					// }
 					for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
+
+						/*
+						 * Current caching not 100% correct
+						 * need to return getMapFrom using business element
+						 */
+						if (!tme.getBusinessElement().getUniqueIdentifier().equals(
+							tmo.getBusinessElement().getUniqueIdentifier())) {
+							System.out.println("skip");
+							continue;
+						}
 						// for (MDMIBusinessElementReference sourceRI : businessReference) {
 
 						// if (sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null) {
