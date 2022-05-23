@@ -110,6 +110,11 @@ public class MdmiResolver {
 
 	public String getActiveMaps(ArrayList<String> filter) {
 		ArrayList<Map> maps = new ArrayList<Map>();
+
+		maps.add(new Map("Mdmi.RUNTIMEVERSION", Mdmi.RUNTIMEVERSION));
+
+		maps.add(new Map("Mdmi.RUNTIMEBUILD", Mdmi.RUNTIMEBUILD));
+
 		for (String key : Mdmi.INSTANCE().getResolver().getMaps().keySet()) {
 			if (filter == null || (filter != null && filter.contains(key))) {
 				MI mi = Mdmi.INSTANCE().getResolver().getMaps().get(key);

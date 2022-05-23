@@ -578,6 +578,10 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 										p = domNodes.peek();
 									} else {
 										p = domNodes.peek().cloneNode(false);
+										if (!StringUtils.isEmpty(domNodes.peek().getTextContent())) {
+											p.setTextContent(domNodes.peek().getTextContent());
+										}
+
 										for (int childNodeCtr = 0; childNodeCtr < domNodes.peek().getChildNodes().getLength(); childNodeCtr++) {
 											org.w3c.dom.Node achildnode = domNodes.peek().getChildNodes().item(
 												childNodeCtr);

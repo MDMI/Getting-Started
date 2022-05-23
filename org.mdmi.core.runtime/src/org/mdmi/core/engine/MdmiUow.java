@@ -644,7 +644,6 @@ public class MdmiUow implements Runnable {
 						 */
 						if (!tme.getBusinessElement().getUniqueIdentifier().equals(
 							tmo.getBusinessElement().getUniqueIdentifier())) {
-							System.out.println("skip");
 							continue;
 						}
 						// for (MDMIBusinessElementReference sourceRI : businessReference) {
