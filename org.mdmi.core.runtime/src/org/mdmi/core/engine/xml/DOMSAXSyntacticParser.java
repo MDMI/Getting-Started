@@ -89,8 +89,6 @@ import com.google.common.collect.Lists;
 
 public class DOMSAXSyntacticParser implements ISyntacticParser {
 
-	// public static long evalctr = 0;
-
 	private static Logger logger = LoggerFactory.getLogger(DOMSAXSyntacticParser.class);
 
 	private class XPathExtractor extends XPathBaseListener {
