@@ -130,6 +130,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -140,6 +141,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -155,6 +157,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageModel getModel() {
 		if (eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL) {
 			return null;
@@ -179,6 +182,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setModel(MessageModel newModel) {
 		if (newModel != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL && newModel != null)) {
@@ -210,6 +214,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public Node getRoot() {
 		return root;
 	}
@@ -241,6 +246,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRoot(Node newRoot) {
 		if (newRoot != root) {
 			NotificationChain msgs = null;
@@ -267,6 +273,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
 		if (elementSet != null && elementSet.eIsProxy()) {
 			InternalEObject oldElementSet = (InternalEObject) elementSet;
@@ -320,6 +327,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != elementSet) {
 			NotificationChain msgs = null;
@@ -349,6 +357,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -359,6 +368,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -556,7 +566,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

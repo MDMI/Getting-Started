@@ -263,6 +263,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -273,6 +274,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -289,6 +291,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -299,6 +302,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -316,6 +320,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRule() {
 		return rule;
 	}
@@ -326,6 +331,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
@@ -342,6 +348,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRuleExpressionLanguage() {
 		return ruleExpressionLanguage;
 	}
@@ -352,6 +359,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
@@ -369,6 +377,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getContext() {
 		if (context != null && context.eIsProxy()) {
 			InternalEObject oldContext = (InternalEObject) context;
@@ -401,6 +410,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setContext(SemanticElement newContext) {
 		SemanticElement oldContext = context;
 		context = newContext;
@@ -417,6 +427,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMinOccurs() {
 		return minOccurs;
 	}
@@ -427,6 +438,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
@@ -444,6 +456,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurs() {
 		return maxOccurs;
 	}
@@ -454,6 +467,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
@@ -471,6 +485,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isSourceIsInstance() {
 		return sourceIsInstance;
 	}
@@ -481,6 +496,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSourceIsInstance(boolean newSourceIsInstance) {
 		boolean oldSourceIsInstance = sourceIsInstance;
 		sourceIsInstance = newSourceIsInstance;
@@ -498,6 +514,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isTargetIsInstance() {
 		return targetIsInstance;
 	}
@@ -508,6 +525,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setTargetIsInstance(boolean newTargetIsInstance) {
 		boolean oldTargetIsInstance = targetIsInstance;
 		targetIsInstance = newTargetIsInstance;
@@ -525,6 +543,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getRelatedSemanticElement() {
 		if (relatedSemanticElement != null && relatedSemanticElement.eIsProxy()) {
 			InternalEObject oldRelatedSemanticElement = (InternalEObject) relatedSemanticElement;
@@ -558,6 +577,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRelatedSemanticElement(SemanticElement newRelatedSemanticElement) {
 		SemanticElement oldRelatedSemanticElement = relatedSemanticElement;
 		relatedSemanticElement = newRelatedSemanticElement;
@@ -747,7 +767,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

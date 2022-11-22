@@ -159,6 +159,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -169,6 +170,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -183,6 +185,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMinOccurs() {
 		return minOccurs;
 	}
@@ -193,6 +196,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
@@ -208,6 +212,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurs() {
 		return maxOccurs;
 	}
@@ -218,6 +223,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
@@ -233,6 +239,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getDatatype() {
 		if (datatype != null && datatype.eIsProxy()) {
 			InternalEObject oldDatatype = (InternalEObject) datatype;
@@ -264,6 +271,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDatatype(MDMIDatatype newDatatype) {
 		MDMIDatatype oldDatatype = datatype;
 		datatype = newDatatype;
@@ -278,6 +286,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -288,6 +297,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -419,7 +429,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", minOccurs: ");

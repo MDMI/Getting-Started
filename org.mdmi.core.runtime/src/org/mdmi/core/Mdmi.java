@@ -26,10 +26,6 @@ import java.util.Properties;
 import org.mdmi.MDMIBusinessElementReference;
 import org.mdmi.SemanticElement;
 import org.mdmi.core.engine.MdmiEngine;
-import org.mdmi.core.engine.postprocessors.CDAPostProcessor;
-import org.mdmi.core.engine.postprocessors.SQLInsertPostProcessor;
-import org.mdmi.core.engine.postprocessors.XML2Deliminated;
-import org.mdmi.core.engine.preprocessors.Deliminated2XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,7 +99,7 @@ public final class Mdmi {
 
 	public static final String PARAM_MDMI_ROOT_DIR = "mdmi.root.dir";
 
-	static private ThreadLocal<Mdmi> mdmiThreadLocal = new ThreadLocal<Mdmi>() {
+	static private ThreadLocal<Mdmi> mdmiThreadLocal = new ThreadLocal<>() {
 
 		/*
 		 * (non-Javadoc)
@@ -121,7 +117,7 @@ public final class Mdmi {
 		logger.trace("Call  public static final Mdmi INSTANCE() " + Thread.currentThread().getName());
 		return mdmiThreadLocal.get();
 
-	};
+	}
 
 	private File m_rootDir;
 
@@ -151,7 +147,7 @@ public final class Mdmi {
 		return targetSemanticModelProcessors;
 	}
 
-	private HashMap<String, MapInfo> m_mapInfos = new HashMap<String, MapInfo>();
+	private HashMap<String, MapInfo> m_mapInfos = new HashMap<>();
 
 	public HashMap<String, MapInfo> getMaps() {
 		return m_mapInfos;
@@ -194,15 +190,15 @@ public final class Mdmi {
 
 		}
 
-		getPreProcessors().addPreProcessor(new Deliminated2XML("CSV2XML", ","));
+		// getPreProcessors().addPreProcessor(new Deliminated2XML("CSV2XML", ","));
 		// getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		// getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
 
-		getPostProcessors().addPostProcessor(new XML2Deliminated("XML2CSV", ","));
-		getPostProcessors().addPostProcessor(new XML2Deliminated("XML2PIPE", "\\|"));
-		getPostProcessors().addPostProcessor(new CDAPostProcessor());
+		// getPostProcessors().addPostProcessor(new XML2Deliminated("XML2CSV", ","));
+		// getPostProcessors().addPostProcessor(new XML2Deliminated("XML2PIPE", "\\|"));
+		// getPostProcessors().addPostProcessor(new CDAPostProcessor());
 		// getPostProcessors().addPostProcessor(new HL7V2MessagePostProcessor());
-		getPostProcessors().addPostProcessor(new SQLInsertPostProcessor());
+		// getPostProcessors().addPostProcessor(new SQLInsertPostProcessor());
 		// getPostProcessors().addPostProcessor(new FHIRSTU3PostProcessorJson());
 		// getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 

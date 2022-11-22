@@ -150,6 +150,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -160,6 +161,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -176,6 +178,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getKeyword() {
 		return keyword;
 	}
@@ -186,6 +189,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setKeyword(String newKeyword) {
 		String oldKeyword = keyword;
 		keyword = newKeyword;
@@ -200,6 +204,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getKeywordValue() {
 		return keywordValue;
 	}
@@ -210,6 +215,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setKeywordValue(String newKeywordValue) {
 		String oldKeywordValue = keywordValue;
 		keywordValue = newKeywordValue;
@@ -226,6 +232,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -236,6 +243,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
@@ -251,6 +259,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getOwner() {
 		if (eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER) {
 			return null;
@@ -275,6 +284,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setOwner(SemanticElement newOwner) {
 		if (newOwner != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER && newOwner != null)) {
@@ -469,7 +479,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (description: ");
 		result.append(description);
 		result.append(", keyword: ");

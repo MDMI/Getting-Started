@@ -83,9 +83,10 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MessageComposite> getComposites() {
 		if (composites == null) {
-			composites = new EObjectWithInverseResolvingEList<MessageComposite>(
+			composites = new EObjectWithInverseResolvingEList<>(
 				MessageComposite.class, this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES,
 				MDMIPackage.MESSAGE_COMPOSITE__OWNER);
 		}
@@ -98,6 +99,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageComposite getOwner() {
 		if (owner != null && owner.eIsProxy()) {
 			InternalEObject oldOwner = (InternalEObject) owner;
@@ -150,6 +152,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setOwner(MessageComposite newOwner) {
 		if (newOwner != owner) {
 			NotificationChain msgs = null;

@@ -101,6 +101,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getFormat() {
 		return format;
 	}
@@ -111,6 +112,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
@@ -127,6 +129,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getFormatExpressionLanguage() {
 		return formatExpressionLanguage;
 	}
@@ -137,6 +140,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setFormatExpressionLanguage(String newFormatExpressionLanguage) {
 		String oldFormatExpressionLanguage = formatExpressionLanguage;
 		formatExpressionLanguage = newFormatExpressionLanguage;
@@ -236,7 +240,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (format: ");
 		result.append(format);
 		result.append(", formatExpressionLanguage: ");

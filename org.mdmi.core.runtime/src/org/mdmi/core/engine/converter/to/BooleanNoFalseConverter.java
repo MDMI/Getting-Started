@@ -26,7 +26,7 @@ public class BooleanNoFalseConverter implements IConvertToString {
 		if (!(obj instanceof Boolean)) {
 			throw new IllegalArgumentException("Object is not a Boolean type.");
 		}
-		if (((Boolean) obj).booleanValue() == false) {
+		if (!((Boolean) obj).booleanValue()) {
 			throw new IllegalArgumentException("Boolean value of false cannot be converted.");
 		}
 		return m_wrapped.convertToString(obj, format);

@@ -69,6 +69,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getBaseType() {
 		if (baseType != null && baseType.eIsProxy()) {
 			InternalEObject oldBaseType = (InternalEObject) baseType;
@@ -100,6 +101,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setBaseType(MDMIDatatype newBaseType) {
 		MDMIDatatype oldBaseType = baseType;
 		baseType = newBaseType;

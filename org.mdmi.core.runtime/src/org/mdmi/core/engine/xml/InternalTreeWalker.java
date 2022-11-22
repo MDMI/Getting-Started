@@ -306,7 +306,6 @@ public class InternalTreeWalker {
 			}
 				NamedNodeMap atts = elem_node.getAttributes();
 				int nAttrs = atts.getLength();
-				// System.out.println("TreeWalker#startNode: "+node.getNodeName());
 
 				// Make sure the namespace node of
 				// each attribute is declared to the ContentHandler
@@ -316,7 +315,6 @@ public class InternalTreeWalker {
 					final int colon = attrName.indexOf(':');
 					final String prefix;
 
-					// System.out.println("TreeWalker#startNode: attr["+i+"] = "+attrName+", "+attr.getNodeValue());
 					if (attrName.equals("xmlns") || attrName.startsWith("xmlns:")) {
 						// Use "" instead of null, as Xerces likes "" for the
 						// name of the default namespace. Fix attributed

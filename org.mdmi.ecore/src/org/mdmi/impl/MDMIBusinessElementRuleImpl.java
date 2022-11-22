@@ -150,6 +150,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -160,6 +161,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -176,6 +178,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -186,6 +189,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -203,6 +207,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRule() {
 		return rule;
 	}
@@ -213,6 +218,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
@@ -229,6 +235,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRuleExpressionLanguage() {
 		return ruleExpressionLanguage;
 	}
@@ -239,6 +246,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
@@ -256,6 +264,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementReference getBusinessElement() {
 		if (eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE__BUSINESS_ELEMENT) {
 			return null;
@@ -282,6 +291,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setBusinessElement(MDMIBusinessElementReference newBusinessElement) {
 		if (newBusinessElement != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE__BUSINESS_ELEMENT &&
@@ -482,7 +492,7 @@ public class MDMIBusinessElementRuleImpl extends EObjectImpl implements MDMIBusi
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

@@ -89,7 +89,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	@Override
 	public EList<Field> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<Field>(Field.class, this, MDMIPackage.DTC_CHOICE__FIELDS);
+			fields = new EObjectContainmentEList<>(Field.class, this, MDMIPackage.DTC_CHOICE__FIELDS);
 		}
 		return fields;
 	}

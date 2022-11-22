@@ -20,31 +20,23 @@ import org.mdmi.core.engine.preprocessors.IPreProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Collection of pre processors registered with this runtime. Will be loaded from the config file at the start, and may
- * be updated later.
- */
 public final class MdmiPreProcessors {
+
+	/**
+	 * @return the m_preProcessors
+	 */
+	public ArrayList<IPreProcessor> getPreProcessors() {
+		return preProcessors;
+	}
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiPreProcessors.class);
 
-	private final ArrayList<IPreProcessor> m_preProcessors = new ArrayList<IPreProcessor>();
+	private final ArrayList<IPreProcessor> preProcessors = new ArrayList<>();
 
 	public void addPreProcessor(IPreProcessor preProcessor) {
 		if (preProcessor != null) {
-			boolean add = true;
-			// fail safe to make sure pre process is onyl added once
-			for (IPreProcessor registered : m_preProcessors) {
-				if (registered.getName().equals(preProcessor.getName())) {
-					add = false;
-				}
-
-			}
-
-			if (add) {
-				logger.trace("Adding post process " + preProcessor.getName());
-				m_preProcessors.add(preProcessor);
-			}
+			logger.trace("Adding post process " + preProcessor.getName());
+			preProcessors.add(preProcessor);
 		}
 
 	}
@@ -64,8 +56,8 @@ public final class MdmiPreProcessors {
 		if (transferInfo == null) {
 			throw new IllegalArgumentException("transferInfo is null");
 		}
-		for (int i = 0; i < m_preProcessors.size(); i++) {
-			IPreProcessor preprocessor = m_preProcessors.get(i);
+		for (int i = 0; i < preProcessors.size(); i++) {
+			IPreProcessor preprocessor = preProcessors.get(i);
 			if (preprocessor.canProcess(transferInfo.sourceModel.getModel())) {
 				try {
 					preprocessor.processMessage(transferInfo.sourceModel.getModel(), transferInfo.sourceMessage);

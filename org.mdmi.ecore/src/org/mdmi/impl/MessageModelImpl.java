@@ -161,6 +161,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getMessageModelName() {
 		return messageModelName;
 	}
@@ -171,6 +172,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMessageModelName(String newMessageModelName) {
 		String oldMessageModelName = messageModelName;
 		messageModelName = newMessageModelName;
@@ -188,6 +190,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel getSyntaxModel() {
 		return syntaxModel;
 	}
@@ -219,6 +222,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
 		if (newSyntaxModel != syntaxModel) {
 			NotificationChain msgs = null;
@@ -247,6 +251,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
 		return elementSet;
 	}
@@ -278,6 +283,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != elementSet) {
 			NotificationChain msgs = null;
@@ -306,6 +312,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -316,6 +323,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -332,6 +340,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getSource() {
 		return source;
 	}
@@ -342,6 +351,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSource(String newSource) {
 		String oldSource = source;
 		source = newSource;
@@ -357,6 +367,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getGroup() {
 		if (eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP) {
 			return null;
@@ -381,6 +392,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setGroup(MessageGroup newGroup) {
 		if (newGroup != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP && newGroup != null)) {
@@ -600,7 +612,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (messageModelName: ");
 		result.append(messageModelName);
 		result.append(", description: ");
@@ -622,7 +634,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 		// // public HashMap<String, MdmiBusinessElementReference> getBusinessElementHashMap() {
 		Collection<SemanticElement> ses = this.elementSet.getSemanticElements();
 
-		HashMap<String, MDMIBusinessElementReference> bers = new HashMap<String, MDMIBusinessElementReference>();
+		HashMap<String, MDMIBusinessElementReference> bers = new HashMap<>();
 		for (Iterator<SemanticElement> it = ses.iterator(); it.hasNext();) {
 			SemanticElement se = it.next();
 			Collection<ConversionRule> toMdmi = se.getMapToMdmi();

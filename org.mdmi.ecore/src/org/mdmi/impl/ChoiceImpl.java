@@ -122,6 +122,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getConstraint() {
 		return constraint;
 	}
@@ -132,6 +133,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setConstraint(String newConstraint) {
 		String oldConstraint = constraint;
 		constraint = newConstraint;
@@ -148,6 +150,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getConstraintExpressionLanguage() {
 		return constraintExpressionLanguage;
 	}
@@ -158,6 +161,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setConstraintExpressionLanguage(String newConstraintExpressionLanguage) {
 		String oldConstraintExpressionLanguage = constraintExpressionLanguage;
 		constraintExpressionLanguage = newConstraintExpressionLanguage;
@@ -175,9 +179,10 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.CHOICE__NODES);
+			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.CHOICE__NODES);
 		}
 		return nodes;
 	}
@@ -297,7 +302,7 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (constraint: ");
 		result.append(constraint);
 		result.append(", constraintExpressionLanguage: ");
@@ -368,12 +373,12 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 */
 	Map<String, ArrayList<Node>> nodeHash = Collections.synchronizedMap(new HashMap<String, ArrayList<Node>>());
 
-	ArrayList<Node> empty = new ArrayList<Node>();
+	ArrayList<Node> empty = new ArrayList<>();
 
 	@Override
 	public ArrayList<Node> getNodesByLocation(String nodeName) {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
+			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
 		}
 		if (nodeHash.isEmpty()) {
 			for (Node node : nodes) {

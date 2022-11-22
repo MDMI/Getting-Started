@@ -44,7 +44,7 @@ public final class YBag extends YNode {
 	public YBag(Bag bag, YNode parent) {
 		super(bag, parent);
 		m_bag = bag;
-		m_nodes = new LinkedList<YNode>();
+		m_nodes = new LinkedList<>();
 	}
 
 	/**
@@ -90,7 +90,7 @@ public final class YBag extends YNode {
 	 */
 	@Override
 	public List<YNode> getYNodesForNode(Node node) {
-		LinkedList<YNode> ynodes = new LinkedList<YNode>();
+		LinkedList<YNode> ynodes = new LinkedList<>();
 		for (int i = 0; i < m_nodes.size(); i++) {
 			YNode ynode = m_nodes.get(i);
 			if (ynode.getNode() == node) {
@@ -166,7 +166,7 @@ public final class YBag extends YNode {
 
 		}
 
-	};
+	}
 
 	private static CompareYNodes compareYNodes = new CompareYNodes();
 
@@ -204,8 +204,6 @@ public final class YBag extends YNode {
 	public void addYNode(YNode ynode) {
 
 		Node node = this.getNode(ynode.getNode());
-
-		// // System.out.println(this.toString());
 
 		if (node != null) {
 

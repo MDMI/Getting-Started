@@ -133,11 +133,11 @@ class ConversionImpl {
 
 		public String mber;
 
-		public XValue xvalue;;
+		public XValue xvalue;
 
 	}
 
-	ArrayList<SEERvalues> theSeerValues = new ArrayList<SEERvalues>();
+	ArrayList<SEERvalues> theSeerValues = new ArrayList<>();
 
 	boolean convert(XElementValue sourceSemanticElement, ConversionInfo ci, XElementValue targetSemanticElement)
 			throws Exception {
@@ -169,7 +169,7 @@ class ConversionImpl {
 		return toSE != null && toSE.getRule() != null && 0 < toSE.getRule().length();
 	}
 
-	private static Map<String, DatamapInterpreter> datamapInterpreters = new HashMap<String, DatamapInterpreter>();
+	private static Map<String, DatamapInterpreter> datamapInterpreters = new HashMap<>();
 
 	public synchronized void initializeDI(MessageGroup source, MessageGroup target, Properties sp, Properties tp) {
 		String key = source.getName() + "_" + source.getModels().get(0).getMessageModelName() + "__DATATYPEMAPS___" +
@@ -399,7 +399,7 @@ class ConversionImpl {
 		if (n == null) {
 			return "null";
 		}
-		Stack<String> path = new Stack<String>();
+		Stack<String> path = new Stack<>();
 
 		if (n != null) {
 			path.push(n.getLocation());

@@ -17,7 +17,7 @@ import org.mdmi.Node;
 
 public class GenerateJSON {
 
-	public static HashMap<String, String> locations = new HashMap<String, String>();
+	public static HashMap<String, String> locations = new HashMap<>();
 
 	public static class WalkTheModel extends MDMISwitch<Object> {
 
@@ -91,18 +91,12 @@ public class GenerateJSON {
 
 			wtm.doSwitch(rootBag);
 
-			// for (Node node : rootBag.getNodes()) {
-			// if (node.getSemanticElement() != null) {
-			// System.out.println(node.getSemanticElement().getName() + node.getLocation());
-			// }
-			// }
-
 		}
 
 		System.out.println(" { ");
 		boolean isFirst = true;
 
-		ArrayList<String> ss = new ArrayList<String>();
+		ArrayList<String> ss = new ArrayList<>();
 
 		ss.addAll(locations.keySet());
 

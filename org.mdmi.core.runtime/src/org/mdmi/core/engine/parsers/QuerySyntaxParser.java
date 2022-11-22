@@ -231,7 +231,7 @@ public class QuerySyntaxParser implements ISyntacticParser {
 
 		public String queryStem;
 
-		public final ArrayList<Param> params = new ArrayList<Param>();
+		public final ArrayList<Param> params = new ArrayList<>();
 
 		public Query() {
 		}
@@ -301,55 +301,6 @@ public class QuerySyntaxParser implements ISyntacticParser {
 
 	public static void main(String[] args) {
 		basicTests();
-		transformTest();
-	}
-
-	private static void transformTest() {
-		// org.apache.log4j.PropertyConfigurator.configure("conf/log4j.properties");
-		// File rootDir = new File("C:/Work/MdmiRoot/mdmicore/org.mdmi.core");
-		// Mdmi.INSTANCE().initialize(rootDir);
-		// Mdmi.INSTANCE().start();
-		// try {
-		// Mdmi.MapInfo meSrc = new Mdmi.MapInfo("SOURCE", "C:/Work/MdmiRoot/test/maps/FHIR.xmi");
-		// // meSrc.synSvcJarName = "C:/Work/MdmiRoot/mdmiplugins/org.mdmi.plugins/target/org.mdmi.plugins-1.1.0-SNAPSHOT.jar";
-		// // meSrc.synSvcClassName = "org.openhealthtools.mdht.mdmiplugins.parsers.QuerySyntaxParser";
-		// Collection<MessageGroup> sourceMessageGroups = Mdmi.INSTANCE().getResolver().resolveOne(meSrc);
-		// MessageGroup srcMG = null;
-		// for (Iterator iterator = sourceMessageGroups.iterator(); iterator.hasNext();) {
-		// MessageGroup messageGroup = (MessageGroup) iterator.next();
-		// if (messageGroup.getName().equals("FHIR")) {
-		// srcMG = messageGroup;
-		// break;
-		// }
-		// }
-		//
-		// Mdmi.MapInfo meTrg = new Mdmi.MapInfo("TARGET", "C:/Work/MdmiRoot/test/maps/EHMP.xmi");
-		// // meSrc.synSvcJarName = "C:/Work/MdmiRoot/mdmiplugins/org.mdmi.plugins/target/org.mdmi.plugins-1.1.0-SNAPSHOT.jar";
-		// // meSrc.synSvcClassName = "org.openhealthtools.mdht.mdmiplugins.parsers.QuerySyntaxParser";
-		// Collection<MessageGroup> targetMessageGroups = Mdmi.INSTANCE().getResolver().resolveOne(meTrg);
-		// for (Iterator iterator = targetMessageGroups.iterator(); iterator.hasNext();) {
-		// MessageGroup messageGroup = (MessageGroup) iterator.next();
-		// if (messageGroup.getName().equals("EHMP")) {
-		// break;
-		// }
-		// }
-		//
-		// MdmiModelRef sMod = new MdmiModelRef("FHIR.PatientSearch");
-		// MdmiMessage sMsg = new MdmiMessage("fhir-open-api-dstu2.smarthealthit.org/Patient?family=Smith&given=Joe");
-		// MdmiModelRef tMod = new MdmiModelRef("EHMP.PatientSearch");
-		// MdmiMessage tMsg = new MdmiMessage();
-		//
-		// ArrayList<MDMIBusinessElementReference> elements = new ArrayList<MDMIBusinessElementReference>();
-		// Collection<MDMIBusinessElementReference> bers = srcMG.getDomainDictionary().getBusinessElements();
-		// elements.addAll(bers);
-		//
-		// MdmiTransferInfo ti = new MdmiTransferInfo(sMod, sMsg, tMod, tMsg, elements);
-		// ti.useDictionary = true;
-		// Mdmi.INSTANCE().executeTransfer(ti);
-		// // System.out.println(StringUtil.getString(tMsg.getData()));
-		// } catch (Exception ex) {
-		//
-		// }
 	}
 
 	private static void basicTests() {

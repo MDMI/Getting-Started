@@ -176,6 +176,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -186,6 +187,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -200,6 +202,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -210,6 +213,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -226,6 +230,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRuleExpressionLanguage() {
 		return ruleExpressionLanguage;
 	}
@@ -236,6 +241,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
@@ -253,6 +259,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumExtResolverUri() {
 		return enumExtResolverUri;
 	}
@@ -263,6 +270,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumExtResolverUri(String newEnumExtResolverUri) {
 		String oldEnumExtResolverUri = enumExtResolverUri;
 		enumExtResolverUri = newEnumExtResolverUri;
@@ -280,6 +288,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementReference getBusinessElement() {
 		return businessElement;
 	}
@@ -290,6 +299,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setBusinessElement(MDMIBusinessElementReference newBusinessElement) {
 		MDMIBusinessElementReference oldBusinessElement = businessElement;
 		businessElement = newBusinessElement;
@@ -307,6 +317,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRule() {
 		return rule;
 	}
@@ -317,6 +328,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
@@ -459,7 +471,7 @@ public class ConversionRuleImpl extends EObjectImpl implements ConversionRule {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

@@ -324,6 +324,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -334,6 +335,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -348,9 +350,10 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<DataRule> getDataRules() {
 		if (dataRules == null) {
-			dataRules = new EObjectContainmentWithInverseEList<DataRule>(
+			dataRules = new EObjectContainmentWithInverseEList<>(
 				DataRule.class, this, MDMIPackage.MESSAGE_GROUP__DATA_RULES, MDMIPackage.DATA_RULE__SCOPE);
 		}
 		return dataRules;
@@ -362,6 +365,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -372,6 +376,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -388,6 +393,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultLocationExprLang() {
 		return defaultLocationExprLang;
 	}
@@ -398,6 +404,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultLocationExprLang(String newDefaultLocationExprLang) {
 		String oldDefaultLocationExprLang = defaultLocationExprLang;
 		defaultLocationExprLang = newDefaultLocationExprLang;
@@ -415,6 +422,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultConstraintExprLang() {
 		return defaultConstraintExprLang;
 	}
@@ -425,6 +433,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultConstraintExprLang(String newDefaultConstraintExprLang) {
 		String oldDefaultConstraintExprLang = defaultConstraintExprLang;
 		defaultConstraintExprLang = newDefaultConstraintExprLang;
@@ -442,6 +451,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultRuleExprLang() {
 		return defaultRuleExprLang;
 	}
@@ -452,6 +462,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultRuleExprLang(String newDefaultRuleExprLang) {
 		String oldDefaultRuleExprLang = defaultRuleExprLang;
 		defaultRuleExprLang = newDefaultRuleExprLang;
@@ -469,6 +480,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultFormatExpressionLanguage() {
 		return defaultFormatExpressionLanguage;
 	}
@@ -479,6 +491,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultFormatExpressionLanguage(String newDefaultFormatExpressionLanguage) {
 		String oldDefaultFormatExpressionLanguage = defaultFormatExpressionLanguage;
 		defaultFormatExpressionLanguage = newDefaultFormatExpressionLanguage;
@@ -496,6 +509,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultOrderingExpressionLanguage() {
 		return defaultOrderingExpressionLanguage;
 	}
@@ -506,6 +520,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultOrderingExpressionLanguage(String newDefaultOrderingExpressionLanguage) {
 		String oldDefaultOrderingExpressionLanguage = defaultOrderingExpressionLanguage;
 		defaultOrderingExpressionLanguage = newDefaultOrderingExpressionLanguage;
@@ -523,9 +538,10 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MessageModel> getModels() {
 		if (models == null) {
-			models = new EObjectContainmentWithInverseEList<MessageModel>(
+			models = new EObjectContainmentWithInverseEList<>(
 				MessageModel.class, this, MDMIPackage.MESSAGE_GROUP__MODELS, MDMIPackage.MESSAGE_MODEL__GROUP);
 		}
 		return models;
@@ -537,6 +553,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDomainDictionaryReference getDomainDictionary() {
 		return domainDictionary;
 	}
@@ -570,6 +587,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDomainDictionary(MDMIDomainDictionaryReference newDomainDictionary) {
 		if (newDomainDictionary != domainDictionary) {
 			NotificationChain msgs = null;
@@ -601,6 +619,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDefaultMDMIExpresionLanguage() {
 		return defaultMDMIExpresionLanguage;
 	}
@@ -611,6 +630,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDefaultMDMIExpresionLanguage(String newDefaultMDMIExpresionLanguage) {
 		String oldDefaultMDMIExpresionLanguage = defaultMDMIExpresionLanguage;
 		defaultMDMIExpresionLanguage = newDefaultMDMIExpresionLanguage;
@@ -628,9 +648,10 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<DataRule> getRules() {
 		if (rules == null) {
-			rules = new EObjectWithInverseResolvingEList<DataRule>(
+			rules = new EObjectWithInverseResolvingEList<>(
 				DataRule.class, this, MDMIPackage.MESSAGE_GROUP__RULES, MDMIPackage.DATA_RULE__GROUP);
 		}
 		return rules;
@@ -642,10 +663,10 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIDatatype> getDatatypes() {
 		if (datatypes == null) {
-			datatypes = new EObjectContainmentEList<MDMIDatatype>(
-				MDMIDatatype.class, this, MDMIPackage.MESSAGE_GROUP__DATATYPES);
+			datatypes = new EObjectContainmentEList<>(MDMIDatatype.class, this, MDMIPackage.MESSAGE_GROUP__DATATYPES);
 		}
 		return datatypes;
 	}
@@ -656,9 +677,10 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<DatatypeMap> getDatatypeMaps() {
 		if (datatypeMaps == null) {
-			datatypeMaps = new EObjectContainmentEList<DatatypeMap>(
+			datatypeMaps = new EObjectContainmentEList<>(
 				DatatypeMap.class, this, MDMIPackage.MESSAGE_GROUP__DATATYPE_MAPS);
 		}
 		return datatypeMaps;
@@ -981,7 +1003,7 @@ public class MessageGroupImpl extends EObjectImpl implements MessageGroup {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

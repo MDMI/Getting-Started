@@ -42,7 +42,7 @@ public class JsAdapter implements IExpressionInterpreter {
 
 	// final static engine = factory.getEngineByName("JavaScript");
 
-	ThreadLocal<ScriptEngine> engine = new ThreadLocal<ScriptEngine>();
+	ThreadLocal<ScriptEngine> engine = new ThreadLocal<>();
 
 	final static String PACKAGES = " importPackage(Packages.org.mdmi.core);" + System.getProperty("line.separator") +
 			"importPackage(Packages.org.mdmi.core.engine);" + System.getProperty("line.separator") +
@@ -85,12 +85,8 @@ public class JsAdapter implements IExpressionInterpreter {
 
 	@Override
 	public void evalAction(IElementValue context, String rule, Properties properties) {
-		ArrayList<Exception> lex = new ArrayList<Exception>();
-		// // System.out.println("evalAction aaa" + rule);
+		ArrayList<Exception> lex = new ArrayList<>();
 		eval(context, rule, lex, properties);
-		// if (0 < lex.size()) {
-		// throw new MdmiException(lex.get(0), "evalAction({0}, {1}) fails!", context.toString(), rule);
-		// }
 	}
 
 	@Override
@@ -99,8 +95,8 @@ public class JsAdapter implements IExpressionInterpreter {
 	}
 
 	private List<String> compile(SemanticElement se, String rule) {
-		ArrayList<String> ler = new ArrayList<String>();
-		ArrayList<Exception> lex = new ArrayList<Exception>();
+		ArrayList<String> ler = new ArrayList<>();
+		ArrayList<Exception> lex = new ArrayList<>();
 		IElementValue context = new XElementValue(
 			se, m_eset == null
 					? new ElementValueSet()

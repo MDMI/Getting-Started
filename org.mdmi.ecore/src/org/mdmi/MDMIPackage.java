@@ -5393,6 +5393,11 @@ public interface MDMIPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.lang.String <em>URI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * <p>
+	 * URI - see ISO standard [TODO: number]
+	 * </p>
+	 * <!-- end-model-doc -->
 	 *
 	 * @return the meta object for data type '<em>URI</em>'.
 	 * @see java.lang.String

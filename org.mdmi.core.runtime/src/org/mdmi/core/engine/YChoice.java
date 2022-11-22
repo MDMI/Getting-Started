@@ -42,7 +42,7 @@ public final class YChoice extends YNode {
 	public YChoice(Choice choice, YNode parent) {
 		super(choice, parent);
 		m_choice = choice;
-		m_nodes = new ArrayList<YNode>();
+		m_nodes = new ArrayList<>();
 	}
 
 	/**
@@ -198,7 +198,7 @@ public final class YChoice extends YNode {
 	 */
 	@Override
 	public ArrayList<YNode> getYNodesForNode(Node newNode) {
-		ArrayList<YNode> ynodes = new ArrayList<YNode>();
+		ArrayList<YNode> ynodes = new ArrayList<>();
 		for (int i = 0; i < m_nodes.size(); i++) {
 			YNode ynode = m_nodes.get(i);
 			if (ynode.getNode() == newNode) {

@@ -296,6 +296,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -306,6 +307,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -322,6 +324,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -332,6 +335,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -349,6 +353,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -359,6 +364,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
@@ -376,6 +382,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getUniqueIdentifier() {
 		return uniqueIdentifier;
 	}
@@ -386,6 +393,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setUniqueIdentifier(String newUniqueIdentifier) {
 		String oldUniqueIdentifier = uniqueIdentifier;
 		uniqueIdentifier = newUniqueIdentifier;
@@ -403,9 +411,10 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIBusinessElementRule> getBusinessRules() {
 		if (businessRules == null) {
-			businessRules = new EObjectContainmentWithInverseEList<MDMIBusinessElementRule>(
+			businessRules = new EObjectContainmentWithInverseEList<>(
 				MDMIBusinessElementRule.class, this, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES,
 				MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE__BUSINESS_ELEMENT);
 		}
@@ -418,6 +427,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDomainDictionaryReference getDomainDictionaryReference() {
 		if (eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE) {
 			return null;
@@ -445,6 +455,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDomainDictionaryReference(MDMIDomainDictionaryReference newDomainDictionaryReference) {
 		if (newDomainDictionaryReference != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE &&
@@ -479,6 +490,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getReferenceDatatype() {
 		return referenceDatatype;
 	}
@@ -489,6 +501,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReferenceDatatype(MDMIDatatype newReferenceDatatype) {
 		MDMIDatatype oldReferenceDatatype = referenceDatatype;
 		referenceDatatype = newReferenceDatatype;
@@ -506,6 +519,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueSetField() {
 		return enumValueSetField;
 	}
@@ -516,6 +530,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueSetField(String newEnumValueSetField) {
 		String oldEnumValueSetField = enumValueSetField;
 		enumValueSetField = newEnumValueSetField;
@@ -533,6 +548,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueField() {
 		return enumValueField;
 	}
@@ -543,6 +559,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueField(String newEnumValueField) {
 		String oldEnumValueField = enumValueField;
 		enumValueField = newEnumValueField;
@@ -560,6 +577,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueDescrField() {
 		return enumValueDescrField;
 	}
@@ -570,6 +588,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
 		String oldEnumValueDescrField = enumValueDescrField;
 		enumValueDescrField = newEnumValueDescrField;
@@ -587,6 +606,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueSet() {
 		return enumValueSet;
 	}
@@ -597,6 +617,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueSet(String newEnumValueSet) {
 		String oldEnumValueSet = enumValueSet;
 		enumValueSet = newEnumValueSet;
@@ -614,6 +635,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public Boolean getReadonly() {
 		return readonly;
 	}
@@ -624,6 +646,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReadonly(Boolean newReadonly) {
 		Boolean oldReadonly = readonly;
 		readonly = newReadonly;
@@ -895,7 +918,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

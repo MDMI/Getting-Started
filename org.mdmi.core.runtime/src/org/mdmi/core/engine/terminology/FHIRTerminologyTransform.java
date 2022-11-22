@@ -73,7 +73,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	public static boolean processTerminology = false;
 
-	private static String userName = "";;
+	private static String userName = "";
 
 	public static String createKey(String source, String code, String target) {
 		return source + "_X_" + code + "_Y_" + target + "_Z_";

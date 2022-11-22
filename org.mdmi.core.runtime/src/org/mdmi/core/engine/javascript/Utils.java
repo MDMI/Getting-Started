@@ -58,7 +58,7 @@ public class Utils {
 		public int getValue() {
 			return value;
 		}
-	};
+	}
 
 	public static class RuntimeDateFormat {
 
@@ -220,7 +220,7 @@ public class Utils {
 			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
 			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
-	public static HashMap<String, RuntimeDateFormat[]> FORMATS = new HashMap<String, RuntimeDateFormat[]>();
+	public static HashMap<String, RuntimeDateFormat[]> FORMATS = new HashMap<>();
 
 	/*
 	 * Ignore case when matching formats
@@ -370,61 +370,61 @@ public class Utils {
 	 */
 	public static void StringToAddress(String sourceAddress, Object object) {
 
-		XDataStruct xds = (XDataStruct) object;
-
-		if (!StringUtils.isEmpty(sourceAddress)) {
-
-			Map<net.sourceforge.jgeocoder.AddressComponent, String> addressComponents = net.sourceforge.jgeocoder.us.AddressParser.parseAddress(
-				sourceAddress);
-
-			if (addressComponents != null) {
-
-				StringBuffer streetAddresLine = new StringBuffer();
-
-				String number = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.NUMBER);
-
-				if (!StringUtils.isEmpty(number)) {
-					streetAddresLine.append(number).append(" ");
-				}
-
-				String street1 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET);
-
-				if (!StringUtils.isEmpty(street1)) {
-					streetAddresLine.append(street1);
-				}
-
-				if (streetAddresLine.length() > 0) {
-					xds.getXValue("streetAddressLine").addValue(streetAddresLine.toString());
-				}
-				String street2 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET2);
-
-				if (!StringUtils.isEmpty(street2)) {
-					xds.getXValue("streetAddressLine").addValue(street2);
-				}
-
-				String city = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.CITY);
-
-				if (!StringUtils.isEmpty(city)) {
-					xds.getXValue("city").setValue(city);
-				}
-
-				String state = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STATE);
-
-				if (!StringUtils.isEmpty(state)) {
-					xds.getXValue("state").setValue(state);
-				}
-
-				String zip = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.ZIP);
-
-				if (!StringUtils.isEmpty(zip)) {
-					xds.getXValue("postalCode").setValue(zip);
-				}
-			} else {
-				// issue parsing just set the street address line
-				xds.getXValue("streetAddressLine").addValue(sourceAddress);
-
-			}
-		}
+		// XDataStruct xds = (XDataStruct) object;
+		//
+		// if (!StringUtils.isEmpty(sourceAddress)) {
+		//
+		// Map<net.sourceforge.jgeocoder.AddressComponent, String> addressComponents = net.sourceforge.jgeocoder.us.AddressParser.parseAddress(
+		// sourceAddress);
+		//
+		// if (addressComponents != null) {
+		//
+		// StringBuffer streetAddresLine = new StringBuffer();
+		//
+		// String number = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.NUMBER);
+		//
+		// if (!StringUtils.isEmpty(number)) {
+		// streetAddresLine.append(number).append(" ");
+		// }
+		//
+		// String street1 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET);
+		//
+		// if (!StringUtils.isEmpty(street1)) {
+		// streetAddresLine.append(street1);
+		// }
+		//
+		// if (streetAddresLine.length() > 0) {
+		// xds.getXValue("streetAddressLine").addValue(streetAddresLine.toString());
+		// }
+		// String street2 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET2);
+		//
+		// if (!StringUtils.isEmpty(street2)) {
+		// xds.getXValue("streetAddressLine").addValue(street2);
+		// }
+		//
+		// String city = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.CITY);
+		//
+		// if (!StringUtils.isEmpty(city)) {
+		// xds.getXValue("city").setValue(city);
+		// }
+		//
+		// String state = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STATE);
+		//
+		// if (!StringUtils.isEmpty(state)) {
+		// xds.getXValue("state").setValue(state);
+		// }
+		//
+		// String zip = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.ZIP);
+		//
+		// if (!StringUtils.isEmpty(zip)) {
+		// xds.getXValue("postalCode").setValue(zip);
+		// }
+		// } else {
+		// // issue parsing just set the street address line
+		// xds.getXValue("streetAddressLine").addValue(sourceAddress);
+		//
+		// }
+		// }
 
 	}
 
@@ -458,7 +458,7 @@ public class Utils {
 		}
 	}
 
-	static Map<String, Properties> mapOfTransforms = new HashMap<String, Properties>();
+	static Map<String, Properties> mapOfTransforms = new HashMap<>();
 
 	public static void loadMap(String targetSystem) {
 		if (!mapOfTransforms.containsKey(targetSystem)) {

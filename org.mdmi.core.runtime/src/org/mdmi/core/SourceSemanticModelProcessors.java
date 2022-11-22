@@ -28,7 +28,7 @@ public final class SourceSemanticModelProcessors {
 
 	private static Logger logger = LoggerFactory.getLogger(SourceSemanticModelProcessors.class);
 
-	private final ArrayList<ISemanticProcessor> sourceSemanticProcessors = new ArrayList<ISemanticProcessor>();
+	private final ArrayList<ISemanticProcessor> sourceSemanticProcessors = new ArrayList<>();
 
 	public void addSourceSemanticProcessor(ISemanticProcessor sourceSemanticProcessor) {
 		if (sourceSemanticProcessor != null) {
@@ -58,7 +58,7 @@ public final class SourceSemanticModelProcessors {
 
 		for (ISemanticProcessor sourceSemanticProcessor : sourceSemanticProcessors) {
 			logger.trace("Checking " + sourceSemanticProcessor.getName());
-			if (sourceSemanticProcessor.canProcess(transferInfo.targetModel.getModel())) {
+			if (sourceSemanticProcessor.canProcess(transferInfo.sourceModel.getModel())) {
 				try {
 					logger.info("Executing " + sourceSemanticProcessor.getName());
 					sourceSemanticProcessor.processSemanticModel(sourceSemanticModel);

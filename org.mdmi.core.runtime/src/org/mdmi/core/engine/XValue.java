@@ -39,7 +39,7 @@ public final class XValue implements IValue {
 
 	private MDMIDatatype m_datatype;
 
-	private LinkedList<Object> m_values = new LinkedList<Object>();
+	private LinkedList<Object> m_values = new LinkedList<>();
 
 	/**
 	 * Construct one as the main value of an element value,
@@ -197,7 +197,7 @@ public final class XValue implements IValue {
 	private XValue(XValue src, boolean deep) {
 		m_name = src.m_name;
 		m_datatype = src.m_datatype;
-		m_values = new LinkedList<Object>();
+		m_values = new LinkedList<>();
 
 		if (src.m_values.size() <= 0) {
 			return;
@@ -503,7 +503,7 @@ public final class XValue implements IValue {
 	 * THIS IS ONLY FOR STRING ELEMENTS
 	 */
 
-	private ArrayList<String> m_temp = new ArrayList<String>(10);
+	private ArrayList<String> m_temp = new ArrayList<>(10);
 
 	public void appendValue(int order, Object value) {
 

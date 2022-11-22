@@ -145,6 +145,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -155,6 +156,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -171,6 +173,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -181,6 +184,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -198,9 +202,10 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIBusinessElementReference> getBusinessElements() {
 		if (businessElements == null) {
-			businessElements = new EObjectContainmentWithInverseEList<MDMIBusinessElementReference>(
+			businessElements = new EObjectContainmentWithInverseEList<>(
 				MDMIBusinessElementReference.class, this,
 				MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS,
 				MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE);
@@ -214,6 +219,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -224,6 +230,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
@@ -241,6 +248,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getGroup() {
 		if (eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP) {
 			return null;
@@ -266,6 +274,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setGroup(MessageGroup newGroup) {
 		if (newGroup != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP && newGroup != null)) {
@@ -504,7 +513,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -535,7 +544,8 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 */
 	@Override
 	public MDMIBusinessElementReference getBusinessElementByUniqueID(String uid) {
-		for (MDMIBusinessElementReference be : this.businessElements) {
+
+		for (MDMIBusinessElementReference be : this.getBusinessElements()) {
 			if (uid.equals(be.getUniqueIdentifier())) {
 				return be;
 			}

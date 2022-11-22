@@ -4,9 +4,9 @@
     editorDirectory="/org.mdmi.ecore.editor/src" modelPluginID="org.mdmi.ecore" modelName="MDMI"
     modelPluginClass="MDMIPlugin" editPluginClass="org.mdmi.ecore.provider.MDMIEditPlugin"
     editorPluginClass="org.mdmi.ecore.presentation.MDMIEditorPlugin" testSuiteClass="org.mdmi.ecore.tests.MDMIAllTests"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="11.0" copyrightFields="false"
     providerRootExtendsClass="" editPluginID="org.mdmi.ecore.edit" editorPluginID="org.mdmi.ecore.editor"
-    optimizedHasChildren="true" tableProviders="true" colorProviders="true" runtimeVersion="2.11"
+    optimizedHasChildren="true" tableProviders="true" colorProviders="true" runtimeVersion="2.31"
     runtimePlatform="RAP" styleProviders="true">
   <foreignModel>MDMI.ecore</foreignModel>
   <genPackages prefix="MDMI" basePackage="org" resource="XMI" disposableProviderFactory="true"

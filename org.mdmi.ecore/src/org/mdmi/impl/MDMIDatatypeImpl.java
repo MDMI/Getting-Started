@@ -193,6 +193,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getTypeName() {
 		return typeName;
 	}
@@ -203,6 +204,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setTypeName(String newTypeName) {
 		String oldTypeName = typeName;
 		typeName = newTypeName;
@@ -219,6 +221,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -229,6 +232,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -245,6 +249,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -255,6 +260,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
@@ -271,6 +277,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsReadonly() {
 		return isReadonly;
 	}
@@ -281,6 +288,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsReadonly(boolean newIsReadonly) {
 		boolean oldIsReadonly = isReadonly;
 		isReadonly = newIsReadonly;
@@ -297,6 +305,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getTypeSpec() {
 		return typeSpec;
 	}
@@ -307,6 +316,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setTypeSpec(String newTypeSpec) {
 		String oldTypeSpec = typeSpec;
 		typeSpec = newTypeSpec;
@@ -323,6 +333,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRestriction() {
 		return restriction;
 	}
@@ -333,6 +344,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRestriction(String newRestriction) {
 		String oldRestriction = restriction;
 		restriction = newRestriction;
@@ -477,7 +489,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (typeName: ");
 		result.append(typeName);
 		result.append(", description: ");

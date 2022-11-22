@@ -26,7 +26,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-//import org.apache.xml.utils.TreeWalker;
 import org.mdmi.MessageGroup;
 import org.mdmi.MessageModel;
 import org.mdmi.core.Mdmi.MapInfo;
@@ -46,7 +45,7 @@ public class MdmiResolver {
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiResolver.class);
 
-	static protected HashMap<String, MI> themaps = new HashMap<String, MI>();
+	static protected HashMap<String, MI> themaps = new HashMap<>();
 
 	public synchronized HashMap<String, MI> getMaps() {
 		return themaps;
@@ -102,14 +101,14 @@ public class MdmiResolver {
 			this.display = display;
 		}
 
-	};
+	}
 
-	public String getActiveMaps() {
+	public ArrayList<Map> getActiveMaps() {
 		return getActiveMaps(null);
 	}
 
-	public String getActiveMaps(ArrayList<String> filter) {
-		ArrayList<Map> maps = new ArrayList<Map>();
+	public ArrayList<Map> getActiveMaps(ArrayList<String> filter) {
+		ArrayList<Map> maps = new ArrayList<>();
 
 		maps.add(new Map("Mdmi.RUNTIMEVERSION", Mdmi.RUNTIMEVERSION));
 
@@ -127,10 +126,18 @@ public class MdmiResolver {
 				}
 			}
 		}
+		return maps;
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public String getEngineConfigurations() {
+		ArrayList<Object> configurations = new ArrayList<Object>();
+		configurations.addAll(getActiveMaps());
+		configurations.addAll(Mdmi.INSTANCE().getPreProcessors().getPreProcessors());
+		configurations.addAll(Mdmi.INSTANCE().getPostProcessors().getPostProcessors());
 		Gson gsonBuilder = new GsonBuilder().create();
-
-		return gsonBuilder.toJson(maps);
-
+		return gsonBuilder.toJson(configurations);
 	}
 
 	/**
@@ -143,21 +150,7 @@ public class MdmiResolver {
 
 	}
 
-	/**
-	 * Resolve (load and parse) the MDMI maps specified in the configuration file.
-	 *
-	 * @param config
-	 *            Configuration data, used to locate the MDMI maps and providers.
-	 */
-	// public void resolveConfig(MdmiConfig config) {
-	// Collection<MdmiConfig.MapInfo> mes = config.getAllMapInfos();
-	// for (Iterator<MdmiConfig.MapInfo> iterator = mes.iterator(); iterator.hasNext();) {
-	// MdmiConfig.MapInfo me = iterator.next();
-	// resolveOne(me);
-	// }
-	// }
-
-	static HashMap<String, List<MessageGroup>> loadedGroups = new HashMap<String, List<MessageGroup>>();
+	static HashMap<String, List<MessageGroup>> loadedGroups = new HashMap<>();
 
 	private InputStream createInputStreamfromURI(String uri) {
 
@@ -189,18 +182,6 @@ public class MdmiResolver {
 				themaps.put(createKey(messageGroup.getName(), messageModel.getMessageModelName()), mi);
 			}
 		}
-		// MapInfo mapInfo = new MapInfo();
-		// // mapInfo.mapFileName;
-		// mapInfo.mapName = mg.getName();
-		//
-		// MI mi = new MI(mapInfo, mg);
-		//
-		// logger.debug("Loaded message group " + mg.getName());
-		// // if (m_maps.containsKey(mi.messageGroup.getName())) {
-		// // m_maps.remove(mi.messageGroup.getName());
-		// // }
-		// m_maps.put(mi.messageGroup.getName() + mi.messageGroup.getName(), mi);
-		// }
 
 	}
 
@@ -303,7 +284,7 @@ public class MdmiResolver {
 	 */
 	public Collection<MessageGroup> getMessageGroups() {
 		synchronized (themaps) {
-			ArrayList<MessageGroup> a = new ArrayList<MessageGroup>();
+			ArrayList<MessageGroup> a = new ArrayList<>();
 			Collection<MI> c = themaps.values();
 			for (Iterator<MI> it = c.iterator(); it.hasNext();) {
 				MI mi = it.next();
@@ -374,27 +355,6 @@ public class MdmiResolver {
 			return mi.getSemanticParser();
 		}
 	}
-
-	// private void handleErrors(File f, List<ModelInfo> errors) {
-	// StringBuffer sb = new StringBuffer();
-	// for (int i = 0; i < errors.size(); i++) {
-	// ModelInfo mi = errors.get(i);
-	// sb.append(mi.getMessage());
-	// sb.append("\n");
-	// }
-	// // TODO for now log the exceptions, we should throw on invalid maps!
-	// // Mdmi.INSTANCE().logger().severe("MDMI map in file {0} has errors: {1}", f.getAbsolutePath(), sb.toString());
-	// }
-	//
-	// private void handleWarnings(File f, List<ModelInfo> errors) {
-	// StringBuffer sb = new StringBuffer();
-	// for (int i = 0; i < errors.size(); i++) {
-	// ModelInfo mi = errors.get(i);
-	// sb.append(mi.getMessage());
-	// sb.append("\n");
-	// }
-	// // Mdmi.INSTANCE().logger().severe("MDMI map in file {0} has warnings: {1}", f.getAbsolutePath(), sb.toString());
-	// }
 
 	public final class MI {
 		Mdmi.MapInfo mapInfo;

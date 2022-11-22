@@ -51,7 +51,7 @@ public class DateUtil {
 
 	private static final Pattern bracketMatcher = Pattern.compile("\\[([^\\]]+)");
 
-	private static HashMap<String, SimpleDateFormat> dateCache = new HashMap<String, SimpleDateFormat>();
+	private static HashMap<String, SimpleDateFormat> dateCache = new HashMap<>();
 
 	/***
 	 * Global DateFormat cache. Note this is not thread safe, but
@@ -177,7 +177,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static DateWrapper parseDateWithOptional(String format, String value) {
-		ArrayList<String> fmts = new ArrayList<String>();
+		ArrayList<String> fmts = new ArrayList<>();
 		StringBuilder fmtSB = new StringBuilder();
 		int firstBracket = format.indexOf('[');
 		fmtSB.append(
@@ -225,7 +225,6 @@ public class DateUtil {
 	public static DateWrapper parseDateImplicitOptional(String format, String value) {
 		format = pickDateFormat(format, value);
 		Date output = null;
-		// // System.out.println("Date format is"+format);
 
 		// Optimization: in the average case, the format chosen by pickDateFormat will work
 		SimpleDateFormat sdf = getDateFormatCached(format);
@@ -242,7 +241,7 @@ public class DateUtil {
 		// All the complex logic to try subparts of the dateformat, in chunks.
 		int vLen = value.length();
 		int outLen = 0;
-		ArrayList<String> dateparts = new ArrayList<String>();
+		ArrayList<String> dateparts = new ArrayList<>();
 		StringBuilder datePart = new StringBuilder();
 		char charAt = '~';
 		boolean inQuote = false, buffering = true;
@@ -269,9 +268,9 @@ public class DateUtil {
 				if (nonAlpha || inQuote) {
 					if (currChar == '\'') {
 						outLen--;
-						if (inQuote == false) {
+						if (!inQuote) {
 							inQuote = true;
-						} else if (inQuote == true) {
+						} else if (inQuote) {
 							inQuote = false;
 						}
 					}
@@ -288,7 +287,7 @@ public class DateUtil {
 		}
 		if (vLen >= outLen) {
 			dateparts.add(datePart.toString());
-			// // System.out.println(dateParts);
+
 		}
 
 		// Loop through our list of formats, from longest to shortest...
@@ -306,8 +305,6 @@ public class DateUtil {
 				// Ignore, just keep going
 			}
 		}
-
-		// // System.out.println("Slower date parsing:"+output+","+originalFormat);
 
 		return new DateWrapper(output, originalFormat, value);
 	}
@@ -370,7 +367,7 @@ public class DateUtil {
 			for (int i = 0; i < outFormat.length(); i++) {
 				char current = outFormat.charAt(i);
 				if (current == '\'') {
-					if (instring == false) {
+					if (!instring) {
 						instring = true;
 					} else {
 						instring = false;

@@ -23,12 +23,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Stack;
-import java.util.function.Consumer;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.DTCChoice;
@@ -63,7 +60,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 	private ElementValueSet valueSet;
 
-	protected static Map<String, SemanticInterpreter> semanticRollupInterpreters = new HashMap<String, SemanticInterpreter>();
+	protected static Map<String, SemanticInterpreter> semanticRollupInterpreters = new HashMap<>();
 
 	MessageGroup sourceMessageGroup = null;
 
@@ -175,7 +172,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 		// top level XElementValues
 		for (XElementValues.XES xes : values.elementValues) {
 			YNode ynode = ensureAbsolutePath(yroot, xes.semanticElement);
-			List<YNode> ynodes = new ArrayList<YNode>();
+			List<YNode> ynodes = new ArrayList<>();
 			int n = xes.elementValues.size();
 			if (n == 1) {
 				ynodes.add(ynode);
@@ -299,42 +296,44 @@ public class DefaultSemanticParser implements ISemanticParser {
 	}
 
 	private void setInitialValues(MessageModel mdl, Properties properties) {
-		JSONParser parser = new JSONParser();
-		Object obj;
-		try {
-			String values = properties.getProperty("InitialValues");
-			if (StringUtils.isEmpty(values)) {
-				return;
-			}
-
-			logger.trace("Initial Values " + values);
-			obj = parser.parse(values);
-			JSONObject initialValues = (JSONObject) obj;
-			Consumer<String> action = new Consumer<String>() {
-				@Override
-				public void accept(String semanticElementName) {
-					SemanticElement me = mdl.getElementSet().getSemanticElement(semanticElementName);
-					if (me != null && me.getDatatype() != null) {
-						XElementValue xe = new XElementValue(me, valueSet);
-						XDataStruct xs = new XDataStruct(xe.getXValue(), true);
-						me.getDatatype();
-						JSONObject semanticElement = (JSONObject) initialValues.get(semanticElementName);
-						Consumer<String> action2 = new Consumer<String>() {
-							@Override
-							public void accept(String property) {
-								logger.trace(property + " : " + semanticElement.get(property));
-								xs.setValueSafely(property, semanticElement.get(property));
-								xe.getXValue().addValue(xs);
-							}
-						};
-						semanticElement.keySet().forEach(action2);
-					}
-				}
-			};
-			initialValues.keySet().forEach(action);
-		} catch (Exception e) {
-			logger.error("setInitialValues", e);
-		}
+		// JSONParser parser = new JSONParser();
+		// Object obj;
+		// try {
+		// String values = properties.getProperty("InitialValues");
+		// if (StringUtils.isEmpty(values)) {
+		// return;
+		// }
+		//
+		// logger.trace("Initial Values " + values);
+		// obj = parser.parse(values);
+		// JSONObject initialValues = (JSONObject) obj;
+		// Consumer<String> action = new Consumer<>() {
+		// @Override
+		// public void accept(String semanticElementName) {
+		// MDMIBusinessElementReference be = null;
+		// // @TODO Fix look up BER by name
+		// SemanticElement me = mdl.getElementSet().getSemanticElement(be);
+		// if (me != null && me.getDatatype() != null) {
+		// XElementValue xe = new XElementValue(me, valueSet);
+		// XDataStruct xs = new XDataStruct(xe.getXValue(), true);
+		// me.getDatatype();
+		// JSONObject semanticElement = (JSONObject) initialValues.get(semanticElementName);
+		// Consumer<String> action2 = new Consumer<>() {
+		// @Override
+		// public void accept(String property) {
+		// logger.trace(property + " : " + semanticElement.get(property));
+		// xs.setValueSafely(property, semanticElement.get(property));
+		// xe.getXValue().addValue(xs);
+		// }
+		// };
+		// semanticElement.keySet().forEach(action2);
+		// }
+		// }
+		// };
+		// initialValues.keySet().forEach(action);
+		// } catch (Exception e) {
+		// logger.error("setInitialValues", e);
+		// }
 
 	}
 
@@ -384,7 +383,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 					getMappedElement(yn, xe);
 				} else {
 					// field
-					Stack<Node> nodes = new Stack<Node>();
+					Stack<Node> nodes = new Stack<>();
 					Node currentNode = n;
 
 					while (currentNode != null && currentNode.getSemanticElement() == null) {
@@ -608,7 +607,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 		// 2. recursively go through its child nodes and set the values
 		for (XElementValues.XES xes : xe.children) {
 			YNode ychild = ensureRelativePath(ynode, xes.semanticElement);
-			List<YNode> ynodes = new ArrayList<YNode>();
+			List<YNode> ynodes = new ArrayList<>();
 			int n = xes.elementValues.size();
 			if (n == 1) {
 				ynodes.add(ychild);
@@ -743,7 +742,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 	}
 
 	private MDMIDatatype getDatatype(Node node) {
-		ArrayList<String> fns = new ArrayList<String>();
+		ArrayList<String> fns = new ArrayList<>();
 		Node n = node;
 		while (n.getSemanticElement() == null) {
 			fns.add(0, n.getFieldName());
@@ -882,7 +881,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 	 *         If the given node is null, it will return the absolute path.
 	 */
 	private ArrayList<Node> getPath(SemanticElement se, Node node) {
-		ArrayList<Node> path = new ArrayList<Node>();
+		ArrayList<Node> path = new ArrayList<>();
 		Node n = se.getSyntaxNode();
 		while (n != null && n != node) {
 			path.add(0, n);
@@ -1098,8 +1097,8 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 		String rule = se.getComputedValue().getExpression();
 		se.getComputedValue().getLanguage();
-		HashMap<IElementValue, ArrayList<IElementValue>> valuesByParent = new HashMap<IElementValue, ArrayList<IElementValue>>();
-		HashMap<SemanticElement, String> rulesBySemanticElement = new HashMap<SemanticElement, String>();
+		HashMap<IElementValue, ArrayList<IElementValue>> valuesByParent = new HashMap<>();
+		HashMap<SemanticElement, String> rulesBySemanticElement = new HashMap<>();
 
 		if (rule.equals("SEMANTICROLLUP")) {
 			/*
@@ -1139,7 +1138,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 					}
 				}
-				if (elementValueSet.hasElementValuesByName(relationship.getRelatedSemanticElement().getName())) {
+				if (elementValueSet.hasElementValuesByName(relationship.getRelatedSemanticElement())) {
 
 					for (IElementValue iev2 : elementValueSet.getElementValuesByType(
 						relationship.getRelatedSemanticElement())) {
@@ -1165,7 +1164,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 						} else {
 
 							// check for root owned
-							logger.error("Invalid Semantic Rollup Relationship ");
+							logger.error("Invalid Semantic Rollup Relationship, no apparent parent " + se.getName());
 						}
 
 					}
@@ -1268,15 +1267,15 @@ public class DefaultSemanticParser implements ISemanticParser {
 		} else {
 
 			if (rule.startsWith("UPDATEVALUE:")) {
-				if (elementValueSet.hasElementValuesByName(se.getName())) {
-					for (IElementValue value : elementValueSet.getElementValuesByName(se.getName())) {
+				if (elementValueSet.hasElementValuesByName(se)) {
+					for (IElementValue value : elementValueSet.getElementValuesByName(se)) {
 						getSemanticInterpreter().update(se.getName() + "_UPDATEVALUE", value);
 					}
 				}
 			} else {
 				if (se.getParent() != null) {
 
-					if (elementValueSet.hasElementValuesByName(se.getParent().getName())) {
+					if (elementValueSet.hasElementValuesByName(se.getParent())) {
 
 						List<IElementValue> elements = elementValueSet.getElementValuesByType(se.getParent());
 						for (IElementValue element : elements) {
@@ -1475,7 +1474,7 @@ public class DefaultSemanticParser implements ISemanticParser {
 
 	private List<IElementValue> getElementValuesWithoutChild(SemanticElement semanticElement) {
 		List<IElementValue> parentElementValues = valueSet.getElementValuesByType(semanticElement.getParent());
-		List<IElementValue> result = new ArrayList<IElementValue>(parentElementValues);
+		List<IElementValue> result = new ArrayList<>(parentElementValues);
 
 		for (IElementValue parentElementValue : parentElementValues) {
 			for (IElementValue childElementValue : valueSet.getElementValuesByType(semanticElement)) {

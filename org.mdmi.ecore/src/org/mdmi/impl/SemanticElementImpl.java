@@ -441,7 +441,9 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
+		// throw new RuntimeException("boom get name");
 		return name;
 	}
 
@@ -451,6 +453,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -465,6 +468,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -475,6 +479,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -491,6 +496,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getElementType() {
 		return elementType;
 	}
@@ -501,6 +507,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementType(String newElementType) {
 		String oldElementType = elementType;
 		elementType = newElementType;
@@ -517,6 +524,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getDatatype() {
 		if (datatype != null && datatype.eIsProxy()) {
 			InternalEObject oldDatatype = (InternalEObject) datatype;
@@ -548,6 +556,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDatatype(MDMIDatatype newDatatype) {
 		MDMIDatatype oldDatatype = datatype;
 		datatype = newDatatype;
@@ -564,9 +573,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getPropertyQualifier() {
 		if (propertyQualifier == null) {
-			propertyQualifier = new EDataTypeUniqueEList<String>(
+			propertyQualifier = new EDataTypeUniqueEList<>(
 				String.class, this, MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER);
 		}
 		return propertyQualifier;
@@ -578,6 +588,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public SimpleMessageComposite getComposite() {
 		if (composite != null && composite.eIsProxy()) {
 			InternalEObject oldComposite = (InternalEObject) composite;
@@ -631,6 +642,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setComposite(SimpleMessageComposite newComposite) {
 		if (newComposite != composite) {
 			NotificationChain msgs = null;
@@ -659,6 +671,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
 		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET) {
 			return null;
@@ -683,6 +696,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET && newElementSet != null)) {
@@ -714,9 +728,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElementBusinessRule> getBusinessRules() {
 		if (businessRules == null) {
-			businessRules = new EObjectContainmentWithInverseEList<SemanticElementBusinessRule>(
+			businessRules = new EObjectContainmentWithInverseEList<>(
 				SemanticElementBusinessRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES,
 				MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT);
 		}
@@ -729,9 +744,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<DataRule> getDataRules() {
 		if (dataRules == null) {
-			dataRules = new EObjectWithInverseResolvingEList<DataRule>(
+			dataRules = new EObjectWithInverseResolvingEList<>(
 				DataRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES,
 				MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT);
 		}
@@ -744,9 +760,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElementRelationship> getRelationships() {
 		if (relationships == null) {
-			relationships = new EObjectContainmentEList<SemanticElementRelationship>(
+			relationships = new EObjectContainmentEList<>(
 				SemanticElementRelationship.class, this, MDMIPackage.SEMANTIC_ELEMENT__RELATIONSHIPS);
 		}
 		return relationships;
@@ -758,6 +775,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isMultipleInstances() {
 		return multipleInstances;
 	}
@@ -768,6 +786,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMultipleInstances(boolean newMultipleInstances) {
 		boolean oldMultipleInstances = multipleInstances;
 		multipleInstances = newMultipleInstances;
@@ -785,9 +804,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ConversionRule> getMapFromMdmi() {
 		if (mapFromMdmi == null) {
-			mapFromMdmi = new EObjectContainmentEList<ConversionRule>(
+			mapFromMdmi = new EObjectContainmentEList<>(
 				ConversionRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__MAP_FROM_MDMI);
 		}
 		return mapFromMdmi;
@@ -799,6 +819,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getOrdering() {
 		return ordering;
 	}
@@ -809,6 +830,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setOrdering(String newOrdering) {
 		String oldOrdering = ordering;
 		ordering = newOrdering;
@@ -825,6 +847,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getOrderingLanguage() {
 		return orderingLanguage;
 	}
@@ -835,6 +858,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setOrderingLanguage(String newOrderingLanguage) {
 		String oldOrderingLanguage = orderingLanguage;
 		orderingLanguage = newOrderingLanguage;
@@ -852,6 +876,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedValue() {
 		return computedValue;
 	}
@@ -884,6 +909,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedValue(MDMIExpression newComputedValue) {
 		if (newComputedValue != computedValue) {
 			NotificationChain msgs = null;
@@ -913,6 +939,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedInValue() {
 		return computedInValue;
 	}
@@ -945,6 +972,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedInValue(MDMIExpression newComputedInValue) {
 		if (newComputedInValue != computedInValue) {
 			NotificationChain msgs = null;
@@ -974,9 +1002,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ConversionRule> getMapToMdmi() {
 		if (mapToMdmi == null) {
-			mapToMdmi = new EObjectContainmentEList<ConversionRule>(
+			mapToMdmi = new EObjectContainmentEList<>(
 				ConversionRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__MAP_TO_MDMI);
 		}
 		return mapToMdmi;
@@ -988,6 +1017,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getParent() {
 		if (parent != null && parent.eIsProxy()) {
 			InternalEObject oldParent = (InternalEObject) parent;
@@ -1040,6 +1070,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setParent(SemanticElement newParent) {
 		if (newParent != parent) {
 			NotificationChain msgs = null;
@@ -1068,9 +1099,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElement> getChildren() {
 		if (children == null) {
-			children = new EObjectWithInverseResolvingEList<SemanticElement>(
+			children = new EObjectWithInverseResolvingEList<>(
 				SemanticElement.class, this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN,
 				MDMIPackage.SEMANTIC_ELEMENT__PARENT);
 		}
@@ -1092,6 +1124,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public Node getSyntaxNode() {
 		if (syntaxNode != null && syntaxNode.eIsProxy()) {
 			InternalEObject oldSyntaxNode = (InternalEObject) syntaxNode;
@@ -1145,6 +1178,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxNode(Node newSyntaxNode) {
 		if (newSyntaxNode != syntaxNode) {
 			NotificationChain msgs = null;
@@ -1173,6 +1207,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedOutValue() {
 		return computedOutValue;
 	}
@@ -1205,6 +1240,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedOutValue(MDMIExpression newComputedOutValue) {
 		if (newComputedOutValue != computedOutValue) {
 			NotificationChain msgs = null;
@@ -1234,9 +1270,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Keyword> getKeywords() {
 		if (keywords == null) {
-			keywords = new EObjectContainmentWithInverseEList<Keyword>(
+			keywords = new EObjectContainmentWithInverseEList<>(
 				Keyword.class, this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, MDMIPackage.KEYWORD__OWNER);
 		}
 		return keywords;
@@ -1248,6 +1285,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueField() {
 		return enumValueField;
 	}
@@ -1258,6 +1296,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueField(String newEnumValueField) {
 		String oldEnumValueField = enumValueField;
 		enumValueField = newEnumValueField;
@@ -1275,6 +1314,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueDescrField() {
 		return enumValueDescrField;
 	}
@@ -1285,6 +1325,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
 		String oldEnumValueDescrField = enumValueDescrField;
 		enumValueDescrField = newEnumValueDescrField;
@@ -1739,7 +1780,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -1771,10 +1812,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public boolean isNullFlavor() {
 		// return false;
 		// return false;
-		if (computedValue == null) {
-			return false;
-		}
-		if (this.getRelationshipByName("NULLFLAVOR") == null) {
+		if ((computedValue == null) || (this.getRelationshipByName("NULLFLAVOR") == null)) {
 			return false;
 		}
 		String x = computedValue.getExpression();
@@ -1886,6 +1924,17 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public boolean hasChild(SemanticElement target) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.mdmi.SemanticElement#getUniqueId()
+	 */
+	@Override
+	public String getUniqueId() {
+		System.err.println();
+		return EcoreUtil.getID(this);
 	}
 
 } // SemanticElementImpl

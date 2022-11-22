@@ -172,6 +172,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -182,6 +183,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -197,6 +199,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -207,6 +210,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -224,6 +228,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getMessageModelName() {
 		return messageModelName;
 	}
@@ -234,6 +239,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMessageModelName(String newMessageModelName) {
 		String oldMessageModelName = messageModelName;
 		messageModelName = newMessageModelName;
@@ -251,6 +257,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel getSyntaxModel() {
 		if (syntaxModel != null && syntaxModel.eIsProxy()) {
 			InternalEObject oldSyntaxModel = (InternalEObject) syntaxModel;
@@ -304,6 +311,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
 		if (newSyntaxModel != syntaxModel) {
 			NotificationChain msgs = null;
@@ -333,6 +341,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageModel getModel() {
 		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL) {
 			return null;
@@ -357,6 +366,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setModel(MessageModel newModel) {
 		if (newModel != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL && newModel != null)) {
@@ -388,9 +398,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElement> getSemanticElements() {
 		if (semanticElements == null) {
-			semanticElements = new EObjectContainmentWithInverseEList<SemanticElement>(
+			semanticElements = new EObjectContainmentWithInverseEList<>(
 				SemanticElement.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS,
 				MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET);
 		}
@@ -403,9 +414,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleMessageComposite> getComposite() {
 		if (composite == null) {
-			composite = new EObjectContainmentWithInverseEList<SimpleMessageComposite>(
+			composite = new EObjectContainmentWithInverseEList<>(
 				SimpleMessageComposite.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE,
 				MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET);
 		}
@@ -625,7 +637,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -641,16 +653,16 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @see org.mdmi.SemanticElementSet#getSemanticElement(java.lang.String)
 	 */
-	@Override
-	public SemanticElement getSemanticElement(String name) {
-		for (SemanticElement semanticElement : this.semanticElements) {
-			if (semanticElement.getName() != null && semanticElement.getName().equals(name)) {
-				return semanticElement;
-
-			}
-		}
-		return null;
-	}
+	// @Override
+	// public SemanticElement getSemanticElement(String name) {
+	// for (SemanticElement semanticElement : this.semanticElements) {
+	// if (semanticElement.getName() != null && semanticElement.getName().equals(name)) {
+	// return semanticElement;
+	//
+	// }
+	// }
+	// return null;
+	// }
 
 	/*
 	 * (non-Javadoc)

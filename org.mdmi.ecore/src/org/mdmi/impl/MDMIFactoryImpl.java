@@ -199,6 +199,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageModel createMessageModel() {
 		MessageModelImpl messageModel = new MessageModelImpl();
 		return messageModel;
@@ -210,6 +211,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel createMessageSyntaxModel() {
 		MessageSyntaxModelImpl messageSyntaxModel = new MessageSyntaxModelImpl();
 		return messageSyntaxModel;
@@ -221,6 +223,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public Bag createBag() {
 		BagImpl bag = new BagImpl();
 		return bag;
@@ -232,6 +235,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public Choice createChoice() {
 		ChoiceImpl choice = new ChoiceImpl();
 		return choice;
@@ -243,6 +247,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public LeafSyntaxTranslator createLeafSyntaxTranslator() {
 		LeafSyntaxTranslatorImpl leafSyntaxTranslator = new LeafSyntaxTranslatorImpl();
 		return leafSyntaxTranslator;
@@ -254,6 +259,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageGroup createMessageGroup() {
 		MessageGroupImpl messageGroup = new MessageGroupImpl();
 		return messageGroup;
@@ -265,6 +271,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DataRule createDataRule() {
 		DataRuleImpl dataRule = new DataRuleImpl();
 		return dataRule;
@@ -276,6 +283,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet createSemanticElementSet() {
 		SemanticElementSetImpl semanticElementSet = new SemanticElementSetImpl();
 		return semanticElementSet;
@@ -287,6 +295,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement createSemanticElement() {
 		SemanticElementImpl semanticElement = new SemanticElementImpl();
 		return semanticElement;
@@ -298,6 +307,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SimpleMessageComposite createSimpleMessageComposite() {
 		SimpleMessageCompositeImpl simpleMessageComposite = new SimpleMessageCompositeImpl();
 		return simpleMessageComposite;
@@ -309,6 +319,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageComposite createMessageComposite() {
 		MessageCompositeImpl messageComposite = new MessageCompositeImpl();
 		return messageComposite;
@@ -320,6 +331,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementBusinessRule createSemanticElementBusinessRule() {
 		SemanticElementBusinessRuleImpl semanticElementBusinessRule = new SemanticElementBusinessRuleImpl();
 		return semanticElementBusinessRule;
@@ -331,6 +343,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementRelationship createSemanticElementRelationship() {
 		SemanticElementRelationshipImpl semanticElementRelationship = new SemanticElementRelationshipImpl();
 		return semanticElementRelationship;
@@ -342,6 +355,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementReference createMDMIBusinessElementReference() {
 		MDMIBusinessElementReferenceImpl mdmiBusinessElementReference = new MDMIBusinessElementReferenceImpl();
 		return mdmiBusinessElementReference;
@@ -353,6 +367,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementRule createMDMIBusinessElementRule() {
 		MDMIBusinessElementRuleImpl mdmiBusinessElementRule = new MDMIBusinessElementRuleImpl();
 		return mdmiBusinessElementRule;
@@ -364,6 +379,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public ConversionRule createConversionRule() {
 		ConversionRuleImpl conversionRule = new ConversionRuleImpl();
 		return conversionRule;
@@ -375,6 +391,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDomainDictionaryReference createMDMIDomainDictionaryReference() {
 		MDMIDomainDictionaryReferenceImpl mdmiDomainDictionaryReference = new MDMIDomainDictionaryReferenceImpl();
 		return mdmiDomainDictionaryReference;
@@ -386,6 +403,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression createMDMIExpression() {
 		MDMIExpressionImpl mdmiExpression = new MDMIExpressionImpl();
 		return mdmiExpression;
@@ -397,6 +415,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public Keyword createKeyword() {
 		KeywordImpl keyword = new KeywordImpl();
 		return keyword;
@@ -408,6 +427,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype createMDMIDatatype() {
 		MDMIDatatypeImpl mdmiDatatype = new MDMIDatatypeImpl();
 		return mdmiDatatype;
@@ -419,6 +439,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTSPrimitive createDTSPrimitive() {
 		DTSPrimitiveImpl dtsPrimitive = new DTSPrimitiveImpl();
 		return dtsPrimitive;
@@ -430,6 +451,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTCStructured createDTCStructured() {
 		DTCStructuredImpl dtcStructured = new DTCStructuredImpl();
 		return dtcStructured;
@@ -441,6 +463,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public Field createField() {
 		FieldImpl field = new FieldImpl();
 		return field;
@@ -452,6 +475,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTExternal createDTExternal() {
 		DTExternalImpl dtExternal = new DTExternalImpl();
 		return dtExternal;
@@ -463,6 +487,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTSDerived createDTSDerived() {
 		DTSDerivedImpl dtsDerived = new DTSDerivedImpl();
 		return dtsDerived;
@@ -474,6 +499,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTCChoice createDTCChoice() {
 		DTCChoiceImpl dtcChoice = new DTCChoiceImpl();
 		return dtcChoice;
@@ -485,6 +511,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DTSEnumerated createDTSEnumerated() {
 		DTSEnumeratedImpl dtsEnumerated = new DTSEnumeratedImpl();
 		return dtsEnumerated;
@@ -496,6 +523,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
@@ -507,6 +535,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public DatatypeMap createDatatypeMap() {
 		DatatypeMapImpl datatypeMap = new DatatypeMapImpl();
 		return datatypeMap;
@@ -565,6 +594,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIPackage getMDMIPackage() {
 		return (MDMIPackage) getEPackage();
 	}

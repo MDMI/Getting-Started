@@ -22,7 +22,7 @@ import org.mdmi.impl.MDMIPackageImpl;
 
 public class ConvertFromFactory {
 	// Map of converters
-	private static final HashMap<XDT, HashMap<String, IConvertFromString>> CONVERT_MAP = new HashMap<XDT, HashMap<String, IConvertFromString>>();
+	private static final HashMap<XDT, HashMap<String, IConvertFromString>> CONVERT_MAP = new HashMap<>();
 
 	// Converters- they are state-less, so we only need one of each.
 	public static final BooleanConverter CONV_BOOL = new BooleanConverter();
@@ -84,7 +84,7 @@ public class ConvertFromFactory {
 		local.put(MDMIPackageImpl.STRING.getTypeName(), CONV_STRING);
 
 		/*********** base64Binary *****************/
-		local = new HashMap<String, IConvertFromString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(XDT.BASE64BINARY, local);
 		local.put(MDMIPackageImpl.INTEGER.getTypeName(), new Base64Converter(CONV_INT));
 		local.put(MDMIPackageImpl.DECIMAL.getTypeName(), new Base64Converter(CONV_DEC));
@@ -152,7 +152,7 @@ public class ConvertFromFactory {
 		local.put(MDMIPackageImpl.DATETIME.getTypeName(), CONV_YEARMONTH);
 
 		/*********** hexbinary *****************/
-		local = new HashMap<String, IConvertFromString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(XDT.HEXBINARY, local);
 		local.put(MDMIPackageImpl.INTEGER.getTypeName(), CONV_INTHEX);
 		local.put(MDMIPackageImpl.DECIMAL.getTypeName(), CONV_DECHEX);
@@ -245,7 +245,7 @@ public class ConvertFromFactory {
 	}
 
 	private HashMap<String, IConvertFromString> createNewMap(XDT xmlType) {
-		HashMap<String, IConvertFromString> local = new HashMap<String, IConvertFromString>();
+		HashMap<String, IConvertFromString> local = new HashMap<>();
 		CONVERT_MAP.put(xmlType, local);
 		local.put(MDMIPackageImpl.BINARY.getDescription(), CONV_BINARY);
 		return local;

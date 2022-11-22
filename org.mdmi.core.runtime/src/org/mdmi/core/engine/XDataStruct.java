@@ -32,7 +32,7 @@ public class XDataStruct extends XData {
 
 	private static Logger logger = LoggerFactory.getLogger(XDataStruct.class);
 
-	private LinkedHashMap<String, XValue> m_values = new LinkedHashMap<String, XValue>();
+	private LinkedHashMap<String, XValue> m_values = new LinkedHashMap<>();
 
 	/**
 	 * Construct one from its owner value and its data type.
@@ -458,9 +458,6 @@ public class XDataStruct extends XData {
 
 	public Object addValueSafely(String fieldName) {
 		XValue x = this.m_values.get(fieldName);
-		if (x == null) {
-			// System.out.println(fieldName);
-		}
 		XValue xxx = new XValue(x.getDatatype());
 		this.setValue(fieldName, xxx);
 		return xxx.getValue();

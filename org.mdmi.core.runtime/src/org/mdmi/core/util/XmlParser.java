@@ -167,7 +167,7 @@ public final class XmlParser {
 	public Document parse(File uri) {
 		Document doc = null;
 		try {
-			m_messages = new ArrayList<String>();
+			m_messages = new ArrayList<>();
 			m_errors = false;
 			doc = m_parser.parse(uri);
 			if (m_errors) {
@@ -203,7 +203,7 @@ public final class XmlParser {
 	public Document parse(InputStream ios, String systemID) {
 		Document doc = null;
 		try {
-			m_messages = new ArrayList<String>();
+			m_messages = new ArrayList<>();
 			m_errors = false;
 			if (systemID == null) {
 				doc = m_parser.parse(ios);
@@ -230,7 +230,7 @@ public final class XmlParser {
 	public Document parse(Reader reader) {
 		Document doc = null;
 		try {
-			m_messages = new ArrayList<String>();
+			m_messages = new ArrayList<>();
 			m_errors = false;
 			doc = m_parser.parse(new InputSource(reader));
 			if (m_errors) {
@@ -253,7 +253,7 @@ public final class XmlParser {
 	public Document parse(String uri) {
 		Document doc = null;
 		try {
-			m_messages = new ArrayList<String>();
+			m_messages = new ArrayList<>();
 			m_errors = false;
 			doc = m_parser.parse(uri);
 			if (m_errors) {
@@ -288,7 +288,7 @@ public final class XmlParser {
 
 		String s = sb.toString();
 		if (m_messages == null) {
-			m_messages = new ArrayList<String>();
+			m_messages = new ArrayList<>();
 		}
 		m_messages.add(s);
 	}

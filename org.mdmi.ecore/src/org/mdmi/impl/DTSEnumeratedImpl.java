@@ -66,9 +66,10 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<EnumerationLiteral> getLiterals() {
 		if (literals == null) {
-			literals = new EObjectContainmentEList<EnumerationLiteral>(
+			literals = new EObjectContainmentEList<>(
 				EnumerationLiteral.class, this, MDMIPackage.DTS_ENUMERATED__LITERALS);
 		}
 		return literals;

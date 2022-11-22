@@ -39,9 +39,6 @@ import org.mdmi.core.engine.YNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParser;
-
 /**
  * @TODO Move runtime to One JSON library (GSON ???)
  * @author seanmuir
@@ -53,11 +50,11 @@ public class JsonSyntacticParser implements ISyntacticParser {
 
 	class JsonHandler implements ContentHandler {
 
-		private Stack<Node> syntaxNodes = new Stack<Node>();;
+		private Stack<Node> syntaxNodes = new Stack<>();
 
-		private Stack<YBag> yBags = new Stack<YBag>();
+		private Stack<YBag> yBags = new Stack<>();
 
-		private Stack<String> keyStack = new Stack<String>();;
+		private Stack<String> keyStack = new Stack<>();
 
 		YBag yroot = null;
 
@@ -197,7 +194,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 
 		// Node matchingSyntaxNode = null;
 
-		Stack<Boolean> shouldPop = new Stack<Boolean>();
+		Stack<Boolean> shouldPop = new Stack<>();
 
 		private Node getSyntaxNode(String key) {
 			Bag bag = (Bag) syntaxNodes.peek();
@@ -215,10 +212,6 @@ public class JsonSyntacticParser implements ISyntacticParser {
 		public boolean startObjectEntry(String key) throws ParseException, IOException {
 
 			logger.trace("startObjectEntry(String key)" + key);
-
-			if ("InDemographic".equals(key)) {
-				System.out.println(key);
-			}
 
 			keyStack.push(key);
 
@@ -265,7 +258,6 @@ public class JsonSyntacticParser implements ISyntacticParser {
 				if (!StringUtils.isEmpty(n.getLocation())) {
 					String simplelocation = n.getLocation().split("\\[")[0];
 					if (simplelocation.equals(key)) {
-						System.out.println("pop syntax " + key);
 						syntaxNodes.pop();
 					}
 				}
@@ -371,9 +363,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 			serializeBag((YBag) yroot, root);
 		}
 
-		msg.setData(
-			new GsonBuilder().setPrettyPrinting().create().toJson(
-				new JsonParser().parse(root.toJSONString())).getBytes());
+		msg.setData(root.toJSONString().getBytes());
 
 	}
 
@@ -391,7 +381,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 
 	private HashMap<Node, ArrayList<YNode>> getHashMap(ArrayList<YNode> ynodes) {
 
-		HashMap<Node, ArrayList<YNode>> nodes = new HashMap<Node, ArrayList<YNode>>();
+		HashMap<Node, ArrayList<YNode>> nodes = new HashMap<>();
 
 		for (YNode yNode : ynodes) {
 			if (!nodes.containsKey(yNode.getNode())) {
@@ -414,7 +404,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 			// path.push("");
 		}
 
-		Stack<JSONAware> elements = new Stack<JSONAware>();
+		Stack<JSONAware> elements = new Stack<>();
 
 		/*
 		 * (non-Javadoc)
@@ -426,7 +416,7 @@ public class JsonSyntacticParser implements ISyntacticParser {
 
 			logger.trace("start visit " + ybag.getNode().getName());
 
-			HashMap<String, JSONArray> bagnodes = new HashMap<String, JSONArray>();
+			HashMap<String, JSONArray> bagnodes = new HashMap<>();
 
 			for (YNode ynode : ybag.getYNodes()) {
 				logger.trace("Check " + ynode.getNode().getName());
@@ -486,17 +476,21 @@ public class JsonSyntacticParser implements ISyntacticParser {
 		 */
 		@Override
 		public void visit(YLeaf yleaf) {
-			logger.trace("leaf" + yleaf.getNode().getName() + " " + yleaf.getValue());
-			JSONObject jsonObject = (JSONObject) elements.peek();
-			if (yleaf.getNode().getSemanticElement() != null &&
-					yleaf.getNode().getSemanticElement().getDatatype() != null) {
-				if ("Decimal".equals(yleaf.getNode().getSemanticElement().getDatatype().getName())) {
-					jsonObject.put(yleaf.getNode().getName(), Double.parseDouble(yleaf.getValue()));
-					return;
-				}
-			}
+			if (yleaf.getValue() != null) {
+				logger.trace("leaf" + yleaf.getNode().getName() + " " + yleaf.getValue());
+				JSONObject jsonObject = (JSONObject) elements.peek();
+				if (yleaf.getNode().getSemanticElement() != null &&
+						yleaf.getNode().getSemanticElement().getDatatype() != null) {
+					if ("Decimal".equals(yleaf.getNode().getSemanticElement().getDatatype().getName())) {
 
-			jsonObject.put(yleaf.getNode().getName(), yleaf.getValue());
+						System.err.println(yleaf.getValue());
+						jsonObject.put(yleaf.getNode().getName(), Double.parseDouble(yleaf.getValue()));
+						return;
+					}
+				}
+
+				jsonObject.put(yleaf.getNode().getName(), yleaf.getValue());
+			}
 		}
 
 		/*

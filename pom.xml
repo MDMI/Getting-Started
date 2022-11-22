@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi</groupId>
 	<artifactId>org.mdmi.pom</artifactId>
-	<version>2.6.1-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>MDMI Eclipse Plugin Parent POM</name>
 	<description>MDMI Eclipse Plugin Parent POM</description>
 
 	<properties>
-		<tycho-version>2.5.0</tycho-version>
+		<tycho-version>2.7.5</tycho-version>
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -19,25 +17,14 @@
 
 	<repositories>
 		<repository>
-			<id>2021-09</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/2021-09</url>
+			<id>HEREANDNOW</id>
+		 <layout>p2</layout>  
+			<url>http://download.eclipse.org/releases/2022-12</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
-		<repository>
-			<id>R20201130205003</id>
-			<layout>p2</layout>
-			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20210825222808/repository</url>
-		</repository>
-<!--  		<repository>
-			<id>MDMI2021-03</id>
-			<layout>p2</layout>
-			<url>http://mdmi.sourceforge.net/mdmi-2.5.0</url>
-		</repository> -->
-		<repository>
-			<id>mdmi3rdparty</id>
-			<layout>p2</layout>
-			<url>http://mdmi.sourceforge.net/mdmi3rdparty</url>
-		</repository>
+
 	</repositories>
 
 	<build>

@@ -11,9 +11,7 @@
  *******************************************************************************/
 package org.mdmi.core.engine;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -40,6 +38,7 @@ import com.google.javascript.jscomp.Compiler;
 import com.google.javascript.jscomp.CompilerOptions;
 import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
+import com.google.javascript.rhino.StaticSourceFile.SourceKind;
 
 //import com.google.javascript.jscomp.JSS
 //import com.google.javascript.jscomp.JSSourceFile;
@@ -58,7 +57,7 @@ public class DatamapInterpreter {
 
 	Invocable inv;
 
-	public HashMap<String, Exception> exceptions = new HashMap<String, Exception>();
+	public HashMap<String, Exception> exceptions = new HashMap<>();
 
 	/**
 	 *
@@ -120,7 +119,7 @@ public class DatamapInterpreter {
 		 * Make sure no overlap of datatype maps - relying on name might have to rely on function name
 		 *
 		 */
-		HashSet<String> added = new HashSet<String>();
+		HashSet<String> added = new HashSet<>();
 
 		StringBuffer sb = new StringBuffer();
 
@@ -215,23 +214,22 @@ public class DatamapInterpreter {
 		CompilationLevel.ADVANCED_OPTIMIZATIONS.setOptionsForCompilationLevel(options);
 
 		SourceFile sf;
-		try {
-			sf = SourceFile.fromInputStream(
-				"mappings.js", new ByteArrayInputStream(code.getBytes()), StandardCharsets.UTF_8);
-			ArrayList<SourceFile> inputFiles = new ArrayList<SourceFile>();
-			inputFiles.add(sf);
+		// try {
 
-			Result result = compiler.compile(new ArrayList<SourceFile>(), inputFiles, options);
+		// String code2;
+		// SourceKind SourceKind.STRONG;
+		// SourceFile.fromCode(code, code2);
+		sf = SourceFile.fromCode("mappings.js", code, SourceKind.STRONG);
+		ArrayList<SourceFile> inputFiles = new ArrayList<>();
+		inputFiles.add(sf);
 
-			if (!result.success) {
-				// throw new ProcessException("Failure when processing javascript files!");
-			}
-			// // System.out.println(compiler.toSource());
-			return compiler.toSource();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		Result result = compiler.compile(new ArrayList<SourceFile>(), inputFiles, options);
 
-		}
+		return compiler.toSource();
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		//
+		// }
 
 		// To get the complete set of externs, the logic in
 		// CompilerRunner.getDefaultExterns() should be used here.
@@ -247,7 +245,7 @@ public class DatamapInterpreter {
 
 		// The compiler is responsible for generating the compiled code; it is not
 		// accessible via the Result.
-		return code;
+		// return code;
 	}
 
 	void compare(String function, Object source, Object target) {

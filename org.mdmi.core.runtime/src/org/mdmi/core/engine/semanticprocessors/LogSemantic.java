@@ -31,7 +31,7 @@ public class LogSemantic implements ISemanticProcessor {
 
 	public enum DIRECTION {
 		FROM, TO
-	};
+	}
 
 	DIRECTION direction;
 
@@ -81,6 +81,11 @@ public class LogSemantic implements ISemanticProcessor {
 	}
 
 	void log(IElementValue semanticElement, int indent) {
+
+		if (direction.equals(DIRECTION.TO)) {
+
+		}
+
 		String businessElementName = "NONE";
 
 		if (direction.equals(DIRECTION.TO)) {
@@ -117,7 +122,7 @@ public class LogSemantic implements ISemanticProcessor {
 	@Override
 	public void processSemanticModel(ElementValueSet semanticModel) {
 
-		List<IElementValue> parents = new ArrayList<IElementValue>();
+		List<IElementValue> parents = new ArrayList<>();
 
 		for (IElementValue semanticElement : semanticModel.getAllElementValues()) {
 			if (semanticElement.getParent() == null) {
@@ -128,7 +133,6 @@ public class LogSemantic implements ISemanticProcessor {
 		for (IElementValue semanticElement : parents) {
 			log(semanticElement, 1);
 		}
-		System.out.println("");
 	}
 
 }

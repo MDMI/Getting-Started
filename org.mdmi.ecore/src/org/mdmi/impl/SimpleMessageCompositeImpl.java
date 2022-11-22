@@ -122,6 +122,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -132,6 +133,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -148,9 +150,10 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElement> getSemanticElements() {
 		if (semanticElements == null) {
-			semanticElements = new EObjectWithInverseResolvingEList<SemanticElement>(
+			semanticElements = new EObjectWithInverseResolvingEList<>(
 				SemanticElement.class, this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS,
 				MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE);
 		}
@@ -163,6 +166,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
 		if (eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET) {
 			return null;
@@ -188,6 +192,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET && newElementSet != null)) {
@@ -220,6 +225,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -230,6 +236,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -406,7 +413,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

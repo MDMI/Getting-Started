@@ -192,6 +192,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -202,6 +203,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -216,6 +218,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -226,6 +229,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -242,6 +246,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRule() {
 		return rule;
 	}
@@ -252,6 +257,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
@@ -266,6 +272,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getRuleExpressionLanguage() {
 		return ruleExpressionLanguage;
 	}
@@ -276,6 +283,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
@@ -293,6 +301,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getScope() {
 		if (eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE) {
 			return null;
@@ -317,6 +326,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setScope(MessageGroup newScope) {
 		if (newScope != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE && newScope != null)) {
@@ -346,10 +356,10 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIDatatype> getDatatype() {
 		if (datatype == null) {
-			datatype = new EObjectResolvingEList<MDMIDatatype>(
-				MDMIDatatype.class, this, MDMIPackage.DATA_RULE__DATATYPE);
+			datatype = new EObjectResolvingEList<>(MDMIDatatype.class, this, MDMIPackage.DATA_RULE__DATATYPE);
 		}
 		return datatype;
 	}
@@ -360,6 +370,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getSemanticElement() {
 		if (semanticElement != null && semanticElement.eIsProxy()) {
 			InternalEObject oldSemanticElement = (InternalEObject) semanticElement;
@@ -414,6 +425,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSemanticElement(SemanticElement newSemanticElement) {
 		if (newSemanticElement != semanticElement) {
 			NotificationChain msgs = null;
@@ -443,6 +455,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getGroup() {
 		if (group != null && group.eIsProxy()) {
 			InternalEObject oldGroup = (InternalEObject) group;
@@ -495,6 +508,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setGroup(MessageGroup newGroup) {
 		if (newGroup != group) {
 			NotificationChain msgs = null;
@@ -740,7 +754,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

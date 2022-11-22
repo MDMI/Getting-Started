@@ -65,8 +65,8 @@ public class XElementValue implements IElementValue {
 			throw new IllegalArgumentException("Null argument!");
 		}
 		m_semanticElement = semanticElement;
-		m_children = new LinkedList<XElementValue>();
-		m_relations = new ArrayList<RelElement>();
+		m_children = new LinkedList<>();
+		m_relations = new ArrayList<>();
 		m_xvalue = new XValue(this);
 		m_owner = eset;
 		m_owner.addElementValue(this);
@@ -76,12 +76,12 @@ public class XElementValue implements IElementValue {
 	private XElementValue(XElementValue src, boolean deep) {
 		m_semanticElement = src.m_semanticElement;
 		if (deep) {
-			m_children = new LinkedList<XElementValue>();
+			m_children = new LinkedList<>();
 			for (int i = 0; i < src.m_children.size(); i++) {
 				XElementValue e = src.m_children.get(i);
 				m_children.add(e.clone(true));
 			}
-			m_relations = new ArrayList<RelElement>();
+			m_relations = new ArrayList<>();
 			for (int i = 0; i < src.m_relations.size(); i++) {
 				RelElement e = src.m_relations.get(i);
 				RelElement t = new RelElement(e.name, e.relatedElement.clone(true));
@@ -108,8 +108,8 @@ public class XElementValue implements IElementValue {
 			throw new IllegalArgumentException("Null argument!");
 		}
 		m_semanticElement = semanticElement;
-		m_children = new LinkedList<XElementValue>();
-		m_relations = new ArrayList<RelElement>();
+		m_children = new LinkedList<>();
+		m_relations = new ArrayList<>();
 		m_xvalue = new XValue(this);
 		m_owner = elementValueSet;
 		iterator.add(this);
@@ -155,7 +155,7 @@ public class XElementValue implements IElementValue {
 	 * @TODO This seems unneccesary
 	 */
 	public List<IElementValue> getChildren() {
-		List<IElementValue> a = new LinkedList<IElementValue>();
+		List<IElementValue> a = new LinkedList<>();
 		for (XElementValue e : m_children) {
 			a.add(e);
 		}
@@ -208,7 +208,7 @@ public class XElementValue implements IElementValue {
 
 	@Override
 	public List<IElementValue> getRelations() {
-		List<IElementValue> a = new ArrayList<IElementValue>();
+		List<IElementValue> a = new ArrayList<>();
 		for (RelElement e : m_relations) {
 			a.add(e.relatedElement);
 		}

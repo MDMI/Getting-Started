@@ -85,7 +85,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	@Override
 	public EList<Field> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<Field>(Field.class, this, MDMIPackage.DTC_STRUCTURED__FIELDS);
+			fields = new EObjectContainmentEList<>(Field.class, this, MDMIPackage.DTC_STRUCTURED__FIELDS);
 		}
 		return fields;
 	}

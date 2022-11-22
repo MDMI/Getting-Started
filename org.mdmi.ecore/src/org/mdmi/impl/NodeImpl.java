@@ -303,6 +303,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -313,6 +314,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -327,6 +329,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -337,6 +340,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -353,6 +357,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMinOccurs() {
 		return minOccurs;
 	}
@@ -363,6 +368,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
@@ -378,6 +384,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurs() {
 		return maxOccurs;
 	}
@@ -388,6 +395,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
@@ -403,6 +411,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getLocation() {
 		return location;
 	}
@@ -413,6 +422,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;
@@ -427,6 +437,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getLocationExpressionLanguage() {
 		return locationExpressionLanguage;
 	}
@@ -437,6 +448,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setLocationExpressionLanguage(String newLocationExpressionLanguage) {
 		String oldLocationExpressionLanguage = locationExpressionLanguage;
 		locationExpressionLanguage = newLocationExpressionLanguage;
@@ -454,6 +466,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel getSyntaxModel() {
 		if (eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL) {
 			return null;
@@ -478,6 +491,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
 		if (newSyntaxModel != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL && newSyntaxModel != null)) {
@@ -509,6 +523,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getSemanticElement() {
 		return semanticElement;
 	}
@@ -540,6 +555,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setSemanticElement(SemanticElement newSemanticElement) {
 		if (newSemanticElement != semanticElement) {
 			NotificationChain msgs = null;
@@ -569,6 +585,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getFieldName() {
 		return fieldName;
 	}
@@ -579,6 +596,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setFieldName(String newFieldName) {
 		String oldFieldName = fieldName;
 		fieldName = newFieldName;
@@ -594,6 +612,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsSyntacticField() {
 		return isSyntacticField;
 	}
@@ -604,6 +623,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsSyntacticField(boolean newIsSyntacticField) {
 		boolean oldIsSyntacticField = isSyntacticField;
 		isSyntacticField = newIsSyntacticField;
@@ -621,6 +641,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getPath() {
 		return path;
 	}
@@ -631,6 +652,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setPath(String newPath) {
 		String oldPath = path;
 		path = newPath;
@@ -911,7 +933,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

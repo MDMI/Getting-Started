@@ -26,9 +26,9 @@ import org.mdmi.SemanticElement;
  */
 public final class ElementValueSet {
 
-	List<IElementValue> theSetOfAll = new LinkedList<IElementValue>();
+	List<IElementValue> theSetOfAll = new LinkedList<>();
 
-	private LinkedHashMap<String, List<IElementValue>> m_xelements = new LinkedHashMap<String, List<IElementValue>>();
+	private LinkedHashMap<String, List<IElementValue>> m_xelements = new LinkedHashMap<>();
 
 	/**
 	 * Get all the element values in this element values set.
@@ -50,7 +50,7 @@ public final class ElementValueSet {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
-		return getElementValuesByName(semanticElement.getName());
+		return getElementValuesByName(semanticElement);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public final class ElementValueSet {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
-		List<IElementValue> values = new LinkedList<IElementValue>();
+		List<IElementValue> values = new LinkedList<>();
 		processChildren(semanticElement, thiz, values);
 		return values;
 	}
@@ -86,7 +86,7 @@ public final class ElementValueSet {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
-		List<IElementValue> values = new LinkedList<IElementValue>();
+		List<IElementValue> values = new LinkedList<>();
 		List<IElementValue> children = thiz.getChildren();
 		for (IElementValue child : children) {
 			if (child.getSemanticElement() == semanticElement) {
@@ -111,7 +111,7 @@ public final class ElementValueSet {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
-		LinkedList<IElementValue> values = new LinkedList<IElementValue>();
+		LinkedList<IElementValue> values = new LinkedList<>();
 		IElementValue owner = thiz.getParent();
 		if (owner != null) {
 			processOwner(semanticElement, owner, values, thiz);
@@ -119,8 +119,8 @@ public final class ElementValueSet {
 		return values;
 	}
 
-	public boolean hasElementValuesByName(String semanticElementName) {
-		return m_xelements.containsKey(semanticElementName);
+	public boolean hasElementValuesByName(SemanticElement semanticElementName) {
+		return m_xelements.containsKey(semanticElementName.getUniqueId());
 	}
 
 	/**
@@ -130,13 +130,13 @@ public final class ElementValueSet {
 	 *            The semantic element name to look for.
 	 * @return The sub-set of all element values of the specified type.
 	 */
-	public List<IElementValue> getElementValuesByName(String semanticElementName) {
+	public List<IElementValue> getElementValuesByName(SemanticElement semanticElementName) {
 
 		if (semanticElementName == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
 		if (!m_xelements.containsKey(semanticElementName)) {
-			m_xelements.put(semanticElementName, new LinkedList<IElementValue>());
+			m_xelements.put(semanticElementName.getUniqueId(), new LinkedList<IElementValue>());
 			for (IElementValue avalue : this.theSetOfAll) {
 				if (avalue.getSemanticElement() != null &&
 						semanticElementName.equals(avalue.getSemanticElement().getName())) {
@@ -157,29 +157,34 @@ public final class ElementValueSet {
 	 *            The element value to add.
 	 */
 	public void addElementValue(IElementValue xelement) {
+
+		// xelement.getSemanticElement().
+
 		theSetOfAll.add(xelement);
-		if (xelement.getSemanticElement() != null && !StringUtils.isEmpty(xelement.getSemanticElement().getName())) {
-			if (!m_xelements.containsKey(xelement.getSemanticElement().getName())) {
-				m_xelements.put(xelement.getSemanticElement().getName(), new LinkedList<IElementValue>());
+		if (xelement.getSemanticElement() != null &&
+				!StringUtils.isEmpty(xelement.getSemanticElement().getUniqueId())) {
+			if (!m_xelements.containsKey(xelement.getSemanticElement().getUniqueId())) {
+				m_xelements.put(xelement.getSemanticElement().getUniqueId(), new LinkedList<IElementValue>());
 			}
-			m_xelements.get(xelement.getSemanticElement().getName()).add(xelement);
+			m_xelements.get(xelement.getSemanticElement().getUniqueId()).add(xelement);
 		}
 
 	}
 
 	public void pushElementValue(IElementValue xelement) {
-		if (xelement.getSemanticElement() != null && !StringUtils.isEmpty(xelement.getSemanticElement().getName())) {
-			if (!m_xelements.containsKey(xelement.getSemanticElement().getName())) {
-				m_xelements.put(xelement.getSemanticElement().getName(), new LinkedList<IElementValue>());
+		if (xelement.getSemanticElement() != null &&
+				!StringUtils.isEmpty(xelement.getSemanticElement().getUniqueId())) {
+			if (!m_xelements.containsKey(xelement.getSemanticElement().getUniqueId())) {
+				m_xelements.put(xelement.getSemanticElement().getUniqueId(), new LinkedList<IElementValue>());
 			}
-			m_xelements.get(xelement.getSemanticElement().getName()).add(xelement);
+			m_xelements.get(xelement.getSemanticElement().getUniqueId()).add(xelement);
 		}
 
 	}
 
 	public void removeElementValue(IElementValue xelement) {
 		this.theSetOfAll.remove(xelement);
-		m_xelements.get(xelement.getSemanticElement().getName()).remove(xelement);
+		m_xelements.get(xelement.getSemanticElement().getUniqueId()).remove(xelement);
 	}
 
 	/**

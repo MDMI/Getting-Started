@@ -167,6 +167,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -177,6 +178,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -191,6 +193,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -201,6 +204,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -217,6 +221,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getFromMDMI() {
 		return fromMDMI;
 	}
@@ -227,6 +232,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setFromMDMI(String newFromMDMI) {
 		String oldFromMDMI = fromMDMI;
 		fromMDMI = newFromMDMI;
@@ -243,6 +249,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getToMDMI() {
 		return toMDMI;
 	}
@@ -253,6 +260,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setToMDMI(String newToMDMI) {
 		String oldToMDMI = toMDMI;
 		toMDMI = newToMDMI;
@@ -268,6 +276,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getMdmiDatatype() {
 		if (mdmiDatatype != null && mdmiDatatype.eIsProxy()) {
 			InternalEObject oldMdmiDatatype = (InternalEObject) mdmiDatatype;
@@ -300,6 +309,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMdmiDatatype(MDMIDatatype newMdmiDatatype) {
 		MDMIDatatype oldMdmiDatatype = mdmiDatatype;
 		mdmiDatatype = newMdmiDatatype;
@@ -316,6 +326,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getMessageDatatype() {
 		if (messageDatatype != null && messageDatatype.eIsProxy()) {
 			InternalEObject oldMessageDatatype = (InternalEObject) messageDatatype;
@@ -348,6 +359,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setMessageDatatype(MDMIDatatype newMessageDatatype) {
 		MDMIDatatype oldMessageDatatype = messageDatatype;
 		messageDatatype = newMessageDatatype;
@@ -497,7 +509,7 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

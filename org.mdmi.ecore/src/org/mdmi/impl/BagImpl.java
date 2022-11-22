@@ -134,6 +134,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsUnique() {
 		return isUnique;
 	}
@@ -144,6 +145,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsUnique(boolean newIsUnique) {
 		boolean oldIsUnique = isUnique;
 		isUnique = newIsUnique;
@@ -158,6 +160,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsOrdered() {
 		return isOrdered;
 	}
@@ -168,6 +171,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsOrdered(boolean newIsOrdered) {
 		boolean oldIsOrdered = isOrdered;
 		isOrdered = newIsOrdered;
@@ -183,9 +187,10 @@ public class BagImpl extends NodeImpl implements Bag {
 	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
+			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
 		}
 		return nodes;
 	}
@@ -301,7 +306,7 @@ public class BagImpl extends NodeImpl implements Bag {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isUnique: ");
 		result.append(isUnique);
 		result.append(", isOrdered: ");
@@ -379,7 +384,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 */
 	Map<String, ArrayList<Node>> nodeHash = Collections.synchronizedMap(new HashMap<String, ArrayList<Node>>());
 
-	ArrayList<Node> empty = new ArrayList<Node>();
+	ArrayList<Node> empty = new ArrayList<>();
 
 	@Override
 	public ArrayList<Node> getNodesByLocation(String nodeName) {
@@ -387,13 +392,13 @@ public class BagImpl extends NodeImpl implements Bag {
 		synchronized (this) {
 
 			if (nodes == null) {
-				nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
+				nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
 			}
 			if (nodeHash.isEmpty()) {
 				for (Node node : nodes) {
 
 					String key = node.getLocation();
-					// System.out.println("NAME IS " + this.getName() + "add key " + key);
+
 					int start = key.indexOf("[");
 					if (start > -1) {
 						key = key.substring(0, start);
@@ -402,10 +407,9 @@ public class BagImpl extends NodeImpl implements Bag {
 					String[] keys = key.split("/");
 					for (String k : keys) {
 						if (!nodeHash.containsKey(k)) {
-							// System.out.println("key is " + k);
+
 							nodeHash.put(k, new ArrayList<Node>());
 						}
-						/// System.out.println(node.getName() + "add key " + k);
 
 						nodeHash.get(k).add(node);
 					}
@@ -413,12 +417,11 @@ public class BagImpl extends NodeImpl implements Bag {
 				}
 			}
 
-			// System.out.println("look for " + nodeName);
 			if (nodeHash.containsKey(nodeName)) {
-				// System.out.println("found for " + nodeName);
+
 				return nodeHash.get(nodeName);
 			} else {
-				// System.out.println("not found for " + nodeName);
+
 				return empty;
 			}
 		}

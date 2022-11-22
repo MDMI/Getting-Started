@@ -99,6 +99,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getExpression() {
 		return expression;
 	}
@@ -109,6 +110,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;
@@ -125,6 +127,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getLanguage() {
 		return language;
 	}
@@ -135,6 +138,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
@@ -233,7 +237,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (expression: ");
 		result.append(expression);
 		result.append(", language: ");

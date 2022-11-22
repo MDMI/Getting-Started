@@ -50,10 +50,9 @@ public class ExportToXMI {
 
 		try {
 			resource.save(options);
-			System.out.println("Model has been exported to XMI");
+
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			System.out.println(e1.getMessage());
+
 		}
 
 	}

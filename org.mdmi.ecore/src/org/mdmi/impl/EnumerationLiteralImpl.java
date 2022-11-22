@@ -118,6 +118,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -128,6 +129,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -143,6 +145,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -153,6 +156,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
@@ -169,6 +173,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -179,6 +184,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 *
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
@@ -288,7 +294,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 			return super.toString();
 		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

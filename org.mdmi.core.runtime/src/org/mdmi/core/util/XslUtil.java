@@ -90,7 +90,7 @@ public class XslUtil {
 			throw new IllegalArgumentException("The xpath cannot be null or empty!");
 		}
 		NodeList nodes = getNodeList(root, xpath, context);
-		ArrayList<Node> a = new ArrayList<Node>();
+		ArrayList<Node> a = new ArrayList<>();
 		for (int i = 0; i < nodes.getLength(); i++) {
 			a.add(nodes.item(i));
 		}
@@ -890,11 +890,11 @@ public class XslUtil {
 	}
 
 	private static class XCache {
-		private final ArrayList<XC> m_cache = new ArrayList<XC>();
+		private final ArrayList<XC> m_cache = new ArrayList<>();
 
-		private final HashMap<String, Integer> m_ruleNameIndex = new HashMap<String, Integer>();
+		private final HashMap<String, Integer> m_ruleNameIndex = new HashMap<>();
 
-		private final TreeMap<Date, Integer> m_lastUsedIndex = new TreeMap<Date, Integer>();
+		private final TreeMap<Date, Integer> m_lastUsedIndex = new TreeMap<>();
 
 		private final Object lock = new Object();
 
@@ -975,14 +975,10 @@ public class XslUtil {
 		Node n = createNodeForPath(root, "e[@a='v1']", 0);
 		Element e = (Element) n;
 		XmlUtil.addElement(e, "test1", "value1");
-		// System.out.println("----------");
-		// System.out.println(XmlWriter.toString(doc));
 
 		n = createNodeForPath(root, "e[@a='v2']", 0);
 		e = (Element) n;
 		XmlUtil.addElement(e, "test2", "value2");
-		// System.out.println("----------");
-		// System.out.println(XmlWriter.toString(doc));
 
 		xml = "<root>" + "  <e1>" + "    <e2 a='v1'></e2>" + "    <x>test1</x>" + "  </e1>" + "  <e1>" +
 				"    <e2 a='v2'></e2>" + "  </e1>" + "</root>";
@@ -1013,7 +1009,5 @@ public class XslUtil {
 		}
 		XmlUtil.setText(x, "changed3");
 
-		// System.out.println("----------");
-		// System.out.println(XmlWriter.toString(doc));
 	}
 } // XslUtil

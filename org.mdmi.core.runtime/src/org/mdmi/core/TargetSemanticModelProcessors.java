@@ -28,7 +28,7 @@ public final class TargetSemanticModelProcessors {
 
 	private static Logger logger = LoggerFactory.getLogger(TargetSemanticModelProcessors.class);
 
-	private final ArrayList<ISemanticProcessor> targetSemanticProcessors = new ArrayList<ISemanticProcessor>();
+	private final ArrayList<ISemanticProcessor> targetSemanticProcessors = new ArrayList<>();
 
 	public void addTargetSemanticProcessor(ISemanticProcessor targetSemanticProcessor) {
 		if (targetSemanticProcessor != null) {

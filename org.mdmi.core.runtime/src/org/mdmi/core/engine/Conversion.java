@@ -45,7 +45,7 @@ public class Conversion {
 
 	MdmiTransferInfo m_transferInfo;
 
-	ArrayList<ConversionInfo> m_conversionInfos = new ArrayList<ConversionInfo>();
+	ArrayList<ConversionInfo> m_conversionInfos = new ArrayList<>();
 
 	/**
 	 * Construct an instance from the given unit of work.
@@ -62,7 +62,6 @@ public class Conversion {
 
 		ArrayList<MDMIBusinessElementReference> elements = m_transferInfo.targetElements;
 		if (elements.size() <= 0) {
-			// System.out.println("WARNING: no transfer targets specified, nothing to do!");
 			return;
 		}
 		if (m_transferInfo.useDictionary) {
@@ -106,7 +105,7 @@ public class Conversion {
 					"Conversion: invalid mapping, missing target SEs, target BER is " + trgBER.getName());
 			}
 
-			ArrayList<ConversionInfo> cis = new ArrayList<ConversionInfo>();
+			ArrayList<ConversionInfo> cis = new ArrayList<>();
 			for (int j = 0; j < trgSes.size(); j++) {
 				SemanticElement target = trgSes.get(j);
 				ConversionInfo ci = new ConversionInfo(target, trgBER, srcBER);
@@ -167,7 +166,7 @@ public class Conversion {
 				continue;
 			}
 
-			ArrayList<ConversionInfo> cis = new ArrayList<ConversionInfo>();
+			ArrayList<ConversionInfo> cis = new ArrayList<>();
 			for (int j = 0; j < trgBers.size(); j++) {
 				MDMIBusinessElementReference trgBER = trgBers.get(j);
 				String uid = trgBER.getUniqueIdentifier();
@@ -208,14 +207,14 @@ public class Conversion {
 					SemanticElement source = ci.source.get(j);
 					List<IElementValue> srcs = m_owner.srcSemanticModel.getElementValuesByType(source);
 					List<IElementValue> trgs = m_owner.trgSemanticModel.getElementValuesByType(ci.target);
-					HashMap<String, XElementValue> relTrgs = new HashMap<String, XElementValue>();
+					HashMap<String, XElementValue> relTrgs = new HashMap<>();
 					boolean hasKey = source.hasValidKeyRelation();
 					if (ci.target.isMultipleInstances()) {
 						for (int k = 0; k < srcs.size(); k++) {
 							XElementValue parentContainer = null;
 							XElementValue src = (XElementValue) srcs.get(k);
 							XElementValue trg = null;
-							ArrayList<XElementValue> trgXes = new ArrayList<XElementValue>();
+							ArrayList<XElementValue> trgXes = new ArrayList<>();
 							CWMM cwmm = null;
 
 							if (hasKey && 0 < k) {
@@ -329,7 +328,7 @@ public class Conversion {
 		}
 	}
 
-	HashMap<String, List<IElementValue>> globalSources = new HashMap<String, List<IElementValue>>();
+	HashMap<String, List<IElementValue>> globalSources = new HashMap<>();
 
 	// Child With Multiple Maps
 	private static class CWMM {
@@ -346,7 +345,7 @@ public class Conversion {
 	// returns null if there is no child with multiple maps
 	private CWMM getChildWithMultipleMaps(ConversionInfo parent) {
 		ArrayList<ConversionInfo> cis = getCisForSE(parent.target);
-		HashMap<String, CWMM> ses = new HashMap<String, CWMM>();
+		HashMap<String, CWMM> ses = new HashMap<>();
 		CWMM max = null;
 		for (int i = 0; i < cis.size(); i++) {
 			ConversionInfo ci = cis.get(i);
@@ -374,11 +373,11 @@ public class Conversion {
 	private void execute(XElementValue srcOwner, ConversionInfo parent, ArrayList<XElementValue> trgOwners, CWMM cwmm) {
 		try {
 			ArrayList<ConversionInfo> cis = getCisForSE(parent.target);
-			ArrayList<ConversionInfo> procs = new ArrayList<ConversionInfo>();
+			ArrayList<ConversionInfo> procs = new ArrayList<>();
 			for (int i = 0; i < trgOwners.size(); i++) {
 				// generate an array of CIs that for each owners has only obe CI of the multiple-mapped child
 				XElementValue trgOwner = trgOwners.get(i);
-				ArrayList<ConversionInfo> cisProc = new ArrayList<Conversion.ConversionInfo>();
+				ArrayList<ConversionInfo> cisProc = new ArrayList<>();
 				boolean added = false;
 				for (int j = 0; j < cis.size(); j++) {
 					ConversionInfo ci = cis.get(j);
@@ -425,12 +424,12 @@ public class Conversion {
 
 				boolean deleteOnNull = false;
 				if (ci.target.isMultipleInstances()) {
-					HashMap<String, XElementValue> relTrgs = new HashMap<String, XElementValue>();
+					HashMap<String, XElementValue> relTrgs = new HashMap<>();
 					boolean hasKey = source.hasValidKeyRelation();
 					for (int k = 0; k < srcs.size(); k++) {
 						XElementValue src = (XElementValue) srcs.get(k);
 						XElementValue trg = null;
-						ArrayList<XElementValue> trgXes = new ArrayList<XElementValue>();
+						ArrayList<XElementValue> trgXes = new ArrayList<>();
 						CWMM cwmm = null;
 
 						if (hasKey && 0 < k) {
@@ -596,10 +595,10 @@ public class Conversion {
 
 	// get the CIs for which the target SE's are top level, i.e. have no parent or have a LOCAL parent
 	private ArrayList<ConversionInfo> getTopLevelCis() {
-		ArrayList<ConversionInfo> cis = new ArrayList<ConversionInfo>();
+		ArrayList<ConversionInfo> cis = new ArrayList<>();
 
 		// HashMap to make sure ConversionInfo is only added once
-		HashMap<String, ConversionInfo> hm = new HashMap<String, ConversionInfo>();
+		HashMap<String, ConversionInfo> hm = new HashMap<>();
 		for (int i = 0; i < m_conversionInfos.size(); i++) {
 			ConversionInfo ci = m_conversionInfos.get(i);
 			SemanticElement parent = ci.target.getParent();
@@ -613,13 +612,8 @@ public class Conversion {
 		for (int i = 0; i < m_conversionInfos.size(); i++) {
 			ConversionInfo ci = m_conversionInfos.get(i);
 			SemanticElement parent = ci.target.getParent();
-			if (null == parent || !parent.getDatatype().getName().equalsIgnoreCase("container")) {
-				continue; // parent is either null or not a container
-			}
-			if (hm.containsKey(String.valueOf(i))) {
-				continue; // CI is already in the list as a top level conversion
-			}
-			if (parentHasConversion(cis, parent)) {
+			if (null == parent || !parent.getDatatype().getName().equalsIgnoreCase("container") ||
+					hm.containsKey(String.valueOf(i)) || parentHasConversion(cis, parent)) {
 				continue; // a CI with the target = the parent is in conversions list already, do not add twice
 			}
 			SemanticElement grandParent = parent.getParent(); // check if the grandparent is null or local
@@ -643,7 +637,7 @@ public class Conversion {
 
 	// get the CIs for which the target SE is a child of the given SE
 	private ArrayList<ConversionInfo> getCisForSE(SemanticElement parent) {
-		ArrayList<ConversionInfo> cis = new ArrayList<ConversionInfo>();
+		ArrayList<ConversionInfo> cis = new ArrayList<>();
 		for (int i = 0; i < m_conversionInfos.size(); i++) {
 			ConversionInfo ci = m_conversionInfos.get(i);
 			if (parent.hasChild(ci.target)) {
@@ -653,9 +647,9 @@ public class Conversion {
 		return cis;
 	}
 
-	// given a BER get a list of all SEs that have a ConversionRule rule for it and if none get a name match
+	// given a BER get a list of all SEs that have a ConversionRule rule for it
 	private ArrayList<SemanticElement> getSourceSESforBER(MessageModel model, MDMIBusinessElementReference ber) {
-		ArrayList<SemanticElement> a = new ArrayList<SemanticElement>();
+		ArrayList<SemanticElement> a = new ArrayList<>();
 		Collection<SemanticElement> srcSEs = model.getElementSet().getSemanticElements();
 		for (Iterator<SemanticElement> itSE = srcSEs.iterator(); itSE.hasNext();) {
 			SemanticElement se = itSE.next();
@@ -668,18 +662,18 @@ public class Conversion {
 				}
 			}
 		}
-		if (a.size() <= 0) {
-			SemanticElement se = model.getElementSet().getSemanticElement(ber.getName());
-			if (se != null) {
-				a.add(se);
-			}
-		}
+		// if (a.size() <= 0) {
+		// SemanticElement se = model.getElementSet().getSemanticElement(ber.getName());
+		// if (se != null) {
+		// a.add(se);
+		// }
+		// }
 		return a;
 	}
 
-	// given a BER get a list of all SEs that have a ConversionRule rule for it and if none get a name match
+	// given a BER get a list of all SEs that have a ConversionRule rule for it
 	private ArrayList<SemanticElement> getTargetSESforBER(MessageModel model, MDMIBusinessElementReference ber) {
-		ArrayList<SemanticElement> a = new ArrayList<SemanticElement>();
+		ArrayList<SemanticElement> a = new ArrayList<>();
 		Collection<SemanticElement> srcSEs = model.getElementSet().getSemanticElements();
 		for (Iterator<SemanticElement> itSE = srcSEs.iterator(); itSE.hasNext();) {
 			SemanticElement se = itSE.next();
@@ -692,18 +686,18 @@ public class Conversion {
 				}
 			}
 		}
-		if (a.size() <= 0) {
-			SemanticElement se = model.getElementSet().getSemanticElement(ber.getName());
-			if (se != null) {
-				a.add(se);
-			}
-		}
+		// if (a.size() <= 0) {
+		// SemanticElement se = model.getElementSet().getSemanticElement(ber.getName());
+		// if (se != null) {
+		// a.add(se);
+		// }
+		// }
 		return a;
 	}
 
 	@SuppressWarnings("unused")
 	private ArrayList<MDMIBusinessElementReference> getSourceBERSforSE(MessageModel model, SemanticElement se) {
-		ArrayList<MDMIBusinessElementReference> a = new ArrayList<MDMIBusinessElementReference>();
+		ArrayList<MDMIBusinessElementReference> a = new ArrayList<>();
 		Collection<ConversionRule> toBEs = se.getMapFromMdmi();
 		for (Iterator<ConversionRule> itBE = toBEs.iterator(); itBE.hasNext();) {
 			ConversionRule tbe = itBE.next();
@@ -722,7 +716,7 @@ public class Conversion {
 	}
 
 	private ArrayList<MDMIBusinessElementReference> getTargetBERSforSE(MessageModel model, SemanticElement se) {
-		ArrayList<MDMIBusinessElementReference> a = new ArrayList<MDMIBusinessElementReference>();
+		ArrayList<MDMIBusinessElementReference> a = new ArrayList<>();
 		Collection<ConversionRule> toMEs = se.getMapToMdmi();
 		for (Iterator<ConversionRule> itME = toMEs.iterator(); itME.hasNext();) {
 			ConversionRule tme = itME.next();
@@ -783,7 +777,7 @@ public class Conversion {
 			this.target = target;
 			this.trgBER = trgBER;
 			this.srcBER = srcBER;
-			this.source = new ArrayList<SemanticElement>();
+			this.source = new ArrayList<>();
 		}
 
 		@SuppressWarnings("unchecked")
