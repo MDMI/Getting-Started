@@ -14,18 +14,16 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The Bag class represents a set of syntax nodes. They can be a set or a bag and can be ordered or unordered.
- * </p>
+ * <p>The Bag class represents a set of syntax nodes. They can be a set or a bag and can be ordered or unordered.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.Bag#isIsUnique <em>Is Unique</em>}</li>
- * <li>{@link org.mdmi.Bag#isIsOrdered <em>Is Ordered</em>}</li>
- * <li>{@link org.mdmi.Bag#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link org.mdmi.Bag#isIsUnique <em>Is Unique</em>}</li>
+ *   <li>{@link org.mdmi.Bag#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link org.mdmi.Bag#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getBag()
@@ -39,11 +37,8 @@ public interface Bag extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An "isUnique" Boolean property whose value is true if the set is composed of unique items and false if the set can contain duplicates.
-	 * </p>
+	 * <p>An "isUnique" Boolean property whose value is true if the set is composed of unique items and false if the set can contain duplicates.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Is Unique</em>' attribute.
 	 * @see #setIsUnique(boolean)
 	 * @see org.mdmi.MDMIPackage#getBag_IsUnique()
@@ -56,9 +51,7 @@ public interface Bag extends Node {
 	 * Sets the value of the '{@link org.mdmi.Bag#isIsUnique <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Unique</em>' attribute.
+	 * @param value the new value of the '<em>Is Unique</em>' attribute.
 	 * @see #isIsUnique()
 	 * @generated
 	 */
@@ -69,12 +62,8 @@ public interface Bag extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An "isOrdered" Boolean property whose value is true if the nodes must be in an ordered sequence and false if the set can be unordered. This is
-	 * needed information when inserting a value into a target message.
-	 * </p>
+	 * <p>An "isOrdered" Boolean property whose value is true if the nodes must be in an ordered sequence and false if the set can be unordered. This is needed information when inserting a value into a target message.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Is Ordered</em>' attribute.
 	 * @see #setIsOrdered(boolean)
 	 * @see org.mdmi.MDMIPackage#getBag_IsOrdered()
@@ -87,9 +76,7 @@ public interface Bag extends Node {
 	 * Sets the value of the '{@link org.mdmi.Bag#isIsOrdered <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Ordered</em>' attribute.
+	 * @param value the new value of the '<em>Is Ordered</em>' attribute.
 	 * @see #isIsOrdered()
 	 * @generated
 	 */
@@ -104,7 +91,6 @@ public interface Bag extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Nodes</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getBag_Nodes()
 	 * @model containment="true" required="true" ordered="false"

@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- *
  * @see org.mdmi.util.MDMIResourceImpl
  * @generated
  */
@@ -26,7 +25,6 @@ public class MDMIResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public MDMIResourceFactoryImpl() {

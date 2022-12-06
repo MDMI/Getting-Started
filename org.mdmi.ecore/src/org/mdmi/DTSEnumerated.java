@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.DTSEnumerated#getLiterals <em>Literals</em>}</li>
+ *   <li>{@link org.mdmi.DTSEnumerated#getLiterals <em>Literals</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getDTSEnumerated()
@@ -30,7 +30,6 @@ public interface DTSEnumerated extends MDMIDatatype {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Literals</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getDTSEnumerated_Literals()
 	 * @model containment="true"

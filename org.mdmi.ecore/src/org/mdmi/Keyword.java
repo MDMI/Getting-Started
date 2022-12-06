@@ -14,21 +14,18 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The keyword class contains either a keyword or a keyword/value pair. The set of Keywords can be used to profile a SemanticElement, to provide a
- * mechanism to search for a SemanticElement, and to associate a SemanticElement with an external ontology or taxonomy.
- * </p>
+ * <p>The keyword class contains either a keyword or a keyword/value pair. The set of Keywords can be used to profile a SemanticElement, to provide a mechanism to search for a SemanticElement, and to associate a SemanticElement with an external ontology or taxonomy.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.Keyword#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.Keyword#getKeyword <em>Keyword</em>}</li>
- * <li>{@link org.mdmi.Keyword#getKeywordValue <em>Keyword Value</em>}</li>
- * <li>{@link org.mdmi.Keyword#getReference <em>Reference</em>}</li>
- * <li>{@link org.mdmi.Keyword#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.mdmi.Keyword#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.Keyword#getKeyword <em>Keyword</em>}</li>
+ *   <li>{@link org.mdmi.Keyword#getKeywordValue <em>Keyword Value</em>}</li>
+ *   <li>{@link org.mdmi.Keyword#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdmi.Keyword#getOwner <em>Owner</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getKeyword()
@@ -42,11 +39,8 @@ public interface Keyword extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The optional "description" property of type string describing the Keyword and/or the set of Keyword associated with a SemanticElement.
-	 * </p>
+	 * <p>The optional "description" property of type string describing the Keyword and/or the set of Keyword associated with a SemanticElement.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getKeyword_Description()
@@ -59,9 +53,7 @@ public interface Keyword extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Keyword#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -72,11 +64,8 @@ public interface Keyword extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "keyword" property of type String is used to describe or profile a SemanticElement.
-	 * </p>
+	 * <p>A "keyword" property of type String is used to describe or profile a SemanticElement.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Keyword</em>' attribute.
 	 * @see #setKeyword(String)
 	 * @see org.mdmi.MDMIPackage#getKeyword_Keyword()
@@ -89,9 +78,7 @@ public interface Keyword extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Keyword#getKeyword <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Keyword</em>' attribute.
+	 * @param value the new value of the '<em>Keyword</em>' attribute.
 	 * @see #getKeyword()
 	 * @generated
 	 */
@@ -102,11 +89,8 @@ public interface Keyword extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An optional "keywordValue" of type string that is associated with the keyword creating a keyword/value pair.
-	 * </p>
+	 * <p>An optional "keywordValue" of type string that is associated with the keyword creating a keyword/value pair.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Keyword Value</em>' attribute.
 	 * @see #setKeywordValue(String)
 	 * @see org.mdmi.MDMIPackage#getKeyword_KeywordValue()
@@ -119,9 +103,7 @@ public interface Keyword extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Keyword#getKeywordValue <em>Keyword Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Keyword Value</em>' attribute.
+	 * @param value the new value of the '<em>Keyword Value</em>' attribute.
 	 * @see #getKeywordValue()
 	 * @generated
 	 */
@@ -132,11 +114,8 @@ public interface Keyword extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An optional reference that identifies the origin set for the keywords, for example a formal ontology.
-	 * </p>
+	 * <p>An optional reference that identifies the origin set for the keywords, for example a formal ontology.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Reference</em>' attribute.
 	 * @see #setReference(String)
 	 * @see org.mdmi.MDMIPackage#getKeyword_Reference()
@@ -149,9 +128,7 @@ public interface Keyword extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Keyword#getReference <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Reference</em>' attribute.
+	 * @param value the new value of the '<em>Reference</em>' attribute.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -166,7 +143,6 @@ public interface Keyword extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(SemanticElement)
 	 * @see org.mdmi.MDMIPackage#getKeyword_Owner()
@@ -180,9 +156,7 @@ public interface Keyword extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Keyword#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Owner</em>' container reference.
+	 * @param value the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
 	 * @generated
 	 */

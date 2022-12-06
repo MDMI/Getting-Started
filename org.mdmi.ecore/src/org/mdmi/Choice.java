@@ -14,19 +14,16 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The Choice class describes a conditional branch of the syntax tree for which a subset is present in any particular message. The subset is
- * determined by a constraint expression.
- * </p>
+ * <p>The Choice class describes a conditional branch of the syntax tree for which a subset is present in any particular message. The subset is determined by a constraint expression.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.Choice#getConstraint <em>Constraint</em>}</li>
- * <li>{@link org.mdmi.Choice#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
- * <li>{@link org.mdmi.Choice#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link org.mdmi.Choice#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.mdmi.Choice#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.Choice#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getChoice()
@@ -40,12 +37,8 @@ public interface Choice extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "constraint" property whose value is an expression that can be used to determine which of the set of nodes should be in a physical message
-	 * instance.
-	 * </p>
+	 * <p>A "constraint" property whose value is an expression that can be used to determine which of the set of nodes should be in a physical message instance.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Constraint</em>' attribute.
 	 * @see #setConstraint(String)
 	 * @see org.mdmi.MDMIPackage#getChoice_Constraint()
@@ -58,9 +51,7 @@ public interface Choice extends Node {
 	 * Sets the value of the '{@link org.mdmi.Choice#getConstraint <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Constraint</em>' attribute.
+	 * @param value the new value of the '<em>Constraint</em>' attribute.
 	 * @see #getConstraint()
 	 * @generated
 	 */
@@ -71,12 +62,8 @@ public interface Choice extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An optional "constraintExpressionLanguage" of type String that is a references the language used in the Choice constraint property. The
-	 * constraintExpressionLanguage must be able to reference nodes.
-	 * </p>
+	 * <p>An optional "constraintExpressionLanguage" of type String that is a references the language used in the Choice constraint property. The constraintExpressionLanguage must be able to reference nodes.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Constraint Expression Language</em>' attribute.
 	 * @see #setConstraintExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getChoice_ConstraintExpressionLanguage()
@@ -89,9 +76,7 @@ public interface Choice extends Node {
 	 * Sets the value of the '{@link org.mdmi.Choice#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Constraint Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Constraint Expression Language</em>' attribute.
 	 * @see #getConstraintExpressionLanguage()
 	 * @generated
 	 */
@@ -106,7 +91,6 @@ public interface Choice extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Nodes</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getChoice_Nodes()
 	 * @model containment="true" required="true" ordered="false"

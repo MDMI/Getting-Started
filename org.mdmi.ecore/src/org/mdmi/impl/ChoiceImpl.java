@@ -32,9 +32,9 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.impl.ChoiceImpl#getConstraint <em>Constraint</em>}</li>
- * <li>{@link org.mdmi.impl.ChoiceImpl#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
- * <li>{@link org.mdmi.impl.ChoiceImpl#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link org.mdmi.impl.ChoiceImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.mdmi.impl.ChoiceImpl#getConstraintExpressionLanguage <em>Constraint Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.impl.ChoiceImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,7 +44,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The default value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -55,7 +54,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConstraint()
 	 * @generated
 	 * @ordered
@@ -66,7 +64,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The default value of the '{@link #getConstraintExpressionLanguage() <em>Constraint Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConstraintExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -77,7 +74,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getConstraintExpressionLanguage() <em>Constraint Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getConstraintExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -88,7 +84,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getNodes()
 	 * @generated
 	 * @ordered
@@ -98,7 +93,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected ChoiceImpl() {
@@ -108,7 +102,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +112,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -130,24 +122,19 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setConstraint(String newConstraint) {
 		String oldConstraint = constraint;
 		constraint = newConstraint;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.CHOICE__CONSTRAINT, oldConstraint, constraint));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.CHOICE__CONSTRAINT, oldConstraint, constraint));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -158,31 +145,25 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setConstraintExpressionLanguage(String newConstraintExpressionLanguage) {
 		String oldConstraintExpressionLanguage = constraintExpressionLanguage;
 		constraintExpressionLanguage = newConstraintExpressionLanguage;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.CHOICE__CONSTRAINT_EXPRESSION_LANGUAGE,
-					oldConstraintExpressionLanguage, constraintExpressionLanguage));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.CHOICE__CONSTRAINT_EXPRESSION_LANGUAGE, oldConstraintExpressionLanguage, constraintExpressionLanguage));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.CHOICE__NODES);
+			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.CHOICE__NODES);
 		}
 		return nodes;
 	}
@@ -190,14 +171,13 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.CHOICE__NODES:
-				return ((InternalEList<?>) getNodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -205,7 +185,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +203,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -232,14 +210,14 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.CHOICE__CONSTRAINT:
-				setConstraint((String) newValue);
+				setConstraint((String)newValue);
 				return;
 			case MDMIPackage.CHOICE__CONSTRAINT_EXPRESSION_LANGUAGE:
-				setConstraintExpressionLanguage((String) newValue);
+				setConstraintExpressionLanguage((String)newValue);
 				return;
 			case MDMIPackage.CHOICE__NODES:
 				getNodes().clear();
-				getNodes().addAll((Collection<? extends Node>) newValue);
+				getNodes().addAll((Collection<? extends Node>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,7 +226,6 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -270,20 +247,15 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.CHOICE__CONSTRAINT:
-				return CONSTRAINT_EDEFAULT == null
-						? constraint != null
-						: !CONSTRAINT_EDEFAULT.equals(constraint);
+				return CONSTRAINT_EDEFAULT == null ? constraint != null : !CONSTRAINT_EDEFAULT.equals(constraint);
 			case MDMIPackage.CHOICE__CONSTRAINT_EXPRESSION_LANGUAGE:
-				return CONSTRAINT_EXPRESSION_LANGUAGE_EDEFAULT == null
-						? constraintExpressionLanguage != null
-						: !CONSTRAINT_EXPRESSION_LANGUAGE_EDEFAULT.equals(constraintExpressionLanguage);
+				return CONSTRAINT_EXPRESSION_LANGUAGE_EDEFAULT == null ? constraintExpressionLanguage != null : !CONSTRAINT_EXPRESSION_LANGUAGE_EDEFAULT.equals(constraintExpressionLanguage);
 			case MDMIPackage.CHOICE__NODES:
 				return nodes != null && !nodes.isEmpty();
 		}
@@ -293,14 +265,11 @@ public class ChoiceImpl extends NodeImpl implements Choice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (constraint: ");

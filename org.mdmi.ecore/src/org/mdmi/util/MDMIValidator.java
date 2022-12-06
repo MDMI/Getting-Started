@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
+import org.mdmi.*;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.ConversionRule;
@@ -51,7 +52,6 @@ import org.mdmi.ecore.MDMIPlugin;
  * <!-- begin-user-doc -->
  * The <b>Validator</b> for the model.
  * <!-- end-user-doc -->
- *
  * @see org.mdmi.MDMIPackage
  * @generated
  */
@@ -60,17 +60,14 @@ public class MDMIValidator extends EObjectValidator {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public static final MDMIValidator INSTANCE = new MDMIValidator();
 
 	/**
-	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic
-	 * {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
+	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
@@ -81,7 +78,6 @@ public class MDMIValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
@@ -90,7 +86,6 @@ public class MDMIValidator extends EObjectValidator {
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
@@ -99,7 +94,6 @@ public class MDMIValidator extends EObjectValidator {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public MDMIValidator() {
@@ -110,19 +104,17 @@ public class MDMIValidator extends EObjectValidator {
 	 * Returns the package of this validator switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	protected EPackage getEPackage() {
-		return MDMIPackage.eINSTANCE;
+	  return MDMIPackage.eINSTANCE;
 	}
 
 	/**
 	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -130,70 +122,69 @@ public class MDMIValidator extends EObjectValidator {
 			Map<Object, Object> context) {
 		switch (classifierID) {
 			case MDMIPackage.MESSAGE_MODEL:
-				return validateMessageModel((MessageModel) value, diagnostics, context);
+				return validateMessageModel((MessageModel)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL:
-				return validateMessageSyntaxModel((MessageSyntaxModel) value, diagnostics, context);
+				return validateMessageSyntaxModel((MessageSyntaxModel)value, diagnostics, context);
 			case MDMIPackage.NODE:
-				return validateNode((Node) value, diagnostics, context);
+				return validateNode((Node)value, diagnostics, context);
 			case MDMIPackage.BAG:
-				return validateBag((Bag) value, diagnostics, context);
+				return validateBag((Bag)value, diagnostics, context);
 			case MDMIPackage.CHOICE:
-				return validateChoice((Choice) value, diagnostics, context);
+				return validateChoice((Choice)value, diagnostics, context);
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR:
-				return validateLeafSyntaxTranslator((LeafSyntaxTranslator) value, diagnostics, context);
+				return validateLeafSyntaxTranslator((LeafSyntaxTranslator)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_GROUP:
-				return validateMessageGroup((MessageGroup) value, diagnostics, context);
+				return validateMessageGroup((MessageGroup)value, diagnostics, context);
 			case MDMIPackage.DATA_RULE:
-				return validateDataRule((DataRule) value, diagnostics, context);
+				return validateDataRule((DataRule)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET:
-				return validateSemanticElementSet((SemanticElementSet) value, diagnostics, context);
+				return validateSemanticElementSet((SemanticElementSet)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT:
-				return validateSemanticElement((SemanticElement) value, diagnostics, context);
+				return validateSemanticElement((SemanticElement)value, diagnostics, context);
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE:
-				return validateSimpleMessageComposite((SimpleMessageComposite) value, diagnostics, context);
+				return validateSimpleMessageComposite((SimpleMessageComposite)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_COMPOSITE:
-				return validateMessageComposite((MessageComposite) value, diagnostics, context);
+				return validateMessageComposite((MessageComposite)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE:
-				return validateSemanticElementBusinessRule((SemanticElementBusinessRule) value, diagnostics, context);
+				return validateSemanticElementBusinessRule((SemanticElementBusinessRule)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP:
-				return validateSemanticElementRelationship((SemanticElementRelationship) value, diagnostics, context);
+				return validateSemanticElementRelationship((SemanticElementRelationship)value, diagnostics, context);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE:
-				return validateMDMIBusinessElementReference((MDMIBusinessElementReference) value, diagnostics, context);
+				return validateMDMIBusinessElementReference((MDMIBusinessElementReference)value, diagnostics, context);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE:
-				return validateMDMIBusinessElementRule((MDMIBusinessElementRule) value, diagnostics, context);
+				return validateMDMIBusinessElementRule((MDMIBusinessElementRule)value, diagnostics, context);
 			case MDMIPackage.CONVERSION_RULE:
-				return validateConversionRule((ConversionRule) value, diagnostics, context);
+				return validateConversionRule((ConversionRule)value, diagnostics, context);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE:
-				return validateMDMIDomainDictionaryReference(
-					(MDMIDomainDictionaryReference) value, diagnostics, context);
+				return validateMDMIDomainDictionaryReference((MDMIDomainDictionaryReference)value, diagnostics, context);
 			case MDMIPackage.MDMI_EXPRESSION:
-				return validateMDMIExpression((MDMIExpression) value, diagnostics, context);
+				return validateMDMIExpression((MDMIExpression)value, diagnostics, context);
 			case MDMIPackage.KEYWORD:
-				return validateKeyword((Keyword) value, diagnostics, context);
+				return validateKeyword((Keyword)value, diagnostics, context);
 			case MDMIPackage.MDMI_DATATYPE:
-				return validateMDMIDatatype((MDMIDatatype) value, diagnostics, context);
+				return validateMDMIDatatype((MDMIDatatype)value, diagnostics, context);
 			case MDMIPackage.DTS_PRIMITIVE:
-				return validateDTSPrimitive((DTSPrimitive) value, diagnostics, context);
+				return validateDTSPrimitive((DTSPrimitive)value, diagnostics, context);
 			case MDMIPackage.DTC_STRUCTURED:
-				return validateDTCStructured((DTCStructured) value, diagnostics, context);
+				return validateDTCStructured((DTCStructured)value, diagnostics, context);
 			case MDMIPackage.FIELD:
-				return validateField((Field) value, diagnostics, context);
+				return validateField((Field)value, diagnostics, context);
 			case MDMIPackage.DT_EXTERNAL:
-				return validateDTExternal((DTExternal) value, diagnostics, context);
+				return validateDTExternal((DTExternal)value, diagnostics, context);
 			case MDMIPackage.DTS_DERIVED:
-				return validateDTSDerived((DTSDerived) value, diagnostics, context);
+				return validateDTSDerived((DTSDerived)value, diagnostics, context);
 			case MDMIPackage.DTC_CHOICE:
-				return validateDTCChoice((DTCChoice) value, diagnostics, context);
+				return validateDTCChoice((DTCChoice)value, diagnostics, context);
 			case MDMIPackage.DTS_ENUMERATED:
-				return validateDTSEnumerated((DTSEnumerated) value, diagnostics, context);
+				return validateDTSEnumerated((DTSEnumerated)value, diagnostics, context);
 			case MDMIPackage.ENUMERATION_LITERAL:
-				return validateEnumerationLiteral((EnumerationLiteral) value, diagnostics, context);
+				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
 			case MDMIPackage.DATATYPE_MAP:
-				return validateDatatypeMap((DatatypeMap) value, diagnostics, context);
+				return validateDatatypeMap((DatatypeMap)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_ELEMENT_TYPE:
-				return validateMessageElementType((MessageElementType) value, diagnostics, context);
+				return validateMessageElementType((MessageElementType)value, diagnostics, context);
 			case MDMIPackage.URI:
-				return validateURI((String) value, diagnostics, context);
+				return validateURI((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -202,7 +193,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMessageModel(MessageModel messageModel, DiagnosticChain diagnostics,
@@ -213,7 +203,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMessageSyntaxModel(MessageSyntaxModel messageSyntaxModel, DiagnosticChain diagnostics,
@@ -224,7 +213,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateNode(Node node, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -234,7 +222,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateBag(Bag bag, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -244,7 +231,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateChoice(Choice choice, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -254,7 +240,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateLeafSyntaxTranslator(LeafSyntaxTranslator leafSyntaxTranslator, DiagnosticChain diagnostics,
@@ -265,7 +250,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMessageGroup(MessageGroup messageGroup, DiagnosticChain diagnostics,
@@ -276,7 +260,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDataRule(DataRule dataRule, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -286,7 +269,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateSemanticElementSet(SemanticElementSet semanticElementSet, DiagnosticChain diagnostics,
@@ -297,7 +279,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateSemanticElement(SemanticElement semanticElement, DiagnosticChain diagnostics,
@@ -308,7 +289,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateSimpleMessageComposite(SimpleMessageComposite simpleMessageComposite,
@@ -319,7 +299,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMessageComposite(MessageComposite messageComposite, DiagnosticChain diagnostics,
@@ -330,7 +309,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateSemanticElementBusinessRule(SemanticElementBusinessRule semanticElementBusinessRule,
@@ -341,7 +319,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateSemanticElementRelationship(SemanticElementRelationship semanticElementRelationship,
@@ -352,7 +329,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMDMIBusinessElementReference(MDMIBusinessElementReference mdmiBusinessElementReference,
@@ -363,7 +339,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMDMIBusinessElementRule(MDMIBusinessElementRule mdmiBusinessElementRule,
@@ -374,7 +349,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateConversionRule(ConversionRule conversionRule, DiagnosticChain diagnostics,
@@ -385,7 +359,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMDMIDomainDictionaryReference(MDMIDomainDictionaryReference mdmiDomainDictionaryReference,
@@ -396,7 +369,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMDMIExpression(MDMIExpression mdmiExpression, DiagnosticChain diagnostics,
@@ -407,7 +379,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateKeyword(Keyword keyword, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -417,7 +388,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMDMIDatatype(MDMIDatatype mdmiDatatype, DiagnosticChain diagnostics,
@@ -428,7 +398,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTSPrimitive(DTSPrimitive dtsPrimitive, DiagnosticChain diagnostics,
@@ -439,7 +408,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTCStructured(DTCStructured dtcStructured, DiagnosticChain diagnostics,
@@ -450,7 +418,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateField(Field field, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -460,7 +427,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTExternal(DTExternal dtExternal, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -470,7 +436,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTSDerived(DTSDerived dtsDerived, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -480,7 +445,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTCChoice(DTCChoice dtcChoice, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -490,7 +454,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDTSEnumerated(DTSEnumerated dtsEnumerated, DiagnosticChain diagnostics,
@@ -501,7 +464,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateEnumerationLiteral(EnumerationLiteral enumerationLiteral, DiagnosticChain diagnostics,
@@ -512,7 +474,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateDatatypeMap(DatatypeMap datatypeMap, DiagnosticChain diagnostics,
@@ -523,7 +484,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateMessageElementType(MessageElementType messageElementType, DiagnosticChain diagnostics,
@@ -534,7 +494,6 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateURI(String uri, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -545,19 +504,19 @@ public class MDMIValidator extends EObjectValidator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 * @see #validateURI_Pattern
 	 */
-	public static final PatternMatcher[][] URI__PATTERN__VALUES = new PatternMatcher[][] {
-			new PatternMatcher[] {
-					XMLTypeUtil.createPatternMatcher("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?") } };
+	public static final PatternMatcher [][] URI__PATTERN__VALUES = new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?")
+			}
+		};
 
 	/**
 	 * Validates the Pattern constraint of '<em>URI</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public boolean validateURI_Pattern(String uri, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -568,7 +527,6 @@ public class MDMIValidator extends EObjectValidator {
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

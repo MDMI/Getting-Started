@@ -12,19 +12,15 @@ package org.mdmi;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The LeafSyntaxTranslator class is a key class in the syntax model. It is the leaf of the syntax tree, corresponding to every field or sub-field in
- * a message format.A LeafSyntaxTranslator (including its inherited attributes from the Node class) provides the information necessary to extract or
- * insert a value from a message field from/to a SemanticElement.
- * </p>
+ * <p>The LeafSyntaxTranslator class is a key class in the syntax model. It is the leaf of the syntax tree, corresponding to every field or sub-field in a message format.A LeafSyntaxTranslator (including its inherited attributes from the Node class) provides the information necessary to extract or insert a value from a message field from/to a SemanticElement.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.LeafSyntaxTranslator#getFormat <em>Format</em>}</li>
- * <li>{@link org.mdmi.LeafSyntaxTranslator#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.LeafSyntaxTranslator#getFormat <em>Format</em>}</li>
+ *   <li>{@link org.mdmi.LeafSyntaxTranslator#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getLeafSyntaxTranslator()
@@ -38,11 +34,8 @@ public interface LeafSyntaxTranslator extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The "format" property of type String provides the specific format of each field or subfield in the message format.
-	 * </p>
+	 * <p>The "format" property of type String provides the specific format of each field or subfield in the message format.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Format</em>' attribute.
 	 * @see #setFormat(String)
 	 * @see org.mdmi.MDMIPackage#getLeafSyntaxTranslator_Format()
@@ -55,9 +48,7 @@ public interface LeafSyntaxTranslator extends Node {
 	 * Sets the value of the '{@link org.mdmi.LeafSyntaxTranslator#getFormat <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Format</em>' attribute.
+	 * @param value the new value of the '<em>Format</em>' attribute.
 	 * @see #getFormat()
 	 * @generated
 	 */
@@ -68,15 +59,8 @@ public interface LeafSyntaxTranslator extends Node {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The "formatExpressionLanguage" property of type String is a reference to the expression language used in the format property. For example,
-	 * SWIFT has a defined regular expression language for the format of fields in MT messages. The formatExpressionLanguage must be able to describe
-	 * fields as well as sub-fields, in particular the proper termination character for a field or sub-field. While the MDMI standard does not require
-	 * a specific formatExpressionLanguage, if no formatExpressionLanguage exists for a particular message format, the MDMI standard is recommending
-	 * the use of a small subset of DFDL as a general solution.
-	 * </p>
+	 * <p>The "formatExpressionLanguage" property of type String is a reference to the expression language used in the format property. For example, SWIFT has a defined regular expression language for the format of fields in MT messages. The formatExpressionLanguage must be able to describe fields as well as sub-fields, in particular the proper termination character for a field or sub-field. While the MDMI standard does not require a specific formatExpressionLanguage, if no formatExpressionLanguage exists for a particular message format, the MDMI standard is recommending the use of a small subset of DFDL as a general solution.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Format Expression Language</em>' attribute.
 	 * @see #setFormatExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getLeafSyntaxTranslator_FormatExpressionLanguage()
@@ -89,9 +73,7 @@ public interface LeafSyntaxTranslator extends Node {
 	 * Sets the value of the '{@link org.mdmi.LeafSyntaxTranslator#getFormatExpressionLanguage <em>Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Format Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Format Expression Language</em>' attribute.
 	 * @see #getFormatExpressionLanguage()
 	 * @generated
 	 */

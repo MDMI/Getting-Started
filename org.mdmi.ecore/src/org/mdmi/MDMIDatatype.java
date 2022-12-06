@@ -15,23 +15,19 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * Abstract class, base for the named types used to represent a message element. Can be a simple type (built-in, derived, or enumerated), or a complex
- * type (structure or a choice) or an external datatype. The latter is a registered datatype that is associated with the domain dictionary - a URI is
- * required to reference it.
- * </p>
+ * <p>Abstract class, base for the named types used to represent a message element. Can be a simple type (built-in, derived, or enumerated), or a complex type (structure or a choice) or an external datatype. The latter is a registered datatype that is associated with the domain dictionary - a URI is required to reference it.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.MDMIDatatype#getTypeName <em>Type Name</em>}</li>
- * <li>{@link org.mdmi.MDMIDatatype#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.MDMIDatatype#getReference <em>Reference</em>}</li>
- * <li>{@link org.mdmi.MDMIDatatype#isIsReadonly <em>Is Readonly</em>}</li>
- * <li>{@link org.mdmi.MDMIDatatype#getTypeSpec <em>Type Spec</em>}</li>
- * <li>{@link org.mdmi.MDMIDatatype#getRestriction <em>Restriction</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#getTypeName <em>Type Name</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#isIsReadonly <em>Is Readonly</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#getTypeSpec <em>Type Spec</em>}</li>
+ *   <li>{@link org.mdmi.MDMIDatatype#getRestriction <em>Restriction</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMDMIDatatype()
@@ -48,7 +44,6 @@ public interface MDMIDatatype extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Type Name</em>' attribute.
 	 * @see #setTypeName(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_TypeName()
@@ -61,9 +56,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#getTypeName <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Type Name</em>' attribute.
+	 * @param value the new value of the '<em>Type Name</em>' attribute.
 	 * @see #getTypeName()
 	 * @generated
 	 */
@@ -74,11 +67,8 @@ public interface MDMIDatatype extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * Datatype description.
-	 * </p>
+	 * <p>Datatype description.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_Description()
@@ -91,9 +81,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -107,7 +95,6 @@ public interface MDMIDatatype extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Reference</em>' attribute.
 	 * @see #setReference(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_Reference()
@@ -120,9 +107,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#getReference <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Reference</em>' attribute.
+	 * @param value the new value of the '<em>Reference</em>' attribute.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -136,7 +121,6 @@ public interface MDMIDatatype extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Is Readonly</em>' attribute.
 	 * @see #setIsReadonly(boolean)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_IsReadonly()
@@ -149,9 +133,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#isIsReadonly <em>Is Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Readonly</em>' attribute.
+	 * @param value the new value of the '<em>Is Readonly</em>' attribute.
 	 * @see #isIsReadonly()
 	 * @generated
 	 */
@@ -165,7 +147,6 @@ public interface MDMIDatatype extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Type Spec</em>' attribute.
 	 * @see #setTypeSpec(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_TypeSpec()
@@ -178,9 +159,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#getTypeSpec <em>Type Spec</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Type Spec</em>' attribute.
+	 * @param value the new value of the '<em>Type Spec</em>' attribute.
 	 * @see #getTypeSpec()
 	 * @generated
 	 */
@@ -194,7 +173,6 @@ public interface MDMIDatatype extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Restriction</em>' attribute.
 	 * @see #setRestriction(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIDatatype_Restriction()
@@ -207,9 +185,7 @@ public interface MDMIDatatype extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIDatatype#getRestriction <em>Restriction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Restriction</em>' attribute.
+	 * @param value the new value of the '<em>Restriction</em>' attribute.
 	 * @see #getRestriction()
 	 * @generated
 	 */

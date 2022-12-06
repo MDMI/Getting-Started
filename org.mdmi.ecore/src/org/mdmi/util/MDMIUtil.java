@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
@@ -113,47 +112,47 @@ public class MDMIUtil {
 		return false;
 	}
 
-	public static List<MDMIBusinessElementReference> calculateReferences(MessageModel left, MessageModel right) {
-
-		// MDMIBusinessElementReference[] found = WebServiceUtillity.findAllMDMIBusinessElementReferences(null, 0, null);
-
-		HashMap<String, MDMIBusinessElementReference> elements = new HashMap<>();
-
-		for (SemanticElement semanticElement : left.getElementSet().getSemanticElements()) {
-
-			for (ConversionRule tse : semanticElement.getMapToMdmi()) {
-
-				if (tse.getBusinessElement() != null) {
-					if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
-						elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
-					}
-				}
-
-			}
-
-		}
-
-		for (SemanticElement semanticElement : right.getElementSet().getSemanticElements()) {
-
-			for (ConversionRule tse : semanticElement.getMapToMdmi()) {
-
-				if (tse.getBusinessElement() != null) {
-					if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
-						elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
-					}
-				}
-
-			}
-
-		}
-		List<MDMIBusinessElementReference> asdf = org.eclipse.ocl.util.CollectionUtil.createNewSequence();
-
-		asdf.addAll(elements.values());
-
-		return asdf;
-		// return org.eclipse.ocl.util.CollectionUtil.createNewSequence().addAll(elements.values());
-
-	}
+	// public static List<MDMIBusinessElementReference> calculateReferences(MessageModel left, MessageModel right) {
+	//
+	// // MDMIBusinessElementReference[] found = WebServiceUtillity.findAllMDMIBusinessElementReferences(null, 0, null);
+	//
+	// HashMap<String, MDMIBusinessElementReference> elements = new HashMap<>();
+	//
+	// for (SemanticElement semanticElement : left.getElementSet().getSemanticElements()) {
+	//
+	// for (ConversionRule tse : semanticElement.getMapToMdmi()) {
+	//
+	// if (tse.getBusinessElement() != null) {
+	// if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
+	// elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
+	// }
+	// }
+	//
+	// }
+	//
+	// }
+	//
+	// for (SemanticElement semanticElement : right.getElementSet().getSemanticElements()) {
+	//
+	// for (ConversionRule tse : semanticElement.getMapToMdmi()) {
+	//
+	// if (tse.getBusinessElement() != null) {
+	// if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
+	// elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
+	// }
+	// }
+	//
+	// }
+	//
+	// }
+	// List<MDMIBusinessElementReference> asdf = org.eclipse.ocl.util.CollectionUtil.createNewSequence();
+	//
+	// asdf.addAll(elements.values());
+	//
+	// return asdf;
+	// // return org.eclipse.ocl.util.CollectionUtil.createNewSequence().addAll(elements.values());
+	//
+	// }
 
 	public static SemanticElement searchForRollUp(SemanticElement rollup, SemanticElement semanticElement) {
 

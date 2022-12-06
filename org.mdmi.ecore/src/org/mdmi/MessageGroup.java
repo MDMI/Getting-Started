@@ -15,30 +15,27 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The MessageGroup class contains a set of message models that are considered in the same grouping, e.g., SWIFT 15022 messages, SWIFT 20022 payment
- * messages, FIX security messages, etc.
- * </p>
+ * <p>The MessageGroup class contains a set of message models that are considered in the same grouping, e.g., SWIFT 15022 messages, SWIFT 20022 payment messages, FIX security messages, etc.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.MessageGroup#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDataRules <em>Data Rules</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultLocationExprLang <em>Default Location Expr Lang</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultConstraintExprLang <em>Default Constraint Expr Lang</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultRuleExprLang <em>Default Rule Expr Lang</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultFormatExpressionLanguage <em>Default Format Expression Language</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getModels <em>Models</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDomainDictionary <em>Domain Dictionary</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDefaultMDMIExpresionLanguage <em>Default MDMI Expresion Language</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getRules <em>Rules</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDatatypes <em>Datatypes</em>}</li>
- * <li>{@link org.mdmi.MessageGroup#getDatatypeMaps <em>Datatype Maps</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDataRules <em>Data Rules</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultLocationExprLang <em>Default Location Expr Lang</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultConstraintExprLang <em>Default Constraint Expr Lang</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultRuleExprLang <em>Default Rule Expr Lang</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultFormatExpressionLanguage <em>Default Format Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getModels <em>Models</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDomainDictionary <em>Domain Dictionary</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDefaultMDMIExpresionLanguage <em>Default MDMI Expresion Language</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getRules <em>Rules</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDatatypes <em>Datatypes</em>}</li>
+ *   <li>{@link org.mdmi.MessageGroup#getDatatypeMaps <em>Datatype Maps</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMessageGroup()
@@ -51,11 +48,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The property "name." of type String, names the MessageGroup.
-	 * </p>
+	 * <p>The property "name." of type String, names the MessageGroup.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_Name()
@@ -68,9 +62,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -86,7 +78,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Data Rules</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DataRules()
 	 * @see org.mdmi.DataRule#getScope
@@ -100,11 +91,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The optional property "description" of type String provides a description of MessageGroup.
-	 * </p>
+	 * <p>The optional property "description" of type String provides a description of MessageGroup.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_Description()
@@ -117,9 +105,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -130,14 +116,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The property "locationExpressionLanguage" of type String identifies the location language to be used as a default for specifying location for
-	 * all the messages in the MessageGroup. The value must be recognized by a runtime transformation application. The location of any field or
-	 * sub-field in a message must be expressible in the chosen messagelocationExpressionLanguage. For example a location language for an XML message
-	 * format would be "XPath 2.0".
-	 * </p>
+	 * <p>The property "locationExpressionLanguage" of type String identifies the location language to be used as a default for specifying location for all the messages in the MessageGroup. The value must be recognized by a runtime transformation application. The location of any field or sub-field in a message must be expressible in the chosen messagelocationExpressionLanguage. For example a location language for an XML message format would be "XPath 2.0".</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Default Location Expr Lang</em>' attribute.
 	 * @see #setDefaultLocationExprLang(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultLocationExprLang()
@@ -150,9 +130,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultLocationExprLang <em>Default Location Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default Location Expr Lang</em>' attribute.
+	 * @param value the new value of the '<em>Default Location Expr Lang</em>' attribute.
 	 * @see #getDefaultLocationExprLang()
 	 * @generated
 	 */
@@ -163,13 +141,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The property "constraintExpressionLanguage" of type String identifies the constraint language to be used as a default for specifying the
-	 * constraints in the Choice class for all the messages in the MessageGroup. The constraintExpressionLanguage must be able to reference nodes. The
-	 * language used in the reference implementation is NRL 1.0
-	 * </p>
+	 * <p>The property "constraintExpressionLanguage" of type String identifies the constraint language to be used as a default for specifying the constraints in the Choice class for all the messages in the MessageGroup. The constraintExpressionLanguage must be able to reference nodes. The language used in the reference implementation is NRL 1.0</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Default Constraint Expr Lang</em>' attribute.
 	 * @see #setDefaultConstraintExprLang(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultConstraintExprLang()
@@ -182,9 +155,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultConstraintExprLang <em>Default Constraint Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default Constraint Expr Lang</em>' attribute.
+	 * @param value the new value of the '<em>Default Constraint Expr Lang</em>' attribute.
 	 * @see #getDefaultConstraintExprLang()
 	 * @generated
 	 */
@@ -195,13 +166,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The property "ruleExpressionLanguage" of type String identifies the rule language to be used as a default for specifying rules in all classes
-	 * with the property "rule" for all the messages in the MessageGroup. This rule language must be able to access the values of any SemanticElement
-	 * and thus it also must be able to access the fields in complex datatypes. The language used in the reference implementation is NRL 1.0
-	 * </p>
+	 * <p>The property "ruleExpressionLanguage" of type String identifies the rule language to be used as a default for specifying rules in all classes with the property "rule" for all the messages in the MessageGroup. This rule language must be able to access the values of any SemanticElement and thus it also must be able to access the fields in complex datatypes. The language used in the reference implementation is NRL 1.0</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Default Rule Expr Lang</em>' attribute.
 	 * @see #setDefaultRuleExprLang(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultRuleExprLang()
@@ -214,9 +180,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultRuleExprLang <em>Default Rule Expr Lang</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default Rule Expr Lang</em>' attribute.
+	 * @param value the new value of the '<em>Default Rule Expr Lang</em>' attribute.
 	 * @see #getDefaultRuleExprLang()
 	 * @generated
 	 */
@@ -227,14 +191,8 @@ public interface MessageGroup extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The property "formatExpressionLanguage" of type String identifies the format language to be used as a default for specifying fornats in the
-	 * LeafSyntaxTranslator class for all the messages in the MessageGroup. The formatExpressionLanguage must be able to describe fields as well as
-	 * sub-fields, in particular the proper termination character for a field or sub-field. The languages used in the reference implementation are
-	 * "XML datatypes" and "SWIFT regular expression format language"
-	 * </p>
+	 * <p>The property "formatExpressionLanguage" of type String identifies the format language to be used as a default for specifying fornats in the LeafSyntaxTranslator class for all the messages in the MessageGroup. The formatExpressionLanguage must be able to describe fields as well as sub-fields, in particular the proper termination character for a field or sub-field. The languages used in the reference implementation are "XML datatypes" and "SWIFT regular expression format language"</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Default Format Expression Language</em>' attribute.
 	 * @see #setDefaultFormatExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultFormatExpressionLanguage()
@@ -247,9 +205,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultFormatExpressionLanguage <em>Default Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default Format Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Default Format Expression Language</em>' attribute.
 	 * @see #getDefaultFormatExpressionLanguage()
 	 * @generated
 	 */
@@ -263,7 +219,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Default Ordering Expression Language</em>' attribute.
 	 * @see #setDefaultOrderingExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultOrderingExpressionLanguage()
@@ -273,13 +228,10 @@ public interface MessageGroup extends EObject {
 	String getDefaultOrderingExpressionLanguage();
 
 	/**
-	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}'
-	 * attribute.
+	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultOrderingExpressionLanguage <em>Default Ordering Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default Ordering Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Default Ordering Expression Language</em>' attribute.
 	 * @see #getDefaultOrderingExpressionLanguage()
 	 * @generated
 	 */
@@ -295,7 +247,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Models</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_Models()
 	 * @see org.mdmi.MessageModel#getGroup
@@ -313,7 +264,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Domain Dictionary</em>' containment reference.
 	 * @see #setDomainDictionary(MDMIDomainDictionaryReference)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DomainDictionary()
@@ -327,9 +277,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDomainDictionary <em>Domain Dictionary</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Domain Dictionary</em>' containment reference.
+	 * @param value the new value of the '<em>Domain Dictionary</em>' containment reference.
 	 * @see #getDomainDictionary()
 	 * @generated
 	 */
@@ -343,7 +291,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Default MDMI Expresion Language</em>' attribute.
 	 * @see #setDefaultMDMIExpresionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DefaultMDMIExpresionLanguage()
@@ -356,9 +303,7 @@ public interface MessageGroup extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageGroup#getDefaultMDMIExpresionLanguage <em>Default MDMI Expresion Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Default MDMI Expresion Language</em>' attribute.
+	 * @param value the new value of the '<em>Default MDMI Expresion Language</em>' attribute.
 	 * @see #getDefaultMDMIExpresionLanguage()
 	 * @generated
 	 */
@@ -374,7 +319,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Rules</em>' reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_Rules()
 	 * @see org.mdmi.DataRule#getGroup
@@ -392,7 +336,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Datatypes</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_Datatypes()
 	 * @model containment="true"
@@ -409,7 +352,6 @@ public interface MessageGroup extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Datatype Maps</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageGroup_DatatypeMaps()
 	 * @model containment="true"
@@ -420,7 +362,6 @@ public interface MessageGroup extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @model required="true" nameRequired="true"
 	 * @generated
 	 */
@@ -429,7 +370,6 @@ public interface MessageGroup extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @model datatypeRequired="true"
 	 * @generated
 	 */

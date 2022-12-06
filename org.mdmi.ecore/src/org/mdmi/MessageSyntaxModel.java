@@ -14,21 +14,18 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The MessageSyntaxModel contains a syntax tree that describes how each Semantic Element can be either inserted into or extracted from a message
- * based on that message�s message format.
- * </p>
+ * <p>The MessageSyntaxModel contains a syntax tree that describes how each Semantic Element can be either inserted into or extracted from a message based on that message�s message format.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.MessageSyntaxModel#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.MessageSyntaxModel#getModel <em>Model</em>}</li>
- * <li>{@link org.mdmi.MessageSyntaxModel#getRoot <em>Root</em>}</li>
- * <li>{@link org.mdmi.MessageSyntaxModel#getElementSet <em>Element Set</em>}</li>
- * <li>{@link org.mdmi.MessageSyntaxModel#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.MessageSyntaxModel#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.MessageSyntaxModel#getModel <em>Model</em>}</li>
+ *   <li>{@link org.mdmi.MessageSyntaxModel#getRoot <em>Root</em>}</li>
+ *   <li>{@link org.mdmi.MessageSyntaxModel#getElementSet <em>Element Set</em>}</li>
+ *   <li>{@link org.mdmi.MessageSyntaxModel#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMessageSyntaxModel()
@@ -42,12 +39,8 @@ public interface MessageSyntaxModel extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "name" property, whose value is the name of the MessageSyntaxModel -- This name will often be similar to the MessageModel name, e.g., "MT103
-	 * Syntax Tree." The optional property "description" of type String provides a description of MessageGroup.
-	 * </p>
+	 * <p>A "name" property, whose value is the name of the MessageSyntaxModel -- This name will often be similar to the MessageModel name, e.g., "MT103 Syntax Tree."  The optional property "description" of type String provides a description of MessageGroup.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getMessageSyntaxModel_Name()
@@ -60,9 +53,7 @@ public interface MessageSyntaxModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageSyntaxModel#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -77,7 +68,6 @@ public interface MessageSyntaxModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Model</em>' container reference.
 	 * @see #setModel(MessageModel)
 	 * @see org.mdmi.MDMIPackage#getMessageSyntaxModel_Model()
@@ -91,9 +81,7 @@ public interface MessageSyntaxModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageSyntaxModel#getModel <em>Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Model</em>' container reference.
+	 * @param value the new value of the '<em>Model</em>' container reference.
 	 * @see #getModel()
 	 * @generated
 	 */
@@ -108,7 +96,6 @@ public interface MessageSyntaxModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Root</em>' containment reference.
 	 * @see #setRoot(Node)
 	 * @see org.mdmi.MDMIPackage#getMessageSyntaxModel_Root()
@@ -122,9 +109,7 @@ public interface MessageSyntaxModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageSyntaxModel#getRoot <em>Root</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Root</em>' containment reference.
+	 * @param value the new value of the '<em>Root</em>' containment reference.
 	 * @see #getRoot()
 	 * @generated
 	 */
@@ -139,7 +124,6 @@ public interface MessageSyntaxModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Element Set</em>' reference.
 	 * @see #setElementSet(SemanticElementSet)
 	 * @see org.mdmi.MDMIPackage#getMessageSyntaxModel_ElementSet()
@@ -153,9 +137,7 @@ public interface MessageSyntaxModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageSyntaxModel#getElementSet <em>Element Set</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Element Set</em>' reference.
+	 * @param value the new value of the '<em>Element Set</em>' reference.
 	 * @see #getElementSet()
 	 * @generated
 	 */
@@ -166,11 +148,8 @@ public interface MessageSyntaxModel extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The optional property "description" of type String provides a description of MessageGroup.
-	 * </p>
+	 * <p>The optional property "description" of type String provides a description of MessageGroup.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMessageSyntaxModel_Description()
@@ -183,9 +162,7 @@ public interface MessageSyntaxModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageSyntaxModel#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */

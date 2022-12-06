@@ -22,7 +22,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.impl.DTCChoiceImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link org.mdmi.impl.DTCChoiceImpl#getFields <em>Fields</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,7 +52,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getFields()
 	 * @generated
 	 * @ordered
@@ -62,7 +61,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected DTCChoiceImpl() {
@@ -72,7 +70,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -83,13 +80,12 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<Field> getFields() {
 		if (fields == null) {
-			fields = new EObjectContainmentEList<>(Field.class, this, MDMIPackage.DTC_CHOICE__FIELDS);
+			fields = new EObjectContainmentEList<Field>(Field.class, this, MDMIPackage.DTC_CHOICE__FIELDS);
 		}
 		return fields;
 	}
@@ -115,14 +111,13 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DTC_CHOICE__FIELDS:
-				return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -130,7 +125,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -145,7 +139,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -154,7 +147,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 		switch (featureID) {
 			case MDMIPackage.DTC_CHOICE__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends Field>) newValue);
+				getFields().addAll((Collection<? extends Field>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,7 +156,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -179,7 +171,6 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override

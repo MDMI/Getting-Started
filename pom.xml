@@ -17,9 +17,9 @@
 
 	<repositories>
 		<repository>
-			<id>HEREANDNOW</id>
-		 <layout>p2</layout>  
-			<url>http://download.eclipse.org/releases/2022-12</url>
+			<id>2022-09</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/2022-09</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -60,18 +60,17 @@
 			<distributionManagement>
 				<repository>
 					<id>mdix</id>
-					<name>7ed03140605b-releases</name>
-					<url>http://artifactory.mdixinc.net:8082/artifactory/mdmiartifactory/libs-release</url>
+					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
 				</repository>
 				<snapshotRepository>
 					<id>mdix</id>
-					<name>7ed03140605b-snapshots</name>
-					<url>http://artifactory.mdixinc.net:8081/artifactory/mdmiartifactory/libs-snapshot</url>
+					<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
 				</snapshotRepository>
 			</distributionManagement>
+
 		</profile>
-
-
 		<profile>
 			<id>dependencycheck</id>
 			<build>
@@ -79,7 +78,7 @@
 					<plugin>
 						<groupId>org.owasp</groupId>
 						<artifactId>dependency-check-maven</artifactId>
-						<version>6.0.4</version>
+						<version>7.3.2</version>
 						<executions>
 							<execution>
 								<goals>
@@ -91,7 +90,6 @@
 				</plugins>
 			</build>
 		</profile>
-
 
 	</profiles>
 

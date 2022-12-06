@@ -14,21 +14,19 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * ConversionRule is an abstract class that defines a rule used to convert values.
- * </p>
+ * <p>ConversionRule is an abstract class that defines a rule used to convert values.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.ConversionRule#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.ConversionRule#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.ConversionRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- * <li>{@link org.mdmi.ConversionRule#getEnumExtResolverUri <em>Enum Ext Resolver Uri</em>}</li>
- * <li>{@link org.mdmi.ConversionRule#getBusinessElement <em>Business Element</em>}</li>
- * <li>{@link org.mdmi.ConversionRule#getRule <em>Rule</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getEnumExtResolverUri <em>Enum Ext Resolver Uri</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getBusinessElement <em>Business Element</em>}</li>
+ *   <li>{@link org.mdmi.ConversionRule#getRule <em>Rule</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getConversionRule()
@@ -42,11 +40,8 @@ public interface ConversionRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "name" property of type String that names the ConversionRule.
-	 * </p>
+	 * <p>A "name" property of type String that names the ConversionRule.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_Name()
@@ -59,9 +54,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -72,11 +65,8 @@ public interface ConversionRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The optional "description" property of type String describes the ToBusinessElement.
-	 * </p>
+	 * <p>The optional "description" property of type String describes the ToBusinessElement.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_Description()
@@ -89,9 +79,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -102,14 +90,8 @@ public interface ConversionRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "ruleExpressionLanguage" property whose value is a reference to the expression language used to define the rule. This scope of the language
-	 * allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules
-	 * can be used to define the semantic distance between business elements in a central dictionary by identifying "near synonyms". It is important
-	 * that the "near synonyms do not turn out to be far synonyms.
-	 * </p>
+	 * <p>A "ruleExpressionLanguage" property whose value is a reference to the expression language used to define the rule. This scope of the language allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules can be used to define the semantic distance between business elements in a central dictionary by identifying "near synonyms". It is important that the "near synonyms do not turn out to be far synonyms.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #setRuleExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_RuleExpressionLanguage()
@@ -122,9 +104,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Rule Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 */
@@ -135,14 +115,8 @@ public interface ConversionRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "ruleExpressionLanguage" property whose value is a reference to the expression language used to define the rule. This scope of the language
-	 * allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules
-	 * can be used to define the semantic distance between business elements in a central dictionary by identifying "near synonyms". It is important
-	 * that the "near synonyms do not turn out to be far synonyms.
-	 * </p>
+	 * <p>A "ruleExpressionLanguage" property whose value is a reference to the expression language used to define the rule. This scope of the language allowed in conversions should be limited so that only very straightforward transformations are possible. This is because these ConversionRules can be used to define the semantic distance between business elements in a central dictionary by identifying "near synonyms". It is important that the "near synonyms do not turn out to be far synonyms.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Enum Ext Resolver Uri</em>' attribute.
 	 * @see #setEnumExtResolverUri(String)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_EnumExtResolverUri()
@@ -155,9 +129,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getEnumExtResolverUri <em>Enum Ext Resolver Uri</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Enum Ext Resolver Uri</em>' attribute.
+	 * @param value the new value of the '<em>Enum Ext Resolver Uri</em>' attribute.
 	 * @see #getEnumExtResolverUri()
 	 * @generated
 	 */
@@ -171,7 +143,6 @@ public interface ConversionRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Business Element</em>' reference.
 	 * @see #setBusinessElement(MDMIBusinessElementReference)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_BusinessElement()
@@ -185,9 +156,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getBusinessElement <em>Business Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Business Element</em>' reference.
+	 * @param value the new value of the '<em>Business Element</em>' reference.
 	 * @see #getBusinessElement()
 	 * @generated
 	 */
@@ -198,11 +167,8 @@ public interface ConversionRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "rule" property of type String that holds an expression for converting one value to another.
-	 * </p>
+	 * <p>A "rule" property of type String that holds an expression for converting one value to another.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Rule</em>' attribute.
 	 * @see #setRule(String)
 	 * @see org.mdmi.MDMIPackage#getConversionRule_Rule()
@@ -216,9 +182,7 @@ public interface ConversionRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.ConversionRule#getRule <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Rule</em>' attribute.
+	 * @param value the new value of the '<em>Rule</em>' attribute.
 	 * @see #getRule()
 	 * @generated
 	 */

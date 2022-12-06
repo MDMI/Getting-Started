@@ -16,26 +16,19 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * MessageModel contains the MessageElementSet in a message and the related MessageSyntaxModel. It important to point out that a MessageModel does not
- * necessarily contain all of the MessageElements in a message, as some MessageElements can be associated with other domains. (For example, a
- * RosettaNet message may have two hundred MessageElements but only a couple of dozen MessageElements associated with payments. In that case, only the
- * payment MessageElements may be modeled and grouped into a MessageModel associated with a Payment-domain dictionary.) The MessageModel is the parent
- * class that contains the MDMI model of a message format. Database schema of a record in a table can also be considered a message format as well as
- * most XML documents.
- * </p>
+ * <p>MessageModel contains the MessageElementSet in a message and the related MessageSyntaxModel. It important to point out that a MessageModel does not necessarily contain all of the MessageElements in a message, as some MessageElements can be associated with other domains. (For example, a RosettaNet message may have two hundred MessageElements but only a couple of dozen MessageElements associated with payments. In that case, only the payment MessageElements may be modeled and grouped into a MessageModel associated with a Payment-domain dictionary.)  The MessageModel is the parent class that contains the MDMI model of a message format. Database schema of a record in a table can also be considered a message format as well as most XML documents.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.MessageModel#getMessageModelName <em>Message Model Name</em>}</li>
- * <li>{@link org.mdmi.MessageModel#getSyntaxModel <em>Syntax Model</em>}</li>
- * <li>{@link org.mdmi.MessageModel#getElementSet <em>Element Set</em>}</li>
- * <li>{@link org.mdmi.MessageModel#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.MessageModel#getSource <em>Source</em>}</li>
- * <li>{@link org.mdmi.MessageModel#getGroup <em>Group</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getMessageModelName <em>Message Model Name</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getSyntaxModel <em>Syntax Model</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getElementSet <em>Element Set</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getSource <em>Source</em>}</li>
+ *   <li>{@link org.mdmi.MessageModel#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMessageModel()
@@ -48,15 +41,8 @@ public interface MessageModel extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The MessageModel is the parent class that contains the MDMI model of a message format. Database schema of a record in a table can also be
-	 * considered a message format as well as most XML documents. A MessageModel does not necessarily contain all of the MessageElements in a message,
-	 * as some MessageElements can be associated with other domains. For example, a RosettaNet message may have two hundred MessageElements but only a
-	 * couple of dozen MessageElements associated with payments. In that case, only the payment MessageElements may be modeled and grouped into a
-	 * MessageModel associated with a Payment domain dictionary.
-	 * </p>
+	 * <p>The MessageModel is the parent class that contains the MDMI model of a message format. Database schema of a record in a table can also be considered a message format as well as most XML documents. A MessageModel does not necessarily contain all of the MessageElements in a message, as some MessageElements can be associated with other domains. For example, a RosettaNet message may have two hundred MessageElements but only a couple of dozen MessageElements associated with payments. In that case, only the payment MessageElements may be modeled and grouped into a MessageModel associated with a Payment domain dictionary.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Message Model Name</em>' attribute.
 	 * @see #setMessageModelName(String)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_MessageModelName()
@@ -69,9 +55,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getMessageModelName <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Message Model Name</em>' attribute.
+	 * @param value the new value of the '<em>Message Model Name</em>' attribute.
 	 * @see #getMessageModelName()
 	 * @generated
 	 */
@@ -86,7 +70,6 @@ public interface MessageModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Syntax Model</em>' containment reference.
 	 * @see #setSyntaxModel(MessageSyntaxModel)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_SyntaxModel()
@@ -100,9 +83,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getSyntaxModel <em>Syntax Model</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Syntax Model</em>' containment reference.
+	 * @param value the new value of the '<em>Syntax Model</em>' containment reference.
 	 * @see #getSyntaxModel()
 	 * @generated
 	 */
@@ -117,7 +98,6 @@ public interface MessageModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Element Set</em>' containment reference.
 	 * @see #setElementSet(SemanticElementSet)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_ElementSet()
@@ -131,9 +111,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getElementSet <em>Element Set</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Element Set</em>' containment reference.
+	 * @param value the new value of the '<em>Element Set</em>' containment reference.
 	 * @see #getElementSet()
 	 * @generated
 	 */
@@ -144,11 +122,8 @@ public interface MessageModel extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An optional "description" property of type String containing a description of the message model.
-	 * </p>
+	 * <p>An optional "description" property of type String containing a description of the message model.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_Description()
@@ -161,9 +136,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -174,12 +147,8 @@ public interface MessageModel extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "source" property � the value is a reference to the definition of the message format, whose elements are being mapped. This reference might
-	 * be to a formal model such as the location of the message definition in the ISO 20022 repository or it might be a paper document.
-	 * </p>
+	 * <p>A "source" property � the value is a reference to the definition of the message format, whose elements are being mapped. This reference might be to a formal model such as the location of the message definition in the ISO 20022 repository or it might be a paper document.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Source</em>' attribute.
 	 * @see #setSource(String)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_Source()
@@ -192,9 +161,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getSource <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Source</em>' attribute.
+	 * @param value the new value of the '<em>Source</em>' attribute.
 	 * @see #getSource()
 	 * @generated
 	 */
@@ -209,7 +176,6 @@ public interface MessageModel extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Group</em>' container reference.
 	 * @see #setGroup(MessageGroup)
 	 * @see org.mdmi.MDMIPackage#getMessageModel_Group()
@@ -223,9 +189,7 @@ public interface MessageModel extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MessageModel#getGroup <em>Group</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Group</em>' container reference.
+	 * @param value the new value of the '<em>Group</em>' container reference.
 	 * @see #getGroup()
 	 * @generated
 	 */

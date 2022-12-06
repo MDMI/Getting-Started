@@ -34,9 +34,9 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
- * <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
- * <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
+ *   <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
+ *   <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ *   <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,7 +56,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -67,7 +66,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -78,7 +76,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -89,7 +86,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -100,7 +96,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getNodes()
 	 * @generated
 	 * @ordered
@@ -110,7 +105,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected BagImpl() {
@@ -120,7 +114,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -131,7 +124,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -142,22 +134,19 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIsUnique(boolean newIsUnique) {
 		boolean oldIsUnique = isUnique;
 		isUnique = newIsUnique;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_UNIQUE, oldIsUnique, isUnique));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -168,29 +157,25 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setIsOrdered(boolean newIsOrdered) {
 		boolean oldIsOrdered = isOrdered;
 		isOrdered = newIsOrdered;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_ORDERED, oldIsOrdered, isOrdered));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_ORDERED, oldIsOrdered, isOrdered));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
+			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
 		}
 		return nodes;
 	}
@@ -198,14 +183,13 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.BAG__NODES:
-				return ((InternalEList<?>) getNodes()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -213,7 +197,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +215,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -240,14 +222,14 @@ public class BagImpl extends NodeImpl implements Bag {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.BAG__IS_UNIQUE:
-				setIsUnique((Boolean) newValue);
+				setIsUnique((Boolean)newValue);
 				return;
 			case MDMIPackage.BAG__IS_ORDERED:
-				setIsOrdered((Boolean) newValue);
+				setIsOrdered((Boolean)newValue);
 				return;
 			case MDMIPackage.BAG__NODES:
 				getNodes().clear();
-				getNodes().addAll((Collection<? extends Node>) newValue);
+				getNodes().addAll((Collection<? extends Node>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,7 +238,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -278,7 +259,6 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -297,14 +277,11 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isUnique: ");

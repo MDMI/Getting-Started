@@ -17,11 +17,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.Field#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.Field#getMinOccurs <em>Min Occurs</em>}</li>
- * <li>{@link org.mdmi.Field#getMaxOccurs <em>Max Occurs</em>}</li>
- * <li>{@link org.mdmi.Field#getDatatype <em>Datatype</em>}</li>
- * <li>{@link org.mdmi.Field#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.Field#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.Field#getMinOccurs <em>Min Occurs</em>}</li>
+ *   <li>{@link org.mdmi.Field#getMaxOccurs <em>Max Occurs</em>}</li>
+ *   <li>{@link org.mdmi.Field#getDatatype <em>Datatype</em>}</li>
+ *   <li>{@link org.mdmi.Field#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getField()
@@ -38,7 +38,6 @@ public interface Field extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getField_Name()
@@ -51,9 +50,7 @@ public interface Field extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Field#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -67,7 +64,6 @@ public interface Field extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Min Occurs</em>' attribute.
 	 * @see #setMinOccurs(int)
 	 * @see org.mdmi.MDMIPackage#getField_MinOccurs()
@@ -80,9 +76,7 @@ public interface Field extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Field#getMinOccurs <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Min Occurs</em>' attribute.
+	 * @param value the new value of the '<em>Min Occurs</em>' attribute.
 	 * @see #getMinOccurs()
 	 * @generated
 	 */
@@ -96,7 +90,6 @@ public interface Field extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Max Occurs</em>' attribute.
 	 * @see #setMaxOccurs(int)
 	 * @see org.mdmi.MDMIPackage#getField_MaxOccurs()
@@ -109,9 +102,7 @@ public interface Field extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Field#getMaxOccurs <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Max Occurs</em>' attribute.
+	 * @param value the new value of the '<em>Max Occurs</em>' attribute.
 	 * @see #getMaxOccurs()
 	 * @generated
 	 */
@@ -125,7 +116,6 @@ public interface Field extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Datatype</em>' reference.
 	 * @see #setDatatype(MDMIDatatype)
 	 * @see org.mdmi.MDMIPackage#getField_Datatype()
@@ -139,9 +129,7 @@ public interface Field extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Field#getDatatype <em>Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Datatype</em>' reference.
+	 * @param value the new value of the '<em>Datatype</em>' reference.
 	 * @see #getDatatype()
 	 * @generated
 	 */
@@ -152,11 +140,8 @@ public interface Field extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * Datatype description.
-	 * </p>
+	 * <p>Datatype description.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getField_Description()
@@ -169,9 +154,7 @@ public interface Field extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Field#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */

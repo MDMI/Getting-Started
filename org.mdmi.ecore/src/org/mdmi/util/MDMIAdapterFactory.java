@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.mdmi.*;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.ConversionRule;
@@ -47,7 +48,6 @@ import org.mdmi.SimpleMessageComposite;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- *
  * @see org.mdmi.MDMIPackage
  * @generated
  */
@@ -56,7 +56,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected static MDMIPackage modelPackage;
@@ -65,7 +64,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	public MDMIAdapterFactory() {
@@ -79,7 +77,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -89,7 +86,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -98,179 +95,146 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
-	protected MDMISwitch<Adapter> modelSwitch = new MDMISwitch<>() {
-		@Override
-		public Adapter caseMessageModel(MessageModel object) {
-			return createMessageModelAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageSyntaxModel(MessageSyntaxModel object) {
-			return createMessageSyntaxModelAdapter();
-		}
-
-		@Override
-		public Adapter caseNode(Node object) {
-			return createNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseBag(Bag object) {
-			return createBagAdapter();
-		}
-
-		@Override
-		public Adapter caseChoice(Choice object) {
-			return createChoiceAdapter();
-		}
-
-		@Override
-		public Adapter caseLeafSyntaxTranslator(LeafSyntaxTranslator object) {
-			return createLeafSyntaxTranslatorAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageGroup(MessageGroup object) {
-			return createMessageGroupAdapter();
-		}
-
-		@Override
-		public Adapter caseDataRule(DataRule object) {
-			return createDataRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementSet(SemanticElementSet object) {
-			return createSemanticElementSetAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElement(SemanticElement object) {
-			return createSemanticElementAdapter();
-		}
-
-		@Override
-		public Adapter caseSimpleMessageComposite(SimpleMessageComposite object) {
-			return createSimpleMessageCompositeAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageComposite(MessageComposite object) {
-			return createMessageCompositeAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementBusinessRule(SemanticElementBusinessRule object) {
-			return createSemanticElementBusinessRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementRelationship(SemanticElementRelationship object) {
-			return createSemanticElementRelationshipAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIBusinessElementReference(MDMIBusinessElementReference object) {
-			return createMDMIBusinessElementReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIBusinessElementRule(MDMIBusinessElementRule object) {
-			return createMDMIBusinessElementRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseConversionRule(ConversionRule object) {
-			return createConversionRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIDomainDictionaryReference(MDMIDomainDictionaryReference object) {
-			return createMDMIDomainDictionaryReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIExpression(MDMIExpression object) {
-			return createMDMIExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseKeyword(Keyword object) {
-			return createKeywordAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIDatatype(MDMIDatatype object) {
-			return createMDMIDatatypeAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSPrimitive(DTSPrimitive object) {
-			return createDTSPrimitiveAdapter();
-		}
-
-		@Override
-		public Adapter caseDTCStructured(DTCStructured object) {
-			return createDTCStructuredAdapter();
-		}
-
-		@Override
-		public Adapter caseField(Field object) {
-			return createFieldAdapter();
-		}
-
-		@Override
-		public Adapter caseDTExternal(DTExternal object) {
-			return createDTExternalAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSDerived(DTSDerived object) {
-			return createDTSDerivedAdapter();
-		}
-
-		@Override
-		public Adapter caseDTCChoice(DTCChoice object) {
-			return createDTCChoiceAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSEnumerated(DTSEnumerated object) {
-			return createDTSEnumeratedAdapter();
-		}
-
-		@Override
-		public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
-			return createEnumerationLiteralAdapter();
-		}
-
-		@Override
-		public Adapter caseDatatypeMap(DatatypeMap object) {
-			return createDatatypeMapAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+	protected MDMISwitch<Adapter> modelSwitch = new MDMISwitch<Adapter>() {
+			@Override
+			public Adapter caseMessageModel(MessageModel object) {
+				return createMessageModelAdapter();
+			}
+			@Override
+			public Adapter caseMessageSyntaxModel(MessageSyntaxModel object) {
+				return createMessageSyntaxModelAdapter();
+			}
+			@Override
+			public Adapter caseNode(Node object) {
+				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseBag(Bag object) {
+				return createBagAdapter();
+			}
+			@Override
+			public Adapter caseChoice(Choice object) {
+				return createChoiceAdapter();
+			}
+			@Override
+			public Adapter caseLeafSyntaxTranslator(LeafSyntaxTranslator object) {
+				return createLeafSyntaxTranslatorAdapter();
+			}
+			@Override
+			public Adapter caseMessageGroup(MessageGroup object) {
+				return createMessageGroupAdapter();
+			}
+			@Override
+			public Adapter caseDataRule(DataRule object) {
+				return createDataRuleAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementSet(SemanticElementSet object) {
+				return createSemanticElementSetAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElement(SemanticElement object) {
+				return createSemanticElementAdapter();
+			}
+			@Override
+			public Adapter caseSimpleMessageComposite(SimpleMessageComposite object) {
+				return createSimpleMessageCompositeAdapter();
+			}
+			@Override
+			public Adapter caseMessageComposite(MessageComposite object) {
+				return createMessageCompositeAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementBusinessRule(SemanticElementBusinessRule object) {
+				return createSemanticElementBusinessRuleAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementRelationship(SemanticElementRelationship object) {
+				return createSemanticElementRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseMDMIBusinessElementReference(MDMIBusinessElementReference object) {
+				return createMDMIBusinessElementReferenceAdapter();
+			}
+			@Override
+			public Adapter caseMDMIBusinessElementRule(MDMIBusinessElementRule object) {
+				return createMDMIBusinessElementRuleAdapter();
+			}
+			@Override
+			public Adapter caseConversionRule(ConversionRule object) {
+				return createConversionRuleAdapter();
+			}
+			@Override
+			public Adapter caseMDMIDomainDictionaryReference(MDMIDomainDictionaryReference object) {
+				return createMDMIDomainDictionaryReferenceAdapter();
+			}
+			@Override
+			public Adapter caseMDMIExpression(MDMIExpression object) {
+				return createMDMIExpressionAdapter();
+			}
+			@Override
+			public Adapter caseKeyword(Keyword object) {
+				return createKeywordAdapter();
+			}
+			@Override
+			public Adapter caseMDMIDatatype(MDMIDatatype object) {
+				return createMDMIDatatypeAdapter();
+			}
+			@Override
+			public Adapter caseDTSPrimitive(DTSPrimitive object) {
+				return createDTSPrimitiveAdapter();
+			}
+			@Override
+			public Adapter caseDTCStructured(DTCStructured object) {
+				return createDTCStructuredAdapter();
+			}
+			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
+			}
+			@Override
+			public Adapter caseDTExternal(DTExternal object) {
+				return createDTExternalAdapter();
+			}
+			@Override
+			public Adapter caseDTSDerived(DTSDerived object) {
+				return createDTSDerivedAdapter();
+			}
+			@Override
+			public Adapter caseDTCChoice(DTCChoice object) {
+				return createDTCChoiceAdapter();
+			}
+			@Override
+			public Adapter caseDTSEnumerated(DTSEnumerated object) {
+				return createDTSEnumeratedAdapter();
+			}
+			@Override
+			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
+				return createEnumerationLiteralAdapter();
+			}
+			@Override
+			public Adapter caseDatatypeMap(DatatypeMap object) {
+				return createDatatypeMapAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param target
-	 *            the object to adapt.
+	 * @param target the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**
@@ -279,7 +243,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageModel
 	 * @generated
@@ -294,7 +257,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageSyntaxModel
 	 * @generated
@@ -309,7 +271,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Node
 	 * @generated
@@ -324,7 +285,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Bag
 	 * @generated
@@ -339,7 +299,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Choice
 	 * @generated
@@ -354,7 +313,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.LeafSyntaxTranslator
 	 * @generated
@@ -369,7 +327,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageGroup
 	 * @generated
@@ -384,7 +341,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DataRule
 	 * @generated
@@ -399,7 +355,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementSet
 	 * @generated
@@ -414,7 +369,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElement
 	 * @generated
@@ -429,7 +383,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SimpleMessageComposite
 	 * @generated
@@ -444,7 +397,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MessageComposite
 	 * @generated
@@ -459,7 +411,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementBusinessRule
 	 * @generated
@@ -474,7 +425,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.SemanticElementRelationship
 	 * @generated
@@ -489,7 +439,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIBusinessElementReference
 	 * @generated
@@ -504,7 +453,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIBusinessElementRule
 	 * @generated
@@ -519,7 +467,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.ConversionRule
 	 * @generated
@@ -534,7 +481,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIDomainDictionaryReference
 	 * @generated
@@ -549,7 +495,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIExpression
 	 * @generated
@@ -564,7 +509,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Keyword
 	 * @generated
@@ -579,7 +523,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.MDMIDatatype
 	 * @generated
@@ -594,7 +537,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSPrimitive
 	 * @generated
@@ -609,7 +551,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTCStructured
 	 * @generated
@@ -624,7 +565,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.Field
 	 * @generated
@@ -639,7 +579,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTExternal
 	 * @generated
@@ -654,7 +593,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSDerived
 	 * @generated
@@ -669,7 +607,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTCChoice
 	 * @generated
@@ -684,7 +621,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DTSEnumerated
 	 * @generated
@@ -699,7 +635,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.EnumerationLiteral
 	 * @generated
@@ -714,7 +649,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @see org.mdmi.DatatypeMap
 	 * @generated
@@ -728,7 +662,6 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

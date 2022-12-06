@@ -17,9 +17,9 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.impl.EnumerationLiteralImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,7 +29,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -40,7 +39,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -51,7 +49,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -62,7 +59,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -73,7 +69,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -84,7 +79,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @see #getCode()
 	 * @generated
 	 * @ordered
@@ -94,7 +88,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	protected EnumerationLiteralImpl() {
@@ -104,7 +97,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -115,7 +107,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -126,23 +117,19 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__NAME, oldName, name));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -153,24 +140,19 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION, oldDescription, description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -181,23 +163,19 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__CODE, oldCode, code));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__CODE, oldCode, code));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -216,20 +194,19 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.ENUMERATION_LITERAL__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.ENUMERATION_LITERAL__CODE:
-				setCode((String) newValue);
+				setCode((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -238,7 +215,6 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
@@ -260,24 +236,17 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.ENUMERATION_LITERAL__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.ENUMERATION_LITERAL__CODE:
-				return CODE_EDEFAULT == null
-						? code != null
-						: !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -285,14 +254,11 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

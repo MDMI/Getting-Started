@@ -16,27 +16,24 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>
- * The Node class is an abstract class that represents all nodes in the syntax tree. It primarily contains location information so that any field in a
- * message can be located.
- * </p>
+ * <p>The Node class is an abstract class that represents all nodes in the syntax tree. It primarily contains location information so that any field in a message can be located.</p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.mdmi.Node#getName <em>Name</em>}</li>
- * <li>{@link org.mdmi.Node#getDescription <em>Description</em>}</li>
- * <li>{@link org.mdmi.Node#getMinOccurs <em>Min Occurs</em>}</li>
- * <li>{@link org.mdmi.Node#getMaxOccurs <em>Max Occurs</em>}</li>
- * <li>{@link org.mdmi.Node#getLocation <em>Location</em>}</li>
- * <li>{@link org.mdmi.Node#getLocationExpressionLanguage <em>Location Expression Language</em>}</li>
- * <li>{@link org.mdmi.Node#getSyntaxModel <em>Syntax Model</em>}</li>
- * <li>{@link org.mdmi.Node#getSemanticElement <em>Semantic Element</em>}</li>
- * <li>{@link org.mdmi.Node#getFieldName <em>Field Name</em>}</li>
- * <li>{@link org.mdmi.Node#isIsSyntacticField <em>Is Syntactic Field</em>}</li>
- * <li>{@link org.mdmi.Node#getPath <em>Path</em>}</li>
+ *   <li>{@link org.mdmi.Node#getName <em>Name</em>}</li>
+ *   <li>{@link org.mdmi.Node#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.mdmi.Node#getMinOccurs <em>Min Occurs</em>}</li>
+ *   <li>{@link org.mdmi.Node#getMaxOccurs <em>Max Occurs</em>}</li>
+ *   <li>{@link org.mdmi.Node#getLocation <em>Location</em>}</li>
+ *   <li>{@link org.mdmi.Node#getLocationExpressionLanguage <em>Location Expression Language</em>}</li>
+ *   <li>{@link org.mdmi.Node#getSyntaxModel <em>Syntax Model</em>}</li>
+ *   <li>{@link org.mdmi.Node#getSemanticElement <em>Semantic Element</em>}</li>
+ *   <li>{@link org.mdmi.Node#getFieldName <em>Field Name</em>}</li>
+ *   <li>{@link org.mdmi.Node#isIsSyntacticField <em>Is Syntactic Field</em>}</li>
+ *   <li>{@link org.mdmi.Node#getPath <em>Path</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getNode()
@@ -49,12 +46,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The "name" property, whose value is a name for the Node -- This name can be useful to label a section or element in a message format. The name
-	 * property should provide a reference to a node for the expression languages used in the syntax tree.
-	 * </p>
+	 * <p>The "name" property, whose value is a name for the Node -- This name can be useful to label a section or element in a message format. The name property should provide a reference to a node for the expression languages used in the syntax tree.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getNode_Name()
@@ -67,9 +60,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Name</em>' attribute.
+	 * @param value the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -81,11 +72,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The optional "description" property whose value is a string describing the Node�s purpose.
-	 * </p>
+	 * <p>The optional "description" property whose value is a string describing the Node�s purpose.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getNode_Description()
@@ -98,9 +86,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Description</em>' attribute.
+	 * @param value the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -111,11 +97,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * The "minOccurs" property with a multiplicity of 0..1. The multiplicity of zero indicates that the Node is optional.
-	 * </p>
+	 * <p>The "minOccurs" property with a multiplicity of 0..1. The multiplicity of zero indicates that the Node is optional.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Min Occurs</em>' attribute.
 	 * @see #setMinOccurs(int)
 	 * @see org.mdmi.MDMIPackage#getNode_MinOccurs()
@@ -128,9 +111,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getMinOccurs <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Min Occurs</em>' attribute.
+	 * @param value the new value of the '<em>Min Occurs</em>' attribute.
 	 * @see #getMinOccurs()
 	 * @generated
 	 */
@@ -141,11 +122,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * An optional "maxOccurs" property that puts an upper limit on the number of instances allowed for the node.
-	 * </p>
+	 * <p>An optional "maxOccurs" property that puts an upper limit on the number of instances allowed for the node.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Max Occurs</em>' attribute.
 	 * @see #setMaxOccurs(int)
 	 * @see org.mdmi.MDMIPackage#getNode_MaxOccurs()
@@ -158,9 +136,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getMaxOccurs <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Max Occurs</em>' attribute.
+	 * @param value the new value of the '<em>Max Occurs</em>' attribute.
 	 * @see #getMaxOccurs()
 	 * @generated
 	 */
@@ -171,12 +147,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or
-	 * anchored by, the URI that defines the location of the physical message.
-	 * </p>
+	 * <p>A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or anchored by, the URI that defines the location of the physical message.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Location</em>' attribute.
 	 * @see #setLocation(String)
 	 * @see org.mdmi.MDMIPackage#getNode_Location()
@@ -208,9 +180,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getLocation <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Location</em>' attribute.
+	 * @param value the new value of the '<em>Location</em>' attribute.
 	 * @see #getLocation()
 	 * @generated
 	 */
@@ -221,12 +191,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "locationExpressionLanguage" property whose value defines a reference to the expression language used in the location property. The language
-	 * used must have a reference.
-	 * </p>
+	 * <p>A "locationExpressionLanguage" property whose value defines a reference to the expression language used in the location property. The language used must have a reference.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Location Expression Language</em>' attribute.
 	 * @see #setLocationExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getNode_LocationExpressionLanguage()
@@ -239,9 +205,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getLocationExpressionLanguage <em>Location Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Location Expression Language</em>' attribute.
+	 * @param value the new value of the '<em>Location Expression Language</em>' attribute.
 	 * @see #getLocationExpressionLanguage()
 	 * @generated
 	 */
@@ -256,7 +220,6 @@ public interface Node extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Syntax Model</em>' container reference.
 	 * @see #setSyntaxModel(MessageSyntaxModel)
 	 * @see org.mdmi.MDMIPackage#getNode_SyntaxModel()
@@ -270,9 +233,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getSyntaxModel <em>Syntax Model</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Syntax Model</em>' container reference.
+	 * @param value the new value of the '<em>Syntax Model</em>' container reference.
 	 * @see #getSyntaxModel()
 	 * @generated
 	 */
@@ -287,7 +248,6 @@ public interface Node extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 *
 	 * @return the value of the '<em>Semantic Element</em>' reference.
 	 * @see #setSemanticElement(SemanticElement)
 	 * @see org.mdmi.MDMIPackage#getNode_SemanticElement()
@@ -302,9 +262,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getSemanticElement <em>Semantic Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Semantic Element</em>' reference.
+	 * @param value the new value of the '<em>Semantic Element</em>' reference.
 	 * @see #getSemanticElement()
 	 * @generated
 	 */
@@ -315,12 +273,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "fieldName" property has a value the class name of the simple datatype which is part of a complex MDMIDatatype, that corresponds to the
-	 * syntactic field in the message format.
-	 * </p>
+	 * <p>A "fieldName" property has a value the class name of the simple datatype which is part of a complex MDMIDatatype, that corresponds to the syntactic field in the message format.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Field Name</em>' attribute.
 	 * @see #setFieldName(String)
 	 * @see org.mdmi.MDMIPackage#getNode_FieldName()
@@ -333,9 +287,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getFieldName <em>Field Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Field Name</em>' attribute.
+	 * @param value the new value of the '<em>Field Name</em>' attribute.
 	 * @see #getFieldName()
 	 * @generated
 	 */
@@ -346,12 +298,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A derived Boolean property "isSyntaticfield", which indicates that this node corresponds to a syntactic field if the property�s value is
-	 * "True".
-	 * </p>
+	 * <p>A derived Boolean property "isSyntaticfield", which indicates that this node corresponds to a syntactic field if the property�s value is "True".</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Is Syntactic Field</em>' attribute.
 	 * @see #setIsSyntacticField(boolean)
 	 * @see org.mdmi.MDMIPackage#getNode_IsSyntacticField()
@@ -364,9 +312,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#isIsSyntacticField <em>Is Syntactic Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Is Syntactic Field</em>' attribute.
+	 * @param value the new value of the '<em>Is Syntactic Field</em>' attribute.
 	 * @see #isIsSyntacticField()
 	 * @generated
 	 */
@@ -378,12 +324,8 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>
-	 * A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or
-	 * anchored by, the URI that defines the location of the physical message.
-	 * </p>
+	 * <p>A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or anchored by, the URI that defines the location of the physical message.</p>
 	 * <!-- end-model-doc -->
-	 *
 	 * @return the value of the '<em>Path</em>' attribute.
 	 * @see #setPath(String)
 	 * @see org.mdmi.MDMIPackage#getNode_Path()
@@ -396,9 +338,7 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.mdmi.Node#getPath <em>Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
-	 * @param value
-	 *            the new value of the '<em>Path</em>' attribute.
+	 * @param value the new value of the '<em>Path</em>' attribute.
 	 * @see #getPath()
 	 * @generated
 	 */
@@ -407,7 +347,6 @@ public interface Node extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 *
 	 * @model kind="operation" required="true"
 	 * @generated
 	 */
