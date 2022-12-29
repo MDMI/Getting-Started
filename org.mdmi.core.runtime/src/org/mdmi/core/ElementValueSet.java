@@ -132,15 +132,12 @@ public final class ElementValueSet {
 	 */
 	public List<IElementValue> getElementValuesByName(SemanticElement semanticElementName) {
 
-		if (semanticElementName == null) {
-			throw new IllegalArgumentException("Null argument!");
-		}
-		if (!m_xelements.containsKey(semanticElementName)) {
+		if (!m_xelements.containsKey(semanticElementName.getUniqueId())) {
 			m_xelements.put(semanticElementName.getUniqueId(), new LinkedList<IElementValue>());
 			for (IElementValue avalue : this.theSetOfAll) {
 				if (avalue.getSemanticElement() != null &&
-						semanticElementName.equals(avalue.getSemanticElement().getName())) {
-					m_xelements.get(semanticElementName).add(avalue);
+						semanticElementName.getUniqueId().equals(avalue.getSemanticElement().getUniqueId())) {
+					m_xelements.get(semanticElementName.getUniqueId()).add(avalue);
 				}
 
 			}
