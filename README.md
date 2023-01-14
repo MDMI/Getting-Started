@@ -11,7 +11,7 @@ The components of MDMI message transformations have been provided here on GitHub
 ### Swagger API
 An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
 https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
-http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation  
+http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=  
 
 ---
 
