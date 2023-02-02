@@ -423,7 +423,9 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				}
 			}
 
-			private boolean isMatch(String currentRelativeXPath, String nodeXPathLocation) {
+			private boolean isMatch(String currentRelativeXPath, Node node) {
+
+				String nodeXPathLocation = node.getLocation();
 
 				logger.trace(currentRelativeXPath);
 				logger.trace(nodeXPathLocation);
@@ -447,6 +449,16 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 					return true;
 				}
+
+				// @TODO - Add some global to note call this unless parsing MDMI language map
+				if ("MDMI".equals(node.getLocationExpressionLanguage())) {
+					if (nodeXPathLocation.endsWith("#")) {
+						if (nodeXPathLocation.startsWith(currentRelativeXPath.replaceAll("\\d+$", ""))) {
+							return true;
+						}
+					}
+				}
+
 				return false;
 
 			}
@@ -476,7 +488,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 						return false;
 					}
 
-					return isMatch(sb.toString(), node.getLocation());
+					return isMatch(sb.toString(), node);
 				}
 
 				void pushNode(Node node) {
@@ -493,7 +505,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				for (Node currentBag : Lists.reverse(syntaxNodes)) {
 					depthCtr++;
 
-					logger.trace(currentBag.getName() + "lookForMatch " + qName);
+					logger.trace(currentBag.getName() + " lookForMatch " + qName);
 
 					if (results.size() > 0) {
 						logger.info("Look for match using after found " + currentBag.getName());
@@ -742,6 +754,8 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 			boolean prune = false;
 
+			private boolean skipfirst = true;
+
 			@Override
 			public void startElement(String uri, String localName, String qName, Attributes attributes)
 					throws SAXException {
@@ -750,7 +764,8 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 					prune = true;
 				}
 
-				if (prune || (yBags.peek().getParent() == null && qName.equals(yBags.peek().getNode().getLocation()))) {
+				if (prune || this.skipfirst) {
+					this.skipfirst = false;
 					return;
 				}
 

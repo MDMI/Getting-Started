@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
-import org.mdmi.ConversionRule;
 import org.mdmi.MessageModel;
 import org.mdmi.core.ElementValueSet;
 import org.mdmi.core.IElementValue;
@@ -28,27 +27,17 @@ import org.slf4j.LoggerFactory;
  * @author seanmuir
  *
  */
-public class LogSemantic extends ConfigurableSemanticProcessor {
-
-	public enum DIRECTION {
-		FROM, TO
-	}
-
-	DIRECTION direction;
+public class CompressSemanticContainership extends ConfigurableSemanticProcessor {
 
 	/**
 	 * @param direction
 	 */
-	public LogSemantic(DIRECTION direction) {
+	public CompressSemanticContainership() {
 		super();
-		this.direction = direction;
+
 	}
 
-	public LogSemantic() {
-		super();
-	}
-
-	private static Logger logger = LoggerFactory.getLogger(LogSemantic.class);
+	private static Logger logger = LoggerFactory.getLogger(CompressSemanticContainership.class);
 
 	/*
 	 * (non-Javadoc)
@@ -57,13 +46,12 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	 */
 	@Override
 	public String getName() {
-		return "LogSemantic";
+		return "CompressSemanticContainership";
 	}
 
 	@Override
 	public void setArguments(Object arguments) {
 		Map map = (Map) arguments;
-		this.direction = DIRECTION.valueOf(map.get("direction").toString());
 
 	}
 
@@ -74,7 +62,7 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		return logger.isTraceEnabled();
+		return true;
 	}
 
 	void serializeXDataStruct(XDataStruct v, int indent) {
@@ -92,22 +80,44 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 		}
 	}
 
+	void compress(IElementValue semanticElement) {
+		logger.trace("compreass " + semanticElement.getName());
+		for (IElementValue childSemanticElement : semanticElement.getChildren()) {
+			compress(childSemanticElement);
+		}
+
+		if (semanticElement.getParent() != null) {
+			for (IElementValue childSemanticElement : semanticElement.getChildren()) {
+				if (!"Container".equals(childSemanticElement.getSemanticElement().getDatatype().getName())) {
+					logger.trace("set parent " + semanticElement.getName());
+					childSemanticElement.setParent(semanticElement.getParent());
+				}
+			}
+		}
+
+	}
+
 	void log(IElementValue semanticElement, int indent) {
 
-		if (direction.equals(DIRECTION.TO)) {
+		// if (direction.equals(DIRECTION.TO)) {
+		//
+		// }
+		//
+		// logger.trace("***********************************************");
+		// logger.trace("***********************************************");
+		// logger.trace("***********************************************");
 
-		}
 		String businessElementName = "NONE";
 
-		if (direction.equals(DIRECTION.TO)) {
-			for (ConversionRule fromRule : semanticElement.getSemanticElement().getMapToMdmi()) {
-				businessElementName = fromRule.getBusinessElement().getName();
-			}
-		} else {
-			for (ConversionRule fromRule : semanticElement.getSemanticElement().getMapFromMdmi()) {
-				businessElementName = fromRule.getBusinessElement().getName();
-			}
-		}
+		// if (direction.equals(DIRECTION.TO)) {
+		// for (ConversionRule fromRule : semanticElement.getSemanticElement().getMapToMdmi()) {
+		// businessElementName = fromRule.getBusinessElement().getName();
+		// }
+		// } else {
+		// for (ConversionRule fromRule : semanticElement.getSemanticElement().getMapFromMdmi()) {
+		// businessElementName = fromRule.getBusinessElement().getName();
+		// }
+		// }
 
 		if (semanticElement.getXValue().getValue() instanceof XDataStruct) {
 			logger.trace(
@@ -124,6 +134,9 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 			log(childSemanticElement, indent + 2);
 		}
 
+		logger.trace("***********************************************");
+		logger.trace("***********************************************");
+		logger.trace("***********************************************");
 	}
 
 	/*
@@ -143,7 +156,7 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 		}
 
 		for (IElementValue semanticElement : parents) {
-			log(semanticElement, 1);
+			compress(semanticElement);
 		}
 	}
 

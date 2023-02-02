@@ -55,6 +55,13 @@ public final class TargetSemanticModelProcessors {
 	 *            The transfer info which is just about to being processed by the runtime.
 	 */
 	public void targetSemanticModelProcessing(MdmiTransferInfo transferInfo, ElementValueSet targetSemanticModel) {
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
+		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing " + targetSemanticProcessors);
 
 		for (ISemanticProcessor targetSemanticProcessor : targetSemanticProcessors) {
 			logger.trace("Checking " + targetSemanticProcessor.getName());

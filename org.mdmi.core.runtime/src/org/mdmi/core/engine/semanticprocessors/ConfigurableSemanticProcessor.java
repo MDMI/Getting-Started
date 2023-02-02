@@ -1,14 +1,10 @@
-package org.mdmi.core.engine.preprocessors;
+package org.mdmi.core.engine.semanticprocessors;
 
 import java.util.ArrayList;
 
 import org.mdmi.MessageModel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public abstract class ConfigurablePreProcessor implements IPreProcessor {
-
-	private static Logger logger = LoggerFactory.getLogger(ConfigurablePreProcessor.class);
+public abstract class ConfigurableSemanticProcessor implements ISemanticProcessor {
 
 	String name;
 
@@ -30,12 +26,9 @@ public abstract class ConfigurablePreProcessor implements IPreProcessor {
 
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		logger.trace("canProcess " + messageModel.getGroup().getName());
 		if (groups.contains(messageModel.getGroup().getName())) {
-			logger.trace("canProcess true");
 			return true;
 		}
-		logger.trace("canProcess false");
 		return false;
 	}
 

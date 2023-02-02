@@ -173,6 +173,8 @@ public class DatamapInterpreter {
 				try {
 					Files.write(Paths.get("./logs/datatypemaps.js"), sb.toString().getBytes());
 				} catch (IOException e) {
+					logger.error(e.getLocalizedMessage());
+					e.printStackTrace();
 				}
 			}
 			engine.eval(compile(sb.toString()));

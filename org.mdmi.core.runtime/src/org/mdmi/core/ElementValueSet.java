@@ -144,7 +144,7 @@ public final class ElementValueSet {
 
 		}
 
-		return m_xelements.get(semanticElementName);
+		return m_xelements.get(semanticElementName.getUniqueId());
 	}
 
 	/**
@@ -180,8 +180,11 @@ public final class ElementValueSet {
 	}
 
 	public void removeElementValue(IElementValue xelement) {
-		this.theSetOfAll.remove(xelement);
-		m_xelements.get(xelement.getSemanticElement().getUniqueId()).remove(xelement);
+		if (this.theSetOfAll.remove(xelement)) {
+			if (m_xelements.containsKey(xelement.getSemanticElement().getUniqueId())) {
+				m_xelements.get(xelement.getSemanticElement().getUniqueId()).remove(xelement);
+			}
+		}
 	}
 
 	/**

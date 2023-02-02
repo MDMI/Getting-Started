@@ -51,6 +51,8 @@ import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.MdmiModelRef;
 import org.mdmi.core.MdmiResolver;
 import org.mdmi.core.MdmiTransferInfo;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic.DIRECTION;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -176,7 +178,17 @@ public class MdmiUow implements Runnable {
 
 			processSourceSemanticModel();
 			processConversions();
+			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
+			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
+			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
+			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
+			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
 			processTargetSemanticModel();
+			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
+			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
+			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
+			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
+			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
 
 			watch.split();
 			logger.info("Split processConversions: " + watch.toSplitString());
@@ -633,6 +645,26 @@ public class MdmiUow implements Runnable {
 					// if (!targetSementicElement.isMultipleInstances()) {
 					// continue;
 					// }
+
+					// SemanticElementRelationship ser = targetSementicElement.getRelationshipByName("QUALIFIER");
+					// if (ser != null) {
+					// continue;
+					// // if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
+					// // for (IElementValue child : targetElementValue.getChildren()) {
+					// // System.err.println(child.getSemanticElement());
+					// // System.err.println(child.getSemanticElement().getName());
+					// // System.err.println(ser);
+					// // System.err.println(ser.getRelatedSemanticElement());
+					// // System.err.println(ser.getRelatedSemanticElement().getName());
+					// // if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
+					// // if (!impl.datamapInterpreter.execute("is" + se.getName(), child, impl.targetProperties)) {
+					// // tobedeleted.add(targetElementValue);
+					// // tobedeleted.addAll(targetElementValue.getChildren());
+					// // }
+					// // }
+					// // }
+					// }
+
 					for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
 
 						/*
@@ -830,6 +862,9 @@ public class MdmiUow implements Runnable {
 
 		// IElementValue targetElementValue : targettosource.keySet()) {
 
+		LogSemantic foo = new LogSemantic(DIRECTION.TO);
+		foo.processSemanticModel(trgSemanticModel);
+
 		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 			if (targettosource.containsKey(targetElementValue)) {
 				if (targetElementValue.getParent() == null) {
@@ -842,25 +877,80 @@ public class MdmiUow implements Runnable {
 						}
 						if (sourceParent != null && sourcetotarget.containsKey(sourceParent)) {
 							for (IElementValue targetParent : sourcetotarget.get(sourceParent)) {
-								targetParent.addChild(targetElementValue);
+
+								if (targetParent.getSemanticElement().getRelationshipByName("QUALIFIER") != null) {
+									for (SemanticElement child : targetParent.getSemanticElement().getChildren()) {
+
+										if (targetElementValue.getSemanticElement().getUniqueId().equals(
+											child.getUniqueId())) {
+											targetParent.addChild(targetElementValue);
+										}
+
+									}
+
+								} else {
+									targetParent.addChild(targetElementValue);
+								}
+
 							}
 
-							// if (!sourcetotarget2.isEmpty()) {
-
-							// while (sourceParent != null && !sourcetotarget.containsKey(sourceParent)) {
-							// sourceParent = sourceParent.getParent();
-							// }
-							// if (sourceParent != null && sourcetotarget2.containsKey(sourceParent)) {
-							// sourcetotarget2.get(sourceParent).addChild(targetElementValue);
 						}
-
-						// }
 
 					}
 				}
 			}
 
 		}
+
+		for (IElementValue key : targettosource.keySet()) {
+			System.err.println(
+				key.getSemanticElement().getName() + " ---> " + targettosource.get(key).getSemanticElement().getName());
+		}
+
+		// for (IElementValue key : sourcetotarget.keySet()) {
+		// System.err.println(targettosource.get(key).getSemanticElement().getName());
+		// }
+
+		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
+			if (targetElementValue.getSemanticElement() != null &&
+					"glucose".equals(targetElementValue.getSemanticElement().getName())) {
+
+				IElementValue sourceElementValue = targettosource.get(targetElementValue);
+
+				while (sourceElementValue.getParent() != null) {
+					System.err.println(sourceElementValue.getSemanticElement().getName());
+					sourceElementValue = sourceElementValue.getParent();
+					// if (sourcetotarget.containsKey(sourceElementValue)) {
+					// System.err.println(sourcetotarget.get(sourcetotarget));
+					// }
+				}
+
+				IElementValue sourceParent = sourceElementValue.getParent();
+
+				// System.err.println(sourceElementValue.getSemanticElement().getName());
+				// System.err.println(sourceParent.getSemanticElement().getName());
+
+			}
+
+			// if (targetElementValue.getSemanticElement().getParent() != null && targetElementValue.getParent() == null) {
+			// System.err.println(targetElementValue);
+			//
+			// IElementValue sourceElementValue = targettosource.get(targetElementValue);
+			// IElementValue sourceParent = sourceElementValue.getParent();
+			// while (sourceParent != null && !sourcetotarget.containsKey(sourceParent)) {
+			// sourceParent = sourceParent.getParent();
+			// }
+			// if (sourceParent != null && sourcetotarget.containsKey(sourceParent)) {
+			// for (IElementValue targetParent : sourcetotarget.get(sourceParent)) {
+			// targetParent.addChild(targetElementValue);
+			// }
+			// }
+			//
+			// }
+
+		}
+
+		foo.processSemanticModel(trgSemanticModel);
 		// for (IElementValue elementValueToTransfer : this.trgSemanticModel.getAllElementValues()) {''
 		// for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 
@@ -898,15 +988,29 @@ public class MdmiUow implements Runnable {
 		for (IElementValue targetElementValue : targettosource.keySet()) {
 			SemanticElement se = targetElementValue.getSemanticElement();
 			SemanticElementRelationship ser = se.getRelationshipByName("QUALIFIER");
-			System.err.println(se.getName());
-			if (ser != null && targetElementValue.getParent() != null &&
-					targetElementValue.getParent().getChildren() != null) {
-				for (IElementValue child : targetElementValue.getParent().getChildren()) {
-					if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
-						if (!impl.datamapInterpreter.execute("is" + se.getName(), child, impl.targetProperties)) {
-							tobedeleted.add(targetElementValue);
+			if (ser != null) {
+				if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
+					for (IElementValue child : targetElementValue.getChildren()) {
+						if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
+							if (!impl.datamapInterpreter.execute("is" + se.getName(), child, impl.targetProperties)) {
+								tobedeleted.add(targetElementValue);
+								tobedeleted.addAll(targetElementValue.getChildren());
+							}
 						}
+					}
+				} else {
+					if (ser != null && targetElementValue.getParent() != null &&
+							targetElementValue.getParent().getChildren() != null) {
+						for (IElementValue child : targetElementValue.getParent().getChildren()) {
+							if (child.getSemanticElement().getName().equals(
+								ser.getRelatedSemanticElement().getName())) {
+								if (!impl.datamapInterpreter.execute(
+									"is" + se.getName(), child, impl.targetProperties)) {
+									tobedeleted.add(targetElementValue);
+								}
 
+							}
+						}
 					}
 				}
 			}
@@ -916,18 +1020,16 @@ public class MdmiUow implements Runnable {
 		watch.split();
 		logger.trace("QUALIFIER : " + watch.toSplitString());
 
-		for (
-
-		IElementValue remove : tobedeleted) {
+		for (IElementValue remove : tobedeleted) {
 			trgSemanticModel.removeElementValue(remove);
 			if (remove.getParent() != null) {
 				remove.getParent().removeChild(remove);
 			}
 		}
 
-		for (
+		foo.processSemanticModel(trgSemanticModel);
 
-		String key : impl.datamapInterpreter.exceptions.keySet()) {
+		for (String key : impl.datamapInterpreter.exceptions.keySet()) {
 			logger.error(key);
 			logger.error(impl.datamapInterpreter.exceptions.get(key).getMessage());
 		}
@@ -1334,6 +1436,10 @@ public class MdmiUow implements Runnable {
 	 *
 	 */
 	private void processTargetSemanticModel() {
+		logger.trace(
+			"processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
+		logger.trace(
+			"processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
 		Mdmi.INSTANCE().getTargetSemanticModelProcessors().targetSemanticModelProcessing(
 			transferInfo, trgSemanticModel);
 	}
