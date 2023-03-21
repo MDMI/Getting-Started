@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
+import java.util.regex.Pattern;
 
 import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
@@ -232,8 +233,6 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				}
 				return current;
 			} else {
-				System.err.println("aaaaaaaaa" + xPath);
-				System.err.println("aaaaaaaaa" + elemement);
 				if (StringUtils.isEmpty(xPath)) {
 					xPath = "XPATH";
 				}
@@ -253,7 +252,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 		XPathParser parser = new XPathParser(tokens);
 
 		parser.removeErrorListener(ConsoleErrorListener.INSTANCE);
-		parser.addErrorListener(SL4JBaseErrorListener.INSTANCE);
+		// parser.addErrorListener(SL4JBaseErrorListener.INSTANCE);
 
 		logger.trace("Creating ParseTreeWalker");
 		ParseTreeWalker walker = new ParseTreeWalker();
@@ -452,11 +451,35 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 				// @TODO - Add some global to note call this unless parsing MDMI language map
 				if ("MDMI".equals(node.getLocationExpressionLanguage())) {
-					if (nodeXPathLocation.endsWith("#")) {
-						if (nodeXPathLocation.startsWith(currentRelativeXPath.replaceAll("\\d+$", ""))) {
+
+					String[] locations = nodeXPathLocation.split(Pattern.quote("|"));
+					for (String location : locations) {
+
+						location = location.trim();
+
+						if (location.equals(currentRelativeXPath)) {
 							return true;
 						}
+
+						if (location.endsWith("#")) {
+							if (location.startsWith(currentRelativeXPath.replaceAll("\\d+$", ""))) {
+								return true;
+							}
+							if (location.startsWith("^")) {
+								if (location.substring(1).toUpperCase().startsWith(
+									currentRelativeXPath.toUpperCase().replaceAll("\\d+$", ""))) {
+									return true;
+								}
+							}
+						}
+						if (location.startsWith("^")) {
+							if (location.substring(1).equalsIgnoreCase(currentRelativeXPath)) {
+								return true;
+							}
+						}
+
 					}
+
 				}
 
 				return false;
@@ -1036,15 +1059,19 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 		};
 
 		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+
 		// df.setAttribute(XMLConstants.ACCESS_EXTERNAL_DTD, "");
 		// df.setAttribute(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
 		DocumentBuilder b = df.newDocumentBuilder();
+
 		org.w3c.dom.Document doc;
 		try {
 			doc = b.parse(new ByteArrayInputStream(data));
 			InternalTreeWalker treeWalker = new MDMITreeWalker(mdmiHandler);
 			treeWalker.traverse(doc.getDocumentElement());
-		} catch (IOException ex) {
+		} catch (
+
+		IOException ex) {
 
 		}
 

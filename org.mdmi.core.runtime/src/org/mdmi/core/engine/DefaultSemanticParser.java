@@ -236,8 +236,13 @@ public class DefaultSemanticParser implements ISemanticParser {
 		}
 		XElementValue xe = new XElementValue(me, valueSet);
 		if (owner != null) {
-			// set parent-child relationship
-			owner.addChild(xe);
+			if (!xe.getSemanticElement().getParent().getName().equals(owner.getSemanticElement().getName())) {
+				XElementValue inject = new XElementValue(me.getParent(), valueSet);
+				inject.addChild(xe);
+				owner.addChild(inject);
+			} else {
+				owner.addChild(xe);
+			}
 		}
 
 		// set the value
