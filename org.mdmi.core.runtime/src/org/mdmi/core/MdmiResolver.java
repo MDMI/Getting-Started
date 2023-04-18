@@ -136,7 +136,7 @@ public class MdmiResolver {
 		configurations.addAll(getActiveMaps());
 		configurations.addAll(Mdmi.INSTANCE().getPreProcessors().getPreProcessors());
 		configurations.addAll(Mdmi.INSTANCE().getPostProcessors().getPostProcessors());
-		Gson gsonBuilder = new GsonBuilder().create();
+		Gson gsonBuilder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		return gsonBuilder.toJson(configurations);
 	}
 

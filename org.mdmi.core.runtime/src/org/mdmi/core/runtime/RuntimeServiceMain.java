@@ -97,10 +97,6 @@ public class RuntimeServiceMain {
 				cmd = parser.parse(options, args);
 			} catch (ParseException pe) {
 
-				pe.printStackTrace(System.err);
-
-				pe.printStackTrace(System.out);
-
 				final PrintWriter writer = new PrintWriter(System.out);
 				final HelpFormatter usageFormatter = new HelpFormatter();
 				Comparator<Option> comparator = new Comparator<>() {

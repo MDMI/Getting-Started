@@ -1471,9 +1471,6 @@ public class DefaultSemanticParser implements ISemanticParser {
 		for (int i = 0; i < axs.size(); i++) {
 
 			this.getSemanticInterpreter().execute(se.getName() + "_COMPUTEDIN", axs.get(i), properties);
-
-			// System.err.println("EXECUTE SETCOMPUTEDINVALUE");
-			// evalRule(lang, rule, (XElementValue) axs.get(i), properties);
 		}
 	}
 

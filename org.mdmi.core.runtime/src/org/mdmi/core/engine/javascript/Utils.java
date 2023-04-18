@@ -23,7 +23,12 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
+import org.mdmi.Bag;
 import org.mdmi.ConversionRule;
+import org.mdmi.LeafSyntaxTranslator;
+import org.mdmi.MDMIPackage;
+import org.mdmi.Node;
+import org.mdmi.SemanticElement;
 import org.mdmi.core.engine.XDataStruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -238,6 +243,16 @@ public class Utils {
 		FORMATS.put(dash3.toUpperCase(), dashes3);
 		FORMATS.put(fhirInstancefmt.toUpperCase(), fhirInstancefmts);
 		FORMATS.put(iso8601timezone.toUpperCase(), iso8601timezones);
+	}
+
+	public static String FormatToDate(String to, String date) {
+		return FormatDate("yyyy-MM-dd'T'hh:mm:ss+zzzz", to, date);
+
+	}
+
+	public static String FormatFromDate(String from, String date) {
+		return FormatDate(from, "yyyy-MM-dd'T'hh:mm:ss+zzzz", date);
+
 	}
 
 	public static String FormatDate(String from, String to, String date) {
@@ -490,6 +505,40 @@ public class Utils {
 				}
 			}
 
+		}
+		return "";
+	}
+
+	public static String getLeafNodeFormat(ConversionRule conversionRule) {
+		if (MDMIPackage.eINSTANCE.getSemanticElement().isInstance(conversionRule.getOwner())) {
+			SemanticElement semanticElement = conversionRule.getOwner();
+			if (MDMIPackage.eINSTANCE.getLeafSyntaxTranslator().isInstance(semanticElement.getSyntaxNode())) {
+				LeafSyntaxTranslator lst = (LeafSyntaxTranslator) semanticElement.getSyntaxNode();
+				if (StringUtils.isEmpty(lst.getFormat())) {
+					return lst.getFormat();
+				}
+			}
+
+		}
+		return "";
+	}
+
+	public static String getBagNodeFormat(ConversionRule conversionRule, String field) {
+		if (MDMIPackage.eINSTANCE.getSemanticElement().isInstance(conversionRule.getOwner())) {
+			SemanticElement semanticElement = conversionRule.getOwner();
+			if (MDMIPackage.eINSTANCE.getBag().isInstance(semanticElement.getSyntaxNode())) {
+				Bag bag = (Bag) semanticElement.getSyntaxNode();
+				if (!StringUtils.isEmpty(field)) {
+					Node node = bag.getNode(field);
+					if (MDMIPackage.eINSTANCE.getLeafSyntaxTranslator().isInstance(node)) {
+						LeafSyntaxTranslator lst = (LeafSyntaxTranslator) node;
+						if (!StringUtils.isEmpty(lst.getFormat())) {
+							return lst.getFormat();
+						}
+					}
+
+				}
+			}
 		}
 		return "";
 	}

@@ -482,8 +482,6 @@ public class JsonSyntacticParser implements ISyntacticParser {
 				if (yleaf.getNode().getSemanticElement() != null &&
 						yleaf.getNode().getSemanticElement().getDatatype() != null) {
 					if ("Decimal".equals(yleaf.getNode().getSemanticElement().getDatatype().getName())) {
-
-						System.err.println(yleaf.getValue());
 						jsonObject.put(yleaf.getNode().getName(), Double.parseDouble(yleaf.getValue()));
 						return;
 					}

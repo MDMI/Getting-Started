@@ -51,8 +51,6 @@ import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.MdmiModelRef;
 import org.mdmi.core.MdmiResolver;
 import org.mdmi.core.MdmiTransferInfo;
-import org.mdmi.core.engine.semanticprocessors.LogSemantic;
-import org.mdmi.core.engine.semanticprocessors.LogSemantic.DIRECTION;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -628,7 +626,6 @@ public class MdmiUow implements Runnable {
 		for (IElementValue sourceElementValue : whattotransfer) {
 
 			// Create list of RI for the element
-			// ArrayList<MDMIBusinessElementReference> businessReference = new ArrayList<MDMIBusinessElementReference>();
 
 			for (ConversionRule tme : sourceElementValue.getSemanticElement().getMapToMdmi()) {
 
@@ -636,34 +633,10 @@ public class MdmiUow implements Runnable {
 						!targetSementicElementsByBER.containsKey(tme.getBusinessElement().getUniqueIdentifier())) {
 					continue;
 				}
-				// businessReference.add(tme.getBusinessElement());
-				// }
 
 				// Create list of target semantic elements based on the source RI
 				for (SemanticElement targetSementicElement : targetSementicElementsByBER.get(
 					tme.getBusinessElement().getUniqueIdentifier())) {
-					// if (!targetSementicElement.isMultipleInstances()) {
-					// continue;
-					// }
-
-					// SemanticElementRelationship ser = targetSementicElement.getRelationshipByName("QUALIFIER");
-					// if (ser != null) {
-					// continue;
-					// // if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
-					// // for (IElementValue child : targetElementValue.getChildren()) {
-					// // System.err.println(child.getSemanticElement());
-					// // System.err.println(child.getSemanticElement().getName());
-					// // System.err.println(ser);
-					// // System.err.println(ser.getRelatedSemanticElement());
-					// // System.err.println(ser.getRelatedSemanticElement().getName());
-					// // if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
-					// // if (!impl.datamapInterpreter.execute("is" + se.getName(), child, impl.targetProperties)) {
-					// // tobedeleted.add(targetElementValue);
-					// // tobedeleted.addAll(targetElementValue.getChildren());
-					// // }
-					// // }
-					// // }
-					// }
 
 					for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
 
@@ -675,13 +648,6 @@ public class MdmiUow implements Runnable {
 							tmo.getBusinessElement().getUniqueIdentifier())) {
 							continue;
 						}
-						// for (MDMIBusinessElementReference sourceRI : businessReference) {
-
-						// if (sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null) {
-						// logger.trace("sourceRI.getUniqueIdentifier() == null || tmo.getBusinessElement() == null");
-						// continue;
-						// }
-						// if (sourceRI.getUniqueIdentifier().equals(tmo.getBusinessElement().getUniqueIdentifier())) {
 						logger.trace("CREATE CORRESPONDNG ELEMENT " + targetSementicElement.getName());
 						Stack<SemanticElement> mappedParentStack = new Stack<>();
 						getMappedStack(targetSementicElement, mappedParentStack);
@@ -704,8 +670,6 @@ public class MdmiUow implements Runnable {
 								}
 							}
 						}
-
-						// wholeStackMapped = true;
 
 						if (wholeStackMapped) {
 							logger.trace("CREATING TARGET ELEMENT " + targetSementicElement.getName());
@@ -862,9 +826,6 @@ public class MdmiUow implements Runnable {
 
 		// IElementValue targetElementValue : targettosource.keySet()) {
 
-		LogSemantic foo = new LogSemantic(DIRECTION.TO);
-		foo.processSemanticModel(trgSemanticModel);
-
 		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 			if (targettosource.containsKey(targetElementValue)) {
 				if (targetElementValue.getParent() == null) {
@@ -902,15 +863,6 @@ public class MdmiUow implements Runnable {
 
 		}
 
-		for (IElementValue key : targettosource.keySet()) {
-			System.err.println(
-				key.getSemanticElement().getName() + " ---> " + targettosource.get(key).getSemanticElement().getName());
-		}
-
-		// for (IElementValue key : sourcetotarget.keySet()) {
-		// System.err.println(targettosource.get(key).getSemanticElement().getName());
-		// }
-
 		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 			if (targetElementValue.getSemanticElement() != null &&
 					"glucose".equals(targetElementValue.getSemanticElement().getName())) {
@@ -918,41 +870,14 @@ public class MdmiUow implements Runnable {
 				IElementValue sourceElementValue = targettosource.get(targetElementValue);
 
 				while (sourceElementValue.getParent() != null) {
-					System.err.println(sourceElementValue.getSemanticElement().getName());
 					sourceElementValue = sourceElementValue.getParent();
-					// if (sourcetotarget.containsKey(sourceElementValue)) {
-					// System.err.println(sourcetotarget.get(sourcetotarget));
-					// }
 				}
 
 				IElementValue sourceParent = sourceElementValue.getParent();
 
-				// System.err.println(sourceElementValue.getSemanticElement().getName());
-				// System.err.println(sourceParent.getSemanticElement().getName());
-
 			}
 
-			// if (targetElementValue.getSemanticElement().getParent() != null && targetElementValue.getParent() == null) {
-			// System.err.println(targetElementValue);
-			//
-			// IElementValue sourceElementValue = targettosource.get(targetElementValue);
-			// IElementValue sourceParent = sourceElementValue.getParent();
-			// while (sourceParent != null && !sourcetotarget.containsKey(sourceParent)) {
-			// sourceParent = sourceParent.getParent();
-			// }
-			// if (sourceParent != null && sourcetotarget.containsKey(sourceParent)) {
-			// for (IElementValue targetParent : sourcetotarget.get(sourceParent)) {
-			// targetParent.addChild(targetElementValue);
-			// }
-			// }
-			//
-			// }
-
 		}
-
-		foo.processSemanticModel(trgSemanticModel);
-		// for (IElementValue elementValueToTransfer : this.trgSemanticModel.getAllElementValues()) {''
-		// for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 
 		ListIterator<IElementValue> iterator = trgSemanticModel.getAllElementValues().listIterator();
 
@@ -1026,8 +951,6 @@ public class MdmiUow implements Runnable {
 				remove.getParent().removeChild(remove);
 			}
 		}
-
-		foo.processSemanticModel(trgSemanticModel);
 
 		for (String key : impl.datamapInterpreter.exceptions.keySet()) {
 			logger.error(key);
