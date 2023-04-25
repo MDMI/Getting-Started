@@ -30,6 +30,8 @@ import org.mdmi.MessageGroup;
 import org.mdmi.MessageModel;
 import org.mdmi.core.Mdmi.MapInfo;
 import org.mdmi.core.engine.SimplifiedSemanticParser;
+import org.mdmi.core.engine.postprocessors.IPostProcessor;
+import org.mdmi.core.engine.preprocessors.IPreProcessor;
 import org.mdmi.util.MDMIUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -134,9 +136,16 @@ public class MdmiResolver {
 	public String getEngineConfigurations() {
 		ArrayList<Object> configurations = new ArrayList<Object>();
 		configurations.addAll(getActiveMaps());
-		configurations.addAll(Mdmi.INSTANCE().getPreProcessors().getPreProcessors());
-		configurations.addAll(Mdmi.INSTANCE().getPostProcessors().getPostProcessors());
-		Gson gsonBuilder = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		// TODO Fix issue with GSON serialization on processors
+		// configurations.addAll(Mdmi.INSTANCE().getPreProcessors().getPreProcessors());
+		// configurations.addAll(Mdmi.INSTANCE().getPostProcessors().getPostProcessors());
+		for (IPreProcessor preprocessor : Mdmi.INSTANCE().getPreProcessors().getPreProcessors()) {
+			configurations.add(preprocessor.getName());
+		}
+		for (IPostProcessor postprocessor : Mdmi.INSTANCE().getPostProcessors().getPostProcessors()) {
+			configurations.add(postprocessor.getName());
+		}
+		Gson gsonBuilder = new GsonBuilder().create();
 		return gsonBuilder.toJson(configurations);
 	}
 
