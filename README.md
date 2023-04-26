@@ -6,25 +6,10 @@ The MDMI Project goals are to lower the barriers for implementing healthcare tra
 All software and content on this site are provided under the [Eclipse Public License](/files/Eclipse%20Public%20License%20-%20v%202.0.pdf).
 
 ## Hands-on with MDMI Transformations
-The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. They include the following:
-
-### Swagger API
-An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
-https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
-http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=  
-
----
-
-| 🚩 🚩 🚩 |
-| ----------|
-| **Connectathon Participants** |  
-
-Please click [here](https://github.com/MDMI/Getting-Started/wiki/Connectathon-Testing) for test messages and a dedicated Swagger implementation.
-
----
+The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. To examine message transformations for yourself we suggest an API development platform such as [Postman](https://www.postman.com/).
 
 ### Docker Implementation
-A Docker image is available to run the application locally - the best option to examine with your own messages. To get the Docker image enter the commands:
+First, download and run the MDMI Docker image using the commands:
 
 *docker pull mdmiservices/cda2fhir*  
 
@@ -32,7 +17,21 @@ Then:
 
 *docker run --name cda2fhir -d -p 5000:8080 mdmiservices/cda2fhir*
 
+### API Test (Postman) ###
+In Postman, create a new request with this information:  
+**Type:** POST  
+**URL:** http://localhost:8080/mdmi/transformation  
+**Keys**  
+*message:* your CDA source message file  
+*source:* CDAR2.ContinuityOfCareDocument  
+*target:* FHIRR4JSON.MasterBundle  
+
+### Swagger API
 A Swagger implementation is accessed at [http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation](http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation)
+
+An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
+https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
+http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=  
 
 ## MDMI Map Repository
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
