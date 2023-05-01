@@ -20,7 +20,7 @@ Then:
 ### API Test (Postman) ###
 In Postman, create a new request with this information:  
 **Type:** POST  
-**URL:** http://localhost:8080/mdmi/transformation  
+**URL:** http://localhost:5000/mdmi/transformation  
 **Keys**  
 *message:* your CDA source message file  
 *source:* CDAR2.ContinuityOfCareDocument  
