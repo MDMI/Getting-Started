@@ -33,6 +33,7 @@ import java.util.Set;
 import java.util.Stack;
 
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.commons.lang3.tuple.Pair;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.DTCChoice;
@@ -103,12 +104,11 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 	 * @param iterator
 	 */
 	void normalizeSemanticContainers(ElementValueSet elementValueSet, IElementValue parent,
-			ListIterator<IElementValue> iterator) {
-		HashMap<String, IElementValue> containers = new HashMap<>();
+			ListIterator<IElementValue> iterator, HashMap<String, IElementValue> containers) {
+		// = new HashMap<>();
 		ArrayList<IElementValue> remove = new ArrayList<>();
 		for (IElementValue child : parent.getChildren()) {
 			if (!child.getSemanticElement().getParent().getName().equals(parent.getSemanticElement().getName())) {
-
 				if (!containers.containsKey(child.getSemanticElement().getParent().getName())) {
 					XElementValue x = new XElementValue(
 						child.getSemanticElement().getParent(), elementValueSet, iterator);
@@ -132,7 +132,8 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 	}
 
-	void walkComputedIn(MessageModel mdl, ElementValueSet elementValueSet, Properties properties) {
+	void walkComputedIn(MessageModel mdl, ElementValueSet elementValueSet, Properties properties,
+			HashMap<String, IElementValue> containers) {
 
 		StopWatch watch = new StopWatch();
 		watch.start();
@@ -157,7 +158,8 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		while (iterator.hasNext()) {
 			IElementValue elementValue = iterator.next();
 			if (elementValue.getSemanticElement() != null) {
-				normalizeSemanticContainers(elementValueSet, elementValue, iterator);
+				;
+				normalizeSemanticContainers(elementValueSet, elementValue, iterator, containers);
 			}
 		}
 
@@ -263,57 +265,85 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 	}
 
-	void walkNullFlavor(IElementValue elementValue, ElementValueSet elementValueSet, Properties properties) {
-		if (elementValue.getSemanticElement() != null) {
-			for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
-				if (child.isNullFlavor()) {
+	void walkNullFlavor(ElementValueSet elementValueSet, Properties properties) {
 
-					boolean runForElement = true;
+		ArrayList<Pair<IElementValue, SemanticElement>> toRun = new ArrayList<>();
 
-					for (SemanticElementRelationship ser : child.getRelationships()) {
-						for (IElementValue childElement : elementValue.getChildren()) {
-							if (ser.getRelatedSemanticElement() != null) {
-								if (childElement.getSemanticElement().getName().equals(
-									ser.getRelatedSemanticElement().getName())) {
+		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
+
+			if (elementValue.getSemanticElement() != null) {
+				for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
+					if (child.isNullFlavor()) {
+
+						boolean runForElement = true;
+
+						for (SemanticElementRelationship ser : child.getRelationships()) {
+							for (IElementValue childElement : elementValue.getChildren()) {
+								if (ser.getRelatedSemanticElement() != null) {
+									if (childElement.getSemanticElement().getName().equals(
+										ser.getRelatedSemanticElement().getName())) {
+										runForElement = false;
+									}
+									if (ser.getRelatedSemanticElement().isComputedIn()) {
+										runForElement = false;
+									}
+								} else {
+									logger.error(
+										"Error! processing Null Flavor " + child.getName() +
+												", NULLFLAVOR relationship missing semantic element");
 									runForElement = false;
 								}
-								if (ser.getRelatedSemanticElement().isComputedIn()) {
-									runForElement = false;
-								}
-							} else {
-								logger.error(
-									"Error! processing Null Flavor " + child.getName() +
-											", NULLFLAVOR relationship missing semantic element");
-								runForElement = false;
 							}
+
 						}
 
-					}
+						if (runForElement) {
 
-					if (runForElement) {
-						try {
-
-							SemanticElementRelationship ser = child.getRelationshipByName("NULLFLAVOR");
-							logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
-							XElementValue computedInElement = new XElementValue(
-								ser.getRelatedSemanticElement(), elementValueSet);
-							this.getSemanticInterpreter().execute("setNullFlavor", computedInElement, properties);
-
-							// String rule = child.getComputedValue().getExpression();
-							// String lang = child.getComputedValue().getLanguage();
-							// evalRule(lang, rule, computedInElement, properties);
-							elementValue.addChild(computedInElement);
-						} catch (Exception e) {
-
+							// Pair<IElementValue, SemanticElement> nullFlavorPair = new Pair<IElementValue, SemanticElement>();
+							toRun.add(Pair.of(elementValue, child));
+							// try {
+							//
+							// SemanticElementRelationship ser = child.getRelationshipByName("NULLFLAVOR");
+							// logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
+							// XElementValue computedInElement = new XElementValue(
+							// ser.getRelatedSemanticElement(), elementValueSet);
+							// this.getSemanticInterpreter().execute("setNullFlavor", computedInElement, properties);
+							//
+							// // String rule = child.getComputedValue().getExpression();
+							// // String lang = child.getComputedValue().getLanguage();
+							// // evalRule(lang, rule, computedInElement, properties);
+							// elementValue.addChild(computedInElement);
+							// } catch (Exception e) {
+							//
+							// }
 						}
 					}
 				}
 			}
 		}
 
-		for (IElementValue childElementValue : elementValue.getChildren()) {
-			walkNullFlavor(childElementValue, elementValueSet, properties);
+		for (Pair<IElementValue, SemanticElement> foo : toRun) {
+			// if (runForElement) {
+			try {
+
+				SemanticElementRelationship ser = foo.getRight().getRelationshipByName("NULLFLAVOR");
+				logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
+				XElementValue nullFlavor = new XElementValue(ser.getRelatedSemanticElement(), elementValueSet);
+				this.getSemanticInterpreter().execute("setNullFlavor", nullFlavor, properties);
+
+				// String rule = child.getComputedValue().getExpression();
+				// String lang = child.getComputedValue().getLanguage();
+				// evalRule(lang, rule, computedInElement, properties);
+				foo.getLeft().addChild(nullFlavor);
+			} catch (Exception e) {
+
+			}
+			// }
 		}
+
+		// for (IElementValue childElementValue : elementValue.getChildren()) {
+		// walkNullFlavor(childElementValue, elementValueSet, properties);
+		// }
 	}
 
 	SemanticElement getRoot(SemanticElement child) {
@@ -360,9 +390,9 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		watch.split();
 		logger.trace("Set up: " + watch.toSplitString());
 
-		XElementValue rootElement = new XElementValue(rootSemantic, elementValueSet);
-
-		fillInTheBlanks.put(rootSemantic.getName(), rootElement);
+		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+			fillInTheBlanks.put(rootSemantic.getName(), (XElementValue) rootElementValue);
+		}
 
 		watch.split();
 		logger.trace("fillInTheBlanks: " + watch.toSplitString());
@@ -404,15 +434,24 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		watch.split();
 		logger.trace("update all semantic containment: " + watch.toSplitString());
 
-		walkComputedIn(mdl, elementValueSet, properties);
+		HashMap<String, IElementValue> containers = new HashMap<String, IElementValue>();
+
+		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+			containers.put(rootElementValue.getSemanticElement().getName(), rootElementValue);
+		}
+
+		walkComputedIn(mdl, elementValueSet, properties, containers);
 		watch.split();
 		logger.trace("walkComputedIn: " + watch.toSplitString());
 
-		walkNullFlavor(rootElement, elementValueSet, properties);
+		walkNullFlavor(elementValueSet, properties);
+
 		watch.split();
 		logger.trace("walkNullFlavor: " + watch.toSplitString());
 
-		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
+		for (
+
+		IElementValue elementValue : elementValueSet.getAllElementValues()) {
 			if (elementValue.getSemanticElement() != null && elementValue.getSemanticElement().getParent() == null) {
 				if (elementValue.value() instanceof XDataStruct) {
 					setYNodeValuesForBag((YBag) yroot, (XDataStruct) elementValue.value());
