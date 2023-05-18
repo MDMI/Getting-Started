@@ -9,10 +9,10 @@ All software and content on this site are provided under the [Eclipse Public Lic
 The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. To examine message transformations for yourself, we suggest these:
 
 **Postman** - a popular tool for API development. A standalone application available at https://www.postman.com/  
-Click here for instructions to use Postman [![Postman Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger)
+Click here for instructions to use Postman [![Postman Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Postman)
 
 **Swagger** - another tool for developing and testing REST APIs. Swagger is a hosted application running on the same server as the MDMI Transformation Engine.  
-Click here for instructions to use Postman [![Swagger Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Postman)
+Click here for instructions to use Postman [![Swagger Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger)
 
 
 <!--
