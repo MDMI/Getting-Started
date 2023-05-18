@@ -8,12 +8,18 @@ All software and content on this site are provided under the [Eclipse Public Lic
 ## Hands-on with MDMI Transformations
 The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. To examine message transformations for yourself, we suggest these:
 
-1. Postman - a popular tool for API development. A standalone application available at https://www.postman.com/
-2. Swagger - another tool for developing and testing REST APIs. Swagger is a hosted application running on the same server as the MDMI Transformation Engine.
+**Postman** - a popular tool for API development. A standalone application available at https://www.postman.com/  
+Click here for instructions to use Postman [![Postman Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger)
+
+**Swagger** - another tool for developing and testing REST APIs. Swagger is a hosted application running on the same server as the MDMI Transformation Engine.  
+Click here for instructions to use Postman [![Swagger Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Postman)
+
+
 <!--
 3. cURL - a command line tool for transferring data using various network protocols. It is included in many Linux distributions and is available at https://curl.se/
 -->
 
+<!--
 The MDMI Transformation Service is provided as a Docker image that can be downloaded for local use. However, a copy is hosted so that you may use the service without setting up the Docker infrastructure. The hosted copy is referenced below.
 
 ### Docker Implementation
@@ -26,51 +32,15 @@ When running locally, download and run the MDMI Docker image using the commands:
 Then:
 
 `docker run --name cda2fhir -d -p 5000:8080 mdmiservices/transformation`
-
-### API Test (Postman) ###
-A set of API requests is provided for ease of use. Download this zip file, [MDMI_Demo.zip,](https://github.com/MDMI/Getting-Started/blob/main/files/MDMI_Demo.zip) and expand it. The resultant file is *MDMI_Demo.json*.
-
-#### Using the Prepackaged Requests ####
-After installing Postman, download and expand the zip file as described above. From within Postman, click the **Import** button at the top of the left pane and select this file. It will create a "collection" named **MDIX Demonstration**. This provides six requests:
-- GET Get  
-- POST CDAtoFHIR  
-- POST FHIR2CDA  
-- POST V2toFHIR  
-- POST SBHAtoFHIR 
-- POST SBHAtoCDA  
-
-#### Running Postman ####
-The POST requests are used for message transformation. For example, to transform a CDA message, click on **GET CDAtoFHIR** from the left pane. 
-
-![](/files/images/Postman2.png)
-
-In the right pane, click on **Body** as shown.
-
-![CDAtoFHIR](/files/images/Postman1.png)
-
-From there click the **Select Files** button and enter your message file.
-
-![](/files/images/Postman3.png)
-
-At this point you can run by clicking the **Send** button in the upper right of the window. The resultant message will appear at the bottom of the right pane.
-<!--
-#### Creating POST Requests ####
-In Postman, create a new request with this information:  
-**Type:** POST  
-**URL:** http://localhost:5000/mdmi/transformation  
-**Params Keys**  
-*source:* CDAR2.ContinuityOfCareDocument (MDMI source map)   
-*target:* FHIRR4JSON.MasterBundle (MDMI target map)  
-**Body Key**  
-*message:* your CDA source message file  
 -->
+<!--
 ### Swagger API
 An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
 https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
 http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=  
 
 When running locally, a Swagger implementation is accessed at http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation
-
+-->
 ## MDMI Map Repository
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
 [Click here to see example maps](https://github.com/MDMI/Getting-Started/tree/main/Maps)
