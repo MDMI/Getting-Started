@@ -473,7 +473,7 @@ public class Utils {
 		}
 	}
 
-	static Map<String, Properties> mapOfTransforms = new HashMap<>();
+	static public Map<String, Properties> mapOfTransforms = new HashMap<>();
 
 	public static void loadMap(String targetSystem) {
 		if (!mapOfTransforms.containsKey(targetSystem)) {

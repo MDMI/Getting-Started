@@ -17,6 +17,7 @@ package org.mdmi.core.engine;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -26,6 +27,7 @@ import java.util.ListIterator;
 import java.util.Set;
 import java.util.Stack;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.StopWatch;
 import org.eclipse.emf.common.util.EList;
 import org.mdmi.Bag;
@@ -51,6 +53,7 @@ import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.MdmiModelRef;
 import org.mdmi.core.MdmiResolver;
 import org.mdmi.core.MdmiTransferInfo;
+import org.mdmi.core.engine.javascript.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -863,21 +866,21 @@ public class MdmiUow implements Runnable {
 
 		}
 
-		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
-			if (targetElementValue.getSemanticElement() != null &&
-					"glucose".equals(targetElementValue.getSemanticElement().getName())) {
-
-				IElementValue sourceElementValue = targettosource.get(targetElementValue);
-
-				while (sourceElementValue.getParent() != null) {
-					sourceElementValue = sourceElementValue.getParent();
-				}
-
-				IElementValue sourceParent = sourceElementValue.getParent();
-
-			}
-
-		}
+		// for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
+		// if (targetElementValue.getSemanticElement() != null &&
+		// "glucose".equals(targetElementValue.getSemanticElement().getName())) {
+		//
+		// IElementValue sourceElementValue = targettosource.get(targetElementValue);
+		//
+		// while (sourceElementValue.getParent() != null) {
+		// sourceElementValue = sourceElementValue.getParent();
+		// }
+		//
+		// IElementValue sourceParent = sourceElementValue.getParent();
+		//
+		// }
+		//
+		// }
 
 		ListIterator<IElementValue> iterator = trgSemanticModel.getAllElementValues().listIterator();
 
@@ -913,11 +916,30 @@ public class MdmiUow implements Runnable {
 		for (IElementValue targetElementValue : targettosource.keySet()) {
 			SemanticElement se = targetElementValue.getSemanticElement();
 			SemanticElementRelationship ser = se.getRelationshipByName("QUALIFIER");
+
 			if (ser != null) {
 				if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
 					for (IElementValue child : targetElementValue.getChildren()) {
 						if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
-							if (!impl.datamapInterpreter.execute("is" + se.getName(), child, impl.targetProperties)) {
+							String qualifierFunction = "is" + se.getName();
+							impl.targetProperties.remove("VALUESET");
+							/*
+							 * Use metamodel better - if description is no empty check for value set
+							 */
+							if (!StringUtils.isEmpty(ser.getDescription())) {
+
+								if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
+									qualifierFunction = "checkFilter";
+									impl.targetProperties.put(
+										"VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+								} else {
+									impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
+								}
+
+							} else {
+								impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
+							}
+							if (!impl.datamapInterpreter.execute(qualifierFunction, child, impl.targetProperties)) {
 								tobedeleted.add(targetElementValue);
 								tobedeleted.addAll(targetElementValue.getChildren());
 							}

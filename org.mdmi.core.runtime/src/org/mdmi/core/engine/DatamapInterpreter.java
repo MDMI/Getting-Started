@@ -40,14 +40,17 @@ import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
 import com.google.javascript.rhino.StaticSourceFile.SourceKind;
 
-//import com.google.javascript.jscomp.JSS
-//import com.google.javascript.jscomp.JSSourceFile;
-
 /**
  * @author seanmuir
  *
  */
 public class DatamapInterpreter {
+
+	private static String checkFilter = "function checkFilter(target,properties) { " + "print('checkFilter'); " +
+			"if (properties.containsKey('VALUESET')) { " +
+			"    if (properties.get('VALUESET').containsKey(target.value())) { " +
+			"         print('checkFilter true'); " + "        return true; " + "    } " + "} " +
+			"print('checkFilter false'); " + "return false " + "} ";
 
 	private static Logger logger = LoggerFactory.getLogger(DatamapInterpreter.class);
 
@@ -166,6 +169,7 @@ public class DatamapInterpreter {
 					}
 				}
 			}
+			sb.append(checkFilter);
 		}
 
 		try {
