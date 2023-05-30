@@ -26,6 +26,10 @@ import org.slf4j.LoggerFactory;
  */
 public final class TargetSemanticModelProcessors {
 
+	public ArrayList<ISemanticProcessor> getTargetSemanticProcessors() {
+		return targetSemanticProcessors;
+	}
+
 	private static Logger logger = LoggerFactory.getLogger(TargetSemanticModelProcessors.class);
 
 	private final ArrayList<ISemanticProcessor> targetSemanticProcessors = new ArrayList<>();
@@ -55,12 +59,6 @@ public final class TargetSemanticModelProcessors {
 	 *            The transfer info which is just about to being processed by the runtime.
 	 */
 	public void targetSemanticModelProcessing(MdmiTransferInfo transferInfo, ElementValueSet targetSemanticModel) {
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
-		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing");
 		logger.trace("targetSemanticModelProcessingtargetSemanticModelProcessing " + targetSemanticProcessors);
 
 		for (ISemanticProcessor targetSemanticProcessor : targetSemanticProcessors) {
@@ -79,4 +77,4 @@ public final class TargetSemanticModelProcessors {
 		}
 	}
 
-} // MdmiPostProcessors
+}

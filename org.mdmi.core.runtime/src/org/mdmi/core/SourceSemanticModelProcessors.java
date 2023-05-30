@@ -26,6 +26,10 @@ import org.slf4j.LoggerFactory;
  */
 public final class SourceSemanticModelProcessors {
 
+	public ArrayList<ISemanticProcessor> getSourceSemanticProcessors() {
+		return sourceSemanticProcessors;
+	}
+
 	private static Logger logger = LoggerFactory.getLogger(SourceSemanticModelProcessors.class);
 
 	private final ArrayList<ISemanticProcessor> sourceSemanticProcessors = new ArrayList<>();
