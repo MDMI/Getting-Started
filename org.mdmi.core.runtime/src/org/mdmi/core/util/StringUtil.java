@@ -16,8 +16,9 @@ package org.mdmi.core.util;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.util.Base64;
 
-import org.apache.commons.codec.binary.Base64;
+//import org.apache.commons.codec.binary.Base64;
 import org.mdmi.core.MdmiException;
 
 /**
@@ -103,7 +104,8 @@ public class StringUtil {
 			throw new IllegalArgumentException("null argument in Util.decodeBytes()");
 		}
 		try {
-			return Base64.decodeBase64(z);
+
+			return Base64.getDecoder().decode(z); // .decodeBase64(z);
 		} catch (Exception ex) {
 			throw new MdmiException(ex, "Decode fails");
 		}
@@ -145,7 +147,9 @@ public class StringUtil {
 			throw new IllegalArgumentException("null argument in Util.encodeBytes()");
 		}
 		try {
-			return Base64.encodeBase64String(a);
+			return Base64.getEncoder().encodeToString(a);
+
+			// return Base64.encodeBase64String(a);
 		} catch (Exception ex) {
 			throw new MdmiException(ex, "Encode fails");
 		}

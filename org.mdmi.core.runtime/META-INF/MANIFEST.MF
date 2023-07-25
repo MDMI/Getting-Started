@@ -2,14 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Runtime
 Bundle-SymbolicName: org.mdmi.core.runtime;singleton:=true
-Bundle-Version: 2.5.0.qualifier
+Bundle-Version: 2.5.1.qualifier
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.emf.common,
  org.apache.commons.cli,
  org.apache.commons.lang3,
  org.mdmi.ecore,
  com.google.guava,
- org.apache.commons.codec,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.antlr.runtime;bundle-version="4.7.1";visibility:=reexport,

@@ -744,6 +744,10 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 
 				List<Node> matchingSyntaxNodes = lookForMatch(qName);
 
+				if (matchingSyntaxNodes.isEmpty()) {
+					matchingSyntaxNodes = lookForMatch(localName);
+				}
+
 				Node matchingSyntaxNode = null;
 
 				if (!matchingSyntaxNodes.isEmpty()) {
