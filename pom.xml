@@ -85,22 +85,29 @@
 		<module>org.mdmi.core.runtime</module>
 	</modules>
 	<profiles>
+ 
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
+
 				<repository>
 					<id>mdix</id>
-					<name>7ed03140605b-releases</name>
-					<url>http://artifactory.mdixinc.net:8082/artifactory/mdmiartifactory/libs-release</url>
+					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
 				</repository>
 				<snapshotRepository>
 					<id>mdix</id>
-					<name>7ed03140605b-snapshots</name>
-					<url>http://artifactory.mdixinc.net:8081/artifactory/mdmiartifactory/libs-snapshot</url>
+					<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
 				</snapshotRepository>
+
+
 			</distributionManagement>
 		</profile>
-
+ 
 
 		<profile>
 			<id>dependencycheck</id>
