@@ -43,6 +43,7 @@ public final class YBag extends YNode {
 	 */
 	public YBag(Bag bag, YNode parent) {
 		super(bag, parent);
+
 		m_bag = bag;
 		m_nodes = new LinkedList<>();
 	}
@@ -59,6 +60,7 @@ public final class YBag extends YNode {
 	 */
 	public YBag(Bag bag, YNode parent, YNode ynode) {
 		this(bag, parent);
+
 		m_nodes.add(ynode);
 	}
 

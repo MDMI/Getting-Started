@@ -57,9 +57,6 @@ import org.mdmi.core.engine.javascript.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-
 /**
  * MDMI Unit of Work. Will execute a transfer from the source to the target
  * messages, based on the given maps.
@@ -180,60 +177,12 @@ public class MdmiUow implements Runnable {
 			processSourceSemanticModel();
 			processConversions();
 			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
-			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
-			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
-			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
-			logger.trace("processTargetSemanticModelprocessTargetSemanticModelprocessTargetSemanticModel");
 			processTargetSemanticModel();
-			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
-			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
-			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
-			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
-			logger.trace("asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf");
 
 			watch.split();
 			logger.info("Split processConversions: " + watch.toSplitString());
 			logger.info("Done processConversions " + Thread.currentThread().getName());
 
-			if (false && logger.isTraceEnabled()) {
-
-				Multimap<String, IElementValue> sourceMap = ArrayListMultimap.create();
-				Multimap<String, IElementValue> targetMap = ArrayListMultimap.create();
-
-				// HashMap<String,String>
-				for (IElementValue elementValue : srcSemanticModel.getAllElementValues()) {
-					for (ConversionRule conversionRule : elementValue.getSemanticElement().getMapToMdmi()) {
-						sourceMap.put(conversionRule.getBusinessElement().getName(), elementValue);
-					}
-				}
-
-				for (IElementValue elementValue : this.trgSemanticModel.getAllElementValues()) {
-					for (ConversionRule conversionRule : elementValue.getSemanticElement().getMapFromMdmi()) {
-						targetMap.put(conversionRule.getBusinessElement().getName(), elementValue);
-					}
-				}
-
-				for (MDMIBusinessElementReference aaa : transferInfo.targetElements) {
-					String key = aaa.getName();
-					Collection<IElementValue> sources = sourceMap.get(key);
-					if (targetMap.containsKey(key)) {
-						Collection<IElementValue> targets = targetMap.get(key);
-						if (sources.size() != targets.size()) {
-							logger.error(
-								key + " Number of instances in sources and data are not the same,  " + sources.size() +
-										" to " + targets.size());
-						} else {
-							/**
-							 * @TODO Add smart value comparison
-							 */
-						}
-					} else {
-						logger.error(key + " missing element in target");
-					}
-
-				}
-
-			}
 			logger.info("Execute processOutboundTargetMessage " + Thread.currentThread().getName());
 			processOutboundTargetMessage();
 			watch.split();
@@ -347,7 +296,8 @@ public class MdmiUow implements Runnable {
 		srcSemanticModel = new ElementValueSet();
 
 		srcSemProv.buildSemanticModel(
-			transferInfo.sourceModel.getModel(), srcSyntaxModel, srcSemanticModel, transferInfo.sourceProperties);
+			transferInfo.sourceModel.getModel(), srcSyntaxModel, srcSemanticModel, transferInfo.sourceProperties,
+			transferInfo.sourceValues);
 
 		watch.split();
 		logger.trace("buildSemanticModel : " + watch.toSplitString());
@@ -437,7 +387,8 @@ public class MdmiUow implements Runnable {
 		}
 
 		trgSemProv.buildSemanticModel(
-			transferInfo.targetModel.getModel(), trgSyntaxModel, trgSemanticModel, transferInfo.sourceProperties);
+			transferInfo.targetModel.getModel(), trgSyntaxModel, trgSemanticModel, transferInfo.targetProperties,
+			transferInfo.targetValues);
 
 	}
 
@@ -527,6 +478,7 @@ public class MdmiUow implements Runnable {
 		HashMap<String, MDMIBusinessElementReference> matches = new HashMap<>();
 		for (IElementValue iev : srcSemanticModel.getAllElementValues()) {
 			logger.trace("Source Semantic Element " + iev.getSemanticElement().getName());
+			System.err.println("Source Semantic Element " + iev.getSemanticElement().getName());
 
 			boolean isMatched = false;
 			for (ConversionRule tme : iev.getSemanticElement().getMapToMdmi()) {
@@ -535,34 +487,6 @@ public class MdmiUow implements Runnable {
 					whattotransfer.add(iev);
 					matches.put(tme.getBusinessElement().getUniqueIdentifier(), tme.getBusinessElement());
 					isMatched = true;
-				} else {
-
-					if (false && manyToOneContainers) {
-
-						if (manyToOneMatches.isEmpty()) {
-							manyToOneMatches.put("92ad5c46-0554-4919-95ad-ed267e4ec007", new HashSet<String>());
-
-							manyToOneMatches.get("92ad5c46-0554-4919-95ad-ed267e4ec007").add(
-								"04efdee4-2132-490a-99c4-0f635300879a");
-						}
-
-						for (String key : manyToOneMatches.keySet()) {
-							if (manyToOneMatches.get(key).contains(tme.getBusinessElement().getUniqueIdentifier())) {
-								whattotransfer.add(iev);
-								tme.getBusinessElement().setUniqueIdentifier(key);
-								matches.put(tme.getBusinessElement().getUniqueIdentifier(), tme.getBusinessElement());
-								isMatched = true;
-							}
-							if (tme.getBusinessElement().getUniqueIdentifier().equals(key)) {
-								whattotransfer.add(iev);
-								tme.getBusinessElement().setUniqueIdentifier(key);
-								matches.put(tme.getBusinessElement().getUniqueIdentifier(), tme.getBusinessElement());
-								isMatched = true;
-							}
-						}
-
-					}
-
 				}
 			}
 
@@ -740,8 +664,10 @@ public class MdmiUow implements Runnable {
 			}
 		}
 
-		for (SemanticElement s : singles) {
-			logger.trace("SINGLE ELEMENTS : " + s.getName());
+		if (logger.isTraceEnabled()) {
+			for (SemanticElement s : singles) {
+				logger.trace("SINGLE ELEMENTS : " + s.getName());
+			}
 		}
 
 		/*
@@ -760,20 +686,13 @@ public class MdmiUow implements Runnable {
 
 				List<IElementValue> values = trgSemanticModel.getElementValuesByName(single.getParent());
 
-				// if (values.isEmpty()) {
-				// continue;
-				// }
-
 				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + single.getParent().getName());
 				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + values);
 
-				for (IElementValue v : values) {
-					logger.trace("GETTING SINGLE ELEMENT PARENTS : " + v.getSemanticElement().getName());
-				}
-
-				for (IElementValue foo : sourcetotarget.keySet()) {
-
-					logger.trace("xxxGETTING SINGLE ELEMENT PARENTS : " + foo.getSemanticElement().getName());
+				if (logger.isTraceEnabled()) {
+					for (IElementValue v : values) {
+						logger.trace("GETTING SINGLE ELEMENT PARENTS : " + v.getSemanticElement().getName());
+					}
 				}
 
 				for (ConversionRule x : single.getMapToMdmi()) {
@@ -790,8 +709,6 @@ public class MdmiUow implements Runnable {
 								logger.trace("SINGLE ELEMENT MATCHED : " + sourceRI.getName());
 								logger.trace("SINGLE ELEMENT PARENT : " + single.getName());
 								logger.trace("SOURCE ELEMENT CONTAINER : " + bbbb.getSemanticElement().getName());
-								// bbbb
-
 								XElementValue singleElementValue = new XElementValue(single, trgSemanticModel);
 								try {
 									@SuppressWarnings("deprecation")
@@ -865,22 +782,6 @@ public class MdmiUow implements Runnable {
 			}
 
 		}
-
-		// for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
-		// if (targetElementValue.getSemanticElement() != null &&
-		// "glucose".equals(targetElementValue.getSemanticElement().getName())) {
-		//
-		// IElementValue sourceElementValue = targettosource.get(targetElementValue);
-		//
-		// while (sourceElementValue.getParent() != null) {
-		// sourceElementValue = sourceElementValue.getParent();
-		// }
-		//
-		// IElementValue sourceParent = sourceElementValue.getParent();
-		//
-		// }
-		//
-		// }
 
 		ListIterator<IElementValue> iterator = trgSemanticModel.getAllElementValues().listIterator();
 
@@ -991,6 +892,12 @@ public class MdmiUow implements Runnable {
 		ISemanticParser trgSemProv = getSemanticProvider(transferInfo.getTargetMessageGroup());
 		ISyntacticParser trgSynProv = getSyntaxProvider(transferInfo.getTargetMessageGroup());
 		long ts = System.currentTimeMillis();
+
+		// for (IElementValue v : trgSemanticModel.getAllElementValues()) {
+		//
+		// System.err.println(v.getSemanticElement().getName());
+		//
+		// }
 		if (trgSyntaxModel != null) {
 			trgSemProv.updateSyntacticModel(
 				transferInfo.targetModel.getModel(), trgSemanticModel, trgSyntaxModel, transferInfo.targetProperties);
@@ -1281,13 +1188,7 @@ public class MdmiUow implements Runnable {
 			logger.info("Create Source Model ");
 			ArrayList<SemanticElement> created = new ArrayList<>();
 			ArrayList<String> singles = new ArrayList<>();
-			// transferInfo.sourceModel.getModel().getElementSet().getSemanticElements().clear();
-			// for (SemanticElement se : transferInfo.sourceModel.getModel().getElementSet().getSemanticElements()) {
-			// if (se.getParent() == null) {
 			populateSourceSemanticModel(semanticContainer, null, bers, created, singles);
-			// }
-
-			// }
 
 			serializeSemanticModel("SourceSemanticModel", transferInfo.location, srcSemanticModel, false);
 

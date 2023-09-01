@@ -372,7 +372,8 @@ class ConversionImpl {
 
 	private void cloneStruct(XDataStruct src, XDataStruct trg, boolean fromSrc) {
 		if (src == null || trg == null) {
-			throw new IllegalArgumentException("Null argument!");
+			// throw new IllegalArgumentException("Null argument!");
+			return;
 		}
 		Collection<XValue> values = trg.getXValues();
 		for (XValue t : values) {

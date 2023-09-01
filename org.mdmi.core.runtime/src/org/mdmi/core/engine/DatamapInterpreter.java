@@ -91,7 +91,11 @@ public class DatamapInterpreter {
 
 				logger.trace(sb.toString());
 				try {
-					Files.write(Paths.get("./logs/datatypemaps.js"), sb.toString().getBytes());
+					Files.write(
+						Paths.get(
+							"./logs/" + messgaeGroup.getName() + messgaeGroup.getModels().get(0).getMessageModelName() +
+									"datatypemaps.js"),
+						sb.toString().getBytes());
 				} catch (IOException e) {
 
 				}
@@ -175,10 +179,11 @@ public class DatamapInterpreter {
 		try {
 			if (logger.isTraceEnabled()) {
 				try {
+					Files.createDirectories(Paths.get("./logs"));
 					Files.write(Paths.get("./logs/datatypemaps.js"), sb.toString().getBytes());
 				} catch (IOException e) {
-					logger.error(e.getLocalizedMessage());
-					e.printStackTrace();
+					logger.trace("Unable to log datatypes");
+					// e.printStackTrace();
 				}
 			}
 			engine.eval(compile(sb.toString()));

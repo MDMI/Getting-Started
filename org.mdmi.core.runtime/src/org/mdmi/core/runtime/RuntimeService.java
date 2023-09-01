@@ -11,6 +11,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
+import org.json.simple.JSONObject;
 import org.mdmi.ConversionRule;
 import org.mdmi.DatatypeMap;
 import org.mdmi.Field;
@@ -35,7 +36,8 @@ public class RuntimeService {
 
 	//
 	public static String runTransformation(String srcMdl, byte[] srcData, String trgMdl, String location,
-			Properties sourcePropertyValues, Properties targetPropertyValues) throws Exception {
+			Properties sourcePropertyValues, Properties targetPropertyValues, JSONObject sourceValues,
+			JSONObject targetValues) throws Exception {
 
 		String retVal = null;
 
@@ -71,6 +73,8 @@ public class RuntimeService {
 
 		ti.sourceProperties = sourcePropertyValues;
 		ti.targetProperties = targetPropertyValues;
+		ti.sourceValues = sourceValues;
+		ti.targetValues = targetValues;
 
 		long start = System.nanoTime();
 

@@ -16,6 +16,7 @@ package org.mdmi.core;
 
 import java.util.Properties;
 
+import org.json.simple.JSONObject;
 import org.mdmi.MessageModel;
 
 /**
@@ -34,7 +35,8 @@ public interface ISemanticParser {
 	 * @param eset
 	 *            The element set as defined by the message model (IN-OUT parameter).
 	 */
-	public void buildSemanticModel(MessageModel mdl, ISyntaxNode root, ElementValueSet eset, Properties properties);
+	public void buildSemanticModel(MessageModel mdl, ISyntaxNode root, ElementValueSet eset, Properties properties,
+			JSONObject values);
 
 	/**
 	 * Create a new syntax tree represented from the given semantic content (element set) and

@@ -39,6 +39,8 @@ public final class SourceSemanticModelProcessors {
 			boolean add = true;
 			// fail safe to make sure post process is onyl added once
 			for (ISemanticProcessor registered : sourceSemanticProcessors) {
+				System.err.println(registered.getName());
+				System.err.println(sourceSemanticProcessor.getName());
 				if (registered.getName().equals(sourceSemanticProcessor.getName())) {
 					add = false;
 				}
@@ -67,7 +69,7 @@ public final class SourceSemanticModelProcessors {
 					logger.info("Executing " + sourceSemanticProcessor.getName());
 					sourceSemanticProcessor.processSemanticModel(sourceSemanticModel);
 				} catch (Exception ex) {
-
+					ex.printStackTrace();
 					logger.error(
 						"SourceSemanticModelProcessors.postProcess {0} throws an unexpected exception while processing source of transfer request",
 						ex);

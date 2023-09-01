@@ -26,6 +26,8 @@ import java.util.Stack;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.DTCChoice;
@@ -81,7 +83,8 @@ public class DefaultSemanticParser implements ISemanticParser {
 	}
 
 	@Override
-	public void buildSemanticModel(MessageModel mdl, ISyntaxNode yroot, ElementValueSet eset, Properties properties) {
+	public void buildSemanticModel(MessageModel mdl, ISyntaxNode yroot, ElementValueSet eset, Properties properties,
+			JSONObject values) {
 
 		if (mdl == null || yroot == null || eset == null) {
 			throw new IllegalArgumentException("Null argument!");
@@ -95,7 +98,10 @@ public class DefaultSemanticParser implements ISemanticParser {
 						: yroot.getNode().getName()));
 		}
 
-		setInitialValues(mdl, properties);
+		List<XElementValue> initalElements = new ArrayList<XElementValue>();
+		if (values != null) {
+			initalElements.addAll(setInitialValues(mdl, values));
+		}
 
 		// 1. create all XElementValues
 		getElements((YNode) yroot);
@@ -123,6 +129,21 @@ public class DefaultSemanticParser implements ISemanticParser {
 					setComputedOutValue(se, properties, null);
 				}
 			}
+		}
+
+		for (IElementValue elementValue : this.valueSet.getAllElementValues()) {
+
+			if (elementValue.getParent() == null && !initalElements.contains(elementValue)) {
+
+				for (IElementValue intialElement : initalElements) {
+					intialElement.setParent(elementValue);
+					elementValue.addChild(intialElement);
+					;
+
+				}
+
+			}
+
 		}
 	}
 
@@ -300,45 +321,69 @@ public class DefaultSemanticParser implements ISemanticParser {
 		}
 	}
 
-	private void setInitialValues(MessageModel mdl, Properties properties) {
-		// JSONParser parser = new JSONParser();
-		// Object obj;
-		// try {
-		// String values = properties.getProperty("InitialValues");
-		// if (StringUtils.isEmpty(values)) {
-		// return;
-		// }
-		//
-		// logger.trace("Initial Values " + values);
-		// obj = parser.parse(values);
-		// JSONObject initialValues = (JSONObject) obj;
-		// Consumer<String> action = new Consumer<>() {
-		// @Override
-		// public void accept(String semanticElementName) {
-		// MDMIBusinessElementReference be = null;
-		// // @TODO Fix look up BER by name
-		// SemanticElement me = mdl.getElementSet().getSemanticElement(be);
-		// if (me != null && me.getDatatype() != null) {
-		// XElementValue xe = new XElementValue(me, valueSet);
-		// XDataStruct xs = new XDataStruct(xe.getXValue(), true);
-		// me.getDatatype();
-		// JSONObject semanticElement = (JSONObject) initialValues.get(semanticElementName);
-		// Consumer<String> action2 = new Consumer<>() {
-		// @Override
-		// public void accept(String property) {
-		// logger.trace(property + " : " + semanticElement.get(property));
-		// xs.setValueSafely(property, semanticElement.get(property));
-		// xe.getXValue().addValue(xs);
-		// }
-		// };
-		// semanticElement.keySet().forEach(action2);
-		// }
-		// }
-		// };
-		// initialValues.keySet().forEach(action);
-		// } catch (Exception e) {
-		// logger.error("setInitialValues", e);
-		// }
+	private void walkTheValues(MessageModel mdl, XElementValue parent, JSONObject theValues,
+			List<XElementValue> initalElements) {
+		for (Object key : theValues.keySet()) {
+
+			for (SemanticElement x : mdl.getElementSet().getSemanticElements()) {
+				if (key.equals(x.getName())) {
+					XElementValue element = new XElementValue(x, valueSet);
+
+					if (parent != null) {
+						parent.addChild(element);
+						// element.setParent(parent);
+					} else {
+						initalElements.add(element);
+					}
+
+					if (x.getDatatype() != null && "Container".endsWith(x.getDatatype().getName())) {
+						parent = element;
+						walkTheValues(mdl, parent, (JSONObject) theValues.get(key), initalElements);
+					} else {
+
+						Object vv = theValues.get(key);
+						if (vv instanceof JSONObject) {
+							JSONObject ddd = (JSONObject) theValues.get(key);
+
+							XDataStruct xs = new XDataStruct(parent.getXValue(), true);
+
+							for (Object vkey : ddd.keySet()) {
+								xs.setValueSafely((String) vkey, theValues.get(vkey));
+							}
+							element.getXValue().addValue(xs);
+						} else {
+							element.getXValue().addValue(vv);
+
+						}
+					}
+
+				}
+			}
+		}
+
+	}
+
+	private List<XElementValue> setInitialValues(MessageModel mdl, JSONObject initialValues) {
+		JSONParser parser = new JSONParser();
+
+		List<XElementValue> initalElements = new ArrayList<>();
+
+		try {
+			for (Object key : initialValues.keySet()) {
+				for (SemanticElement x : mdl.getElementSet().getSemanticElements()) {
+					if (key.equals(x.getName())) {
+						// XElementValue parent = new XElementValue(x, valueSet);
+						// initalElements.add(parent);
+						walkTheValues(mdl, null, initialValues, initalElements);
+					}
+				}
+			}
+
+		} catch (Exception e) {
+			logger.error("setInitialValues", e);
+		}
+
+		return initalElements;
 
 	}
 

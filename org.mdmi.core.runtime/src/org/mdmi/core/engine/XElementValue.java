@@ -41,6 +41,25 @@ public class XElementValue implements IElementValue {
 
 	private ElementValueSet m_owner;
 
+	public void zap() {
+		for (XElementValue c : m_children) {
+			c.zap();
+		}
+
+		while (!m_children.isEmpty()) {
+			for (XElementValue c : m_children) {
+				// c.zap();
+				m_owner.removeElementValue(c);
+			}
+		}
+
+		m_owner.removeElementValue(this);
+		m_owner = null;
+		m_parent = null;
+		m_xvalue = null;
+
+	}
+
 	public static class RelElement {
 		public String name;
 
@@ -64,6 +83,7 @@ public class XElementValue implements IElementValue {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
+
 		m_semanticElement = semanticElement;
 		m_children = new LinkedList<>();
 		m_relations = new ArrayList<>();
@@ -107,6 +127,7 @@ public class XElementValue implements IElementValue {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
+
 		m_semanticElement = semanticElement;
 		m_children = new LinkedList<>();
 		m_relations = new ArrayList<>();
@@ -203,7 +224,7 @@ public class XElementValue implements IElementValue {
 	@Override
 	public void removeChild(IElementValue child) {
 		m_children.remove(child);
-		child.setParent(this);
+		// child.setParent(this);
 	}
 
 	@Override

@@ -180,11 +180,29 @@ public final class ElementValueSet {
 	}
 
 	public void removeElementValue(IElementValue xelement) {
-		if (this.theSetOfAll.remove(xelement)) {
-			if (m_xelements.containsKey(xelement.getSemanticElement().getUniqueId())) {
-				m_xelements.get(xelement.getSemanticElement().getUniqueId()).remove(xelement);
-			}
+		for (IElementValue child : xelement.getChildren()) {
+			this.removeElementValue(child);
 		}
+		System.err.println("before " + theSetOfAll.size());
+		if (this.theSetOfAll.remove(xelement)) {
+			System.err.println("Error");
+		}
+		System.err.println("after " + theSetOfAll.size());
+
+		// this.theSetOfAll.clear();
+		// this.m_xelements.clear();
+		// if (this.theSetOfAll.remove(xelement)) {
+		// if (m_xelements.containsKey(xelement.getSemanticElement().getUniqueId())) {
+		// m_xelements.get(xelement.getSemanticElement().getUniqueId()).clear();
+		// m_xelements.remove(xelement.getSemanticElement().getUniqueId());
+		// IElementValue p = xelement.getParent();
+		//
+		// // p.getChildren()
+		// xelement.getParent().removeChild(xelement);
+		// // xelement.setParent(null);
+		// }
+		// }
+		// System.err.println("after " + m_xelements.size());
 	}
 
 	/**

@@ -79,10 +79,18 @@ public class XDataStruct extends XData {
 	 */
 	XDataStruct(XValue owner, XDataStruct src) {
 		super(owner, src.m_datatype);
-		for (int i = 0; i < src.m_values.size(); i++) {
-			XValue xv = src.m_values.get(i);
-			m_values.put(xv.getName(), xv.clone(true));
+
+		// src.m_values;
+
+		for (String key : src.m_values.keySet()) {
+			XValue xv = src.m_values.get(key);
+			if (xv != null) {
+				m_values.put(xv.getName(), xv.clone(true));
+			} else {
+				System.err.println(src.m_values);
+			}
 		}
+
 	}
 
 	/**
