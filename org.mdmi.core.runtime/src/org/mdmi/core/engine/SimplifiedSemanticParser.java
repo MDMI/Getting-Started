@@ -29,7 +29,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Properties;
 import java.util.Stack;
-import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.commons.lang3.tuple.Pair;
@@ -74,10 +73,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 	/**
 	 * @param sourceMessageGroup
 	 */
-	// public SimplifiedSemanticParser(MessageGroup messageGroup) {
-	// super
-	// // TODO Auto-generated constructor stub
-	// }
 
 	@Override
 	public ISyntaxNode createNewSyntacticModel(MessageModel mdl, ElementValueSet eset, Properties properties) {
@@ -273,31 +268,13 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			if (elementValue.getSemanticElement() != null) {
 				for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
 
-					// System.err.println(child.getName());
-
 					if (child.isNullFlavor()) {
-
-						// System.err.println(child.getName());
-
-						if ("q1_curr_immunizationsNullFlavor".equals(child.getName())) {
-							// System.err.println(child.getName());
-
-							for (IElementValue wtf : elementValueSet.getAllElementValues()) {
-								if (wtf.getSemanticElement().getName().equals("date_of_service")) {
-									// System.err.println(wtf.getName());
-								}
-
-							}
-						}
 
 						boolean runForElement = true;
 
 						for (SemanticElementRelationship ser : child.getRelationships()) {
 							for (IElementValue childElement : elementValue.getChildren()) {
 								if (ser.getRelatedSemanticElement() != null) {
-
-									System.err.println("CHECKING " + childElement.getSemanticElement().getName());
-									System.err.println("TO " + ser.getRelatedSemanticElement().getName());
 									if (childElement.getSemanticElement().getName().equals(
 										ser.getRelatedSemanticElement().getName())) {
 										runForElement = false;
@@ -316,52 +293,26 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 						}
 
 						if (runForElement) {
-
-							// Pair<IElementValue, SemanticElement> nullFlavorPair = new Pair<IElementValue, SemanticElement>();
 							toRun.add(Pair.of(elementValue, child));
-							// try {
-							//
-							// SemanticElementRelationship ser = child.getRelationshipByName("NULLFLAVOR");
-							// logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
-							// XElementValue computedInElement = new XElementValue(
-							// ser.getRelatedSemanticElement(), elementValueSet);
-							// this.getSemanticInterpreter().execute("setNullFlavor", computedInElement, properties);
-							//
-							// // String rule = child.getComputedValue().getExpression();
-							// // String lang = child.getComputedValue().getLanguage();
-							// // evalRule(lang, rule, computedInElement, properties);
-							// elementValue.addChild(computedInElement);
-							// } catch (Exception e) {
-							//
-							// }
 						}
 					}
 				}
 			}
 		}
 
-		for (Pair<IElementValue, SemanticElement> foo : toRun) {
-			// if (runForElement) {
+		for (Pair<IElementValue, SemanticElement> nullFlavorToRun : toRun) {
 			try {
-
-				SemanticElementRelationship ser = foo.getRight().getRelationshipByName("NULLFLAVOR");
+				SemanticElementRelationship ser = nullFlavorToRun.getRight().getRelationshipByName("NULLFLAVOR");
 				logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
 				XElementValue nullFlavor = new XElementValue(ser.getRelatedSemanticElement(), elementValueSet);
-				this.getSemanticInterpreter().execute("setNullFlavor", nullFlavor, properties);
-
-				// String rule = child.getComputedValue().getExpression();
-				// String lang = child.getComputedValue().getLanguage();
-				// evalRule(lang, rule, computedInElement, properties);
-				foo.getLeft().addChild(nullFlavor);
+				this.getSemanticInterpreter().execute(
+					"setNullFlavor" + ser.getContext().getName(), nullFlavor, properties);
+				nullFlavorToRun.getLeft().addChild(nullFlavor);
+				nullFlavor.setParent(nullFlavorToRun.getLeft());
+				System.err.println(nullFlavor.value());
 			} catch (Exception e) {
-
 			}
-			// }
 		}
-
-		// for (IElementValue childElementValue : elementValue.getChildren()) {
-		// walkNullFlavor(childElementValue, elementValueSet, properties);
-		// }
 	}
 
 	SemanticElement getRoot(SemanticElement child) {
@@ -521,13 +472,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			getPath(bags, currentYBag.getNode(), childElementValue.getSemanticElement().getSyntaxNode());
 
 			logger.trace("walkModel child : " + childElementValue.getName());
-			// logger.trace("walkModel path : " + bags.toString());
-
-			// List<Node> list = bags.stream().collect(Collectors.toList());
-
-			List<String> names = bags.stream().map(car -> car.getName()).collect(Collectors.toList());
-
-			System.out.println("Collected: " + names);
 
 			YNode ynode = currentYBag;
 			while (!bags.isEmpty()) {

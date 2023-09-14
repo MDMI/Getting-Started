@@ -38,9 +38,6 @@ import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
 import com.google.javascript.rhino.StaticSourceFile.SourceKind;
 
-//import com.google.javascript.jscomp.JSS
-//import com.google.javascript.jscomp.JSSourceFile;
-
 /**
  * @author seanmuir
  *
@@ -132,17 +129,13 @@ public class SemanticInterpreter {
 					}
 
 				} else if (semanticElement.isNullFlavor()) {
-
-					if (!createdNullFlavor) {
-						createdNullFlavor = true;
-						String computedInExpression = semanticElement.getComputedValue().getExpression();
-						if (!StringUtils.isEmpty(computedInExpression)) {
-							StringBuffer function = new StringBuffer();
-							function.append("function " + "setNullFlavor" + "(value) {");
-							function.append(computedInExpression);
-							function.append("}");
-							sb.append(function.toString());
-						}
+					String computedInExpression = semanticElement.getComputedValue().getExpression();
+					if (!StringUtils.isEmpty(computedInExpression)) {
+						StringBuffer function = new StringBuffer();
+						function.append("function " + "setNullFlavorFor" + semanticElement.getName() + "(value) {");
+						function.append(computedInExpression);
+						function.append("}");
+						sb.append(function.toString());
 					}
 
 				} else if (semanticElement.isComputedIn()) {
@@ -300,7 +293,6 @@ public class SemanticInterpreter {
 
 	public boolean execute(String function, Object value, Object param1) {
 
-		// synchronized (inv) {
 		try {
 			/*
 			 * @TODO Fix Editor Whitespace
@@ -310,14 +302,12 @@ public class SemanticInterpreter {
 
 			inv.invokeFunction(function.replaceAll("\\s+", ""), value, param1);
 			return true;
-			// compare(function, source, target);
 		} catch (Exception e) {
 			exceptions.put(function, e);
 			logger.error("Failed executing function " + function + " := " + e.getMessage());
-			// logger.error(e.getMessage(), e);
 			return false;
 		}
-		// }
+
 	}
 
 	public boolean update(String function, Object value) {
