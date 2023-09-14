@@ -478,8 +478,6 @@ public class MdmiUow implements Runnable {
 		HashMap<String, MDMIBusinessElementReference> matches = new HashMap<>();
 		for (IElementValue iev : srcSemanticModel.getAllElementValues()) {
 			logger.trace("Source Semantic Element " + iev.getSemanticElement().getName());
-			System.err.println("Source Semantic Element " + iev.getSemanticElement().getName());
-
 			boolean isMatched = false;
 			for (ConversionRule tme : iev.getSemanticElement().getMapToMdmi()) {
 				if (hasTarget(tme.getBusinessElement())) {
@@ -893,11 +891,6 @@ public class MdmiUow implements Runnable {
 		ISyntacticParser trgSynProv = getSyntaxProvider(transferInfo.getTargetMessageGroup());
 		long ts = System.currentTimeMillis();
 
-		// for (IElementValue v : trgSemanticModel.getAllElementValues()) {
-		//
-		// System.err.println(v.getSemanticElement().getName());
-		//
-		// }
 		if (trgSyntaxModel != null) {
 			trgSemProv.updateSyntacticModel(
 				transferInfo.targetModel.getModel(), trgSemanticModel, trgSyntaxModel, transferInfo.targetProperties);

@@ -135,7 +135,6 @@ public class CascadingSemantic extends ConfigurableSemanticProcessor {
 			boolean process = true;
 			for (IElementValue checkFor : cascadetarget.getChildren()) {
 
-				System.err.println(checkFor.getSemanticElement().getName());
 				if ("AuthorCascadingTarget".equals(checkFor.getSemanticElement().getName())) {
 					process = false;
 				}

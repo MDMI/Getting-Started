@@ -86,8 +86,6 @@ public class XDataStruct extends XData {
 			XValue xv = src.m_values.get(key);
 			if (xv != null) {
 				m_values.put(xv.getName(), xv.clone(true));
-			} else {
-				System.err.println(src.m_values);
 			}
 		}
 

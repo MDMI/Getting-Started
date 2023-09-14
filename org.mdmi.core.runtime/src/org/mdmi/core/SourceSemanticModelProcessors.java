@@ -39,8 +39,7 @@ public final class SourceSemanticModelProcessors {
 			boolean add = true;
 			// fail safe to make sure post process is onyl added once
 			for (ISemanticProcessor registered : sourceSemanticProcessors) {
-				System.err.println(registered.getName());
-				System.err.println(sourceSemanticProcessor.getName());
+
 				if (registered.getName().equals(sourceSemanticProcessor.getName())) {
 					add = false;
 				}

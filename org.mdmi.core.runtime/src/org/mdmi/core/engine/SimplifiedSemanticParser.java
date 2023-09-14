@@ -228,7 +228,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 					this.getSemanticInterpreter().execute(
 						child.getName() + "_COMPUTEDIN", computedInElement, properties);
 
-					// evalRule(lang, rule, computedInElement, properties);
 				}
 
 				for (IElementValue parentValue : elementValueSet.getElementValuesByName(child.getParent())) {
@@ -306,11 +305,12 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 				logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
 				XElementValue nullFlavor = new XElementValue(ser.getRelatedSemanticElement(), elementValueSet);
 				this.getSemanticInterpreter().execute(
-					"setNullFlavor" + ser.getContext().getName(), nullFlavor, properties);
+					"setNullFlavorFor" + nullFlavorToRun.getRight().getName(), nullFlavor, properties);
 				nullFlavorToRun.getLeft().addChild(nullFlavor);
 				nullFlavor.setParent(nullFlavorToRun.getLeft());
-				System.err.println(nullFlavor.value());
+
 			} catch (Exception e) {
+				logger.error("Error processing null flavor " + nullFlavorToRun.getRight().getName(), e);
 			}
 		}
 	}
@@ -491,9 +491,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 					if (newNode.getMaxOccurs() != 1 || !createdNodes.containsKey(newNode)) {
 
-						if ("representedCustodianOrganization".equals(newNode.getName())) {
-							System.err.println(newNode.getName());
-						}
 						logger.trace("Create YBag: " + newNode.getName());
 						createdNodes.put(newNode, new YBag((Bag) newNode, ynode));
 
