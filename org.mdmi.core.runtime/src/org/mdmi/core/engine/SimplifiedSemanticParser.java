@@ -264,10 +264,16 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
 
+			logger.trace("walkNullFlavor " + elementValue.getSemanticElement().getName());
+
 			if (elementValue.getSemanticElement() != null) {
 				for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
 
+					logger.trace("walkNullFlavor child " + child.getName());
+
 					if (child.isNullFlavor()) {
+
+						logger.trace("child is null flavor" + child.getName());
 
 						boolean runForElement = true;
 
@@ -276,9 +282,16 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 								if (ser.getRelatedSemanticElement() != null) {
 									if (childElement.getSemanticElement().getName().equals(
 										ser.getRelatedSemanticElement().getName())) {
+
+										logger.trace(
+											"do not run found element " + childElement.getSemanticElement().getName());
 										runForElement = false;
 									}
 									if (ser.getRelatedSemanticElement().isComputedIn()) {
+
+										logger.trace(
+											"do not run, isComputedIn" + childElement.getSemanticElement().getName());
+
 										runForElement = false;
 									}
 								} else {

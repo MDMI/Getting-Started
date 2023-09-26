@@ -48,9 +48,8 @@ public class DatamapInterpreter {
 
 	private static String checkFilter = "function checkFilter(target,properties) { " + "print('checkFilter'); " +
 			"if (properties.containsKey('VALUESET')) { " +
-			"    if (properties.get('VALUESET').containsKey(target.value())) { " +
-			"         print('checkFilter true'); " + "        return true; " + "    } " + "} " +
-			"print('checkFilter false'); " + "return false " + "} ";
+			"    if (properties.get('VALUESET').containsKey(target.value())) { " + "         " +
+			"        return true; " + "    } " + "} " + "  " + "return false " + "} ";
 
 	private static Logger logger = LoggerFactory.getLogger(DatamapInterpreter.class);
 
