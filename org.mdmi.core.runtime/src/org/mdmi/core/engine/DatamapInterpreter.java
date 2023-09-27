@@ -46,7 +46,7 @@ import com.google.javascript.rhino.StaticSourceFile.SourceKind;
  */
 public class DatamapInterpreter {
 
-	private static String checkFilter = "function checkFilter(target,properties) { " + "print('checkFilter'); " +
+	private static String checkFilter = "function checkFilter(target,properties) { " +
 			"if (properties.containsKey('VALUESET')) { " +
 			"    if (properties.get('VALUESET').containsKey(target.value())) { " + "         " +
 			"        return true; " + "    } " + "} " + "  " + "return false " + "} ";
