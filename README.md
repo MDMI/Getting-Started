@@ -6,34 +6,41 @@ The MDMI Project goals are to lower the barriers for implementing healthcare tra
 All software and content on this site are provided under the [Eclipse Public License](/files/Eclipse%20Public%20License%20-%20v%202.0.pdf).
 
 ## Hands-on with MDMI Transformations
-The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. They include the following:
+The components of MDMI message transformations have been provided here on GitHub as well as staged online for immediate use. To examine message transformations for yourself, we suggest these:
 
-### Swagger API
-An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
-https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
-http://ec2-3-16-40-203.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation  
+**Postman** - a popular tool for API development. A standalone application available at https://www.postman.com/  
+Click here for instructions to use Postman [![Postman Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Postman)
 
----
+**Swagger** - another tool for developing and testing REST APIs. Swagger is a hosted application running on the same server as the MDMI Transformation Engine.  
+Click here for instructions to use Swagger [![Swagger Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger)
 
-| 🚩 🚩 🚩 |
-| ----------|
-| **Connectathon Participants** |  
 
-Please click [here](https://github.com/MDMI/Getting-Started/wiki/Connectathon-Testing) for test messages and a dedicated Swagger implementation.
+<!--
+3. cURL - a command line tool for transferring data using various network protocols. It is included in many Linux distributions and is available at https://curl.se/
+-->
 
----
+<!--
+The MDMI Transformation Service is provided as a Docker image that can be downloaded for local use. However, a copy is hosted so that you may use the service without setting up the Docker infrastructure. The hosted copy is referenced below.
 
 ### Docker Implementation
-A Docker image is available to run the application locally - the best option to examine with your own messages. To get the Docker image enter the commands:
+(Skip this step if using the hosted instance of the MDMI Transformation Service.)
 
-*docker pull mdmiservices/cda2fhir*  
+When running locally, download and run the MDMI Docker image using the commands:
+
+`docker pull mdmiservices/transformation`  
 
 Then:
 
-*docker run --name cda2fhir -d -p 5000:8080 mdmiservices/cda2fhir*
+`docker run --name cda2fhir -d -p 5000:8080 mdmiservices/transformation`
+-->
+<!--
+### Swagger API
+An online Swagger implementation is available allowing you to see the structure of the API. Instructions for its use are [here](
+https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger). You can go directly to the site at this URL:  
+http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=  
 
-A Swagger implementation is accessed at [http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation](http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation)
-
+When running locally, a Swagger implementation is accessed at http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation
+-->
 ## MDMI Map Repository
 MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
 [Click here to see example maps](https://github.com/MDMI/Getting-Started/tree/main/Maps)

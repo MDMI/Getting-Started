@@ -55,9 +55,11 @@
 		<module>org.mdmi.core.runtime</module>
 	</modules>
 	<profiles>
+ 
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
+
 				<repository>
 					<id>mdix</id>
 					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
@@ -68,6 +70,8 @@
 					<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
 					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
 				</snapshotRepository>
+
+
 			</distributionManagement>
 
 		</profile>
