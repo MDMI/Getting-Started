@@ -23,7 +23,12 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
+import org.mdmi.Bag;
 import org.mdmi.ConversionRule;
+import org.mdmi.LeafSyntaxTranslator;
+import org.mdmi.MDMIPackage;
+import org.mdmi.Node;
+import org.mdmi.SemanticElement;
 import org.mdmi.core.engine.XDataStruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,10 +41,6 @@ public class Utils {
 
 	private static Logger logger = LoggerFactory.getLogger(Utils.class);
 
-	public static String Hello() {
-		return "hello from java";
-	}
-
 	/**
 	 * RuntimeDateFormat pairs the format for parsing and the expected significant digits in the date for the target format
 	 * We are assuming all two digit dates are in this century
@@ -47,122 +48,211 @@ public class Utils {
 	 * @author seanmuir
 	 *
 	 */
-	private static class RuntimeDateFormat {
+	public enum DateSegments {
+		YEAR(1), YEARMONTH(2), YEARMONTHDAY(3), YEARMONTHDAYHOUR(4), YEARMONTHDAYHOURMINUTE(
+				5), YEARMONTHDAYHOURMINUTESECOND(6), YEARMONTHDAYHOURMINUTESUBSECOND(7), YEARMONTHDAYHOURTZ(
+						8), YEARMONTHDAYHOURMINUTETZ(
+								9), YEARMONTHDAYHOURMINUTESECONDTZ(10), YEARMONTHDAYHOURMINUTESUBSECONDTZ(11);
 
-		DateTimeFormatter input;
+		private final int value;
 
-		DateTimeFormatter output;
+		DateSegments(final int newValue) {
+			value = newValue;
+		}
 
-		int significant;
+		public int getValue() {
+			return value;
+		}
+	}
 
-		String pattern;
+	public static class RuntimeDateFormat {
 
-		public RuntimeDateFormat(String pattern, int significant) {
+		public DateTimeFormatter input;
+
+		public DateTimeFormatter output;
+
+		public DateSegments segment;
+
+		public String pattern;
+
+		public boolean preferred;
+
+		public RuntimeDateFormat(String pattern, DateSegments significant, boolean preferred) {
 			super();
 
 			this.input = DateTimeFormatter.ofPattern(pattern.replace("yyyy", "uuuu")).withLocale(Locale.US).withZone(
 				ZoneId.systemDefault());
 			this.output = DateTimeFormatter.ofPattern(pattern.replace("yyyy", "uuuu")).withLocale(Locale.US).withZone(
 				ZoneId.systemDefault());
-			this.significant = significant;
+			this.segment = significant;
 			this.pattern = pattern;
+			this.preferred = preferred;
 		}
 
-		public RuntimeDateFormat(String inpattern, String outpattern, int significant) {
+		public RuntimeDateFormat(String inpattern, String outpattern, DateSegments significant, boolean preferred) {
 			super();
 
 			this.input = DateTimeFormatter.ofPattern(inpattern.replace("yyyy", "uuuu")).withLocale(Locale.US).withZone(
 				ZoneId.systemDefault());
 			this.output = DateTimeFormatter.ofPattern(outpattern.replace("yyyy", "uuuu")).withLocale(
 				Locale.US).withZone(ZoneId.systemDefault());
-			this.significant = significant;
+			this.segment = significant;
 			this.pattern = inpattern;
+			this.preferred = preferred;
 		}
 	}
 
 	private static final String dash = "MM-dd-yyyy";
 
 	private static final RuntimeDateFormat dashes[] = {
-			new RuntimeDateFormat("M-d-yyyy", "MM-dd-yyyy", 8), new RuntimeDateFormat("M-d-yy", 8),
-			new RuntimeDateFormat("M-yy", 6), new RuntimeDateFormat("yy", 4), new RuntimeDateFormat("M-yyyy", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("M-d-yyyy", "MM-dd-yyyy", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("M-d-yy", DateSegments.YEARMONTHDAY, false),
+			new RuntimeDateFormat("M-yy", DateSegments.YEARMONTH, false),
+			new RuntimeDateFormat("yy", DateSegments.YEAR, false),
+			new RuntimeDateFormat("M-yyyy", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String dash2 = "yyyy-MM-dd";
 
 	private static final RuntimeDateFormat dashes2[] = {
-			new RuntimeDateFormat("yyyy-M-d", "yyyy-MM-dd", 8), new RuntimeDateFormat("yyyy-MM", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("yyyy-M-d", "yyyy-MM-dd", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String dash3 = "yyyy-MM-dd HH:mm:ss";
 
 	private static final RuntimeDateFormat dashes3[] = {
-			new RuntimeDateFormat("yyyy-M-d HH:mm:ss", 14), new RuntimeDateFormat("yyyy-M-d", 8),
-			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("yyyy-M-d HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("yyyy-M-d", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String slash = "MM/dd/yyyy";
 
 	private static final RuntimeDateFormat slashes[] = {
-			new RuntimeDateFormat("M/d/yy", 8), new RuntimeDateFormat("M/yy", 6), new RuntimeDateFormat("M/yyyy", 6),
-			new RuntimeDateFormat("yy", 4), new RuntimeDateFormat("M/d/yyyy", 8), new RuntimeDateFormat("M/yyyy", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("M/d/yy", DateSegments.YEARMONTHDAY, false),
+			new RuntimeDateFormat("M/d/yyyy", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("M/yy", DateSegments.YEARMONTH, false),
+			new RuntimeDateFormat("M/yyyy", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yy", DateSegments.YEAR, false),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String slash2 = "MM/dd/yyyy HH:mm:ss";
 
 	private static final RuntimeDateFormat slashes2[] = {
-			new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss", 14), new RuntimeDateFormat("M/d/yy", 8),
-			new RuntimeDateFormat("M/yy", 6), new RuntimeDateFormat("M/yyyy", 6), new RuntimeDateFormat("yy", 4),
-			new RuntimeDateFormat("M/d/yyyy", 8), new RuntimeDateFormat("M/yyyy", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("M/d/yyyy", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("M/d/yy", DateSegments.YEARMONTHDAY, false),
+			new RuntimeDateFormat("M/yy", DateSegments.YEARMONTH, false),
+			new RuntimeDateFormat("M/yyyy", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yy", DateSegments.YEAR, false),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String slash3 = "MM/dd/yyyy HH:mm:ss.SSSSSS";
 
 	private static final RuntimeDateFormat slashes3[] = {
-			new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss.SSSSSS", 20), new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss", 14),
-			new RuntimeDateFormat("M/d/yy", 8), new RuntimeDateFormat("M/yy", 6), new RuntimeDateFormat("M/yyyy", 6),
-			new RuntimeDateFormat("yy", 4), new RuntimeDateFormat("M/d/yyyy", 8), new RuntimeDateFormat("M/yyyy", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss.SSSSSS", DateSegments.YEARMONTHDAYHOURMINUTESUBSECOND, true),
+			new RuntimeDateFormat("MM/dd/yyyy HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("M/d/yy", DateSegments.YEARMONTHDAY, false),
+			new RuntimeDateFormat("M/d/yyyy", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("M/yy", DateSegments.YEARMONTH, false),
+			new RuntimeDateFormat("M/yyyy", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yy", DateSegments.YEAR, false),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String fmtHL7 = "yyyyMMddHHmmssZ";
 
 	private static final RuntimeDateFormat fmtHL7s[] = {
-			new RuntimeDateFormat("yyyyMMddHHmmssZ", 16), new RuntimeDateFormat("yyyyMMddHHmmss.SSSZ", 16),
-			new RuntimeDateFormat("yyyyMMddHHmmZ", 12), new RuntimeDateFormat("yyyyMMddHHZ", 10),
-			new RuntimeDateFormat("yyyyMMddHHmmss", 14), new RuntimeDateFormat("yyyyMMddHHmm", 12),
-			new RuntimeDateFormat("yyyyMMdd", 8), new RuntimeDateFormat("yyyyMM", 6),
-			new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("yyyyMMddHHmmss.SSSZ", DateSegments.YEARMONTHDAYHOURMINUTESUBSECONDTZ, true),
+			new RuntimeDateFormat("yyyyMMddHHmmssZ", DateSegments.YEARMONTHDAYHOURMINUTESECONDTZ, true),
+			new RuntimeDateFormat("yyyyMMddHHmmZ", DateSegments.YEARMONTHDAYHOURMINUTETZ, true),
+			new RuntimeDateFormat("yyyyMMddHHZ", DateSegments.YEARMONTHDAYHOURTZ, true),
+			new RuntimeDateFormat("yyyyMMddHHmmss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("yyyyMMddHHmm", DateSegments.YEARMONTHDAYHOURMINUTE, true),
+			new RuntimeDateFormat("yyyyMMdd", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyyMM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String fhirfmt = "yyyy-MM-dd'T'hh:mm:ss";
 
 	private static final RuntimeDateFormat fhirfmts[] = {
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", 12),
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH", 10), new RuntimeDateFormat("yyyy-MM-dd", 8),
-			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", DateSegments.YEARMONTHDAYHOURMINUTE, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH", DateSegments.YEARMONTHDAYHOUR, true),
+			new RuntimeDateFormat("yyyy-MM-dd", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
 	private static final String fhirInstancefmt = "yyyy-MM-dd'T'HH:mm:ss+zzzz";
 
 	private static final RuntimeDateFormat fhirInstancefmts[] = {
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss+zzzz", "yyyy-MM-dd'T'HH:mm:ssxxx", 16),
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", 14), new RuntimeDateFormat("yyyy-MM-dd'T'HH:mmxxx", 12),
-			new RuntimeDateFormat("yyyy-MM-dd'T'HH", 10), new RuntimeDateFormat("yyyy-MM-dd", 8),
-			new RuntimeDateFormat("yyyy-MM", 6), new RuntimeDateFormat("yyyy", 4) };
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSS+zzzz", "yyyy-MM-dd'T'HH:mm:ss.SSS+zzzz",
+				DateSegments.YEARMONTHDAYHOURMINUTESUBSECONDTZ, true),
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSSxxx", "yyyy-MM-dd'T'HH:mm:ss.SSSxxx",
+				DateSegments.YEARMONTHDAYHOURMINUTESUBSECONDTZ, true),
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss+zzzz", "yyyy-MM-dd'T'HH:mm:ssxxx", DateSegments.YEARMONTHDAYHOURMINUTESECONDTZ,
+				true),
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ssxxx", "yyyy-MM-dd'T'HH:mm:ssxxx", DateSegments.YEARMONTHDAYHOURMINUTESECONDTZ,
+				true),
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ssZZZ", "yyyy-MM-dd'T'HH:mm:ssZZZ", DateSegments.YEARMONTHDAYHOURMINUTESECONDTZ,
+				true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mmxxx", DateSegments.YEARMONTHDAYHOURMINUTETZ, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH", DateSegments.YEARMONTHDAYHOUR, true),
+			new RuntimeDateFormat("yyyy-MM-dd", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
 
-	public static HashMap<String, RuntimeDateFormat[]> formats = new HashMap<String, RuntimeDateFormat[]>();
+	private static final String iso8601timezone = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX";
+
+	private static final RuntimeDateFormat iso8601timezones[] = {
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSSXXX", "yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+				DateSegments.YEARMONTHDAYHOURMINUTESUBSECONDTZ, true),
+			new RuntimeDateFormat(
+				"yyyy-MM-dd'T'HH:mm:ss.SSS", "yyyy-MM-dd'T'HH:mm:ss.SSS", DateSegments.YEARMONTHDAYHOURMINUTESUBSECOND,
+				true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm:ss", DateSegments.YEARMONTHDAYHOURMINUTESECOND, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mmxxx", DateSegments.YEARMONTHDAYHOURMINUTETZ, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH:mm", DateSegments.YEARMONTHDAYHOURMINUTE, true),
+			new RuntimeDateFormat("yyyy-MM-dd'T'HH", DateSegments.YEARMONTHDAYHOUR, true),
+			new RuntimeDateFormat("yyyy-MM-dd", DateSegments.YEARMONTHDAY, true),
+			new RuntimeDateFormat("yyyy-MM", DateSegments.YEARMONTH, true),
+			new RuntimeDateFormat("yyyy", DateSegments.YEAR, true) };
+
+	public static HashMap<String, RuntimeDateFormat[]> FORMATS = new HashMap<>();
 
 	/*
 	 * Ignore case when matching formats
 	 */
 	static {
-		formats.put("yyyyMMdd".toUpperCase(), fhirfmts);
-		formats.put("yyyy-MM-dd".toUpperCase(), fmtHL7s);
-		formats.put(fmtHL7.toUpperCase(), fmtHL7s);
-		formats.put(fhirfmt.toUpperCase(), fhirfmts);
-		formats.put(slash.toUpperCase(), slashes);
-		formats.put(slash2.toUpperCase(), slashes2);
-		formats.put(slash3.toUpperCase(), slashes3);
-		formats.put(dash.toUpperCase(), dashes);
-		formats.put(dash2.toUpperCase(), dashes2);
-		formats.put(dash3.toUpperCase(), dashes3);
-		formats.put(fhirInstancefmt.toUpperCase(), fhirInstancefmts);
+		FORMATS.put("yyyyMMdd".toUpperCase(), fhirfmts);
+		FORMATS.put("yyyy-MM-dd".toUpperCase(), fmtHL7s);
+		FORMATS.put(fmtHL7.toUpperCase(), fmtHL7s);
+		FORMATS.put(fhirfmt.toUpperCase(), fhirfmts);
+		FORMATS.put(slash.toUpperCase(), slashes);
+		FORMATS.put(slash2.toUpperCase(), slashes2);
+		FORMATS.put(slash3.toUpperCase(), slashes3);
+		FORMATS.put(dash.toUpperCase(), dashes);
+		FORMATS.put(dash2.toUpperCase(), dashes2);
+		FORMATS.put(dash3.toUpperCase(), dashes3);
+		FORMATS.put(fhirInstancefmt.toUpperCase(), fhirInstancefmts);
+		FORMATS.put(iso8601timezone.toUpperCase(), iso8601timezones);
+	}
+
+	public static String FormatToDate(String to, String date) {
+		return FormatDate("yyyy-MM-dd'T'hh:mm:ss+zzzz", to, date);
+
+	}
+
+	public static String FormatFromDate(String from, String date) {
+		return FormatDate(from, "yyyy-MM-dd'T'hh:mm:ss+zzzz", date);
+
 	}
 
 	public static String FormatDate(String from, String to, String date) {
@@ -180,18 +270,17 @@ public class Utils {
 			return "";
 		}
 
-		int significant = 0;
+		DateSegments significant = null;
 
-		if (formats.containsKey(toKey) && formats.containsKey(fromKey)) {
+		if (FORMATS.containsKey(toKey) && FORMATS.containsKey(fromKey)) {
 			TemporalAccessor fromDate = null;
-			for (RuntimeDateFormat fromFormat : formats.get(fromKey)) {
+			for (RuntimeDateFormat fromFormat : FORMATS.get(fromKey)) {
 				try {
 					fromDate = fromFormat.input.parse(date);
 				} catch (DateTimeParseException ne) {
-
 				}
 				if (fromDate != null) {
-					significant = fromFormat.significant;
+					significant = fromFormat.segment;
 					break;
 				}
 			}
@@ -203,13 +292,13 @@ public class Utils {
 
 				// date = date.replace("--", "-");
 				date = StringUtils.stripEnd(date, "-");
-				for (RuntimeDateFormat fromFormat : formats.get(fromKey)) {
+				for (RuntimeDateFormat fromFormat : FORMATS.get(fromKey)) {
 					try {
 						fromDate = fromFormat.input.parse(date);
 					} catch (DateTimeParseException ne) {
 					}
 					if (fromDate != null) {
-						significant = fromFormat.significant;
+						significant = fromFormat.segment;
 						break;
 					}
 				}
@@ -218,32 +307,21 @@ public class Utils {
 			if (fromDate == null && (date.contains("--"))) {
 				String[] splitresult = date.split("--");
 				date = splitresult[0];
-				for (RuntimeDateFormat fromFormat : formats.get(fromKey)) {
+				for (RuntimeDateFormat fromFormat : FORMATS.get(fromKey)) {
 					try {
 						fromDate = fromFormat.input.parse(date);
 					} catch (DateTimeParseException ne) {
 					}
 					if (fromDate != null) {
-						significant = fromFormat.significant;
+						significant = fromFormat.segment;
 						break;
 					}
 				}
 			}
 
 			if (fromDate != null) {
-				// if FHIR target set significant to 14 pads 00 to seconds
-				// No time zone in fhir
-				if (to.equals("yyyy-MM-dd'T'hh:mm:ss") &&
-						(significant == 12 || significant == 16 || significant == 20)) {
-					significant = 14;
-				}
-
-				if (significant > 8 && to.length() <= 10) {
-					significant = 8;
-				}
-
-				for (RuntimeDateFormat toFormat : formats.get(toKey)) {
-					if (toFormat.significant == significant) {
+				for (RuntimeDateFormat toFormat : FORMATS.get(toKey)) {
+					if (toFormat.preferred && toFormat.segment.getValue() == significant.getValue()) {
 						try {
 							return toFormat.output.format(fromDate);
 						} catch (UnsupportedTemporalTypeException unsupportedTemporalTypeException) {
@@ -255,8 +333,8 @@ public class Utils {
 				}
 				// try best fit here
 				// String key
-				for (RuntimeDateFormat toFormat : formats.get(toKey)) {
-					if (toFormat.pattern.equals(toKey.replace("yyyy", "uuuu"))) {
+				for (RuntimeDateFormat toFormat : FORMATS.get(toKey)) {
+					if (toFormat.preferred && toFormat.pattern.equals(toKey.replace("yyyy", "uuuu"))) {
 						try {
 							return toFormat.output.format(fromDate);
 						} catch (UnsupportedTemporalTypeException unsupportedTemporalTypeException) {
@@ -267,18 +345,31 @@ public class Utils {
 					}
 
 				}
+
+				for (RuntimeDateFormat toFormat : FORMATS.get(toKey)) {
+					// if (toFormat.preferred && toFormat.pattern.equals(toKey.replace("yyyy", "uuuu"))) {
+					try {
+						return toFormat.output.format(fromDate);
+					} catch (UnsupportedTemporalTypeException unsupportedTemporalTypeException) {
+						logger.error("From " + from + " To " + to + " Date " + date);
+						logger.error(unsupportedTemporalTypeException.getLocalizedMessage());
+						return date;
+					}
+					// }
+
+				}
 			}
 		} else {
-			if (!formats.containsKey(toKey)) {
+			if (!FORMATS.containsKey(toKey)) {
 				logger.error("to date format is missing " + toKey);
-				for (String key : formats.keySet()) {
+				for (String key : FORMATS.keySet()) {
 					logger.trace(key);
 				}
 
 			}
-			if (!formats.containsKey(fromKey)) {
+			if (!FORMATS.containsKey(fromKey)) {
 				logger.error("from date format is missing " + fromKey);
-				for (String key : formats.keySet()) {
+				for (String key : FORMATS.keySet()) {
 					logger.trace(key);
 				}
 			}
@@ -294,61 +385,61 @@ public class Utils {
 	 */
 	public static void StringToAddress(String sourceAddress, Object object) {
 
-		XDataStruct xds = (XDataStruct) object;
-
-		if (!StringUtils.isEmpty(sourceAddress)) {
-
-			Map<net.sourceforge.jgeocoder.AddressComponent, String> addressComponents = net.sourceforge.jgeocoder.us.AddressParser.parseAddress(
-				sourceAddress);
-
-			if (addressComponents != null) {
-
-				StringBuffer streetAddresLine = new StringBuffer();
-
-				String number = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.NUMBER);
-
-				if (!StringUtils.isEmpty(number)) {
-					streetAddresLine.append(number).append(" ");
-				}
-
-				String street1 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET);
-
-				if (!StringUtils.isEmpty(street1)) {
-					streetAddresLine.append(street1);
-				}
-
-				if (streetAddresLine.length() > 0) {
-					xds.getXValue("streetAddressLine").addValue(streetAddresLine.toString());
-				}
-				String street2 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET2);
-
-				if (!StringUtils.isEmpty(street2)) {
-					xds.getXValue("streetAddressLine").addValue(street2);
-				}
-
-				String city = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.CITY);
-
-				if (!StringUtils.isEmpty(city)) {
-					xds.getXValue("city").setValue(city);
-				}
-
-				String state = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STATE);
-
-				if (!StringUtils.isEmpty(state)) {
-					xds.getXValue("state").setValue(state);
-				}
-
-				String zip = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.ZIP);
-
-				if (!StringUtils.isEmpty(zip)) {
-					xds.getXValue("postalCode").setValue(zip);
-				}
-			} else {
-				// issue parsing just set the street address line
-				xds.getXValue("streetAddressLine").addValue(sourceAddress);
-
-			}
-		}
+		// XDataStruct xds = (XDataStruct) object;
+		//
+		// if (!StringUtils.isEmpty(sourceAddress)) {
+		//
+		// Map<net.sourceforge.jgeocoder.AddressComponent, String> addressComponents = net.sourceforge.jgeocoder.us.AddressParser.parseAddress(
+		// sourceAddress);
+		//
+		// if (addressComponents != null) {
+		//
+		// StringBuffer streetAddresLine = new StringBuffer();
+		//
+		// String number = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.NUMBER);
+		//
+		// if (!StringUtils.isEmpty(number)) {
+		// streetAddresLine.append(number).append(" ");
+		// }
+		//
+		// String street1 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET);
+		//
+		// if (!StringUtils.isEmpty(street1)) {
+		// streetAddresLine.append(street1);
+		// }
+		//
+		// if (streetAddresLine.length() > 0) {
+		// xds.getXValue("streetAddressLine").addValue(streetAddresLine.toString());
+		// }
+		// String street2 = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STREET2);
+		//
+		// if (!StringUtils.isEmpty(street2)) {
+		// xds.getXValue("streetAddressLine").addValue(street2);
+		// }
+		//
+		// String city = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.CITY);
+		//
+		// if (!StringUtils.isEmpty(city)) {
+		// xds.getXValue("city").setValue(city);
+		// }
+		//
+		// String state = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.STATE);
+		//
+		// if (!StringUtils.isEmpty(state)) {
+		// xds.getXValue("state").setValue(state);
+		// }
+		//
+		// String zip = addressComponents.get(net.sourceforge.jgeocoder.AddressComponent.ZIP);
+		//
+		// if (!StringUtils.isEmpty(zip)) {
+		// xds.getXValue("postalCode").setValue(zip);
+		// }
+		// } else {
+		// // issue parsing just set the street address line
+		// xds.getXValue("streetAddressLine").addValue(sourceAddress);
+		//
+		// }
+		// }
 
 	}
 
@@ -382,7 +473,7 @@ public class Utils {
 		}
 	}
 
-	static Map<String, Properties> mapOfTransforms = new HashMap<String, Properties>();
+	static public Map<String, Properties> mapOfTransforms = new HashMap<>();
 
 	public static void loadMap(String targetSystem) {
 		if (!mapOfTransforms.containsKey(targetSystem)) {
@@ -414,6 +505,40 @@ public class Utils {
 				}
 			}
 
+		}
+		return "";
+	}
+
+	public static String getLeafNodeFormat(ConversionRule conversionRule) {
+		if (MDMIPackage.eINSTANCE.getSemanticElement().isInstance(conversionRule.getOwner())) {
+			SemanticElement semanticElement = conversionRule.getOwner();
+			if (MDMIPackage.eINSTANCE.getLeafSyntaxTranslator().isInstance(semanticElement.getSyntaxNode())) {
+				LeafSyntaxTranslator lst = (LeafSyntaxTranslator) semanticElement.getSyntaxNode();
+				if (StringUtils.isEmpty(lst.getFormat())) {
+					return lst.getFormat();
+				}
+			}
+
+		}
+		return "";
+	}
+
+	public static String getBagNodeFormat(ConversionRule conversionRule, String field) {
+		if (MDMIPackage.eINSTANCE.getSemanticElement().isInstance(conversionRule.getOwner())) {
+			SemanticElement semanticElement = conversionRule.getOwner();
+			if (MDMIPackage.eINSTANCE.getBag().isInstance(semanticElement.getSyntaxNode())) {
+				Bag bag = (Bag) semanticElement.getSyntaxNode();
+				if (!StringUtils.isEmpty(field)) {
+					Node node = bag.getNode(field);
+					if (MDMIPackage.eINSTANCE.getLeafSyntaxTranslator().isInstance(node)) {
+						LeafSyntaxTranslator lst = (LeafSyntaxTranslator) node;
+						if (!StringUtils.isEmpty(lst.getFormat())) {
+							return lst.getFormat();
+						}
+					}
+
+				}
+			}
 		}
 		return "";
 	}

@@ -208,7 +208,7 @@ public interface SemanticElementSet extends EObject {
 	 * @param string
 	 * @return
 	 */
-	SemanticElement getSemanticElement(String string);
+	// SemanticElement getSemanticElement(String string);
 
 	/**
 	 * @param name

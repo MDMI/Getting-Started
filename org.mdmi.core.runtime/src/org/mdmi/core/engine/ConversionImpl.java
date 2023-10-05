@@ -29,7 +29,6 @@ import java.util.Stack;
 import org.apache.commons.lang3.StringUtils;
 import org.mdmi.ConversionRule;
 import org.mdmi.DTCStructured;
-import org.mdmi.DTExternal;
 import org.mdmi.DTSEnumerated;
 import org.mdmi.EnumerationLiteral;
 import org.mdmi.Field;
@@ -134,11 +133,11 @@ class ConversionImpl {
 
 		public String mber;
 
-		public XValue xvalue;;
+		public XValue xvalue;
 
 	}
 
-	ArrayList<SEERvalues> theSeerValues = new ArrayList<SEERvalues>();
+	ArrayList<SEERvalues> theSeerValues = new ArrayList<>();
 
 	boolean convert(XElementValue sourceSemanticElement, ConversionInfo ci, XElementValue targetSemanticElement)
 			throws Exception {
@@ -162,71 +161,6 @@ class ConversionImpl {
 		return !xv.isNullOrEmpty();
 	}
 
-	// public static void serializeSEER() {
-	// // if logger is trace and serializeSemanticModel is true save the semantic model
-	//
-	// if (logger.isTraceEnabled()) {
-	//
-	// try {
-	// ObjectMapper mapper = new ObjectMapper();
-	//
-	// // SimpleModule dateTimeSerializerModule = new SimpleModule(
-	// // "DateTimeSerializerModule", new Version(1, 0, 0, null));
-	// // dateTimeSerializerModule.addSerializer(ElementValueSet.class, new ElementValueSetSerializer());
-	// // mapper.registerModule(dateTimeSerializerModule);
-	// //
-	// // SimpleModule xElementValueSerializerModule = new SimpleModule(
-	// // "XElementValueSerializer", new Version(1, 0, 0, null));
-	// // xElementValueSerializerModule.addSerializer(XElementValue.class, new XElementValueSerializer());
-	// // mapper.registerModule(xElementValueSerializerModule);
-	// //
-	// // SimpleModule semanticElementSerializerModule = new SimpleModule(
-	// // "SemanticElementSerializer", new Version(1, 0, 0, null));
-	// // xElementValueSerializerModule.addSerializer(SemanticElement.class, new SemanticElementSerializer());
-	// // mapper.registerModule(semanticElementSerializerModule);
-	// //
-	// SimpleModule xValueSerializerrModule = new SimpleModule("XValueSerializer", new Version(1, 0, 0, null));
-	// xValueSerializerrModule.addSerializer(XValue.class, new XValueSerializer());
-	// mapper.registerModule(xValueSerializerrModule);
-	//
-	// SimpleModule xDataStructSerializerrModule = new SimpleModule(
-	// "XDataStructSerializer", new Version(1, 0, 0, null));
-	// xDataStructSerializerrModule.addSerializer(XDataStruct.class, new XDataStructSerializer());
-	// mapper.registerModule(xDataStructSerializerrModule);
-	//
-	// // if (location == null) {
-	// // File directory = new File(String.valueOf("logs"));
-	// // if (!directory.exists()) {
-	// // directory.mkdir();
-	// // }
-	// // }
-	// // File jsonFile = new File(
-	// // String.format(
-	// // "%s/%s.json", (location != null
-	// // ? location
-	// // : "./logs"),
-	// // name));
-	// //
-	// // ArrayList<IElementValue> roots = new ArrayList<IElementValue>();
-	// // for (IElementValue f : semanticModel.getAllElementValues()) {
-	// // if (f.getParent() == null) {
-	// // roots.add(f);
-	// // } else {
-	// // }
-	// // }
-	//
-	// logger.debug(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(theSeerValues));
-	//
-	// // mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, roots);
-	//
-	// } catch (Exception ex) {
-	// logger.error(ex.getLocalizedMessage());
-	//
-	//
-	// }
-	// }
-	// }
-
 	boolean hasSrcRule(ConversionRule toBE) {
 		return toBE != null && toBE.getRule() != null && 0 < toBE.getRule().length();
 	}
@@ -235,7 +169,7 @@ class ConversionImpl {
 		return toSE != null && toSE.getRule() != null && 0 < toSE.getRule().length();
 	}
 
-	private static Map<String, DatamapInterpreter> datamapInterpreters = new HashMap<String, DatamapInterpreter>();
+	private static Map<String, DatamapInterpreter> datamapInterpreters = new HashMap<>();
 
 	public synchronized void initializeDI(MessageGroup source, MessageGroup target, Properties sp, Properties tp) {
 		String key = source.getName() + "_" + source.getModels().get(0).getMessageModelName() + "__DATATYPEMAPS___" +
@@ -286,34 +220,36 @@ class ConversionImpl {
 			}
 
 		} else {
-			// System.err.println("EXECUTE EXECMAPTOMDMI");
-			// IExpressionInterpreter adapter = Mdmi.getInterpreter(toBE, src, toBE.getName(), v);
-			//
-			// logger.trace("Source Rule " + toBE.getRule());
-			// adapter.evalAction(src, toBE.getRule(), sourceProperties);
+			logger.trace("Missing transformation Source Rule " + toBE.getRule());
 		}
 
 		// If we have a terminology conversion
 		if (v != null && hasTerminologyTransformation(toBE, toBE.getBusinessElement())) {
 
-			XDataStruct xds = (XDataStruct) v.getValue();
-			if (xds.hasfield("code")) {
-				TransformCode transformCode = getTerminologyService().transform(
-					toBE.getEnumExtResolverUri(), xds.getValue("code").toString(),
-					toBE.getBusinessElement().getEnumValueSet());
+			if (v.getValue() != null && v.getValue() instanceof XDataStruct) {
 
-				if (!StringUtils.isEmpty(transformCode.code)) {
-					xds.replaceValue("code", transformCode.code);
-					if (xds.hasfield("codeSystem")) {
-						xds.replaceValue("codeSystem", transformCode.system);
-					}
-					if (xds.hasfield("displayName")) {
+				XDataStruct xds = (XDataStruct) v.getValue();
 
-						if (!StringUtils.isEmpty((String) xds.getValue("displayName")) &&
-								xds.hasfield("originalText")) {
-							xds.replaceValue("originalText", (String) xds.getValue("displayName"));
+				if (xds.hasfield("code") && xds.getValue("code") != null &&
+						!StringUtils.isEmpty(xds.getValue("code").toString())) {
+					TransformCode transformCode = getTerminologyService().transform(
+						toBE.getEnumExtResolverUri(), xds.getValue("code").toString(),
+						toBE.getBusinessElement().getEnumValueSet());
+
+					/** @TODO Add configuration for transformation code */
+					if (!StringUtils.isEmpty(transformCode.code)) {
+						xds.replaceValue("code", transformCode.code);
+						if (xds.hasfield("codeSystem")) {
+							xds.replaceValue("codeSystem", transformCode.system);
 						}
-						xds.replaceValue("displayName", transformCode.displayName);
+						if (xds.hasfield("displayName")) {
+
+							if (!StringUtils.isEmpty((String) xds.getValue("displayName")) &&
+									xds.hasfield("originalText")) {
+								xds.replaceValue("originalText", (String) xds.getValue("displayName"));
+							}
+							xds.replaceValue("displayName", transformCode.displayName);
+						}
 					}
 				}
 			}
@@ -349,30 +285,34 @@ class ConversionImpl {
 		if (v != null) {
 
 			if (hasTerminologyTransformation(toSE, toSE.getBusinessElement())) {
-				logger.trace("Looking to transform " + v.getValue());
-				XDataStruct xds = (XDataStruct) v.getValue();
-				if (xds.hasfield("code") && xds.getValue("code") != null &&
-						!StringUtils.isEmpty(xds.getValue("code").toString())) {
 
-					TransformCode transformCode = getTerminologyService().transform(
-						toSE.getBusinessElement().getEnumValueSet(), xds.getValue("code").toString(),
-						toSE.getEnumExtResolverUri());
+				if (v.getValue() != null && v.getValue() instanceof XDataStruct) {
+					logger.trace("Looking to transform " + v.getValue());
+					XDataStruct xds = (XDataStruct) v.getValue();
+					if (xds.hasfield("code") && xds.getValue("code") != null &&
+							!StringUtils.isEmpty(xds.getValue("code").toString())) {
 
-					if (!StringUtils.isEmpty(transformCode.code)) {
-						xds.replaceValue("code", transformCode.code);
-						if (xds.hasfield("codeSystem")) {
-							xds.replaceValue("codeSystem", transformCode.system);
-						}
-						if (xds.hasfield("displayName")) {
+						TransformCode transformCode = getTerminologyService().transform(
+							toSE.getBusinessElement().getEnumValueSet(), xds.getValue("code").toString(),
+							toSE.getEnumExtResolverUri());
 
-							if (!StringUtils.isEmpty((String) xds.getValue("displayName")) &&
-									xds.hasfield("originalText")) {
-								xds.replaceValue("originalText", (String) xds.getValue("displayName"));
+						/** @TODO Add configuration for transformation code */
+						if (!StringUtils.isEmpty(transformCode.code)) {
+							xds.replaceValue("code", transformCode.code);
+							if (xds.hasfield("codeSystem")) {
+								xds.replaceValue("codeSystem", transformCode.system);
 							}
-							xds.replaceValue("displayName", transformCode.displayName);
+							if (xds.hasfield("displayName")) {
+
+								if (!StringUtils.isEmpty((String) xds.getValue("displayName")) &&
+										xds.hasfield("originalText")) {
+									xds.replaceValue("originalText", (String) xds.getValue("displayName"));
+								}
+								xds.replaceValue("displayName", transformCode.displayName);
+							}
+							// xds.replaceValue("system", transformCode.system);
+							// xds.replaceValue("display", transformCode.displayName);
 						}
-						// xds.replaceValue("system", transformCode.system);
-						// xds.replaceValue("display", transformCode.displayName);
 					}
 				}
 
@@ -420,8 +360,6 @@ class ConversionImpl {
 					"Unable To Execute " + parseFunctionName(toSE.getRule()) + " at " +
 							getFullPathForNode(toSE.getOwner().getSyntaxNode()) + " for " +
 							toSE.getBusinessElement().getName());
-
-				// logger.error("DATATYPE MISMATCH FOR BUSINESS ELEMENT " + toSE.getBusinessElement().getName());
 			}
 
 		} else {
@@ -429,15 +367,13 @@ class ConversionImpl {
 				XDataStruct xs = new XDataStruct(trg.getXValue());
 				trg.getXValue().addValue(xs);
 			}
-			// System.err.println("EXECUTE EXECMAPFROMMDMI" + toSE.getRule());
-			// IExpressionInterpreter adapter = Mdmi.getInterpreter(toSE, trg, toSE.getName(), v);
-			// adapter.evalAction(trg, toSE.getRule(), targetProperties);
 		}
 	}
 
 	private void cloneStruct(XDataStruct src, XDataStruct trg, boolean fromSrc) {
 		if (src == null || trg == null) {
-			throw new IllegalArgumentException("Null argument!");
+			// throw new IllegalArgumentException("Null argument!");
+			return;
 		}
 		Collection<XValue> values = trg.getXValues();
 		for (XValue t : values) {
@@ -464,7 +400,7 @@ class ConversionImpl {
 		if (n == null) {
 			return "null";
 		}
-		Stack<String> path = new Stack<String>();
+		Stack<String> path = new Stack<>();
 
 		if (n != null) {
 			path.push(n.getLocation());
@@ -496,14 +432,6 @@ class ConversionImpl {
 			return;
 		}
 
-		// fromMDMI.getOwner().getSyntaxNode()
-		if (src.getDatatype() == null || src.getDatatype().getName() == null || trg.getDatatype() == null) {
-			// // System.out.println(src.getDatatype());
-			// // System.out.println(src.getDatatype().getName());
-			// // System.out.println(trg.getDatatype());
-			// // System.out.println("asdfasdf");
-		}
-
 		if (!(src.getDatatype().getName().equals(trg.getDatatype().getName()))) {
 			logger.error(
 				"No Conversion rule found and the datatypes need to be the same to clone, \"" +
@@ -527,13 +455,7 @@ class ConversionImpl {
 			return;
 		}
 
-		if (usesVSR(fromSrc, toMDMI, fromMDMI)) {
-			vsConvertWithResolver(src, trg, fromSrc, toMDMI, fromMDMI);
-			return;
-		} else if (usesVS(fromSrc, toMDMI, fromMDMI)) {
-			vsConvert(src, trg, fromSrc, toMDMI, fromMDMI);
-			return;
-		} else if (src.getDatatype().isStruct()) {
+		if (src.getDatatype().isStruct()) {
 			for (int i = 0; i < values.size(); i++) {
 				XDataStruct srcXD = (XDataStruct) values.get(i);
 				try {
@@ -573,10 +495,19 @@ class ConversionImpl {
 		}
 	}
 
+	/**
+	 * @deprecated
+	 *
+	 * @param src
+	 * @param trg
+	 * @param fromSrc
+	 * @param toBE
+	 * @param toSE
+	 */
+	@SuppressWarnings("unused")
+	@Deprecated
 	private void vsConvertWithResolver(XValue src, XValue trg, boolean fromSrc, ConversionRule toBE,
 			ConversionRule toSE) {
-		// MdmiExternalResolvers rs = Mdmi.INSTANCE().getExternalResolvers();
-		DTExternal dt = null;
 		Field srcField = null;
 		Field trgField = null;
 		if (fromSrc) {
@@ -584,7 +515,6 @@ class ConversionImpl {
 			MDMIBusinessElementReference ber = toBE.getBusinessElement(); // target
 			DTCStructured srcDT = (DTCStructured) se.getDatatype();
 			srcField = srcDT.getField(se.getEnumValueField());
-			dt = (DTExternal) srcField.getDatatype();
 			DTCStructured trgDT = (DTCStructured) ber.getReferenceDatatype();
 			trgField = trgDT.getField(ber.getEnumValueField());
 		} else {
@@ -592,7 +522,6 @@ class ConversionImpl {
 			MDMIBusinessElementReference ber = toSE.getBusinessElement(); // source
 			DTCStructured srcDT = (DTCStructured) ber.getReferenceDatatype();
 			srcField = srcDT.getField(ber.getEnumValueField());
-			dt = (DTExternal) srcField.getDatatype();
 			DTCStructured trgDT = (DTCStructured) se.getDatatype();
 			trgField = trgDT.getField(se.getEnumValueField());
 		}
@@ -601,18 +530,22 @@ class ConversionImpl {
 			XDataStruct srcXD = (XDataStruct) values.get(i);
 			XDataStruct trgXD = new XDataStruct(trg);
 			trg.setValue(trgXD);
-			XValue sfv = srcXD.getXValue(srcField);
-			XValue tfv = trgXD.getXValue(trgField);
-			// if (fromSrc) {
-			// Object o = rs.getDictionaryValue(dt, sfv.getValue().toString());
-			// tfv.addValue(o);
-			// } else {
-			// Object o = rs.getModelValue(dt, sfv.getValue().toString());
-			// tfv.addValue(o);
-			// }
+			srcXD.getXValue(srcField);
+			trgXD.getXValue(trgField);
 		}
 	}
 
+	/**
+	 * @deprecated
+	 * @param src
+	 * @param trg
+	 * @param fromSrc
+	 * @param toBE
+	 * @param toSE
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	@Deprecated
 	private boolean vsConvert(XValue src, XValue trg, boolean fromSrc, ConversionRule toBE, ConversionRule toSE) {
 		MdmiValueSetsHandler handler = null;
 		String vsMapName = null;
@@ -760,53 +693,4 @@ class ConversionImpl {
 		}
 	}
 
-	boolean usesVS(boolean fromSrc, ConversionRule toBE, ConversionRule toSE) {
-		// if (null == toBE && null == toSE) {
-		// return false;
-		// }
-		// if (fromSrc) {
-		// // toBE is not null, toSE is null, executing conversion from SE -> BER
-		// String erUri = toBE.getEnumExtResolverUri();
-		// if (null != erUri && 0 < erUri.length()) {
-		// return true;
-		// }
-		// MDMIBusinessElementReference ber = toBE.getBusinessElement();
-		// SemanticElement se = toBE.getOwner();
-		// if (ber.usesValueSet() && se.usesValueSet()) {
-		// return true;
-		// }
-		// } else {
-		// // toBE is null, toSE is not null, executing conversion from BER -> SE
-		// String erUri = toSE.getEnumExtResolverUri();
-		// if (null != erUri && 0 < erUri.length()) {
-		// return true;
-		// }
-		// MDMIBusinessElementReference ber = toSE.getBusinessElement();
-		// SemanticElement se = toSE.getOwner();
-		// if (ber.usesValueSet() && se.usesValueSet()) {
-		// return true;
-		// }
-		// }
-		return false;
-	}
-
-	boolean usesVSR(boolean fromSrc, ConversionRule toBE, ConversionRule toSE) {
-		// if (null == toBE && null == toSE) {
-		// return false;
-		// }
-		// if (fromSrc) {
-		// // toBE is not null, toSE is null, executing conversion from SE -> BER
-		// String erUri = toBE.getEnumExtResolverUri();
-		// if (null != erUri && 0 < erUri.length()) {
-		// return true;
-		// }
-		// } else {
-		// // toBE is null, toSE is not null, executing conversion from BER -> SE
-		// String erUri = toSE.getEnumExtResolverUri();
-		// if (null != erUri && 0 < erUri.length()) {
-		// return true;
-		// }
-		// }
-		return false;
-	}
 } // ConversionImpl

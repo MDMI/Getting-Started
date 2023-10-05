@@ -32,14 +32,11 @@ public class RuntimeServiceMain {
 		while (keys.hasMoreElements()) {
 			String key = (String) keys.nextElement();
 			String value = (String) p.get(key);
-			System.out.println(key + ": " + value);
 			logger.trace(key + ": " + value);
 		}
 
 		for (String arg : args) {
-			System.out.println(arg);
 			logger.trace(arg);
-
 		}
 
 		Options options = new Options();
@@ -100,13 +97,9 @@ public class RuntimeServiceMain {
 				cmd = parser.parse(options, args);
 			} catch (ParseException pe) {
 
-				pe.printStackTrace(System.err);
-
-				pe.printStackTrace(System.out);
-
 				final PrintWriter writer = new PrintWriter(System.out);
 				final HelpFormatter usageFormatter = new HelpFormatter();
-				Comparator<Option> comparator = new Comparator<Option>() {
+				Comparator<Option> comparator = new Comparator<>() {
 
 					@Override
 					public int compare(Option o1, Option o2) {
@@ -169,8 +162,8 @@ public class RuntimeServiceMain {
 				return;
 			}
 
-			HashMap<String, String> sourceProperties = new HashMap<String, String>();
-			HashMap<String, String> targetProperties = new HashMap<String, String>();
+			HashMap<String, String> sourceProperties = new HashMap<>();
+			HashMap<String, String> targetProperties = new HashMap<>();
 
 			String useTerminologyArg = cmd.getOptionValue("useTerminology");
 

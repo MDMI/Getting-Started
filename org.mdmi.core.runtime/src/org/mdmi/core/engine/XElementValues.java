@@ -27,7 +27,7 @@ import org.mdmi.core.IElementValue;
  * @author goancea
  */
 final class XElementValues {
-	public List<XES> elementValues = new LinkedList<XES>();
+	public List<XES> elementValues = new LinkedList<>();
 
 	/**
 	 * Construct one from an element values set.
@@ -96,7 +96,7 @@ final class XElementValues {
 	static class XE {
 		public XElementValue elementValue;
 
-		public LinkedList<XES> children = new LinkedList<XES>();
+		public LinkedList<XES> children = new LinkedList<>();
 
 		public XE(XElementValue elementValue) {
 			this.elementValue = elementValue;
@@ -136,7 +136,7 @@ final class XElementValues {
 	static class XES {
 		public SemanticElement semanticElement;
 
-		public LinkedList<XE> elementValues = new LinkedList<XE>();
+		public LinkedList<XE> elementValues = new LinkedList<>();
 
 		public XES(SemanticElement semanticElement) {
 			this.semanticElement = semanticElement;

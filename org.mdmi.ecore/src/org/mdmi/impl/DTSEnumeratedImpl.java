@@ -62,10 +62,10 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<EnumerationLiteral> getLiterals() {
 		if (literals == null) {
-			literals = new EObjectContainmentEList<EnumerationLiteral>(
-				EnumerationLiteral.class, this, MDMIPackage.DTS_ENUMERATED__LITERALS);
+			literals = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, MDMIPackage.DTS_ENUMERATED__LITERALS);
 		}
 		return literals;
 	}
@@ -79,7 +79,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DTS_ENUMERATED__LITERALS:
-				return ((InternalEList<?>) getLiterals()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getLiterals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -109,7 +109,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 		switch (featureID) {
 			case MDMIPackage.DTS_ENUMERATED__LITERALS:
 				getLiterals().clear();
-				getLiterals().addAll((Collection<? extends EnumerationLiteral>) newValue);
+				getLiterals().addAll((Collection<? extends EnumerationLiteral>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

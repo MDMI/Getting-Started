@@ -162,8 +162,12 @@ public interface Node extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or anchored by, the URI that defines the location of the physical message.</p>
+	 * <p>
+	 * A "location" property whose value describes the location of the Node in the physical message. The location is often in reference to, or
+	 * anchored by, the URI that defines the location of the physical message.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Location</em>' attribute.
 	 * @see #setLocation(String)
 	 * @see org.mdmi.MDMIPackage#getNode_Location()

@@ -32,7 +32,7 @@ public class XDataStruct extends XData {
 
 	private static Logger logger = LoggerFactory.getLogger(XDataStruct.class);
 
-	private LinkedHashMap<String, XValue> m_values = new LinkedHashMap<String, XValue>();
+	private LinkedHashMap<String, XValue> m_values = new LinkedHashMap<>();
 
 	/**
 	 * Construct one from its owner value and its data type.
@@ -79,10 +79,16 @@ public class XDataStruct extends XData {
 	 */
 	XDataStruct(XValue owner, XDataStruct src) {
 		super(owner, src.m_datatype);
-		for (int i = 0; i < src.m_values.size(); i++) {
-			XValue xv = src.m_values.get(i);
-			m_values.put(xv.getName(), xv.clone(true));
+
+		// src.m_values;
+
+		for (String key : src.m_values.keySet()) {
+			XValue xv = src.m_values.get(key);
+			if (xv != null) {
+				m_values.put(xv.getName(), xv.clone(true));
+			}
 		}
+
 	}
 
 	/**
@@ -411,7 +417,13 @@ public class XDataStruct extends XData {
 			if (theValue != null) {
 				StringBuffer sb = new StringBuffer();
 				for (Object object : theValue.getValues()) {
-					sb.append(object).append(" ");
+					if (object instanceof XDataStruct) {
+						XDataStruct fieldValue = (XDataStruct) object;
+						// sb.append(fieldValue.get).append(" ");
+						sb.append(fieldValue.getXValues()).append(" ");
+					} else {
+						sb.append(object).append(" ");
+					}
 				}
 				return sb.toString();
 			}
@@ -452,9 +464,6 @@ public class XDataStruct extends XData {
 
 	public Object addValueSafely(String fieldName) {
 		XValue x = this.m_values.get(fieldName);
-		if (x == null) {
-			// System.out.println(fieldName);
-		}
 		XValue xxx = new XValue(x.getDatatype());
 		this.setValue(fieldName, xxx);
 		return xxx.getValue();

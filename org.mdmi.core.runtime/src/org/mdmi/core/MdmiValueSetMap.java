@@ -121,7 +121,7 @@ public class MdmiValueSetMap {
 		this.owner = owner;
 		this.sourceSet = sourceSet;
 		this.targetSet = targetSet;
-		mappings = new ArrayList<MdmiValueSetMap.Mapping>();
+		mappings = new ArrayList<>();
 	}
 
 	protected MdmiValueSetMap(MdmiValueSetsHandler owner, Element root) {
@@ -129,7 +129,7 @@ public class MdmiValueSetMap {
 			throw new IllegalArgumentException("Owner cannot be null!");
 		}
 		this.owner = owner;
-		mappings = new ArrayList<MdmiValueSetMap.Mapping>();
+		mappings = new ArrayList<>();
 		fromXml(root);
 	}
 

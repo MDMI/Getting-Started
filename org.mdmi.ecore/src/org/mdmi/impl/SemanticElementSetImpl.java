@@ -160,6 +160,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -169,13 +170,12 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__NAME, oldName, name));
 	}
 
 	/**
@@ -183,6 +183,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -192,15 +193,12 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__DESCRIPTION, oldDescription,
-					description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -208,6 +206,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getMessageModelName() {
 		return messageModelName;
 	}
@@ -217,15 +216,12 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMessageModelName(String newMessageModelName) {
 		String oldMessageModelName = messageModelName;
 		messageModelName = newMessageModelName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__MESSAGE_MODEL_NAME, oldMessageModelName,
-					messageModelName));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__MESSAGE_MODEL_NAME, oldMessageModelName, messageModelName));
 	}
 
 	/**
@@ -233,17 +229,14 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel getSyntaxModel() {
 		if (syntaxModel != null && syntaxModel.eIsProxy()) {
-			InternalEObject oldSyntaxModel = (InternalEObject) syntaxModel;
-			syntaxModel = (MessageSyntaxModel) eResolveProxy(oldSyntaxModel);
+			InternalEObject oldSyntaxModel = (InternalEObject)syntaxModel;
+			syntaxModel = (MessageSyntaxModel)eResolveProxy(oldSyntaxModel);
 			if (syntaxModel != oldSyntaxModel) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, oldSyntaxModel,
-							syntaxModel));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, oldSyntaxModel, syntaxModel));
 			}
 		}
 		return syntaxModel;
@@ -267,13 +260,8 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 		MessageSyntaxModel oldSyntaxModel = syntaxModel;
 		syntaxModel = newSyntaxModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, oldSyntaxModel, newSyntaxModel);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, oldSyntaxModel, newSyntaxModel);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -283,27 +271,19 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
 		if (newSyntaxModel != syntaxModel) {
 			NotificationChain msgs = null;
-			if (syntaxModel != null) {
-				msgs = ((InternalEObject) syntaxModel).eInverseRemove(
-					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
-			}
-			if (newSyntaxModel != null) {
-				msgs = ((InternalEObject) newSyntaxModel).eInverseAdd(
-					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
-			}
+			if (syntaxModel != null)
+				msgs = ((InternalEObject)syntaxModel).eInverseRemove(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
+			if (newSyntaxModel != null)
+				msgs = ((InternalEObject)newSyntaxModel).eInverseAdd(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
 			msgs = basicSetSyntaxModel(newSyntaxModel, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, newSyntaxModel,
-					newSyntaxModel));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, newSyntaxModel, newSyntaxModel));
 	}
 
 	/**
@@ -311,11 +291,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageModel getModel() {
-		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL) {
-			return null;
-		}
-		return (MessageModel) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL) return null;
+		return (MessageModel)eInternalContainer();
 	}
 
 	/**
@@ -324,7 +303,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * @generated
 	 */
 	public NotificationChain basicSetModel(MessageModel newModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newModel, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newModel, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, msgs);
 		return msgs;
 	}
 
@@ -333,29 +312,21 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModel(MessageModel newModel) {
-		if (newModel != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL && newModel != null)) {
-			if (EcoreUtil.isAncestor(this, newModel)) {
+		if (newModel != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL && newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newModel != null) {
-				msgs = ((InternalEObject) newModel).eInverseAdd(
-					this, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, MessageModel.class, msgs);
-			}
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, MessageModel.class, msgs);
 			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, newModel, newModel));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, newModel, newModel));
 	}
 
 	/**
@@ -363,11 +334,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElement> getSemanticElements() {
 		if (semanticElements == null) {
-			semanticElements = new EObjectContainmentWithInverseEList<SemanticElement>(
-				SemanticElement.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS,
-				MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET);
+			semanticElements = new EObjectContainmentWithInverseEList<SemanticElement>(SemanticElement.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS, MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET);
 		}
 		return semanticElements;
 	}
@@ -377,11 +347,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<SimpleMessageComposite> getComposite() {
 		if (composite == null) {
-			composite = new EObjectContainmentWithInverseEList<SimpleMessageComposite>(
-				SimpleMessageComposite.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE,
-				MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET);
+			composite = new EObjectContainmentWithInverseEList<SimpleMessageComposite>(SimpleMessageComposite.class, this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET);
 		}
 		return composite;
 	}
@@ -396,21 +365,17 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL:
-				if (syntaxModel != null) {
-					msgs = ((InternalEObject) syntaxModel).eInverseRemove(
-						this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
-				}
-				return basicSetSyntaxModel((MessageSyntaxModel) otherEnd, msgs);
+				if (syntaxModel != null)
+					msgs = ((InternalEObject)syntaxModel).eInverseRemove(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, MessageSyntaxModel.class, msgs);
+				return basicSetSyntaxModel((MessageSyntaxModel)otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetModel((MessageModel) otherEnd, msgs);
+				return basicSetModel((MessageModel)otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS:
-				return ((InternalEList<InternalEObject>) (InternalEList<?>) getSemanticElements()).basicAdd(
-					otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemanticElements()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE:
-				return ((InternalEList<InternalEObject>) (InternalEList<?>) getComposite()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComposite()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -428,9 +393,9 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
 				return basicSetModel(null, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS:
-				return ((InternalEList<?>) getSemanticElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getSemanticElements()).basicRemove(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE:
-				return ((InternalEList<?>) getComposite()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getComposite()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -444,8 +409,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, MessageModel.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, MessageModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -465,9 +429,7 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MESSAGE_MODEL_NAME:
 				return getMessageModelName();
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL:
-				if (resolve) {
-					return getSyntaxModel();
-				}
+				if (resolve) return getSyntaxModel();
 				return basicGetSyntaxModel();
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
 				return getModel();
@@ -489,27 +451,27 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MESSAGE_MODEL_NAME:
-				setMessageModelName((String) newValue);
+				setMessageModelName((String)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel) newValue);
+				setSyntaxModel((MessageSyntaxModel)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
-				setModel((MessageModel) newValue);
+				setModel((MessageModel)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS:
 				getSemanticElements().clear();
-				getSemanticElements().addAll((Collection<? extends SemanticElement>) newValue);
+				getSemanticElements().addAll((Collection<? extends SemanticElement>)newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE:
 				getComposite().clear();
-				getComposite().addAll((Collection<? extends SimpleMessageComposite>) newValue);
+				getComposite().addAll((Collection<? extends SimpleMessageComposite>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -533,10 +495,10 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 				setMessageModelName(MESSAGE_MODEL_NAME_EDEFAULT);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel) null);
+				setSyntaxModel((MessageSyntaxModel)null);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
-				setModel((MessageModel) null);
+				setModel((MessageModel)null);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS:
 				getSemanticElements().clear();
@@ -557,17 +519,11 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MESSAGE_MODEL_NAME:
-				return MESSAGE_MODEL_NAME_EDEFAULT == null
-						? messageModelName != null
-						: !MESSAGE_MODEL_NAME_EDEFAULT.equals(messageModelName);
+				return MESSAGE_MODEL_NAME_EDEFAULT == null ? messageModelName != null : !MESSAGE_MODEL_NAME_EDEFAULT.equals(messageModelName);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL:
 				return syntaxModel != null;
 			case MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL:
@@ -587,11 +543,9 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -607,16 +561,16 @@ public class SemanticElementSetImpl extends EObjectImpl implements SemanticEleme
 	 *
 	 * @see org.mdmi.SemanticElementSet#getSemanticElement(java.lang.String)
 	 */
-	@Override
-	public SemanticElement getSemanticElement(String name) {
-		for (SemanticElement semanticElement : this.semanticElements) {
-			if (semanticElement.getName() != null && semanticElement.getName().equals(name)) {
-				return semanticElement;
-
-			}
-		}
-		return null;
-	}
+	// @Override
+	// public SemanticElement getSemanticElement(String name) {
+	// for (SemanticElement semanticElement : this.semanticElements) {
+	// if (semanticElement.getName() != null && semanticElement.getName().equals(name)) {
+	// return semanticElement;
+	//
+	// }
+	// }
+	// return null;
+	// }
 
 	/*
 	 * (non-Javadoc)

@@ -28,20 +28,27 @@ public final class MdmiPostProcessors {
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiPostProcessors.class);
 
-	private final ArrayList<IPostProcessor> m_postProcessors = new ArrayList<IPostProcessor>();
+	private final ArrayList<IPostProcessor> postProcessors = new ArrayList<>();
+
+	/**
+	 * @return the postProcessors
+	 */
+	public ArrayList<IPostProcessor> getPostProcessors() {
+		return postProcessors;
+	}
 
 	public void addPostProcessor(IPostProcessor postProcessor) {
 		if (postProcessor != null) {
 			boolean add = true;
 			// fail safe to make sure post process is onyl added once
-			for (IPostProcessor registered : m_postProcessors) {
+			for (IPostProcessor registered : postProcessors) {
 				if (registered.getName().equals(postProcessor.getName())) {
 					add = false;
 				}
 			}
 			if (add) {
 				logger.trace("Adding post process " + postProcessor.getName());
-				m_postProcessors.add(postProcessor);
+				postProcessors.add(postProcessor);
 			}
 		}
 
@@ -58,8 +65,8 @@ public final class MdmiPostProcessors {
 		if (transferInfo == null) {
 			throw new IllegalArgumentException("transferInfo is null");
 		}
-		for (int i = 0; i < m_postProcessors.size(); i++) {
-			IPostProcessor postProcessor = m_postProcessors.get(i);
+		for (int i = 0; i < postProcessors.size(); i++) {
+			IPostProcessor postProcessor = postProcessors.get(i);
 			logger.trace("Checking " + postProcessor.getName());
 			logger.trace("messageModel.getGroup().getName() " + transferInfo.targetModel.getGroupName());
 			if (postProcessor.canProcess(transferInfo.targetModel.getModel())) {
@@ -67,7 +74,7 @@ public final class MdmiPostProcessors {
 					logger.info("Executing " + postProcessor.getName());
 					postProcessor.processMessage(transferInfo.targetModel.getModel(), transferInfo.targetMessage);
 				} catch (Exception ex) {
-					
+
 					logger.error(
 						"MdmiPostProcessor {0} throws an unexpected exception while processing source of transfer request",
 						ex);

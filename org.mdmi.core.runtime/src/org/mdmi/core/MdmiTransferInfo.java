@@ -17,6 +17,7 @@ package org.mdmi.core;
 import java.util.ArrayList;
 import java.util.Properties;
 
+import org.json.simple.JSONObject;
 import org.mdmi.MDMIBusinessElementReference;
 import org.mdmi.MessageGroup;
 
@@ -48,6 +49,10 @@ public class MdmiTransferInfo {
 	public Properties targetProperties = new Properties();
 
 	public String location = null;
+
+	public JSONObject sourceValues;
+
+	public JSONObject targetValues;
 
 	/**
 	 * Construct a new transfer info instance. By default the useDictionary is false, meaning that the

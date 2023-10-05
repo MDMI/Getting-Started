@@ -29,9 +29,9 @@ public class MdmiNetTransferInfo {
 
 	public String elements; // may be null, comma separated BER names or IDs
 
-	public HashMap<String, String> sourceProperties = new HashMap<String, String>();
+	public HashMap<String, String> sourceProperties = new HashMap<>();
 
-	public HashMap<String, String> targetProperties = new HashMap<String, String>();
+	public HashMap<String, String> targetProperties = new HashMap<>();
 
 	public String toXml() {
 

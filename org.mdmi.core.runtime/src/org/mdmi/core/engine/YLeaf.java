@@ -110,7 +110,7 @@ public final class YLeaf extends YNode {
 		return Collections.EMPTY_LIST;
 	}
 
-	private static final ArrayList<YNode> empty = new ArrayList<YNode>();
+	private static final ArrayList<YNode> empty = new ArrayList<>();
 
 	/*
 	 *

@@ -43,8 +43,8 @@ public class RuntimeServiceISOMain {
 			CommandLineParser parser = new PosixParser();
 			CommandLine cmd = parser.parse(options, args);
 
-			HashMap<String, String> sourceProperties = new HashMap<String, String>();
-			HashMap<String, String> targetProperties = new HashMap<String, String>();
+			new HashMap<String, String>();
+			new HashMap<String, String>();
 
 			String result = RuntimeService.runTransformationISO(
 				cmd.getOptionValue("sourceMap"), cmd.getOptionValue("sourceModel"), cmd.getOptionValues("elements"),

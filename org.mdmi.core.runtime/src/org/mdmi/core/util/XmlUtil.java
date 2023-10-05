@@ -582,7 +582,7 @@ public class XmlUtil {
 		}
 		NodeList lst = root.getChildNodes();
 		final int n = lst.getLength();
-		ArrayList<Element> a = new ArrayList<Element>(n);
+		ArrayList<Element> a = new ArrayList<>(n);
 		for (int i = 0; i < n; i++) {
 			Node node = lst.item(i);
 			if (node.getNodeType() == Node.ELEMENT_NODE) {
@@ -609,7 +609,7 @@ public class XmlUtil {
 		}
 		NodeList lst = root.getChildNodes();
 		int size = lst.getLength();
-		ArrayList<Element> a = new ArrayList<Element>(size / 2);
+		ArrayList<Element> a = new ArrayList<>(size / 2);
 		name = localName(name);
 		for (int i = 0; i < size; i++) {
 			Node node = lst.item(i);
@@ -887,10 +887,7 @@ public class XmlUtil {
 	 * @return True if an element/attribute name is a valid NCName.
 	 */
 	public static boolean isValidNCName(String name) {
-		if (name == null || name.length() <= 0) {
-			return false;
-		}
-		if (name.equalsIgnoreCase("XML")) {
+		if (name == null || name.length() <= 0 || name.equalsIgnoreCase("XML")) {
 			return false;
 		}
 		char c = name.charAt(0);

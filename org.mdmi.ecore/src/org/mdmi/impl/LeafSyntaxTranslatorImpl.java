@@ -94,6 +94,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFormat() {
 		return format;
 	}
@@ -103,14 +104,12 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT, oldFormat, format));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT, oldFormat, format));
 	}
 
 	/**
@@ -118,6 +117,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFormatExpressionLanguage() {
 		return formatExpressionLanguage;
 	}
@@ -127,15 +127,12 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFormatExpressionLanguage(String newFormatExpressionLanguage) {
 		String oldFormatExpressionLanguage = formatExpressionLanguage;
 		formatExpressionLanguage = newFormatExpressionLanguage;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE,
-					oldFormatExpressionLanguage, formatExpressionLanguage));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE, oldFormatExpressionLanguage, formatExpressionLanguage));
 	}
 
 	/**
@@ -163,10 +160,10 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT:
-				setFormat((String) newValue);
+				setFormat((String)newValue);
 				return;
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE:
-				setFormatExpressionLanguage((String) newValue);
+				setFormatExpressionLanguage((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,13 +196,9 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT:
-				return FORMAT_EDEFAULT == null
-						? format != null
-						: !FORMAT_EDEFAULT.equals(format);
+				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE:
-				return FORMAT_EXPRESSION_LANGUAGE_EDEFAULT == null
-						? formatExpressionLanguage != null
-						: !FORMAT_EXPRESSION_LANGUAGE_EDEFAULT.equals(formatExpressionLanguage);
+				return FORMAT_EXPRESSION_LANGUAGE_EDEFAULT == null ? formatExpressionLanguage != null : !FORMAT_EXPRESSION_LANGUAGE_EDEFAULT.equals(formatExpressionLanguage);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -217,11 +210,9 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (format: ");
 		result.append(format);
 		result.append(", formatExpressionLanguage: ");

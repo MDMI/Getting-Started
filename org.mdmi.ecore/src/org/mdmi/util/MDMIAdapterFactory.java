@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.mdmi.*;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.ConversionRule;
@@ -85,7 +86,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject) object).eClass().getEPackage() == modelPackage;
+			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -97,161 +98,131 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected MDMISwitch<Adapter> modelSwitch = new MDMISwitch<Adapter>() {
-		@Override
-		public Adapter caseMessageModel(MessageModel object) {
-			return createMessageModelAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageSyntaxModel(MessageSyntaxModel object) {
-			return createMessageSyntaxModelAdapter();
-		}
-
-		@Override
-		public Adapter caseNode(Node object) {
-			return createNodeAdapter();
-		}
-
-		@Override
-		public Adapter caseBag(Bag object) {
-			return createBagAdapter();
-		}
-
-		@Override
-		public Adapter caseChoice(Choice object) {
-			return createChoiceAdapter();
-		}
-
-		@Override
-		public Adapter caseLeafSyntaxTranslator(LeafSyntaxTranslator object) {
-			return createLeafSyntaxTranslatorAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageGroup(MessageGroup object) {
-			return createMessageGroupAdapter();
-		}
-
-		@Override
-		public Adapter caseDataRule(DataRule object) {
-			return createDataRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementSet(SemanticElementSet object) {
-			return createSemanticElementSetAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElement(SemanticElement object) {
-			return createSemanticElementAdapter();
-		}
-
-		@Override
-		public Adapter caseSimpleMessageComposite(SimpleMessageComposite object) {
-			return createSimpleMessageCompositeAdapter();
-		}
-
-		@Override
-		public Adapter caseMessageComposite(MessageComposite object) {
-			return createMessageCompositeAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementBusinessRule(SemanticElementBusinessRule object) {
-			return createSemanticElementBusinessRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseSemanticElementRelationship(SemanticElementRelationship object) {
-			return createSemanticElementRelationshipAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIBusinessElementReference(MDMIBusinessElementReference object) {
-			return createMDMIBusinessElementReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIBusinessElementRule(MDMIBusinessElementRule object) {
-			return createMDMIBusinessElementRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseConversionRule(ConversionRule object) {
-			return createConversionRuleAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIDomainDictionaryReference(MDMIDomainDictionaryReference object) {
-			return createMDMIDomainDictionaryReferenceAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIExpression(MDMIExpression object) {
-			return createMDMIExpressionAdapter();
-		}
-
-		@Override
-		public Adapter caseKeyword(Keyword object) {
-			return createKeywordAdapter();
-		}
-
-		@Override
-		public Adapter caseMDMIDatatype(MDMIDatatype object) {
-			return createMDMIDatatypeAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSPrimitive(DTSPrimitive object) {
-			return createDTSPrimitiveAdapter();
-		}
-
-		@Override
-		public Adapter caseDTCStructured(DTCStructured object) {
-			return createDTCStructuredAdapter();
-		}
-
-		@Override
-		public Adapter caseField(Field object) {
-			return createFieldAdapter();
-		}
-
-		@Override
-		public Adapter caseDTExternal(DTExternal object) {
-			return createDTExternalAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSDerived(DTSDerived object) {
-			return createDTSDerivedAdapter();
-		}
-
-		@Override
-		public Adapter caseDTCChoice(DTCChoice object) {
-			return createDTCChoiceAdapter();
-		}
-
-		@Override
-		public Adapter caseDTSEnumerated(DTSEnumerated object) {
-			return createDTSEnumeratedAdapter();
-		}
-
-		@Override
-		public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
-			return createEnumerationLiteralAdapter();
-		}
-
-		@Override
-		public Adapter caseDatatypeMap(DatatypeMap object) {
-			return createDatatypeMapAdapter();
-		}
-
-		@Override
-		public Adapter defaultCase(EObject object) {
-			return createEObjectAdapter();
-		}
-	};
+			@Override
+			public Adapter caseMessageModel(MessageModel object) {
+				return createMessageModelAdapter();
+			}
+			@Override
+			public Adapter caseMessageSyntaxModel(MessageSyntaxModel object) {
+				return createMessageSyntaxModelAdapter();
+			}
+			@Override
+			public Adapter caseNode(Node object) {
+				return createNodeAdapter();
+			}
+			@Override
+			public Adapter caseBag(Bag object) {
+				return createBagAdapter();
+			}
+			@Override
+			public Adapter caseChoice(Choice object) {
+				return createChoiceAdapter();
+			}
+			@Override
+			public Adapter caseLeafSyntaxTranslator(LeafSyntaxTranslator object) {
+				return createLeafSyntaxTranslatorAdapter();
+			}
+			@Override
+			public Adapter caseMessageGroup(MessageGroup object) {
+				return createMessageGroupAdapter();
+			}
+			@Override
+			public Adapter caseDataRule(DataRule object) {
+				return createDataRuleAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementSet(SemanticElementSet object) {
+				return createSemanticElementSetAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElement(SemanticElement object) {
+				return createSemanticElementAdapter();
+			}
+			@Override
+			public Adapter caseSimpleMessageComposite(SimpleMessageComposite object) {
+				return createSimpleMessageCompositeAdapter();
+			}
+			@Override
+			public Adapter caseMessageComposite(MessageComposite object) {
+				return createMessageCompositeAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementBusinessRule(SemanticElementBusinessRule object) {
+				return createSemanticElementBusinessRuleAdapter();
+			}
+			@Override
+			public Adapter caseSemanticElementRelationship(SemanticElementRelationship object) {
+				return createSemanticElementRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseMDMIBusinessElementReference(MDMIBusinessElementReference object) {
+				return createMDMIBusinessElementReferenceAdapter();
+			}
+			@Override
+			public Adapter caseMDMIBusinessElementRule(MDMIBusinessElementRule object) {
+				return createMDMIBusinessElementRuleAdapter();
+			}
+			@Override
+			public Adapter caseConversionRule(ConversionRule object) {
+				return createConversionRuleAdapter();
+			}
+			@Override
+			public Adapter caseMDMIDomainDictionaryReference(MDMIDomainDictionaryReference object) {
+				return createMDMIDomainDictionaryReferenceAdapter();
+			}
+			@Override
+			public Adapter caseMDMIExpression(MDMIExpression object) {
+				return createMDMIExpressionAdapter();
+			}
+			@Override
+			public Adapter caseKeyword(Keyword object) {
+				return createKeywordAdapter();
+			}
+			@Override
+			public Adapter caseMDMIDatatype(MDMIDatatype object) {
+				return createMDMIDatatypeAdapter();
+			}
+			@Override
+			public Adapter caseDTSPrimitive(DTSPrimitive object) {
+				return createDTSPrimitiveAdapter();
+			}
+			@Override
+			public Adapter caseDTCStructured(DTCStructured object) {
+				return createDTCStructuredAdapter();
+			}
+			@Override
+			public Adapter caseField(Field object) {
+				return createFieldAdapter();
+			}
+			@Override
+			public Adapter caseDTExternal(DTExternal object) {
+				return createDTExternalAdapter();
+			}
+			@Override
+			public Adapter caseDTSDerived(DTSDerived object) {
+				return createDTSDerivedAdapter();
+			}
+			@Override
+			public Adapter caseDTCChoice(DTCChoice object) {
+				return createDTCChoiceAdapter();
+			}
+			@Override
+			public Adapter caseDTSEnumerated(DTSEnumerated object) {
+				return createDTSEnumeratedAdapter();
+			}
+			@Override
+			public Adapter caseEnumerationLiteral(EnumerationLiteral object) {
+				return createEnumerationLiteralAdapter();
+			}
+			@Override
+			public Adapter caseDatatypeMap(DatatypeMap object) {
+				return createDatatypeMapAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object) {
+				return createEObjectAdapter();
+			}
+		};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
@@ -263,7 +234,7 @@ public class MDMIAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject) target);
+		return modelSwitch.doSwitch((EObject)target);
 	}
 
 	/**

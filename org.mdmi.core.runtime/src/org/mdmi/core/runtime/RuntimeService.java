@@ -11,6 +11,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
+import org.json.simple.JSONObject;
 import org.mdmi.ConversionRule;
 import org.mdmi.DatatypeMap;
 import org.mdmi.Field;
@@ -24,6 +25,8 @@ import org.mdmi.core.MdmiUtil;
 import org.mdmi.core.engine.DatamapInterpreter;
 import org.mdmi.core.engine.XDataStruct;
 import org.mdmi.core.engine.XValue;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic;
+import org.mdmi.core.engine.semanticprocessors.LogSemantic.DIRECTION;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,7 +36,8 @@ public class RuntimeService {
 
 	//
 	public static String runTransformation(String srcMdl, byte[] srcData, String trgMdl, String location,
-			Properties sourcePropertyValues, Properties targetPropertyValues) throws Exception {
+			Properties sourcePropertyValues, Properties targetPropertyValues, JSONObject sourceValues,
+			JSONObject targetValues) throws Exception {
 
 		String retVal = null;
 
@@ -43,7 +47,7 @@ public class RuntimeService {
 		a = trgMdl.split("\\.");
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
-		final ArrayList<String> filter = new ArrayList<String>();
+		final ArrayList<String> filter = new ArrayList<>();
 
 		logger.trace("Start Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE()) " + Thread.currentThread().getName());
 
@@ -69,6 +73,8 @@ public class RuntimeService {
 
 		ti.sourceProperties = sourcePropertyValues;
 		ti.targetProperties = targetPropertyValues;
+		ti.sourceValues = sourceValues;
+		ti.targetValues = targetValues;
 
 		long start = System.nanoTime();
 
@@ -116,7 +122,7 @@ public class RuntimeService {
 		a = trgMdl.split("\\.");
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
-		final ArrayList<String> filter = new ArrayList<String>();
+		final ArrayList<String> filter = new ArrayList<>();
 
 		Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE());
 		MdmiModelRef sMod = new MdmiModelRef(srcMapName, srcMsgMdl);
@@ -178,7 +184,7 @@ public class RuntimeService {
 		a = trgMdl.split("\\.");
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
-		final ArrayList<String> filter = new ArrayList<String>();
+		final ArrayList<String> filter = new ArrayList<>();
 
 		// Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMdl, srcMap));
 		// Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(trgMdl, trgMap));
@@ -225,7 +231,10 @@ public class RuntimeService {
 		a = trgMdl.split("\\.");
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
-		final ArrayList<String> filter = new ArrayList<String>();
+		final ArrayList<String> filter = new ArrayList<>();
+
+		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new LogSemantic(DIRECTION.TO));
+		Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
 
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMdl, srcMap));
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(trgMdl, trgMap));
@@ -262,23 +271,9 @@ public class RuntimeService {
 	public static void runDatatypeMappings(String srcMap, String srcMdl) throws Exception {
 		Mdmi.INSTANCE().start();
 
-		String retVal = null;
 		String[] a = srcMdl.split("\\.");
 		String srcMapName = a[0];
 		String srcMsgMdl = a[1];
-		// final List<String> filter = new ArrayList<String>();
-
-		// boolean isAll = true;
-		// for (String element : elements) {
-		// logger.trace("ELEMENT FILTER " + element);
-		// if ("ALL".equalsIgnoreCase(element)) {
-		// isAll = true;
-		// }
-		// }
-
-		// if (!isAll) {
-		// filter.addAll(Arrays.asList(elements));
-		// }
 
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMapName, srcMap));
 		Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE());
@@ -292,8 +287,6 @@ public class RuntimeService {
 					datatypemap.getMessageDatatype().isStruct() && datatypemap.getMdmiDatatype().isStruct()
 
 			) {
-				// // System.out.println(datatypemap.getMessageDatatype().getName());
-				// // System.out.println(datatypemap.getMdmiDatatype().getName());
 
 				if (StringUtils.isEmpty(datatypemap.getFromMDMI())) {
 
@@ -302,7 +295,7 @@ public class RuntimeService {
 					populateFrom(from);
 					String function = "map" + datatypemap.getMdmiDatatype().getName() + "To" +
 							datatypemap.getMessageDatatype().getName();
-					Object executed = datamapInterpreter.execute(function, from, to, null, null);
+					datamapInterpreter.execute(function, from, to, null, null);
 				}
 
 				if (!StringUtils.isEmpty(datatypemap.getToMDMI())) {
@@ -312,22 +305,11 @@ public class RuntimeService {
 					XDataStruct to = new XDataStruct(new XValue(datatypemap.getMdmiDatatype()));
 					String function = "map" + datatypemap.getMessageDatatype().getName() + "To" +
 							datatypemap.getMdmiDatatype().getName();
-					// if (function.equals("mapPLToInstanceIdentifier")) {
-					// // System.out.println("mapPLToInstanceIdentifier");
-					// from.setValueSafely("PL10.EI1", "one");
-					// from.setValueSafely("PL10.EI2", "two");
-					// from.setValueSafely("PL10.EI3", "three");
-					// // XValue foo = (XValue) from.getValueByName(name);
-					// // foo.getValueByName("EI2");
-					// }
-					Object executed = datamapInterpreter.execute(function, from, to, null, null);
-					// System.out.println("FROM IS");
+					datamapInterpreter.execute(function, from, to, null, null);
+
 					log(from);
-					// System.out.println("TO IS");
+
 					log(to);
-					// for (Field field : to.getDatatype().getFields()) {
-					// // System.out.println(field.getName() + " : " + to.getValue(field.getName()));
-					// }
 
 				}
 
@@ -335,23 +317,16 @@ public class RuntimeService {
 
 		}
 
-		// MdmiMessage tMsg = new MdmiMessage();
-
 	}
 
 	static void populateFrom(XDataStruct from) {
 
-		if ("SAD".equals(from.getDatatype().getName())) {
-			// System.out.println("aaaa");
-		}
-
 		for (Field field : from.getDatatype().getFields()) {
 			if (field.getDatatype().isSimple()) {
-				// System.out.println("isSimple " + field.getName() + " " + field.getDatatype().getName());
+
 				from.setValue(field.getName(), field.getName());
-				// System.out.println("populateFrom " + field.getName() + " " + from.getValue(field.getName()));
+
 			} else {
-				// System.out.println("SUB TYPE " + field.getDatatype().getName());
 
 				XDataStruct sub = new XDataStruct(new XValue(field.getDatatype()));
 				populateFrom(sub);
@@ -361,31 +336,26 @@ public class RuntimeService {
 	}
 
 	static void log(XDataStruct xDataStruct) {
-		// System.out.println(xDataStruct.getDatatype().getName());
-		if ("SAD".equals(xDataStruct.getDatatype().getName())) {
-			// System.out.println("aaaa");
-		}
+
 		for (Field field : xDataStruct.getDatatype().getFields()) {
-			// System.out.println("field.getName() " + field.getName());
 
 			if (field.getDatatype() == null) {
-				// System.out.println(field.getName() + " NULL DATATYPE !!!");
+
 			} else {
 				if (field.getDatatype().isSimple()) {
 					if (field.getMaxOccurs() == 1) {
-						// System.out.println(field.getName() + " : " + xDataStruct.getValue(field.getName()));
+
 					} else {
-						//
 
 						if (xDataStruct.getValue(field.getName()) instanceof XDataStruct) {
 							XDataStruct values = (XDataStruct) xDataStruct.getValue(field.getName());
 
 							for (XValue value : values.getXValues()) {
-								// System.out.println(field.getName() + " : " + value.getValue());
+
 							}
 
 						} else {
-							// System.out.println(xDataStruct.getValue(field.getName()));
+
 						}
 
 					}
@@ -407,7 +377,7 @@ public class RuntimeService {
 		String[] a = srcMdl.split("\\.");
 		String srcMapName = a[0];
 		String srcMsgMdl = a[1];
-		final List<String> filter = new ArrayList<String>();
+		new ArrayList<String>();
 
 		boolean isAll = false;
 		for (String element : elements) {
@@ -432,7 +402,7 @@ public class RuntimeService {
 
 				if (sem.getParent() == null) {
 
-					final List<String> allfilter = new ArrayList<String>();
+					final List<String> allfilter = new ArrayList<>();
 
 					walkSyntax(sem, allfilter);
 
@@ -440,7 +410,7 @@ public class RuntimeService {
 						ArrayList<MDMIBusinessElementReference> bers = MdmiUtil.getElements(
 							sMod.getModel(), sMod.getModel(), allfilter);
 
-						List<SemanticElement> semanticElements = new ArrayList<SemanticElement>();
+						List<SemanticElement> semanticElements = new ArrayList<>();
 						long start = System.nanoTime();
 						Mdmi.INSTANCE().executeTransfer(sMod, tMsg, sem, bers, semanticElements, location);
 						logger.trace("Elapsed Time FILTER " + (System.nanoTime() - start));
@@ -458,7 +428,7 @@ public class RuntimeService {
 
 				if (sem.getParent() == null) {
 					for (SemanticElement semchild : sem.getChildren()) {
-						final List<String> allfilter = new ArrayList<String>();
+						final List<String> allfilter = new ArrayList<>();
 
 						// if (!isAll) {
 						if (semchild.getSyntaxNode() == null ||
@@ -473,7 +443,7 @@ public class RuntimeService {
 							ArrayList<MDMIBusinessElementReference> bers = MdmiUtil.getElements(
 								sMod.getModel(), sMod.getModel(), allfilter);
 
-							List<SemanticElement> semanticElements = new ArrayList<SemanticElement>();
+							List<SemanticElement> semanticElements = new ArrayList<>();
 							long start = System.nanoTime();
 							Mdmi.INSTANCE().executeTransfer(sMod, tMsg, semchild, bers, semanticElements, location);
 							logger.trace("Elapsed Time FILTER " + (System.nanoTime() - start));
@@ -530,7 +500,7 @@ public class RuntimeService {
 		a = trgMdl.split("\\.");
 		String trgMapName = a[0];
 		String trgMsgMdl = a[1];
-		final ArrayList<String> filter = new ArrayList<String>();
+		final ArrayList<String> filter = new ArrayList<>();
 
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMapName, srcMap));
 		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(trgMapName, trgMap));
@@ -545,11 +515,7 @@ public class RuntimeService {
 
 		for (final File fileEntry : folder.listFiles()) {
 
-			if (!fileEntry.isFile()) {
-				continue;
-			}
-
-			if (!fileEntry.getName().endsWith("xml")) {
+			if (!fileEntry.isFile() || !fileEntry.getName().endsWith("xml")) {
 				continue;
 			}
 

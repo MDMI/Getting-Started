@@ -26,10 +26,6 @@ import java.util.Properties;
 import org.mdmi.MDMIBusinessElementReference;
 import org.mdmi.SemanticElement;
 import org.mdmi.core.engine.MdmiEngine;
-import org.mdmi.core.engine.postprocessors.CDAPostProcessor;
-import org.mdmi.core.engine.postprocessors.SQLInsertPostProcessor;
-import org.mdmi.core.engine.postprocessors.XML2Deliminated;
-import org.mdmi.core.engine.preprocessors.Deliminated2XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,7 +99,7 @@ public final class Mdmi {
 
 	public static final String PARAM_MDMI_ROOT_DIR = "mdmi.root.dir";
 
-	static private ThreadLocal<Mdmi> foo = new ThreadLocal<Mdmi>() {
+	static private ThreadLocal<Mdmi> mdmiThreadLocal = new ThreadLocal<>() {
 
 		/*
 		 * (non-Javadoc)
@@ -119,28 +115,11 @@ public final class Mdmi {
 
 	public static final Mdmi INSTANCE() {
 		logger.trace("Call  public static final Mdmi INSTANCE() " + Thread.currentThread().getName());
-		return foo.get();
+		return mdmiThreadLocal.get();
 
-	};
-
-	// private static final ThreadLocal<Integer> threadId =
-	// new ThreadLocal<Integer>() {
-	// @Override protected Integer initialValue() {
-	// return nextId.getAndIncrement();
-	// }
-	// };
+	}
 
 	private File m_rootDir;
-
-	// private PluginManager pluginManager = new DefaultPluginManager();
-
-	/**
-	 * @return the pluginManager
-	 *         //
-	 */
-	// public PluginManager getPluginManager() {
-	// return pluginManager;
-	// }
 
 	private MdmiResolver m_resolver;
 
@@ -150,7 +129,25 @@ public final class Mdmi {
 
 	private MdmiPostProcessors m_postProcessors = new MdmiPostProcessors();
 
-	private HashMap<String, MapInfo> m_mapInfos = new HashMap<String, MapInfo>();
+	private SourceSemanticModelProcessors sourceSemanticModelProcessors = new SourceSemanticModelProcessors();
+
+	/**
+	 * @return the sourceSemanticModelProcessors
+	 */
+	public SourceSemanticModelProcessors getSourceSemanticModelProcessors() {
+		return sourceSemanticModelProcessors;
+	}
+
+	private TargetSemanticModelProcessors targetSemanticModelProcessors = new TargetSemanticModelProcessors();
+
+	/**
+	 * @return the targetSemanticModelProcessors
+	 */
+	public TargetSemanticModelProcessors getTargetSemanticModelProcessors() {
+		return targetSemanticModelProcessors;
+	}
+
+	private HashMap<String, MapInfo> m_mapInfos = new HashMap<>();
 
 	public HashMap<String, MapInfo> getMaps() {
 		return m_mapInfos;
@@ -193,15 +190,15 @@ public final class Mdmi {
 
 		}
 
-		getPreProcessors().addPreProcessor(new Deliminated2XML("CSV2XML", ","));
+		// getPreProcessors().addPreProcessor(new Deliminated2XML("CSV2XML", ","));
 		// getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		// getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
 
-		getPostProcessors().addPostProcessor(new XML2Deliminated("XML2CSV", ","));
-		getPostProcessors().addPostProcessor(new XML2Deliminated("XML2PIPE", "\\|"));
-		getPostProcessors().addPostProcessor(new CDAPostProcessor());
+		// getPostProcessors().addPostProcessor(new XML2Deliminated("XML2CSV", ","));
+		// getPostProcessors().addPostProcessor(new XML2Deliminated("XML2PIPE", "\\|"));
+		// getPostProcessors().addPostProcessor(new CDAPostProcessor());
 		// getPostProcessors().addPostProcessor(new HL7V2MessagePostProcessor());
-		getPostProcessors().addPostProcessor(new SQLInsertPostProcessor());
+		// getPostProcessors().addPostProcessor(new SQLInsertPostProcessor());
 		// getPostProcessors().addPostProcessor(new FHIRSTU3PostProcessorJson());
 		// getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 
@@ -423,8 +420,7 @@ public final class Mdmi {
 		}
 	}
 
-	// clients should use the INSTANCE
-	public Mdmi() {
+	private Mdmi() {
 		init();
 	}
 

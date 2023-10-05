@@ -89,6 +89,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -120,7 +121,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DTC_STRUCTURED__FIELDS:
-				return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -150,7 +151,7 @@ public class DTCStructuredImpl extends MDMIDatatypeImpl implements DTCStructured
 		switch (featureID) {
 			case MDMIPackage.DTC_STRUCTURED__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends Field>) newValue);
+				getFields().addAll((Collection<? extends Field>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

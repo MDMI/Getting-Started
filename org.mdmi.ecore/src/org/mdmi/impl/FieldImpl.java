@@ -147,6 +147,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -156,12 +157,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__NAME, oldName, name));
-		}
 	}
 
 	/**
@@ -169,6 +170,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMinOccurs() {
 		return minOccurs;
 	}
@@ -178,13 +180,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__MIN_OCCURS, oldMinOccurs, minOccurs));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__MIN_OCCURS, oldMinOccurs, minOccurs));
 	}
 
 	/**
@@ -192,6 +193,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurs() {
 		return maxOccurs;
 	}
@@ -201,13 +203,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__MAX_OCCURS, oldMaxOccurs, maxOccurs));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__MAX_OCCURS, oldMaxOccurs, maxOccurs));
 	}
 
 	/**
@@ -215,16 +216,14 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getDatatype() {
 		if (datatype != null && datatype.eIsProxy()) {
-			InternalEObject oldDatatype = (InternalEObject) datatype;
-			datatype = (MDMIDatatype) eResolveProxy(oldDatatype);
+			InternalEObject oldDatatype = (InternalEObject)datatype;
+			datatype = (MDMIDatatype)eResolveProxy(oldDatatype);
 			if (datatype != oldDatatype) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.FIELD__DATATYPE, oldDatatype, datatype));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.FIELD__DATATYPE, oldDatatype, datatype));
 			}
 		}
 		return datatype;
@@ -244,12 +243,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDatatype(MDMIDatatype newDatatype) {
 		MDMIDatatype oldDatatype = datatype;
 		datatype = newDatatype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__DATATYPE, oldDatatype, datatype));
-		}
 	}
 
 	/**
@@ -257,6 +256,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -266,14 +266,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.FIELD__DESCRIPTION, oldDescription, description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.FIELD__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -291,9 +289,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 			case MDMIPackage.FIELD__MAX_OCCURS:
 				return getMaxOccurs();
 			case MDMIPackage.FIELD__DATATYPE:
-				if (resolve) {
-					return getDatatype();
-				}
+				if (resolve) return getDatatype();
 				return basicGetDatatype();
 			case MDMIPackage.FIELD__DESCRIPTION:
 				return getDescription();
@@ -310,19 +306,19 @@ public class FieldImpl extends EObjectImpl implements Field {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.FIELD__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.FIELD__MIN_OCCURS:
-				setMinOccurs((Integer) newValue);
+				setMinOccurs((Integer)newValue);
 				return;
 			case MDMIPackage.FIELD__MAX_OCCURS:
-				setMaxOccurs((Integer) newValue);
+				setMaxOccurs((Integer)newValue);
 				return;
 			case MDMIPackage.FIELD__DATATYPE:
-				setDatatype((MDMIDatatype) newValue);
+				setDatatype((MDMIDatatype)newValue);
 				return;
 			case MDMIPackage.FIELD__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -346,7 +342,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 				setMaxOccurs(MAX_OCCURS_EDEFAULT);
 				return;
 			case MDMIPackage.FIELD__DATATYPE:
-				setDatatype((MDMIDatatype) null);
+				setDatatype((MDMIDatatype)null);
 				return;
 			case MDMIPackage.FIELD__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -364,9 +360,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.FIELD__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.FIELD__MIN_OCCURS:
 				return minOccurs != MIN_OCCURS_EDEFAULT;
 			case MDMIPackage.FIELD__MAX_OCCURS:
@@ -374,9 +368,7 @@ public class FieldImpl extends EObjectImpl implements Field {
 			case MDMIPackage.FIELD__DATATYPE:
 				return datatype != null;
 			case MDMIPackage.FIELD__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -388,11 +380,9 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", minOccurs: ");

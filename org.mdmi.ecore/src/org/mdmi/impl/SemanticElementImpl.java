@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.mdmi.ConversionRule;
 import org.mdmi.DataRule;
 import org.mdmi.Keyword;
@@ -44,30 +45,30 @@ import org.mdmi.SimpleMessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getElementType <em>Element Type</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDatatype <em>Datatype</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getPropertyQualifier <em>Property Qualifier</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComposite <em>Composite</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getBusinessRules <em>Business Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getDataRules <em>Data Rules</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getRelationships <em>Relationships</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#isMultipleInstances <em>Multiple Instances</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getMapFromMdmi <em>Map From Mdmi</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getOrdering <em>Ordering</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getOrderingLanguage <em>Ordering Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedValue <em>Computed Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedInValue <em>Computed In Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getMapToMdmi <em>Map To Mdmi</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getParent <em>Parent</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getSyntaxNode <em>Syntax Node</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedOutValue <em>Computed Out Value</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getKeywords <em>Keywords</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueField <em>Enum Value Field</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getElementType <em>Element Type</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDatatype <em>Datatype</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getPropertyQualifier <em>Property Qualifier</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComposite <em>Composite</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getBusinessRules <em>Business Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getDataRules <em>Data Rules</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getRelationships <em>Relationships</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#isMultipleInstances <em>Multiple Instances</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getMapFromMdmi <em>Map From Mdmi</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getOrdering <em>Ordering</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getOrderingLanguage <em>Ordering Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedValue <em>Computed Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedInValue <em>Computed In Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getMapToMdmi <em>Map To Mdmi</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getParent <em>Parent</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getSyntaxNode <em>Syntax Node</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getComputedOutValue <em>Computed Out Value</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getKeywords <em>Keywords</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueField <em>Enum Value Field</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementImpl#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +78,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -87,6 +89,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -97,6 +100,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -107,6 +111,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -117,6 +122,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -127,6 +133,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -137,6 +144,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDatatype()
 	 * @generated
 	 * @ordered
@@ -147,6 +155,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getPropertyQualifier() <em>Property Qualifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getPropertyQualifier()
 	 * @generated
 	 * @ordered
@@ -157,6 +166,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComposite() <em>Composite</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComposite()
 	 * @generated
 	 * @ordered
@@ -167,6 +177,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getBusinessRules() <em>Business Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBusinessRules()
 	 * @generated
 	 * @ordered
@@ -177,6 +188,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getDataRules() <em>Data Rules</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDataRules()
 	 * @generated
 	 * @ordered
@@ -187,6 +199,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getRelationships() <em>Relationships</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRelationships()
 	 * @generated
 	 * @ordered
@@ -197,6 +210,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #isMultipleInstances() <em>Multiple Instances</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isMultipleInstances()
 	 * @generated NOT
 	 * @ordered
@@ -207,6 +221,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #isMultipleInstances() <em>Multiple Instances</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isMultipleInstances()
 	 * @generated
 	 * @ordered
@@ -217,6 +232,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getMapFromMdmi() <em>Map From Mdmi</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMapFromMdmi()
 	 * @generated
 	 * @ordered
@@ -227,6 +243,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -237,6 +254,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getOrdering() <em>Ordering</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrdering()
 	 * @generated
 	 * @ordered
@@ -247,6 +265,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getOrderingLanguage() <em>Ordering Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrderingLanguage()
 	 * @generated
 	 * @ordered
@@ -257,6 +276,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getOrderingLanguage() <em>Ordering Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getOrderingLanguage()
 	 * @generated
 	 * @ordered
@@ -267,6 +287,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedValue() <em>Computed Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedValue()
 	 * @generated
 	 * @ordered
@@ -277,6 +298,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedInValue() <em>Computed In Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedInValue()
 	 * @generated
 	 * @ordered
@@ -287,6 +309,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getMapToMdmi() <em>Map To Mdmi</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMapToMdmi()
 	 * @generated
 	 * @ordered
@@ -297,6 +320,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getParent()
 	 * @generated
 	 * @ordered
@@ -307,6 +331,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -317,6 +342,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getSyntaxNode() <em>Syntax Node</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSyntaxNode()
 	 * @generated
 	 * @ordered
@@ -327,6 +353,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getComputedOutValue() <em>Computed Out Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getComputedOutValue()
 	 * @generated
 	 * @ordered
@@ -337,6 +364,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getKeywords() <em>Keywords</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywords()
 	 * @generated
 	 * @ordered
@@ -347,6 +375,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -357,6 +386,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getEnumValueField() <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueField()
 	 * @generated
 	 * @ordered
@@ -367,6 +397,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The default value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -377,6 +408,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 * The cached value of the '{@link #getEnumValueDescrField() <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 * @ordered
@@ -386,6 +418,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementImpl() {
@@ -395,6 +428,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,8 +439,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -414,21 +450,24 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__NAME, oldName, name));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -436,23 +475,26 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__DESCRIPTION, oldDescription, description));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getElementType() {
 		return elementType;
 	}
@@ -460,33 +502,35 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementType(String newElementType) {
 		String oldElementType = elementType;
 		elementType = newElementType;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_TYPE, oldElementType, elementType));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getDatatype() {
 		if (datatype != null && datatype.eIsProxy()) {
 			InternalEObject oldDatatype = (InternalEObject) datatype;
 			datatype = (MDMIDatatype) eResolveProxy(oldDatatype);
 			if (datatype != oldDatatype) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__DATATYPE, oldDatatype, datatype));
-				}
 			}
 		}
 		return datatype;
@@ -495,6 +539,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetDatatype() {
@@ -504,23 +549,26 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setDatatype(MDMIDatatype newDatatype) {
 		MDMIDatatype oldDatatype = datatype;
 		datatype = newDatatype;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__DATATYPE, oldDatatype, datatype));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<String> getPropertyQualifier() {
 		if (propertyQualifier == null) {
 			propertyQualifier = new EDataTypeUniqueEList<String>(
@@ -532,19 +580,20 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SimpleMessageComposite getComposite() {
 		if (composite != null && composite.eIsProxy()) {
 			InternalEObject oldComposite = (InternalEObject) composite;
 			composite = (SimpleMessageComposite) eResolveProxy(oldComposite);
 			if (composite != oldComposite) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, oldComposite,
 							composite));
-				}
 			}
 		}
 		return composite;
@@ -553,6 +602,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SimpleMessageComposite basicGetComposite() {
@@ -562,6 +612,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComposite(SimpleMessageComposite newComposite, NotificationChain msgs) {
@@ -570,11 +621,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, oldComposite, newComposite);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -582,45 +632,45 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setComposite(SimpleMessageComposite newComposite) {
 		if (newComposite != composite) {
 			NotificationChain msgs = null;
-			if (composite != null) {
+			if (composite != null)
 				msgs = ((InternalEObject) composite).eInverseRemove(
 					this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class, msgs);
-			}
-			if (newComposite != null) {
+			if (newComposite != null)
 				msgs = ((InternalEObject) newComposite).eInverseAdd(
 					this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class, msgs);
-			}
 			msgs = basicSetComposite(newComposite, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, newComposite, newComposite));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
-		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET) {
+		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET)
 			return null;
-		}
 		return (SemanticElementSet) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
@@ -631,38 +681,37 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET && newElementSet != null)) {
-			if (EcoreUtil.isAncestor(this, newElementSet)) {
+			if (EcoreUtil.isAncestor(this, newElementSet))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newElementSet != null) {
+			if (newElementSet != null)
 				msgs = ((InternalEObject) newElementSet).eInverseAdd(
 					this, MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS, SemanticElementSet.class, msgs);
-			}
 			msgs = basicSetElementSet(newElementSet, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET, newElementSet, newElementSet));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElementBusinessRule> getBusinessRules() {
 		if (businessRules == null) {
 			businessRules = new EObjectContainmentWithInverseEList<SemanticElementBusinessRule>(
@@ -675,8 +724,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<DataRule> getDataRules() {
 		if (dataRules == null) {
 			dataRules = new EObjectWithInverseResolvingEList<DataRule>(
@@ -689,8 +740,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElementRelationship> getRelationships() {
 		if (relationships == null) {
 			relationships = new EObjectContainmentEList<SemanticElementRelationship>(
@@ -702,8 +755,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isMultipleInstances() {
 		return multipleInstances;
 	}
@@ -711,24 +766,27 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setMultipleInstances(boolean newMultipleInstances) {
 		boolean oldMultipleInstances = multipleInstances;
 		multipleInstances = newMultipleInstances;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__MULTIPLE_INSTANCES, oldMultipleInstances,
 					multipleInstances));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ConversionRule> getMapFromMdmi() {
 		if (mapFromMdmi == null) {
 			mapFromMdmi = new EObjectContainmentEList<ConversionRule>(
@@ -740,8 +798,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getOrdering() {
 		return ordering;
 	}
@@ -749,23 +809,26 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOrdering(String newOrdering) {
 		String oldOrdering = ordering;
 		ordering = newOrdering;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ORDERING, oldOrdering, ordering));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getOrderingLanguage() {
 		return orderingLanguage;
 	}
@@ -773,24 +836,27 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setOrderingLanguage(String newOrderingLanguage) {
 		String oldOrderingLanguage = orderingLanguage;
 		orderingLanguage = newOrderingLanguage;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ORDERING_LANGUAGE, oldOrderingLanguage,
 					orderingLanguage));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedValue() {
 		return computedValue;
 	}
@@ -798,6 +864,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedValue(MDMIExpression newComputedValue, NotificationChain msgs) {
@@ -807,11 +874,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, oldComputedValue,
 				newComputedValue);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -819,36 +885,36 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedValue(MDMIExpression newComputedValue) {
 		if (newComputedValue != computedValue) {
 			NotificationChain msgs = null;
-			if (computedValue != null) {
+			if (computedValue != null)
 				msgs = ((InternalEObject) computedValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, null, msgs);
-			}
-			if (newComputedValue != null) {
+			if (newComputedValue != null)
 				msgs = ((InternalEObject) newComputedValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, null, msgs);
-			}
 			msgs = basicSetComputedValue(newComputedValue, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, newComputedValue,
 					newComputedValue));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedInValue() {
 		return computedInValue;
 	}
@@ -856,6 +922,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedInValue(MDMIExpression newComputedInValue, NotificationChain msgs) {
@@ -865,11 +932,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, oldComputedInValue,
 				newComputedInValue);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -877,36 +943,36 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedInValue(MDMIExpression newComputedInValue) {
 		if (newComputedInValue != computedInValue) {
 			NotificationChain msgs = null;
-			if (computedInValue != null) {
+			if (computedInValue != null)
 				msgs = ((InternalEObject) computedInValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, null, msgs);
-			}
-			if (newComputedInValue != null) {
+			if (newComputedInValue != null)
 				msgs = ((InternalEObject) newComputedInValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, null, msgs);
-			}
 			msgs = basicSetComputedInValue(newComputedInValue, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, newComputedInValue,
 					newComputedInValue));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<ConversionRule> getMapToMdmi() {
 		if (mapToMdmi == null) {
 			mapToMdmi = new EObjectContainmentEList<ConversionRule>(
@@ -918,18 +984,19 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getParent() {
 		if (parent != null && parent.eIsProxy()) {
 			InternalEObject oldParent = (InternalEObject) parent;
 			parent = (SemanticElement) eResolveProxy(oldParent);
 			if (parent != oldParent) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__PARENT, oldParent, parent));
-				}
 			}
 		}
 		return parent;
@@ -938,6 +1005,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetParent() {
@@ -947,6 +1015,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(SemanticElement newParent, NotificationChain msgs) {
@@ -955,11 +1024,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PARENT, oldParent, newParent);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -967,35 +1035,35 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setParent(SemanticElement newParent) {
 		if (newParent != parent) {
 			NotificationChain msgs = null;
-			if (parent != null) {
+			if (parent != null)
 				msgs = ((InternalEObject) parent).eInverseRemove(
 					this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
-			}
-			if (newParent != null) {
+			if (newParent != null)
 				msgs = ((InternalEObject) newParent).eInverseAdd(
 					this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
-			}
 			msgs = basicSetParent(newParent, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PARENT, newParent, newParent));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<SemanticElement> getChildren() {
 		if (children == null) {
 			children = new EObjectWithInverseResolvingEList<SemanticElement>(
@@ -1017,19 +1085,20 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public Node getSyntaxNode() {
 		if (syntaxNode != null && syntaxNode.eIsProxy()) {
 			InternalEObject oldSyntaxNode = (InternalEObject) syntaxNode;
 			syntaxNode = (Node) eResolveProxy(oldSyntaxNode);
 			if (syntaxNode != oldSyntaxNode) {
-				if (eNotificationRequired()) {
+				if (eNotificationRequired())
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, oldSyntaxNode,
 							syntaxNode));
-				}
 			}
 		}
 		return syntaxNode;
@@ -1038,6 +1107,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public Node basicGetSyntaxNode() {
@@ -1047,6 +1117,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxNode(Node newSyntaxNode, NotificationChain msgs) {
@@ -1055,11 +1126,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, oldSyntaxNode, newSyntaxNode);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -1067,35 +1137,35 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxNode(Node newSyntaxNode) {
 		if (newSyntaxNode != syntaxNode) {
 			NotificationChain msgs = null;
-			if (syntaxNode != null) {
+			if (syntaxNode != null)
 				msgs = ((InternalEObject) syntaxNode).eInverseRemove(
 					this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
-			}
-			if (newSyntaxNode != null) {
+			if (newSyntaxNode != null)
 				msgs = ((InternalEObject) newSyntaxNode).eInverseAdd(
 					this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
-			}
 			msgs = basicSetSyntaxNode(newSyntaxNode, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, newSyntaxNode, newSyntaxNode));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression getComputedOutValue() {
 		return computedOutValue;
 	}
@@ -1103,6 +1173,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetComputedOutValue(MDMIExpression newComputedOutValue, NotificationChain msgs) {
@@ -1112,11 +1183,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, oldComputedOutValue,
 				newComputedOutValue);
-			if (msgs == null) {
+			if (msgs == null)
 				msgs = notification;
-			} else {
+			else
 				msgs.add(notification);
-			}
 		}
 		return msgs;
 	}
@@ -1124,36 +1194,36 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setComputedOutValue(MDMIExpression newComputedOutValue) {
 		if (newComputedOutValue != computedOutValue) {
 			NotificationChain msgs = null;
-			if (computedOutValue != null) {
+			if (computedOutValue != null)
 				msgs = ((InternalEObject) computedOutValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, null, msgs);
-			}
-			if (newComputedOutValue != null) {
+			if (newComputedOutValue != null)
 				msgs = ((InternalEObject) newComputedOutValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, null, msgs);
-			}
 			msgs = basicSetComputedOutValue(newComputedOutValue, msgs);
-			if (msgs != null) {
+			if (msgs != null)
 				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
+		} else if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, newComputedOutValue,
 					newComputedOutValue));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Keyword> getKeywords() {
 		if (keywords == null) {
 			keywords = new EObjectContainmentWithInverseEList<Keyword>(
@@ -1165,8 +1235,10 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueField() {
 		return enumValueField;
 	}
@@ -1174,24 +1246,27 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueField(String newEnumValueField) {
 		String oldEnumValueField = enumValueField;
 		enumValueField = newEnumValueField;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ENUM_VALUE_FIELD, oldEnumValueField,
 					enumValueField));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueDescrField() {
 		return enumValueDescrField;
 	}
@@ -1199,22 +1274,24 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
 		String oldEnumValueDescrField = enumValueDescrField;
 		enumValueDescrField = newEnumValueDescrField;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ENUM_VALUE_DESCR_FIELD,
 					oldEnumValueDescrField, enumValueDescrField));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1222,16 +1299,14 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE:
-				if (composite != null) {
+				if (composite != null)
 					msgs = ((InternalEObject) composite).eInverseRemove(
 						this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class,
 						msgs);
-				}
 				return basicSetComposite((SimpleMessageComposite) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
 				return basicSetElementSet((SemanticElementSet) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinessRules()).basicAdd(
@@ -1239,18 +1314,16 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getDataRules()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__PARENT:
-				if (parent != null) {
+				if (parent != null)
 					msgs = ((InternalEObject) parent).eInverseRemove(
 						this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
-				}
 				return basicSetParent((SemanticElement) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__CHILDREN:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE:
-				if (syntaxNode != null) {
+				if (syntaxNode != null)
 					msgs = ((InternalEObject) syntaxNode).eInverseRemove(
 						this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
-				}
 				return basicSetSyntaxNode((Node) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getKeywords()).basicAdd(otherEnd, msgs);
@@ -1261,6 +1334,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1301,6 +1375,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1316,6 +1391,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1328,16 +1404,14 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_TYPE:
 				return getElementType();
 			case MDMIPackage.SEMANTIC_ELEMENT__DATATYPE:
-				if (resolve) {
+				if (resolve)
 					return getDatatype();
-				}
 				return basicGetDatatype();
 			case MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER:
 				return getPropertyQualifier();
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE:
-				if (resolve) {
+				if (resolve)
 					return getComposite();
-				}
 				return basicGetComposite();
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET:
 				return getElementSet();
@@ -1362,16 +1436,14 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__MAP_TO_MDMI:
 				return getMapToMdmi();
 			case MDMIPackage.SEMANTIC_ELEMENT__PARENT:
-				if (resolve) {
+				if (resolve)
 					return getParent();
-				}
 				return basicGetParent();
 			case MDMIPackage.SEMANTIC_ELEMENT__CHILDREN:
 				return getChildren();
 			case MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE:
-				if (resolve) {
+				if (resolve)
 					return getSyntaxNode();
-				}
 				return basicGetSyntaxNode();
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE:
 				return getComputedOutValue();
@@ -1388,6 +1460,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1481,6 +1554,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1565,6 +1639,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -1639,15 +1714,15 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -1679,10 +1754,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public boolean isNullFlavor() {
 		// return false;
 		// return false;
-		if (computedValue == null) {
-			return false;
-		}
-		if (this.getRelationshipByName("NULLFLAVOR") == null) {
+		if ((computedValue == null) || (this.getRelationshipByName("NULLFLAVOR") == null)) {
 			return false;
 		}
 		String x = computedValue.getExpression();
@@ -1794,6 +1866,22 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public boolean hasChild(SemanticElement target) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	String uniqueID = null;
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.mdmi.SemanticElement#getUniqueId()
+	 */
+	@Override
+	public String getUniqueId() {
+		if (uniqueID == null) {
+			XMLResource xmlResource = (XMLResource) this.eResource();
+			uniqueID = xmlResource.getID(this);
+		}
+		return uniqueID;
 	}
 
 } // SemanticElementImpl

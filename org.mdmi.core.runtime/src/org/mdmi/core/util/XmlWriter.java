@@ -430,7 +430,7 @@ public final class XmlWriter {
 
 		NamedNodeMap attrs = node.getAttributes();
 		final int nAttrs = attrs.getLength();
-		ArrayList<String> aAttrs = new ArrayList<String>(nAttrs);
+		ArrayList<String> aAttrs = new ArrayList<>(nAttrs);
 		for (int i = 0; i < nAttrs; i++) {
 			Attr attr = (Attr) attrs.item(i);
 			String sa = " " + attr.getNodeName() + "=\"" + (normalize

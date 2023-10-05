@@ -44,8 +44,8 @@ public final class XmlNamespaceContext implements NamespaceContext {
 	 */
 	public XmlNamespaceContext(String defaultNsPrefix) {
 		this.defaultNsPrefix = defaultNsPrefix;
-		prefixes = new HashMap<String, String>();
-		namespaces = new HashMap<String, HashSet<String>>();
+		prefixes = new HashMap<>();
+		namespaces = new HashMap<>();
 		addImpl(XMLConstants.XML_NS_PREFIX, XMLConstants.XML_NS_URI);
 		addImpl(XMLConstants.XMLNS_ATTRIBUTE, XMLConstants.XMLNS_ATTRIBUTE_NS_URI);
 	}
@@ -119,7 +119,7 @@ public final class XmlNamespaceContext implements NamespaceContext {
 		prefixes.put(prefix, namespaceUri);
 		HashSet<String> ps = namespaces.get(namespaceUri);
 		if (ps == null) {
-			ps = new HashSet<String>();
+			ps = new HashSet<>();
 			namespaces.put(namespaceUri, ps);
 		}
 		if (!ps.contains(prefix)) {

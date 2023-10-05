@@ -41,6 +41,25 @@ public class XElementValue implements IElementValue {
 
 	private ElementValueSet m_owner;
 
+	public void zap() {
+		for (XElementValue c : m_children) {
+			c.zap();
+		}
+
+		while (!m_children.isEmpty()) {
+			for (XElementValue c : m_children) {
+				// c.zap();
+				m_owner.removeElementValue(c);
+			}
+		}
+
+		m_owner.removeElementValue(this);
+		m_owner = null;
+		m_parent = null;
+		m_xvalue = null;
+
+	}
+
 	public static class RelElement {
 		public String name;
 
@@ -64,9 +83,10 @@ public class XElementValue implements IElementValue {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
+
 		m_semanticElement = semanticElement;
-		m_children = new LinkedList<XElementValue>();
-		m_relations = new ArrayList<RelElement>();
+		m_children = new LinkedList<>();
+		m_relations = new ArrayList<>();
 		m_xvalue = new XValue(this);
 		m_owner = eset;
 		m_owner.addElementValue(this);
@@ -76,12 +96,12 @@ public class XElementValue implements IElementValue {
 	private XElementValue(XElementValue src, boolean deep) {
 		m_semanticElement = src.m_semanticElement;
 		if (deep) {
-			m_children = new LinkedList<XElementValue>();
+			m_children = new LinkedList<>();
 			for (int i = 0; i < src.m_children.size(); i++) {
 				XElementValue e = src.m_children.get(i);
 				m_children.add(e.clone(true));
 			}
-			m_relations = new ArrayList<RelElement>();
+			m_relations = new ArrayList<>();
 			for (int i = 0; i < src.m_relations.size(); i++) {
 				RelElement e = src.m_relations.get(i);
 				RelElement t = new RelElement(e.name, e.relatedElement.clone(true));
@@ -107,13 +127,14 @@ public class XElementValue implements IElementValue {
 		if (semanticElement == null) {
 			throw new IllegalArgumentException("Null argument!");
 		}
+
 		m_semanticElement = semanticElement;
-		m_children = new LinkedList<XElementValue>();
-		m_relations = new ArrayList<RelElement>();
+		m_children = new LinkedList<>();
+		m_relations = new ArrayList<>();
 		m_xvalue = new XValue(this);
 		m_owner = elementValueSet;
 		iterator.add(this);
-		// m_owner.addElementValue(this);
+		elementValueSet.pushElementValue(this);
 	}
 
 	/**
@@ -155,7 +176,7 @@ public class XElementValue implements IElementValue {
 	 * @TODO This seems unneccesary
 	 */
 	public List<IElementValue> getChildren() {
-		List<IElementValue> a = new LinkedList<IElementValue>();
+		List<IElementValue> a = new LinkedList<>();
 		for (XElementValue e : m_children) {
 			a.add(e);
 		}
@@ -178,7 +199,6 @@ public class XElementValue implements IElementValue {
 		for (SemanticElement ase : this.getSemanticElement().getChildren()) {
 
 			if (ase.getName().equals(child.getSemanticElement().getName())) {
-				// // System.out.println("ADD CHILD " + child.getName());
 				m_children.add((XElementValue) child);
 				child.setParent(this);
 				return;
@@ -188,7 +208,6 @@ public class XElementValue implements IElementValue {
 		for (SemanticElement ase : this.getSemanticElement().getChildren()) {
 			for (SemanticElement ase2 : ase.getChildren()) {
 				if (ase2.getName().equals(child.getSemanticElement().getName())) {
-					// // System.out.println("ADD CHILD IN CONTAINER " + child.getName());
 					XElementValue targetElementValue = new XElementValue(ase, this.m_owner);
 					m_children.add(targetElementValue);
 					targetElementValue.setParent(this);
@@ -205,12 +224,12 @@ public class XElementValue implements IElementValue {
 	@Override
 	public void removeChild(IElementValue child) {
 		m_children.remove(child);
-		child.setParent(this);
+		// child.setParent(this);
 	}
 
 	@Override
 	public List<IElementValue> getRelations() {
-		List<IElementValue> a = new ArrayList<IElementValue>();
+		List<IElementValue> a = new ArrayList<>();
 		for (RelElement e : m_relations) {
 			a.add(e.relatedElement);
 		}

@@ -35,7 +35,7 @@ public final class MDMIPlugin extends EMFPlugin {
 	 * @generated
 	 */
 	public MDMIPlugin() {
-		super(new ResourceLocator[] {});
+		super(new ResourceLocator [] {});
 	}
 
 	/**

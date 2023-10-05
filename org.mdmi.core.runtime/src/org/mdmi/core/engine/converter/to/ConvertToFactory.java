@@ -24,7 +24,7 @@ import org.mdmi.impl.MDMIPackageImpl;
 
 public class ConvertToFactory {
 	// Map of converters
-	private static final HashMap<String, HashMap<XDT, IConvertToString>> CONVERT_MAP = new HashMap<String, HashMap<XDT, IConvertToString>>();
+	private static final HashMap<String, HashMap<XDT, IConvertToString>> CONVERT_MAP = new HashMap<>();
 
 	// Converters. These are state-less, so they can be shared.
 	private static final ToStringConverter CONV_STRING = new ToStringConverter();
@@ -92,7 +92,7 @@ public class ConvertToFactory {
 	private ConvertToFactory() {
 
 		/*********** Integer *****************/
-		HashMap<XDT, IConvertToString> local = new HashMap<XDT, IConvertToString>();
+		HashMap<XDT, IConvertToString> local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.INTEGER.getTypeName(), local);
 		local.put(XDT.BASE64BINARY, CONV_BASE64);
 		local.put(XDT.BOOLEAN, new IntegerToBooleanConverter());
@@ -118,7 +118,7 @@ public class ConvertToFactory {
 		local.put(XDT.UNSIGNEDSHORT, CONV_USHORT);
 
 		/*********** Decimal *****************/
-		local = new HashMap<XDT, IConvertToString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.DECIMAL.getTypeName(), local);
 		local.put(XDT.BASE64BINARY, CONV_BASE64);
 		local.put(XDT.BOOLEAN, new DecimalToBooleanConverter());
@@ -144,7 +144,7 @@ public class ConvertToFactory {
 		local.put(XDT.UNSIGNEDSHORT, CONV_USHORT);
 
 		/*********** Boolean *****************/
-		local = new HashMap<XDT, IConvertToString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.BOOLEAN.getTypeName(), local);
 		local.put(XDT.BASE64BINARY, CONV_BASE64);
 		local.put(XDT.BOOLEAN, CONV_STRING);
@@ -170,7 +170,7 @@ public class ConvertToFactory {
 		local.put(XDT.UNSIGNEDSHORT, CONV_BOOLNUM);
 
 		/*********** Binary *****************/
-		local = new HashMap<XDT, IConvertToString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.BINARY.getTypeName(), local);
 		local.put(XDT.ANYURI, CONV_BINARY);
 		local.put(XDT.BASE64BINARY, CONV_BINARY);
@@ -216,7 +216,7 @@ public class ConvertToFactory {
 		local.put(XDT.UNSIGNEDSHORT, new ToAnyFromBinaryConverter(ConvertFromFactory.CONV_INT, CONV_USHORT));
 
 		/*********** String *****************/
-		local = new HashMap<XDT, IConvertToString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.STRING.getTypeName(), local);
 		local.put(XDT.ANYURI, CONV_STRING);
 		local.put(XDT.BASE64BINARY, CONV_STRING);
@@ -263,7 +263,7 @@ public class ConvertToFactory {
 		local.put(XDT.NMTOKENS, CONV_ARRAY);
 
 		/*********** DateTime *****************/
-		local = new HashMap<XDT, IConvertToString>();
+		local = new HashMap<>();
 		CONVERT_MAP.put(MDMIPackageImpl.DATETIME.getTypeName(), local);
 		local.put(XDT.BASE64BINARY, new ToBase64Converter(CONV_DATETIME));
 		local.put(XDT.DATE, CONV_DATE);

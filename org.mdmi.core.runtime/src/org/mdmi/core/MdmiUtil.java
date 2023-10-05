@@ -37,25 +37,23 @@ public class MdmiUtil {
 
 	static boolean manyToOneContainers = true;
 
-	static HashMap<String, HashSet<String>> manyToOneMatches = new HashMap<String, HashSet<String>>();
+	static HashMap<String, HashSet<String>> manyToOneMatches = new HashMap<>();
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiUtil.class);
 
 	public static ArrayList<MDMIBusinessElementReference> getElements(MessageModel srcMessageModel,
 			MessageModel trgMessageModel, final List<String> elements) {
 
-		ArrayList<MDMIBusinessElementReference> common = new ArrayList<MDMIBusinessElementReference>();
+		ArrayList<MDMIBusinessElementReference> common = new ArrayList<>();
 
 		Map<String, MDMIBusinessElementReference> left = srcMessageModel.getBusinessElementHashMap();
 
 		Map<String, MDMIBusinessElementReference> right = trgMessageModel.getBusinessElementHashMap();
 
-		Equivalence<MDMIBusinessElementReference> valueEquivalence = new Equivalence<MDMIBusinessElementReference>() {
+		Equivalence<MDMIBusinessElementReference> valueEquivalence = new Equivalence<>() {
 
 			@Override
 			protected boolean doEquivalent(MDMIBusinessElementReference a, MDMIBusinessElementReference b) {
-
-				// System.out.println(a.eContainer());
 
 				return a.getUniqueIdentifier().equals(b.getUniqueIdentifier());
 			}
@@ -66,41 +64,10 @@ public class MdmiUtil {
 			}
 		};
 
-		// for (String key : left.keySet()) {
-		// if (manyToOneMatches.isEmpty()) {
-		// manyToOneMatches.put("92ad5c46-0554-4919-95ad-ed267e4ec007", new HashSet<String>());
-		//
-		// manyToOneMatches.get("92ad5c46-0554-4919-95ad-ed267e4ec007").add(
-		// "04efdee4-2132-490a-99c4-0f635300879a");
-		// }
-		//
-		// }
-		// // System.out.println("a " + a.getUniqueIdentifier());
-		// // System.out.println("b " + b.getUniqueIdentifier());
-		// if (a.getUniqueIdentifier().equals(b.getUniqueIdentifier())) {
-		// return true;
-		// } else if (manyToOneContainers) {
-		//
-		// if (manyToOneMatches.isEmpty()) {
-		// manyToOneMatches.put("92ad5c46-0554-4919-95ad-ed267e4ec007", new HashSet<String>());
-		//
-		// manyToOneMatches.get("92ad5c46-0554-4919-95ad-ed267e4ec007").add(
-		// "04efdee4-2132-490a-99c4-0f635300879a");
-		// }
-		//
-		// for (String key : manyToOneMatches.keySet()) {
-		// if (manyToOneMatches.get(key).contains(b.getUniqueIdentifier())) {
-		// return true;
-		// }
-		// }
-		//
-		// }
-		// return false;
-
 		MapDifference<String, MDMIBusinessElementReference> differences = Maps.difference(
 			left, right, valueEquivalence);
 
-		Predicate<MDMIBusinessElementReference> predicate = new Predicate<MDMIBusinessElementReference>() {
+		Predicate<MDMIBusinessElementReference> predicate = new Predicate<>() {
 
 			@Override
 			public boolean apply(MDMIBusinessElementReference input) {

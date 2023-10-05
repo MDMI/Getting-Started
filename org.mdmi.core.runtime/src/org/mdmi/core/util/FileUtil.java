@@ -274,7 +274,7 @@ public final class FileUtil {
 		if (null == file || !file.exists() || !file.isFile()) {
 			throw new IllegalArgumentException("FileUtil.readCsvFile() file is null or inaccessible!");
 		}
-		ArrayList<ArrayList<String>> a = new ArrayList<ArrayList<String>>();
+		ArrayList<ArrayList<String>> a = new ArrayList<>();
 		try {
 			try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 				for (String line; (line = br.readLine()) != null;) {
@@ -288,7 +288,7 @@ public final class FileUtil {
 	}
 
 	private static ArrayList<String> readOneLine(String line) {
-		ArrayList<String> a = new ArrayList<String>();
+		ArrayList<String> a = new ArrayList<>();
 		if (null == line) {
 			return a;
 		}
@@ -351,10 +351,7 @@ public final class FileUtil {
 	 * @return True if the files exist and are identical, false otherwise
 	 */
 	public static boolean compareFiles(File f, File g) {
-		if (f == null || g == null) {
-			return false;
-		}
-		if (!(f.exists() && g.exists())) {
+		if (f == null || g == null || !(f.exists() && g.exists())) {
 			return false;
 		}
 		FileInputStream fis = null;
@@ -399,10 +396,7 @@ public final class FileUtil {
 	}
 
 	private static boolean compareBytes(byte[] a, byte[] b) {
-		if (a == null || b == null) {
-			return false;
-		}
-		if (a.length != b.length) {
+		if (a == null || b == null || (a.length != b.length)) {
 			return false;
 		}
 		final int n = a.length;
@@ -749,10 +743,7 @@ public final class FileUtil {
 	public static String getPathRelativeToDir(File file, File dir) {
 		String filePath = file.getAbsolutePath();
 		String dirPath = dir.getAbsolutePath();
-		if (dirPath.length() >= filePath.length()) {
-			throw new MdmiException("Path " + dirPath + " not a subset of " + filePath);
-		}
-		if (filePath.startsWith(dirPath)) {
+		if ((dirPath.length() >= filePath.length()) || filePath.startsWith(dirPath)) {
 			throw new MdmiException("Path " + dirPath + " not a subset of " + filePath);
 		}
 		return filePath.substring(dirPath.length() + 1);

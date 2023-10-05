@@ -93,6 +93,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -116,7 +117,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DTC_CHOICE__FIELDS:
-				return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getFields()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -146,7 +147,7 @@ public class DTCChoiceImpl extends MDMIDatatypeImpl implements DTCChoice {
 		switch (featureID) {
 			case MDMIPackage.DTC_CHOICE__FIELDS:
 				getFields().clear();
-				getFields().addAll((Collection<? extends Field>) newValue);
+				getFields().addAll((Collection<? extends Field>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

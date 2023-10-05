@@ -78,11 +78,10 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MessageComposite> getComposites() {
 		if (composites == null) {
-			composites = new EObjectWithInverseResolvingEList<MessageComposite>(
-				MessageComposite.class, this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES,
-				MDMIPackage.MESSAGE_COMPOSITE__OWNER);
+			composites = new EObjectWithInverseResolvingEList<MessageComposite>(MessageComposite.class, this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MDMIPackage.MESSAGE_COMPOSITE__OWNER);
 		}
 		return composites;
 	}
@@ -92,16 +91,14 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageComposite getOwner() {
 		if (owner != null && owner.eIsProxy()) {
-			InternalEObject oldOwner = (InternalEObject) owner;
-			owner = (MessageComposite) eResolveProxy(oldOwner);
+			InternalEObject oldOwner = (InternalEObject)owner;
+			owner = (MessageComposite)eResolveProxy(oldOwner);
 			if (owner != oldOwner) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.MESSAGE_COMPOSITE__OWNER, oldOwner, owner));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.MESSAGE_COMPOSITE__OWNER, oldOwner, owner));
 			}
 		}
 		return owner;
@@ -125,13 +122,8 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 		MessageComposite oldOwner = owner;
 		owner = newOwner;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.MESSAGE_COMPOSITE__OWNER, oldOwner, newOwner);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_COMPOSITE__OWNER, oldOwner, newOwner);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -141,26 +133,19 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOwner(MessageComposite newOwner) {
 		if (newOwner != owner) {
 			NotificationChain msgs = null;
-			if (owner != null) {
-				msgs = ((InternalEObject) owner).eInverseRemove(
-					this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
-			}
-			if (newOwner != null) {
-				msgs = ((InternalEObject) newOwner).eInverseAdd(
-					this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
-			}
+			if (owner != null)
+				msgs = ((InternalEObject)owner).eInverseRemove(this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
+			if (newOwner != null)
+				msgs = ((InternalEObject)newOwner).eInverseAdd(this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
 			msgs = basicSetOwner(newOwner, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MESSAGE_COMPOSITE__OWNER, newOwner, newOwner));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_COMPOSITE__OWNER, newOwner, newOwner));
 	}
 
 	/**
@@ -173,13 +158,11 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES:
-				return ((InternalEList<InternalEObject>) (InternalEList<?>) getComposites()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComposites()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.MESSAGE_COMPOSITE__OWNER:
-				if (owner != null) {
-					msgs = ((InternalEObject) owner).eInverseRemove(
-						this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
-				}
-				return basicSetOwner((MessageComposite) otherEnd, msgs);
+				if (owner != null)
+					msgs = ((InternalEObject)owner).eInverseRemove(this, MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES, MessageComposite.class, msgs);
+				return basicSetOwner((MessageComposite)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -193,7 +176,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES:
-				return ((InternalEList<?>) getComposites()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getComposites()).basicRemove(otherEnd, msgs);
 			case MDMIPackage.MESSAGE_COMPOSITE__OWNER:
 				return basicSetOwner(null, msgs);
 		}
@@ -211,9 +194,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 			case MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES:
 				return getComposites();
 			case MDMIPackage.MESSAGE_COMPOSITE__OWNER:
-				if (resolve) {
-					return getOwner();
-				}
+				if (resolve) return getOwner();
 				return basicGetOwner();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -230,10 +211,10 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_COMPOSITE__COMPOSITES:
 				getComposites().clear();
-				getComposites().addAll((Collection<? extends MessageComposite>) newValue);
+				getComposites().addAll((Collection<? extends MessageComposite>)newValue);
 				return;
 			case MDMIPackage.MESSAGE_COMPOSITE__OWNER:
-				setOwner((MessageComposite) newValue);
+				setOwner((MessageComposite)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,7 +232,7 @@ public class MessageCompositeImpl extends SimpleMessageCompositeImpl implements 
 				getComposites().clear();
 				return;
 			case MDMIPackage.MESSAGE_COMPOSITE__OWNER:
-				setOwner((MessageComposite) null);
+				setOwner((MessageComposite)null);
 				return;
 		}
 		super.eUnset(featureID);

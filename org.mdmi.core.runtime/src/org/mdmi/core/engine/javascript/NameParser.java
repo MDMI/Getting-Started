@@ -33,11 +33,11 @@ public class NameParser {
 
 	private String middleName = "";
 
-	private List<String> middleNames = new ArrayList<String>();
+	private List<String> middleNames = new ArrayList<>();
 
-	private List<String> titlesBefore = new ArrayList<String>();
+	private List<String> titlesBefore = new ArrayList<>();
 
-	private List<String> titlesAfter = new ArrayList<String>();
+	private List<String> titlesAfter = new ArrayList<>();
 
 	private String[] prefixes = { "dr", "mr", "ms", "atty", "prof", "miss", "mrs" };
 
@@ -53,29 +53,32 @@ public class NameParser {
 
 	private void reset() {
 		firstName = lastName = middleName = "";
-		middleNames = new ArrayList<String>();
-		titlesBefore = new ArrayList<String>();
-		titlesAfter = new ArrayList<String>();
+		middleNames = new ArrayList<>();
+		titlesBefore = new ArrayList<>();
+		titlesAfter = new ArrayList<>();
 	}
 
 	private boolean isOneOf(String checkStr, String[] titles) {
 		for (String title : titles) {
-			if (checkStr.toLowerCase().startsWith(title))
+			if (checkStr.toLowerCase().startsWith(title)) {
 				return true;
+			}
 		}
 		return false;
 	}
 
 	public void parse(String name) {
-		if (StringUtils.isBlank(name))
+		if (StringUtils.isBlank(name)) {
 			return;
+		}
 		this.reset();
 		String[] words = name.split(" ");
 		boolean isFirstName = false;
 
 		for (String word : words) {
-			if (StringUtils.isBlank(word))
+			if (StringUtils.isBlank(word)) {
 				continue;
+			}
 			if (word.charAt(word.length() - 1) == '.') {
 				if (!isFirstName && !this.isOneOf(word, prefixes)) {
 					firstName = word;
@@ -86,9 +89,10 @@ public class NameParser {
 					titlesBefore.add(word);
 				}
 			} else {
-				if (word.endsWith(","))
+				if (word.endsWith(",")) {
 					word = StringUtils.chop(word);
-				if (isFirstName == false) {
+				}
+				if (!isFirstName) {
 					firstName = word;
 					isFirstName = true;
 				} else {
@@ -98,7 +102,7 @@ public class NameParser {
 		}
 		if (middleNames.size() > 0) {
 			boolean stop = false;
-			List<String> toRemove = new ArrayList<String>();
+			List<String> toRemove = new ArrayList<>();
 			for (int i = middleNames.size() - 1; i >= 0 && !stop; i--) {
 				String str = middleNames.get(i);
 				if (this.isOneOf(str, suffixes)) {

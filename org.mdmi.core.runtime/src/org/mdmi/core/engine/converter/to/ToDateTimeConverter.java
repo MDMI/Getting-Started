@@ -25,7 +25,7 @@ import org.mdmi.core.util.DateUtil;
 
 public class ToDateTimeConverter implements IConvertToString {
 
-	HashMap<String, SimpleDateFormat> formats = new HashMap<String, SimpleDateFormat>();
+	HashMap<String, SimpleDateFormat> formats = new HashMap<>();
 
 	@Override
 	public String convertToString(Object obj, String format) {

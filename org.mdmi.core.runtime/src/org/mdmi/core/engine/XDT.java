@@ -146,17 +146,8 @@ public enum XDT {
 			return null;
 		}
 
-		// for (DTSPrimitive aaa : primitiveFormatters.keySet()) {
-		// // System.out.println(aaa);
-		// }
 		return primitiveFormatters.get(pdt.getTypeName());
-		// else if( pdt == DTSPrimitive.BINARY ) return HEXBINARY;
-		// else if( pdt == DTSPrimitive.BOOLEAN ) return BOOLEAN ;
-		// else if( pdt == DTSPrimitive.DATETIME ) return DATETIME ;
-		// else if( pdt == DTSPrimitive.DECIMAL ) return DECIMAL ;
-		// else if( pdt == DTSPrimitive.INTEGER ) return INTEGER ;
-		// else if( pdt == DTSPrimitive.STRING ) return STRING ;
-		// return null;
+
 	}
 
 	/**

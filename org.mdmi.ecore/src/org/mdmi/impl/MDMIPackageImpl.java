@@ -346,10 +346,12 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MDMIPackage#eINSTANCE} when that field is accessed.
+	 * <p>
+	 * This method is used to initialize {@link MDMIPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #eNS_URI
 	 * @generated NOT
 	 */
@@ -404,10 +406,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageModel() {
 		if (messageModelEClass == null) {
-			messageModelEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(0);
+			messageModelEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(0);
 		}
 		return messageModelEClass;
 	}
@@ -417,8 +419,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageModel_MessageModelName() {
-		return (EAttribute) getMessageModel().getEStructuralFeatures().get(0);
+        return (EAttribute)getMessageModel().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -426,8 +429,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageModel_SyntaxModel() {
-		return (EReference) getMessageModel().getEStructuralFeatures().get(1);
+        return (EReference)getMessageModel().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -435,8 +439,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageModel_ElementSet() {
-		return (EReference) getMessageModel().getEStructuralFeatures().get(2);
+        return (EReference)getMessageModel().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -444,8 +449,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageModel_Description() {
-		return (EAttribute) getMessageModel().getEStructuralFeatures().get(3);
+        return (EAttribute)getMessageModel().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -453,8 +459,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageModel_Source() {
-		return (EAttribute) getMessageModel().getEStructuralFeatures().get(4);
+        return (EAttribute)getMessageModel().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -462,8 +469,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageModel_Group() {
-		return (EReference) getMessageModel().getEStructuralFeatures().get(5);
+        return (EReference)getMessageModel().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -471,10 +479,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageSyntaxModel() {
 		if (messageSyntaxModelEClass == null) {
-			messageSyntaxModelEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(1);
+			messageSyntaxModelEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(1);
 		}
 		return messageSyntaxModelEClass;
 	}
@@ -484,8 +492,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageSyntaxModel_Name() {
-		return (EAttribute) getMessageSyntaxModel().getEStructuralFeatures().get(0);
+        return (EAttribute)getMessageSyntaxModel().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -493,8 +502,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageSyntaxModel_Model() {
-		return (EReference) getMessageSyntaxModel().getEStructuralFeatures().get(1);
+        return (EReference)getMessageSyntaxModel().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -502,8 +512,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageSyntaxModel_Root() {
-		return (EReference) getMessageSyntaxModel().getEStructuralFeatures().get(2);
+        return (EReference)getMessageSyntaxModel().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -511,8 +522,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageSyntaxModel_ElementSet() {
-		return (EReference) getMessageSyntaxModel().getEStructuralFeatures().get(3);
+        return (EReference)getMessageSyntaxModel().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -520,8 +532,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageSyntaxModel_Description() {
-		return (EAttribute) getMessageSyntaxModel().getEStructuralFeatures().get(4);
+        return (EAttribute)getMessageSyntaxModel().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -529,9 +542,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNode() {
 		if (nodeEClass == null) {
-			nodeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(2);
+			nodeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(2);
 		}
 		return nodeEClass;
 	}
@@ -541,8 +555,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Name() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(0);
+        return (EAttribute)getNode().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -550,8 +565,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Description() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(1);
+        return (EAttribute)getNode().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -559,8 +575,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_MinOccurs() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(2);
+        return (EAttribute)getNode().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -568,8 +585,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_MaxOccurs() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(3);
+        return (EAttribute)getNode().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -577,8 +595,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Location() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(4);
+        return (EAttribute)getNode().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -586,8 +605,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_LocationExpressionLanguage() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(5);
+        return (EAttribute)getNode().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -595,8 +615,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_SyntaxModel() {
-		return (EReference) getNode().getEStructuralFeatures().get(6);
+        return (EReference)getNode().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -604,8 +625,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_SemanticElement() {
-		return (EReference) getNode().getEStructuralFeatures().get(7);
+        return (EReference)getNode().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -613,8 +635,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_FieldName() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(8);
+        return (EAttribute)getNode().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -622,8 +645,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_IsSyntacticField() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(9);
+        return (EAttribute)getNode().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -631,8 +655,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Path() {
-		return (EAttribute) getNode().getEStructuralFeatures().get(10);
+        return (EAttribute)getNode().getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -640,9 +665,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBag() {
 		if (bagEClass == null) {
-			bagEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(3);
+			bagEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(3);
 		}
 		return bagEClass;
 	}
@@ -652,8 +678,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBag_IsUnique() {
-		return (EAttribute) getBag().getEStructuralFeatures().get(0);
+        return (EAttribute)getBag().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -661,8 +688,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getBag_IsOrdered() {
-		return (EAttribute) getBag().getEStructuralFeatures().get(1);
+        return (EAttribute)getBag().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -670,8 +698,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBag_Nodes() {
-		return (EReference) getBag().getEStructuralFeatures().get(2);
+        return (EReference)getBag().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -679,10 +708,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getChoice() {
 		if (choiceEClass == null) {
-			choiceEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(
-				4);
+			choiceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(4);
 		}
 		return choiceEClass;
 	}
@@ -692,8 +721,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getChoice_Constraint() {
-		return (EAttribute) getChoice().getEStructuralFeatures().get(0);
+        return (EAttribute)getChoice().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -701,8 +731,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getChoice_ConstraintExpressionLanguage() {
-		return (EAttribute) getChoice().getEStructuralFeatures().get(1);
+        return (EAttribute)getChoice().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -710,8 +741,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getChoice_Nodes() {
-		return (EReference) getChoice().getEStructuralFeatures().get(2);
+        return (EReference)getChoice().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -719,10 +751,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLeafSyntaxTranslator() {
 		if (leafSyntaxTranslatorEClass == null) {
-			leafSyntaxTranslatorEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(5);
+			leafSyntaxTranslatorEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(5);
 		}
 		return leafSyntaxTranslatorEClass;
 	}
@@ -732,8 +764,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLeafSyntaxTranslator_Format() {
-		return (EAttribute) getLeafSyntaxTranslator().getEStructuralFeatures().get(0);
+        return (EAttribute)getLeafSyntaxTranslator().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -741,8 +774,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLeafSyntaxTranslator_FormatExpressionLanguage() {
-		return (EAttribute) getLeafSyntaxTranslator().getEStructuralFeatures().get(1);
+        return (EAttribute)getLeafSyntaxTranslator().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -750,10 +784,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageGroup() {
 		if (messageGroupEClass == null) {
-			messageGroupEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(6);
+			messageGroupEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(6);
 		}
 		return messageGroupEClass;
 	}
@@ -763,8 +797,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_Name() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(0);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -772,8 +807,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_DataRules() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(1);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -781,8 +817,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_Description() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(2);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -790,8 +827,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultLocationExprLang() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(3);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -799,8 +837,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultConstraintExprLang() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(4);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -808,8 +847,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultRuleExprLang() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(5);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -817,8 +857,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultFormatExpressionLanguage() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(6);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -826,8 +867,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultOrderingExpressionLanguage() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(7);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -835,8 +877,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_Models() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(8);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -844,8 +887,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_DomainDictionary() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(9);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -853,8 +897,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMessageGroup_DefaultMDMIExpresionLanguage() {
-		return (EAttribute) getMessageGroup().getEStructuralFeatures().get(10);
+        return (EAttribute)getMessageGroup().getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -862,8 +907,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_Rules() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(11);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -871,8 +917,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_Datatypes() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(12);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -880,8 +927,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageGroup_DatatypeMaps() {
-		return (EReference) getMessageGroup().getEStructuralFeatures().get(13);
+        return (EReference)getMessageGroup().getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -889,10 +937,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDataRule() {
 		if (dataRuleEClass == null) {
-			dataRuleEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(
-				7);
+			dataRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(7);
 		}
 		return dataRuleEClass;
 	}
@@ -902,8 +950,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataRule_Name() {
-		return (EAttribute) getDataRule().getEStructuralFeatures().get(0);
+        return (EAttribute)getDataRule().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -911,8 +960,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataRule_Description() {
-		return (EAttribute) getDataRule().getEStructuralFeatures().get(1);
+        return (EAttribute)getDataRule().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -920,8 +970,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataRule_Rule() {
-		return (EAttribute) getDataRule().getEStructuralFeatures().get(2);
+        return (EAttribute)getDataRule().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -929,8 +980,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataRule_RuleExpressionLanguage() {
-		return (EAttribute) getDataRule().getEStructuralFeatures().get(3);
+        return (EAttribute)getDataRule().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -938,8 +990,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataRule_Scope() {
-		return (EReference) getDataRule().getEStructuralFeatures().get(4);
+        return (EReference)getDataRule().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -947,8 +1000,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataRule_Datatype() {
-		return (EReference) getDataRule().getEStructuralFeatures().get(5);
+        return (EReference)getDataRule().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -956,8 +1010,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataRule_SemanticElement() {
-		return (EReference) getDataRule().getEStructuralFeatures().get(6);
+        return (EReference)getDataRule().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -965,8 +1020,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataRule_Group() {
-		return (EReference) getDataRule().getEStructuralFeatures().get(7);
+        return (EReference)getDataRule().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -974,10 +1030,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemanticElementSet() {
 		if (semanticElementSetEClass == null) {
-			semanticElementSetEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(8);
+			semanticElementSetEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(8);
 		}
 		return semanticElementSetEClass;
 	}
@@ -987,8 +1043,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementSet_Name() {
-		return (EAttribute) getSemanticElementSet().getEStructuralFeatures().get(0);
+        return (EAttribute)getSemanticElementSet().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -996,8 +1053,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementSet_Description() {
-		return (EAttribute) getSemanticElementSet().getEStructuralFeatures().get(1);
+        return (EAttribute)getSemanticElementSet().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1005,8 +1063,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementSet_MessageModelName() {
-		return (EAttribute) getSemanticElementSet().getEStructuralFeatures().get(2);
+        return (EAttribute)getSemanticElementSet().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1014,8 +1073,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementSet_SyntaxModel() {
-		return (EReference) getSemanticElementSet().getEStructuralFeatures().get(3);
+        return (EReference)getSemanticElementSet().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1023,8 +1083,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementSet_Model() {
-		return (EReference) getSemanticElementSet().getEStructuralFeatures().get(4);
+        return (EReference)getSemanticElementSet().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1032,8 +1093,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementSet_SemanticElements() {
-		return (EReference) getSemanticElementSet().getEStructuralFeatures().get(5);
+        return (EReference)getSemanticElementSet().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1041,8 +1103,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementSet_Composite() {
-		return (EReference) getSemanticElementSet().getEStructuralFeatures().get(6);
+        return (EReference)getSemanticElementSet().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1050,10 +1113,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemanticElement() {
 		if (semanticElementEClass == null) {
-			semanticElementEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(9);
+			semanticElementEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(9);
 		}
 		return semanticElementEClass;
 	}
@@ -1063,8 +1126,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_Name() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(0);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1072,8 +1136,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_Description() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(1);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1081,8 +1146,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_ElementType() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(2);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1090,8 +1156,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Datatype() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(3);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1099,8 +1166,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_PropertyQualifier() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(4);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1108,8 +1176,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Composite() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(5);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1117,8 +1186,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_ElementSet() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(6);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1126,8 +1196,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_BusinessRules() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(7);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1135,8 +1206,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_DataRules() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(8);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1144,8 +1216,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Relationships() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(9);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1153,8 +1226,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_MultipleInstances() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(10);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1162,8 +1236,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_MapFromMdmi() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(11);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1171,8 +1246,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_Ordering() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(12);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -1180,8 +1256,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_OrderingLanguage() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(13);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1189,8 +1266,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_ComputedValue() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(14);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -1198,8 +1276,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_ComputedInValue() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(15);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -1207,8 +1286,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_MapToMdmi() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(16);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -1216,8 +1296,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Parent() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(17);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -1225,8 +1306,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Children() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(18);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -1234,8 +1316,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_SyntaxNode() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(19);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -1243,8 +1326,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_ComputedOutValue() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(20);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -1252,8 +1336,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElement_Keywords() {
-		return (EReference) getSemanticElement().getEStructuralFeatures().get(21);
+        return (EReference)getSemanticElement().getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -1261,8 +1346,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_EnumValueField() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(22);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1270,8 +1356,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElement_EnumValueDescrField() {
-		return (EAttribute) getSemanticElement().getEStructuralFeatures().get(23);
+        return (EAttribute)getSemanticElement().getEStructuralFeatures().get(23);
 	}
 
 	/**
@@ -1279,10 +1366,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleMessageComposite() {
 		if (simpleMessageCompositeEClass == null) {
-			simpleMessageCompositeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(10);
+			simpleMessageCompositeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(10);
 		}
 		return simpleMessageCompositeEClass;
 	}
@@ -1292,8 +1379,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleMessageComposite_Name() {
-		return (EAttribute) getSimpleMessageComposite().getEStructuralFeatures().get(0);
+        return (EAttribute)getSimpleMessageComposite().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1301,8 +1389,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleMessageComposite_SemanticElements() {
-		return (EReference) getSimpleMessageComposite().getEStructuralFeatures().get(1);
+        return (EReference)getSimpleMessageComposite().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1310,8 +1399,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSimpleMessageComposite_ElementSet() {
-		return (EReference) getSimpleMessageComposite().getEStructuralFeatures().get(2);
+        return (EReference)getSimpleMessageComposite().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1319,8 +1409,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSimpleMessageComposite_Description() {
-		return (EAttribute) getSimpleMessageComposite().getEStructuralFeatures().get(3);
+        return (EAttribute)getSimpleMessageComposite().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1328,10 +1419,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMessageComposite() {
 		if (messageCompositeEClass == null) {
-			messageCompositeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(11);
+			messageCompositeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(11);
 		}
 		return messageCompositeEClass;
 	}
@@ -1341,8 +1432,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComposite_Composites() {
-		return (EReference) getMessageComposite().getEStructuralFeatures().get(0);
+        return (EReference)getMessageComposite().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1350,8 +1442,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMessageComposite_Owner() {
-		return (EReference) getMessageComposite().getEStructuralFeatures().get(1);
+        return (EReference)getMessageComposite().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1359,10 +1452,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemanticElementBusinessRule() {
 		if (semanticElementBusinessRuleEClass == null) {
-			semanticElementBusinessRuleEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(12);
+			semanticElementBusinessRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(12);
 		}
 		return semanticElementBusinessRuleEClass;
 	}
@@ -1372,8 +1465,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementBusinessRule_Name() {
-		return (EAttribute) getSemanticElementBusinessRule().getEStructuralFeatures().get(0);
+        return (EAttribute)getSemanticElementBusinessRule().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1381,8 +1475,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementBusinessRule_Description() {
-		return (EAttribute) getSemanticElementBusinessRule().getEStructuralFeatures().get(1);
+        return (EAttribute)getSemanticElementBusinessRule().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1390,8 +1485,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementBusinessRule_Rule() {
-		return (EAttribute) getSemanticElementBusinessRule().getEStructuralFeatures().get(2);
+        return (EAttribute)getSemanticElementBusinessRule().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1399,8 +1495,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementBusinessRule_RuleExpressionLanguage() {
-		return (EAttribute) getSemanticElementBusinessRule().getEStructuralFeatures().get(3);
+        return (EAttribute)getSemanticElementBusinessRule().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1408,8 +1505,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementBusinessRule_SemanticElement() {
-		return (EReference) getSemanticElementBusinessRule().getEStructuralFeatures().get(4);
+        return (EReference)getSemanticElementBusinessRule().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1417,10 +1515,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSemanticElementRelationship() {
 		if (semanticElementRelationshipEClass == null) {
-			semanticElementRelationshipEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(13);
+			semanticElementRelationshipEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(13);
 		}
 		return semanticElementRelationshipEClass;
 	}
@@ -1430,8 +1528,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_Name() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(0);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1439,8 +1538,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_Description() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(1);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1448,8 +1548,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_Rule() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(2);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1457,8 +1558,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_RuleExpressionLanguage() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(3);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1466,8 +1568,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementRelationship_Context() {
-		return (EReference) getSemanticElementRelationship().getEStructuralFeatures().get(4);
+        return (EReference)getSemanticElementRelationship().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1475,8 +1578,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_MinOccurs() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(5);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1484,8 +1588,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_MaxOccurs() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(6);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1493,8 +1598,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_SourceIsInstance() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(7);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1502,8 +1608,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getSemanticElementRelationship_TargetIsInstance() {
-		return (EAttribute) getSemanticElementRelationship().getEStructuralFeatures().get(8);
+        return (EAttribute)getSemanticElementRelationship().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1511,8 +1618,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getSemanticElementRelationship_RelatedSemanticElement() {
-		return (EReference) getSemanticElementRelationship().getEStructuralFeatures().get(9);
+        return (EReference)getSemanticElementRelationship().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1520,10 +1628,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDMIBusinessElementReference() {
 		if (mdmiBusinessElementReferenceEClass == null) {
-			mdmiBusinessElementReferenceEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(14);
+			mdmiBusinessElementReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(14);
 		}
 		return mdmiBusinessElementReferenceEClass;
 	}
@@ -1533,8 +1641,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_Name() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(0);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1542,8 +1651,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_Description() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(1);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1551,8 +1661,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_Reference() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(2);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1560,8 +1671,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_UniqueIdentifier() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(3);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1569,8 +1681,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIBusinessElementReference_BusinessRules() {
-		return (EReference) getMDMIBusinessElementReference().getEStructuralFeatures().get(4);
+        return (EReference)getMDMIBusinessElementReference().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1578,8 +1691,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIBusinessElementReference_DomainDictionaryReference() {
-		return (EReference) getMDMIBusinessElementReference().getEStructuralFeatures().get(5);
+        return (EReference)getMDMIBusinessElementReference().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1587,8 +1701,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIBusinessElementReference_ReferenceDatatype() {
-		return (EReference) getMDMIBusinessElementReference().getEStructuralFeatures().get(6);
+        return (EReference)getMDMIBusinessElementReference().getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1596,8 +1711,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_EnumValueSetField() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(7);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1605,8 +1721,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_EnumValueField() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(8);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1614,8 +1731,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_EnumValueDescrField() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(9);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1623,8 +1741,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_EnumValueSet() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(10);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1632,8 +1751,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementReference_Readonly() {
-		return (EAttribute) getMDMIBusinessElementReference().getEStructuralFeatures().get(11);
+        return (EAttribute)getMDMIBusinessElementReference().getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -1641,10 +1761,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDMIBusinessElementRule() {
 		if (mdmiBusinessElementRuleEClass == null) {
-			mdmiBusinessElementRuleEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(15);
+			mdmiBusinessElementRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(15);
 		}
 		return mdmiBusinessElementRuleEClass;
 	}
@@ -1654,8 +1774,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementRule_Name() {
-		return (EAttribute) getMDMIBusinessElementRule().getEStructuralFeatures().get(0);
+        return (EAttribute)getMDMIBusinessElementRule().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1663,8 +1784,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementRule_Description() {
-		return (EAttribute) getMDMIBusinessElementRule().getEStructuralFeatures().get(1);
+        return (EAttribute)getMDMIBusinessElementRule().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1672,8 +1794,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementRule_Rule() {
-		return (EAttribute) getMDMIBusinessElementRule().getEStructuralFeatures().get(2);
+        return (EAttribute)getMDMIBusinessElementRule().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1681,8 +1804,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIBusinessElementRule_RuleExpressionLanguage() {
-		return (EAttribute) getMDMIBusinessElementRule().getEStructuralFeatures().get(3);
+        return (EAttribute)getMDMIBusinessElementRule().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1690,8 +1814,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIBusinessElementRule_BusinessElement() {
-		return (EReference) getMDMIBusinessElementRule().getEStructuralFeatures().get(4);
+        return (EReference)getMDMIBusinessElementRule().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1699,10 +1824,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConversionRule() {
 		if (conversionRuleEClass == null) {
-			conversionRuleEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(16);
+			conversionRuleEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(16);
 		}
 		return conversionRuleEClass;
 	}
@@ -1712,8 +1837,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConversionRule_Name() {
-		return (EAttribute) getConversionRule().getEStructuralFeatures().get(0);
+        return (EAttribute)getConversionRule().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1721,8 +1847,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConversionRule_Description() {
-		return (EAttribute) getConversionRule().getEStructuralFeatures().get(1);
+        return (EAttribute)getConversionRule().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1730,8 +1857,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConversionRule_RuleExpressionLanguage() {
-		return (EAttribute) getConversionRule().getEStructuralFeatures().get(2);
+        return (EAttribute)getConversionRule().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1739,8 +1867,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConversionRule_EnumExtResolverUri() {
-		return (EAttribute) getConversionRule().getEStructuralFeatures().get(3);
+        return (EAttribute)getConversionRule().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1748,8 +1877,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConversionRule_BusinessElement() {
-		return (EReference) getConversionRule().getEStructuralFeatures().get(4);
+        return (EReference)getConversionRule().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1757,8 +1887,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConversionRule_Rule() {
-		return (EAttribute) getConversionRule().getEStructuralFeatures().get(5);
+        return (EAttribute)getConversionRule().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1766,10 +1897,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDMIDomainDictionaryReference() {
 		if (mdmiDomainDictionaryReferenceEClass == null) {
-			mdmiDomainDictionaryReferenceEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(17);
+			mdmiDomainDictionaryReferenceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(17);
 		}
 		return mdmiDomainDictionaryReferenceEClass;
 	}
@@ -1779,8 +1910,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDomainDictionaryReference_Name() {
-		return (EAttribute) getMDMIDomainDictionaryReference().getEStructuralFeatures().get(0);
+        return (EAttribute)getMDMIDomainDictionaryReference().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1788,8 +1920,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDomainDictionaryReference_Description() {
-		return (EAttribute) getMDMIDomainDictionaryReference().getEStructuralFeatures().get(1);
+        return (EAttribute)getMDMIDomainDictionaryReference().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1797,8 +1930,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIDomainDictionaryReference_BusinessElements() {
-		return (EReference) getMDMIDomainDictionaryReference().getEStructuralFeatures().get(2);
+        return (EReference)getMDMIDomainDictionaryReference().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1806,8 +1940,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDomainDictionaryReference_Reference() {
-		return (EAttribute) getMDMIDomainDictionaryReference().getEStructuralFeatures().get(3);
+        return (EAttribute)getMDMIDomainDictionaryReference().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1815,8 +1950,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMDMIDomainDictionaryReference_Group() {
-		return (EReference) getMDMIDomainDictionaryReference().getEStructuralFeatures().get(4);
+        return (EReference)getMDMIDomainDictionaryReference().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1824,10 +1960,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDMIExpression() {
 		if (mdmiExpressionEClass == null) {
-			mdmiExpressionEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(18);
+			mdmiExpressionEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(18);
 		}
 		return mdmiExpressionEClass;
 	}
@@ -1837,8 +1973,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIExpression_Expression() {
-		return (EAttribute) getMDMIExpression().getEStructuralFeatures().get(0);
+        return (EAttribute)getMDMIExpression().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1846,8 +1983,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIExpression_Language() {
-		return (EAttribute) getMDMIExpression().getEStructuralFeatures().get(1);
+        return (EAttribute)getMDMIExpression().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1855,10 +1993,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getKeyword() {
 		if (keywordEClass == null) {
-			keywordEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(
-				19);
+			keywordEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(19);
 		}
 		return keywordEClass;
 	}
@@ -1868,8 +2006,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKeyword_Description() {
-		return (EAttribute) getKeyword().getEStructuralFeatures().get(0);
+        return (EAttribute)getKeyword().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1877,8 +2016,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKeyword_Keyword() {
-		return (EAttribute) getKeyword().getEStructuralFeatures().get(1);
+        return (EAttribute)getKeyword().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1886,8 +2026,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKeyword_KeywordValue() {
-		return (EAttribute) getKeyword().getEStructuralFeatures().get(2);
+        return (EAttribute)getKeyword().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1895,8 +2036,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getKeyword_Reference() {
-		return (EAttribute) getKeyword().getEStructuralFeatures().get(3);
+        return (EAttribute)getKeyword().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1904,8 +2046,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getKeyword_Owner() {
-		return (EReference) getKeyword().getEStructuralFeatures().get(4);
+        return (EReference)getKeyword().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1913,10 +2056,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMDMIDatatype() {
 		if (mdmiDatatypeEClass == null) {
-			mdmiDatatypeEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(20);
+			mdmiDatatypeEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(20);
 		}
 		return mdmiDatatypeEClass;
 	}
@@ -1926,8 +2069,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_TypeName() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(0);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1935,8 +2079,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_Description() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(1);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1944,8 +2089,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_Reference() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(2);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1953,8 +2099,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_IsReadonly() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(3);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1962,8 +2109,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_TypeSpec() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(4);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1971,8 +2119,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMDMIDatatype_Restriction() {
-		return (EAttribute) getMDMIDatatype().getEStructuralFeatures().get(5);
+        return (EAttribute)getMDMIDatatype().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1980,10 +2129,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTSPrimitive() {
 		if (dtsPrimitiveEClass == null) {
-			dtsPrimitiveEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(23);
+			dtsPrimitiveEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(23);
 		}
 		return dtsPrimitiveEClass;
 	}
@@ -1993,10 +2142,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTCStructured() {
 		if (dtcStructuredEClass == null) {
-			dtcStructuredEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(24);
+			dtcStructuredEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(24);
 		}
 		return dtcStructuredEClass;
 	}
@@ -2006,8 +2155,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDTCStructured_Fields() {
-		return (EReference) getDTCStructured().getEStructuralFeatures().get(0);
+        return (EReference)getDTCStructured().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2015,10 +2165,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getField() {
 		if (fieldEClass == null) {
-			fieldEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(
-				25);
+			fieldEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(25);
 		}
 		return fieldEClass;
 	}
@@ -2028,8 +2178,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getField_Name() {
-		return (EAttribute) getField().getEStructuralFeatures().get(0);
+        return (EAttribute)getField().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2037,8 +2188,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getField_MinOccurs() {
-		return (EAttribute) getField().getEStructuralFeatures().get(1);
+        return (EAttribute)getField().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2046,8 +2198,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getField_MaxOccurs() {
-		return (EAttribute) getField().getEStructuralFeatures().get(2);
+        return (EAttribute)getField().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2055,8 +2208,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getField_Datatype() {
-		return (EReference) getField().getEStructuralFeatures().get(3);
+        return (EReference)getField().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2064,8 +2218,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getField_Description() {
-		return (EAttribute) getField().getEStructuralFeatures().get(4);
+        return (EAttribute)getField().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2073,10 +2228,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTExternal() {
 		if (dtExternalEClass == null) {
-			dtExternalEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(26);
+			dtExternalEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(26);
 		}
 		return dtExternalEClass;
 	}
@@ -2086,10 +2241,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTSDerived() {
 		if (dtsDerivedEClass == null) {
-			dtsDerivedEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(27);
+			dtsDerivedEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(27);
 		}
 		return dtsDerivedEClass;
 	}
@@ -2099,8 +2254,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDTSDerived_BaseType() {
-		return (EReference) getDTSDerived().getEStructuralFeatures().get(0);
+        return (EReference)getDTSDerived().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2108,10 +2264,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTCChoice() {
 		if (dtcChoiceEClass == null) {
-			dtcChoiceEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(28);
+			dtcChoiceEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(28);
 		}
 		return dtcChoiceEClass;
 	}
@@ -2121,8 +2277,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDTCChoice_Fields() {
-		return (EReference) getDTCChoice().getEStructuralFeatures().get(0);
+        return (EReference)getDTCChoice().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2130,10 +2287,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDTSEnumerated() {
 		if (dtsEnumeratedEClass == null) {
-			dtsEnumeratedEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(29);
+			dtsEnumeratedEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(29);
 		}
 		return dtsEnumeratedEClass;
 	}
@@ -2143,8 +2300,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDTSEnumerated_Literals() {
-		return (EReference) getDTSEnumerated().getEStructuralFeatures().get(0);
+        return (EReference)getDTSEnumerated().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2152,10 +2310,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEnumerationLiteral() {
 		if (enumerationLiteralEClass == null) {
-			enumerationLiteralEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(30);
+			enumerationLiteralEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(30);
 		}
 		return enumerationLiteralEClass;
 	}
@@ -2165,8 +2323,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumerationLiteral_Name() {
-		return (EAttribute) getEnumerationLiteral().getEStructuralFeatures().get(0);
+        return (EAttribute)getEnumerationLiteral().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2174,8 +2333,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumerationLiteral_Description() {
-		return (EAttribute) getEnumerationLiteral().getEStructuralFeatures().get(1);
+        return (EAttribute)getEnumerationLiteral().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2183,8 +2343,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEnumerationLiteral_Code() {
-		return (EAttribute) getEnumerationLiteral().getEStructuralFeatures().get(2);
+        return (EAttribute)getEnumerationLiteral().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2192,10 +2353,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDatatypeMap() {
 		if (datatypeMapEClass == null) {
-			datatypeMapEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(31);
+			datatypeMapEClass = (EClass)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(31);
 		}
 		return datatypeMapEClass;
 	}
@@ -2205,8 +2366,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatatypeMap_Name() {
-		return (EAttribute) getDatatypeMap().getEStructuralFeatures().get(0);
+        return (EAttribute)getDatatypeMap().getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2214,8 +2376,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatatypeMap_Description() {
-		return (EAttribute) getDatatypeMap().getEStructuralFeatures().get(1);
+        return (EAttribute)getDatatypeMap().getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2223,8 +2386,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatatypeMap_FromMDMI() {
-		return (EAttribute) getDatatypeMap().getEStructuralFeatures().get(2);
+        return (EAttribute)getDatatypeMap().getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2232,8 +2396,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDatatypeMap_ToMDMI() {
-		return (EAttribute) getDatatypeMap().getEStructuralFeatures().get(3);
+        return (EAttribute)getDatatypeMap().getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2241,8 +2406,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDatatypeMap_MdmiDatatype() {
-		return (EReference) getDatatypeMap().getEStructuralFeatures().get(4);
+        return (EReference)getDatatypeMap().getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -2250,8 +2416,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDatatypeMap_MessageDatatype() {
-		return (EReference) getDatatypeMap().getEStructuralFeatures().get(5);
+        return (EReference)getDatatypeMap().getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -2259,10 +2426,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getMessageElementType() {
 		if (messageElementTypeEEnum == null) {
-			messageElementTypeEEnum = (EEnum) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(21);
+			messageElementTypeEEnum = (EEnum)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(21);
 		}
 		return messageElementTypeEEnum;
 	}
@@ -2272,10 +2439,10 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getURI() {
 		if (uriEDataType == null) {
-			uriEDataType = (EDataType) EPackage.Registry.INSTANCE.getEPackage(
-				MDMIPackage.eNS_URI).getEClassifiers().get(22);
+			uriEDataType = (EDataType)EPackage.Registry.INSTANCE.getEPackage(MDMIPackage.eNS_URI).getEClassifiers().get(22);
 		}
 		return uriEDataType;
 	}
@@ -2285,8 +2452,9 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIFactory getMDMIFactory() {
-		return (MDMIFactory) getEFactoryInstance();
+		return (MDMIFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -2297,15 +2465,13 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	private boolean isLoaded = false;
 
 	/**
-	 * Laods the package and any sub-packages from their serialized form.
+	 * Loads the package and any sub-packages from their serialized form.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void loadPackage() {
-		if (isLoaded) {
-			return;
-		}
+		if (isLoaded) return;
 		isLoaded = true;
 
 		URL url = getClass().getResource(packageFilename);
@@ -2316,10 +2482,11 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 		Resource resource = new EcoreResourceFactoryImpl().createResource(uri);
 		try {
 			resource.load(null);
-		} catch (IOException exception) {
+		}
+		catch (IOException exception) {
 			throw new WrappedException(exception);
 		}
-		initializeFromLoadedEPackage(this, (EPackage) resource.getContents().get(0));
+		initializeFromLoadedEPackage(this, (EPackage)resource.getContents().get(0));
 		createResource(eNS_URI);
 	}
 
@@ -2337,9 +2504,7 @@ public class MDMIPackageImpl extends EPackageImpl implements MDMIPackage {
 	 * @generated
 	 */
 	public void fixPackageContents() {
-		if (isFixed) {
-			return;
-		}
+		if (isFixed) return;
 		isFixed = true;
 		fixEClassifiers();
 	}

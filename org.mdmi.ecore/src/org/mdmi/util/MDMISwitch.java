@@ -9,6 +9,7 @@ package org.mdmi.util;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.mdmi.*;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.ConversionRule;
@@ -99,283 +100,198 @@ public class MDMISwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case MDMIPackage.MESSAGE_MODEL: {
-				MessageModel messageModel = (MessageModel) theEObject;
+				MessageModel messageModel = (MessageModel)theEObject;
 				T result = caseMessageModel(messageModel);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL: {
-				MessageSyntaxModel messageSyntaxModel = (MessageSyntaxModel) theEObject;
+				MessageSyntaxModel messageSyntaxModel = (MessageSyntaxModel)theEObject;
 				T result = caseMessageSyntaxModel(messageSyntaxModel);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.NODE: {
-				Node node = (Node) theEObject;
+				Node node = (Node)theEObject;
 				T result = caseNode(node);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.BAG: {
-				Bag bag = (Bag) theEObject;
+				Bag bag = (Bag)theEObject;
 				T result = caseBag(bag);
-				if (result == null) {
-					result = caseNode(bag);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseNode(bag);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.CHOICE: {
-				Choice choice = (Choice) theEObject;
+				Choice choice = (Choice)theEObject;
 				T result = caseChoice(choice);
-				if (result == null) {
-					result = caseNode(choice);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseNode(choice);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR: {
-				LeafSyntaxTranslator leafSyntaxTranslator = (LeafSyntaxTranslator) theEObject;
+				LeafSyntaxTranslator leafSyntaxTranslator = (LeafSyntaxTranslator)theEObject;
 				T result = caseLeafSyntaxTranslator(leafSyntaxTranslator);
-				if (result == null) {
-					result = caseNode(leafSyntaxTranslator);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseNode(leafSyntaxTranslator);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MESSAGE_GROUP: {
-				MessageGroup messageGroup = (MessageGroup) theEObject;
+				MessageGroup messageGroup = (MessageGroup)theEObject;
 				T result = caseMessageGroup(messageGroup);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DATA_RULE: {
-				DataRule dataRule = (DataRule) theEObject;
+				DataRule dataRule = (DataRule)theEObject;
 				T result = caseDataRule(dataRule);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.SEMANTIC_ELEMENT_SET: {
-				SemanticElementSet semanticElementSet = (SemanticElementSet) theEObject;
+				SemanticElementSet semanticElementSet = (SemanticElementSet)theEObject;
 				T result = caseSemanticElementSet(semanticElementSet);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.SEMANTIC_ELEMENT: {
-				SemanticElement semanticElement = (SemanticElement) theEObject;
+				SemanticElement semanticElement = (SemanticElement)theEObject;
 				T result = caseSemanticElement(semanticElement);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE: {
-				SimpleMessageComposite simpleMessageComposite = (SimpleMessageComposite) theEObject;
+				SimpleMessageComposite simpleMessageComposite = (SimpleMessageComposite)theEObject;
 				T result = caseSimpleMessageComposite(simpleMessageComposite);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MESSAGE_COMPOSITE: {
-				MessageComposite messageComposite = (MessageComposite) theEObject;
+				MessageComposite messageComposite = (MessageComposite)theEObject;
 				T result = caseMessageComposite(messageComposite);
-				if (result == null) {
-					result = caseSimpleMessageComposite(messageComposite);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseSimpleMessageComposite(messageComposite);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE: {
-				SemanticElementBusinessRule semanticElementBusinessRule = (SemanticElementBusinessRule) theEObject;
+				SemanticElementBusinessRule semanticElementBusinessRule = (SemanticElementBusinessRule)theEObject;
 				T result = caseSemanticElementBusinessRule(semanticElementBusinessRule);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP: {
-				SemanticElementRelationship semanticElementRelationship = (SemanticElementRelationship) theEObject;
+				SemanticElementRelationship semanticElementRelationship = (SemanticElementRelationship)theEObject;
 				T result = caseSemanticElementRelationship(semanticElementRelationship);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE: {
-				MDMIBusinessElementReference mdmiBusinessElementReference = (MDMIBusinessElementReference) theEObject;
+				MDMIBusinessElementReference mdmiBusinessElementReference = (MDMIBusinessElementReference)theEObject;
 				T result = caseMDMIBusinessElementReference(mdmiBusinessElementReference);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE: {
-				MDMIBusinessElementRule mdmiBusinessElementRule = (MDMIBusinessElementRule) theEObject;
+				MDMIBusinessElementRule mdmiBusinessElementRule = (MDMIBusinessElementRule)theEObject;
 				T result = caseMDMIBusinessElementRule(mdmiBusinessElementRule);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.CONVERSION_RULE: {
-				ConversionRule conversionRule = (ConversionRule) theEObject;
+				ConversionRule conversionRule = (ConversionRule)theEObject;
 				T result = caseConversionRule(conversionRule);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE: {
-				MDMIDomainDictionaryReference mdmiDomainDictionaryReference = (MDMIDomainDictionaryReference) theEObject;
+				MDMIDomainDictionaryReference mdmiDomainDictionaryReference = (MDMIDomainDictionaryReference)theEObject;
 				T result = caseMDMIDomainDictionaryReference(mdmiDomainDictionaryReference);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MDMI_EXPRESSION: {
-				MDMIExpression mdmiExpression = (MDMIExpression) theEObject;
+				MDMIExpression mdmiExpression = (MDMIExpression)theEObject;
 				T result = caseMDMIExpression(mdmiExpression);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.KEYWORD: {
-				Keyword keyword = (Keyword) theEObject;
+				Keyword keyword = (Keyword)theEObject;
 				T result = caseKeyword(keyword);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.MDMI_DATATYPE: {
-				MDMIDatatype mdmiDatatype = (MDMIDatatype) theEObject;
+				MDMIDatatype mdmiDatatype = (MDMIDatatype)theEObject;
 				T result = caseMDMIDatatype(mdmiDatatype);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DTS_PRIMITIVE: {
-				DTSPrimitive dtsPrimitive = (DTSPrimitive) theEObject;
+				DTSPrimitive dtsPrimitive = (DTSPrimitive)theEObject;
 				T result = caseDTSPrimitive(dtsPrimitive);
-				if (result == null) {
-					result = caseMDMIDatatype(dtsPrimitive);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseMDMIDatatype(dtsPrimitive);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DTC_STRUCTURED: {
-				DTCStructured dtcStructured = (DTCStructured) theEObject;
+				DTCStructured dtcStructured = (DTCStructured)theEObject;
 				T result = caseDTCStructured(dtcStructured);
-				if (result == null) {
-					result = caseMDMIDatatype(dtcStructured);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseMDMIDatatype(dtcStructured);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.FIELD: {
-				Field field = (Field) theEObject;
+				Field field = (Field)theEObject;
 				T result = caseField(field);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DT_EXTERNAL: {
-				DTExternal dtExternal = (DTExternal) theEObject;
+				DTExternal dtExternal = (DTExternal)theEObject;
 				T result = caseDTExternal(dtExternal);
-				if (result == null) {
-					result = caseDTSPrimitive(dtExternal);
-				}
-				if (result == null) {
-					result = caseMDMIDatatype(dtExternal);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseDTSPrimitive(dtExternal);
+				if (result == null) result = caseMDMIDatatype(dtExternal);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DTS_DERIVED: {
-				DTSDerived dtsDerived = (DTSDerived) theEObject;
+				DTSDerived dtsDerived = (DTSDerived)theEObject;
 				T result = caseDTSDerived(dtsDerived);
-				if (result == null) {
-					result = caseDTSPrimitive(dtsDerived);
-				}
-				if (result == null) {
-					result = caseMDMIDatatype(dtsDerived);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseDTSPrimitive(dtsDerived);
+				if (result == null) result = caseMDMIDatatype(dtsDerived);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DTC_CHOICE: {
-				DTCChoice dtcChoice = (DTCChoice) theEObject;
+				DTCChoice dtcChoice = (DTCChoice)theEObject;
 				T result = caseDTCChoice(dtcChoice);
-				if (result == null) {
-					result = caseMDMIDatatype(dtcChoice);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseMDMIDatatype(dtcChoice);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DTS_ENUMERATED: {
-				DTSEnumerated dtsEnumerated = (DTSEnumerated) theEObject;
+				DTSEnumerated dtsEnumerated = (DTSEnumerated)theEObject;
 				T result = caseDTSEnumerated(dtsEnumerated);
-				if (result == null) {
-					result = caseMDMIDatatype(dtsEnumerated);
-				}
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = caseMDMIDatatype(dtsEnumerated);
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.ENUMERATION_LITERAL: {
-				EnumerationLiteral enumerationLiteral = (EnumerationLiteral) theEObject;
+				EnumerationLiteral enumerationLiteral = (EnumerationLiteral)theEObject;
 				T result = caseEnumerationLiteral(enumerationLiteral);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDMIPackage.DATATYPE_MAP: {
-				DatatypeMap datatypeMap = (DatatypeMap) theEObject;
+				DatatypeMap datatypeMap = (DatatypeMap)theEObject;
 				T result = caseDatatypeMap(datatypeMap);
-				if (result == null) {
-					result = defaultCase(theEObject);
-				}
+				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			default:
-				return defaultCase(theEObject);
+			default: return defaultCase(theEObject);
 		}
 	}
 

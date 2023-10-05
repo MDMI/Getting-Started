@@ -26,8 +26,8 @@ public final class MdmiValueSetsHandler {
 	private HashMap<String, MdmiValueSetMap> valueSetMaps;
 
 	protected MdmiValueSetsHandler() {
-		valueSets = new HashMap<String, MdmiValueSet>();
-		valueSetMaps = new HashMap<String, MdmiValueSetMap>();
+		valueSets = new HashMap<>();
+		valueSetMaps = new HashMap<>();
 	}
 
 	// TODO: made public for testing (shouldn't check in)

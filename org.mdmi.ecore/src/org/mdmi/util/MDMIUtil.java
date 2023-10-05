@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Stack;
 
@@ -113,53 +112,51 @@ public class MDMIUtil {
 		return false;
 	}
 
-	public static List<MDMIBusinessElementReference> calculateReferences(MessageModel left, MessageModel right) {
-
-		// MDMIBusinessElementReference[] found = WebServiceUtillity.findAllMDMIBusinessElementReferences(null, 0, null);
-
-		HashMap<String, MDMIBusinessElementReference> elements = new HashMap<String, MDMIBusinessElementReference>();
-
-		for (SemanticElement semanticElement : left.getElementSet().getSemanticElements()) {
-
-			for (ConversionRule tse : semanticElement.getMapToMdmi()) {
-
-				if (tse.getBusinessElement() != null) {
-					if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
-						elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
-					}
-				}
-
-			}
-
-		}
-
-		for (SemanticElement semanticElement : right.getElementSet().getSemanticElements()) {
-
-			for (ConversionRule tse : semanticElement.getMapToMdmi()) {
-
-				if (tse.getBusinessElement() != null) {
-					if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
-						elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
-					}
-				}
-
-			}
-
-		}
-		List<MDMIBusinessElementReference> asdf = org.eclipse.ocl.util.CollectionUtil.createNewSequence();
-
-		asdf.addAll(elements.values());
-
-		return asdf;
-		// return org.eclipse.ocl.util.CollectionUtil.createNewSequence().addAll(elements.values());
-
-	}
+	// public static List<MDMIBusinessElementReference> calculateReferences(MessageModel left, MessageModel right) {
+	//
+	// // MDMIBusinessElementReference[] found = WebServiceUtillity.findAllMDMIBusinessElementReferences(null, 0, null);
+	//
+	// HashMap<String, MDMIBusinessElementReference> elements = new HashMap<>();
+	//
+	// for (SemanticElement semanticElement : left.getElementSet().getSemanticElements()) {
+	//
+	// for (ConversionRule tse : semanticElement.getMapToMdmi()) {
+	//
+	// if (tse.getBusinessElement() != null) {
+	// if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
+	// elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
+	// }
+	// }
+	//
+	// }
+	//
+	// }
+	//
+	// for (SemanticElement semanticElement : right.getElementSet().getSemanticElements()) {
+	//
+	// for (ConversionRule tse : semanticElement.getMapToMdmi()) {
+	//
+	// if (tse.getBusinessElement() != null) {
+	// if (!elements.containsKey(tse.getBusinessElement().getUniqueIdentifier())) {
+	// elements.put(tse.getBusinessElement().getUniqueIdentifier(), tse.getBusinessElement());
+	// }
+	// }
+	//
+	// }
+	//
+	// }
+	// List<MDMIBusinessElementReference> asdf = org.eclipse.ocl.util.CollectionUtil.createNewSequence();
+	//
+	// asdf.addAll(elements.values());
+	//
+	// return asdf;
+	// // return org.eclipse.ocl.util.CollectionUtil.createNewSequence().addAll(elements.values());
+	//
+	// }
 
 	public static SemanticElement searchForRollUp(SemanticElement rollup, SemanticElement semanticElement) {
 
 		for (SemanticElementRelationship ser : semanticElement.getRelationships()) {
-			// System.out.println(rollup.getName());
-			// System.out.println(ser.getRelatedSemanticElement().getName());
 
 			if (ser.getRelatedSemanticElement() != null && ser.getRelatedSemanticElement().equals(rollup)) {
 				return semanticElement;
@@ -447,7 +444,7 @@ public class MDMIUtil {
 					sb.append(
 						s1.replace("value.getXValue().addValue('", "").replace(")", "").replace("', ", "=")).append(
 							" ");
-					// System.out.println(s1);
+
 				}
 				return sb.toString();
 			}
@@ -492,7 +489,7 @@ public class MDMIUtil {
 
 	public static String getSemanticPath(SemanticElement semanticElement) {
 
-		Stack<String> textStack = new Stack<String>();
+		Stack<String> textStack = new Stack<>();
 
 		// String path = "";
 		// semanticElement.getSyntaxNode().getLocation();
@@ -568,12 +565,11 @@ public class MDMIUtil {
 
 	public static List<SemanticElement> getTo(MessageModel mmessageModel, MDMIBusinessElementReference ber) {
 
-		// System.out.println("Look for " + ber.getName() + " :: " + ber.getUniqueIdentifier());
-		List<SemanticElement> results = new ArrayList<SemanticElement>();
+		List<SemanticElement> results = new ArrayList<>();
 
 		for (SemanticElement se : mmessageModel.getElementSet().getSemanticElements()) {
 			for (ConversionRule tbe : se.getMapFromMdmi()) {
-				// System.out.println("tbe" + tbe.getName());
+
 				if (tbe.getBusinessElement() != null && tbe.getBusinessElement().getUniqueIdentifier() != null &&
 						tbe.getBusinessElement().getUniqueIdentifier().equals(ber.getUniqueIdentifier())) {
 					results.add(se);
@@ -589,15 +585,12 @@ public class MDMIUtil {
 
 		}
 
-		// System.out.println("!!!!!not found!!!");
-
 		if (results.isEmpty()) {
 			SemanticElement none = MDMIFactory.eINSTANCE.createSemanticElement();
 
 			MDMIDatatype value = MDMIFactory.eINSTANCE.createMDMIDatatype();
 			value.setTypeName("NONE");
 			none.setDatatype(value);
-			;
 
 			none.setName("NONE");
 			none.setDescription("NONE");
@@ -609,7 +602,7 @@ public class MDMIUtil {
 
 	public static List<SemanticElement> getFrom(MessageModel mmessageModel, MDMIBusinessElementReference ber) {
 
-		List<SemanticElement> results = new ArrayList<SemanticElement>();
+		List<SemanticElement> results = new ArrayList<>();
 
 		for (SemanticElement se : mmessageModel.getElementSet().getSemanticElements()) {
 			for (ConversionRule tse : se.getMapToMdmi()) {
@@ -633,7 +626,6 @@ public class MDMIUtil {
 			MDMIDatatype value = MDMIFactory.eINSTANCE.createMDMIDatatype();
 			value.setTypeName("NONE");
 			none.setDatatype(value);
-			;
 
 			none.setName("NONE");
 			none.setDescription("NONE");

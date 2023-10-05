@@ -239,10 +239,7 @@ public class StringUtil {
 	 * @return Output string.
 	 */
 	public static String getString(byte[] a, String enc) {
-		if (a == null) {
-			return "";// throw new IllegalArgumentException("null argument in Util.getString()");
-		}
-		if (a.length <= 0) {
+		if ((a == null) || (a.length <= 0)) {
 			return "";
 		}
 		if (enc == null) {
@@ -355,10 +352,7 @@ public class StringUtil {
 	}
 
 	private static String unquoteImpl(String s, char delim) {
-		if (s == null || s.length() < 2) {
-			return s;
-		}
-		if (!(s.charAt(0) == delim && s.charAt(s.length() - 1) == delim)) {
+		if (s == null || s.length() < 2 || !(s.charAt(0) == delim && s.charAt(s.length() - 1) == delim)) {
 			return s;
 		}
 		if (s.length() == 2) {

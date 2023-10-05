@@ -109,6 +109,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -118,13 +119,12 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__NAME, oldName, name));
 	}
 
 	/**
@@ -132,6 +132,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -141,14 +142,12 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION, oldDescription, description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -156,6 +155,7 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCode() {
 		return code;
 	}
@@ -165,13 +165,12 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCode(String newCode) {
 		String oldCode = code;
 		code = newCode;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__CODE, oldCode, code));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.ENUMERATION_LITERAL__CODE, oldCode, code));
 	}
 
 	/**
@@ -201,13 +200,13 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.ENUMERATION_LITERAL__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.ENUMERATION_LITERAL__CODE:
-				setCode((String) newValue);
+				setCode((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,17 +242,11 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.ENUMERATION_LITERAL__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.ENUMERATION_LITERAL__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.ENUMERATION_LITERAL__CODE:
-				return CODE_EDEFAULT == null
-						? code != null
-						: !CODE_EDEFAULT.equals(code);
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -265,11 +258,9 @@ public class EnumerationLiteralImpl extends EObjectImpl implements EnumerationLi
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

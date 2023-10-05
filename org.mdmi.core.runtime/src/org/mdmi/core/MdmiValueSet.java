@@ -98,7 +98,7 @@ public class MdmiValueSet {
 		}
 		this.owner = owner;
 		this.name = name;
-		values = new HashMap<String, Value>();
+		values = new HashMap<>();
 	}
 
 	public MdmiValueSet(MdmiValueSetsHandler owner, DTSEnumerated enumDataType) {
@@ -111,7 +111,7 @@ public class MdmiValueSet {
 		this.owner = owner;
 		this.name = enumDataType.getName();
 		this.dataType = enumDataType;
-		values = new HashMap<String, Value>();
+		values = new HashMap<>();
 		PopulateFromEnum();
 	}
 
@@ -120,7 +120,7 @@ public class MdmiValueSet {
 			throw new IllegalArgumentException("Owner cannot be null!");
 		}
 		this.owner = owner;
-		values = new HashMap<String, Value>();
+		values = new HashMap<>();
 		fromXml(root);
 	}
 
@@ -155,7 +155,7 @@ public class MdmiValueSet {
 	}
 
 	public ArrayList<Value> getValues() {
-		return new ArrayList<Value>(values.values());
+		return new ArrayList<>(values.values());
 	}
 
 	public Value getValue(String code) {

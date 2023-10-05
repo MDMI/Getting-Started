@@ -273,6 +273,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -282,14 +283,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__NAME, oldName, name));
 	}
 
 	/**
@@ -297,6 +296,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -306,15 +306,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DESCRIPTION, oldDescription,
-					description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -322,6 +319,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -331,15 +329,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE, oldReference,
-					reference));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE, oldReference, reference));
 	}
 
 	/**
@@ -347,6 +342,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getUniqueIdentifier() {
 		return uniqueIdentifier;
 	}
@@ -356,15 +352,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setUniqueIdentifier(String newUniqueIdentifier) {
 		String oldUniqueIdentifier = uniqueIdentifier;
 		uniqueIdentifier = newUniqueIdentifier;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__UNIQUE_IDENTIFIER,
-					oldUniqueIdentifier, uniqueIdentifier));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__UNIQUE_IDENTIFIER, oldUniqueIdentifier, uniqueIdentifier));
 	}
 
 	/**
@@ -372,11 +365,10 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIBusinessElementRule> getBusinessRules() {
 		if (businessRules == null) {
-			businessRules = new EObjectContainmentWithInverseEList<MDMIBusinessElementRule>(
-				MDMIBusinessElementRule.class, this, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES,
-				MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE__BUSINESS_ELEMENT);
+			businessRules = new EObjectContainmentWithInverseEList<MDMIBusinessElementRule>(MDMIBusinessElementRule.class, this, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES, MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE__BUSINESS_ELEMENT);
 		}
 		return businessRules;
 	}
@@ -386,11 +378,10 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIDomainDictionaryReference getDomainDictionaryReference() {
-		if (eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE) {
-			return null;
-		}
-		return (MDMIDomainDictionaryReference) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE) return null;
+		return (MDMIDomainDictionaryReference)eInternalContainer();
 	}
 
 	/**
@@ -400,9 +391,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 */
 	public NotificationChain basicSetDomainDictionaryReference(
 			MDMIDomainDictionaryReference newDomainDictionaryReference, NotificationChain msgs) {
-		msgs = eBasicSetContainer(
-			(InternalEObject) newDomainDictionaryReference,
-			MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newDomainDictionaryReference, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE, msgs);
 		return msgs;
 	}
 
@@ -411,32 +400,21 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDomainDictionaryReference(MDMIDomainDictionaryReference newDomainDictionaryReference) {
-		if (newDomainDictionaryReference != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE &&
-						newDomainDictionaryReference != null)) {
-			if (EcoreUtil.isAncestor(this, newDomainDictionaryReference)) {
+		if (newDomainDictionaryReference != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE && newDomainDictionaryReference != null)) {
+			if (EcoreUtil.isAncestor(this, newDomainDictionaryReference))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newDomainDictionaryReference != null) {
-				msgs = ((InternalEObject) newDomainDictionaryReference).eInverseAdd(
-					this, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS,
-					MDMIDomainDictionaryReference.class, msgs);
-			}
+			if (newDomainDictionaryReference != null)
+				msgs = ((InternalEObject)newDomainDictionaryReference).eInverseAdd(this, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS, MDMIDomainDictionaryReference.class, msgs);
 			msgs = basicSetDomainDictionaryReference(newDomainDictionaryReference, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE,
-					newDomainDictionaryReference, newDomainDictionaryReference));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE, newDomainDictionaryReference, newDomainDictionaryReference));
 	}
 
 	/**
@@ -444,6 +422,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype getReferenceDatatype() {
 		return referenceDatatype;
 	}
@@ -453,15 +432,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReferenceDatatype(MDMIDatatype newReferenceDatatype) {
 		MDMIDatatype oldReferenceDatatype = referenceDatatype;
 		referenceDatatype = newReferenceDatatype;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE_DATATYPE,
-					oldReferenceDatatype, referenceDatatype));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE_DATATYPE, oldReferenceDatatype, referenceDatatype));
 	}
 
 	/**
@@ -469,6 +445,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueSetField() {
 		return enumValueSetField;
 	}
@@ -478,15 +455,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueSetField(String newEnumValueSetField) {
 		String oldEnumValueSetField = enumValueSetField;
 		enumValueSetField = newEnumValueSetField;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET_FIELD,
-					oldEnumValueSetField, enumValueSetField));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET_FIELD, oldEnumValueSetField, enumValueSetField));
 	}
 
 	/**
@@ -494,6 +468,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueField() {
 		return enumValueField;
 	}
@@ -503,15 +478,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueField(String newEnumValueField) {
 		String oldEnumValueField = enumValueField;
 		enumValueField = newEnumValueField;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_FIELD,
-					oldEnumValueField, enumValueField));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_FIELD, oldEnumValueField, enumValueField));
 	}
 
 	/**
@@ -519,6 +491,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueDescrField() {
 		return enumValueDescrField;
 	}
@@ -528,15 +501,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
 		String oldEnumValueDescrField = enumValueDescrField;
 		enumValueDescrField = newEnumValueDescrField;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_DESCR_FIELD,
-					oldEnumValueDescrField, enumValueDescrField));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_DESCR_FIELD, oldEnumValueDescrField, enumValueDescrField));
 	}
 
 	/**
@@ -544,6 +514,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEnumValueSet() {
 		return enumValueSet;
 	}
@@ -553,15 +524,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEnumValueSet(String newEnumValueSet) {
 		String oldEnumValueSet = enumValueSet;
 		enumValueSet = newEnumValueSet;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET,
-					oldEnumValueSet, enumValueSet));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET, oldEnumValueSet, enumValueSet));
 	}
 
 	/**
@@ -569,6 +537,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getReadonly() {
 		return readonly;
 	}
@@ -578,15 +547,12 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReadonly(Boolean newReadonly) {
 		Boolean oldReadonly = readonly;
 		readonly = newReadonly;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__READONLY, oldReadonly,
-					readonly));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__READONLY, oldReadonly, readonly));
 	}
 
 	/**
@@ -599,13 +565,11 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES:
-				return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinessRules()).basicAdd(
-					otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBusinessRules()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetDomainDictionaryReference((MDMIDomainDictionaryReference) otherEnd, msgs);
+				return basicSetDomainDictionaryReference((MDMIDomainDictionaryReference)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -619,7 +583,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES:
-				return ((InternalEList<?>) getBusinessRules()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBusinessRules()).basicRemove(otherEnd, msgs);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
 				return basicSetDomainDictionaryReference(null, msgs);
 		}
@@ -635,9 +599,7 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS,
-					MDMIDomainDictionaryReference.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS, MDMIDomainDictionaryReference.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -688,41 +650,41 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE:
-				setReference((String) newValue);
+				setReference((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__UNIQUE_IDENTIFIER:
-				setUniqueIdentifier((String) newValue);
+				setUniqueIdentifier((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES:
 				getBusinessRules().clear();
-				getBusinessRules().addAll((Collection<? extends MDMIBusinessElementRule>) newValue);
+				getBusinessRules().addAll((Collection<? extends MDMIBusinessElementRule>)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
-				setDomainDictionaryReference((MDMIDomainDictionaryReference) newValue);
+				setDomainDictionaryReference((MDMIDomainDictionaryReference)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE_DATATYPE:
-				setReferenceDatatype((MDMIDatatype) newValue);
+				setReferenceDatatype((MDMIDatatype)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET_FIELD:
-				setEnumValueSetField((String) newValue);
+				setEnumValueSetField((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_FIELD:
-				setEnumValueField((String) newValue);
+				setEnumValueField((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_DESCR_FIELD:
-				setEnumValueDescrField((String) newValue);
+				setEnumValueDescrField((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET:
-				setEnumValueSet((String) newValue);
+				setEnumValueSet((String)newValue);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__READONLY:
-				setReadonly((Boolean) newValue);
+				setReadonly((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -752,10 +714,10 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 				getBusinessRules().clear();
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
-				setDomainDictionaryReference((MDMIDomainDictionaryReference) null);
+				setDomainDictionaryReference((MDMIDomainDictionaryReference)null);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE_DATATYPE:
-				setReferenceDatatype((MDMIDatatype) null);
+				setReferenceDatatype((MDMIDatatype)null);
 				return;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET_FIELD:
 				setEnumValueSetField(ENUM_VALUE_SET_FIELD_EDEFAULT);
@@ -785,21 +747,13 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE:
-				return REFERENCE_EDEFAULT == null
-						? reference != null
-						: !REFERENCE_EDEFAULT.equals(reference);
+				return REFERENCE_EDEFAULT == null ? reference != null : !REFERENCE_EDEFAULT.equals(reference);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__UNIQUE_IDENTIFIER:
-				return UNIQUE_IDENTIFIER_EDEFAULT == null
-						? uniqueIdentifier != null
-						: !UNIQUE_IDENTIFIER_EDEFAULT.equals(uniqueIdentifier);
+				return UNIQUE_IDENTIFIER_EDEFAULT == null ? uniqueIdentifier != null : !UNIQUE_IDENTIFIER_EDEFAULT.equals(uniqueIdentifier);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__BUSINESS_RULES:
 				return businessRules != null && !businessRules.isEmpty();
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE:
@@ -807,25 +761,15 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__REFERENCE_DATATYPE:
 				return referenceDatatype != null;
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET_FIELD:
-				return ENUM_VALUE_SET_FIELD_EDEFAULT == null
-						? enumValueSetField != null
-						: !ENUM_VALUE_SET_FIELD_EDEFAULT.equals(enumValueSetField);
+				return ENUM_VALUE_SET_FIELD_EDEFAULT == null ? enumValueSetField != null : !ENUM_VALUE_SET_FIELD_EDEFAULT.equals(enumValueSetField);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_FIELD:
-				return ENUM_VALUE_FIELD_EDEFAULT == null
-						? enumValueField != null
-						: !ENUM_VALUE_FIELD_EDEFAULT.equals(enumValueField);
+				return ENUM_VALUE_FIELD_EDEFAULT == null ? enumValueField != null : !ENUM_VALUE_FIELD_EDEFAULT.equals(enumValueField);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_DESCR_FIELD:
-				return ENUM_VALUE_DESCR_FIELD_EDEFAULT == null
-						? enumValueDescrField != null
-						: !ENUM_VALUE_DESCR_FIELD_EDEFAULT.equals(enumValueDescrField);
+				return ENUM_VALUE_DESCR_FIELD_EDEFAULT == null ? enumValueDescrField != null : !ENUM_VALUE_DESCR_FIELD_EDEFAULT.equals(enumValueDescrField);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__ENUM_VALUE_SET:
-				return ENUM_VALUE_SET_EDEFAULT == null
-						? enumValueSet != null
-						: !ENUM_VALUE_SET_EDEFAULT.equals(enumValueSet);
+				return ENUM_VALUE_SET_EDEFAULT == null ? enumValueSet != null : !ENUM_VALUE_SET_EDEFAULT.equals(enumValueSet);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__READONLY:
-				return READONLY_EDEFAULT == null
-						? readonly != null
-						: !READONLY_EDEFAULT.equals(readonly);
+				return READONLY_EDEFAULT == null ? readonly != null : !READONLY_EDEFAULT.equals(readonly);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -837,11 +781,9 @@ public class MDMIBusinessElementReferenceImpl extends EObjectImpl implements MDM
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

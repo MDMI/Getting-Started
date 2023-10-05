@@ -55,6 +55,10 @@ import org.eclipse.emf.ecore.EObject;
 public interface SemanticElement extends EObject {
 	String VALUE_NAME = "value";
 
+	String getUniqueId();
+
+	// }
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>""</code>.

@@ -178,6 +178,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -187,12 +188,12 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__NAME, oldName, name));
-		}
 	}
 
 	/**
@@ -200,6 +201,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -209,14 +211,12 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.DATA_RULE__DESCRIPTION, oldDescription, description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -224,6 +224,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRule() {
 		return rule;
 	}
@@ -233,12 +234,12 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__RULE, oldRule, rule));
-		}
 	}
 
 	/**
@@ -246,6 +247,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRuleExpressionLanguage() {
 		return ruleExpressionLanguage;
 	}
@@ -255,15 +257,12 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.DATA_RULE__RULE_EXPRESSION_LANGUAGE, oldRuleExpressionLanguage,
-					ruleExpressionLanguage));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__RULE_EXPRESSION_LANGUAGE, oldRuleExpressionLanguage, ruleExpressionLanguage));
 	}
 
 	/**
@@ -271,11 +270,10 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getScope() {
-		if (eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE) {
-			return null;
-		}
-		return (MessageGroup) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE) return null;
+		return (MessageGroup)eInternalContainer();
 	}
 
 	/**
@@ -284,7 +282,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * @generated
 	 */
 	public NotificationChain basicSetScope(MessageGroup newScope, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newScope, MDMIPackage.DATA_RULE__SCOPE, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newScope, MDMIPackage.DATA_RULE__SCOPE, msgs);
 		return msgs;
 	}
 
@@ -293,27 +291,21 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setScope(MessageGroup newScope) {
-		if (newScope != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE && newScope != null)) {
-			if (EcoreUtil.isAncestor(this, newScope)) {
+		if (newScope != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.DATA_RULE__SCOPE && newScope != null)) {
+			if (EcoreUtil.isAncestor(this, newScope))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newScope != null) {
-				msgs = ((InternalEObject) newScope).eInverseAdd(
-					this, MDMIPackage.MESSAGE_GROUP__DATA_RULES, MessageGroup.class, msgs);
-			}
+			if (newScope != null)
+				msgs = ((InternalEObject)newScope).eInverseAdd(this, MDMIPackage.MESSAGE_GROUP__DATA_RULES, MessageGroup.class, msgs);
 			msgs = basicSetScope(newScope, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__SCOPE, newScope, newScope));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__SCOPE, newScope, newScope));
 	}
 
 	/**
@@ -321,10 +313,10 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIDatatype> getDatatype() {
 		if (datatype == null) {
-			datatype = new EObjectResolvingEList<MDMIDatatype>(
-				MDMIDatatype.class, this, MDMIPackage.DATA_RULE__DATATYPE);
+			datatype = new EObjectResolvingEList<MDMIDatatype>(MDMIDatatype.class, this, MDMIPackage.DATA_RULE__DATATYPE);
 		}
 		return datatype;
 	}
@@ -334,17 +326,14 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getSemanticElement() {
 		if (semanticElement != null && semanticElement.eIsProxy()) {
-			InternalEObject oldSemanticElement = (InternalEObject) semanticElement;
-			semanticElement = (SemanticElement) eResolveProxy(oldSemanticElement);
+			InternalEObject oldSemanticElement = (InternalEObject)semanticElement;
+			semanticElement = (SemanticElement)eResolveProxy(oldSemanticElement);
 			if (semanticElement != oldSemanticElement) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, oldSemanticElement,
-							semanticElement));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, oldSemanticElement, semanticElement));
 			}
 		}
 		return semanticElement;
@@ -368,14 +357,8 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 		SemanticElement oldSemanticElement = semanticElement;
 		semanticElement = newSemanticElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, oldSemanticElement,
-				newSemanticElement);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, oldSemanticElement, newSemanticElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -385,27 +368,19 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSemanticElement(SemanticElement newSemanticElement) {
 		if (newSemanticElement != semanticElement) {
 			NotificationChain msgs = null;
-			if (semanticElement != null) {
-				msgs = ((InternalEObject) semanticElement).eInverseRemove(
-					this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
-			}
-			if (newSemanticElement != null) {
-				msgs = ((InternalEObject) newSemanticElement).eInverseAdd(
-					this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
-			}
+			if (semanticElement != null)
+				msgs = ((InternalEObject)semanticElement).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
+			if (newSemanticElement != null)
+				msgs = ((InternalEObject)newSemanticElement).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
 			msgs = basicSetSemanticElement(newSemanticElement, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, newSemanticElement,
-					newSemanticElement));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT, newSemanticElement, newSemanticElement));
 	}
 
 	/**
@@ -413,16 +388,14 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getGroup() {
 		if (group != null && group.eIsProxy()) {
-			InternalEObject oldGroup = (InternalEObject) group;
-			group = (MessageGroup) eResolveProxy(oldGroup);
+			InternalEObject oldGroup = (InternalEObject)group;
+			group = (MessageGroup)eResolveProxy(oldGroup);
 			if (group != oldGroup) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.DATA_RULE__GROUP, oldGroup, group));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.DATA_RULE__GROUP, oldGroup, group));
 			}
 		}
 		return group;
@@ -446,13 +419,8 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 		MessageGroup oldGroup = group;
 		group = newGroup;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.DATA_RULE__GROUP, oldGroup, newGroup);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__GROUP, oldGroup, newGroup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -462,24 +430,19 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGroup(MessageGroup newGroup) {
 		if (newGroup != group) {
 			NotificationChain msgs = null;
-			if (group != null) {
-				msgs = ((InternalEObject) group).eInverseRemove(
-					this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
-			}
-			if (newGroup != null) {
-				msgs = ((InternalEObject) newGroup).eInverseAdd(
-					this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
-			}
+			if (group != null)
+				msgs = ((InternalEObject)group).eInverseRemove(this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
+			if (newGroup != null)
+				msgs = ((InternalEObject)newGroup).eInverseAdd(this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
 			msgs = basicSetGroup(newGroup, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__GROUP, newGroup, newGroup));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATA_RULE__GROUP, newGroup, newGroup));
 	}
 
 	/**
@@ -491,22 +454,17 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DATA_RULE__SCOPE:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetScope((MessageGroup) otherEnd, msgs);
+				return basicSetScope((MessageGroup)otherEnd, msgs);
 			case MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT:
-				if (semanticElement != null) {
-					msgs = ((InternalEObject) semanticElement).eInverseRemove(
-						this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
-				}
-				return basicSetSemanticElement((SemanticElement) otherEnd, msgs);
+				if (semanticElement != null)
+					msgs = ((InternalEObject)semanticElement).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES, SemanticElement.class, msgs);
+				return basicSetSemanticElement((SemanticElement)otherEnd, msgs);
 			case MDMIPackage.DATA_RULE__GROUP:
-				if (group != null) {
-					msgs = ((InternalEObject) group).eInverseRemove(
-						this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
-				}
-				return basicSetGroup((MessageGroup) otherEnd, msgs);
+				if (group != null)
+					msgs = ((InternalEObject)group).eInverseRemove(this, MDMIPackage.MESSAGE_GROUP__RULES, MessageGroup.class, msgs);
+				return basicSetGroup((MessageGroup)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -538,8 +496,7 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.DATA_RULE__SCOPE:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MESSAGE_GROUP__DATA_RULES, MessageGroup.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_GROUP__DATA_RULES, MessageGroup.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -565,14 +522,10 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 			case MDMIPackage.DATA_RULE__DATATYPE:
 				return getDatatype();
 			case MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT:
-				if (resolve) {
-					return getSemanticElement();
-				}
+				if (resolve) return getSemanticElement();
 				return basicGetSemanticElement();
 			case MDMIPackage.DATA_RULE__GROUP:
-				if (resolve) {
-					return getGroup();
-				}
+				if (resolve) return getGroup();
 				return basicGetGroup();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -588,29 +541,29 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.DATA_RULE__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__RULE:
-				setRule((String) newValue);
+				setRule((String)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__RULE_EXPRESSION_LANGUAGE:
-				setRuleExpressionLanguage((String) newValue);
+				setRuleExpressionLanguage((String)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__SCOPE:
-				setScope((MessageGroup) newValue);
+				setScope((MessageGroup)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__DATATYPE:
 				getDatatype().clear();
-				getDatatype().addAll((Collection<? extends MDMIDatatype>) newValue);
+				getDatatype().addAll((Collection<? extends MDMIDatatype>)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement) newValue);
+				setSemanticElement((SemanticElement)newValue);
 				return;
 			case MDMIPackage.DATA_RULE__GROUP:
-				setGroup((MessageGroup) newValue);
+				setGroup((MessageGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -637,16 +590,16 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 				setRuleExpressionLanguage(RULE_EXPRESSION_LANGUAGE_EDEFAULT);
 				return;
 			case MDMIPackage.DATA_RULE__SCOPE:
-				setScope((MessageGroup) null);
+				setScope((MessageGroup)null);
 				return;
 			case MDMIPackage.DATA_RULE__DATATYPE:
 				getDatatype().clear();
 				return;
 			case MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement) null);
+				setSemanticElement((SemanticElement)null);
 				return;
 			case MDMIPackage.DATA_RULE__GROUP:
-				setGroup((MessageGroup) null);
+				setGroup((MessageGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -661,21 +614,13 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.DATA_RULE__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.DATA_RULE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.DATA_RULE__RULE:
-				return RULE_EDEFAULT == null
-						? rule != null
-						: !RULE_EDEFAULT.equals(rule);
+				return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
 			case MDMIPackage.DATA_RULE__RULE_EXPRESSION_LANGUAGE:
-				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null
-						? ruleExpressionLanguage != null
-						: !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
+				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null ? ruleExpressionLanguage != null : !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
 			case MDMIPackage.DATA_RULE__SCOPE:
 				return getScope() != null;
 			case MDMIPackage.DATA_RULE__DATATYPE:
@@ -695,11 +640,9 @@ public class DataRuleImpl extends EObjectImpl implements DataRule {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

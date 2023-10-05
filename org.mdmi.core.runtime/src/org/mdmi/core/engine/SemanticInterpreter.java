@@ -11,9 +11,7 @@
  *******************************************************************************/
 package org.mdmi.core.engine;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -38,9 +36,7 @@ import com.google.javascript.jscomp.Compiler;
 import com.google.javascript.jscomp.CompilerOptions;
 import com.google.javascript.jscomp.Result;
 import com.google.javascript.jscomp.SourceFile;
-
-//import com.google.javascript.jscomp.JSS
-//import com.google.javascript.jscomp.JSSourceFile;
+import com.google.javascript.rhino.StaticSourceFile.SourceKind;
 
 /**
  * @author seanmuir
@@ -56,7 +52,7 @@ public class SemanticInterpreter {
 
 	Invocable inv;
 
-	public HashMap<String, Exception> exceptions = new HashMap<String, Exception>();
+	public HashMap<String, Exception> exceptions = new HashMap<>();
 
 	public static String getFunctionName(SemanticElement from, SemanticElement to) {
 		return from.getName() + "_to_" + to.getName() + "RollUp";
@@ -133,17 +129,13 @@ public class SemanticInterpreter {
 					}
 
 				} else if (semanticElement.isNullFlavor()) {
-
-					if (!createdNullFlavor) {
-						createdNullFlavor = true;
-						String computedInExpression = semanticElement.getComputedValue().getExpression();
-						if (!StringUtils.isEmpty(computedInExpression)) {
-							StringBuffer function = new StringBuffer();
-							function.append("function " + "setNullFlavor" + "(value) {");
-							function.append(computedInExpression);
-							function.append("}");
-							sb.append(function.toString());
-						}
+					String computedInExpression = semanticElement.getComputedValue().getExpression();
+					if (!StringUtils.isEmpty(computedInExpression)) {
+						StringBuffer function = new StringBuffer();
+						function.append("function " + "setNullFlavorFor" + semanticElement.getName() + "(value) {");
+						function.append(computedInExpression);
+						function.append("}");
+						sb.append(function.toString());
 					}
 
 				} else if (semanticElement.isComputedIn()) {
@@ -227,34 +219,32 @@ public class SemanticInterpreter {
 		CompilationLevel.ADVANCED_OPTIMIZATIONS.setOptionsForCompilationLevel(options);
 
 		SourceFile sf;
-		try {
-			sf = SourceFile.fromInputStream(
-				"mappings.js", new ByteArrayInputStream(code.getBytes()), StandardCharsets.UTF_8);
-			ArrayList<SourceFile> inputFiles = new ArrayList<SourceFile>();
-			inputFiles.add(sf);
+		// try {
+		sf = SourceFile.fromCode("mappings.js", code, SourceKind.STRONG);
+		// sf = SourceFile.fromInputStream(
+		// "mappings.js", new ByteArrayInputStream(code.getBytes()), StandardCharsets.UTF_8);
+		ArrayList<SourceFile> inputFiles = new ArrayList<>();
+		inputFiles.add(sf);
 
-			Result result = compiler.compile(new ArrayList<SourceFile>(), inputFiles, options);
+		Result result = compiler.compile(new ArrayList<SourceFile>(), inputFiles, options);
 
-			if (!result.success) {
-				// throw new ProcessException("Failure when processing javascript files!");
-			}
-			// // System.out.println(compiler.toSource());
-			return compiler.toSource();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-
+		if (!result.success) {
+			// throw new ProcessException("Failure when processing javascript files!");
 		}
 
-		return code;
+		return compiler.toSource();
+		// } catch (IOException e) {
+		// // TODO Auto-generated catch block
+		//
+		// }
+		//
+		// return code;
 	}
 
 	void compare(String function, Object source, Object target) {
 
 		if (source instanceof XDataStruct) {
-			XDataStruct sourceStruct = (XDataStruct) source;
 			if (target instanceof XDataStruct) {
-				XDataStruct targetStruct = (XDataStruct) target;
-				// Assume all the values should transfer
 
 				/**
 				 * @TODO Add better comparison
@@ -303,7 +293,6 @@ public class SemanticInterpreter {
 
 	public boolean execute(String function, Object value, Object param1) {
 
-		// synchronized (inv) {
 		try {
 			/*
 			 * @TODO Fix Editor Whitespace
@@ -313,14 +302,12 @@ public class SemanticInterpreter {
 
 			inv.invokeFunction(function.replaceAll("\\s+", ""), value, param1);
 			return true;
-			// compare(function, source, target);
 		} catch (Exception e) {
 			exceptions.put(function, e);
 			logger.error("Failed executing function " + function + " := " + e.getMessage());
-			// logger.error(e.getMessage(), e);
 			return false;
 		}
-		// }
+
 	}
 
 	public boolean update(String function, Object value) {

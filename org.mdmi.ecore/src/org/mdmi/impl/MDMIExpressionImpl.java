@@ -92,6 +92,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getExpression() {
 		return expression;
 	}
@@ -101,14 +102,12 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__EXPRESSION, oldExpression, expression));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__EXPRESSION, oldExpression, expression));
 	}
 
 	/**
@@ -116,6 +115,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLanguage() {
 		return language;
 	}
@@ -125,14 +125,12 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__LANGUAGE, oldLanguage, language));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__LANGUAGE, oldLanguage, language));
 	}
 
 	/**
@@ -160,10 +158,10 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_EXPRESSION__EXPRESSION:
-				setExpression((String) newValue);
+				setExpression((String)newValue);
 				return;
 			case MDMIPackage.MDMI_EXPRESSION__LANGUAGE:
-				setLanguage((String) newValue);
+				setLanguage((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,13 +194,9 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_EXPRESSION__EXPRESSION:
-				return EXPRESSION_EDEFAULT == null
-						? expression != null
-						: !EXPRESSION_EDEFAULT.equals(expression);
+				return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
 			case MDMIPackage.MDMI_EXPRESSION__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null
-						? language != null
-						: !LANGUAGE_EDEFAULT.equals(language);
+				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,11 +208,9 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (expression: ");
 		result.append(expression);
 		result.append(", language: ");

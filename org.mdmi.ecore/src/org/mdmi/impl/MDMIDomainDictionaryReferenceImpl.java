@@ -135,6 +135,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -144,14 +145,12 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__NAME, oldName, name));
 	}
 
 	/**
@@ -159,6 +158,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -168,15 +168,12 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__DESCRIPTION, oldDescription,
-					description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -184,12 +181,10 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<MDMIBusinessElementReference> getBusinessElements() {
 		if (businessElements == null) {
-			businessElements = new EObjectContainmentWithInverseEList<MDMIBusinessElementReference>(
-				MDMIBusinessElementReference.class, this,
-				MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS,
-				MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE);
+			businessElements = new EObjectContainmentWithInverseEList<MDMIBusinessElementReference>(MDMIBusinessElementReference.class, this, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS, MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE__DOMAIN_DICTIONARY_REFERENCE);
 		}
 		return businessElements;
 	}
@@ -199,6 +194,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getReference() {
 		return reference;
 	}
@@ -208,15 +204,12 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__REFERENCE, oldReference,
-					reference));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__REFERENCE, oldReference, reference));
 	}
 
 	/**
@@ -224,11 +217,10 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageGroup getGroup() {
-		if (eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP) {
-			return null;
-		}
-		return (MessageGroup) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP) return null;
+		return (MessageGroup)eInternalContainer();
 	}
 
 	/**
@@ -237,8 +229,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(MessageGroup newGroup, NotificationChain msgs) {
-		msgs = eBasicSetContainer(
-			(InternalEObject) newGroup, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newGroup, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP, msgs);
 		return msgs;
 	}
 
@@ -247,34 +238,27 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGroup(MessageGroup newGroup) {
-		if (newGroup != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP && newGroup != null)) {
-			if (EcoreUtil.isAncestor(this, newGroup)) {
+		if (newGroup != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP && newGroup != null)) {
+			if (EcoreUtil.isAncestor(this, newGroup))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newGroup != null) {
-				msgs = ((InternalEObject) newGroup).eInverseAdd(
-					this, MDMIPackage.MESSAGE_GROUP__DOMAIN_DICTIONARY, MessageGroup.class, msgs);
-			}
+			if (newGroup != null)
+				msgs = ((InternalEObject)newGroup).eInverseAdd(this, MDMIPackage.MESSAGE_GROUP__DOMAIN_DICTIONARY, MessageGroup.class, msgs);
 			msgs = basicSetGroup(newGroup, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP, newGroup, newGroup));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP, newGroup, newGroup));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public void addBusinessElement(MDMIBusinessElementReference businessElementReference) {
@@ -317,13 +301,11 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS:
-				return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinessElements()).basicAdd(
-					otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBusinessElements()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetGroup((MessageGroup) otherEnd, msgs);
+				return basicSetGroup((MessageGroup)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -337,7 +319,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS:
-				return ((InternalEList<?>) getBusinessElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>)getBusinessElements()).basicRemove(otherEnd, msgs);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
 				return basicSetGroup(null, msgs);
 		}
@@ -353,8 +335,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MESSAGE_GROUP__DOMAIN_DICTIONARY, MessageGroup.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_GROUP__DOMAIN_DICTIONARY, MessageGroup.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -391,20 +372,20 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS:
 				getBusinessElements().clear();
-				getBusinessElements().addAll((Collection<? extends MDMIBusinessElementReference>) newValue);
+				getBusinessElements().addAll((Collection<? extends MDMIBusinessElementReference>)newValue);
 				return;
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__REFERENCE:
-				setReference((String) newValue);
+				setReference((String)newValue);
 				return;
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
-				setGroup((MessageGroup) newValue);
+				setGroup((MessageGroup)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,7 +412,7 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 				setReference(REFERENCE_EDEFAULT);
 				return;
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
-				setGroup((MessageGroup) null);
+				setGroup((MessageGroup)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -446,19 +427,13 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__BUSINESS_ELEMENTS:
 				return businessElements != null && !businessElements.isEmpty();
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__REFERENCE:
-				return REFERENCE_EDEFAULT == null
-						? reference != null
-						: !REFERENCE_EDEFAULT.equals(reference);
+				return REFERENCE_EDEFAULT == null ? reference != null : !REFERENCE_EDEFAULT.equals(reference);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE__GROUP:
 				return getGroup() != null;
 		}
@@ -472,11 +447,9 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
@@ -507,7 +480,8 @@ public class MDMIDomainDictionaryReferenceImpl extends EObjectImpl implements MD
 	 */
 	@Override
 	public MDMIBusinessElementReference getBusinessElementByUniqueID(String uid) {
-		for (MDMIBusinessElementReference be : this.businessElements) {
+
+		for (MDMIBusinessElementReference be : this.getBusinessElements()) {
 			if (uid.equals(be.getUniqueIdentifier())) {
 				return be;
 			}

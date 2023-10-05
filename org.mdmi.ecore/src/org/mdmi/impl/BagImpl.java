@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -34,14 +35,17 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
- *   <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
- *   <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#isIsUnique <em>Is Unique</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#isIsOrdered <em>Is Ordered</em>}</li>
+ * <li>{@link org.mdmi.impl.BagImpl#getNodes <em>Nodes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BagImpl extends NodeImpl implements Bag {
+
+	boolean hasMDMIExpressions = false;
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -56,6 +60,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -66,6 +71,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsUnique() <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsUnique()
 	 * @generated
 	 * @ordered
@@ -76,6 +82,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The default value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -86,6 +93,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #isIsOrdered() <em>Is Ordered</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsOrdered()
 	 * @generated
 	 * @ordered
@@ -96,6 +104,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getNodes()
 	 * @generated
 	 * @ordered
@@ -105,6 +114,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected BagImpl() {
@@ -114,6 +124,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,8 +135,10 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsUnique() {
 		return isUnique;
 	}
@@ -133,21 +146,24 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsUnique(boolean newIsUnique) {
 		boolean oldIsUnique = isUnique;
 		isUnique = newIsUnique;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_UNIQUE, oldIsUnique, isUnique));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isIsOrdered() {
 		return isOrdered;
 	}
@@ -155,22 +171,25 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setIsOrdered(boolean newIsOrdered) {
 		boolean oldIsOrdered = isOrdered;
 		isOrdered = newIsOrdered;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(
 				new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_ORDERED, oldIsOrdered, isOrdered));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
+	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
 			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
@@ -181,6 +200,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -195,6 +215,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,6 +234,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -236,6 +258,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -257,6 +280,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -275,15 +299,15 @@ public class BagImpl extends NodeImpl implements Bag {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
+		if (eIsProxy())
 			return super.toString();
-		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isUnique: ");
 		result.append(isUnique);
 		result.append(", isOrdered: ");
@@ -361,7 +385,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	 */
 	Map<String, ArrayList<Node>> nodeHash = Collections.synchronizedMap(new HashMap<String, ArrayList<Node>>());
 
-	ArrayList<Node> empty = new ArrayList<Node>();
+	ArrayList<Node> empty = new ArrayList<>();
 
 	@Override
 	public ArrayList<Node> getNodesByLocation(String nodeName) {
@@ -369,38 +393,90 @@ public class BagImpl extends NodeImpl implements Bag {
 		synchronized (this) {
 
 			if (nodes == null) {
-				nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
+				nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
 			}
 			if (nodeHash.isEmpty()) {
 				for (Node node : nodes) {
 
 					String key = node.getLocation();
-					// System.out.println("NAME IS " + this.getName() + "add key " + key);
-					int start = key.indexOf("[");
-					if (start > -1) {
-						key = key.substring(0, start);
-					}
 
-					String[] keys = key.split("/");
-					for (String k : keys) {
-						if (!nodeHash.containsKey(k)) {
-							// System.out.println("key is " + k);
-							nodeHash.put(k, new ArrayList<Node>());
+					if ("MDMI".equals(node.getLocationExpressionLanguage())) {
+						hasMDMIExpressions = true;
+						String[] locations = key.split(Pattern.quote("|"));
+						for (String location : locations) {
+
+							location = location.trim();
+
+							if (location.endsWith("#")) {
+								location = location.replace("#", "");
+							}
+
+							if (location.startsWith("^")) {
+								location = location.replace("^", "").toUpperCase();
+							}
+
+							if (!nodeHash.containsKey(location)) {
+								nodeHash.put(location, new ArrayList<Node>());
+							}
+							nodeHash.get(location).add(node);
 						}
-						/// System.out.println(node.getName() + "add key " + k);
 
-						nodeHash.get(k).add(node);
+						// if (key.endsWith("#")) {
+						// key = key.replace("#", "");
+						// }
+						// hasMDMIExpressions = true;
+						//
+						// if (key.contains("|")) {
+						// String[] locations = key.split(Pattern.quote("|"));
+						// for (String location : locations) {
+						// if (!nodeHash.containsKey(location)) {
+						// nodeHash.put(location, new ArrayList<Node>());
+						// }
+						// nodeHash.get(location).add(node);
+						// }
+						// } else {
+						//
+						// if (key.startsWith("^")) {
+						// key = key.replace("^", "").toUpperCase();
+						// }
+						//
+						// if (!nodeHash.containsKey(key)) {
+						// nodeHash.put(key, new ArrayList<Node>());
+						// }
+						// nodeHash.get(key).add(node);
+						// }
+					} else {
+
+						int start = key.indexOf("[");
+						if (start > -1) {
+							key = key.substring(0, start);
+						}
+
+						String[] keys = key.split("/");
+						for (String k : keys) {
+							if (!nodeHash.containsKey(k)) {
+								nodeHash.put(k, new ArrayList<Node>());
+							}
+							nodeHash.get(k).add(node);
+						}
 					}
 
 				}
+
 			}
 
-			// System.out.println("look for " + nodeName);
 			if (nodeHash.containsKey(nodeName)) {
-				// System.out.println("found for " + nodeName);
 				return nodeHash.get(nodeName);
 			} else {
-				// System.out.println("not found for " + nodeName);
+				if (hasMDMIExpressions) {
+					String mdmiNode = nodeName.replaceAll("\\d+$", "");
+					if (nodeHash.containsKey(mdmiNode)) {
+						return nodeHash.get(mdmiNode);
+					} else if (nodeHash.containsKey(mdmiNode.toUpperCase())) {
+						return nodeHash.get(mdmiNode.toUpperCase());
+					}
+				}
+
 				return empty;
 			}
 		}

@@ -23,16 +23,15 @@ package org.mdmi.core.engine;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Properties;
-import java.util.Set;
 import java.util.Stack;
 
 import org.apache.commons.lang3.time.StopWatch;
+import org.apache.commons.lang3.tuple.Pair;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.DTCChoice;
@@ -74,10 +73,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 	/**
 	 * @param sourceMessageGroup
 	 */
-	// public SimplifiedSemanticParser(MessageGroup messageGroup) {
-	// super
-	// // TODO Auto-generated constructor stub
-	// }
 
 	@Override
 	public ISyntaxNode createNewSyntacticModel(MessageModel mdl, ElementValueSet eset, Properties properties) {
@@ -103,12 +98,11 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 	 * @param iterator
 	 */
 	void normalizeSemanticContainers(ElementValueSet elementValueSet, IElementValue parent,
-			ListIterator<IElementValue> iterator) {
-		HashMap<String, IElementValue> containers = new HashMap<String, IElementValue>();
-		ArrayList<IElementValue> remove = new ArrayList<IElementValue>();
+			ListIterator<IElementValue> iterator, HashMap<String, IElementValue> containers) {
+		// = new HashMap<>();
+		ArrayList<IElementValue> remove = new ArrayList<>();
 		for (IElementValue child : parent.getChildren()) {
 			if (!child.getSemanticElement().getParent().getName().equals(parent.getSemanticElement().getName())) {
-
 				if (!containers.containsKey(child.getSemanticElement().getParent().getName())) {
 					XElementValue x = new XElementValue(
 						child.getSemanticElement().getParent(), elementValueSet, iterator);
@@ -132,13 +126,14 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 	}
 
-	void walkComputedIn(MessageModel mdl, ElementValueSet elementValueSet, Properties properties) {
+	void walkComputedIn(MessageModel mdl, ElementValueSet elementValueSet, Properties properties,
+			HashMap<String, IElementValue> containers) {
 
 		StopWatch watch = new StopWatch();
 		watch.start();
 
-		ArrayList<SemanticElement> computedElementsContainers = new ArrayList<SemanticElement>();
-		ArrayList<SemanticElement> rootComputedElements = new ArrayList<SemanticElement>();
+		ArrayList<SemanticElement> computedElementsContainers = new ArrayList<>();
+		ArrayList<SemanticElement> rootComputedElements = new ArrayList<>();
 
 		for (SemanticElement semanticElement : mdl.getElementSet().getSemanticElements()) {
 			if (semanticElement.isComputedIn()) {
@@ -157,15 +152,18 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		while (iterator.hasNext()) {
 			IElementValue elementValue = iterator.next();
 			if (elementValue.getSemanticElement() != null) {
-				normalizeSemanticContainers(elementValueSet, elementValue, iterator);
+				;
+				normalizeSemanticContainers(elementValueSet, elementValue, iterator, containers);
 			}
 		}
 
 		for (SemanticElement computedElementOwner : computedElementsContainers) {
 
-			if (computedElementOwner.getParent() != null) {
+			if (computedElementOwner.getParent() != null &&
+					elementValueSet.hasElementValuesByName(computedElementOwner.getParent())) {
+
 				List<IElementValue> foundElements = elementValueSet.getElementValuesByName(
-					computedElementOwner.getParent().getName());
+					computedElementOwner.getParent());
 
 				for (IElementValue elementValue : foundElements) {
 
@@ -230,10 +228,9 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 					this.getSemanticInterpreter().execute(
 						child.getName() + "_COMPUTEDIN", computedInElement, properties);
 
-					// evalRule(lang, rule, computedInElement, properties);
 				}
 
-				for (IElementValue parentValue : elementValueSet.getElementValuesByName(child.getParent().getName())) {
+				for (IElementValue parentValue : elementValueSet.getElementValuesByName(child.getParent())) {
 					parentValue.addChild(computedInElement);
 					break;
 				}
@@ -261,56 +258,73 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 	}
 
-	void walkNullFlavor(IElementValue elementValue, ElementValueSet elementValueSet, Properties properties) {
-		if (elementValue.getSemanticElement() != null) {
-			for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
-				if (child.isNullFlavor()) {
+	void walkNullFlavor(ElementValueSet elementValueSet, Properties properties) {
 
-					boolean runForElement = true;
+		ArrayList<Pair<IElementValue, SemanticElement>> toRun = new ArrayList<>();
 
-					for (SemanticElementRelationship ser : child.getRelationships()) {
-						for (IElementValue childElement : elementValue.getChildren()) {
-							if (ser.getRelatedSemanticElement() != null) {
-								if (childElement.getSemanticElement().getName().equals(
-									ser.getRelatedSemanticElement().getName())) {
+		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
+
+			logger.trace("walkNullFlavor " + elementValue.getSemanticElement().getName());
+
+			if (elementValue.getSemanticElement() != null) {
+				for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
+
+					logger.trace("walkNullFlavor child " + child.getName());
+
+					if (child.isNullFlavor()) {
+
+						logger.trace("child is null flavor" + child.getName());
+
+						boolean runForElement = true;
+
+						for (SemanticElementRelationship ser : child.getRelationships()) {
+							for (IElementValue childElement : elementValue.getChildren()) {
+								if (ser.getRelatedSemanticElement() != null) {
+									if (childElement.getSemanticElement().getName().equals(
+										ser.getRelatedSemanticElement().getName())) {
+
+										logger.trace(
+											"do not run found element " + childElement.getSemanticElement().getName());
+										runForElement = false;
+									}
+									if (ser.getRelatedSemanticElement().isComputedIn()) {
+
+										logger.trace(
+											"do not run, isComputedIn" + childElement.getSemanticElement().getName());
+
+										runForElement = false;
+									}
+								} else {
+									logger.error(
+										"Error! processing Null Flavor " + child.getName() +
+												", NULLFLAVOR relationship missing semantic element");
 									runForElement = false;
 								}
-								if (ser.getRelatedSemanticElement().isComputedIn()) {
-									runForElement = false;
-								}
-							} else {
-								logger.error(
-									"Error! processing Null Flavor " + child.getName() +
-											", NULLFLAVOR relationship missing semantic element");
-								runForElement = false;
 							}
+
 						}
 
-					}
-
-					if (runForElement) {
-						try {
-
-							SemanticElementRelationship ser = child.getRelationshipByName("NULLFLAVOR");
-							logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
-							XElementValue computedInElement = new XElementValue(
-								ser.getRelatedSemanticElement(), elementValueSet);
-							this.getSemanticInterpreter().execute("setNullFlavor", computedInElement, properties);
-
-							// String rule = child.getComputedValue().getExpression();
-							// String lang = child.getComputedValue().getLanguage();
-							// evalRule(lang, rule, computedInElement, properties);
-							elementValue.addChild(computedInElement);
-						} catch (Exception e) {
-
+						if (runForElement) {
+							toRun.add(Pair.of(elementValue, child));
 						}
 					}
 				}
 			}
 		}
 
-		for (IElementValue childElementValue : elementValue.getChildren()) {
-			walkNullFlavor(childElementValue, elementValueSet, properties);
+		for (Pair<IElementValue, SemanticElement> nullFlavorToRun : toRun) {
+			try {
+				SemanticElementRelationship ser = nullFlavorToRun.getRight().getRelationshipByName("NULLFLAVOR");
+				logger.trace("Running Null Flavor " + ser.getRelatedSemanticElement().getName());
+				XElementValue nullFlavor = new XElementValue(ser.getRelatedSemanticElement(), elementValueSet);
+				this.getSemanticInterpreter().execute(
+					"setNullFlavorFor" + nullFlavorToRun.getRight().getName(), nullFlavor, properties);
+				nullFlavorToRun.getLeft().addChild(nullFlavor);
+				nullFlavor.setParent(nullFlavorToRun.getLeft());
+
+			} catch (Exception e) {
+				logger.error("Error processing null flavor " + nullFlavorToRun.getRight().getName(), e);
+			}
 		}
 	}
 
@@ -351,16 +365,16 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			return;
 		}
 
-		HashMap<String, XElementValue> fillInTheBlanks = new HashMap<String, XElementValue>();
+		HashMap<String, XElementValue> fillInTheBlanks = new HashMap<>();
 
 		logger.trace("Root Semantic Element " + rootSemantic.getName());
 
 		watch.split();
 		logger.trace("Set up: " + watch.toSplitString());
 
-		XElementValue rootElement = new XElementValue(rootSemantic, elementValueSet);
-
-		fillInTheBlanks.put(rootSemantic.getName(), rootElement);
+		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+			fillInTheBlanks.put(rootSemantic.getName(), (XElementValue) rootElementValue);
+		}
 
 		watch.split();
 		logger.trace("fillInTheBlanks: " + watch.toSplitString());
@@ -373,7 +387,7 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			IElementValue value = iterator.next();
 			if (value.getParent() == null) {
 				logger.trace("ORPHAN ELEMENT " + value.getSemanticElement().getName());
-				Stack<SemanticElement> path = new Stack<SemanticElement>();
+				Stack<SemanticElement> path = new Stack<>();
 				SemanticElement currentParent = value.getSemanticElement().getParent();
 				while (currentParent != null) {
 					path.push(currentParent);
@@ -402,15 +416,24 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		watch.split();
 		logger.trace("update all semantic containment: " + watch.toSplitString());
 
-		walkComputedIn(mdl, elementValueSet, properties);
+		HashMap<String, IElementValue> containers = new HashMap<String, IElementValue>();
+
+		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+			containers.put(rootElementValue.getSemanticElement().getName(), rootElementValue);
+		}
+
+		walkComputedIn(mdl, elementValueSet, properties, containers);
 		watch.split();
 		logger.trace("walkComputedIn: " + watch.toSplitString());
 
-		walkNullFlavor(rootElement, elementValueSet, properties);
+		walkNullFlavor(elementValueSet, properties);
+
 		watch.split();
 		logger.trace("walkNullFlavor: " + watch.toSplitString());
 
-		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
+		for (
+
+		IElementValue elementValue : elementValueSet.getAllElementValues()) {
 			if (elementValue.getSemanticElement() != null && elementValue.getSemanticElement().getParent() == null) {
 				if (elementValue.value() instanceof XDataStruct) {
 					setYNodeValuesForBag((YBag) yroot, (XDataStruct) elementValue.value());
@@ -435,7 +458,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 		if (child == null || container == null) {
 			return;
 		}
-		logger.trace("getPath " + container.getLocation() + " " + child.getLocation());
 		bags.push(child);
 		if (child.getParentNode() != null && container != null && !container.equals(child.getParentNode())) {
 			getPath(bags, container, child.getParentNode());
@@ -451,43 +473,27 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 
 	void walkModel(YNode currentYBag, IElementValue elementValue) {
 
-		if (logger.isTraceEnabled()) {
-			logger.trace("walk model " + elementValue.getSemanticElement().getName());
-			logger.trace("Start walkModel " + elementValue.getSemanticElement().getName());
-			logger.trace("walkModel location  " + currentYBag.getNode().getLocation());
-			logger.trace("walkModel complete path " + currentYBag.getNode().getCompletePath());
-			logger.trace("walkModel relative path " + currentYBag.getNode().getCurrentRelative());
-		}
-		//
+		logger.trace("walkModel : " + elementValue.getName());
 
 		Node node = elementValue.getSemanticElement().getSyntaxNode();
 
-		HashMap<Node, YNode> createdNodes = new HashMap<Node, YNode>();
+		HashMap<Node, YNode> createdNodes = new HashMap<>();
 
 		for (IElementValue childElementValue : elementValue.getChildren()) {
-			Stack<Node> bags = new Stack<Node>();
-
-			if (logger.isTraceEnabled()) {
-				logger.trace("walkemodel " + currentYBag.getNode().getCompletePath());
-				if (childElementValue.getSemanticElement().getSyntaxNode() != null) {
-					logger.trace(
-						"walkemodel " + childElementValue.getSemanticElement().getSyntaxNode().getCompletePath());
-				}
-			}
+			Stack<Node> bags = new Stack<>();
 
 			getPath(bags, currentYBag.getNode(), childElementValue.getSemanticElement().getSyntaxNode());
+
+			logger.trace("walkModel child : " + childElementValue.getName());
 
 			YNode ynode = currentYBag;
 			while (!bags.isEmpty()) {
 				Node newNode = bags.pop();
 
-				if (logger.isTraceEnabled()) {
-					logger.trace("pop " + newNode.getCompletePath());
-				}
-
 				YNode child = null;
 				if (newNode instanceof Choice) {
 					if (!createdNodes.containsKey(newNode)) {
+						logger.trace("Create YChoice: " + newNode.getName());
 						createdNodes.put(newNode, new YChoice((Choice) newNode, ynode));
 						child = createdNodes.get(newNode);
 						ynode.addYNode(child);
@@ -497,6 +503,8 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 				if (newNode instanceof Bag) {
 
 					if (newNode.getMaxOccurs() != 1 || !createdNodes.containsKey(newNode)) {
+
+						logger.trace("Create YBag: " + newNode.getName());
 						createdNodes.put(newNode, new YBag((Bag) newNode, ynode));
 
 						child = createdNodes.get(newNode);
@@ -510,8 +518,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 											elementValue.getSemanticElement().getName() + " " +
 											getFullPathForNode(child.getNode()) + " " + childElementValue.value());
 
-								// newNode.getCompletePath();
-
 							}
 						}
 						ynode.addYNode(child);
@@ -521,6 +527,9 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 				}
 				if (newNode instanceof LeafSyntaxTranslator) {
 					if (!createdNodes.containsKey(newNode)) {
+
+						logger.trace("Create YLeaf: " + newNode.getName());
+
 						createdNodes.put(newNode, new YLeaf((LeafSyntaxTranslator) newNode, ynode));
 						child = createdNodes.get(newNode);
 						setLeafValue((YLeaf) child, childElementValue.value());
@@ -534,68 +543,12 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			}
 
 			if (ynode != null) {
+
+				logger.trace("ynode setvalue " + ynode.getNode().getName() + " : " + childElementValue.getXValue());
 				ynode.setElementValue(childElementValue);
 				walkModel(ynode, childElementValue);
 			}
 		}
-
-		if (false && node instanceof Bag) {
-
-			Stack<Node> bags = new Stack<Node>();
-
-			// Populate bags stack
-			getPath(bags, currentYBag.getNode(), node);
-
-			while (!bags.isEmpty()) {
-				Node newNode = bags.pop();
-
-				List<YNode> yNodes = currentYBag.getYNodesForNode(newNode);
-				YNode child = null;
-				if (yNodes.isEmpty()) {
-					if (newNode instanceof Choice) {
-						child = new YChoice((Choice) newNode, currentYBag);
-					}
-					if (newNode instanceof Bag) {
-						child = new YBag((Bag) newNode, currentYBag);
-					}
-
-					child.setElementValue(elementValue);
-					currentYBag.addYNode(child);
-				} else {
-
-					for (YNode yNode : yNodes) {
-
-						if (yNode.getElementValue() != null &&
-								yNode.getElementValue().equals(elementValue.getParent())) {
-							child = yNode;
-						}
-
-					}
-
-					/**
-					 * @TODO
-					 *       This is where the simplification comes into effect
-					 *       We just do not have the structures to support correct creation of nodes
-					 *       so we just support local containers with cardinality of 1
-					 */
-					if (child == null) {
-
-						if (newNode.getMaxOccurs() == 1 && !yNodes.isEmpty()) {
-							child = yNodes.get(0);
-						} else {
-							child = new YBag((Bag) newNode, currentYBag);
-							child.setElementValue(elementValue);
-							currentYBag.addYNode(child);
-						}
-					}
-
-				}
-			}
-		}
-
-		// for (IElementValue childElementValue : elementValue.getChildren()) {
-		// walkModel(childElementValue, elementValueSet, properties);
-		// }
 
 	}
 
@@ -604,275 +557,6 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 			return n.getLocation();
 		} else {
 			return getFullPathForNode(n.getParentNode()) + "/" + n.getLocation();
-		}
-	}
-
-	void walkMode2l(YNode currentYBag, IElementValue elementValue) {
-
-		logger.trace("walkModel Semantic Element " + elementValue.getSemanticElement().getName());
-
-		Node childType = elementValue.getSemanticElement().getSyntaxNode();
-
-		if (childType instanceof Bag) {
-
-			logger.trace("walkModel Bag node " + childType.getLocation());
-
-			Stack<Node> bags = new Stack<Node>();
-
-			// Populate bags stack
-			getPath(bags, currentYBag.getNode(), childType);
-
-			YNode currentParent = currentYBag;
-
-			// iterate over bags stack
-			while (!bags.isEmpty()) {
-				Node newNode = bags.pop();
-
-				List<YNode> yNodes = currentParent.getYNodesForNode(newNode);
-				YNode child = null;
-				if (yNodes.isEmpty()) {
-					if (newNode instanceof Choice) {
-						child = new YChoice((Choice) newNode, currentParent);
-					}
-					if (newNode instanceof Bag) {
-						child = new YBag((Bag) newNode, currentParent);
-					}
-
-					child.setElementValue(elementValue);
-					currentParent.addYNode(child);
-				} else {
-
-					for (YNode yNode : yNodes) {
-
-						if (yNode.getElementValue() != null &&
-								yNode.getElementValue().equals(elementValue.getParent())) {
-							child = yNode;
-						}
-
-					}
-
-					/**
-					 * @TODO
-					 *       This is where the simplification comes into effect
-					 *       We just do not have the structures to support correct creation of nodes
-					 *       so we just support local containers with cardinality of 1
-					 */
-					if (child == null) {
-
-						if (newNode.getMaxOccurs() == 1 && !yNodes.isEmpty()) {
-							child = yNodes.get(0);
-						} else {
-							child = new YBag((Bag) newNode, currentParent);
-							child.setElementValue(elementValue);
-							currentParent.addYNode(child);
-						}
-					}
-
-				}
-
-				currentParent = child;
-
-			}
-
-			// Use a set to make sure we do not get duplicates
-			// This might not be necessary
-			Set<IElementValue> setofChildren = new HashSet<IElementValue>();
-
-			for (IElementValue elementValueChild : elementValue.getChildren()) {
-
-				logger.trace("adding " + elementValueChild.getSemanticElement().getName());
-
-				setofChildren.add(elementValueChild);
-			}
-
-			// recursively walk the model
-			for (IElementValue elementValueChild : setofChildren) {
-				logger.trace("continue walking model " + elementValueChild.getSemanticElement().getName());
-				logger.trace(
-					"continue walking model " + elementValueChild.getSemanticElement().getSyntaxNode().getLocation());
-
-				walkModel(currentParent, elementValueChild);
-			}
-
-			// if the current element has a value - set the value on the bag
-			if (elementValue.value() != null) {
-				try {
-					setYNodeValuesForBag((YBag) currentParent, (XDataStruct) elementValue.value());
-				} catch (RuntimeException re) {
-					// r
-				}
-			}
-
-		} else if (childType instanceof Choice) {
-			logger.trace("walkModel Choice node " + childType.getLocation());
-			YChoice child = new YChoice((Choice) childType, currentYBag);
-			currentYBag.addYNode(child);
-			Stack<Node> bags = new Stack<Node>();
-
-			getPath(bags, currentYBag.getNode(), childType);
-
-		} else {
-			logger.trace("walkModel leaf node " + childType.getLocation());
-			// process a leaf, similar to bag processing
-			Stack<Node> bags = new Stack<Node>();
-
-			getPath(bags, currentYBag.getNode(), childType);
-
-			if (!bags.isEmpty()) {
-				YBag currentParent = (YBag) currentYBag;
-				while (!bags.isEmpty()) {
-					Node newNode = bags.pop();
-					if (newNode instanceof Bag) {
-						List<YNode> yNodes = currentParent.getYNodesForNode(newNode);
-						YBag child = null;
-						if (newNode.getMaxOccurs() > 1 || yNodes.isEmpty()) {
-							child = new YBag((Bag) newNode, currentParent);
-							currentParent.addYNode(child);
-						} else {
-							child = (YBag) yNodes.get(0);
-
-						}
-						currentParent = child;
-					} else {
-						YLeaf aachild = new YLeaf((LeafSyntaxTranslator) childType, currentParent);
-						setLeafValue(aachild, elementValue.value());
-						currentParent.addYNode(aachild);
-					}
-
-				}
-			} else {
-
-				if (childType != null) {
-					YLeaf aachild = new YLeaf((LeafSyntaxTranslator) childType, currentYBag);
-					setLeafValue(aachild, elementValue.value());
-				}
-
-			}
-
-		}
-	}
-
-	void walkModelOriginal(YBag currentYBag, IElementValue elementValue) {
-
-		Node childType = elementValue.getSemanticElement().getSyntaxNode();
-
-		if (childType instanceof Bag) {
-			Stack<Node> bags = new Stack<Node>();
-
-			// Populate bags stack
-			getPath(bags, currentYBag.getNode(), childType);
-
-			YBag currentParent = currentYBag;
-
-			// iterate over bags stack
-			while (!bags.isEmpty()) {
-				Node newNode = bags.pop();
-
-				List<YNode> yNodes = currentParent.getYNodesForNode(newNode);
-				YBag child = null;
-				if (yNodes.isEmpty()) {
-					child = new YBag((Bag) newNode, currentParent);
-
-					child.setElementValue(elementValue);
-					currentParent.addYNode(child);
-				} else {
-
-					for (YNode yNode : yNodes) {
-
-						if (yNode.getElementValue() != null &&
-								yNode.getElementValue().equals(elementValue.getParent())) {
-							child = (YBag) yNode;
-						}
-
-					}
-
-					/**
-					 * @TODO
-					 *       This is where the simplification comes into effect
-					 *       We just do not have the structures to support correct creation of nodes
-					 *       so we just support local containers with cardinality of 1
-					 */
-					if (child == null) {
-
-						if (newNode.getMaxOccurs() == 1 && !yNodes.isEmpty()) {
-							child = (YBag) yNodes.get(0);
-						} else {
-							child = new YBag((Bag) newNode, currentParent);
-							child.setElementValue(elementValue);
-							currentParent.addYNode(child);
-						}
-					}
-
-				}
-
-				currentParent = child;
-
-			}
-
-			// Use a set to make sure we do not get duplicates
-			// This might not be necessary
-			Set<IElementValue> setofChildren = new HashSet<IElementValue>();
-
-			for (IElementValue elementValueChild : elementValue.getChildren()) {
-				setofChildren.add(elementValueChild);
-			}
-
-			// recursively walk the model
-			for (IElementValue elementValueChild : setofChildren) {
-				walkModel(currentParent, elementValueChild);
-			}
-
-			// if the current element has a value - set the value on the bag
-			if (elementValue.value() != null) {
-				try {
-					setYNodeValuesForBag(currentParent, (XDataStruct) elementValue.value());
-				} catch (RuntimeException re) {
-
-				}
-			}
-
-		} else if (childType instanceof Choice) {
-			/**
-			 * @TODO Add support for choice
-			 */
-			YChoice child = new YChoice((Choice) childType, currentYBag);
-			currentYBag.addYNode(child);
-
-		} else {
-
-			// process a leaf, similar to bag processing
-			Stack<Node> bags = new Stack<Node>();
-
-			getPath(bags, currentYBag.getNode(), childType);
-
-			if (!bags.isEmpty()) {
-				YBag currentParent = currentYBag;
-				while (!bags.isEmpty()) {
-					Node newNode = bags.pop();
-					if (newNode instanceof Bag) {
-						List<YNode> yNodes = currentParent.getYNodesForNode(newNode);
-						YBag child = null;
-						if (newNode.getMaxOccurs() > 1 || yNodes.isEmpty()) {
-							child = new YBag((Bag) newNode, currentParent);
-							currentParent.addYNode(child);
-						} else {
-							child = (YBag) yNodes.get(0);
-
-						}
-						currentParent = child;
-					} else {
-						YLeaf aachild = new YLeaf((LeafSyntaxTranslator) childType, currentParent);
-						setLeafValue(aachild, elementValue.value());
-						currentParent.addYNode(aachild);
-					}
-
-				}
-			} else {
-
-				YLeaf aachild = new YLeaf((LeafSyntaxTranslator) childType, currentYBag);
-				setLeafValue(aachild, elementValue.value());
-			}
-
 		}
 	}
 
@@ -1318,7 +1002,7 @@ public class SimplifiedSemanticParser extends DefaultSemanticParser {
 	}
 
 	private MDMIDatatype getDatatype(Node node) {
-		ArrayList<String> fns = new ArrayList<String>();
+		ArrayList<String> fns = new ArrayList<>();
 		Node n = node;
 		while (n.getSemanticElement() == null) {
 			fns.add(0, n.getFieldName());

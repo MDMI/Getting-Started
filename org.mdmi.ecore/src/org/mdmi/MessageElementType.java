@@ -103,7 +103,11 @@ public enum MessageElementType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final MessageElementType[] VALUES_ARRAY = new MessageElementType[] { NORMAL, COMPUTED, LOCAL, };
+	private static final MessageElementType[] VALUES_ARRAY = new MessageElementType[] {
+			NORMAL,
+			COMPUTED,
+			LOCAL,
+		};
 
 	/**
 	 * A public read-only list of all the '<em><b>Message Element Type</b></em>' enumerators.
@@ -159,12 +163,9 @@ public enum MessageElementType implements Enumerator {
 	 */
 	public static MessageElementType get(int value) {
 		switch (value) {
-			case NORMAL_VALUE:
-				return NORMAL;
-			case COMPUTED_VALUE:
-				return COMPUTED;
-			case LOCAL_VALUE:
-				return LOCAL;
+			case NORMAL_VALUE: return NORMAL;
+			case COMPUTED_VALUE: return COMPUTED;
+			case LOCAL_VALUE: return LOCAL;
 		}
 		return null;
 	}
@@ -207,8 +208,9 @@ public enum MessageElementType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
-		return value;
+	  return value;
 	}
 
 	/**
@@ -216,8 +218,9 @@ public enum MessageElementType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
-		return name;
+	  return name;
 	}
 
 	/**
@@ -225,8 +228,9 @@ public enum MessageElementType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
-		return literal;
+	  return literal;
 	}
 
 	/**

@@ -73,7 +73,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	public static boolean processTerminology = false;
 
-	private static String userName = "";;
+	private static String userName = "";
 
 	public static String createKey(String source, String code, String target) {
 		return source + "_X_" + code + "_Y_" + target + "_Z_";
@@ -113,14 +113,23 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 	 */
 	@Override
 	public TransformCode transform(String source, String code, String target) {
+
+		if (!StringUtils.isEmpty(source) && source.equals(target)) {
+			logger.trace("SOURCE AND TARGET ARE THE SAME" + source);
+			return BLANK;
+		}
 		logger.debug("Transform from " + code + " from " + source + " to " + target);
 
 		if (processTerminology && !StringUtils.isEmpty(target) && !StringUtils.isEmpty(code) &&
 				!StringUtils.isEmpty(source) && !StringUtils.isEmpty(fhirTerminologyURL)) {
 			try {
-				return translate(fhirTerminologyURL, source, code, target);
+				String key = createKey(source, code, target);
+				if (codeValues.containsKey(key)) {
+					return codeValues.get(key);
+				} else {
+					return translate(fhirTerminologyURL, source, code, target);
+				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 
 			}
 		}
@@ -144,7 +153,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	private TransformCode translate(String url, String source, String code, String target) throws Exception {
 
-		logger.debug("translate ");
+		logger.trace("actually translate " + source + "  " + code + "  to " + target);
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
 			if (StringUtils.isEmpty(source)) {
 				throw new Exception("SOURCE IS NULL");
@@ -189,6 +198,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 				JSONArray msg = (JSONArray) jsonObject.get("parameter");
 
 				if (msg == null) {
+					codeValues.put(key, BLANK);
 					return BLANK;
 				}
 
@@ -232,6 +242,9 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 			} catch (ParseException e) {
 				logger.error(e.getMessage());
 			}
+			codeValues.put(key, BLANK);
+
+			logger.trace("NO TRANSFORM VALUE " + key);
 			return BLANK;
 		}
 

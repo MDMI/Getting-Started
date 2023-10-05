@@ -151,6 +151,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLocation()
 	 * @generated NOT
 	 * @ordered
@@ -281,6 +282,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -290,12 +292,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__NAME, oldName, name));
-		}
 	}
 
 	/**
@@ -303,6 +305,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -312,14 +315,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.NODE__DESCRIPTION, oldDescription, description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -327,6 +328,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMinOccurs() {
 		return minOccurs;
 	}
@@ -336,13 +338,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__MIN_OCCURS, oldMinOccurs, minOccurs));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__MIN_OCCURS, oldMinOccurs, minOccurs));
 	}
 
 	/**
@@ -350,6 +351,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getMaxOccurs() {
 		return maxOccurs;
 	}
@@ -359,13 +361,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__MAX_OCCURS, oldMaxOccurs, maxOccurs));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__MAX_OCCURS, oldMaxOccurs, maxOccurs));
 	}
 
 	/**
@@ -373,6 +374,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLocation() {
 		return location;
 	}
@@ -382,12 +384,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__LOCATION, oldLocation, location));
-		}
 	}
 
 	/**
@@ -395,6 +397,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLocationExpressionLanguage() {
 		return locationExpressionLanguage;
 	}
@@ -404,15 +407,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocationExpressionLanguage(String newLocationExpressionLanguage) {
 		String oldLocationExpressionLanguage = locationExpressionLanguage;
 		locationExpressionLanguage = newLocationExpressionLanguage;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.NODE__LOCATION_EXPRESSION_LANGUAGE,
-					oldLocationExpressionLanguage, locationExpressionLanguage));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__LOCATION_EXPRESSION_LANGUAGE, oldLocationExpressionLanguage, locationExpressionLanguage));
 	}
 
 	/**
@@ -420,11 +420,10 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel getSyntaxModel() {
-		if (eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL) {
-			return null;
-		}
-		return (MessageSyntaxModel) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL) return null;
+		return (MessageSyntaxModel)eInternalContainer();
 	}
 
 	/**
@@ -433,7 +432,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxModel(MessageSyntaxModel newSyntaxModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newSyntaxModel, MDMIPackage.NODE__SYNTAX_MODEL, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newSyntaxModel, MDMIPackage.NODE__SYNTAX_MODEL, msgs);
 		return msgs;
 	}
 
@@ -442,29 +441,21 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
-		if (newSyntaxModel != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL && newSyntaxModel != null)) {
-			if (EcoreUtil.isAncestor(this, newSyntaxModel)) {
+		if (newSyntaxModel != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.NODE__SYNTAX_MODEL && newSyntaxModel != null)) {
+			if (EcoreUtil.isAncestor(this, newSyntaxModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newSyntaxModel != null) {
-				msgs = ((InternalEObject) newSyntaxModel).eInverseAdd(
-					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, MessageSyntaxModel.class, msgs);
-			}
+			if (newSyntaxModel != null)
+				msgs = ((InternalEObject)newSyntaxModel).eInverseAdd(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, MessageSyntaxModel.class, msgs);
 			msgs = basicSetSyntaxModel(newSyntaxModel, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.NODE__SYNTAX_MODEL, newSyntaxModel, newSyntaxModel));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__SYNTAX_MODEL, newSyntaxModel, newSyntaxModel));
 	}
 
 	/**
@@ -472,6 +463,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElement getSemanticElement() {
 		return semanticElement;
 	}
@@ -485,13 +477,8 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 		SemanticElement oldSemanticElement = semanticElement;
 		semanticElement = newSemanticElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.NODE__SEMANTIC_ELEMENT, oldSemanticElement, newSemanticElement);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__SEMANTIC_ELEMENT, oldSemanticElement, newSemanticElement);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -501,27 +488,19 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSemanticElement(SemanticElement newSemanticElement) {
 		if (newSemanticElement != semanticElement) {
 			NotificationChain msgs = null;
-			if (semanticElement != null) {
-				msgs = ((InternalEObject) semanticElement).eInverseRemove(
-					this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
-			}
-			if (newSemanticElement != null) {
-				msgs = ((InternalEObject) newSemanticElement).eInverseAdd(
-					this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
-			}
+			if (semanticElement != null)
+				msgs = ((InternalEObject)semanticElement).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
+			if (newSemanticElement != null)
+				msgs = ((InternalEObject)newSemanticElement).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
 			msgs = basicSetSemanticElement(newSemanticElement, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.NODE__SEMANTIC_ELEMENT, newSemanticElement,
-					newSemanticElement));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__SEMANTIC_ELEMENT, newSemanticElement, newSemanticElement));
 	}
 
 	/**
@@ -529,6 +508,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFieldName() {
 		return fieldName;
 	}
@@ -538,13 +518,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFieldName(String newFieldName) {
 		String oldFieldName = fieldName;
 		fieldName = newFieldName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__FIELD_NAME, oldFieldName, fieldName));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__FIELD_NAME, oldFieldName, fieldName));
 	}
 
 	/**
@@ -552,6 +531,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public boolean isIsSyntacticField() {
 		return isSyntacticField;
 	}
@@ -561,15 +541,12 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsSyntacticField(boolean newIsSyntacticField) {
 		boolean oldIsSyntacticField = isSyntacticField;
 		isSyntacticField = newIsSyntacticField;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.NODE__IS_SYNTACTIC_FIELD, oldIsSyntacticField,
-					isSyntacticField));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__IS_SYNTACTIC_FIELD, oldIsSyntacticField, isSyntacticField));
 	}
 
 	/**
@@ -577,6 +554,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPath() {
 		return path;
 	}
@@ -586,17 +564,18 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPath(String newPath) {
 		String oldPath = path;
 		path = newPath;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.NODE__PATH, oldPath, path));
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public String getCompletePath() {
@@ -631,16 +610,13 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.NODE__SYNTAX_MODEL:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetSyntaxModel((MessageSyntaxModel) otherEnd, msgs);
+				return basicSetSyntaxModel((MessageSyntaxModel)otherEnd, msgs);
 			case MDMIPackage.NODE__SEMANTIC_ELEMENT:
-				if (semanticElement != null) {
-					msgs = ((InternalEObject) semanticElement).eInverseRemove(
-						this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
-				}
-				return basicSetSemanticElement((SemanticElement) otherEnd, msgs);
+				if (semanticElement != null)
+					msgs = ((InternalEObject)semanticElement).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, SemanticElement.class, msgs);
+				return basicSetSemanticElement((SemanticElement)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -670,8 +646,7 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.NODE__SYNTAX_MODEL:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, MessageSyntaxModel.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, MessageSyntaxModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -719,37 +694,37 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.NODE__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.NODE__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 			case MDMIPackage.NODE__MIN_OCCURS:
-				setMinOccurs((Integer) newValue);
+				setMinOccurs((Integer)newValue);
 				return;
 			case MDMIPackage.NODE__MAX_OCCURS:
-				setMaxOccurs((Integer) newValue);
+				setMaxOccurs((Integer)newValue);
 				return;
 			case MDMIPackage.NODE__LOCATION:
-				setLocation((String) newValue);
+				setLocation((String)newValue);
 				return;
 			case MDMIPackage.NODE__LOCATION_EXPRESSION_LANGUAGE:
-				setLocationExpressionLanguage((String) newValue);
+				setLocationExpressionLanguage((String)newValue);
 				return;
 			case MDMIPackage.NODE__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel) newValue);
+				setSyntaxModel((MessageSyntaxModel)newValue);
 				return;
 			case MDMIPackage.NODE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement) newValue);
+				setSemanticElement((SemanticElement)newValue);
 				return;
 			case MDMIPackage.NODE__FIELD_NAME:
-				setFieldName((String) newValue);
+				setFieldName((String)newValue);
 				return;
 			case MDMIPackage.NODE__IS_SYNTACTIC_FIELD:
-				setIsSyntacticField((Boolean) newValue);
+				setIsSyntacticField((Boolean)newValue);
 				return;
 			case MDMIPackage.NODE__PATH:
-				setPath((String) newValue);
+				setPath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -782,10 +757,10 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 				setLocationExpressionLanguage(LOCATION_EXPRESSION_LANGUAGE_EDEFAULT);
 				return;
 			case MDMIPackage.NODE__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel) null);
+				setSyntaxModel((MessageSyntaxModel)null);
 				return;
 			case MDMIPackage.NODE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement) null);
+				setSemanticElement((SemanticElement)null);
 				return;
 			case MDMIPackage.NODE__FIELD_NAME:
 				setFieldName(FIELD_NAME_EDEFAULT);
@@ -809,39 +784,27 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.NODE__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.NODE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.NODE__MIN_OCCURS:
 				return minOccurs != MIN_OCCURS_EDEFAULT;
 			case MDMIPackage.NODE__MAX_OCCURS:
 				return maxOccurs != MAX_OCCURS_EDEFAULT;
 			case MDMIPackage.NODE__LOCATION:
-				return LOCATION_EDEFAULT == null
-						? location != null
-						: !LOCATION_EDEFAULT.equals(location);
+				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 			case MDMIPackage.NODE__LOCATION_EXPRESSION_LANGUAGE:
-				return LOCATION_EXPRESSION_LANGUAGE_EDEFAULT == null
-						? locationExpressionLanguage != null
-						: !LOCATION_EXPRESSION_LANGUAGE_EDEFAULT.equals(locationExpressionLanguage);
+				return LOCATION_EXPRESSION_LANGUAGE_EDEFAULT == null ? locationExpressionLanguage != null : !LOCATION_EXPRESSION_LANGUAGE_EDEFAULT.equals(locationExpressionLanguage);
 			case MDMIPackage.NODE__SYNTAX_MODEL:
 				return getSyntaxModel() != null;
 			case MDMIPackage.NODE__SEMANTIC_ELEMENT:
 				return semanticElement != null;
 			case MDMIPackage.NODE__FIELD_NAME:
-				return FIELD_NAME_EDEFAULT == null
-						? fieldName != null
-						: !FIELD_NAME_EDEFAULT.equals(fieldName);
+				return FIELD_NAME_EDEFAULT == null ? fieldName != null : !FIELD_NAME_EDEFAULT.equals(fieldName);
 			case MDMIPackage.NODE__IS_SYNTACTIC_FIELD:
 				return isSyntacticField != IS_SYNTACTIC_FIELD_EDEFAULT;
 			case MDMIPackage.NODE__PATH:
-				return PATH_EDEFAULT == null
-						? path != null
-						: !PATH_EDEFAULT.equals(path);
+				return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -853,11 +816,9 @@ public abstract class NodeImpl extends EObjectImpl implements Node {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");

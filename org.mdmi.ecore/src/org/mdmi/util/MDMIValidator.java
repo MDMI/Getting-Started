@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.xml.type.util.XMLTypeUtil;
+import org.mdmi.*;
 import org.mdmi.Bag;
 import org.mdmi.Choice;
 import org.mdmi.ConversionRule;
@@ -107,7 +108,7 @@ public class MDMIValidator extends EObjectValidator {
 	 */
 	@Override
 	protected EPackage getEPackage() {
-		return MDMIPackage.eINSTANCE;
+	  return MDMIPackage.eINSTANCE;
 	}
 
 	/**
@@ -121,70 +122,69 @@ public class MDMIValidator extends EObjectValidator {
 			Map<Object, Object> context) {
 		switch (classifierID) {
 			case MDMIPackage.MESSAGE_MODEL:
-				return validateMessageModel((MessageModel) value, diagnostics, context);
+				return validateMessageModel((MessageModel)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL:
-				return validateMessageSyntaxModel((MessageSyntaxModel) value, diagnostics, context);
+				return validateMessageSyntaxModel((MessageSyntaxModel)value, diagnostics, context);
 			case MDMIPackage.NODE:
-				return validateNode((Node) value, diagnostics, context);
+				return validateNode((Node)value, diagnostics, context);
 			case MDMIPackage.BAG:
-				return validateBag((Bag) value, diagnostics, context);
+				return validateBag((Bag)value, diagnostics, context);
 			case MDMIPackage.CHOICE:
-				return validateChoice((Choice) value, diagnostics, context);
+				return validateChoice((Choice)value, diagnostics, context);
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR:
-				return validateLeafSyntaxTranslator((LeafSyntaxTranslator) value, diagnostics, context);
+				return validateLeafSyntaxTranslator((LeafSyntaxTranslator)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_GROUP:
-				return validateMessageGroup((MessageGroup) value, diagnostics, context);
+				return validateMessageGroup((MessageGroup)value, diagnostics, context);
 			case MDMIPackage.DATA_RULE:
-				return validateDataRule((DataRule) value, diagnostics, context);
+				return validateDataRule((DataRule)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_SET:
-				return validateSemanticElementSet((SemanticElementSet) value, diagnostics, context);
+				return validateSemanticElementSet((SemanticElementSet)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT:
-				return validateSemanticElement((SemanticElement) value, diagnostics, context);
+				return validateSemanticElement((SemanticElement)value, diagnostics, context);
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE:
-				return validateSimpleMessageComposite((SimpleMessageComposite) value, diagnostics, context);
+				return validateSimpleMessageComposite((SimpleMessageComposite)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_COMPOSITE:
-				return validateMessageComposite((MessageComposite) value, diagnostics, context);
+				return validateMessageComposite((MessageComposite)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE:
-				return validateSemanticElementBusinessRule((SemanticElementBusinessRule) value, diagnostics, context);
+				return validateSemanticElementBusinessRule((SemanticElementBusinessRule)value, diagnostics, context);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP:
-				return validateSemanticElementRelationship((SemanticElementRelationship) value, diagnostics, context);
+				return validateSemanticElementRelationship((SemanticElementRelationship)value, diagnostics, context);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE:
-				return validateMDMIBusinessElementReference((MDMIBusinessElementReference) value, diagnostics, context);
+				return validateMDMIBusinessElementReference((MDMIBusinessElementReference)value, diagnostics, context);
 			case MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE:
-				return validateMDMIBusinessElementRule((MDMIBusinessElementRule) value, diagnostics, context);
+				return validateMDMIBusinessElementRule((MDMIBusinessElementRule)value, diagnostics, context);
 			case MDMIPackage.CONVERSION_RULE:
-				return validateConversionRule((ConversionRule) value, diagnostics, context);
+				return validateConversionRule((ConversionRule)value, diagnostics, context);
 			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE:
-				return validateMDMIDomainDictionaryReference(
-					(MDMIDomainDictionaryReference) value, diagnostics, context);
+				return validateMDMIDomainDictionaryReference((MDMIDomainDictionaryReference)value, diagnostics, context);
 			case MDMIPackage.MDMI_EXPRESSION:
-				return validateMDMIExpression((MDMIExpression) value, diagnostics, context);
+				return validateMDMIExpression((MDMIExpression)value, diagnostics, context);
 			case MDMIPackage.KEYWORD:
-				return validateKeyword((Keyword) value, diagnostics, context);
+				return validateKeyword((Keyword)value, diagnostics, context);
 			case MDMIPackage.MDMI_DATATYPE:
-				return validateMDMIDatatype((MDMIDatatype) value, diagnostics, context);
+				return validateMDMIDatatype((MDMIDatatype)value, diagnostics, context);
 			case MDMIPackage.DTS_PRIMITIVE:
-				return validateDTSPrimitive((DTSPrimitive) value, diagnostics, context);
+				return validateDTSPrimitive((DTSPrimitive)value, diagnostics, context);
 			case MDMIPackage.DTC_STRUCTURED:
-				return validateDTCStructured((DTCStructured) value, diagnostics, context);
+				return validateDTCStructured((DTCStructured)value, diagnostics, context);
 			case MDMIPackage.FIELD:
-				return validateField((Field) value, diagnostics, context);
+				return validateField((Field)value, diagnostics, context);
 			case MDMIPackage.DT_EXTERNAL:
-				return validateDTExternal((DTExternal) value, diagnostics, context);
+				return validateDTExternal((DTExternal)value, diagnostics, context);
 			case MDMIPackage.DTS_DERIVED:
-				return validateDTSDerived((DTSDerived) value, diagnostics, context);
+				return validateDTSDerived((DTSDerived)value, diagnostics, context);
 			case MDMIPackage.DTC_CHOICE:
-				return validateDTCChoice((DTCChoice) value, diagnostics, context);
+				return validateDTCChoice((DTCChoice)value, diagnostics, context);
 			case MDMIPackage.DTS_ENUMERATED:
-				return validateDTSEnumerated((DTSEnumerated) value, diagnostics, context);
+				return validateDTSEnumerated((DTSEnumerated)value, diagnostics, context);
 			case MDMIPackage.ENUMERATION_LITERAL:
-				return validateEnumerationLiteral((EnumerationLiteral) value, diagnostics, context);
+				return validateEnumerationLiteral((EnumerationLiteral)value, diagnostics, context);
 			case MDMIPackage.DATATYPE_MAP:
-				return validateDatatypeMap((DatatypeMap) value, diagnostics, context);
+				return validateDatatypeMap((DatatypeMap)value, diagnostics, context);
 			case MDMIPackage.MESSAGE_ELEMENT_TYPE:
-				return validateMessageElementType((MessageElementType) value, diagnostics, context);
+				return validateMessageElementType((MessageElementType)value, diagnostics, context);
 			case MDMIPackage.URI:
-				return validateURI((String) value, diagnostics, context);
+				return validateURI((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -507,9 +507,11 @@ public class MDMIValidator extends EObjectValidator {
 	 * @generated
 	 * @see #validateURI_Pattern
 	 */
-	public static final PatternMatcher[][] URI__PATTERN__VALUES = new PatternMatcher[][] {
-			new PatternMatcher[] {
-					XMLTypeUtil.createPatternMatcher("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?") } };
+	public static final PatternMatcher [][] URI__PATTERN__VALUES = new PatternMatcher [][] {
+			new PatternMatcher [] {
+				XMLTypeUtil.createPatternMatcher("^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?")
+			}
+		};
 
 	/**
 	 * Validates the Pattern constraint of '<em>URI</em>'.

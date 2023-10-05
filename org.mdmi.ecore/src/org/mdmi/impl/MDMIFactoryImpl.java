@@ -60,11 +60,12 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 */
 	public static MDMIFactory init() {
 		try {
-			MDMIFactory theMDMIFactory = (MDMIFactory) EPackage.Registry.INSTANCE.getEFactory(MDMIPackage.eNS_URI);
+			MDMIFactory theMDMIFactory = (MDMIFactory)EPackage.Registry.INSTANCE.getEFactory(MDMIPackage.eNS_URI);
 			if (theMDMIFactory != null) {
 				return theMDMIFactory;
 			}
-		} catch (Exception exception) {
+		}
+		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new MDMIFactoryImpl();
@@ -88,64 +89,35 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MDMIPackage.MESSAGE_MODEL:
-				return createMessageModel();
-			case MDMIPackage.MESSAGE_SYNTAX_MODEL:
-				return createMessageSyntaxModel();
-			case MDMIPackage.BAG:
-				return createBag();
-			case MDMIPackage.CHOICE:
-				return createChoice();
-			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR:
-				return createLeafSyntaxTranslator();
-			case MDMIPackage.MESSAGE_GROUP:
-				return createMessageGroup();
-			case MDMIPackage.DATA_RULE:
-				return createDataRule();
-			case MDMIPackage.SEMANTIC_ELEMENT_SET:
-				return createSemanticElementSet();
-			case MDMIPackage.SEMANTIC_ELEMENT:
-				return createSemanticElement();
-			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE:
-				return createSimpleMessageComposite();
-			case MDMIPackage.MESSAGE_COMPOSITE:
-				return createMessageComposite();
-			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE:
-				return createSemanticElementBusinessRule();
-			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP:
-				return createSemanticElementRelationship();
-			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE:
-				return createMDMIBusinessElementReference();
-			case MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE:
-				return createMDMIBusinessElementRule();
-			case MDMIPackage.CONVERSION_RULE:
-				return createConversionRule();
-			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE:
-				return createMDMIDomainDictionaryReference();
-			case MDMIPackage.MDMI_EXPRESSION:
-				return createMDMIExpression();
-			case MDMIPackage.KEYWORD:
-				return createKeyword();
-			case MDMIPackage.MDMI_DATATYPE:
-				return createMDMIDatatype();
-			case MDMIPackage.DTS_PRIMITIVE:
-				return createDTSPrimitive();
-			case MDMIPackage.DTC_STRUCTURED:
-				return createDTCStructured();
-			case MDMIPackage.FIELD:
-				return createField();
-			case MDMIPackage.DT_EXTERNAL:
-				return createDTExternal();
-			case MDMIPackage.DTS_DERIVED:
-				return createDTSDerived();
-			case MDMIPackage.DTC_CHOICE:
-				return createDTCChoice();
-			case MDMIPackage.DTS_ENUMERATED:
-				return createDTSEnumerated();
-			case MDMIPackage.ENUMERATION_LITERAL:
-				return createEnumerationLiteral();
-			case MDMIPackage.DATATYPE_MAP:
-				return createDatatypeMap();
+			case MDMIPackage.MESSAGE_MODEL: return createMessageModel();
+			case MDMIPackage.MESSAGE_SYNTAX_MODEL: return createMessageSyntaxModel();
+			case MDMIPackage.BAG: return createBag();
+			case MDMIPackage.CHOICE: return createChoice();
+			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR: return createLeafSyntaxTranslator();
+			case MDMIPackage.MESSAGE_GROUP: return createMessageGroup();
+			case MDMIPackage.DATA_RULE: return createDataRule();
+			case MDMIPackage.SEMANTIC_ELEMENT_SET: return createSemanticElementSet();
+			case MDMIPackage.SEMANTIC_ELEMENT: return createSemanticElement();
+			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE: return createSimpleMessageComposite();
+			case MDMIPackage.MESSAGE_COMPOSITE: return createMessageComposite();
+			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE: return createSemanticElementBusinessRule();
+			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP: return createSemanticElementRelationship();
+			case MDMIPackage.MDMI_BUSINESS_ELEMENT_REFERENCE: return createMDMIBusinessElementReference();
+			case MDMIPackage.MDMI_BUSINESS_ELEMENT_RULE: return createMDMIBusinessElementRule();
+			case MDMIPackage.CONVERSION_RULE: return createConversionRule();
+			case MDMIPackage.MDMI_DOMAIN_DICTIONARY_REFERENCE: return createMDMIDomainDictionaryReference();
+			case MDMIPackage.MDMI_EXPRESSION: return createMDMIExpression();
+			case MDMIPackage.KEYWORD: return createKeyword();
+			case MDMIPackage.MDMI_DATATYPE: return createMDMIDatatype();
+			case MDMIPackage.DTS_PRIMITIVE: return createDTSPrimitive();
+			case MDMIPackage.DTC_STRUCTURED: return createDTCStructured();
+			case MDMIPackage.FIELD: return createField();
+			case MDMIPackage.DT_EXTERNAL: return createDTExternal();
+			case MDMIPackage.DTS_DERIVED: return createDTSDerived();
+			case MDMIPackage.DTC_CHOICE: return createDTCChoice();
+			case MDMIPackage.DTS_ENUMERATED: return createDTSEnumerated();
+			case MDMIPackage.ENUMERATION_LITERAL: return createEnumerationLiteral();
+			case MDMIPackage.DATATYPE_MAP: return createDatatypeMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -164,8 +136,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 			case MDMIPackage.URI:
 				return createURIFromString(eDataType, initialValue);
 			default:
-				throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -182,8 +153,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 			case MDMIPackage.URI:
 				return convertURIToString(eDataType, instanceValue);
 			default:
-				throw new IllegalArgumentException(
-					"The datatype '" + eDataType.getName() + "' is not a valid classifier");
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -192,6 +162,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageModel createMessageModel() {
 		MessageModelImpl messageModel = new MessageModelImpl();
 		return messageModel;
@@ -202,6 +173,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageSyntaxModel createMessageSyntaxModel() {
 		MessageSyntaxModelImpl messageSyntaxModel = new MessageSyntaxModelImpl();
 		return messageSyntaxModel;
@@ -212,6 +184,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Bag createBag() {
 		BagImpl bag = new BagImpl();
 		return bag;
@@ -222,6 +195,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Choice createChoice() {
 		ChoiceImpl choice = new ChoiceImpl();
 		return choice;
@@ -232,6 +206,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LeafSyntaxTranslator createLeafSyntaxTranslator() {
 		LeafSyntaxTranslatorImpl leafSyntaxTranslator = new LeafSyntaxTranslatorImpl();
 		return leafSyntaxTranslator;
@@ -242,6 +217,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageGroup createMessageGroup() {
 		MessageGroupImpl messageGroup = new MessageGroupImpl();
 		return messageGroup;
@@ -252,6 +228,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataRule createDataRule() {
 		DataRuleImpl dataRule = new DataRuleImpl();
 		return dataRule;
@@ -262,6 +239,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet createSemanticElementSet() {
 		SemanticElementSetImpl semanticElementSet = new SemanticElementSetImpl();
 		return semanticElementSet;
@@ -272,6 +250,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElement createSemanticElement() {
 		SemanticElementImpl semanticElement = new SemanticElementImpl();
 		return semanticElement;
@@ -282,6 +261,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SimpleMessageComposite createSimpleMessageComposite() {
 		SimpleMessageCompositeImpl simpleMessageComposite = new SimpleMessageCompositeImpl();
 		return simpleMessageComposite;
@@ -292,6 +272,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageComposite createMessageComposite() {
 		MessageCompositeImpl messageComposite = new MessageCompositeImpl();
 		return messageComposite;
@@ -302,6 +283,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElementBusinessRule createSemanticElementBusinessRule() {
 		SemanticElementBusinessRuleImpl semanticElementBusinessRule = new SemanticElementBusinessRuleImpl();
 		return semanticElementBusinessRule;
@@ -312,6 +294,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElementRelationship createSemanticElementRelationship() {
 		SemanticElementRelationshipImpl semanticElementRelationship = new SemanticElementRelationshipImpl();
 		return semanticElementRelationship;
@@ -322,6 +305,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementReference createMDMIBusinessElementReference() {
 		MDMIBusinessElementReferenceImpl mdmiBusinessElementReference = new MDMIBusinessElementReferenceImpl();
 		return mdmiBusinessElementReference;
@@ -332,6 +316,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIBusinessElementRule createMDMIBusinessElementRule() {
 		MDMIBusinessElementRuleImpl mdmiBusinessElementRule = new MDMIBusinessElementRuleImpl();
 		return mdmiBusinessElementRule;
@@ -342,6 +327,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ConversionRule createConversionRule() {
 		ConversionRuleImpl conversionRule = new ConversionRuleImpl();
 		return conversionRule;
@@ -352,6 +338,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIDomainDictionaryReference createMDMIDomainDictionaryReference() {
 		MDMIDomainDictionaryReferenceImpl mdmiDomainDictionaryReference = new MDMIDomainDictionaryReferenceImpl();
 		return mdmiDomainDictionaryReference;
@@ -362,6 +349,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIExpression createMDMIExpression() {
 		MDMIExpressionImpl mdmiExpression = new MDMIExpressionImpl();
 		return mdmiExpression;
@@ -372,6 +360,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Keyword createKeyword() {
 		KeywordImpl keyword = new KeywordImpl();
 		return keyword;
@@ -382,6 +371,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIDatatype createMDMIDatatype() {
 		MDMIDatatypeImpl mdmiDatatype = new MDMIDatatypeImpl();
 		return mdmiDatatype;
@@ -392,6 +382,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTSPrimitive createDTSPrimitive() {
 		DTSPrimitiveImpl dtsPrimitive = new DTSPrimitiveImpl();
 		return dtsPrimitive;
@@ -402,6 +393,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTCStructured createDTCStructured() {
 		DTCStructuredImpl dtcStructured = new DTCStructuredImpl();
 		return dtcStructured;
@@ -412,6 +404,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Field createField() {
 		FieldImpl field = new FieldImpl();
 		return field;
@@ -422,6 +415,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTExternal createDTExternal() {
 		DTExternalImpl dtExternal = new DTExternalImpl();
 		return dtExternal;
@@ -432,6 +426,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTSDerived createDTSDerived() {
 		DTSDerivedImpl dtsDerived = new DTSDerivedImpl();
 		return dtsDerived;
@@ -442,6 +437,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTCChoice createDTCChoice() {
 		DTCChoiceImpl dtcChoice = new DTCChoiceImpl();
 		return dtcChoice;
@@ -452,6 +448,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DTSEnumerated createDTSEnumerated() {
 		DTSEnumeratedImpl dtsEnumerated = new DTSEnumeratedImpl();
 		return dtsEnumerated;
@@ -462,6 +459,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EnumerationLiteral createEnumerationLiteral() {
 		EnumerationLiteralImpl enumerationLiteral = new EnumerationLiteralImpl();
 		return enumerationLiteral;
@@ -472,6 +470,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DatatypeMap createDatatypeMap() {
 		DatatypeMapImpl datatypeMap = new DatatypeMapImpl();
 		return datatypeMap;
@@ -484,10 +483,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 */
 	public MessageElementType createMessageElementTypeFromString(EDataType eDataType, String initialValue) {
 		MessageElementType result = MessageElementType.get(initialValue);
-		if (result == null) {
-			throw new IllegalArgumentException(
-				"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		}
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
@@ -497,9 +493,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * @generated
 	 */
 	public String convertMessageElementTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null
-				? null
-				: instanceValue.toString();
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -508,7 +502,7 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * @generated
 	 */
 	public String createURIFromString(EDataType eDataType, String initialValue) {
-		return (String) super.createFromString(eDataType, initialValue);
+		return (String)super.createFromString(eDataType, initialValue);
 	}
 
 	/**
@@ -525,8 +519,9 @@ public class MDMIFactoryImpl extends EFactoryImpl implements MDMIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDMIPackage getMDMIPackage() {
-		return (MDMIPackage) getEPackage();
+		return (MDMIPackage)getEPackage();
 	}
 
 	/**

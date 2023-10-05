@@ -121,6 +121,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -130,13 +131,12 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__NAME, oldName, name));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__NAME, oldName, name));
 	}
 
 	/**
@@ -144,11 +144,10 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MessageModel getModel() {
-		if (eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL) {
-			return null;
-		}
-		return (MessageModel) eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL) return null;
+		return (MessageModel)eInternalContainer();
 	}
 
 	/**
@@ -157,7 +156,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * @generated
 	 */
 	public NotificationChain basicSetModel(MessageModel newModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject) newModel, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newModel, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, msgs);
 		return msgs;
 	}
 
@@ -166,29 +165,21 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setModel(MessageModel newModel) {
-		if (newModel != eInternalContainer() ||
-				(eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL && newModel != null)) {
-			if (EcoreUtil.isAncestor(this, newModel)) {
+		if (newModel != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL && newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null) {
+			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
-			}
-			if (newModel != null) {
-				msgs = ((InternalEObject) newModel).eInverseAdd(
-					this, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, MessageModel.class, msgs);
-			}
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, MessageModel.class, msgs);
 			msgs = basicSetModel(newModel, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, newModel, newModel));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, newModel, newModel));
 	}
 
 	/**
@@ -196,6 +187,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Node getRoot() {
 		return root;
 	}
@@ -209,13 +201,8 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 		Node oldRoot = root;
 		root = newRoot;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, oldRoot, newRoot);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, oldRoot, newRoot);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -225,24 +212,19 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRoot(Node newRoot) {
 		if (newRoot != root) {
 			NotificationChain msgs = null;
-			if (root != null) {
-				msgs = ((InternalEObject) root).eInverseRemove(this, MDMIPackage.NODE__SYNTAX_MODEL, Node.class, msgs);
-			}
-			if (newRoot != null) {
-				msgs = ((InternalEObject) newRoot).eInverseAdd(this, MDMIPackage.NODE__SYNTAX_MODEL, Node.class, msgs);
-			}
+			if (root != null)
+				msgs = ((InternalEObject)root).eInverseRemove(this, MDMIPackage.NODE__SYNTAX_MODEL, Node.class, msgs);
+			if (newRoot != null)
+				msgs = ((InternalEObject)newRoot).eInverseAdd(this, MDMIPackage.NODE__SYNTAX_MODEL, Node.class, msgs);
 			msgs = basicSetRoot(newRoot, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, newRoot, newRoot));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, newRoot, newRoot));
 	}
 
 	/**
@@ -250,17 +232,14 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public SemanticElementSet getElementSet() {
 		if (elementSet != null && elementSet.eIsProxy()) {
-			InternalEObject oldElementSet = (InternalEObject) elementSet;
-			elementSet = (SemanticElementSet) eResolveProxy(oldElementSet);
+			InternalEObject oldElementSet = (InternalEObject)elementSet;
+			elementSet = (SemanticElementSet)eResolveProxy(oldElementSet);
 			if (elementSet != oldElementSet) {
-				if (eNotificationRequired()) {
-					eNotify(
-						new ENotificationImpl(
-							this, Notification.RESOLVE, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, oldElementSet,
-							elementSet));
-				}
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, oldElementSet, elementSet));
 			}
 		}
 		return elementSet;
@@ -284,13 +263,8 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 		SemanticElementSet oldElementSet = elementSet;
 		elementSet = newElementSet;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-				this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, oldElementSet, newElementSet);
-			if (msgs == null) {
-				msgs = notification;
-			} else {
-				msgs.add(notification);
-			}
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, oldElementSet, newElementSet);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -300,27 +274,19 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != elementSet) {
 			NotificationChain msgs = null;
-			if (elementSet != null) {
-				msgs = ((InternalEObject) elementSet).eInverseRemove(
-					this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
-			}
-			if (newElementSet != null) {
-				msgs = ((InternalEObject) newElementSet).eInverseAdd(
-					this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
-			}
+			if (elementSet != null)
+				msgs = ((InternalEObject)elementSet).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
+			if (newElementSet != null)
+				msgs = ((InternalEObject)newElementSet).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
 			msgs = basicSetElementSet(newElementSet, msgs);
-			if (msgs != null) {
-				msgs.dispatch();
-			}
-		} else if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, newElementSet,
-					newElementSet));
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET, newElementSet, newElementSet));
 	}
 
 	/**
@@ -328,6 +294,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -337,15 +304,12 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired()) {
-			eNotify(
-				new ENotificationImpl(
-					this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION, oldDescription,
-					description));
-		}
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -357,22 +321,17 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL:
-				if (eInternalContainer() != null) {
+				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				}
-				return basicSetModel((MessageModel) otherEnd, msgs);
+				return basicSetModel((MessageModel)otherEnd, msgs);
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT:
-				if (root != null) {
-					msgs = ((InternalEObject) root).eInverseRemove(
-						this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, null, msgs);
-				}
-				return basicSetRoot((Node) otherEnd, msgs);
+				if (root != null)
+					msgs = ((InternalEObject)root).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT, null, msgs);
+				return basicSetRoot((Node)otherEnd, msgs);
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET:
-				if (elementSet != null) {
-					msgs = ((InternalEObject) elementSet).eInverseRemove(
-						this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
-				}
-				return basicSetElementSet((SemanticElementSet) otherEnd, msgs);
+				if (elementSet != null)
+					msgs = ((InternalEObject)elementSet).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT_SET__SYNTAX_MODEL, SemanticElementSet.class, msgs);
+				return basicSetElementSet((SemanticElementSet)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -404,8 +363,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL:
-				return eInternalContainer().eInverseRemove(
-					this, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, MessageModel.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, MessageModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -425,9 +383,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT:
 				return getRoot();
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET:
-				if (resolve) {
-					return getElementSet();
-				}
+				if (resolve) return getElementSet();
 				return basicGetElementSet();
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION:
 				return getDescription();
@@ -444,19 +400,19 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__NAME:
-				setName((String) newValue);
+				setName((String)newValue);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL:
-				setModel((MessageModel) newValue);
+				setModel((MessageModel)newValue);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT:
-				setRoot((Node) newValue);
+				setRoot((Node)newValue);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET:
-				setElementSet((SemanticElementSet) newValue);
+				setElementSet((SemanticElementSet)newValue);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION:
-				setDescription((String) newValue);
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -474,13 +430,13 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 				setName(NAME_EDEFAULT);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL:
-				setModel((MessageModel) null);
+				setModel((MessageModel)null);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT:
-				setRoot((Node) null);
+				setRoot((Node)null);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET:
-				setElementSet((SemanticElementSet) null);
+				setElementSet((SemanticElementSet)null);
 				return;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -498,9 +454,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__NAME:
-				return NAME_EDEFAULT == null
-						? name != null
-						: !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL:
 				return getModel() != null;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ROOT:
@@ -508,9 +462,7 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__ELEMENT_SET:
 				return elementSet != null;
 			case MDMIPackage.MESSAGE_SYNTAX_MODEL__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null
-						? description != null
-						: !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -522,11 +474,9 @@ public class MessageSyntaxModelImpl extends EObjectImpl implements MessageSyntax
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) {
-			return super.toString();
-		}
+		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", description: ");
