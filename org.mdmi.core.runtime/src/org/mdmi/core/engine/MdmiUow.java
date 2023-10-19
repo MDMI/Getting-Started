@@ -210,66 +210,6 @@ public class MdmiUow implements Runnable {
 		Mdmi.INSTANCE().getPreProcessors().preProcess(transferInfo);
 	}
 
-	private void serializeSemanticModel(String name, String location, ElementValueSet semanticModel, boolean b) {
-		// if logger is trace and serializeSemanticModel is true save the semantic model
-
-		// if (serializeSemanticModel && logger.isTraceEnabled()) {
-		//
-		// try {
-		// ObjectMapper mapper = new ObjectMapper();
-		//
-		// SimpleModule dateTimeSerializerModule = new SimpleModule(
-		// "DateTimeSerializerModule", new Version(1, 0, 0, null));
-		// dateTimeSerializerModule.addSerializer(ElementValueSet.class, new ElementValueSetSerializer());
-		// mapper.registerModule(dateTimeSerializerModule);
-		//
-		// SimpleModule xElementValueSerializerModule = new SimpleModule(
-		// "XElementValueSerializer", new Version(1, 0, 0, null));
-		// xElementValueSerializerModule.addSerializer(XElementValue.class, new XElementValueSerializer());
-		// mapper.registerModule(xElementValueSerializerModule);
-		//
-		// SimpleModule semanticElementSerializerModule = new SimpleModule(
-		// "SemanticElementSerializer", new Version(1, 0, 0, null));
-		// xElementValueSerializerModule.addSerializer(SemanticElement.class, new SemanticElementSerializer());
-		// mapper.registerModule(semanticElementSerializerModule);
-		//
-		// SimpleModule xDataStructSerializerrModule = new SimpleModule(
-		// "XDataStructSerializer", new Version(1, 0, 0, null));
-		// xDataStructSerializerrModule.addSerializer(XDataStruct.class, new XDataStructSerializer());
-		// mapper.registerModule(xDataStructSerializerrModule);
-		//
-		// if (location == null) {
-		// File directory = new File(String.valueOf("logs"));
-		// if (!directory.exists()) {
-		// directory.mkdir();
-		// }
-		// }
-		// File jsonFile = new File(
-		// String.format(
-		// "%s/%s.json", (location != null
-		// ? location
-		// : "./logs"),
-		// name));
-		//
-		// ArrayList<IElementValue> roots = new ArrayList<IElementValue>();
-		// for (IElementValue f : semanticModel.getAllElementValues()) {
-		// if (f.getParent() == null) {
-		// roots.add(f);
-		// } else {
-		// }
-		// }
-		//
-		// logger.debug(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(roots));
-		//
-		// mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, roots);
-		//
-		// } catch (Exception ex) {
-		// logger.error(ex.getLocalizedMessage());
-		//
-		// }
-		// }
-	}
-
 	// 1. Build the source syntax tree and semantic model
 	void processInboundSourceMessage() {
 
@@ -321,12 +261,6 @@ public class MdmiUow implements Runnable {
 						logXElementValue(aaa);
 					}
 				}
-				// logger.trace(aaa.getSemanticElement().getName());
-				// if (aaa.getSemanticElement().getParent() != null) {
-				// if (aaa.getSemanticElement().getParent().getParent() != null) {
-				// logger.trace("FOUND AN ELEMENT " + aaa.getSemanticElement().getName());
-				// }
-				// }
 			}
 		}
 	}
@@ -462,11 +396,21 @@ public class MdmiUow implements Runnable {
 	HashMap<String, HashSet<String>> manyToOneMatches = new HashMap<>();
 
 	/*
-	 *
-	 * 92ad5c46-0554-4919-95ad-ed267e4ec007 Observation
-	 * 04efdee4-2132-490a-99c4-0f635300879a - Result Observation
-	 *
+	 * isManyToOneGlobals is true when the source globals elements should only populate the target element as a set of values
+	 * This is accomplished currently by setting the source multiple element to false - which needs to be where the element is under the container
+	 * Else reverse mappings might not work
 	 */
+
+	private boolean isManyToOneGlobals(MessageGroup sourceMessageGroup, MessageGroup targetMessageGroup) {
+
+		// this.transferInfo
+		if (sourceMessageGroup.getName().toUpperCase().startsWith("FHIR") &&
+				targetMessageGroup.getName().toUpperCase().startsWith("CDA")) {
+			return true;
+		}
+		return false;
+	}
+
 	void processConversions() {
 
 		StopWatch watch = new StopWatch();
@@ -676,15 +620,25 @@ public class MdmiUow implements Runnable {
 		 */
 		for (SemanticElement single : singles) {
 
-			if (single.getParent() != null) {
+			SemanticElement theSingleParent = single.getParent();
+			while (theSingleParent != null) {
+				if (theSingleParent.getSemanticElementType().equals(SemanticElementType.NORMAL)) {
+					break;
+				} else {
+					theSingleParent = theSingleParent.getParent();
+				}
 
-				if (!trgSemanticModel.hasElementValuesByName(single.getParent())) {
+			}
+
+			if (theSingleParent != null) {
+
+				if (!trgSemanticModel.hasElementValuesByName(theSingleParent)) {
 					continue;
 				}
 
-				List<IElementValue> values = trgSemanticModel.getElementValuesByName(single.getParent());
+				List<IElementValue> values = trgSemanticModel.getElementValuesByName(theSingleParent);
 
-				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + single.getParent().getName());
+				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + theSingleParent.getName());
 				logger.trace("GETTING SINGLE ELEMENT PARENTS : " + values);
 
 				if (logger.isTraceEnabled()) {
@@ -693,29 +647,44 @@ public class MdmiUow implements Runnable {
 					}
 				}
 
-				for (ConversionRule x : single.getMapToMdmi()) {
-					for (IElementValue bbbb : whattotransfer) {
+				for (ConversionRule conversionRule : single.getMapToMdmi()) {
+					for (IElementValue elementValue : whattotransfer) {
 
 						ArrayList<MDMIBusinessElementReference> businessReference = new ArrayList<>();
 
-						for (ConversionRule tme : bbbb.getSemanticElement().getMapToMdmi()) {
+						for (ConversionRule tme : elementValue.getSemanticElement().getMapToMdmi()) {
 							businessReference.add(tme.getBusinessElement());
 						}
 
 						for (MDMIBusinessElementReference sourceRI : businessReference) {
-							if (sourceRI.getUniqueIdentifier().equals(x.getBusinessElement().getUniqueIdentifier())) {
+							if (sourceRI.getUniqueIdentifier().equals(
+								conversionRule.getBusinessElement().getUniqueIdentifier())) {
+
+								logger.trace(
+									"elementValueelementValueelementValueelementValue " +
+											elementValue.getSemanticElement());
+
+								// If isManyToOneGlobals - populate target only when it source is also global
+								if (isManyToOneGlobals(
+									this.transferInfo.getSourceMessageGroup(),
+									this.transferInfo.getTargetMessageGroup()) &&
+										elementValue.getSemanticElement().isMultipleInstances()) {
+									continue;
+								}
+
 								logger.trace("SINGLE ELEMENT MATCHED : " + sourceRI.getName());
 								logger.trace("SINGLE ELEMENT PARENT : " + single.getName());
-								logger.trace("SOURCE ELEMENT CONTAINER : " + bbbb.getSemanticElement().getName());
+								logger.trace(
+									"SOURCE ELEMENT CONTAINER : " + elementValue.getSemanticElement().getName());
 								XElementValue singleElementValue = new XElementValue(single, trgSemanticModel);
 								try {
 									@SuppressWarnings("deprecation")
 									org.mdmi.core.engine.Conversion.ConversionInfo ci = new org.mdmi.core.engine.Conversion.ConversionInfo(
-										single, sourceRI, x.getBusinessElement());
-									impl.convert((XElementValue) bbbb, ci, singleElementValue);
+										single, sourceRI, conversionRule.getBusinessElement());
+									impl.convert((XElementValue) elementValue, ci, singleElementValue);
 
 									List<IElementValue> foundElements = trgSemanticModel.getElementValuesByName(
-										single.getParent());
+										theSingleParent);
 
 									for (IElementValue parentElementValue : foundElements) {
 										parentElementValue.addChild(singleElementValue);
@@ -1183,8 +1152,6 @@ public class MdmiUow implements Runnable {
 			ArrayList<String> singles = new ArrayList<>();
 			populateSourceSemanticModel(semanticContainer, null, bers, created, singles);
 
-			serializeSemanticModel("SourceSemanticModel", transferInfo.location, srcSemanticModel, false);
-
 			processSourceSemanticModel();
 
 			logger.debug("Target Semantic Model : \n" + trgSemanticModel.toString());
@@ -1232,13 +1199,8 @@ public class MdmiUow implements Runnable {
 
 			processOutboundTargetMessage();
 
-			// MdmiMessage mdmiMessage = new MdmiMessage(transferInfo.targetMessage.getDataAsString());
-
-			serializeSemanticModel("TargetSemanticModel", transferInfo.location, trgSemanticModel, false);
-
 			transferInfo.sourceMessage.setData(transferInfo.targetMessage.getData());
 
-			// ElementValueSet originalsrcSemanticModel = srcSemanticModel;
 			srcSemanticModel = new ElementValueSet();
 			processInboundSourceMessage();
 
