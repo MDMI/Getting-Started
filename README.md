@@ -14,10 +14,11 @@ Click here for instructions to use Postman [![Postman Instructions](files/images
 **Swagger** - another tool for developing and testing REST APIs. Swagger is a hosted application running on the same server as the MDMI Transformation Engine.  
 Click here for instructions to use Swagger [![Swagger Instructions](files/images/instructions-i.png)](https://github.com/MDMI/Getting-Started/wiki/MDMI-Message-Transformations-Using-Swagger)
 
-
 <!--
 3. cURL - a command line tool for transferring data using various network protocols. It is included in many Linux distributions and is available at https://curl.se/
 -->
+
+Example messages for any test process can be found here [![Example Messages](files/images/files.png)](https://github.com/MDMI/Getting-Started/tree/main/files/messages)
 
 <!--
 The MDMI Transformation Service is provided as a Docker image that can be downloaded for local use. However, a copy is hosted so that you may use the service without setting up the Docker infrastructure. The hosted copy is referenced below.
