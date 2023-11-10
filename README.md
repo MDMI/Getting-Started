@@ -42,8 +42,7 @@ http://ec2-18-117-181-57.us-east-2.compute.amazonaws.com:8080/swagger-ui/index.h
 When running locally, a Swagger implementation is accessed at http://localhost:5000/swagger-ui/index.html?url=/v3/api-docs&validatorUrl=#/mdmi-engine/transformation
 -->
 ## MDMI Map Repository
-MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format.  
-[Click here to see example maps](https://github.com/MDMI/Getting-Started/tree/main/Maps)
+MDMI Maps are MDMI models for a specific healthcare exchange standard. The models are reusable, consumable and computable assets. MDMI Maps are used by the MDMI Transformation Service to transform a source message to a target message. Maps are easily modified or versioned to address changes and variants to any standard or proprietary exchange format. Maps are accessible from within the MDMI Workbench.
 
 ## MDMI Workbench
 Transformation maps are created using the MDMI Workbench which is implemented as an Eclipse plugin. Setup instructions are documented in this repository's wiki here:  
