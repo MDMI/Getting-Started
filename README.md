@@ -17,7 +17,6 @@ Click here for instructions to use Swagger [![Swagger Instructions](files/images
 <!--
 3. cURL - a command line tool for transferring data using various network protocols. It is included in many Linux distributions and is available at https://curl.se/
 -->
-
 Example messages for any test process can be found here [![Example Messages](files/images/files.png)](https://github.com/MDMI/Getting-Started/tree/main/files/messages)
 
 <!--
