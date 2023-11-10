@@ -1,0 +1,99 @@
+
+{
+	"entry": [
+		{
+			"request": {
+				"method": "POST",
+				"url": "Patient"
+			},
+			"resource": {
+				"identifier": [
+					{
+						"system": "urn:oid:1.3.6.1.4.1.22812.3.2009316.3",
+						"value": "QQQidentifier"
+					}
+				],
+				"name": [
+					{
+						"given": [
+							"1 patient 2 allergy"
+						],
+						"use": "official",
+						"family": "Jones"
+					}
+				],
+				"id": "qqqId",
+				"resourceType": "Patient"
+			},
+			"fullUrl": "Patient/160920144139807"
+		},
+		{
+			"request": {
+				"method": "POST",
+				"url": "AllergyIntolerance"
+			},
+			"resource": {
+				"identifier": [
+					{
+						"system": "urn:oid:1.3.6.1.4.1.22812.3.2009316.3.4.10.2",
+						"value": "identifierallegy1"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "urn:oid:2.16.840.1.113883.6.88",
+							"code": "yyyy"
+						},
+						{
+							"system": "urn:oid:2.16.840.1.113883.6.96",
+							"code": "yyyy-1"
+						}
+					]
+				},
+				
+				"patient": {
+					"reference": "qqqId"
+				},
+				"id": "545077400001",
+				"resourceType": "AllergyIntolerance"
+			},
+			"fullUrl": "AllergyIntolerance/545077400001"
+		},
+				{
+			"request": {
+				"method": "POST",
+				"url": "AllergyIntolerance"
+			},
+			"resource": {
+				"identifier": [
+					{
+						"system": "urn:oid:1.3.6.1.4.1.22812.3.2009316.3.4.10.2",
+						"value": "identifierAllergy2"
+					}
+				],
+				"code": {
+					"coding": [
+						{
+							"system": "urn:oid:2.16.840.1.113883.6.88",
+							"code": "XXXX"
+						},
+						{
+							"system": "urn:oid:2.16.840.1.113883.6.96",
+							"code": "xxxx-1"
+						}
+					]
+				},
+				
+				"patient": {
+					"reference": "qqqId"
+				},
+				"id": "545077400001",
+			"resourceType": "AllergyIntolerance"
+			},
+			"fullUrl": "AllergyIntolerance/545077400001"
+		}
+	],
+	"type": "transaction",
+	"resourceType": "Bundle"
+}
