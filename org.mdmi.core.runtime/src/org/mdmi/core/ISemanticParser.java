@@ -50,6 +50,9 @@ public interface ISemanticParser {
 	 */
 	public ISyntaxNode createNewSyntacticModel(MessageModel mdl, ElementValueSet eset, Properties properties);
 
+	public void updateTargetSemanticModel(MessageModel mdl, ElementValueSet eset, ISyntaxNode yroot,
+			Properties properties);
+
 	/**
 	 * Update the syntax tree represented by the syntax node given from the given semantic content (element set) and
 	 * based on the specified message model.

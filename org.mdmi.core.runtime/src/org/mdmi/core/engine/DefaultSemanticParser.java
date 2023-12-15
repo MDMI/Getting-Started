@@ -56,7 +56,7 @@ import org.mdmi.impl.MDMIPackageImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DefaultSemanticParser implements ISemanticParser {
+public abstract class DefaultSemanticParser implements ISemanticParser {
 
 	private static Logger logger = LoggerFactory.getLogger(DefaultSemanticParser.class);
 

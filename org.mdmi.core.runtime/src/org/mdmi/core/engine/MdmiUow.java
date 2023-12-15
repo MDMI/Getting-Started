@@ -860,6 +860,11 @@ public class MdmiUow implements Runnable {
 		ISyntacticParser trgSynProv = getSyntaxProvider(transferInfo.getTargetMessageGroup());
 		long ts = System.currentTimeMillis();
 
+		trgSemProv.updateTargetSemanticModel(
+			transferInfo.targetModel.getModel(), trgSemanticModel, trgSyntaxModel, transferInfo.targetProperties);
+
+		processTargetSemanticModel();
+
 		if (trgSyntaxModel != null) {
 			trgSemProv.updateSyntacticModel(
 				transferInfo.targetModel.getModel(), trgSemanticModel, trgSyntaxModel, transferInfo.targetProperties);
