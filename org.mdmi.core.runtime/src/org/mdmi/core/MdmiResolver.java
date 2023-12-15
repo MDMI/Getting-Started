@@ -374,6 +374,8 @@ public class MdmiResolver {
 
 		MdmiValueSetsHandler valueSetsHandler;
 
+		public String datatypemappings;
+
 		public MI(Mdmi.MapInfo mapInfo, MessageGroup messageGroup) {
 			this.mapInfo = mapInfo;
 			this.messageGroup = messageGroup;

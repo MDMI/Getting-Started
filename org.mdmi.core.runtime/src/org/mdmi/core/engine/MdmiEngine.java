@@ -14,19 +14,12 @@
 *******************************************************************************/
 package org.mdmi.core.engine;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.mdmi.MDMIBusinessElementReference;
 import org.mdmi.MessageGroup;
 import org.mdmi.MessageModel;
-import org.mdmi.SemanticElement;
 import org.mdmi.core.ISemanticParser;
 import org.mdmi.core.ISyntacticParser;
 import org.mdmi.core.ISyntaxNode;
 import org.mdmi.core.Mdmi;
-import org.mdmi.core.MdmiMessage;
-import org.mdmi.core.MdmiModelRef;
 import org.mdmi.core.MdmiTransferInfo;
 
 /**
@@ -90,14 +83,14 @@ public final class MdmiEngine {
 	 * @param semanticContainer
 	 * @param location
 	 */
-	public void executeTransfer(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
-			SemanticElement semanticContainer, List<SemanticElement> semanticElements, String location) {
-		MdmiUow uow = new MdmiUow(this);
-		uow.run(sMod, tMsg, bers, semanticContainer, semanticElements, location);
-		sourceSyntaxModel = uow.getSrcSyntaxModel();
-		targetSyntaxModel = uow.getTrgSyntaxModel();
-
-	}
+	// public void executeTransfer(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
+	// SemanticElement semanticContainer, List<SemanticElement> semanticElements, String location) {
+	// MdmiUow uow = new MdmiUow(this);
+	// uow.run(sMod, tMsg, bers, semanticContainer, semanticElements, location);
+	// sourceSyntaxModel = uow.getSrcSyntaxModel();
+	// targetSyntaxModel = uow.getTrgSyntaxModel();
+	//
+	// }
 
 	private ISyntacticParser getSyntaxProvider(MessageGroup messageGroup) {
 		for (MessageModel s : messageGroup.getModels()) {

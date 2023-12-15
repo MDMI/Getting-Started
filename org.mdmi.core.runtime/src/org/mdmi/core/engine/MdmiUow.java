@@ -807,7 +807,8 @@ public class MdmiUow implements Runnable {
 							} else {
 								impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
 							}
-							if (!impl.datamapInterpreter.execute(qualifierFunction, child, impl.targetProperties)) {
+							if (!impl.targetDatamapInterpreter.execute(
+								qualifierFunction, child, impl.targetProperties)) {
 								tobedeleted.add(targetElementValue);
 								tobedeleted.addAll(targetElementValue.getChildren());
 							}
@@ -819,7 +820,7 @@ public class MdmiUow implements Runnable {
 						for (IElementValue child : targetElementValue.getParent().getChildren()) {
 							if (child.getSemanticElement().getName().equals(
 								ser.getRelatedSemanticElement().getName())) {
-								if (!impl.datamapInterpreter.execute(
+								if (!impl.targetDatamapInterpreter.execute(
 									"is" + se.getName(), child, impl.targetProperties)) {
 									tobedeleted.add(targetElementValue);
 								}
@@ -842,9 +843,14 @@ public class MdmiUow implements Runnable {
 			}
 		}
 
-		for (String key : impl.datamapInterpreter.exceptions.keySet()) {
+		for (String key : impl.sourceDatamapInterpreter.exceptions.keySet()) {
 			logger.error(key);
-			logger.error(impl.datamapInterpreter.exceptions.get(key).getMessage());
+			logger.error(impl.sourceDatamapInterpreter.exceptions.get(key).getMessage());
+		}
+
+		for (String key : impl.targetDatamapInterpreter.exceptions.keySet()) {
+			logger.error(key);
+			logger.error(impl.targetDatamapInterpreter.exceptions.get(key).getMessage());
 		}
 
 		// logger.debug("Target Semantic Model : \n" + trgSemanticModel.toString());
@@ -1136,7 +1142,7 @@ public class MdmiUow implements Runnable {
 		}
 	}
 
-	public void run(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
+	public void runxxx(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
 			SemanticElement semanticContainer, List<SemanticElement> semanticElements, String location) {
 		try {
 
@@ -1147,7 +1153,8 @@ public class MdmiUow implements Runnable {
 			transferInfo.location = location;
 
 			ConversionImpl impl = new ConversionImpl();
-			impl.datamapInterpreter = null;
+			impl.sourceDatamapInterpreter = null;
+			impl.targetDatamapInterpreter = null;
 
 			trgSemanticModel = new ElementValueSet();
 			srcSemanticModel = new ElementValueSet();
@@ -1192,11 +1199,21 @@ public class MdmiUow implements Runnable {
 				}
 			}
 
-			if (impl.datamapInterpreter != null) {
-				for (String function : impl.datamapInterpreter.exceptions.keySet()) {
+			if (impl.sourceDatamapInterpreter != null) {
+				for (String function : impl.sourceDatamapInterpreter.exceptions.keySet()) {
 					logger.error(
 						"Datatype Interperted Errors " + function + " " +
-								impl.datamapInterpreter.exceptions.get(function).getMessage());
+								impl.sourceDatamapInterpreter.exceptions.get(function).getMessage());
+				}
+			} else {
+				logger.trace("impl.datamapInterpreter  not set");
+			}
+
+			if (impl.targetDatamapInterpreter != null) {
+				for (String function : impl.targetDatamapInterpreter.exceptions.keySet()) {
+					logger.error(
+						"Datatype Interperted Errors " + function + " " +
+								impl.targetDatamapInterpreter.exceptions.get(function).getMessage());
 				}
 			} else {
 				logger.trace("impl.datamapInterpreter  not set");
