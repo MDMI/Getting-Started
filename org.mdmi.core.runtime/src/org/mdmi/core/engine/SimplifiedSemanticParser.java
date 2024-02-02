@@ -1438,87 +1438,87 @@ public class SimplifiedSemanticParser implements ISemanticParser {
 		}
 		YNode yroot = (YNode) yr;
 
-		// Locate the root semantic element
-		SemanticElement rootSemantic = null;
-		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
-			if (elementValue.getSemanticElement() != null) {
-				rootSemantic = getRoot(elementValue.getSemanticElement());
-			}
-			if (rootSemantic != null) {
-				break;
-			}
-		}
-
-		if (rootSemantic == null) {
-			logger.error("NO RootElement Found ");
-			return;
-		}
-
-		HashMap<String, XElementValue> fillInTheBlanks = new HashMap<>();
-
-		logger.trace("Root Semantic Element " + rootSemantic.getName());
-
-		watch.split();
-		logger.trace("Set up: " + watch.toSplitString());
-
-		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
-			fillInTheBlanks.put(rootSemantic.getName(), (XElementValue) rootElementValue);
-		}
-
-		watch.split();
-		logger.trace("fillInTheBlanks: " + watch.toSplitString());
-
-		// update all semantic containment
-
-		ListIterator<IElementValue> iterator = elementValueSet.getAllElementValues().listIterator();
-
-		while (iterator.hasNext()) {
-			IElementValue value = iterator.next();
-			if (value.getParent() == null) {
-				logger.trace("ORPHAN ELEMENT " + value.getSemanticElement().getName());
-				Stack<SemanticElement> path = new Stack<>();
-				SemanticElement currentParent = value.getSemanticElement().getParent();
-				while (currentParent != null) {
-					path.push(currentParent);
-					currentParent = currentParent.getParent();
-				}
-				IElementValue currentValueParent = null;
-				while (!path.isEmpty()) {
-					SemanticElement current = path.pop();
-					logger.trace("PATH " + current.getName());
-					if (!fillInTheBlanks.containsKey(current.getName())) {
-						XElementValue localElement = new XElementValue(current, elementValueSet, iterator);
-						if (currentValueParent != null) {
-							currentValueParent.addChild(localElement);
-						}
-						fillInTheBlanks.put(current.getName(), localElement);
-					}
-
-					currentValueParent = fillInTheBlanks.get(current.getName());
-				}
-				if (currentValueParent != null) {
-					currentValueParent.addChild(value);
-				}
-			}
-		}
-
-		watch.split();
-		logger.trace("update all semantic containment: " + watch.toSplitString());
-
-		HashMap<String, IElementValue> containers = new HashMap<>();
-
-		for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
-			containers.put(rootElementValue.getSemanticElement().getName(), rootElementValue);
-		}
-
-		walkComputedIn(mdl, elementValueSet, properties, containers);
-		watch.split();
-		logger.trace("walkComputedIn: " + watch.toSplitString());
-
-		walkNullFlavor(elementValueSet, properties);
-
-		watch.split();
-		logger.trace("walkNullFlavor: " + watch.toSplitString());
+		// // Locate the root semantic element
+		// SemanticElement rootSemantic = null;
+		// for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
+		// if (elementValue.getSemanticElement() != null) {
+		// rootSemantic = getRoot(elementValue.getSemanticElement());
+		// }
+		// if (rootSemantic != null) {
+		// break;
+		// }
+		// }
+		//
+		// if (rootSemantic == null) {
+		// logger.error("NO RootElement Found ");
+		// return;
+		// }
+		//
+		// HashMap<String, XElementValue> fillInTheBlanks = new HashMap<>();
+		//
+		// logger.trace("Root Semantic Element " + rootSemantic.getName());
+		//
+		// watch.split();
+		// logger.trace("Set up: " + watch.toSplitString());
+		//
+		// for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+		// fillInTheBlanks.put(rootSemantic.getName(), (XElementValue) rootElementValue);
+		// }
+		//
+		// watch.split();
+		// logger.trace("fillInTheBlanks: " + watch.toSplitString());
+		//
+		// // update all semantic containment
+		//
+		// ListIterator<IElementValue> iterator = elementValueSet.getAllElementValues().listIterator();
+		//
+		// while (iterator.hasNext()) {
+		// IElementValue value = iterator.next();
+		// if (value.getParent() == null) {
+		// logger.trace("ORPHAN ELEMENT " + value.getSemanticElement().getName());
+		// Stack<SemanticElement> path = new Stack<>();
+		// SemanticElement currentParent = value.getSemanticElement().getParent();
+		// while (currentParent != null) {
+		// path.push(currentParent);
+		// currentParent = currentParent.getParent();
+		// }
+		// IElementValue currentValueParent = null;
+		// while (!path.isEmpty()) {
+		// SemanticElement current = path.pop();
+		// logger.trace("PATH " + current.getName());
+		// if (!fillInTheBlanks.containsKey(current.getName())) {
+		// XElementValue localElement = new XElementValue(current, elementValueSet, iterator);
+		// if (currentValueParent != null) {
+		// currentValueParent.addChild(localElement);
+		// }
+		// fillInTheBlanks.put(current.getName(), localElement);
+		// }
+		//
+		// currentValueParent = fillInTheBlanks.get(current.getName());
+		// }
+		// if (currentValueParent != null) {
+		// currentValueParent.addChild(value);
+		// }
+		// }
+		// }
+		//
+		// watch.split();
+		// logger.trace("update all semantic containment: " + watch.toSplitString());
+		//
+		// HashMap<String, IElementValue> containers = new HashMap<>();
+		//
+		// for (IElementValue rootElementValue : elementValueSet.getElementValuesByName(rootSemantic)) {
+		// containers.put(rootElementValue.getSemanticElement().getName(), rootElementValue);
+		// }
+		//
+		// // walkComputedIn(mdl, elementValueSet, properties, containers);
+		// watch.split();
+		// logger.trace("walkComputedIn: " + watch.toSplitString());
+		//
+		// walkNullFlavor(elementValueSet, properties);
+		//
+		// watch.split();
+		// logger.trace("walkNullFlavor: " + watch.toSplitString());
 
 		for (
 
@@ -1632,14 +1632,14 @@ public class SimplifiedSemanticParser implements ISemanticParser {
 			containers.put(rootElementValue.getSemanticElement().getName(), rootElementValue);
 		}
 
-		walkComputedIn(mdl, elementValueSet, properties, containers);
-		watch.split();
-		logger.trace("walkComputedIn: " + watch.toSplitString());
-
 		walkNullFlavor(elementValueSet, properties);
 
 		watch.split();
 		logger.trace("walkNullFlavor: " + watch.toSplitString());
+
+		walkComputedIn(mdl, elementValueSet, properties, containers);
+		watch.split();
+		logger.trace("walkComputedIn: " + watch.toSplitString());
 
 	}
 
@@ -1863,6 +1863,10 @@ public class SimplifiedSemanticParser implements ISemanticParser {
 
 	void walkNullFlavor(ElementValueSet elementValueSet, Properties properties) {
 
+		if (true) {
+			return;
+		}
+
 		ArrayList<Pair<IElementValue, SemanticElement>> toRun = new ArrayList<>();
 
 		for (IElementValue elementValue : elementValueSet.getAllElementValues()) {
@@ -1873,6 +1877,10 @@ public class SimplifiedSemanticParser implements ISemanticParser {
 				for (SemanticElement child : elementValue.getSemanticElement().getChildren()) {
 
 					logger.trace("walkNullFlavor child " + child.getName());
+
+					if ("EffectiveTime59NullFlavoraaaaa".equals(child.getName())) {
+						System.err.println("asdfadf");
+					}
 
 					if (child.isNullFlavor()) {
 
