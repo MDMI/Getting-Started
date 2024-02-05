@@ -30,6 +30,7 @@ import org.mdmi.MessageGroup;
 import org.mdmi.MessageModel;
 import org.mdmi.core.Mdmi.MapInfo;
 import org.mdmi.core.engine.SimplifiedSemanticParser;
+import org.mdmi.core.engine.parsers.MLSyntacticParser;
 import org.mdmi.core.engine.postprocessors.IPostProcessor;
 import org.mdmi.core.engine.preprocessors.IPreProcessor;
 import org.mdmi.util.MDMIUtil;
@@ -391,15 +392,20 @@ public class MdmiResolver {
 								return new org.mdmi.core.engine.json.JsonSyntacticParser();
 							case "HL7":
 								return (ISyntacticParser) Class.forName(
-									"org.openhealthtools.mdht.mdmiplugins.parsers.HL7Parser").newInstance();
+									"org.openhealthtools.mdht.mdmiplugins.parsers.HL7Parser").getDeclaredConstructor().newInstance();
 							case "QUERY":
 								return (ISyntacticParser) Class.forName(
-									"org.mdmi.engine.parsers.QuerySyntaxParser").newInstance();
+									"org.mdmi.engine.parsers.QuerySyntaxParser").getDeclaredConstructor().newInstance();
+							case "ML":
+								return new MLSyntacticParser();
+							// (ISyntacticParser) Class.forName(
+							// "org.mdmi.engine.parsers.MLSyntacticParser").newInstance();
 							default:
 								// TreeWalker tw;
 								return new org.mdmi.core.engine.xml.DOMSAXSyntacticParser(messageGroup.getName());
 						}
 					} catch (Exception e) {
+						e.printStackTrace();
 
 					}
 
