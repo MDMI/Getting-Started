@@ -787,10 +787,12 @@ public class MdmiUow implements Runnable {
 
 			if (ser != null) {
 				if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
+					boolean hasFilterTarget = false;
 					for (IElementValue child : targetElementValue.getChildren()) {
 						if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
 							String qualifierFunction = "is" + se.getName();
 							impl.targetProperties.remove("VALUESET");
+							hasFilterTarget = true;
 							/*
 							 * Use metamodel better - if description is no empty check for value set
 							 */
@@ -813,6 +815,10 @@ public class MdmiUow implements Runnable {
 								tobedeleted.addAll(targetElementValue.getChildren());
 							}
 						}
+					}
+					if (!hasFilterTarget) {
+						tobedeleted.add(targetElementValue);
+						tobedeleted.addAll(targetElementValue.getChildren());
 					}
 				} else {
 					if (ser != null && targetElementValue.getParent() != null &&
