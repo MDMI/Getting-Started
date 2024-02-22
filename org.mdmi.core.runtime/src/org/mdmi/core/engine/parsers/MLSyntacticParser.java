@@ -18,6 +18,7 @@ import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.function.Consumer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.mdmi.Bag;
 import org.mdmi.MessageModel;
 import org.mdmi.MessageSyntaxModel;
@@ -108,13 +109,14 @@ public class MLSyntacticParser implements ISyntacticParser {
 
 				for (SemanticElement seobservation : serow.getChildren()) {
 					if (seobservation.getRelationshipByName("QUALIFIER") != null) {
-						// System.err.println(seobservation.getName());
+
 						Properties qualifierset = Utils.mapOfTransforms.get(
 							seobservation.getRelationshipByName("QUALIFIER").getDescription());
-
 						ArrayList<String> vscodes = new ArrayList<>();
-						for (Object key : qualifierset.keySet()) {
-							vscodes.add((String) key);
+						if (qualifierset != null) {
+							for (Object key : qualifierset.keySet()) {
+								vscodes.add((String) key);
+							}
 						}
 						VS vs = new VS(seobservation.getRelationshipByName("QUALIFIER").getDescription(), vscodes);
 						valuesets.add(vs);
@@ -157,6 +159,12 @@ public class MLSyntacticParser implements ISyntacticParser {
 
 		ArrayList<String> currentRow = new ArrayList<String>();
 
+		String currentSubject = "";
+
+		int currentSubjectCounter = 0;
+
+		static final int subjectCounter = 10;
+
 		/**
 		 * @param element
 		 */
@@ -178,8 +186,13 @@ public class MLSyntacticParser implements ISyntacticParser {
 			if ("DocumentRoot".equals(ybag.getNode().getName())) {
 
 				for (YNode ynode : ybag.getChildren()) {
-					for (YNode ynode2 : ynode.getChildren()) {
-						currentRow.add(ynode2.getNode().getName());
+					for (Node n : ((Bag) ynode.getNode()).getNodes()) {
+						if (!n.getSemanticElement().getName().equals("ACCOUNTIDENTIFIERSE")) {
+							for (int nctr = 0; nctr < n.getMaxOccurs(); nctr++) {
+								currentRow.add(n.getName());
+							}
+						}
+
 					}
 				}
 
@@ -199,24 +212,72 @@ public class MLSyntacticParser implements ISyntacticParser {
 				for (YNode ynode : ybag.getYNodes()) {
 					ynode.accept(this);
 				}
+
+				while (++currentSubjectCounter < subjectCounter) {
+					element.append("THIS LINE INTENTIONALY LEFT BLANK");
+					element.append(System.getProperty("line.separator"));
+				}
 			}
 
 			if ("ROW".equals(ybag.getNode().getName()))
 
 			{
 
-				for (YNode ynode : ybag.getChildren()) {
-					if (ynode instanceof YLeaf) {
-						ynode.accept(this);
-					} else if (ynode instanceof YBag) {
-						YBag x = (YBag) ynode;
+				Bag b = (Bag) ybag.getNode();
+				for (Node n : b.getNodes()) {
+					System.err.println(n.getName());
+					System.err.println(n.getMaxOccurs());
+					System.err.println(n.getMaxOccurs());
+					int ynodectr = n.getMaxOccurs();
 
-						for (YNode y : x.getChildren()) {
-							y.accept(this);
+					if (n.getSemanticElement().getName().equals("ACCOUNTIDENTIFIERSE")) {
+
+						YLeaf yl = (YLeaf) ybag.getChildren().get(0);
+						System.err.println(yl.getValue());
+
+						if (StringUtils.isEmpty(currentSubject)) {
+							currentSubject = yl.getValue();
+						} else {
+
+							if (currentSubject.equals(yl.getValue())) {
+								currentSubjectCounter++;
+							} else {
+								while (++currentSubjectCounter < subjectCounter) {
+									element.append("THIS LINE INTENTIONALY LEFT BLANK");
+									element.append(System.getProperty("line.separator"));
+								}
+								currentSubject = yl.getValue();
+								currentSubjectCounter = 0;
+							}
 						}
 
-					} else {
-						currentRow.add("SOMEVALUEHDERE");
+						continue;
+					}
+
+					for (YNode ynode : ybag.getChildren()) {
+
+						if (n.getName().equals(ynode.getNode().getName())) {
+							ynodectr--;
+							if (ynode instanceof YLeaf) {
+								ynode.accept(this);
+							} else if (ynode instanceof YBag) {
+								YBag x = (YBag) ynode;
+
+								for (YNode y : x.getChildren()) {
+									if (!y.getNode().getSemanticElement().getKeywords().isEmpty()) {
+										currentRow.add(((YLeaf) y).getValue());
+									}
+									// y.accept(this);
+								}
+
+							} else {
+								currentRow.add("SOMEVALUEHDERE");
+							}
+						}
+					}
+					System.err.println(ynodectr);
+					while (ynodectr-- > 0) {
+						currentRow.add("FILLER");
 					}
 				}
 
@@ -244,7 +305,10 @@ public class MLSyntacticParser implements ISyntacticParser {
 		 */
 		@Override
 		public void visit(YLeaf yleaf) {
-			currentRow.add(yleaf.getValue());
+
+			if (!yleaf.getNode().getSemanticElement().getKeywords().isEmpty()) {
+				currentRow.add(yleaf.getValue());
+			}
 
 		}
 

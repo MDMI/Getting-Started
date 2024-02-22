@@ -63,9 +63,9 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	public static CodeHashMap codeValues = new CodeHashMap();
 
-	public static String DEFALUTURL = "http://ec2-18-188-214-103.us-east-2.compute.amazonaws.com:8080/fhir";
+	// public static String DEFALUTURL = "http://ec2-18-188-214-103.us-east-2.compute.amazonaws.com:8080/fhir";
 
-	private static String fhirTerminologyURL = "http://ec2-18-188-214-103.us-east-2.compute.amazonaws.com:8080/fhir";
+	private static String fhirTerminologyURL = null;
 
 	private static Logger logger = LoggerFactory.getLogger(FHIRTerminologyTransform.class);
 
@@ -127,7 +127,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 				if (codeValues.containsKey(key)) {
 					return codeValues.get(key);
 				} else {
-					return translate(fhirTerminologyURL, source, code, target);
+					return translate(source, code, target);
 				}
 			} catch (Exception e) {
 
@@ -151,10 +151,12 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 	}
 
-	private TransformCode translate(String url, String source, String code, String target) throws Exception {
+	private TransformCode translate(String source, String code, String target) throws Exception {
 
-		logger.trace("actually translate " + source + "  " + code + "  to " + target);
 		try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+
+			logger.trace("Start translate " + source + "  " + code + "  to " + target);
+
 			if (StringUtils.isEmpty(source)) {
 				throw new Exception("SOURCE IS NULL");
 			}
@@ -176,6 +178,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 			StringEntity entity = new StringEntity(jsonInputString, ContentType.APPLICATION_JSON);
 
+			logger.trace("URL translate " + fhirTerminologyURL + "/ConceptMap/$translate");
 			HttpPost request = new HttpPost(fhirTerminologyURL + "/ConceptMap/$translate");
 
 			if (!StringUtils.isEmpty(userName) && !StringUtils.isEmpty(password)) {
@@ -195,9 +198,12 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 				JSONObject jsonObject = (JSONObject) parser.parse(json);
 
+				logger.trace("URL response " + jsonObject.toJSONString());
+
 				JSONArray msg = (JSONArray) jsonObject.get("parameter");
 
 				if (msg == null) {
+					logger.trace("Set Blank " + key);
 					codeValues.put(key, BLANK);
 					return BLANK;
 				}
@@ -230,6 +236,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 										TransformCode tc = new TransformCode(
 											translatedCode, translatedSystem, translatedDisplay);
 										codeValues.put(key, tc);
+										logger.trace("Set value " + tc.code + " for " + key);
 										return tc;
 									}
 								}
