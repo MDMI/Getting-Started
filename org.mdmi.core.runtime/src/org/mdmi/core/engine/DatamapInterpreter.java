@@ -111,7 +111,7 @@ public class DatamapInterpreter {
 		}
 
 		try {
-			if (true || logger.isTraceEnabled()) {
+			if (logger.isTraceEnabled()) {
 				try {
 					Files.createDirectories(Paths.get("./logs"));
 					Files.write(

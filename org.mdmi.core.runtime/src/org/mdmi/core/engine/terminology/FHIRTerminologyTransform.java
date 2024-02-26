@@ -130,6 +130,7 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 					return translate(source, code, target);
 				}
 			} catch (Exception e) {
+				logger.error(e.getLocalizedMessage());
 
 			}
 		}
@@ -188,7 +189,11 @@ public class FHIRTerminologyTransform implements ITerminologyTransform {
 
 			request.setEntity(entity);
 
+			logger.trace("httpclient execute request");
 			CloseableHttpResponse response = httpclient.execute(request);
+
+			logger.trace("httpclient execute request " + response.getCode());
+			logger.trace("httpclient execute request " + response.getReasonPhrase());
 
 			String json = EntityUtils.toString(response.getEntity(), "UTF-8");
 
