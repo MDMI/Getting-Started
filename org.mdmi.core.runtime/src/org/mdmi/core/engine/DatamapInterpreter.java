@@ -46,7 +46,12 @@ import com.google.javascript.rhino.StaticSourceFile.SourceKind;
  */
 public class DatamapInterpreter {
 
-	private static String checkFilter = "function checkFilter(target,properties) { " +
+	private static String sourceCheckFilter = "function sourceCheckFilter(target,properties) { " +
+			"if (properties.containsKey('VALUESET')) { " +
+			"    if (properties.get('VALUESET').containsKey(target)) { " + "         " + "        return true; " +
+			"    } " + "} " + "  " + "return false " + "} ";
+
+	private static String targetCheckFilter = "function targetCheckFilter(target,properties) { " +
 			"if (properties.containsKey('VALUESET')) { " +
 			"    if (properties.get('VALUESET').containsKey(target.value())) { " + "         " +
 			"        return true; " + "    } " + "} " + "  " + "return false " + "} ";
@@ -107,7 +112,8 @@ public class DatamapInterpreter {
 					}
 				}
 			}
-			sb.append(checkFilter);
+			sb.append(sourceCheckFilter);
+			sb.append(targetCheckFilter);
 		}
 
 		try {

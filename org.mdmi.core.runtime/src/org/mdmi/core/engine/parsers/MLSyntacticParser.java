@@ -194,6 +194,7 @@ public class MLSyntacticParser implements ISyntacticParser {
 						}
 
 					}
+					break;
 				}
 
 				Consumer<String> appendtobuffer = new Consumer<>() {
@@ -225,15 +226,15 @@ public class MLSyntacticParser implements ISyntacticParser {
 
 				Bag b = (Bag) ybag.getNode();
 				for (Node n : b.getNodes()) {
-					System.err.println(n.getName());
-					System.err.println(n.getMaxOccurs());
-					System.err.println(n.getMaxOccurs());
+					// System.err.println(n.getName());
+					// System.err.println(n.getMaxOccurs());
+					// System.err.println(n.getMaxOccurs());
 					int ynodectr = n.getMaxOccurs();
 
 					if (n.getSemanticElement().getName().equals("ACCOUNTIDENTIFIERSE")) {
 
 						YLeaf yl = (YLeaf) ybag.getChildren().get(0);
-						System.err.println(yl.getValue());
+						// System.err.println(yl.getValue());
 
 						if (StringUtils.isEmpty(currentSubject)) {
 							currentSubject = yl.getValue();
@@ -275,7 +276,7 @@ public class MLSyntacticParser implements ISyntacticParser {
 							}
 						}
 					}
-					System.err.println(ynodectr);
+					// System.err.println(ynodectr);
 					while (ynodectr-- > 0) {
 						currentRow.add("FILLER");
 					}
