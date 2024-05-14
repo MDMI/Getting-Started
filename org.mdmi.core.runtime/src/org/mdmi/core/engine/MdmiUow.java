@@ -24,6 +24,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Properties;
 import java.util.Set;
 import java.util.Stack;
 
@@ -952,62 +953,27 @@ public class MdmiUow implements Runnable {
 		}
 
 		String qualifierFunction = "is" + filterTarget.getName();
-		// Object child;
-		impl.targetProperties.remove("VALUESET");
-		if (!StringUtils.isEmpty(ser.getDescription())) {
 
+		Properties theProperties = new Properties();
+		if (!StringUtils.isEmpty(ser.getDescription())) {
 			if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
 				qualifierFunction = "sourceCheckFilter";
-				impl.targetProperties.put("VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+				theProperties.put("VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
 			} else {
-
-				System.err.println(ser.getDescription());
-				for (String k : Utils.mapOfTransforms.keySet()) {
-					System.err.println(k);
-				}
-				impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
+				theProperties.put("VALUESET", Collections.EMPTY_SET);
 			}
 
 		} else {
-			impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
+			theProperties.put("VALUESET", Collections.EMPTY_SET);
 		}
 
-		// String getValueForFilter = sourceFilterValue.getXValue().getDatatype().getName() + "StringFilterValue";
-		// Object result = new String();
-		//
-		// targetDatamapInterpreter.execute(
-		// getValueForFilter, sourceFilterValue.getXValue().getValue(), sourceFilterValue.getXValue().getValue(),
-		// impl.targetProperties, null);
-		// impl.targetDatamapInterpreter.execute(
-		// getValueForFilter, sourceFilterValue.getXValue().getValue(),result, impl.targetProperties));
-
-		// sourceFilterValue.getXValue().getDatatype().getName()
-
 		XValue xvalue = (XValue) sourceFilterValue.getXValue();
-
-		/*
-		 * function mapFHIR_CodeableConceptToCodedElement(s, t) {
-		 * if (s.getValue('coding') != null) {
-		 * var sc = s.getValue('coding');
-		 * if (sc.getValue('code') != null) {
-		 * t.setValue('code', sc.getValue('code').getValue('value'));
-		 * }
-		 * if (sc.getValue('system') != null) {
-		 * t.setValue('codeSystem', sc.getValue('system').getValue('value'));
-		 * }
-		 * if (sc.getValue('display') != null) {
-		 * t.setValue('displayName', sc.getValue('display').getValue('value'));
-		 * }
-		 * }
-		 * }
-		 */
 
 		XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
 
 		XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
 
-		if (impl.targetDatamapInterpreter.execute(
-			qualifierFunction, xvalue3.getValue("value"), impl.targetProperties)) {
+		if (impl.targetDatamapInterpreter.execute(qualifierFunction, xvalue3.getValue("value"), theProperties)) {
 			return true;
 		}
 
