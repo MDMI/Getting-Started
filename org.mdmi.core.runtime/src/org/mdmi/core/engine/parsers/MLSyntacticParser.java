@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import org.mdmi.Bag;
 import org.mdmi.MessageModel;
@@ -234,21 +235,6 @@ public class MLSyntacticParser implements ISyntacticParser {
 				Bag b = (Bag) ybag.getNode();
 				for (Node n : b.getNodes()) {
 					if (n.getSemanticElement().getName().equals("ACCOUNTIDENTIFIERSE")) {
-
-						// YLeaf yl = (YLeaf) ybag.getChildren().get(0);
-						//
-						// if (StringUtils.isEmpty(currentSubject)) {
-						// currentSubject = yl.getValue();
-						// } else {
-						//
-						// if (currentSubject.equals(yl.getValue())) {
-						// currentSubjectCounter++;
-						// } else {
-						// currentSubject = yl.getValue();
-						// currentSubjectCounter = 0;
-						// }
-						// }
-
 						continue;
 					}
 
@@ -292,28 +278,14 @@ public class MLSyntacticParser implements ISyntacticParser {
 										currentRow.add("");
 									}
 								}
-
-								// values.ge
-
 							}
 						}
 					}
 
 				}
 
-				Consumer<String> appendtobuffer = new Consumer<>() {
-
-					@Override
-					public void accept(String t) {
-						element.append(t).append(",");
-
-					}
-				};
-
-				currentRow.stream().forEach(appendtobuffer);
-
-				element.append(System.getProperty("line.separator"));
-
+				String cr = currentRow.stream().collect(Collectors.joining(", "));
+				element.append(cr).append(System.getProperty("line.separator"));
 			}
 
 		}
@@ -426,7 +398,6 @@ public class MLSyntacticParser implements ISyntacticParser {
 						String key = "";
 						String value = "";
 						for (YNode yc : aa.getChildren()) {
-							// System.err.println("yc " + ((YLeaf) yc).getValue());
 							if (yc.getElementValue().getSemanticElement().equals(qualifier)) {
 								key = ((YLeaf) yc).getValue();
 							} else {
