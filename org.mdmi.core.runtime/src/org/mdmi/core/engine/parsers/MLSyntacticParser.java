@@ -210,18 +210,21 @@ public class MLSyntacticParser implements ISyntacticParser {
 					break;
 				}
 
-				Consumer<String> appendtobuffer = new Consumer<>() {
+				// Consumer<String> appendtobuffer = new Consumer<>() {
+				//
+				// @Override
+				// public void accept(String t) {
+				// element.append(t).append(",");
+				//
+				// }
+				// };
 
-					@Override
-					public void accept(String t) {
-						element.append(t).append(",");
+				// currentRow.stream().forEach(appendtobuffer);
 
-					}
-				};
+				// element.append(System.getProperty("line.separator"));
 
-				currentRow.stream().forEach(appendtobuffer);
-
-				element.append(System.getProperty("line.separator"));
+				String cr = currentRow.stream().collect(Collectors.joining(","));
+				element.append(cr).append(System.getProperty("line.separator"));
 
 				for (YNode ynode : ybag.getYNodes()) {
 					ynode.accept(this);
@@ -284,7 +287,7 @@ public class MLSyntacticParser implements ISyntacticParser {
 
 				}
 
-				String cr = currentRow.stream().collect(Collectors.joining(", "));
+				String cr = currentRow.stream().collect(Collectors.joining(","));
 				element.append(cr).append(System.getProperty("line.separator"));
 			}
 
