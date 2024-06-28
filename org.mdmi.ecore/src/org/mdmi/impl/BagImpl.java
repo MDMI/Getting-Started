@@ -481,7 +481,6 @@ public class BagImpl extends NodeImpl implements Bag {
 					}
 
 				}
-
 				return empty;
 			}
 		}
