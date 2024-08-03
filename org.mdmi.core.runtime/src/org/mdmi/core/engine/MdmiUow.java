@@ -24,7 +24,6 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Properties;
 import java.util.Set;
 import java.util.Stack;
 
@@ -514,8 +513,8 @@ public class MdmiUow implements Runnable {
 					if (sourceFilter) {
 						if ("Container".equals(targetSementicElement.getDatatype().getName()) &&
 								targetSementicElement.getRelationshipByName("QUALIFIER") != null) {
-							String theKey = String.valueOf(
-								sourceElementValue.hashCode() + "_HASFILTERED_" + targetSementicElement.getUniqueId());
+							String theKey = sourceElementValue.getUniqueId() + "_HASFILTERED_" +
+									targetSementicElement.getUniqueId();
 
 							if (!filtered.containsKey(theKey)) {
 								filtered.put(theKey, filterSource(impl, sourceElementValue, targetSementicElement));
@@ -528,10 +527,8 @@ public class MdmiUow implements Runnable {
 									"Container".equals(targetSementicElement.getParent().getDatatype().getName()) &&
 									targetSementicElement.getParent().getRelationshipByName("QUALIFIER") != null &&
 									sourceElementValue.getParent() != null) {
-								String theKey = String.valueOf(
-									sourceElementValue.getParent().hashCode() + "_HASFILTERED_" +
-											targetSementicElement.getUniqueId());
-
+								String theKey = sourceElementValue.getParent().getUniqueId() + "_HASFILTERED_" +
+										targetSementicElement.getUniqueId();
 								if (!filtered.containsKey(theKey)) {
 									filtered.put(
 										theKey, filterSource(
@@ -639,9 +636,7 @@ public class MdmiUow implements Runnable {
 
 		ArrayList<SemanticElement> singles = new ArrayList<>();
 
-		for (
-
-		SemanticElement semanticElement : transferInfo.targetModel.getModel().getElementSet().getSemanticElements()) {
+		for (SemanticElement semanticElement : transferInfo.targetModel.getModel().getElementSet().getSemanticElements()) {
 			if (!semanticElement.isMultipleInstances()) {
 				singles.add(semanticElement);
 			}
@@ -649,7 +644,7 @@ public class MdmiUow implements Runnable {
 
 		if (logger.isTraceEnabled()) {
 			for (SemanticElement s : singles) {
-				logger.trace("SINGLE ELEMENTS : " + s.getName());
+				logger.info("SINGLE ELEMENTS : " + s.getName());
 			}
 		}
 
@@ -659,9 +654,7 @@ public class MdmiUow implements Runnable {
 		 * If the single parent has content - populate the appropriate single instances per container
 		 *
 		 */
-		for (
-
-		SemanticElement single : singles) {
+		for (SemanticElement single : singles) {
 
 			SemanticElement theSingleParent = single.getParent();
 			while (theSingleParent != null) {
@@ -756,9 +749,7 @@ public class MdmiUow implements Runnable {
 
 		// IElementValue targetElementValue : targettosource.keySet()) {
 
-		for (
-
-		IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
+		for (IElementValue targetElementValue : this.trgSemanticModel.getAllElementValues()) {
 			if (targettosource.containsKey(targetElementValue)) {
 				if (targetElementValue.getParent() == null) {
 					if (targetElementValue.getSemanticElement().isMultipleInstances()) {
@@ -823,7 +814,7 @@ public class MdmiUow implements Runnable {
 		}
 
 		watch.split();
-		logger.trace("containers : " + watch.toSplitString());
+		logger.info("containers : " + watch.toSplitString());
 
 		ArrayList<IElementValue> tobedeleted = new ArrayList<>();
 
@@ -952,30 +943,42 @@ public class MdmiUow implements Runnable {
 			return false;
 		}
 
-		String qualifierFunction = "is" + filterTarget.getName();
+		if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
 
-		Properties theProperties = new Properties();
-		if (!StringUtils.isEmpty(ser.getDescription())) {
-			if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
-				qualifierFunction = "sourceCheckFilter";
-				theProperties.put("VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
-			} else {
-				theProperties.put("VALUESET", Collections.EMPTY_SET);
-			}
+			XValue xvalue = (XValue) sourceFilterValue.getXValue();
 
-		} else {
-			theProperties.put("VALUESET", Collections.EMPTY_SET);
+			XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
+
+			XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
+
+			return Utils.mapOfTransforms.get(ser.getDescription()).containsKey(xvalue3.getValue("value"));
+
 		}
 
-		XValue xvalue = (XValue) sourceFilterValue.getXValue();
-
-		XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
-
-		XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
-
-		if (impl.targetDatamapInterpreter.execute(qualifierFunction, xvalue3.getValue("value"), theProperties)) {
-			return true;
-		}
+		// String qualifierFunction = "is" + filterTarget.getName();
+		//
+		// Properties theProperties = new Properties();
+		// if (!StringUtils.isEmpty(ser.getDescription())) {
+		// if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
+		// qualifierFunction = "sourceCheckFilter";
+		// theProperties.put("VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+		// } else {
+		// theProperties.put("VALUESET", Collections.EMPTY_SET);
+		// }
+		//
+		// } else {
+		// theProperties.put("VALUESET", Collections.EMPTY_SET);
+		// }
+		//
+		// XValue xvalue = (XValue) sourceFilterValue.getXValue();
+		//
+		// XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
+		//
+		// XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
+		//
+		// if (impl.targetDatamapInterpreter.execute(qualifierFunction, xvalue3.getValue("value"), theProperties)) {
+		// return true;
+		// }
 
 		return false;
 

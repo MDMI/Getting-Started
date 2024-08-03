@@ -160,7 +160,7 @@ public class CascadingSemantic extends ConfigurableSemanticProcessor {
 							XValue whatisthis = idvalue.getXValue();
 
 							for (Field f : whatisthis.getDatatype().getFields()) {
-								System.out.println(f.getName());
+								// System.out.println(f.getName());
 								t.getXValue().addValue(f.getName(), idvalue.getXValue().getValueByName(f.getName()));
 
 							}
