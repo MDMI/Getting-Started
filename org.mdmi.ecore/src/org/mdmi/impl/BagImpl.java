@@ -470,13 +470,17 @@ public class BagImpl extends NodeImpl implements Bag {
 			} else {
 				if (hasMDMIExpressions) {
 					String mdmiNode = nodeName.replaceAll("\\d+$", "");
-					if (nodeHash.containsKey(mdmiNode)) {
+					if (nodeHash.containsKey(nodeName)) {
+						return nodeHash.get(nodeName);
+					} else if (nodeHash.containsKey(nodeName.toUpperCase())) {
+						return nodeHash.get(nodeName.toUpperCase());
+					} else if (nodeHash.containsKey(mdmiNode)) {
 						return nodeHash.get(mdmiNode);
 					} else if (nodeHash.containsKey(mdmiNode.toUpperCase())) {
 						return nodeHash.get(mdmiNode.toUpperCase());
 					}
-				}
 
+				}
 				return empty;
 			}
 		}
