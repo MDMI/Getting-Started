@@ -1884,4 +1884,22 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		return uniqueID;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.mdmi.SemanticElement#setPropertyQualifier(java.lang.String)
+	 */
+	@Override
+	public void setPropertyQualifier(String value) {
+		// TODO Auto-generated method stub
+		EList<String> oldQualifier = propertyQualifier;
+		propertyQualifier.clear();
+		propertyQualifier.add(value);
+		if (eNotificationRequired())
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER, oldQualifier,
+					propertyQualifier));
+	}
+
 } // SemanticElementImpl

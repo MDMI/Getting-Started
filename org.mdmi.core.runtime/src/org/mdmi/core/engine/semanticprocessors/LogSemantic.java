@@ -11,6 +11,9 @@
  *******************************************************************************/
 package org.mdmi.core.engine.semanticprocessors;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,11 +33,50 @@ import org.slf4j.LoggerFactory;
  */
 public class LogSemantic extends ConfigurableSemanticProcessor {
 
+	void saveModel() {
+
+	}
+
+	private static Logger logger = LoggerFactory.getLogger(LogSemantic.class);
+
+	static final int TRACE = 5;
+
+	static final int DEBUG = 4;
+
+	static final int INFO = 3;
+
+	static final int WARN = 2;
+
+	static final int ERROR = 1;
+
+	public void log(String msg, StringBuffer sb) {
+		switch (level) {
+			case TRACE:
+				logger.trace(msg);
+				break;
+			case DEBUG:
+				logger.debug(msg);
+				break;
+			case INFO:
+				logger.info(msg);
+				break;
+			case WARN:
+				logger.warn(msg);
+				break;
+			case ERROR:
+				logger.error(msg);
+				break;
+		}
+		sb.append(msg).append(System.lineSeparator());
+	}
+
 	public enum DIRECTION {
 		FROM, TO
 	}
 
 	DIRECTION direction;
+
+	int level = 1;
 
 	/**
 	 * @param direction
@@ -47,8 +89,6 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	public LogSemantic() {
 		super();
 	}
-
-	private static Logger logger = LoggerFactory.getLogger(LogSemantic.class);
 
 	/*
 	 * (non-Javadoc)
@@ -64,6 +104,27 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	public void setArguments(Object arguments) {
 		Map map = (Map) arguments;
 		this.direction = DIRECTION.valueOf(map.get("direction").toString());
+		if (map.containsKey("level")) {
+
+			switch (map.get("level").toString()) {
+				case "TRACE":
+					level = 5;
+					break;
+				case "DEBUG":
+					level = 4;
+					break;
+				case "INFO":
+					level = 3;
+					break;
+				case "WARN":
+					level = 2;
+					break;
+				case "ERROR":
+					level = 1;
+					break;
+			}
+
+		}
 
 	}
 
@@ -74,29 +135,39 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		return logger.isTraceEnabled();
+		if (level == ERROR) {
+			return logger.isErrorEnabled();
+		} else if (level == WARN) {
+			return logger.isErrorEnabled();
+		} else if (level == INFO) {
+			return logger.isErrorEnabled();
+		} else if (level == DEBUG) {
+			return logger.isErrorEnabled();
+		} else if (level == TRACE) {
+			return logger.isErrorEnabled();
+		}
+		return false;
+		// return logger.isTraceEnabled();
 	}
 
-	void serializeXDataStruct(XDataStruct v, int indent) {
+	void serializeXDataStruct(XDataStruct v, int indent, StringBuffer sb) {
+
 		for (String field : v.getFields()) {
 			if (v.getValue(field) != null) {
 				if (v.getValue(field) instanceof String) {
-					logger.trace(StringUtils.repeat(".", indent + 2) + " " + field + " = " + v.getValue(field));
+					log(StringUtils.repeat(".", indent + 2) + " " + field + " = " + v.getValue(field), sb);
 				} else if (v.getValue(field) instanceof XDataStruct) {
-					logger.trace(StringUtils.repeat("-", indent + 2) + "> " + field);
-					serializeXDataStruct((XDataStruct) v.getValue(field), indent + 4);
+					log(StringUtils.repeat("-", indent + 2) + "> " + field, sb);
+					serializeXDataStruct((XDataStruct) v.getValue(field), indent + 4, sb);
 				} else {
-					logger.trace(v.getValue(field).getClass() + " " + v.getValue(field));
+					log(v.getValue(field).getClass() + " " + v.getValue(field), sb);
 				}
 			}
 		}
 	}
 
-	void log(IElementValue semanticElement, int indent) {
+	void log(IElementValue semanticElement, int indent, StringBuffer sb) {
 
-		if (direction.equals(DIRECTION.TO)) {
-
-		}
 		String businessElementName = "NONE";
 
 		if (direction.equals(DIRECTION.TO)) {
@@ -109,19 +180,25 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 			}
 		}
 
-		if (semanticElement.getXValue().getValue() instanceof XDataStruct) {
-			logger.trace(
-				StringUtils.repeat("-", indent) + "> " + semanticElement.getName() + " (" + businessElementName + ")");
-			XDataStruct v = (XDataStruct) semanticElement.getXValue().getValue();
-			serializeXDataStruct(v, indent);
-		} else {
-			logger.trace(
-				StringUtils.repeat("-", indent) + "> " + semanticElement.getName() + " (" + businessElementName + ")" +
-						" = " + semanticElement.getXValue().getValue());
+		if (!businessElementName.equals("NONE")) {
+
+			if (semanticElement.getXValue().getValue() instanceof XDataStruct) {
+				log(
+					StringUtils.repeat("-", indent) + "> " + semanticElement.getName() + " (" + businessElementName +
+							")",
+					sb);
+				XDataStruct v = (XDataStruct) semanticElement.getXValue().getValue();
+				serializeXDataStruct(v, indent, sb);
+			} else {
+				log(
+					StringUtils.repeat("-", indent) + "> " + semanticElement.getName() + " (" + businessElementName +
+							")" + " = " + semanticElement.getXValue().getValue(),
+					sb);
+			}
 		}
 
 		for (IElementValue childSemanticElement : semanticElement.getChildren()) {
-			log(childSemanticElement, indent + 2);
+			log(childSemanticElement, indent + 2, sb);
 		}
 
 	}
@@ -134,6 +211,7 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 	@Override
 	public void processSemanticModel(ElementValueSet semanticModel) {
 
+		StringBuffer sb = new StringBuffer();
 		List<IElementValue> parents = new ArrayList<>();
 
 		for (IElementValue semanticElement : semanticModel.getAllElementValues()) {
@@ -143,7 +221,21 @@ public class LogSemantic extends ConfigurableSemanticProcessor {
 		}
 
 		for (IElementValue semanticElement : parents) {
-			log(semanticElement, 1);
+			log(semanticElement, 1, sb);
+		}
+
+		if (true && logger.isTraceEnabled()) {
+			try {
+				Files.createDirectories(Paths.get("./logs"));
+				if (direction.equals(DIRECTION.TO)) {
+					Files.write(Paths.get("./logs/TargetSemanticModel.log"), sb.toString().getBytes());
+				} else {
+					Files.write(Paths.get("./logs/SourceSemanticModel.log"), sb.toString().getBytes());
+				}
+			} catch (IOException e) {
+				logger.trace("Unable to log datatypes");
+				// e.printStackTrace();
+			}
 		}
 	}
 

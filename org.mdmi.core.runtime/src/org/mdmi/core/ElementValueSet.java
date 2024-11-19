@@ -14,6 +14,7 @@
 *******************************************************************************/
 package org.mdmi.core;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -231,5 +232,14 @@ public final class ElementValueSet {
 		if (parent != null) {
 			processOwner(semanticElement, parent, values, owner);
 		}
+	}
+
+	/**
+	 * @param tobedeleted
+	 */
+	public void removeElementValue(ArrayList<IElementValue> tobedeleted) {
+
+		theSetOfAll.removeAll(tobedeleted);
+
 	}
 }

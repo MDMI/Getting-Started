@@ -298,7 +298,7 @@ public class SemanticInterpreter {
 			 * @TODO Fix Editor Whitespace
 			 * Editor is adding on white space chars causing issues with method invocation
 			 */
-			logger.trace("Executing Method " + function);
+			logger.trace("Executing Method with Param " + function);
 
 			inv.invokeFunction(function.replaceAll("\\s+", ""), value, param1);
 			return true;
@@ -318,7 +318,7 @@ public class SemanticInterpreter {
 			 * @TODO Fix Editor Whitespace
 			 * Editor is adding on white space chars causing issues with method invocation
 			 */
-			logger.trace("Executing Method " + function);
+			logger.trace("Executing update Method " + function);
 
 			inv.invokeFunction(function.replaceAll("\\s+", ""), value);
 			return true;
@@ -334,7 +334,7 @@ public class SemanticInterpreter {
 
 	Boolean execute(String function, Object target, Properties properties) {
 		try {
-			logger.trace("Executing Method " + function);
+			logger.trace("Executing Method with properties " + function);
 			return (Boolean) inv.invokeFunction(function.replaceAll("\\s+", ""), target, properties);
 		} catch (Exception e) {
 			exceptions.put(function, e);

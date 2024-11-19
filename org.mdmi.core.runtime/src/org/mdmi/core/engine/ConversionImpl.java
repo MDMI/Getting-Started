@@ -38,6 +38,7 @@ import org.mdmi.MessageGroup;
 import org.mdmi.Node;
 import org.mdmi.SemanticElement;
 import org.mdmi.core.Mdmi;
+import org.mdmi.core.MdmiResolver.MI;
 import org.mdmi.core.MdmiValueSet;
 import org.mdmi.core.MdmiValueSetMap;
 import org.mdmi.core.MdmiValueSetsHandler;
@@ -76,37 +77,9 @@ class ConversionImpl {
 		}
 	}
 
-	public DatamapInterpreter datamapInterpreter;
+	public DatamapInterpreter targetDatamapInterpreter;
 
-	// public SemanticRollupInterpreter semanticRollupInterpreter;
-
-	// public static ConversionImpl Instance = new ConversionImpl();
-
-	@SuppressWarnings("unused")
-	private void logToJson() throws Exception {
-		// if (logging) {
-		// if (first) {
-		// first = false;
-		// } else {
-		// jsonFop.write(",".getBytes());
-		// }
-		//
-		// mapper.writeValue(jsonFop, conversionNode);
-		//
-		// conversionNode = null;
-		// }
-	}
-
-	@SuppressWarnings("unused")
-	private void logObject(String name, Object object) {
-
-		// if (logging) {
-		// if (conversionNode == null) {
-		// conversionNode = mapper.createObjectNode().putObject("conversion");
-		// }
-		// conversionNode.putPOJO(name, object);
-		// }
-	}
+	public DatamapInterpreter sourceDatamapInterpreter;
 
 	FHIRTerminologyTransform terminologyService;
 
@@ -172,13 +145,30 @@ class ConversionImpl {
 	private static Map<String, DatamapInterpreter> datamapInterpreters = new HashMap<>();
 
 	public synchronized void initializeDI(MessageGroup source, MessageGroup target, Properties sp, Properties tp) {
-		String key = source.getName() + "_" + source.getModels().get(0).getMessageModelName() + "__DATATYPEMAPS___" +
-				target.getName() + "_" + target.getModels().get(0).getMessageModelName();
+		String sourceKey = source.getName() + "_" + source.getModels().get(0).getMessageModelName() +
+				"__DATATYPEMAPS___";
+		String targetKey = target.getName() + "_" + target.getModels().get(0).getMessageModelName() +
+				"__DATATYPEMAPS___";
 
-		if (!datamapInterpreters.containsKey(key)) {
-			datamapInterpreters.put(key, new DatamapInterpreter(source, target));
+		if (!datamapInterpreters.containsKey(sourceKey)) {
+
+			MI mi = Mdmi.INSTANCE().getResolver().getMaps().get(
+				source.getName() + "." + source.getModels().get(0).getMessageModelName());
+
+			if (!StringUtils.isEmpty(mi.datatypemappings)) {
+				datamapInterpreters.put(sourceKey, new DatamapInterpreter(mi.datatypemappings));
+			} else {
+				datamapInterpreters.put(sourceKey, new DatamapInterpreter(source));
+			}
+
 		}
-		datamapInterpreter = datamapInterpreters.get(key);
+
+		if (!datamapInterpreters.containsKey(targetKey)) {
+			datamapInterpreters.put(targetKey, new DatamapInterpreter(target));
+		}
+
+		sourceDatamapInterpreter = datamapInterpreters.get(sourceKey);
+		targetDatamapInterpreter = datamapInterpreters.get(targetKey);
 
 		sourceProperties = sp;
 		targetProperties = tp;
@@ -197,7 +187,7 @@ class ConversionImpl {
 			cloneValue(src.getXValue(), v, true, toBE, null);
 		} else if (toBE.getRule().startsWith("DATATYPEMAP:")) {
 
-			if (datamapInterpreter == null) {
+			if (sourceDatamapInterpreter == null) {
 				throw new RuntimeException("execMapToMDMI datamapInterpreter is null");
 				// datamapInterpreter = new DatamapInterpreter(toBE.getOwner().getElementSet().getModel().getGroup());
 			}
@@ -205,11 +195,11 @@ class ConversionImpl {
 			// If getValue == null - we have a primitive pass int the XValue to method
 			boolean executed = true;
 			if (v.getValue() == null) {
-				executed = datamapInterpreter.execute(
+				executed = sourceDatamapInterpreter.execute(
 					parseFunctionName(toBE.getRule()), src.value(), v, sourceProperties, toBE);
 
 			} else {
-				executed = datamapInterpreter.execute(
+				executed = sourceDatamapInterpreter.execute(
 					parseFunctionName(toBE.getRule()), src.value(), v.getValue(), sourceProperties, toBE);
 			}
 			if (!executed) {
@@ -324,7 +314,7 @@ class ConversionImpl {
 			cloneValue(v, trg.getXValue(), false, null, toSE);
 		} else if (toSE.getRule().startsWith("DATATYPEMAP:")) {
 
-			if (datamapInterpreter == null) {
+			if (targetDatamapInterpreter == null) {
 				throw new RuntimeException("execMapFromMDMI datamapInterpreter is null");
 				// datamapInterpreter = new DatamapInterpreter(toSE.getOwner().getElementSet().getModel().getGroup());
 			}
@@ -351,7 +341,7 @@ class ConversionImpl {
 			} else {
 				target = trg.value();
 			}
-			boolean executed = datamapInterpreter.execute(
+			boolean executed = targetDatamapInterpreter.execute(
 				parseFunctionName(toSE.getRule()), source, target, targetProperties, toSE);
 
 			if (!executed) {

@@ -46,7 +46,12 @@ import com.google.javascript.rhino.StaticSourceFile.SourceKind;
  */
 public class DatamapInterpreter {
 
-	private static String checkFilter = "function checkFilter(target,properties) { " +
+	private static String sourceCheckFilter = "function sourceCheckFilter(target,properties) { " +
+			"if (properties.containsKey('VALUESET')) { " +
+			"    if (properties.get('VALUESET').containsKey(target)) { " + "         " + "        return true; " +
+			"    } " + "} " + "  " + "return false " + "} ";
+
+	private static String targetCheckFilter = "function targetCheckFilter(target,properties) { " +
 			"if (properties.containsKey('VALUESET')) { " +
 			"    if (properties.get('VALUESET').containsKey(target.value())) { " + "         " +
 			"        return true; " + "    } " + "} " + "  " + "return false " + "} ";
@@ -62,58 +67,10 @@ public class DatamapInterpreter {
 	public HashMap<String, Exception> exceptions = new HashMap<>();
 
 	/**
-	 *
-	 */
-	public DatamapInterpreter(MessageGroup messgaeGroup) {
-		super();
-		// date.js
-		manager = new ScriptEngineManager();
-		engine = manager.getEngineByName("JavaScript");
-
-		StringBuffer sb = new StringBuffer();
-		sb.append("importPackage(org.mdmi.core.engine.javascript);\n");
-		for (DatatypeMap dm : messgaeGroup.getDatatypeMaps()) {
-
-			if (dm.getToMDMI() != null && !dm.getToMDMI().isEmpty()) {
-				sb.append(dm.getToMDMI());
-			}
-
-			if (dm.getFromMDMI() != null && !dm.getFromMDMI().isEmpty()) {
-				sb.append(dm.getFromMDMI());
-			}
-
-		}
-
-		try {
-			// && logger.isTraceEnabled()
-			if (logger.isTraceEnabled()) {
-
-				logger.trace(sb.toString());
-				try {
-					Files.write(
-						Paths.get(
-							"./logs/" + messgaeGroup.getName() + messgaeGroup.getModels().get(0).getMessageModelName() +
-									"datatypemaps.js"),
-						sb.toString().getBytes());
-				} catch (IOException e) {
-
-				}
-
-			}
-
-			engine.eval(sb.toString());
-		} catch (ScriptException e) {
-			logger.error(e.getLocalizedMessage());
-		}
-
-		inv = (Invocable) engine;
-	}
-
-	/**
-	 * @param source
+	 * @param messageGropu
 	 * @param target
 	 */
-	public DatamapInterpreter(MessageGroup source, MessageGroup target) {
+	public DatamapInterpreter(MessageGroup messageGropu) {
 		manager = new ScriptEngineManager();
 		engine = manager.getEngineByName("JavaScript");
 
@@ -133,7 +90,7 @@ public class DatamapInterpreter {
 
 		sb.append("importPackage(org.mdmi.core.engine.javascript);\n");
 
-		for (DatatypeMap dm : source.getDatatypeMaps()) {
+		for (DatatypeMap dm : messageGropu.getDatatypeMaps()) {
 
 			added.add(dm.getName());
 
@@ -147,24 +104,7 @@ public class DatamapInterpreter {
 
 		}
 
-		if (!source.getName().equals(target.getName())) {
-
-			for (DatatypeMap dm : target.getDatatypeMaps()) {
-
-				if (!added.contains(dm.getName())) {
-					if (dm.getToMDMI() != null && !dm.getToMDMI().isEmpty()) {
-						sb.append(dm.getToMDMI());
-					}
-
-					if (dm.getFromMDMI() != null && !dm.getFromMDMI().isEmpty()) {
-						sb.append(dm.getFromMDMI());
-					}
-				}
-
-			}
-		}
-
-		for (MessageModel mm : target.getModels()) {
+		for (MessageModel mm : messageGropu.getModels()) {
 			for (SemanticElement se : mm.getElementSet().getSemanticElements()) {
 				if (se.getRelationshipByName("QUALIFIER") != null) {
 					if (!StringUtils.isEmpty(se.getRelationshipByName("QUALIFIER").getRule())) {
@@ -172,14 +112,16 @@ public class DatamapInterpreter {
 					}
 				}
 			}
-			sb.append(checkFilter);
+			sb.append(sourceCheckFilter);
+			sb.append(targetCheckFilter);
 		}
 
 		try {
 			if (logger.isTraceEnabled()) {
 				try {
 					Files.createDirectories(Paths.get("./logs"));
-					Files.write(Paths.get("./logs/datatypemaps.js"), sb.toString().getBytes());
+					Files.write(
+						Paths.get("./logs/" + messageGropu.getName() + "datatypemaps.js"), sb.toString().getBytes());
 				} catch (IOException e) {
 					logger.trace("Unable to log datatypes");
 					// e.printStackTrace();
@@ -193,22 +135,26 @@ public class DatamapInterpreter {
 		inv = (Invocable) engine;
 	}
 
-	// static int count = 0;
+	/**
+	 * @param datatypemappings
+	 */
+	public DatamapInterpreter(String datatypemappings) {
 
-	void trace(String context, Object object) {
-		logger.trace(context);
-		if (object instanceof XDataStruct) {
-			XDataStruct struct = (XDataStruct) object;
+		manager = new ScriptEngineManager();
+		engine = manager.getEngineByName("JavaScript");
 
-			logger.trace(struct.getDatatype().getName());
-			for (String field : struct.getFields()) {
-				logger.trace(field + " " + struct.getValue(field));
-			}
-		} else {
-
-			logger.trace(object.toString());
+		if (engine == null) {
+			throw new RuntimeException("Unable to Load Script");
 		}
 
+		try {
+
+			engine.eval(compile(datatypemappings.toString()));
+		} catch (ScriptException e) {
+			logger.error("INVALID JAVA SCRIPT", e.getMessage());
+		}
+
+		inv = (Invocable) engine;
 	}
 
 	/**
@@ -224,11 +170,6 @@ public class DatamapInterpreter {
 		CompilationLevel.ADVANCED_OPTIMIZATIONS.setOptionsForCompilationLevel(options);
 
 		SourceFile sf;
-		// try {
-
-		// String code2;
-		// SourceKind SourceKind.STRONG;
-		// SourceFile.fromCode(code, code2);
 		sf = SourceFile.fromCode("mappings.js", code, SourceKind.STRONG);
 		ArrayList<SourceFile> inputFiles = new ArrayList<>();
 		inputFiles.add(sf);
@@ -236,75 +177,6 @@ public class DatamapInterpreter {
 		Result result = compiler.compile(new ArrayList<SourceFile>(), inputFiles, options);
 
 		return compiler.toSource();
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		//
-		// }
-
-		// To get the complete set of externs, the logic in
-		// CompilerRunner.getDefaultExterns() should be used here.
-		// JSSourceFile extern = JSSourceFile.fromCode("externs.js", "function alert(x) {}");
-
-		// The dummy input name "input.js" is used here so that any warnings or
-		// errors will cite line numbers in terms of input.js.
-		// JSSourceFile input = JSSourceFile.fromCode("input.js", code);
-
-		// compile() returns a Result, but it is not needed here.
-
-		// compiler.compile(extern, sf, options);
-
-		// The compiler is responsible for generating the compiled code; it is not
-		// accessible via the Result.
-		// return code;
-	}
-
-	void compare(String function, Object source, Object target) {
-
-		if (source instanceof XDataStruct) {
-			if (target instanceof XDataStruct) {
-
-				/**
-				 * @TODO Add better comparison
-				 */
-				// int sourceValueCounter = 0;
-				// int targetValueCounter = 0;
-				// for (String sourceField : sourceStruct.getFields()) {
-				// Object sourceValue = sourceStruct.getValue(sourceField);
-				// if (sourceValue != null) {
-				// sourceValueCounter++;
-				// }
-				// }
-				//
-				// for (String targetField : targetStruct.getFields()) {
-				// Object targetValue = targetStruct.getValue(targetField);
-				// if (targetValue != null) {
-				// targetValueCounter++;
-				// }
-				// }
-				//
-				// if (sourceValueCounter != targetValueCounter) {
-				// logger.trace(function + " NOT EQUAL ");
-				// logger.trace(" Source Had " + sourceValueCounter);
-				// logger.trace(" Target Had " + targetValueCounter);
-				//
-				// for (String sourceField : sourceStruct.getFields()) {
-				// Object sourceValue = sourceStruct.getValue(sourceField);
-				// if (sourceValue != null) {
-				// logger.trace(" Source Value " + sourceField + " == " + sourceValue);
-				// }
-				// }
-				//
-				// for (String targetField : targetStruct.getFields()) {
-				// Object targetValue = targetStruct.getValue(targetField);
-				// if (targetValue != null) {
-				// logger.trace(" Target Value " + targetField + " == " + targetValue);
-				// }
-				// }
-				//
-				// }
-
-			}
-		}
 
 	}
 
@@ -318,11 +190,7 @@ public class DatamapInterpreter {
 			 * Editor is adding on white space chars causing issues with method invocation
 			 */
 			logger.trace("Executing Method " + function);
-			// if (conversionRule.getOwner() != null && !conversionRule.getOwner().getPropertyQualifier().isEmpty()) {
 			inv.invokeFunction(function.replaceAll("\\s+", ""), source, target, properties, conversionRule);
-			// } else {
-			// inv.invokeFunction(function.replaceAll("\\s+", ""), source, target, properties);
-			// }
 
 			return true;
 			// compare(function, source, target);
