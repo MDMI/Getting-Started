@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Runtime
+Bundle-ActivationPolicy: lazy
+Bundle-Name: MDMI Runtime Plug-In
+Bundle-Vendor: MDIX, www.mdixinc.com
 Bundle-SymbolicName: org.mdmi.core.runtime;singleton:=true
 Bundle-Version: 3.0.0.qualifier
 Bundle-ClassPath: .

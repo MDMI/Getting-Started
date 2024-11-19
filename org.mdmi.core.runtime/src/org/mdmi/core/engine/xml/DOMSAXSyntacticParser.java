@@ -1278,7 +1278,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				Integer i2;
 				try {
 					if (!StringUtils.isEmpty(o1.getNode().getDescription()) &&
-							!StringUtils.isNumeric(o1.getNode().getDescription())) {
+							StringUtils.isNumeric(o1.getNode().getDescription())) {
 						i1 = Integer.valueOf(o1.getNode().getDescription());
 					} else {
 						i1 = Integer.valueOf(999);
@@ -1288,7 +1288,7 @@ public class DOMSAXSyntacticParser implements ISyntacticParser {
 				}
 				try {
 					if (!StringUtils.isEmpty(o2.getNode().getDescription()) &&
-							!StringUtils.isNumeric(o2.getNode().getDescription())) {
+							StringUtils.isNumeric(o2.getNode().getDescription())) {
 						i2 = Integer.valueOf(o2.getNode().getDescription());
 					} else {
 						i2 = Integer.valueOf(999);

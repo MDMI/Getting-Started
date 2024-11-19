@@ -10,10 +10,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONObject;
 import org.mdmi.ConversionRule;
-import org.mdmi.DatatypeMap;
 import org.mdmi.Field;
 import org.mdmi.MDMIBusinessElementReference;
 import org.mdmi.SemanticElement;
@@ -22,7 +20,6 @@ import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.MdmiModelRef;
 import org.mdmi.core.MdmiTransferInfo;
 import org.mdmi.core.MdmiUtil;
-import org.mdmi.core.engine.DatamapInterpreter;
 import org.mdmi.core.engine.XDataStruct;
 import org.mdmi.core.engine.XValue;
 import org.mdmi.core.engine.semanticprocessors.LogSemantic;
@@ -110,7 +107,7 @@ public class RuntimeService {
 	 * @throws Exception
 	 */
 	@Deprecated
-	public static String runTransformation(String srcMdl, byte[] srcData, String trgMdl, String location,
+	public static String aaarunTransformation(String srcMdl, byte[] srcData, String trgMdl, String location,
 			HashMap<String, String> sourcePropertyValues, HashMap<String, String> targetPropertyValues)
 			throws Exception {
 
@@ -171,9 +168,9 @@ public class RuntimeService {
 
 	}
 
-	public static String runTransformationWithPreloadedMaps(String srcMap, String srcMdl, String srcMsg, String trgMap,
-			String trgMdl, String location, HashMap<String, String> sourcePropertyValues,
-			HashMap<String, String> targetPropertyValues) throws Exception {
+	public static String aaa(String srcMap, String srcMdl, String srcMsg, String trgMap, String trgMdl, String location,
+			HashMap<String, String> sourcePropertyValues, HashMap<String, String> targetPropertyValues)
+			throws Exception {
 		Mdmi mdmi = Mdmi.INSTANCE();
 		mdmi.start();
 
@@ -218,7 +215,7 @@ public class RuntimeService {
 		return retVal; // return the target message transformed
 	}
 
-	public static String runTransformation(String srcMap, String srcMdl, String srcMsg, String trgMap, String trgMdl,
+	public static String aaarunTransformation(String srcMap, String srcMdl, String srcMsg, String trgMap, String trgMdl,
 			String location, HashMap<String, String> sourcePropertyValues, HashMap<String, String> targetPropertyValues)
 			throws Exception {
 		Mdmi mdmi = Mdmi.INSTANCE();
@@ -269,53 +266,53 @@ public class RuntimeService {
 	}
 
 	public static void runDatatypeMappings(String srcMap, String srcMdl) throws Exception {
-		Mdmi.INSTANCE().start();
-
-		String[] a = srcMdl.split("\\.");
-		String srcMapName = a[0];
-		String srcMsgMdl = a[1];
-
-		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMapName, srcMap));
-		Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE());
-		MdmiModelRef sMod = new MdmiModelRef(srcMapName, srcMsgMdl);
-
-		DatamapInterpreter datamapInterpreter = new DatamapInterpreter(sMod.getModel().getGroup());
-
-		for (DatatypeMap datatypemap : sMod.getModel().getGroup().getDatatypeMaps()) {
-
-			if (datatypemap.getMessageDatatype() != null && datatypemap.getMdmiDatatype() != null &&
-					datatypemap.getMessageDatatype().isStruct() && datatypemap.getMdmiDatatype().isStruct()
-
-			) {
-
-				if (StringUtils.isEmpty(datatypemap.getFromMDMI())) {
-
-					XDataStruct to = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
-					XDataStruct from = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
-					populateFrom(from);
-					String function = "map" + datatypemap.getMdmiDatatype().getName() + "To" +
-							datatypemap.getMessageDatatype().getName();
-					datamapInterpreter.execute(function, from, to, null, null);
-				}
-
-				if (!StringUtils.isEmpty(datatypemap.getToMDMI())) {
-					XDataStruct from = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
-					populateFrom(from);
-					log(from);
-					XDataStruct to = new XDataStruct(new XValue(datatypemap.getMdmiDatatype()));
-					String function = "map" + datatypemap.getMessageDatatype().getName() + "To" +
-							datatypemap.getMdmiDatatype().getName();
-					datamapInterpreter.execute(function, from, to, null, null);
-
-					log(from);
-
-					log(to);
-
-				}
-
-			}
-
-		}
+		// Mdmi.INSTANCE().start();
+		//
+		// String[] a = srcMdl.split("\\.");
+		// String srcMapName = a[0];
+		// String srcMsgMdl = a[1];
+		//
+		// Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMapName, srcMap));
+		// Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE());
+		// MdmiModelRef sMod = new MdmiModelRef(srcMapName, srcMsgMdl);
+		//
+		// DatamapInterpreter datamapInterpreter = new DatamapInterpreter(sMod.getModel().getGroup());
+		//
+		// for (DatatypeMap datatypemap : sMod.getModel().getGroup().getDatatypeMaps()) {
+		//
+		// if (datatypemap.getMessageDatatype() != null && datatypemap.getMdmiDatatype() != null &&
+		// datatypemap.getMessageDatatype().isStruct() && datatypemap.getMdmiDatatype().isStruct()
+		//
+		// ) {
+		//
+		// if (StringUtils.isEmpty(datatypemap.getFromMDMI())) {
+		//
+		// XDataStruct to = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
+		// XDataStruct from = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
+		// populateFrom(from);
+		// String function = "map" + datatypemap.getMdmiDatatype().getName() + "To" +
+		// datatypemap.getMessageDatatype().getName();
+		// datamapInterpreter.execute(function, from, to, null, null);
+		// }
+		//
+		// if (!StringUtils.isEmpty(datatypemap.getToMDMI())) {
+		// XDataStruct from = new XDataStruct(new XValue(datatypemap.getMessageDatatype()));
+		// populateFrom(from);
+		// log(from);
+		// XDataStruct to = new XDataStruct(new XValue(datatypemap.getMdmiDatatype()));
+		// String function = "map" + datatypemap.getMessageDatatype().getName() + "To" +
+		// datatypemap.getMdmiDatatype().getName();
+		// datamapInterpreter.execute(function, from, to, null, null);
+		//
+		// log(from);
+		//
+		// log(to);
+		//
+		// }
+		//
+		// }
+		//
+		// }
 
 	}
 
@@ -367,101 +364,6 @@ public class RuntimeService {
 				}
 			}
 		}
-	}
-
-	public static String runTransformationISO(String srcMap, String srcMdl, String[] elements, String location)
-			throws Exception {
-		Mdmi.INSTANCE().start();
-
-		String retVal = null;
-		String[] a = srcMdl.split("\\.");
-		String srcMapName = a[0];
-		String srcMsgMdl = a[1];
-		new ArrayList<String>();
-
-		boolean isAll = false;
-		for (String element : elements) {
-			logger.trace("ELEMENT FILTER " + element);
-			if ("ALL".equalsIgnoreCase(element)) {
-				isAll = true;
-			}
-		}
-
-		// if (!isAll) {
-		// filter.addAll(Arrays.asList(elements));
-		// }
-
-		Mdmi.INSTANCE().putMapInfo(new Mdmi.MapInfo(srcMapName, srcMap));
-		Mdmi.INSTANCE().getResolver().load(Mdmi.INSTANCE());
-		MdmiModelRef sMod = new MdmiModelRef(srcMapName, srcMsgMdl);
-		MdmiMessage tMsg = new MdmiMessage();
-
-		if (isAll) {
-
-			for (SemanticElement sem : sMod.getModel().getElementSet().getSemanticElements()) {
-
-				if (sem.getParent() == null) {
-
-					final List<String> allfilter = new ArrayList<>();
-
-					walkSyntax(sem, allfilter);
-
-					if (!allfilter.isEmpty()) {
-						ArrayList<MDMIBusinessElementReference> bers = MdmiUtil.getElements(
-							sMod.getModel(), sMod.getModel(), allfilter);
-
-						List<SemanticElement> semanticElements = new ArrayList<>();
-						long start = System.nanoTime();
-						Mdmi.INSTANCE().executeTransfer(sMod, tMsg, sem, bers, semanticElements, location);
-						logger.trace("Elapsed Time FILTER " + (System.nanoTime() - start));
-						retVal = tMsg.getDataAsString();
-
-						Files.write(Paths.get(location + "/" + sem.getName() + ".xml"), retVal.getBytes());
-						allfilter.clear();
-						semanticElements.clear();
-					}
-
-				}
-			}
-		} else {
-			for (SemanticElement sem : sMod.getModel().getElementSet().getSemanticElements()) {
-
-				if (sem.getParent() == null) {
-					for (SemanticElement semchild : sem.getChildren()) {
-						final List<String> allfilter = new ArrayList<>();
-
-						// if (!isAll) {
-						if (semchild.getSyntaxNode() == null ||
-								(!Arrays.asList(elements).contains(semchild.getSyntaxNode().getName()))) {
-							continue;
-						}
-						// }
-
-						walkSyntax(semchild, allfilter);
-
-						if (!allfilter.isEmpty()) {
-							ArrayList<MDMIBusinessElementReference> bers = MdmiUtil.getElements(
-								sMod.getModel(), sMod.getModel(), allfilter);
-
-							List<SemanticElement> semanticElements = new ArrayList<>();
-							long start = System.nanoTime();
-							Mdmi.INSTANCE().executeTransfer(sMod, tMsg, semchild, bers, semanticElements, location);
-							logger.trace("Elapsed Time FILTER " + (System.nanoTime() - start));
-							retVal = tMsg.getDataAsString();
-
-							Files.write(Paths.get(location + "/" + semchild.getName() + ".xml"), retVal.getBytes());
-							allfilter.clear();
-							semanticElements.clear();
-						}
-					}
-				}
-				// return retVal;
-
-			}
-		}
-
-		return retVal;
-
 	}
 
 	/**

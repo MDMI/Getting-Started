@@ -393,6 +393,8 @@ public class MdmiUow implements Runnable {
 
 	boolean manyToOneContainers = true;
 
+	static public boolean sourceFilter = false;
+
 	HashMap<String, HashSet<String>> manyToOneMatches = new HashMap<>();
 
 	/*
@@ -492,6 +494,7 @@ public class MdmiUow implements Runnable {
 
 		}
 
+		HashMap<String, Boolean> filtered = new HashMap<>();
 		for (IElementValue sourceElementValue : whattotransfer) {
 
 			// Create list of RI for the element
@@ -506,6 +509,39 @@ public class MdmiUow implements Runnable {
 				// Create list of target semantic elements based on the source RI
 				for (SemanticElement targetSementicElement : targetSementicElementsByBER.get(
 					tme.getBusinessElement().getUniqueIdentifier())) {
+
+					if (sourceFilter) {
+						if ("Container".equals(targetSementicElement.getDatatype().getName()) &&
+								targetSementicElement.getRelationshipByName("QUALIFIER") != null) {
+							String theKey = sourceElementValue.getUniqueId() + "_HASFILTERED_" +
+									targetSementicElement.getUniqueId();
+
+							if (!filtered.containsKey(theKey)) {
+								filtered.put(theKey, filterSource(impl, sourceElementValue, targetSementicElement));
+							}
+							if (!filtered.get(theKey)) {
+								continue;
+							}
+						} else {
+							if (targetSementicElement.getParent() != null &&
+									"Container".equals(targetSementicElement.getParent().getDatatype().getName()) &&
+									targetSementicElement.getParent().getRelationshipByName("QUALIFIER") != null &&
+									sourceElementValue.getParent() != null) {
+								String theKey = sourceElementValue.getParent().getUniqueId() + "_HASFILTERED_" +
+										targetSementicElement.getUniqueId();
+								if (!filtered.containsKey(theKey)) {
+									filtered.put(
+										theKey, filterSource(
+											impl, sourceElementValue.getParent(), targetSementicElement.getParent()));
+								}
+
+								if (!filtered.get(theKey)) {
+									continue;
+								}
+							}
+
+						}
+					}
 
 					for (ConversionRule tmo : targetSementicElement.getMapFromMdmi()) {
 
@@ -608,7 +644,7 @@ public class MdmiUow implements Runnable {
 
 		if (logger.isTraceEnabled()) {
 			for (SemanticElement s : singles) {
-				logger.trace("SINGLE ELEMENTS : " + s.getName());
+				logger.info("SINGLE ELEMENTS : " + s.getName());
 			}
 		}
 
@@ -778,73 +814,92 @@ public class MdmiUow implements Runnable {
 		}
 
 		watch.split();
-		logger.trace("containers : " + watch.toSplitString());
+		logger.info("containers : " + watch.toSplitString());
 
 		ArrayList<IElementValue> tobedeleted = new ArrayList<>();
-		for (IElementValue targetElementValue : targettosource.keySet()) {
-			SemanticElement se = targetElementValue.getSemanticElement();
-			SemanticElementRelationship ser = se.getRelationshipByName("QUALIFIER");
 
-			if (ser != null) {
-				if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
-					for (IElementValue child : targetElementValue.getChildren()) {
-						if (child.getSemanticElement().getName().equals(ser.getRelatedSemanticElement().getName())) {
-							String qualifierFunction = "is" + se.getName();
-							impl.targetProperties.remove("VALUESET");
-							/*
-							 * Use metamodel better - if description is no empty check for value set
-							 */
-							if (!StringUtils.isEmpty(ser.getDescription())) {
+		if (!sourceFilter) {
 
-								if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
-									qualifierFunction = "checkFilter";
-									impl.targetProperties.put(
-										"VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+			for (IElementValue targetElementValue : targettosource.keySet()) {
+				SemanticElement se = targetElementValue.getSemanticElement();
+				SemanticElementRelationship ser = se.getRelationshipByName("QUALIFIER");
+
+				if (ser != null) {
+					if (se.getDatatype() != null && se.getDatatype().getName().equals("Container")) {
+						boolean hasFilterTarget = false;
+						for (IElementValue child : targetElementValue.getChildren()) {
+							if (child.getSemanticElement().getName().equals(
+								ser.getRelatedSemanticElement().getName())) {
+								String qualifierFunction = "is" + se.getName();
+								impl.targetProperties.remove("VALUESET");
+								hasFilterTarget = true;
+								/*
+								 * Use metamodel better - if description is no empty check for value set
+								 */
+								if (!StringUtils.isEmpty(ser.getDescription())) {
+
+									if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
+										qualifierFunction = "targetCheckFilter";
+										impl.targetProperties.put(
+											"VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+									} else {
+										impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
+									}
+
 								} else {
 									impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
 								}
-
-							} else {
-								impl.targetProperties.put("VALUESET", Collections.EMPTY_SET);
-							}
-							if (!impl.datamapInterpreter.execute(qualifierFunction, child, impl.targetProperties)) {
-								tobedeleted.add(targetElementValue);
-								tobedeleted.addAll(targetElementValue.getChildren());
+								if (!impl.targetDatamapInterpreter.execute(
+									qualifierFunction, child, impl.targetProperties)) {
+									tobedeleted.add(targetElementValue);
+									tobedeleted.addAll(targetElementValue.getChildren());
+								}
 							}
 						}
-					}
-				} else {
-					if (ser != null && targetElementValue.getParent() != null &&
-							targetElementValue.getParent().getChildren() != null) {
-						for (IElementValue child : targetElementValue.getParent().getChildren()) {
-							if (child.getSemanticElement().getName().equals(
-								ser.getRelatedSemanticElement().getName())) {
-								if (!impl.datamapInterpreter.execute(
-									"is" + se.getName(), child, impl.targetProperties)) {
-									tobedeleted.add(targetElementValue);
-								}
+						if (!hasFilterTarget) {
+							tobedeleted.add(targetElementValue);
+							tobedeleted.addAll(targetElementValue.getChildren());
+						}
+					} else {
+						if (ser != null && targetElementValue.getParent() != null &&
+								targetElementValue.getParent().getChildren() != null) {
+							for (IElementValue child : targetElementValue.getParent().getChildren()) {
+								if (child.getSemanticElement().getName().equals(
+									ser.getRelatedSemanticElement().getName())) {
+									if (!impl.targetDatamapInterpreter.execute(
+										"is" + se.getName(), child, impl.targetProperties)) {
+										tobedeleted.add(targetElementValue);
+									}
 
+								}
 							}
 						}
 					}
 				}
+
 			}
 
 		}
-
 		watch.split();
 		logger.trace("QUALIFIER : " + watch.toSplitString());
 
-		for (IElementValue remove : tobedeleted) {
-			trgSemanticModel.removeElementValue(remove);
-			if (remove.getParent() != null) {
-				remove.getParent().removeChild(remove);
+		if (!sourceFilter) {
+			for (IElementValue remove : tobedeleted) {
+				trgSemanticModel.removeElementValue(remove);
+				if (remove.getParent() != null) {
+					remove.getParent().removeChild(remove);
+				}
 			}
 		}
 
-		for (String key : impl.datamapInterpreter.exceptions.keySet()) {
+		for (String key : impl.sourceDatamapInterpreter.exceptions.keySet()) {
 			logger.error(key);
-			logger.error(impl.datamapInterpreter.exceptions.get(key).getMessage());
+			logger.error(impl.sourceDatamapInterpreter.exceptions.get(key).getMessage());
+		}
+
+		for (String key : impl.targetDatamapInterpreter.exceptions.keySet()) {
+			logger.error(key);
+			logger.error(impl.targetDatamapInterpreter.exceptions.get(key).getMessage());
 		}
 
 		// logger.debug("Target Semantic Model : \n" + trgSemanticModel.toString());
@@ -854,11 +909,91 @@ public class MdmiUow implements Runnable {
 
 	}
 
+	boolean filterSource(ConversionImpl impl, IElementValue sourceElementContainer,
+			SemanticElement targetSementicContainer) {
+
+		SemanticElementRelationship ser = targetSementicContainer.getRelationshipByName("QUALIFIER");
+
+		SemanticElement filterTarget = null;
+		IElementValue sourceFilterValue = null;
+
+		for (SemanticElement childTarget : targetSementicContainer.getChildren()) {
+
+			if (childTarget.getName().equals(ser.getRelatedSemanticElement().getName())) {
+
+				for (ConversionRule cc : childTarget.getMapFromMdmi()) {
+
+					for (IElementValue xx : sourceElementContainer.getChildren()) {
+
+						for (ConversionRule aaa : xx.getSemanticElement().getMapToMdmi()) {
+							if (cc.getBusinessElement().getUniqueIdentifier().equals(
+								aaa.getBusinessElement().getUniqueIdentifier())) {
+								filterTarget = childTarget;
+								sourceFilterValue = xx;
+							}
+
+						}
+
+					}
+				}
+			}
+		}
+
+		if (filterTarget == null || sourceFilterValue == null) {
+			return false;
+		}
+
+		if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
+
+			XValue xvalue = (XValue) sourceFilterValue.getXValue();
+
+			XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
+
+			XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
+
+			return Utils.mapOfTransforms.get(ser.getDescription()).containsKey(xvalue3.getValue("value"));
+
+		}
+
+		// String qualifierFunction = "is" + filterTarget.getName();
+		//
+		// Properties theProperties = new Properties();
+		// if (!StringUtils.isEmpty(ser.getDescription())) {
+		// if (Utils.mapOfTransforms.containsKey(ser.getDescription())) {
+		// qualifierFunction = "sourceCheckFilter";
+		// theProperties.put("VALUESET", Utils.mapOfTransforms.get(ser.getDescription()));
+		// } else {
+		// theProperties.put("VALUESET", Collections.EMPTY_SET);
+		// }
+		//
+		// } else {
+		// theProperties.put("VALUESET", Collections.EMPTY_SET);
+		// }
+		//
+		// XValue xvalue = (XValue) sourceFilterValue.getXValue();
+		//
+		// XDataStruct xvalue2 = (XDataStruct) xvalue.getValueByName("coding");
+		//
+		// XDataStruct xvalue3 = (XDataStruct) xvalue2.getValue("code");
+		//
+		// if (impl.targetDatamapInterpreter.execute(qualifierFunction, xvalue3.getValue("value"), theProperties)) {
+		// return true;
+		// }
+
+		return false;
+
+	}
+
 	// 4. Build the target syntax tree from the target semantic model
 	void processOutboundTargetMessage() {
 		ISemanticParser trgSemProv = getSemanticProvider(transferInfo.getTargetMessageGroup());
 		ISyntacticParser trgSynProv = getSyntaxProvider(transferInfo.getTargetMessageGroup());
 		long ts = System.currentTimeMillis();
+
+		trgSemProv.updateTargetSemanticModel(
+			transferInfo.targetModel.getModel(), trgSemanticModel, trgSyntaxModel, transferInfo.targetProperties);
+
+		processTargetSemanticModel();
 
 		if (trgSyntaxModel != null) {
 			trgSemProv.updateSyntacticModel(
@@ -1131,7 +1266,7 @@ public class MdmiUow implements Runnable {
 		}
 	}
 
-	public void run(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
+	public void runxxx(MdmiModelRef sMod, MdmiMessage tMsg, ArrayList<MDMIBusinessElementReference> bers,
 			SemanticElement semanticContainer, List<SemanticElement> semanticElements, String location) {
 		try {
 
@@ -1142,7 +1277,8 @@ public class MdmiUow implements Runnable {
 			transferInfo.location = location;
 
 			ConversionImpl impl = new ConversionImpl();
-			impl.datamapInterpreter = null;
+			impl.sourceDatamapInterpreter = null;
+			impl.targetDatamapInterpreter = null;
 
 			trgSemanticModel = new ElementValueSet();
 			srcSemanticModel = new ElementValueSet();
@@ -1187,11 +1323,21 @@ public class MdmiUow implements Runnable {
 				}
 			}
 
-			if (impl.datamapInterpreter != null) {
-				for (String function : impl.datamapInterpreter.exceptions.keySet()) {
+			if (impl.sourceDatamapInterpreter != null) {
+				for (String function : impl.sourceDatamapInterpreter.exceptions.keySet()) {
 					logger.error(
 						"Datatype Interperted Errors " + function + " " +
-								impl.datamapInterpreter.exceptions.get(function).getMessage());
+								impl.sourceDatamapInterpreter.exceptions.get(function).getMessage());
+				}
+			} else {
+				logger.trace("impl.datamapInterpreter  not set");
+			}
+
+			if (impl.targetDatamapInterpreter != null) {
+				for (String function : impl.targetDatamapInterpreter.exceptions.keySet()) {
+					logger.error(
+						"Datatype Interperted Errors " + function + " " +
+								impl.targetDatamapInterpreter.exceptions.get(function).getMessage());
 				}
 			} else {
 				logger.trace("impl.datamapInterpreter  not set");

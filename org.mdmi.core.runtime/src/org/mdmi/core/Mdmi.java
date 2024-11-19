@@ -17,14 +17,10 @@ package org.mdmi.core;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
 
-import org.mdmi.MDMIBusinessElementReference;
-import org.mdmi.SemanticElement;
 import org.mdmi.core.engine.MdmiEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -508,15 +504,15 @@ public final class Mdmi {
 	 * @param bers
 	 * @param location
 	 */
-	public void executeTransfer(MdmiModelRef sMod, MdmiMessage tMsg, SemanticElement semanticContainer,
-			ArrayList<MDMIBusinessElementReference> bers, List<SemanticElement> semanticElements, String location) {
-		try {
-			getEngine().executeTransfer(sMod, tMsg, bers, semanticContainer, semanticElements, location);
-		} catch (MdmiException ex) {
-			throw ex;
-		} catch (Exception ex) {
-			throw new MdmiException(ex, "Mdmi.exec() Unexpected exception for transformnation ");
-		}
-
-	}
+	// public void executeTransfer(MdmiModelRef sMod, MdmiMessage tMsg, SemanticElement semanticContainer,
+	// ArrayList<MDMIBusinessElementReference> bers, List<SemanticElement> semanticElements, String location) {
+	// try {
+	// getEngine().executeTransfer(sMod, tMsg, bers, semanticContainer, semanticElements, location);
+	// } catch (MdmiException ex) {
+	// throw ex;
+	// } catch (Exception ex) {
+	// throw new MdmiException(ex, "Mdmi.exec() Unexpected exception for transformnation ");
+	// }
+	//
+	// }
 } // Mdmi
