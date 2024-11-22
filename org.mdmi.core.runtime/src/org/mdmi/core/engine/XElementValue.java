@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.UUID;
 
+import org.apache.commons.lang3.StringUtils;
 import org.mdmi.SemanticElement;
 import org.mdmi.core.ElementValueSet;
 import org.mdmi.core.IElementValue;
@@ -40,6 +42,8 @@ public class XElementValue implements IElementValue {
 	private XValue m_xvalue;
 
 	private ElementValueSet m_owner;
+
+	String uniqueID = "";
 
 	public void zap() {
 		for (XElementValue c : m_children) {
@@ -292,6 +296,20 @@ public class XElementValue implements IElementValue {
 			return "choice...";
 		}
 		return m_xvalue.toString();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 *
+	 * @see org.mdmi.core.IElementValue#getUniqueId()
+	 */
+	@Override
+	public String getUniqueId() {
+		if (StringUtils.isEmpty(uniqueID)) {
+			uniqueID = UUID.randomUUID().toString();
+		}
+		// TODO Auto-generated method stub
+		return uniqueID;
 	}
 
 	// String toString(String indent) {

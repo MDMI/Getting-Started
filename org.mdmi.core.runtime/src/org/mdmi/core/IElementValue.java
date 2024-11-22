@@ -114,4 +114,9 @@ public interface IElementValue {
 	 * @param child
 	 */
 	void removeChild(IElementValue child);
+
+	/**
+	 * @return
+	 */
+	public String getUniqueId();
 } // IElementValue

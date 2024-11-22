@@ -142,13 +142,17 @@ public class MLSyntacticParser implements ISyntacticParser {
 		}
 
 		msg.setData(root.toString());
-		System.out.println(msg.getDataAsString());
+		// System.out.println(msg.getDataAsString());
 
 	}
 
 	private void serializeBag(YBag yroot, StringBuffer root) {
 		serialize(yroot, this.valuesets, root);
 	}
+
+	static int checkTotal = 0;
+
+	static int checkNode = 0;
 
 	private void serialize(YBag bag, ArrayList<VS> valuesets, StringBuffer element) {
 		org.mdmi.core.engine.YNodeVisitor v = new MLVisitor(element);
@@ -210,19 +214,6 @@ public class MLSyntacticParser implements ISyntacticParser {
 					break;
 				}
 
-				// Consumer<String> appendtobuffer = new Consumer<>() {
-				//
-				// @Override
-				// public void accept(String t) {
-				// element.append(t).append(",");
-				//
-				// }
-				// };
-
-				// currentRow.stream().forEach(appendtobuffer);
-
-				// element.append(System.getProperty("line.separator"));
-
 				String cr = currentRow.stream().collect(Collectors.joining(","));
 				element.append(cr).append(System.getProperty("line.separator"));
 
@@ -241,9 +232,18 @@ public class MLSyntacticParser implements ISyntacticParser {
 						continue;
 					}
 
+					if (checkNode == 0) {
+						checkNode = ybag.getChildren().size();
+					} else {
+						if (checkNode != ybag.getChildren().size()) {
+							throw new RuntimeException("missing ynodes");
+						}
+					}
+
 					for (YNode ynode : ybag.getChildren()) {
 
 						if (n.getName().equals(ynode.getNode().getName())) {
+							String nn = n.getSemanticElement().getName();
 
 							List<String> values = new ArrayList<>();
 
@@ -285,6 +285,14 @@ public class MLSyntacticParser implements ISyntacticParser {
 						}
 					}
 
+				}
+
+				if (checkTotal == 0) {
+					checkTotal = currentRow.size();
+				} else {
+					if (checkTotal != currentRow.size()) {
+						throw new RuntimeException("checksum error");
+					}
 				}
 
 				String cr = currentRow.stream().collect(Collectors.joining(","));
