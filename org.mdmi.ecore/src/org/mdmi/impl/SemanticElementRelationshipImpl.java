@@ -23,16 +23,16 @@ import org.mdmi.SemanticElementRelationship;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getContext <em>Context</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMinOccurs <em>Min Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMaxOccurs <em>Max Occurs</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isSourceIsInstance <em>Source Is Instance</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isTargetIsInstance <em>Target Is Instance</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRelatedSemanticElement <em>Related Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getContext <em>Context</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMinOccurs <em>Min Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getMaxOccurs <em>Max Occurs</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isSourceIsInstance <em>Source Is Instance</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#isTargetIsInstance <em>Target Is Instance</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementRelationshipImpl#getRelatedSemanticElement <em>Related Semantic Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +42,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -72,6 +75,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -82,6 +86,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -92,6 +97,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -102,6 +108,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -112,6 +119,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -122,6 +130,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getContext() <em>Context</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getContext()
 	 * @generated
 	 * @ordered
@@ -132,6 +141,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -142,6 +152,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getMinOccurs() <em>Min Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMinOccurs()
 	 * @generated
 	 * @ordered
@@ -152,6 +163,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -162,6 +174,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getMaxOccurs() <em>Max Occurs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMaxOccurs()
 	 * @generated
 	 * @ordered
@@ -172,6 +185,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #isSourceIsInstance() <em>Source Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isSourceIsInstance()
 	 * @generated
 	 * @ordered
@@ -182,6 +196,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #isSourceIsInstance() <em>Source Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isSourceIsInstance()
 	 * @generated
 	 * @ordered
@@ -192,6 +207,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #isTargetIsInstance() <em>Target Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isTargetIsInstance()
 	 * @generated
 	 * @ordered
@@ -202,6 +218,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #isTargetIsInstance() <em>Target Is Instance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isTargetIsInstance()
 	 * @generated
 	 * @ordered
@@ -212,6 +229,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRelatedSemanticElement() <em>Related Semantic Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRelatedSemanticElement()
 	 * @generated
 	 * @ordered
@@ -221,6 +239,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementRelationshipImpl() {
@@ -230,6 +249,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -240,6 +260,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,19 +271,24 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,19 +299,25 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__DESCRIPTION, oldDescription,
+					description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -296,19 +328,24 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE, oldRule, rule));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE, oldRule, rule));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -319,29 +356,39 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE_EXPRESSION_LANGUAGE, oldRuleExpressionLanguage, ruleExpressionLanguage));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE_EXPRESSION_LANGUAGE,
+					oldRuleExpressionLanguage, ruleExpressionLanguage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public SemanticElement getContext() {
 		if (context != null && context.eIsProxy()) {
-			InternalEObject oldContext = (InternalEObject)context;
-			context = (SemanticElement)eResolveProxy(oldContext);
+			InternalEObject oldContext = (InternalEObject) context;
+			context = (SemanticElement) eResolveProxy(oldContext);
 			if (context != oldContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT, oldContext, context));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT, oldContext,
+							context));
+				}
 			}
 		}
 		return context;
@@ -350,6 +397,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetContext() {
@@ -359,19 +407,24 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setContext(SemanticElement newContext) {
 		SemanticElement oldContext = context;
 		context = newContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT, oldContext, context));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT, oldContext, context));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -382,19 +435,25 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setMinOccurs(int newMinOccurs) {
 		int oldMinOccurs = minOccurs;
 		minOccurs = newMinOccurs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS, oldMinOccurs, minOccurs));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS, oldMinOccurs,
+					minOccurs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -405,19 +464,25 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setMaxOccurs(int newMaxOccurs) {
 		int oldMaxOccurs = maxOccurs;
 		maxOccurs = newMaxOccurs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MAX_OCCURS, oldMaxOccurs, maxOccurs));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MAX_OCCURS, oldMaxOccurs,
+					maxOccurs));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -428,19 +493,25 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setSourceIsInstance(boolean newSourceIsInstance) {
 		boolean oldSourceIsInstance = sourceIsInstance;
 		sourceIsInstance = newSourceIsInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__SOURCE_IS_INSTANCE, oldSourceIsInstance, sourceIsInstance));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__SOURCE_IS_INSTANCE,
+					oldSourceIsInstance, sourceIsInstance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -451,29 +522,40 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setTargetIsInstance(boolean newTargetIsInstance) {
 		boolean oldTargetIsInstance = targetIsInstance;
 		targetIsInstance = newTargetIsInstance;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__TARGET_IS_INSTANCE, oldTargetIsInstance, targetIsInstance));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__TARGET_IS_INSTANCE,
+					oldTargetIsInstance, targetIsInstance));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public SemanticElement getRelatedSemanticElement() {
 		if (relatedSemanticElement != null && relatedSemanticElement.eIsProxy()) {
-			InternalEObject oldRelatedSemanticElement = (InternalEObject)relatedSemanticElement;
-			relatedSemanticElement = (SemanticElement)eResolveProxy(oldRelatedSemanticElement);
+			InternalEObject oldRelatedSemanticElement = (InternalEObject) relatedSemanticElement;
+			relatedSemanticElement = (SemanticElement) eResolveProxy(oldRelatedSemanticElement);
 			if (relatedSemanticElement != oldRelatedSemanticElement) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT, oldRelatedSemanticElement, relatedSemanticElement));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE,
+							MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT,
+							oldRelatedSemanticElement, relatedSemanticElement));
+				}
 			}
 		}
 		return relatedSemanticElement;
@@ -482,6 +564,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public SemanticElement basicGetRelatedSemanticElement() {
@@ -491,19 +574,25 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRelatedSemanticElement(SemanticElement newRelatedSemanticElement) {
 		SemanticElement oldRelatedSemanticElement = relatedSemanticElement;
 		relatedSemanticElement = newRelatedSemanticElement;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT, oldRelatedSemanticElement, relatedSemanticElement));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT,
+					oldRelatedSemanticElement, relatedSemanticElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -518,7 +607,9 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE_EXPRESSION_LANGUAGE:
 				return getRuleExpressionLanguage();
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT:
-				if (resolve) return getContext();
+				if (resolve) {
+					return getContext();
+				}
 				return basicGetContext();
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS:
 				return getMinOccurs();
@@ -529,7 +620,9 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__TARGET_IS_INSTANCE:
 				return isTargetIsInstance();
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT:
-				if (resolve) return getRelatedSemanticElement();
+				if (resolve) {
+					return getRelatedSemanticElement();
+				}
 				return basicGetRelatedSemanticElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -538,40 +631,41 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE:
-				setRule((String)newValue);
+				setRule((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE_EXPRESSION_LANGUAGE:
-				setRuleExpressionLanguage((String)newValue);
+				setRuleExpressionLanguage((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT:
-				setContext((SemanticElement)newValue);
+				setContext((SemanticElement) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS:
-				setMinOccurs((Integer)newValue);
+				setMinOccurs((Integer) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MAX_OCCURS:
-				setMaxOccurs((Integer)newValue);
+				setMaxOccurs((Integer) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__SOURCE_IS_INSTANCE:
-				setSourceIsInstance((Boolean)newValue);
+				setSourceIsInstance((Boolean) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__TARGET_IS_INSTANCE:
-				setTargetIsInstance((Boolean)newValue);
+				setTargetIsInstance((Boolean) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT:
-				setRelatedSemanticElement((SemanticElement)newValue);
+				setRelatedSemanticElement((SemanticElement) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -580,6 +674,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -598,7 +693,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 				setRuleExpressionLanguage(RULE_EXPRESSION_LANGUAGE_EDEFAULT);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT:
-				setContext((SemanticElement)null);
+				setContext((SemanticElement) null);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS:
 				setMinOccurs(MIN_OCCURS_EDEFAULT);
@@ -613,7 +708,7 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 				setTargetIsInstance(TARGET_IS_INSTANCE_EDEFAULT);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RELATED_SEMANTIC_ELEMENT:
-				setRelatedSemanticElement((SemanticElement)null);
+				setRelatedSemanticElement((SemanticElement) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -622,19 +717,28 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE:
-				return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
+				return RULE_EDEFAULT == null
+						? rule != null
+						: !RULE_EDEFAULT.equals(rule);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__RULE_EXPRESSION_LANGUAGE:
-				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null ? ruleExpressionLanguage != null : !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
+				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null
+						? ruleExpressionLanguage != null
+						: !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__CONTEXT:
 				return context != null;
 			case MDMIPackage.SEMANTIC_ELEMENT_RELATIONSHIP__MIN_OCCURS:
@@ -654,11 +758,14 @@ public class SemanticElementRelationshipImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

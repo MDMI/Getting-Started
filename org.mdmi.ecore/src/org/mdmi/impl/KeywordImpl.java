@@ -25,11 +25,11 @@ import org.mdmi.SemanticElement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getKeyword <em>Keyword</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getKeywordValue <em>Keyword Value</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.KeywordImpl#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getKeyword <em>Keyword</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getKeywordValue <em>Keyword Value</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.KeywordImpl#getOwner <em>Owner</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeyword()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getKeyword() <em>Keyword</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeyword()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getKeywordValue() <em>Keyword Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywordValue()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getKeywordValue() <em>Keyword Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getKeywordValue()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected KeywordImpl() {
@@ -127,6 +136,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,19 +158,24 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.KEYWORD__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,19 +186,22 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setKeyword(String newKeyword) {
 		String oldKeyword = keyword;
 		keyword = newKeyword;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__KEYWORD, oldKeyword, keyword));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,19 +212,24 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setKeywordValue(String newKeywordValue) {
 		String oldKeywordValue = keywordValue;
 		keywordValue = newKeywordValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__KEYWORD_VALUE, oldKeywordValue, keywordValue));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.KEYWORD__KEYWORD_VALUE, oldKeywordValue, keywordValue));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,71 +240,88 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__REFERENCE, oldReference, reference));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__REFERENCE, oldReference, reference));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public SemanticElement getOwner() {
-		if (eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER) return null;
-		return (SemanticElement)eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER) {
+			return null;
+		}
+		return (SemanticElement) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(SemanticElement newOwner, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwner, MDMIPackage.KEYWORD__OWNER, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newOwner, MDMIPackage.KEYWORD__OWNER, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setOwner(SemanticElement newOwner) {
-		if (newOwner != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER && newOwner != null)) {
-			if (EcoreUtil.isAncestor(this, newOwner))
+		if (newOwner != eInternalContainer() ||
+				(eContainerFeatureID() != MDMIPackage.KEYWORD__OWNER && newOwner != null)) {
+			if (EcoreUtil.isAncestor(this, newOwner)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newOwner != null)
-				msgs = ((InternalEObject)newOwner).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, SemanticElement.class, msgs);
+			}
+			if (newOwner != null) {
+				msgs = ((InternalEObject) newOwner).eInverseAdd(
+					this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, SemanticElement.class, msgs);
+			}
 			msgs = basicSetOwner(newOwner, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.KEYWORD__OWNER, newOwner, newOwner));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.KEYWORD__OWNER:
-				if (eInternalContainer() != null)
+				if (eInternalContainer() != null) {
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetOwner((SemanticElement)otherEnd, msgs);
+				}
+				return basicSetOwner((SemanticElement) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -288,6 +329,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,13 +344,15 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.KEYWORD__OWNER:
-				return eInternalContainer().eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, SemanticElement.class, msgs);
+				return eInternalContainer().eInverseRemove(
+					this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, SemanticElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -316,6 +360,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,25 +383,26 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.KEYWORD__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 			case MDMIPackage.KEYWORD__KEYWORD:
-				setKeyword((String)newValue);
+				setKeyword((String) newValue);
 				return;
 			case MDMIPackage.KEYWORD__KEYWORD_VALUE:
-				setKeywordValue((String)newValue);
+				setKeywordValue((String) newValue);
 				return;
 			case MDMIPackage.KEYWORD__REFERENCE:
-				setReference((String)newValue);
+				setReference((String) newValue);
 				return;
 			case MDMIPackage.KEYWORD__OWNER:
-				setOwner((SemanticElement)newValue);
+				setOwner((SemanticElement) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -365,6 +411,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +430,7 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 				setReference(REFERENCE_EDEFAULT);
 				return;
 			case MDMIPackage.KEYWORD__OWNER:
-				setOwner((SemanticElement)null);
+				setOwner((SemanticElement) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -392,19 +439,28 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.KEYWORD__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.KEYWORD__KEYWORD:
-				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
+				return KEYWORD_EDEFAULT == null
+						? keyword != null
+						: !KEYWORD_EDEFAULT.equals(keyword);
 			case MDMIPackage.KEYWORD__KEYWORD_VALUE:
-				return KEYWORD_VALUE_EDEFAULT == null ? keywordValue != null : !KEYWORD_VALUE_EDEFAULT.equals(keywordValue);
+				return KEYWORD_VALUE_EDEFAULT == null
+						? keywordValue != null
+						: !KEYWORD_VALUE_EDEFAULT.equals(keywordValue);
 			case MDMIPackage.KEYWORD__REFERENCE:
-				return REFERENCE_EDEFAULT == null ? reference != null : !REFERENCE_EDEFAULT.equals(reference);
+				return REFERENCE_EDEFAULT == null
+						? reference != null
+						: !REFERENCE_EDEFAULT.equals(reference);
 			case MDMIPackage.KEYWORD__OWNER:
 				return getOwner() != null;
 		}
@@ -414,11 +470,14 @@ public class KeywordImpl extends EObjectImpl implements Keyword {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (description: ");

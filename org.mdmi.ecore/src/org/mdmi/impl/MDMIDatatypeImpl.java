@@ -23,12 +23,12 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getTypeName <em>Type Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#isIsReadonly <em>Is Readonly</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getTypeSpec <em>Type Spec</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getRestriction <em>Restriction</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getTypeName <em>Type Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#isIsReadonly <em>Is Readonly</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getTypeSpec <em>Type Spec</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIDatatypeImpl#getRestriction <em>Restriction</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +38,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -88,6 +93,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #getReference() <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getReference()
 	 * @generated
 	 * @ordered
@@ -98,6 +104,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #isIsReadonly() <em>Is Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsReadonly()
 	 * @generated
 	 * @ordered
@@ -108,6 +115,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #isIsReadonly() <em>Is Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #isIsReadonly()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #getTypeSpec() <em>Type Spec</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypeSpec()
 	 * @generated
 	 * @ordered
@@ -128,6 +137,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #getTypeSpec() <em>Type Spec</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getTypeSpec()
 	 * @generated
 	 * @ordered
@@ -138,6 +148,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The default value of the '{@link #getRestriction() <em>Restriction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRestriction()
 	 * @generated
 	 * @ordered
@@ -148,6 +159,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	 * The cached value of the '{@link #getRestriction() <em>Restriction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRestriction()
 	 * @generated
 	 * @ordered
@@ -157,6 +169,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIDatatypeImpl() {
@@ -166,6 +179,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,6 +190,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -186,19 +201,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setTypeName(String newTypeName) {
 		String oldTypeName = typeName;
 		typeName = newTypeName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__TYPE_NAME, oldTypeName, typeName));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__TYPE_NAME, oldTypeName, typeName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -209,19 +229,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,19 +257,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setReference(String newReference) {
 		String oldReference = reference;
 		reference = newReference;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__REFERENCE, oldReference, reference));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__REFERENCE, oldReference, reference));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -255,19 +285,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setIsReadonly(boolean newIsReadonly) {
 		boolean oldIsReadonly = isReadonly;
 		isReadonly = newIsReadonly;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__IS_READONLY, oldIsReadonly, isReadonly));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__IS_READONLY, oldIsReadonly, isReadonly));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -278,19 +313,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setTypeSpec(String newTypeSpec) {
 		String oldTypeSpec = typeSpec;
 		typeSpec = newTypeSpec;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__TYPE_SPEC, oldTypeSpec, typeSpec));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__TYPE_SPEC, oldTypeSpec, typeSpec));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -301,19 +341,24 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRestriction(String newRestriction) {
 		String oldRestriction = restriction;
 		restriction = newRestriction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_DATATYPE__RESTRICTION, oldRestriction, restriction));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_DATATYPE__RESTRICTION, oldRestriction, restriction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,28 +383,29 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DATATYPE__TYPE_NAME:
-				setTypeName((String)newValue);
+				setTypeName((String) newValue);
 				return;
 			case MDMIPackage.MDMI_DATATYPE__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 			case MDMIPackage.MDMI_DATATYPE__REFERENCE:
-				setReference((String)newValue);
+				setReference((String) newValue);
 				return;
 			case MDMIPackage.MDMI_DATATYPE__IS_READONLY:
-				setIsReadonly((Boolean)newValue);
+				setIsReadonly((Boolean) newValue);
 				return;
 			case MDMIPackage.MDMI_DATATYPE__TYPE_SPEC:
-				setTypeSpec((String)newValue);
+				setTypeSpec((String) newValue);
 				return;
 			case MDMIPackage.MDMI_DATATYPE__RESTRICTION:
-				setRestriction((String)newValue);
+				setRestriction((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -368,6 +414,7 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -398,23 +445,34 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_DATATYPE__TYPE_NAME:
-				return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
+				return TYPE_NAME_EDEFAULT == null
+						? typeName != null
+						: !TYPE_NAME_EDEFAULT.equals(typeName);
 			case MDMIPackage.MDMI_DATATYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.MDMI_DATATYPE__REFERENCE:
-				return REFERENCE_EDEFAULT == null ? reference != null : !REFERENCE_EDEFAULT.equals(reference);
+				return REFERENCE_EDEFAULT == null
+						? reference != null
+						: !REFERENCE_EDEFAULT.equals(reference);
 			case MDMIPackage.MDMI_DATATYPE__IS_READONLY:
 				return isReadonly != IS_READONLY_EDEFAULT;
 			case MDMIPackage.MDMI_DATATYPE__TYPE_SPEC:
-				return TYPE_SPEC_EDEFAULT == null ? typeSpec != null : !TYPE_SPEC_EDEFAULT.equals(typeSpec);
+				return TYPE_SPEC_EDEFAULT == null
+						? typeSpec != null
+						: !TYPE_SPEC_EDEFAULT.equals(typeSpec);
 			case MDMIPackage.MDMI_DATATYPE__RESTRICTION:
-				return RESTRICTION_EDEFAULT == null ? restriction != null : !RESTRICTION_EDEFAULT.equals(restriction);
+				return RESTRICTION_EDEFAULT == null
+						? restriction != null
+						: !RESTRICTION_EDEFAULT.equals(restriction);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -422,11 +480,14 @@ public class MDMIDatatypeImpl extends EObjectImpl implements MDMIDatatype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (typeName: ");

@@ -1086,9 +1086,13 @@ public class MdmiUow implements Runnable {
 
 	private ISyntacticParser getSyntaxProvider(MessageGroup messageGroup) {
 
-		for (MessageModel s : messageGroup.getModels()) {
-			return resolver().getSyntacticParser(messageGroup.getName(), s.getMessageModelName());
+		if (!messageGroup.getModels().isEmpty()) {
+			return resolver().getSyntacticParser(
+				messageGroup.getName(), messageGroup.getModels().get(0).getMessageModelName());
 		}
+		// for (MessageModel s : messageGroup.getModels()) {
+		// return resolver().getSyntacticParser(messageGroup.getName(), s.getMessageModelName());
+		// }
 		return null;
 
 	}

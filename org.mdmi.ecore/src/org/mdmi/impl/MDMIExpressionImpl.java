@@ -21,8 +21,8 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MDMIExpressionImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.mdmi.impl.MDMIExpressionImpl#getLanguage <em>Language</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIExpressionImpl#getExpression <em>Expression</em>}</li>
+ * <li>{@link org.mdmi.impl.MDMIExpressionImpl#getLanguage <em>Language</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +32,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getExpression()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLanguage()
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MDMIExpressionImpl() {
@@ -80,6 +85,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,6 +96,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -100,19 +107,24 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setExpression(String newExpression) {
 		String oldExpression = expression;
 		expression = newExpression;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__EXPRESSION, oldExpression, expression));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__EXPRESSION, oldExpression, expression));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,19 +135,24 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setLanguage(String newLanguage) {
 		String oldLanguage = language;
 		language = newLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__LANGUAGE, oldLanguage, language));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MDMI_EXPRESSION__LANGUAGE, oldLanguage, language));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -152,16 +169,17 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_EXPRESSION__EXPRESSION:
-				setExpression((String)newValue);
+				setExpression((String) newValue);
 				return;
 			case MDMIPackage.MDMI_EXPRESSION__LANGUAGE:
-				setLanguage((String)newValue);
+				setLanguage((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -170,6 +188,7 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -188,15 +207,20 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MDMI_EXPRESSION__EXPRESSION:
-				return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+				return EXPRESSION_EDEFAULT == null
+						? expression != null
+						: !EXPRESSION_EDEFAULT.equals(expression);
 			case MDMIPackage.MDMI_EXPRESSION__LANGUAGE:
-				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+				return LANGUAGE_EDEFAULT == null
+						? language != null
+						: !LANGUAGE_EDEFAULT.equals(language);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -204,11 +228,14 @@ public class MDMIExpressionImpl extends EObjectImpl implements MDMIExpression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (expression: ");

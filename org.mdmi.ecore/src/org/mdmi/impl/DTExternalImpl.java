@@ -21,6 +21,7 @@ public class DTExternalImpl extends DTSPrimitiveImpl implements DTExternal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTExternalImpl() {
@@ -30,6 +31,7 @@ public class DTExternalImpl extends DTSPrimitiveImpl implements DTExternal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

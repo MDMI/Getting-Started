@@ -14,10 +14,6 @@
 *******************************************************************************/
 package org.mdmi.core.engine;
 
-import org.mdmi.MessageGroup;
-import org.mdmi.MessageModel;
-import org.mdmi.core.ISemanticParser;
-import org.mdmi.core.ISyntacticParser;
 import org.mdmi.core.ISyntaxNode;
 import org.mdmi.core.Mdmi;
 import org.mdmi.core.MdmiTransferInfo;
@@ -92,20 +88,20 @@ public final class MdmiEngine {
 	//
 	// }
 
-	private ISyntacticParser getSyntaxProvider(MessageGroup messageGroup) {
-		for (MessageModel s : messageGroup.getModels()) {
-			return m_owner.getResolver().getSyntacticParser(messageGroup.getName(), s.getMessageModelName());
-		}
-		return null;
-
-	}
-
-	private ISemanticParser getSemanticProvider(MessageGroup messageGroup) {
-		for (MessageModel s : messageGroup.getModels()) {
-			return m_owner.getResolver().getSemanticParser(messageGroup.getName(), s.getMessageModelName());
-		}
-		return null;
-
-	}
+	// private ISyntacticParser getSyntaxProvider(MessageGroup messageGroup) {
+	// for (MessageModel s : messageGroup.getModels()) {
+	// return m_owner.getResolver().getSyntacticParser(messageGroup.getName(), s.getMessageModelName());
+	// }
+	// return null;
+	//
+	// }
+	//
+	// private ISemanticParser getSemanticProvider(MessageGroup messageGroup) {
+	// for (MessageModel s : messageGroup.getModels()) {
+	// return m_owner.getResolver().getSemanticParser(messageGroup.getName(), s.getMessageModelName());
+	// }
+	// return null;
+	//
+	// }
 
 } // MdmiEngine

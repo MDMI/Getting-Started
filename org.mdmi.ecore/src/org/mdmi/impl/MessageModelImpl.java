@@ -35,12 +35,12 @@ import org.mdmi.SemanticElementSet;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getMessageModelName <em>Message Model Name</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getSyntaxModel <em>Syntax Model</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.mdmi.impl.MessageModelImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getMessageModelName <em>Message Model Name</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getSyntaxModel <em>Syntax Model</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.mdmi.impl.MessageModelImpl#getGroup <em>Group</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +50,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getMessageModelName() <em>Message Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getMessageModelName()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getSyntaxModel() <em>Syntax Model</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSyntaxModel()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getElementSet() <em>Element Set</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getElementSet()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -110,6 +116,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -120,6 +127,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSource()
 	 * @generated
 	 * @ordered
@@ -129,6 +137,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected MessageModelImpl() {
@@ -138,6 +147,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,6 +158,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,19 +169,25 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setMessageModelName(String newMessageModelName) {
 		String oldMessageModelName = messageModelName;
 		messageModelName = newMessageModelName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__MESSAGE_MODEL_NAME, oldMessageModelName, messageModelName));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MESSAGE_MODEL__MESSAGE_MODEL_NAME, oldMessageModelName,
+					messageModelName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,14 +198,20 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSyntaxModel(MessageSyntaxModel newSyntaxModel, NotificationChain msgs) {
 		MessageSyntaxModel oldSyntaxModel = syntaxModel;
 		syntaxModel = newSyntaxModel;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, oldSyntaxModel, newSyntaxModel);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, oldSyntaxModel, newSyntaxModel);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -196,26 +219,36 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setSyntaxModel(MessageSyntaxModel newSyntaxModel) {
 		if (newSyntaxModel != syntaxModel) {
 			NotificationChain msgs = null;
-			if (syntaxModel != null)
-				msgs = ((InternalEObject)syntaxModel).eInverseRemove(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, MessageSyntaxModel.class, msgs);
-			if (newSyntaxModel != null)
-				msgs = ((InternalEObject)newSyntaxModel).eInverseAdd(this, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, MessageSyntaxModel.class, msgs);
+			if (syntaxModel != null) {
+				msgs = ((InternalEObject) syntaxModel).eInverseRemove(
+					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, MessageSyntaxModel.class, msgs);
+			}
+			if (newSyntaxModel != null) {
+				msgs = ((InternalEObject) newSyntaxModel).eInverseAdd(
+					this, MDMIPackage.MESSAGE_SYNTAX_MODEL__MODEL, MessageSyntaxModel.class, msgs);
+			}
 			msgs = basicSetSyntaxModel(newSyntaxModel, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, newSyntaxModel, newSyntaxModel));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, newSyntaxModel, newSyntaxModel));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,14 +259,20 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
 		SemanticElementSet oldElementSet = elementSet;
 		elementSet = newElementSet;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, oldElementSet, newElementSet);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(
+				this, Notification.SET, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, oldElementSet, newElementSet);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -241,26 +280,36 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != elementSet) {
 			NotificationChain msgs = null;
-			if (elementSet != null)
-				msgs = ((InternalEObject)elementSet).eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, SemanticElementSet.class, msgs);
-			if (newElementSet != null)
-				msgs = ((InternalEObject)newElementSet).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, SemanticElementSet.class, msgs);
+			if (elementSet != null) {
+				msgs = ((InternalEObject) elementSet).eInverseRemove(
+					this, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, SemanticElementSet.class, msgs);
+			}
+			if (newElementSet != null) {
+				msgs = ((InternalEObject) newElementSet).eInverseAdd(
+					this, MDMIPackage.SEMANTIC_ELEMENT_SET__MODEL, SemanticElementSet.class, msgs);
+			}
 			msgs = basicSetElementSet(newElementSet, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, newElementSet, newElementSet));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, newElementSet, newElementSet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -271,19 +320,24 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.MESSAGE_MODEL__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -294,79 +348,101 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setSource(String newSource) {
 		String oldSource = source;
 		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SOURCE, oldSource, source));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__SOURCE, oldSource, source));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public MessageGroup getGroup() {
-		if (eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP) return null;
-		return (MessageGroup)eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP) {
+			return null;
+		}
+		return (MessageGroup) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetGroup(MessageGroup newGroup, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newGroup, MDMIPackage.MESSAGE_MODEL__GROUP, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newGroup, MDMIPackage.MESSAGE_MODEL__GROUP, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setGroup(MessageGroup newGroup) {
-		if (newGroup != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP && newGroup != null)) {
-			if (EcoreUtil.isAncestor(this, newGroup))
+		if (newGroup != eInternalContainer() ||
+				(eContainerFeatureID() != MDMIPackage.MESSAGE_MODEL__GROUP && newGroup != null)) {
+			if (EcoreUtil.isAncestor(this, newGroup)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newGroup != null)
-				msgs = ((InternalEObject)newGroup).eInverseAdd(this, MDMIPackage.MESSAGE_GROUP__MODELS, MessageGroup.class, msgs);
+			}
+			if (newGroup != null) {
+				msgs = ((InternalEObject) newGroup).eInverseAdd(
+					this, MDMIPackage.MESSAGE_GROUP__MODELS, MessageGroup.class, msgs);
+			}
 			msgs = basicSetGroup(newGroup, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__GROUP, newGroup, newGroup));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.MESSAGE_MODEL__GROUP, newGroup, newGroup));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL:
-				if (syntaxModel != null)
-					msgs = ((InternalEObject)syntaxModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, null, msgs);
-				return basicSetSyntaxModel((MessageSyntaxModel)otherEnd, msgs);
+				if (syntaxModel != null) {
+					msgs = ((InternalEObject) syntaxModel).eInverseRemove(
+						this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL, null, msgs);
+				}
+				return basicSetSyntaxModel((MessageSyntaxModel) otherEnd, msgs);
 			case MDMIPackage.MESSAGE_MODEL__ELEMENT_SET:
-				if (elementSet != null)
-					msgs = ((InternalEObject)elementSet).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, null, msgs);
-				return basicSetElementSet((SemanticElementSet)otherEnd, msgs);
+				if (elementSet != null) {
+					msgs = ((InternalEObject) elementSet).eInverseRemove(
+						this, EOPPOSITE_FEATURE_BASE - MDMIPackage.MESSAGE_MODEL__ELEMENT_SET, null, msgs);
+				}
+				return basicSetElementSet((SemanticElementSet) otherEnd, msgs);
 			case MDMIPackage.MESSAGE_MODEL__GROUP:
-				if (eInternalContainer() != null)
+				if (eInternalContainer() != null) {
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetGroup((MessageGroup)otherEnd, msgs);
+				}
+				return basicSetGroup((MessageGroup) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -374,6 +450,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -392,13 +469,15 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.MESSAGE_MODEL__GROUP:
-				return eInternalContainer().eInverseRemove(this, MDMIPackage.MESSAGE_GROUP__MODELS, MessageGroup.class, msgs);
+				return eInternalContainer().eInverseRemove(
+					this, MDMIPackage.MESSAGE_GROUP__MODELS, MessageGroup.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -406,6 +485,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -430,28 +510,29 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_MODEL__MESSAGE_MODEL_NAME:
-				setMessageModelName((String)newValue);
+				setMessageModelName((String) newValue);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel)newValue);
+				setSyntaxModel((MessageSyntaxModel) newValue);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__ELEMENT_SET:
-				setElementSet((SemanticElementSet)newValue);
+				setElementSet((SemanticElementSet) newValue);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__SOURCE:
-				setSource((String)newValue);
+				setSource((String) newValue);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__GROUP:
-				setGroup((MessageGroup)newValue);
+				setGroup((MessageGroup) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -460,6 +541,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -469,10 +551,10 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 				setMessageModelName(MESSAGE_MODEL_NAME_EDEFAULT);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL:
-				setSyntaxModel((MessageSyntaxModel)null);
+				setSyntaxModel((MessageSyntaxModel) null);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__ELEMENT_SET:
-				setElementSet((SemanticElementSet)null);
+				setElementSet((SemanticElementSet) null);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -481,7 +563,7 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 				setSource(SOURCE_EDEFAULT);
 				return;
 			case MDMIPackage.MESSAGE_MODEL__GROUP:
-				setGroup((MessageGroup)null);
+				setGroup((MessageGroup) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -490,21 +572,28 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.MESSAGE_MODEL__MESSAGE_MODEL_NAME:
-				return MESSAGE_MODEL_NAME_EDEFAULT == null ? messageModelName != null : !MESSAGE_MODEL_NAME_EDEFAULT.equals(messageModelName);
+				return MESSAGE_MODEL_NAME_EDEFAULT == null
+						? messageModelName != null
+						: !MESSAGE_MODEL_NAME_EDEFAULT.equals(messageModelName);
 			case MDMIPackage.MESSAGE_MODEL__SYNTAX_MODEL:
 				return syntaxModel != null;
 			case MDMIPackage.MESSAGE_MODEL__ELEMENT_SET:
 				return elementSet != null;
 			case MDMIPackage.MESSAGE_MODEL__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.MESSAGE_MODEL__SOURCE:
-				return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+				return SOURCE_EDEFAULT == null
+						? source != null
+						: !SOURCE_EDEFAULT.equals(source);
 			case MDMIPackage.MESSAGE_MODEL__GROUP:
 				return getGroup() != null;
 		}
@@ -514,11 +603,14 @@ public class MessageModelImpl extends EObjectImpl implements MessageModel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (messageModelName: ");

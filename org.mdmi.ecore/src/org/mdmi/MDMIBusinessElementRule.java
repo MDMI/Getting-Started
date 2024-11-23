@@ -14,18 +14,22 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>Given that the MDMI standard does not provide a specification for a the hub dictionary and in effect allows mapping to any appropriate dictionary, such as the ISO 20022 Data Dictionary, then some business rules may have to be specified to make sure that the mapping is correct. Instances of the MDMIBusinessElementRule maintain these rules.</p>
+ * <p>
+ * Given that the MDMI standard does not provide a specification for a the hub dictionary and in effect allows mapping to any appropriate dictionary,
+ * such as the ISO 20022 Data Dictionary, then some business rules may have to be specified to make sure that the mapping is correct. Instances of the
+ * MDMIBusinessElementRule maintain these rules.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.MDMIBusinessElementRule#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementRule#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementRule#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementRule#getBusinessElement <em>Business Element</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementRule#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementRule#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementRule#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementRule#getBusinessElement <em>Business Element</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule()
@@ -39,8 +43,11 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "name" property of type String that assigns a name to the rule.</p>
+	 * <p>
+	 * A "name" property of type String that assigns a name to the rule.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule_Name()
@@ -53,7 +60,9 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -64,8 +73,11 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>An optional "description" property of type String that provides a description of the rule.</p>
+	 * <p>
+	 * An optional "description" property of type String that provides a description of the rule.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule_Description()
@@ -78,7 +90,9 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementRule#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -89,8 +103,11 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "rule" property of type String that is an expression defining the rule that applies to an associated MDMIBusinessElementReference.</p>
+	 * <p>
+	 * A "rule" property of type String that is an expression defining the rule that applies to an associated MDMIBusinessElementReference.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Rule</em>' attribute.
 	 * @see #setRule(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule_Rule()
@@ -103,7 +120,9 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementRule#getRule <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rule</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Rule</em>' attribute.
 	 * @see #getRule()
 	 * @generated
 	 */
@@ -114,8 +133,13 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>A "ruleExpressionLanguage", which provides a reference to the language used in the used for the "rule" property. This language must be able to describe the context in which the rule applies. The language should be able to reference the value of any Semantic Element instance and it should allow external function calls. If this property is not specified the default ruleExpressionLanguage will be used.</p>
+	 * <p>
+	 * A "ruleExpressionLanguage", which provides a reference to the language used in the used for the "rule" property. This language must be able to
+	 * describe the context in which the rule applies. The language should be able to reference the value of any Semantic Element instance and it
+	 * should allow external function calls. If this property is not specified the default ruleExpressionLanguage will be used.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #setRuleExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule_RuleExpressionLanguage()
@@ -128,7 +152,9 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rule Expression Language</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 */
@@ -143,6 +169,7 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Business Element</em>' container reference.
 	 * @see #setBusinessElement(MDMIBusinessElementReference)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementRule_BusinessElement()
@@ -156,7 +183,9 @@ public interface MDMIBusinessElementRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementRule#getBusinessElement <em>Business Element</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Business Element</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Business Element</em>' container reference.
 	 * @see #getBusinessElement()
 	 * @generated
 	 */

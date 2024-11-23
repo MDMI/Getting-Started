@@ -14,18 +14,22 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>The SemanticElementBusinessRule holds a rule that is to be applied to a SemanticElement to make sure that the SemanticElement is valid. SemanticElementBusinessRule usually do not refer to other SematicElelemnts in a message. They are meant to provide rules that reflect an external context, e.g., a AcountID SemanticElement must be from an EU bank, etc.</p>
+ * <p>
+ * The SemanticElementBusinessRule holds a rule that is to be applied to a SemanticElement to make sure that the SemanticElement is valid.
+ * SemanticElementBusinessRule usually do not refer to other SematicElelemnts in a message. They are meant to provide rules that reflect an external
+ * context, e.g., a AcountID SemanticElement must be from an EU bank, etc.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.SemanticElementBusinessRule#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementBusinessRule#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementBusinessRule#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementBusinessRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.SemanticElementBusinessRule#getSemanticElement <em>Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementBusinessRule#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementBusinessRule#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementBusinessRule#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementBusinessRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.SemanticElementBusinessRule#getSemanticElement <em>Semantic Element</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule()
@@ -42,6 +46,7 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule_Name()
@@ -54,7 +59,9 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementBusinessRule#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -68,6 +75,7 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule_Description()
@@ -80,7 +88,9 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementBusinessRule#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -94,6 +104,7 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Rule</em>' attribute.
 	 * @see #setRule(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule_Rule()
@@ -106,7 +117,9 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementBusinessRule#getRule <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rule</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Rule</em>' attribute.
 	 * @see #getRule()
 	 * @generated
 	 */
@@ -120,6 +133,7 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #setRuleExpressionLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule_RuleExpressionLanguage()
@@ -132,7 +146,9 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementBusinessRule#getRuleExpressionLanguage <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rule Expression Language</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Rule Expression Language</em>' attribute.
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 */
@@ -147,6 +163,7 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Semantic Element</em>' container reference.
 	 * @see #setSemanticElement(SemanticElement)
 	 * @see org.mdmi.MDMIPackage#getSemanticElementBusinessRule_SemanticElement()
@@ -160,7 +177,9 @@ public interface SemanticElementBusinessRule extends EObject {
 	 * Sets the value of the '{@link org.mdmi.SemanticElementBusinessRule#getSemanticElement <em>Semantic Element</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semantic Element</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Semantic Element</em>' container reference.
 	 * @see #getSemanticElement()
 	 * @generated
 	 */

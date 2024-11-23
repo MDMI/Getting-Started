@@ -14,15 +14,18 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>The MessageComposite class inherits from the SimpleMessageComposite class, allowing the construction of a complex object tree. MessageComposite are an informative artifact that can be useful when there is a desire to associated SemanticElements with a complex object model.</p>
+ * <p>
+ * The MessageComposite class inherits from the SimpleMessageComposite class, allowing the construction of a complex object tree. MessageComposite are
+ * an informative artifact that can be useful when there is a desire to associated SemanticElements with a complex object model.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.MessageComposite#getComposites <em>Composites</em>}</li>
- *   <li>{@link org.mdmi.MessageComposite#getOwner <em>Owner</em>}</li>
+ * <li>{@link org.mdmi.MessageComposite#getComposites <em>Composites</em>}</li>
+ * <li>{@link org.mdmi.MessageComposite#getOwner <em>Owner</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMessageComposite()
@@ -40,6 +43,7 @@ public interface MessageComposite extends SimpleMessageComposite {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Composites</em>' reference list.
 	 * @see org.mdmi.MDMIPackage#getMessageComposite_Composites()
 	 * @see org.mdmi.MessageComposite#getOwner
@@ -57,6 +61,7 @@ public interface MessageComposite extends SimpleMessageComposite {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Owner</em>' reference.
 	 * @see #setOwner(MessageComposite)
 	 * @see org.mdmi.MDMIPackage#getMessageComposite_Owner()
@@ -70,7 +75,9 @@ public interface MessageComposite extends SimpleMessageComposite {
 	 * Sets the value of the '{@link org.mdmi.MessageComposite#getOwner <em>Owner</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owner</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Owner</em>' reference.
 	 * @see #getOwner()
 	 * @generated
 	 */

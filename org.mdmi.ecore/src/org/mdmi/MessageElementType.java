@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Message Element Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ *
  * @see org.mdmi.MDMIPackage#getMessageElementType()
  * @model
  * @generated
@@ -26,6 +27,7 @@ public enum MessageElementType implements Enumerator {
 	 * The '<em><b>NORMAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #NORMAL_VALUE
 	 * @generated
 	 * @ordered
@@ -36,6 +38,7 @@ public enum MessageElementType implements Enumerator {
 	 * The '<em><b>COMPUTED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #COMPUTED_VALUE
 	 * @generated
 	 * @ordered
@@ -46,6 +49,7 @@ public enum MessageElementType implements Enumerator {
 	 * The '<em><b>LOCAL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #LOCAL_VALUE
 	 * @generated
 	 * @ordered
@@ -60,6 +64,7 @@ public enum MessageElementType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #NORMAL
 	 * @model
 	 * @generated
@@ -75,6 +80,7 @@ public enum MessageElementType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #COMPUTED
 	 * @model
 	 * @generated
@@ -90,6 +96,7 @@ public enum MessageElementType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #LOCAL
 	 * @model
 	 * @generated
@@ -101,18 +108,16 @@ public enum MessageElementType implements Enumerator {
 	 * An array of all the '<em><b>Message Element Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
-	private static final MessageElementType[] VALUES_ARRAY = new MessageElementType[] {
-			NORMAL,
-			COMPUTED,
-			LOCAL,
-		};
+	private static final MessageElementType[] VALUES_ARRAY = new MessageElementType[] { NORMAL, COMPUTED, LOCAL, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Message Element Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<MessageElementType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -121,7 +126,9 @@ public enum MessageElementType implements Enumerator {
 	 * Returns the '<em><b>Message Element Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 *
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -139,7 +146,9 @@ public enum MessageElementType implements Enumerator {
 	 * Returns the '<em><b>Message Element Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 *
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -157,15 +166,20 @@ public enum MessageElementType implements Enumerator {
 	 * Returns the '<em><b>Message Element Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 *
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static MessageElementType get(int value) {
 		switch (value) {
-			case NORMAL_VALUE: return NORMAL;
-			case COMPUTED_VALUE: return COMPUTED;
-			case LOCAL_VALUE: return LOCAL;
+			case NORMAL_VALUE:
+				return NORMAL;
+			case COMPUTED_VALUE:
+				return COMPUTED;
+			case LOCAL_VALUE:
+				return LOCAL;
 		}
 		return null;
 	}
@@ -173,6 +187,7 @@ public enum MessageElementType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final int value;
@@ -180,6 +195,7 @@ public enum MessageElementType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String name;
@@ -187,6 +203,7 @@ public enum MessageElementType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -195,6 +212,7 @@ public enum MessageElementType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	private MessageElementType(int value, String name, String literal) {
@@ -206,37 +224,41 @@ public enum MessageElementType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

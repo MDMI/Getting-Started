@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ *
  * @see org.mdmi.MDMIPackage
  * @generated
  */
@@ -21,6 +22,7 @@ public interface MDMIFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	MDMIFactory eINSTANCE = org.mdmi.impl.MDMIFactoryImpl.init();
@@ -29,6 +31,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Message Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Message Model</em>'.
 	 * @generated
 	 */
@@ -38,6 +41,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Message Syntax Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Message Syntax Model</em>'.
 	 * @generated
 	 */
@@ -47,6 +51,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Bag</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Bag</em>'.
 	 * @generated
 	 */
@@ -56,6 +61,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Choice</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Choice</em>'.
 	 * @generated
 	 */
@@ -65,6 +71,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Leaf Syntax Translator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Leaf Syntax Translator</em>'.
 	 * @generated
 	 */
@@ -74,6 +81,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Message Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Message Group</em>'.
 	 * @generated
 	 */
@@ -83,6 +91,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Data Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Data Rule</em>'.
 	 * @generated
 	 */
@@ -92,6 +101,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Semantic Element Set</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Semantic Element Set</em>'.
 	 * @generated
 	 */
@@ -101,6 +111,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Semantic Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Semantic Element</em>'.
 	 * @generated
 	 */
@@ -110,6 +121,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Simple Message Composite</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Simple Message Composite</em>'.
 	 * @generated
 	 */
@@ -119,6 +131,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Message Composite</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Message Composite</em>'.
 	 * @generated
 	 */
@@ -128,6 +141,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Semantic Element Business Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Semantic Element Business Rule</em>'.
 	 * @generated
 	 */
@@ -137,6 +151,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Semantic Element Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Semantic Element Relationship</em>'.
 	 * @generated
 	 */
@@ -146,6 +161,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Business Element Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Business Element Reference</em>'.
 	 * @generated
 	 */
@@ -155,6 +171,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Business Element Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Business Element Rule</em>'.
 	 * @generated
 	 */
@@ -164,6 +181,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Conversion Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Conversion Rule</em>'.
 	 * @generated
 	 */
@@ -173,6 +191,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Domain Dictionary Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Domain Dictionary Reference</em>'.
 	 * @generated
 	 */
@@ -182,6 +201,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Expression</em>'.
 	 * @generated
 	 */
@@ -191,6 +211,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Keyword</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Keyword</em>'.
 	 * @generated
 	 */
@@ -200,6 +221,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Datatype</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Datatype</em>'.
 	 * @generated
 	 */
@@ -209,6 +231,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DTS Primitive</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DTS Primitive</em>'.
 	 * @generated
 	 */
@@ -218,6 +241,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DTC Structured</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DTC Structured</em>'.
 	 * @generated
 	 */
@@ -227,6 +251,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Field</em>'.
 	 * @generated
 	 */
@@ -236,6 +261,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DT External</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DT External</em>'.
 	 * @generated
 	 */
@@ -245,6 +271,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DTS Derived</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DTS Derived</em>'.
 	 * @generated
 	 */
@@ -254,6 +281,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DTC Choice</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DTC Choice</em>'.
 	 * @generated
 	 */
@@ -263,6 +291,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>DTS Enumerated</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>DTS Enumerated</em>'.
 	 * @generated
 	 */
@@ -272,6 +301,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Enumeration Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Enumeration Literal</em>'.
 	 * @generated
 	 */
@@ -281,6 +311,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns a new object of class '<em>Datatype Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return a new object of class '<em>Datatype Map</em>'.
 	 * @generated
 	 */
@@ -290,6 +321,7 @@ public interface MDMIFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the package supported by this factory.
 	 * @generated
 	 */

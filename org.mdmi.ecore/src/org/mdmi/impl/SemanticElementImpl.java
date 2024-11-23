@@ -457,8 +457,9 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -482,10 +483,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
@@ -509,10 +511,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setElementType(String newElementType) {
 		String oldElementType = elementType;
 		elementType = newElementType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_TYPE, oldElementType, elementType));
+		}
 	}
 
 	/**
@@ -527,10 +530,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			InternalEObject oldDatatype = (InternalEObject) datatype;
 			datatype = (MDMIDatatype) eResolveProxy(oldDatatype);
 			if (datatype != oldDatatype) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__DATATYPE, oldDatatype, datatype));
+				}
 			}
 		}
 		return datatype;
@@ -556,10 +560,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setDatatype(MDMIDatatype newDatatype) {
 		MDMIDatatype oldDatatype = datatype;
 		datatype = newDatatype;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__DATATYPE, oldDatatype, datatype));
+		}
 	}
 
 	/**
@@ -571,7 +576,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<String> getPropertyQualifier() {
 		if (propertyQualifier == null) {
-			propertyQualifier = new EDataTypeUniqueEList<String>(
+			propertyQualifier = new EDataTypeUniqueEList<>(
 				String.class, this, MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER);
 		}
 		return propertyQualifier;
@@ -589,11 +594,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			InternalEObject oldComposite = (InternalEObject) composite;
 			composite = (SimpleMessageComposite) eResolveProxy(oldComposite);
 			if (composite != oldComposite) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, oldComposite,
 							composite));
+				}
 			}
 		}
 		return composite;
@@ -621,10 +627,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, oldComposite, newComposite);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -639,19 +646,23 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setComposite(SimpleMessageComposite newComposite) {
 		if (newComposite != composite) {
 			NotificationChain msgs = null;
-			if (composite != null)
+			if (composite != null) {
 				msgs = ((InternalEObject) composite).eInverseRemove(
 					this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class, msgs);
-			if (newComposite != null)
+			}
+			if (newComposite != null) {
 				msgs = ((InternalEObject) newComposite).eInverseAdd(
 					this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class, msgs);
+			}
 			msgs = basicSetComposite(newComposite, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE, newComposite, newComposite));
+		}
 	}
 
 	/**
@@ -662,8 +673,9 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 */
 	@Override
 	public SemanticElementSet getElementSet() {
-		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET)
+		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET) {
 			return null;
+		}
 		return (SemanticElementSet) eInternalContainer();
 	}
 
@@ -688,21 +700,26 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setElementSet(SemanticElementSet newElementSet) {
 		if (newElementSet != eInternalContainer() ||
 				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET && newElementSet != null)) {
-			if (EcoreUtil.isAncestor(this, newElementSet))
+			if (EcoreUtil.isAncestor(this, newElementSet)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newElementSet != null)
+			}
+			if (newElementSet != null) {
 				msgs = ((InternalEObject) newElementSet).eInverseAdd(
 					this, MDMIPackage.SEMANTIC_ELEMENT_SET__SEMANTIC_ELEMENTS, SemanticElementSet.class, msgs);
+			}
 			msgs = basicSetElementSet(newElementSet, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET, newElementSet, newElementSet));
+		}
 	}
 
 	/**
@@ -714,7 +731,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<SemanticElementBusinessRule> getBusinessRules() {
 		if (businessRules == null) {
-			businessRules = new EObjectContainmentWithInverseEList<SemanticElementBusinessRule>(
+			businessRules = new EObjectContainmentWithInverseEList<>(
 				SemanticElementBusinessRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES,
 				MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT);
 		}
@@ -730,7 +747,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<DataRule> getDataRules() {
 		if (dataRules == null) {
-			dataRules = new EObjectWithInverseResolvingEList<DataRule>(
+			dataRules = new EObjectWithInverseResolvingEList<>(
 				DataRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES,
 				MDMIPackage.DATA_RULE__SEMANTIC_ELEMENT);
 		}
@@ -746,7 +763,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<SemanticElementRelationship> getRelationships() {
 		if (relationships == null) {
-			relationships = new EObjectContainmentEList<SemanticElementRelationship>(
+			relationships = new EObjectContainmentEList<>(
 				SemanticElementRelationship.class, this, MDMIPackage.SEMANTIC_ELEMENT__RELATIONSHIPS);
 		}
 		return relationships;
@@ -773,11 +790,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setMultipleInstances(boolean newMultipleInstances) {
 		boolean oldMultipleInstances = multipleInstances;
 		multipleInstances = newMultipleInstances;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__MULTIPLE_INSTANCES, oldMultipleInstances,
 					multipleInstances));
+		}
 	}
 
 	/**
@@ -789,7 +807,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<ConversionRule> getMapFromMdmi() {
 		if (mapFromMdmi == null) {
-			mapFromMdmi = new EObjectContainmentEList<ConversionRule>(
+			mapFromMdmi = new EObjectContainmentEList<>(
 				ConversionRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__MAP_FROM_MDMI);
 		}
 		return mapFromMdmi;
@@ -816,10 +834,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setOrdering(String newOrdering) {
 		String oldOrdering = ordering;
 		ordering = newOrdering;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ORDERING, oldOrdering, ordering));
+		}
 	}
 
 	/**
@@ -843,11 +862,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setOrderingLanguage(String newOrderingLanguage) {
 		String oldOrderingLanguage = orderingLanguage;
 		orderingLanguage = newOrderingLanguage;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ORDERING_LANGUAGE, oldOrderingLanguage,
 					orderingLanguage));
+		}
 	}
 
 	/**
@@ -874,10 +894,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, oldComputedValue,
 				newComputedValue);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -892,20 +913,24 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setComputedValue(MDMIExpression newComputedValue) {
 		if (newComputedValue != computedValue) {
 			NotificationChain msgs = null;
-			if (computedValue != null)
+			if (computedValue != null) {
 				msgs = ((InternalEObject) computedValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, null, msgs);
-			if (newComputedValue != null)
+			}
+			if (newComputedValue != null) {
 				msgs = ((InternalEObject) newComputedValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, null, msgs);
+			}
 			msgs = basicSetComputedValue(newComputedValue, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_VALUE, newComputedValue,
 					newComputedValue));
+		}
 	}
 
 	/**
@@ -932,10 +957,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, oldComputedInValue,
 				newComputedInValue);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -950,20 +976,24 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setComputedInValue(MDMIExpression newComputedInValue) {
 		if (newComputedInValue != computedInValue) {
 			NotificationChain msgs = null;
-			if (computedInValue != null)
+			if (computedInValue != null) {
 				msgs = ((InternalEObject) computedInValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, null, msgs);
-			if (newComputedInValue != null)
+			}
+			if (newComputedInValue != null) {
 				msgs = ((InternalEObject) newComputedInValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, null, msgs);
+			}
 			msgs = basicSetComputedInValue(newComputedInValue, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_IN_VALUE, newComputedInValue,
 					newComputedInValue));
+		}
 	}
 
 	/**
@@ -975,7 +1005,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<ConversionRule> getMapToMdmi() {
 		if (mapToMdmi == null) {
-			mapToMdmi = new EObjectContainmentEList<ConversionRule>(
+			mapToMdmi = new EObjectContainmentEList<>(
 				ConversionRule.class, this, MDMIPackage.SEMANTIC_ELEMENT__MAP_TO_MDMI);
 		}
 		return mapToMdmi;
@@ -993,10 +1023,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			InternalEObject oldParent = (InternalEObject) parent;
 			parent = (SemanticElement) eResolveProxy(oldParent);
 			if (parent != oldParent) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__PARENT, oldParent, parent));
+				}
 			}
 		}
 		return parent;
@@ -1024,10 +1055,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PARENT, oldParent, newParent);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -1042,19 +1074,23 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setParent(SemanticElement newParent) {
 		if (newParent != parent) {
 			NotificationChain msgs = null;
-			if (parent != null)
+			if (parent != null) {
 				msgs = ((InternalEObject) parent).eInverseRemove(
 					this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
-			if (newParent != null)
+			}
+			if (newParent != null) {
 				msgs = ((InternalEObject) newParent).eInverseAdd(
 					this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
+			}
 			msgs = basicSetParent(newParent, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PARENT, newParent, newParent));
+		}
 	}
 
 	/**
@@ -1066,7 +1102,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<SemanticElement> getChildren() {
 		if (children == null) {
-			children = new EObjectWithInverseResolvingEList<SemanticElement>(
+			children = new EObjectWithInverseResolvingEList<>(
 				SemanticElement.class, this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN,
 				MDMIPackage.SEMANTIC_ELEMENT__PARENT);
 		}
@@ -1094,11 +1130,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			InternalEObject oldSyntaxNode = (InternalEObject) syntaxNode;
 			syntaxNode = (Node) eResolveProxy(oldSyntaxNode);
 			if (syntaxNode != oldSyntaxNode) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, oldSyntaxNode,
 							syntaxNode));
+				}
 			}
 		}
 		return syntaxNode;
@@ -1126,10 +1163,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, oldSyntaxNode, newSyntaxNode);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -1144,19 +1182,23 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setSyntaxNode(Node newSyntaxNode) {
 		if (newSyntaxNode != syntaxNode) {
 			NotificationChain msgs = null;
-			if (syntaxNode != null)
+			if (syntaxNode != null) {
 				msgs = ((InternalEObject) syntaxNode).eInverseRemove(
 					this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
-			if (newSyntaxNode != null)
+			}
+			if (newSyntaxNode != null) {
 				msgs = ((InternalEObject) newSyntaxNode).eInverseAdd(
 					this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
+			}
 			msgs = basicSetSyntaxNode(newSyntaxNode, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE, newSyntaxNode, newSyntaxNode));
+		}
 	}
 
 	/**
@@ -1183,10 +1225,11 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			ENotificationImpl notification = new ENotificationImpl(
 				this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, oldComputedOutValue,
 				newComputedOutValue);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -1201,20 +1244,24 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setComputedOutValue(MDMIExpression newComputedOutValue) {
 		if (newComputedOutValue != computedOutValue) {
 			NotificationChain msgs = null;
-			if (computedOutValue != null)
+			if (computedOutValue != null) {
 				msgs = ((InternalEObject) computedOutValue).eInverseRemove(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, null, msgs);
-			if (newComputedOutValue != null)
+			}
+			if (newComputedOutValue != null) {
 				msgs = ((InternalEObject) newComputedOutValue).eInverseAdd(
 					this, EOPPOSITE_FEATURE_BASE - MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, null, msgs);
+			}
 			msgs = basicSetComputedOutValue(newComputedOutValue, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE, newComputedOutValue,
 					newComputedOutValue));
+		}
 	}
 
 	/**
@@ -1226,7 +1273,7 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	@Override
 	public EList<Keyword> getKeywords() {
 		if (keywords == null) {
-			keywords = new EObjectContainmentWithInverseEList<Keyword>(
+			keywords = new EObjectContainmentWithInverseEList<>(
 				Keyword.class, this, MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS, MDMIPackage.KEYWORD__OWNER);
 		}
 		return keywords;
@@ -1253,11 +1300,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setEnumValueField(String newEnumValueField) {
 		String oldEnumValueField = enumValueField;
 		enumValueField = newEnumValueField;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ENUM_VALUE_FIELD, oldEnumValueField,
 					enumValueField));
+		}
 	}
 
 	/**
@@ -1281,11 +1329,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public void setEnumValueDescrField(String newEnumValueDescrField) {
 		String oldEnumValueDescrField = enumValueDescrField;
 		enumValueDescrField = newEnumValueDescrField;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__ENUM_VALUE_DESCR_FIELD,
 					oldEnumValueDescrField, enumValueDescrField));
+		}
 	}
 
 	/**
@@ -1299,14 +1348,16 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE:
-				if (composite != null)
+				if (composite != null) {
 					msgs = ((InternalEObject) composite).eInverseRemove(
 						this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, SimpleMessageComposite.class,
 						msgs);
+				}
 				return basicSetComposite((SimpleMessageComposite) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET:
-				if (eInternalContainer() != null)
+				if (eInternalContainer() != null) {
 					msgs = eBasicRemoveFromContainer(msgs);
+				}
 				return basicSetElementSet((SemanticElementSet) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getBusinessRules()).basicAdd(
@@ -1314,16 +1365,18 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__DATA_RULES:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getDataRules()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__PARENT:
-				if (parent != null)
+				if (parent != null) {
 					msgs = ((InternalEObject) parent).eInverseRemove(
 						this, MDMIPackage.SEMANTIC_ELEMENT__CHILDREN, SemanticElement.class, msgs);
+				}
 				return basicSetParent((SemanticElement) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__CHILDREN:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE:
-				if (syntaxNode != null)
+				if (syntaxNode != null) {
 					msgs = ((InternalEObject) syntaxNode).eInverseRemove(
 						this, MDMIPackage.NODE__SEMANTIC_ELEMENT, Node.class, msgs);
+				}
 				return basicSetSyntaxNode((Node) otherEnd, msgs);
 			case MDMIPackage.SEMANTIC_ELEMENT__KEYWORDS:
 				return ((InternalEList<InternalEObject>) (InternalEList<?>) getKeywords()).basicAdd(otherEnd, msgs);
@@ -1404,14 +1457,16 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_TYPE:
 				return getElementType();
 			case MDMIPackage.SEMANTIC_ELEMENT__DATATYPE:
-				if (resolve)
+				if (resolve) {
 					return getDatatype();
+				}
 				return basicGetDatatype();
 			case MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER:
 				return getPropertyQualifier();
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE:
-				if (resolve)
+				if (resolve) {
 					return getComposite();
+				}
 				return basicGetComposite();
 			case MDMIPackage.SEMANTIC_ELEMENT__ELEMENT_SET:
 				return getElementSet();
@@ -1436,14 +1491,16 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 			case MDMIPackage.SEMANTIC_ELEMENT__MAP_TO_MDMI:
 				return getMapToMdmi();
 			case MDMIPackage.SEMANTIC_ELEMENT__PARENT:
-				if (resolve)
+				if (resolve) {
 					return getParent();
+				}
 				return basicGetParent();
 			case MDMIPackage.SEMANTIC_ELEMENT__CHILDREN:
 				return getChildren();
 			case MDMIPackage.SEMANTIC_ELEMENT__SYNTAX_NODE:
-				if (resolve)
+				if (resolve) {
 					return getSyntaxNode();
+				}
 				return basicGetSyntaxNode();
 			case MDMIPackage.SEMANTIC_ELEMENT__COMPUTED_OUT_VALUE:
 				return getComputedOutValue();
@@ -1719,8 +1776,9 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
@@ -1895,11 +1953,12 @@ public class SemanticElementImpl extends EObjectImpl implements SemanticElement 
 		EList<String> oldQualifier = propertyQualifier;
 		propertyQualifier.clear();
 		propertyQualifier.add(value);
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT__PROPERTY_QUALIFIER, oldQualifier,
 					propertyQualifier));
+		}
 	}
 
 } // SemanticElementImpl
