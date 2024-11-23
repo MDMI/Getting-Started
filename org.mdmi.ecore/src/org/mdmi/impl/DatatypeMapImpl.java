@@ -182,8 +182,9 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DATATYPE_MAP__NAME, oldName, name));
+		}
 	}
 
 	/**
@@ -207,10 +208,11 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.DATATYPE_MAP__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
@@ -234,10 +236,11 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setFromMDMI(String newFromMDMI) {
 		String oldFromMDMI = fromMDMI;
 		fromMDMI = newFromMDMI;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.DATATYPE_MAP__FROM_MDMI, oldFromMDMI, fromMDMI));
+		}
 	}
 
 	/**
@@ -261,9 +264,10 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setToMDMI(String newToMDMI) {
 		String oldToMDMI = toMDMI;
 		toMDMI = newToMDMI;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(this, Notification.SET, MDMIPackage.DATATYPE_MAP__TO_MDMI, oldToMDMI, toMDMI));
+		}
 	}
 
 	/**
@@ -278,11 +282,12 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 			InternalEObject oldMdmiDatatype = (InternalEObject) mdmiDatatype;
 			mdmiDatatype = (MDMIDatatype) eResolveProxy(oldMdmiDatatype);
 			if (mdmiDatatype != oldMdmiDatatype) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.DATATYPE_MAP__MDMI_DATATYPE, oldMdmiDatatype,
 							mdmiDatatype));
+				}
 			}
 		}
 		return mdmiDatatype;
@@ -308,10 +313,11 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setMdmiDatatype(MDMIDatatype newMdmiDatatype) {
 		MDMIDatatype oldMdmiDatatype = mdmiDatatype;
 		mdmiDatatype = newMdmiDatatype;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.DATATYPE_MAP__MDMI_DATATYPE, oldMdmiDatatype, mdmiDatatype));
+		}
 	}
 
 	/**
@@ -326,11 +332,12 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 			InternalEObject oldMessageDatatype = (InternalEObject) messageDatatype;
 			messageDatatype = (MDMIDatatype) eResolveProxy(oldMessageDatatype);
 			if (messageDatatype != oldMessageDatatype) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(
 						new ENotificationImpl(
 							this, Notification.RESOLVE, MDMIPackage.DATATYPE_MAP__MESSAGE_DATATYPE, oldMessageDatatype,
 							messageDatatype));
+				}
 			}
 		}
 		return messageDatatype;
@@ -356,11 +363,12 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	public void setMessageDatatype(MDMIDatatype newMessageDatatype) {
 		MDMIDatatype oldMessageDatatype = messageDatatype;
 		messageDatatype = newMessageDatatype;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(
 					this, Notification.SET, MDMIPackage.DATATYPE_MAP__MESSAGE_DATATYPE, oldMessageDatatype,
 					messageDatatype));
+		}
 	}
 
 	/**
@@ -381,12 +389,14 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 			case MDMIPackage.DATATYPE_MAP__TO_MDMI:
 				return getToMDMI();
 			case MDMIPackage.DATATYPE_MAP__MDMI_DATATYPE:
-				if (resolve)
+				if (resolve) {
 					return getMdmiDatatype();
+				}
 				return basicGetMdmiDatatype();
 			case MDMIPackage.DATATYPE_MAP__MESSAGE_DATATYPE:
-				if (resolve)
+				if (resolve) {
 					return getMessageDatatype();
+				}
 				return basicGetMessageDatatype();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -495,8 +505,9 @@ public class DatatypeMapImpl extends EObjectImpl implements DatatypeMap {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

@@ -22,7 +22,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTSEnumeratedImpl#getLiterals <em>Literals</em>}</li>
+ * <li>{@link org.mdmi.impl.DTSEnumeratedImpl#getLiterals <em>Literals</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,6 +32,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	 * The cached value of the '{@link #getLiterals() <em>Literals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getLiterals()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTSEnumeratedImpl() {
@@ -50,6 +52,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,12 +63,14 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<EnumerationLiteral> getLiterals() {
 		if (literals == null) {
-			literals = new EObjectContainmentEList<EnumerationLiteral>(EnumerationLiteral.class, this, MDMIPackage.DTS_ENUMERATED__LITERALS);
+			literals = new EObjectContainmentEList<>(
+				EnumerationLiteral.class, this, MDMIPackage.DTS_ENUMERATED__LITERALS);
 		}
 		return literals;
 	}
@@ -73,13 +78,14 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.DTS_ENUMERATED__LITERALS:
-				return ((InternalEList<?>)getLiterals()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getLiterals()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -87,6 +93,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,6 +108,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -109,7 +117,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 		switch (featureID) {
 			case MDMIPackage.DTS_ENUMERATED__LITERALS:
 				getLiterals().clear();
-				getLiterals().addAll((Collection<? extends EnumerationLiteral>)newValue);
+				getLiterals().addAll((Collection<? extends EnumerationLiteral>) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -118,6 +126,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -133,6 +142,7 @@ public class DTSEnumeratedImpl extends MDMIDatatypeImpl implements DTSEnumerated
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override

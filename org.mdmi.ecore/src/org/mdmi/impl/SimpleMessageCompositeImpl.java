@@ -31,10 +31,10 @@ import org.mdmi.SimpleMessageComposite;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getSemanticElements <em>Semantic Elements</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getElementSet <em>Element Set</em>}</li>
- *   <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getSemanticElements <em>Semantic Elements</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getElementSet <em>Element Set</em>}</li>
+ * <li>{@link org.mdmi.impl.SimpleMessageCompositeImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +44,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getSemanticElements() <em>Semantic Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getSemanticElements()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SimpleMessageCompositeImpl() {
@@ -102,6 +108,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -112,6 +119,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,25 +130,32 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<SemanticElement> getSemanticElements() {
 		if (semanticElements == null) {
-			semanticElements = new EObjectWithInverseResolvingEList<SemanticElement>(SemanticElement.class, this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS, MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE);
+			semanticElements = new EObjectWithInverseResolvingEList<>(
+				SemanticElement.class, this, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS,
+				MDMIPackage.SEMANTIC_ELEMENT__COMPOSITE);
 		}
 		return semanticElements;
 	}
@@ -148,49 +163,66 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public SemanticElementSet getElementSet() {
-		if (eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET) return null;
-		return (SemanticElementSet)eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET) {
+			return null;
+		}
+		return (SemanticElementSet) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetElementSet(SemanticElementSet newElementSet, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newElementSet, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET, msgs);
+		msgs = eBasicSetContainer(
+			(InternalEObject) newElementSet, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setElementSet(SemanticElementSet newElementSet) {
-		if (newElementSet != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET && newElementSet != null)) {
-			if (EcoreUtil.isAncestor(this, newElementSet))
+		if (newElementSet != eInternalContainer() ||
+				(eContainerFeatureID() != MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET && newElementSet != null)) {
+			if (EcoreUtil.isAncestor(this, newElementSet)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newElementSet != null)
-				msgs = ((InternalEObject)newElementSet).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE, SemanticElementSet.class, msgs);
+			}
+			if (newElementSet != null) {
+				msgs = ((InternalEObject) newElementSet).eInverseAdd(
+					this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE, SemanticElementSet.class, msgs);
+			}
 			msgs = basicSetElementSet(newElementSet, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET, newElementSet,
+					newElementSet));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET, newElementSet, newElementSet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -201,19 +233,25 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__DESCRIPTION, oldDescription,
+					description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -221,11 +259,13 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSemanticElements()).basicAdd(otherEnd, msgs);
+				return ((InternalEList<InternalEObject>) (InternalEList<?>) getSemanticElements()).basicAdd(
+					otherEnd, msgs);
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
-				if (eInternalContainer() != null)
+				if (eInternalContainer() != null) {
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetElementSet((SemanticElementSet)otherEnd, msgs);
+				}
+				return basicSetElementSet((SemanticElementSet) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -233,13 +273,14 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS:
-				return ((InternalEList<?>)getSemanticElements()).basicRemove(otherEnd, msgs);
+				return ((InternalEList<?>) getSemanticElements()).basicRemove(otherEnd, msgs);
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
 				return basicSetElementSet(null, msgs);
 		}
@@ -249,13 +290,15 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
-				return eInternalContainer().eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE, SemanticElementSet.class, msgs);
+				return eInternalContainer().eInverseRemove(
+					this, MDMIPackage.SEMANTIC_ELEMENT_SET__COMPOSITE, SemanticElementSet.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -263,6 +306,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,6 +327,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -290,17 +335,17 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS:
 				getSemanticElements().clear();
-				getSemanticElements().addAll((Collection<? extends SemanticElement>)newValue);
+				getSemanticElements().addAll((Collection<? extends SemanticElement>) newValue);
 				return;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
-				setElementSet((SemanticElementSet)newValue);
+				setElementSet((SemanticElementSet) newValue);
 				return;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -309,6 +354,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -321,7 +367,7 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 				getSemanticElements().clear();
 				return;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
-				setElementSet((SemanticElementSet)null);
+				setElementSet((SemanticElementSet) null);
 				return;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
@@ -333,19 +379,24 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__SEMANTIC_ELEMENTS:
 				return semanticElements != null && !semanticElements.isEmpty();
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__ELEMENT_SET:
 				return getElementSet() != null;
 			case MDMIPackage.SIMPLE_MESSAGE_COMPOSITE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -353,11 +404,14 @@ public class SimpleMessageCompositeImpl extends EObjectImpl implements SimpleMes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

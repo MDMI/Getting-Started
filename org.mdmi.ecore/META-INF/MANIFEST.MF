@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.mdmi.ecore;singleton:=true
 Automatic-Module-Name: org.mdmi.ecore
-Bundle-Version: 3.0.0.qualifier
+Bundle-Version: 4.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.mdmi.ecore.MDMIPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -16,5 +16,6 @@ Export-Package: org.mdmi,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.apache.commons.lang3,
- org.eclipse.emf.ecore.xmi;bundle-version="2.17.0";visibility:=reexport
+ org.eclipse.emf.ecore.xmi;visibility:=reexport
+Bundle-ActivationPolicy: lazy
 

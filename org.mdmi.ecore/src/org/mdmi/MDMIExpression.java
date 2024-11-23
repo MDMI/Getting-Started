@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.MDMIExpression#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.mdmi.MDMIExpression#getLanguage <em>Language</em>}</li>
+ * <li>{@link org.mdmi.MDMIExpression#getExpression <em>Expression</em>}</li>
+ * <li>{@link org.mdmi.MDMIExpression#getLanguage <em>Language</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMDMIExpression()
@@ -35,6 +35,7 @@ public interface MDMIExpression extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Expression</em>' attribute.
 	 * @see #setExpression(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIExpression_Expression()
@@ -47,7 +48,9 @@ public interface MDMIExpression extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIExpression#getExpression <em>Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expression</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Expression</em>' attribute.
 	 * @see #getExpression()
 	 * @generated
 	 */
@@ -61,6 +64,7 @@ public interface MDMIExpression extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Language</em>' attribute.
 	 * @see #setLanguage(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIExpression_Language()
@@ -73,7 +77,9 @@ public interface MDMIExpression extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIExpression#getLanguage <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Language</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Language</em>' attribute.
 	 * @see #getLanguage()
 	 * @generated
 	 */

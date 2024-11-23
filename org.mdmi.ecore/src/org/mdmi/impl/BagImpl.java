@@ -153,8 +153,9 @@ public class BagImpl extends NodeImpl implements Bag {
 	public void setIsUnique(boolean newIsUnique) {
 		boolean oldIsUnique = isUnique;
 		isUnique = newIsUnique;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_UNIQUE, oldIsUnique, isUnique));
+		}
 	}
 
 	/**
@@ -178,9 +179,10 @@ public class BagImpl extends NodeImpl implements Bag {
 	public void setIsOrdered(boolean newIsOrdered) {
 		boolean oldIsOrdered = isOrdered;
 		isOrdered = newIsOrdered;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(
 				new ENotificationImpl(this, Notification.SET, MDMIPackage.BAG__IS_ORDERED, oldIsOrdered, isOrdered));
+		}
 	}
 
 	/**
@@ -192,7 +194,7 @@ public class BagImpl extends NodeImpl implements Bag {
 	@Override
 	public EList<Node> getNodes() {
 		if (nodes == null) {
-			nodes = new EObjectContainmentEList<Node>(Node.class, this, MDMIPackage.BAG__NODES);
+			nodes = new EObjectContainmentEList<>(Node.class, this, MDMIPackage.BAG__NODES);
 		}
 		return nodes;
 	}
@@ -304,8 +306,9 @@ public class BagImpl extends NodeImpl implements Bag {
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (isUnique: ");
@@ -416,7 +419,7 @@ public class BagImpl extends NodeImpl implements Bag {
 							}
 
 							if (!nodeHash.containsKey(location)) {
-								nodeHash.put(location, new ArrayList<Node>());
+								nodeHash.put(location, new ArrayList<>());
 							}
 							nodeHash.get(location).add(node);
 						}
@@ -455,7 +458,7 @@ public class BagImpl extends NodeImpl implements Bag {
 						String[] keys = key.split("/");
 						for (String k : keys) {
 							if (!nodeHash.containsKey(k)) {
-								nodeHash.put(k, new ArrayList<Node>());
+								nodeHash.put(k, new ArrayList<>());
 							}
 							nodeHash.get(k).add(node);
 						}

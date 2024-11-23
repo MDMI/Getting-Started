@@ -23,8 +23,8 @@ import org.mdmi.Node;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormat <em>Format</em>}</li>
- *   <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormat <em>Format</em>}</li>
+ * <li>{@link org.mdmi.impl.LeafSyntaxTranslatorImpl#getFormatExpressionLanguage <em>Format Expression Language</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,6 +34,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The default value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The cached value of the '{@link #getFormat() <em>Format</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormat()
 	 * @generated
 	 * @ordered
@@ -54,6 +56,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The default value of the '{@link #getFormatExpressionLanguage() <em>Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -64,6 +67,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	 * The cached value of the '{@link #getFormatExpressionLanguage() <em>Format Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getFormatExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected LeafSyntaxTranslatorImpl() {
@@ -82,6 +87,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,6 +98,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,19 +109,24 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setFormat(String newFormat) {
 		String oldFormat = format;
 		format = newFormat;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT, oldFormat, format));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT, oldFormat, format));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,19 +137,25 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setFormatExpressionLanguage(String newFormatExpressionLanguage) {
 		String oldFormatExpressionLanguage = formatExpressionLanguage;
 		formatExpressionLanguage = newFormatExpressionLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE, oldFormatExpressionLanguage, formatExpressionLanguage));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE,
+					oldFormatExpressionLanguage, formatExpressionLanguage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -154,16 +172,17 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT:
-				setFormat((String)newValue);
+				setFormat((String) newValue);
 				return;
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE:
-				setFormatExpressionLanguage((String)newValue);
+				setFormatExpressionLanguage((String) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,6 +191,7 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -190,15 +210,20 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT:
-				return FORMAT_EDEFAULT == null ? format != null : !FORMAT_EDEFAULT.equals(format);
+				return FORMAT_EDEFAULT == null
+						? format != null
+						: !FORMAT_EDEFAULT.equals(format);
 			case MDMIPackage.LEAF_SYNTAX_TRANSLATOR__FORMAT_EXPRESSION_LANGUAGE:
-				return FORMAT_EXPRESSION_LANGUAGE_EDEFAULT == null ? formatExpressionLanguage != null : !FORMAT_EXPRESSION_LANGUAGE_EDEFAULT.equals(formatExpressionLanguage);
+				return FORMAT_EXPRESSION_LANGUAGE_EDEFAULT == null
+						? formatExpressionLanguage != null
+						: !FORMAT_EXPRESSION_LANGUAGE_EDEFAULT.equals(formatExpressionLanguage);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -206,11 +231,14 @@ public class LeafSyntaxTranslatorImpl extends NodeImpl implements LeafSyntaxTran
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (format: ");

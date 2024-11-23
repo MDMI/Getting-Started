@@ -15,7 +15,7 @@ package org.mdmi;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.DTSDerived#getBaseType <em>Base Type</em>}</li>
+ * <li>{@link org.mdmi.DTSDerived#getBaseType <em>Base Type</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getDTSDerived()
@@ -31,6 +31,7 @@ public interface DTSDerived extends DTSPrimitive {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Base Type</em>' reference.
 	 * @see #setBaseType(MDMIDatatype)
 	 * @see org.mdmi.MDMIPackage#getDTSDerived_BaseType()
@@ -43,7 +44,9 @@ public interface DTSDerived extends DTSPrimitive {
 	 * Sets the value of the '{@link org.mdmi.DTSDerived#getBaseType <em>Base Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Type</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Base Type</em>' reference.
 	 * @see #getBaseType()
 	 * @generated
 	 */

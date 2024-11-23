@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.DatatypeMap#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.DatatypeMap#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.DatatypeMap#getFromMDMI <em>From MDMI</em>}</li>
- *   <li>{@link org.mdmi.DatatypeMap#getToMDMI <em>To MDMI</em>}</li>
- *   <li>{@link org.mdmi.DatatypeMap#getMdmiDatatype <em>Mdmi Datatype</em>}</li>
- *   <li>{@link org.mdmi.DatatypeMap#getMessageDatatype <em>Message Datatype</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getFromMDMI <em>From MDMI</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getToMDMI <em>To MDMI</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getMdmiDatatype <em>Mdmi Datatype</em>}</li>
+ * <li>{@link org.mdmi.DatatypeMap#getMessageDatatype <em>Message Datatype</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getDatatypeMap()
@@ -34,6 +34,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_Name()
@@ -46,7 +47,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -60,6 +63,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_Description()
@@ -72,7 +76,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -86,6 +92,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>From MDMI</em>' attribute.
 	 * @see #setFromMDMI(String)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_FromMDMI()
@@ -98,7 +105,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getFromMDMI <em>From MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>From MDMI</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>From MDMI</em>' attribute.
 	 * @see #getFromMDMI()
 	 * @generated
 	 */
@@ -112,6 +121,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>To MDMI</em>' attribute.
 	 * @see #setToMDMI(String)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_ToMDMI()
@@ -124,7 +134,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getToMDMI <em>To MDMI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>To MDMI</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>To MDMI</em>' attribute.
 	 * @see #getToMDMI()
 	 * @generated
 	 */
@@ -138,6 +150,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Mdmi Datatype</em>' reference.
 	 * @see #setMdmiDatatype(MDMIDatatype)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_MdmiDatatype()
@@ -150,7 +163,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getMdmiDatatype <em>Mdmi Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mdmi Datatype</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Mdmi Datatype</em>' reference.
 	 * @see #getMdmiDatatype()
 	 * @generated
 	 */
@@ -164,6 +179,7 @@ public interface DatatypeMap extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Message Datatype</em>' reference.
 	 * @see #setMessageDatatype(MDMIDatatype)
 	 * @see org.mdmi.MDMIPackage#getDatatypeMap_MessageDatatype()
@@ -176,7 +192,9 @@ public interface DatatypeMap extends EObject {
 	 * Sets the value of the '{@link org.mdmi.DatatypeMap#getMessageDatatype <em>Message Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Message Datatype</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Message Datatype</em>' reference.
 	 * @see #getMessageDatatype()
 	 * @generated
 	 */

@@ -25,11 +25,11 @@ import org.mdmi.SemanticElementBusinessRule;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRule <em>Rule</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
- *   <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRule <em>Rule</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getRuleExpressionLanguage <em>Rule Expression Language</em>}</li>
+ * <li>{@link org.mdmi.impl.SemanticElementBusinessRuleImpl#getSemanticElement <em>Semantic Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -89,6 +94,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRule() <em>Rule</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRule()
 	 * @generated
 	 * @ordered
@@ -99,6 +105,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The default value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	 * The cached value of the '{@link #getRuleExpressionLanguage() <em>Rule Expression Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getRuleExpressionLanguage()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected SemanticElementBusinessRuleImpl() {
@@ -127,6 +136,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,19 +158,24 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__NAME, oldName, name));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -170,19 +186,25 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__DESCRIPTION, oldDescription, description));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__DESCRIPTION, oldDescription,
+					description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,19 +215,24 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRule(String newRule) {
 		String oldRule = rule;
 		rule = newRule;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE, oldRule, rule));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE, oldRule, rule));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,71 +243,95 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setRuleExpressionLanguage(String newRuleExpressionLanguage) {
 		String oldRuleExpressionLanguage = ruleExpressionLanguage;
 		ruleExpressionLanguage = newRuleExpressionLanguage;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE_EXPRESSION_LANGUAGE, oldRuleExpressionLanguage, ruleExpressionLanguage));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE_EXPRESSION_LANGUAGE,
+					oldRuleExpressionLanguage, ruleExpressionLanguage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public SemanticElement getSemanticElement() {
-		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT) return null;
-		return (SemanticElement)eInternalContainer();
+		if (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT) {
+			return null;
+		}
+		return (SemanticElement) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetSemanticElement(SemanticElement newSemanticElement, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSemanticElement, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT, msgs);
+		msgs = eBasicSetContainer(
+			(InternalEObject) newSemanticElement, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setSemanticElement(SemanticElement newSemanticElement) {
-		if (newSemanticElement != eInternalContainer() || (eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT && newSemanticElement != null)) {
-			if (EcoreUtil.isAncestor(this, newSemanticElement))
+		if (newSemanticElement != eInternalContainer() ||
+				(eContainerFeatureID() != MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT &&
+						newSemanticElement != null)) {
+			if (EcoreUtil.isAncestor(this, newSemanticElement)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSemanticElement != null)
-				msgs = ((InternalEObject)newSemanticElement).eInverseAdd(this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES, SemanticElement.class, msgs);
+			}
+			if (newSemanticElement != null) {
+				msgs = ((InternalEObject) newSemanticElement).eInverseAdd(
+					this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES, SemanticElement.class, msgs);
+			}
 			msgs = basicSetSemanticElement(newSemanticElement, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
+		} else if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT,
+					newSemanticElement, newSemanticElement));
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT, newSemanticElement, newSemanticElement));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT:
-				if (eInternalContainer() != null)
+				if (eInternalContainer() != null) {
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSemanticElement((SemanticElement)otherEnd, msgs);
+				}
+				return basicSetSemanticElement((SemanticElement) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -288,6 +339,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -302,13 +354,15 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT:
-				return eInternalContainer().eInverseRemove(this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES, SemanticElement.class, msgs);
+				return eInternalContainer().eInverseRemove(
+					this, MDMIPackage.SEMANTIC_ELEMENT__BUSINESS_RULES, SemanticElement.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -316,6 +370,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -338,25 +393,26 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__NAME:
-				setName((String)newValue);
+				setName((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__DESCRIPTION:
-				setDescription((String)newValue);
+				setDescription((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE:
-				setRule((String)newValue);
+				setRule((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE_EXPRESSION_LANGUAGE:
-				setRuleExpressionLanguage((String)newValue);
+				setRuleExpressionLanguage((String) newValue);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement)newValue);
+				setSemanticElement((SemanticElement) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -365,6 +421,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -383,7 +440,7 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 				setRuleExpressionLanguage(RULE_EXPRESSION_LANGUAGE_EDEFAULT);
 				return;
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT:
-				setSemanticElement((SemanticElement)null);
+				setSemanticElement((SemanticElement) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -392,19 +449,28 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+				return NAME_EDEFAULT == null
+						? name != null
+						: !NAME_EDEFAULT.equals(name);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null
+						? description != null
+						: !DESCRIPTION_EDEFAULT.equals(description);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE:
-				return RULE_EDEFAULT == null ? rule != null : !RULE_EDEFAULT.equals(rule);
+				return RULE_EDEFAULT == null
+						? rule != null
+						: !RULE_EDEFAULT.equals(rule);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__RULE_EXPRESSION_LANGUAGE:
-				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null ? ruleExpressionLanguage != null : !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
+				return RULE_EXPRESSION_LANGUAGE_EDEFAULT == null
+						? ruleExpressionLanguage != null
+						: !RULE_EXPRESSION_LANGUAGE_EDEFAULT.equals(ruleExpressionLanguage);
 			case MDMIPackage.SEMANTIC_ELEMENT_BUSINESS_RULE__SEMANTIC_ELEMENT:
 				return getSemanticElement() != null;
 		}
@@ -414,11 +480,14 @@ public class SemanticElementBusinessRuleImpl extends EObjectImpl implements Sema
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");

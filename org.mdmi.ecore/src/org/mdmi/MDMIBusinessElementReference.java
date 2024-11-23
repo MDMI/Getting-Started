@@ -15,25 +15,29 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * <p>The MDMIBusinessElementReference is as a class that references a business element in a dictionary. No assumption is made about the format of the business element in the central dictionary. Therefore, the reference can only be informational. However a function must be available that, given the reference, will return a uniqueIdentifier and a reference MDMIDatatype.</p>
+ * <p>
+ * The MDMIBusinessElementReference is as a class that references a business element in a dictionary. No assumption is made about the format of the
+ * business element in the central dictionary. Therefore, the reference can only be informational. However a function must be available that, given
+ * the reference, will return a uniqueIdentifier and a reference MDMIDatatype.
+ * </p>
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getReference <em>Reference</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getUniqueIdentifier <em>Unique Identifier</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getBusinessRules <em>Business Rules</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getReferenceDatatype <em>Reference Datatype</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSetField <em>Enum Value Set Field</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueField <em>Enum Value Field</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSet <em>Enum Value Set</em>}</li>
- *   <li>{@link org.mdmi.MDMIBusinessElementReference#getReadonly <em>Readonly</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getReference <em>Reference</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getUniqueIdentifier <em>Unique Identifier</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getBusinessRules <em>Business Rules</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getReferenceDatatype <em>Reference Datatype</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSetField <em>Enum Value Set Field</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueField <em>Enum Value Field</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueDescrField <em>Enum Value Descr Field</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSet <em>Enum Value Set</em>}</li>
+ * <li>{@link org.mdmi.MDMIBusinessElementReference#getReadonly <em>Readonly</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference()
@@ -47,8 +51,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The "Name" property of type String names the MDMIBusinessElementReference.</p>
+	 * <p>
+	 * The "Name" property of type String names the MDMIBusinessElementReference.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_Name()
@@ -61,7 +68,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -72,8 +81,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The optional "description" property of type String describes the MDMIBusinessElementReference.</p>
+	 * <p>
+	 * The optional "description" property of type String describes the MDMIBusinessElementReference.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_Description()
@@ -86,7 +98,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -97,8 +111,12 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The "reference" property identifies the location of the BusinessElement in a central dictionary through a URI. URIs are very general address, i.e., the URI could even point to a line in a page in a document therefore the "reference� property is informational.</p>
+	 * <p>
+	 * The "reference" property identifies the location of the BusinessElement in a central dictionary through a URI. URIs are very general address,
+	 * i.e., the URI could even point to a line in a page in a document therefore the "reference� property is informational.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Reference</em>' attribute.
 	 * @see #setReference(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_Reference()
@@ -111,7 +129,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getReference <em>Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Reference</em>' attribute.
 	 * @see #getReference()
 	 * @generated
 	 */
@@ -122,8 +142,14 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The "uniqueIdentifier" is a key property. The �uniqueIdentifier" of type String provides a unique identifier for all MDMIBusinessElementReference instances that reference the same business element in the central dictionary. There must be a function associated with the central dictionary that provides this identifier. Runtime transformation engines recognize the matching source and target mappings for a Semantic Element because they will each have the same "uniqueIdentifier".</p>
+	 * <p>
+	 * The "uniqueIdentifier" is a key property. The �uniqueIdentifier" of type String provides a unique identifier for all
+	 * MDMIBusinessElementReference instances that reference the same business element in the central dictionary. There must be a function associated
+	 * with the central dictionary that provides this identifier. Runtime transformation engines recognize the matching source and target mappings for
+	 * a Semantic Element because they will each have the same "uniqueIdentifier".
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Unique Identifier</em>' attribute.
 	 * @see #setUniqueIdentifier(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_UniqueIdentifier()
@@ -136,7 +162,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getUniqueIdentifier <em>Unique Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Unique Identifier</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Unique Identifier</em>' attribute.
 	 * @see #getUniqueIdentifier()
 	 * @generated
 	 */
@@ -152,6 +180,7 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Business Rules</em>' containment reference list.
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_BusinessRules()
 	 * @see org.mdmi.MDMIBusinessElementRule#getBusinessElement
@@ -170,6 +199,7 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Domain Dictionary Reference</em>' container reference.
 	 * @see #setDomainDictionaryReference(MDMIDomainDictionaryReference)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_DomainDictionaryReference()
@@ -180,10 +210,13 @@ public interface MDMIBusinessElementReference extends EObject {
 	MDMIDomainDictionaryReference getDomainDictionaryReference();
 
 	/**
-	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}' container reference.
+	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getDomainDictionaryReference <em>Domain Dictionary Reference</em>}'
+	 * container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Domain Dictionary Reference</em>' container reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Domain Dictionary Reference</em>' container reference.
 	 * @see #getDomainDictionaryReference()
 	 * @generated
 	 */
@@ -194,8 +227,13 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>The "referenceDatatype" property of type MDMIDatatype provides a reference datatype for each business element in the central dictionary. There must be a function associated with the central dictionary that will deliver the "referenceDatatype". Maps to/from this reference datatype to the "datatype" in the SemanticElement should be provided as a ConversionRule.</p>
+	 * <p>
+	 * The "referenceDatatype" property of type MDMIDatatype provides a reference datatype for each business element in the central dictionary. There
+	 * must be a function associated with the central dictionary that will deliver the "referenceDatatype". Maps to/from this reference datatype to
+	 * the "datatype" in the SemanticElement should be provided as a ConversionRule.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Reference Datatype</em>' reference.
 	 * @see #setReferenceDatatype(MDMIDatatype)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_ReferenceDatatype()
@@ -209,7 +247,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getReferenceDatatype <em>Reference Datatype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference Datatype</em>' reference.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Reference Datatype</em>' reference.
 	 * @see #getReferenceDatatype()
 	 * @generated
 	 */
@@ -220,8 +260,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>Datatype description.</p>
+	 * <p>
+	 * Datatype description.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Enum Value Set Field</em>' attribute.
 	 * @see #setEnumValueSetField(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_EnumValueSetField()
@@ -234,7 +277,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSetField <em>Enum Value Set Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum Value Set Field</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Enum Value Set Field</em>' attribute.
 	 * @see #getEnumValueSetField()
 	 * @generated
 	 */
@@ -245,8 +290,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>Datatype description.</p>
+	 * <p>
+	 * Datatype description.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Enum Value Field</em>' attribute.
 	 * @see #setEnumValueField(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_EnumValueField()
@@ -259,7 +307,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getEnumValueField <em>Enum Value Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum Value Field</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Enum Value Field</em>' attribute.
 	 * @see #getEnumValueField()
 	 * @generated
 	 */
@@ -270,8 +320,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>Datatype description.</p>
+	 * <p>
+	 * Datatype description.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Enum Value Descr Field</em>' attribute.
 	 * @see #setEnumValueDescrField(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_EnumValueDescrField()
@@ -284,7 +337,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getEnumValueDescrField <em>Enum Value Descr Field</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum Value Descr Field</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Enum Value Descr Field</em>' attribute.
 	 * @see #getEnumValueDescrField()
 	 * @generated
 	 */
@@ -295,8 +350,11 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * <p>Datatype description.</p>
+	 * <p>
+	 * Datatype description.
+	 * </p>
 	 * <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Enum Value Set</em>' attribute.
 	 * @see #setEnumValueSet(String)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_EnumValueSet()
@@ -309,7 +367,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getEnumValueSet <em>Enum Value Set</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enum Value Set</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Enum Value Set</em>' attribute.
 	 * @see #getEnumValueSet()
 	 * @generated
 	 */
@@ -323,6 +383,7 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Readonly</em>' attribute.
 	 * @see #setReadonly(Boolean)
 	 * @see org.mdmi.MDMIPackage#getMDMIBusinessElementReference_Readonly()
@@ -335,7 +396,9 @@ public interface MDMIBusinessElementReference extends EObject {
 	 * Sets the value of the '{@link org.mdmi.MDMIBusinessElementReference#getReadonly <em>Readonly</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Readonly</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Readonly</em>' attribute.
 	 * @see #getReadonly()
 	 * @generated
 	 */

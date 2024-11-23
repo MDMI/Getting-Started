@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.EnumerationLiteral#getName <em>Name</em>}</li>
- *   <li>{@link org.mdmi.EnumerationLiteral#getDescription <em>Description</em>}</li>
- *   <li>{@link org.mdmi.EnumerationLiteral#getCode <em>Code</em>}</li>
+ * <li>{@link org.mdmi.EnumerationLiteral#getName <em>Name</em>}</li>
+ * <li>{@link org.mdmi.EnumerationLiteral#getDescription <em>Description</em>}</li>
+ * <li>{@link org.mdmi.EnumerationLiteral#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @see org.mdmi.MDMIPackage#getEnumerationLiteral()
@@ -31,6 +31,7 @@ public interface EnumerationLiteral extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.mdmi.MDMIPackage#getEnumerationLiteral_Name()
@@ -43,7 +44,9 @@ public interface EnumerationLiteral extends EObject {
 	 * Sets the value of the '{@link org.mdmi.EnumerationLiteral#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -57,6 +60,7 @@ public interface EnumerationLiteral extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.mdmi.MDMIPackage#getEnumerationLiteral_Description()
@@ -69,7 +73,9 @@ public interface EnumerationLiteral extends EObject {
 	 * Sets the value of the '{@link org.mdmi.EnumerationLiteral#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -83,6 +89,7 @@ public interface EnumerationLiteral extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 *
 	 * @return the value of the '<em>Code</em>' attribute.
 	 * @see #setCode(String)
 	 * @see org.mdmi.MDMIPackage#getEnumerationLiteral_Code()
@@ -95,7 +102,9 @@ public interface EnumerationLiteral extends EObject {
 	 * Sets the value of the '{@link org.mdmi.EnumerationLiteral#getCode <em>Code</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Code</em>' attribute.
+	 *
+	 * @param value
+	 *            the new value of the '<em>Code</em>' attribute.
 	 * @see #getCode()
 	 * @generated
 	 */

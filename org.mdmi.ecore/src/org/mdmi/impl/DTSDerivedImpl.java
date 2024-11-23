@@ -25,7 +25,7 @@ import org.mdmi.MDMIPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdmi.impl.DTSDerivedImpl#getBaseType <em>Base Type</em>}</li>
+ * <li>{@link org.mdmi.impl.DTSDerivedImpl#getBaseType <em>Base Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -35,6 +35,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	 * The cached value of the '{@link #getBaseType() <em>Base Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @see #getBaseType()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	protected DTSDerivedImpl() {
@@ -53,6 +55,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,16 +66,20 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public MDMIDatatype getBaseType() {
 		if (baseType != null && baseType.eIsProxy()) {
-			InternalEObject oldBaseType = (InternalEObject)baseType;
-			baseType = (MDMIDatatype)eResolveProxy(oldBaseType);
+			InternalEObject oldBaseType = (InternalEObject) baseType;
+			baseType = (MDMIDatatype) eResolveProxy(oldBaseType);
 			if (baseType != oldBaseType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MDMIPackage.DTS_DERIVED__BASE_TYPE, oldBaseType, baseType));
+				if (eNotificationRequired()) {
+					eNotify(
+						new ENotificationImpl(
+							this, Notification.RESOLVE, MDMIPackage.DTS_DERIVED__BASE_TYPE, oldBaseType, baseType));
+				}
 			}
 		}
 		return baseType;
@@ -81,6 +88,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public MDMIDatatype basicGetBaseType() {
@@ -90,26 +98,33 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void setBaseType(MDMIDatatype newBaseType) {
 		MDMIDatatype oldBaseType = baseType;
 		baseType = newBaseType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDMIPackage.DTS_DERIVED__BASE_TYPE, oldBaseType, baseType));
+		if (eNotificationRequired()) {
+			eNotify(
+				new ENotificationImpl(
+					this, Notification.SET, MDMIPackage.DTS_DERIVED__BASE_TYPE, oldBaseType, baseType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case MDMIPackage.DTS_DERIVED__BASE_TYPE:
-				if (resolve) return getBaseType();
+				if (resolve) {
+					return getBaseType();
+				}
 				return basicGetBaseType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -118,13 +133,14 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MDMIPackage.DTS_DERIVED__BASE_TYPE:
-				setBaseType((MDMIDatatype)newValue);
+				setBaseType((MDMIDatatype) newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -133,13 +149,14 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MDMIPackage.DTS_DERIVED__BASE_TYPE:
-				setBaseType((MDMIDatatype)null);
+				setBaseType((MDMIDatatype) null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -148,6 +165,7 @@ public class DTSDerivedImpl extends DTSPrimitiveImpl implements DTSDerived {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
